@@ -36,7 +36,6 @@ import java.util.Set;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.logicware.Licenses;
 import org.logicware.prolog.PredicateIndicator;
 import org.logicware.prolog.PrologAtom;
 import org.logicware.prolog.PrologEngine;
@@ -48,6 +47,7 @@ import org.logicware.prolog.PrologStructure;
 import org.logicware.prolog.PrologTerm;
 import org.logicware.prolog.PrologVariable;
 import org.logicware.prolog.jpl.JplOperator;
+import org.worklogic.Licenses;
 
 import jpl.JPL;
 import jpl.Query;

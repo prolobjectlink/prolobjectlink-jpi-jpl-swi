@@ -19,10 +19,11 @@
  */
 package org.logicware.prolog.jpl.swi;
 
-import jpl.Term;
 import org.logicware.prolog.PrologConverter;
 import org.logicware.prolog.PrologProvider;
 import org.logicware.prolog.jpl.JplConverter;
+
+import jpl.Term;
 
 public class SwiPrologConverter extends JplConverter implements PrologConverter<Term> {
 
