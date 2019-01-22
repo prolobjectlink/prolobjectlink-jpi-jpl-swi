@@ -39,8 +39,6 @@ import org.junit.Test;
 import org.logicware.prolog.PredicateIndicator;
 import org.logicware.prolog.PrologAtom;
 import org.logicware.prolog.PrologEngine;
-import org.logicware.prolog.PrologList;
-import org.logicware.prolog.PrologNumber;
 import org.logicware.prolog.PrologOperator;
 import org.logicware.prolog.PrologQuery;
 import org.logicware.prolog.PrologStructure;
@@ -1038,27 +1036,21 @@ public class PrologEngineTest extends PrologBaseTest {
 	public synchronized final void testCurrentOperators() {
 		Set<PrologOperator> operators = new HashSet<PrologOperator>();
 		String key = "LIST";
-		PrologEngine engine = provider.newEngine();
-		String stringQuery = "findall(P/S/O,current_op(P,S,O)," + key + ")";
-		PrologQuery query = engine.query(stringQuery);
-		Map<String, PrologTerm>[] solution = query.allVariablesSolutions();
-		for (Map<String, PrologTerm> map : solution) {
-			for (PrologTerm operatorList : map.values()) {
-				if (!operatorList.isVariable() && operatorList.isList()) {
-					PrologList l = (PrologList) operatorList;
-					for (PrologTerm operator : l) {
-
-						PrologTerm prio = operator.getArgument(0).getArgument(0);
-						PrologTerm pos = operator.getArgument(0).getArgument(1);
-						PrologTerm op = operator.getArgument(1);
-						int p = ((PrologNumber) prio).getIntValue();
-						String s = pos.getFunctor();
-						String n = op.getFunctor();
-
-						PrologOperator o = new JplOperator(p, s, n);
-						operators.add(o);
-					}
-				}
+		String opQuery = "findall(P/S/O,current_op(P,S,O)," + key + ")";
+		Query query = new Query(opQuery);
+		if (query.hasSolution()) {
+			Term term = (Term) query.oneSolution().get(key);
+			Term[] termArray = term.toTermArray();
+			for (int i = 0; i < termArray.length; i++) {
+				Term t = termArray[i];
+				Term prio = t.arg(1).arg(1);
+				Term pos = t.arg(1).arg(2);
+				Term op = t.arg(2);
+				int p = prio.intValue();
+				String s = pos.name();
+				String n = op.name();
+				PrologOperator o = new JplOperator(p, s, n);
+				operators.add(o);
 			}
 		}
 		assertEquals(operators, engine.currentOperators());
