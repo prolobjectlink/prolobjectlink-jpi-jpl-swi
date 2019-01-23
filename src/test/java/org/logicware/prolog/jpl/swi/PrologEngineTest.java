@@ -1033,7 +1033,7 @@ public class PrologEngineTest extends PrologBaseTest {
 	}
 
 	@Test
-	public synchronized final void testCurrentOperators() {
+	public final void testCurrentOperators() {
 		Set<PrologOperator> operators = new HashSet<PrologOperator>();
 		String key = "LIST";
 		String opQuery = "findall(P/S/O,current_op(P,S,O)," + key + ")";
