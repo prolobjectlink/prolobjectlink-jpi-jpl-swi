@@ -48,7 +48,6 @@ import org.prolobjectlink.prolog.PrologStructure;
 import org.prolobjectlink.prolog.PrologTerm;
 import org.prolobjectlink.prolog.PrologVariable;
 import org.prolobjectlink.prolog.jpl.JplOperator;
-import org.prolobjectlink.prolog.jpl.swi.SwiPrologEngine;
 
 import jpl.JPL;
 import jpl.Query;
@@ -1015,7 +1014,7 @@ public class PrologEngineTest extends PrologBaseTest {
 
 	@Test
 	public final void testCurrentPredicates() {
-		SwiPrologEngine e = engine.unwrap(SwiPrologEngine.class);
+		SwiPrologEngine e = (SwiPrologEngine) engine;
 		Set<PredicateIndicator> predicates = new HashSet<PredicateIndicator>();
 		String consult5 = "consult('" + e.getCache() + "'),findall(X/Y,current_predicate(X/Y),L)";
 		PrologQuery query = e.query(consult5);
