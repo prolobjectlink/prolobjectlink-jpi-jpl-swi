@@ -42,6 +42,7 @@ import org.prolobjectlink.prolog.Licenses;
 import org.prolobjectlink.prolog.PredicateIndicator;
 import org.prolobjectlink.prolog.PrologAtom;
 import org.prolobjectlink.prolog.PrologEngine;
+import org.prolobjectlink.prolog.PrologIndicator;
 import org.prolobjectlink.prolog.PrologOperator;
 import org.prolobjectlink.prolog.PrologQuery;
 import org.prolobjectlink.prolog.PrologStructure;
@@ -1014,21 +1015,23 @@ public class PrologEngineTest extends PrologBaseTest {
 
 	@Test
 	public final void testCurrentPredicates() {
+		String KEY = "X";
 		SwiPrologEngine e = (SwiPrologEngine) engine;
-		Set<PredicateIndicator> predicates = new HashSet<PredicateIndicator>();
-		String consult5 = "consult('" + e.getCache() + "'),findall(X/Y,current_predicate(X/Y),L)";
-		PrologQuery query = e.query(consult5);
+		Set<PrologIndicator> predicates = new HashSet<PrologIndicator>();
+		String opQuery = "consult('" + e.getCache() + "')," + "findall(X/Y,current_predicate(X/Y)," + KEY + ")";
+		Query query = new Query(opQuery);
 		if (query.hasSolution()) {
-			Map<String, PrologTerm>[] s = query.allVariablesSolutions();
-			for (Map<String, PrologTerm> map : s) {
-				for (PrologTerm term : map.values()) {
-					if (term.isCompound()) {
-						int arity = term.getArity();
-						String functor = term.getFunctor();
-						PredicateIndicator pi = new PredicateIndicator(functor, arity);
-						predicates.add(pi);
-					}
-				}
+			Term term = (Term) query.oneSolution().get(KEY);
+			Term[] termArray = term.toTermArray();
+			for (Term t : termArray) {
+				Term f = t.arg(1);
+				Term a = t.arg(2);
+
+				int arity = a.intValue();
+				String functor = f.name();
+
+				PredicateIndicator pi = new PredicateIndicator(functor, arity);
+				predicates.add(pi);
 			}
 		}
 		assertEquals(predicates, engine.currentPredicates());
