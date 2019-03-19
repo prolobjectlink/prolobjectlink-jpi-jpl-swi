@@ -27,6 +27,11 @@ import org.prolobjectlink.prolog.jpl.JplConverter;
 
 import jpl.Term;
 
+/**
+ * 
+ * @author Jose Zalacain
+ * @since 1.0
+ */
 public class SwiPrologConverter extends JplConverter implements PrologConverter<Term> {
 
 	public PrologProvider createProvider() {

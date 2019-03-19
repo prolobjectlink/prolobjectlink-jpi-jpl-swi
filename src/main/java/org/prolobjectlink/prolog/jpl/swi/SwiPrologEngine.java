@@ -34,6 +34,11 @@ import jpl.JPL;
 import jpl.Query;
 import jpl.Term;
 
+/**
+ * 
+ * @author Jose Zalacain
+ * @since 1.0
+ */
 public final class SwiPrologEngine extends JplEngine implements PrologEngine {
 
 	SwiPrologEngine(PrologProvider provider) {

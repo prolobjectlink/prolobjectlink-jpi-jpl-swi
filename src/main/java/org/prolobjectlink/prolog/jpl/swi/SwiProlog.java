@@ -28,6 +28,11 @@ import org.prolobjectlink.prolog.jpl.JplProvider;
 
 import jpl.Term;
 
+/**
+ * 
+ * @author Jose Zalacain
+ * @since 1.0
+ */
 public class SwiProlog extends JplProvider implements PrologProvider {
 
 	public SwiProlog() {
