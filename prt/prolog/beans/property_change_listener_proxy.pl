@@ -25,29 +25,23 @@
 property_change_listener_proxy(ARG0, ARG1, OUT) :- 
 	object_new('java.beans.PropertyChangeListenerProxy', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-property_change_listener_proxy_property_change(REF, ARG0, OUT) :- 
-	object_call(REF, propertyChange, '.'(ARG0, []), OUT).
-
-property_change_listener_proxy_get_property_name(REF, OUT) :- 
-	object_call(REF, getPropertyName, [], OUT).
+property_change_listener_proxy_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 property_change_listener_proxy_get_listener(REF, OUT) :- 
 	object_call(REF, getListener, [], OUT).
 
-property_change_listener_proxy_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-property_change_listener_proxy_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-property_change_listener_proxy_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
 property_change_listener_proxy_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-property_change_listener_proxy_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+property_change_listener_proxy_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+property_change_listener_proxy_get_property_name(REF, OUT) :- 
+	object_call(REF, getPropertyName, [], OUT).
+
+property_change_listener_proxy_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 property_change_listener_proxy_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -55,9 +49,15 @@ property_change_listener_proxy_hash_code(REF, OUT) :-
 property_change_listener_proxy_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-property_change_listener_proxy_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+property_change_listener_proxy_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-property_change_listener_proxy_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+property_change_listener_proxy_property_change(REF, ARG0) :- 
+	object_call(REF, propertyChange, '.'(ARG0, []), _).
+
+property_change_listener_proxy_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+property_change_listener_proxy_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 

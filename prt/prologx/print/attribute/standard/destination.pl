@@ -25,39 +25,39 @@
 destination(ARG0, OUT) :- 
 	object_new('javax.print.attribute.standard.Destination', '.'(ARG0, []), OUT).
 
+destination_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
 destination_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+destination_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 destination_get_name(REF, OUT) :- 
 	object_call(REF, getName, [], OUT).
 
-destination_get_category(REF, OUT) :- 
-	object_call(REF, getCategory, [], OUT).
+destination_get_u_r_i(REF, OUT) :- 
+	object_call(REF, getURI, [], OUT).
+
+destination_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 destination_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
+destination_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
 destination_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
-
-destination_get_u_r_i(REF, OUT) :- 
-	object_call(REF, getURI, [], OUT).
-
-destination_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-destination_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-destination_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
 
 destination_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-destination_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+destination_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-destination_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+destination_get_category(REF, OUT) :- 
+	object_call(REF, getCategory, [], OUT).
 

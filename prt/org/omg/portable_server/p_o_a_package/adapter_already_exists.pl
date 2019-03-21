@@ -28,66 +28,66 @@ adapter_already_exists(OUT) :-
 adapter_already_exists(ARG0, OUT) :- 
 	object_new('org.omg.PortableServer.POAPackage.AdapterAlreadyExists', '.'(ARG0, []), OUT).
 
-adapter_already_exists_print_stack_trace(REF, OUT) :- 
-	object_call(REF, printStackTrace, [], OUT).
-
-adapter_already_exists_print_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, printStackTrace, '.'(ARG0, []), OUT).
-
-adapter_already_exists_print_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, printStackTrace, '.'(ARG0, []), OUT).
-
 adapter_already_exists_fill_in_stack_trace(REF, OUT) :- 
 	object_call(REF, fillInStackTrace, [], OUT).
-
-adapter_already_exists_get_cause(REF, OUT) :- 
-	object_call(REF, getCause, [], OUT).
-
-adapter_already_exists_init_cause(REF, ARG0, OUT) :- 
-	object_call(REF, initCause, '.'(ARG0, []), OUT).
-
-adapter_already_exists_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-adapter_already_exists_add_suppressed(REF, ARG0, OUT) :- 
-	object_call(REF, addSuppressed, '.'(ARG0, []), OUT).
-
-adapter_already_exists_get_localized_message(REF, OUT) :- 
-	object_call(REF, getLocalizedMessage, [], OUT).
-
-adapter_already_exists_get_message(REF, OUT) :- 
-	object_call(REF, getMessage, [], OUT).
 
 adapter_already_exists_get_stack_trace(REF, OUT) :- 
 	object_call(REF, getStackTrace, [], OUT).
 
-adapter_already_exists_get_suppressed(REF, OUT) :- 
-	object_call(REF, getSuppressed, [], OUT).
-
-adapter_already_exists_set_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, setStackTrace, '.'(ARG0, []), OUT).
-
-adapter_already_exists_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-adapter_already_exists_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-adapter_already_exists_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-adapter_already_exists_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-adapter_already_exists_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+adapter_already_exists_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 adapter_already_exists_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-adapter_already_exists_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+adapter_already_exists_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-adapter_already_exists_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+adapter_already_exists_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+adapter_already_exists_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+adapter_already_exists_init_cause(REF, ARG0, OUT) :- 
+	object_call(REF, initCause, '.'(ARG0, []), OUT).
+
+adapter_already_exists_get_localized_message(REF, OUT) :- 
+	object_call(REF, getLocalizedMessage, [], OUT).
+
+adapter_already_exists_add_suppressed(REF, ARG0) :- 
+	object_call(REF, addSuppressed, '.'(ARG0, []), _).
+
+adapter_already_exists_get_cause(REF, OUT) :- 
+	object_call(REF, getCause, [], OUT).
+
+adapter_already_exists_print_stack_trace(REF) :- 
+	object_call(REF, printStackTrace, [], _).
+
+adapter_already_exists_get_message(REF, OUT) :- 
+	object_call(REF, getMessage, [], OUT).
+
+adapter_already_exists_print_stack_trace(REF, ARG0) :- 
+	object_call(REF, printStackTrace, '.'(ARG0, []), _).
+
+adapter_already_exists_print_stack_trace(REF, ARG0) :- 
+	object_call(REF, printStackTrace, '.'(ARG0, []), _).
+
+adapter_already_exists_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+adapter_already_exists_set_stack_trace(REF, ARG0) :- 
+	object_call(REF, setStackTrace, '.'(ARG0, []), _).
+
+adapter_already_exists_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+adapter_already_exists_get_suppressed(REF, OUT) :- 
+	object_call(REF, getSuppressed, [], OUT).
+
+adapter_already_exists_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+adapter_already_exists_notify(REF) :- 
+	object_call(REF, notify, [], _).
 

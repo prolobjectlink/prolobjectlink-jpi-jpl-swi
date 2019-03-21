@@ -22,75 +22,75 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-pushback_reader(ARG0, ARG1, OUT) :- 
-	object_new('java.io.PushbackReader', '.'(ARG0, '.'(ARG1, [])), OUT).
-
 pushback_reader(ARG0, OUT) :- 
 	object_new('java.io.PushbackReader', '.'(ARG0, []), OUT).
 
-pushback_reader_read(REF, OUT) :- 
-	object_call(REF, read, [], OUT).
+pushback_reader(ARG0, ARG1, OUT) :- 
+	object_new('java.io.PushbackReader', '.'(ARG0, '.'(ARG1, [])), OUT).
 
 pushback_reader_read(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, read, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-pushback_reader_close(REF, OUT) :- 
-	object_call(REF, close, [], OUT).
+pushback_reader_unread(REF, ARG0) :- 
+	object_call(REF, unread, '.'(ARG0, []), _).
 
-pushback_reader_mark(REF, ARG0, OUT) :- 
-	object_call(REF, mark, '.'(ARG0, []), OUT).
+pushback_reader_unread(REF, ARG0) :- 
+	object_call(REF, unread, '.'(ARG0, []), _).
 
-pushback_reader_mark_supported(REF, OUT) :- 
-	object_call(REF, markSupported, [], OUT).
-
-pushback_reader_reset(REF, OUT) :- 
-	object_call(REF, reset, [], OUT).
-
-pushback_reader_skip(REF, ARG0, OUT) :- 
-	object_call(REF, skip, '.'(ARG0, []), OUT).
-
-pushback_reader_ready(REF, OUT) :- 
-	object_call(REF, ready, [], OUT).
-
-pushback_reader_unread(REF, ARG0, OUT) :- 
-	object_call(REF, unread, '.'(ARG0, []), OUT).
-
-pushback_reader_unread(REF, ARG0, OUT) :- 
-	object_call(REF, unread, '.'(ARG0, []), OUT).
-
-pushback_reader_unread(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, unread, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-pushback_reader_read(REF, ARG0, OUT) :- 
-	object_call(REF, read, '.'(ARG0, []), OUT).
-
-pushback_reader_read(REF, ARG0, OUT) :- 
-	object_call(REF, read, '.'(ARG0, []), OUT).
-
-pushback_reader_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-pushback_reader_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-pushback_reader_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+pushback_reader_close(REF) :- 
+	object_call(REF, close, [], _).
 
 pushback_reader_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-pushback_reader_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
 pushback_reader_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
+
+pushback_reader_mark_supported(REF, OUT) :- 
+	object_call(REF, markSupported, [], OUT).
 
 pushback_reader_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-pushback_reader_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+pushback_reader_read(REF, OUT) :- 
+	object_call(REF, read, [], OUT).
 
-pushback_reader_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+pushback_reader_read(REF, ARG0, OUT) :- 
+	object_call(REF, read, '.'(ARG0, []), OUT).
+
+pushback_reader_read(REF, ARG0, OUT) :- 
+	object_call(REF, read, '.'(ARG0, []), OUT).
+
+pushback_reader_reset(REF) :- 
+	object_call(REF, reset, [], _).
+
+pushback_reader_mark(REF, ARG0) :- 
+	object_call(REF, mark, '.'(ARG0, []), _).
+
+pushback_reader_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+pushback_reader_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+pushback_reader_ready(REF, OUT) :- 
+	object_call(REF, ready, [], OUT).
+
+pushback_reader_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+pushback_reader_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+pushback_reader_skip(REF, ARG0, OUT) :- 
+	object_call(REF, skip, '.'(ARG0, []), OUT).
+
+pushback_reader_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+pushback_reader_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+pushback_reader_unread(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, unread, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
 

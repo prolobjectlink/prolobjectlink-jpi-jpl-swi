@@ -28,54 +28,54 @@ locator_impl(OUT) :-
 locator_impl(ARG0, OUT) :- 
 	object_new('org.xml.sax.helpers.LocatorImpl', '.'(ARG0, []), OUT).
 
-locator_impl_get_line_number(REF, OUT) :- 
-	object_call(REF, getLineNumber, [], OUT).
-
 locator_impl_get_column_number(REF, OUT) :- 
 	object_call(REF, getColumnNumber, [], OUT).
 
-locator_impl_set_column_number(REF, ARG0, OUT) :- 
-	object_call(REF, setColumnNumber, '.'(ARG0, []), OUT).
-
-locator_impl_get_public_id(REF, OUT) :- 
-	object_call(REF, getPublicId, [], OUT).
+locator_impl_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 locator_impl_get_system_id(REF, OUT) :- 
 	object_call(REF, getSystemId, [], OUT).
 
-locator_impl_set_public_id(REF, ARG0, OUT) :- 
-	object_call(REF, setPublicId, '.'(ARG0, []), OUT).
+locator_impl_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-locator_impl_set_system_id(REF, ARG0, OUT) :- 
-	object_call(REF, setSystemId, '.'(ARG0, []), OUT).
-
-locator_impl_set_line_number(REF, ARG0, OUT) :- 
-	object_call(REF, setLineNumber, '.'(ARG0, []), OUT).
-
-locator_impl_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-locator_impl_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-locator_impl_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+locator_impl_set_line_number(REF, ARG0) :- 
+	object_call(REF, setLineNumber, '.'(ARG0, []), _).
 
 locator_impl_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-locator_impl_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-locator_impl_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+locator_impl_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 locator_impl_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-locator_impl_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+locator_impl_set_system_id(REF, ARG0) :- 
+	object_call(REF, setSystemId, '.'(ARG0, []), _).
 
-locator_impl_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+locator_impl_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+locator_impl_set_column_number(REF, ARG0) :- 
+	object_call(REF, setColumnNumber, '.'(ARG0, []), _).
+
+locator_impl_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+locator_impl_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+locator_impl_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+locator_impl_set_public_id(REF, ARG0) :- 
+	object_call(REF, setPublicId, '.'(ARG0, []), _).
+
+locator_impl_get_line_number(REF, OUT) :- 
+	object_call(REF, getLineNumber, [], OUT).
+
+locator_impl_get_public_id(REF, OUT) :- 
+	object_call(REF, getPublicId, [], OUT).
 

@@ -22,20 +22,20 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-grid_bag_layout_info_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+grid_bag_layout_info_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-grid_bag_layout_info_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+grid_bag_layout_info_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-grid_bag_layout_info_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+grid_bag_layout_info_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+grid_bag_layout_info_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 grid_bag_layout_info_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-grid_bag_layout_info_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
 
 grid_bag_layout_info_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -43,9 +43,9 @@ grid_bag_layout_info_hash_code(REF, OUT) :-
 grid_bag_layout_info_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-grid_bag_layout_info_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+grid_bag_layout_info_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-grid_bag_layout_info_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+grid_bag_layout_info_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 

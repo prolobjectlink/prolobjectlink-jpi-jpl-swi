@@ -28,45 +28,45 @@ u_r_l_permission(ARG0, OUT) :-
 u_r_l_permission(ARG0, ARG1, OUT) :- 
 	object_new('java.net.URLPermission', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-u_r_l_permission_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+u_r_l_permission_get_name(REF, OUT) :- 
+	object_call(REF, getName, [], OUT).
 
-u_r_l_permission_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-u_r_l_permission_get_actions(REF, OUT) :- 
-	object_call(REF, getActions, [], OUT).
+u_r_l_permission_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 u_r_l_permission_implies(REF, ARG0, OUT) :- 
 	object_call(REF, implies, '.'(ARG0, []), OUT).
 
+u_r_l_permission_check_guard(REF, ARG0) :- 
+	object_call(REF, checkGuard, '.'(ARG0, []), _).
+
+u_r_l_permission_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+u_r_l_permission_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+u_r_l_permission_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
 u_r_l_permission_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-u_r_l_permission_get_name(REF, OUT) :- 
-	object_call(REF, getName, [], OUT).
+u_r_l_permission_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+u_r_l_permission_get_actions(REF, OUT) :- 
+	object_call(REF, getActions, [], OUT).
 
 u_r_l_permission_new_permission_collection(REF, OUT) :- 
 	object_call(REF, newPermissionCollection, [], OUT).
 
-u_r_l_permission_check_guard(REF, ARG0, OUT) :- 
-	object_call(REF, checkGuard, '.'(ARG0, []), OUT).
+u_r_l_permission_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-u_r_l_permission_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-u_r_l_permission_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-u_r_l_permission_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+u_r_l_permission_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
 u_r_l_permission_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-u_r_l_permission_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-u_r_l_permission_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

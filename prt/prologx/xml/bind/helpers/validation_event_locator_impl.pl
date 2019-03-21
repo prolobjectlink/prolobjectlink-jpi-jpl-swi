@@ -37,56 +37,47 @@ validation_event_locator_impl(ARG0, OUT) :-
 validation_event_locator_impl(OUT) :- 
 	object_new('javax.xml.bind.helpers.ValidationEventLocatorImpl', [], OUT).
 
+validation_event_locator_impl_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
 validation_event_locator_impl_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-validation_event_locator_impl_get_object(REF, OUT) :- 
-	object_call(REF, getObject, [], OUT).
+validation_event_locator_impl_set_node(REF, ARG0) :- 
+	object_call(REF, setNode, '.'(ARG0, []), _).
 
 validation_event_locator_impl_get_u_r_l(REF, OUT) :- 
 	object_call(REF, getURL, [], OUT).
 
-validation_event_locator_impl_get_line_number(REF, OUT) :- 
-	object_call(REF, getLineNumber, [], OUT).
+validation_event_locator_impl_set_object(REF, ARG0) :- 
+	object_call(REF, setObject, '.'(ARG0, []), _).
 
-validation_event_locator_impl_get_offset(REF, OUT) :- 
-	object_call(REF, getOffset, [], OUT).
-
-validation_event_locator_impl_set_offset(REF, ARG0, OUT) :- 
-	object_call(REF, setOffset, '.'(ARG0, []), OUT).
+validation_event_locator_impl_set_column_number(REF, ARG0) :- 
+	object_call(REF, setColumnNumber, '.'(ARG0, []), _).
 
 validation_event_locator_impl_get_node(REF, OUT) :- 
 	object_call(REF, getNode, [], OUT).
 
-validation_event_locator_impl_set_u_r_l(REF, ARG0, OUT) :- 
-	object_call(REF, setURL, '.'(ARG0, []), OUT).
+validation_event_locator_impl_set_offset(REF, ARG0) :- 
+	object_call(REF, setOffset, '.'(ARG0, []), _).
 
-validation_event_locator_impl_set_node(REF, ARG0, OUT) :- 
-	object_call(REF, setNode, '.'(ARG0, []), OUT).
+validation_event_locator_impl_get_offset(REF, OUT) :- 
+	object_call(REF, getOffset, [], OUT).
+
+validation_event_locator_impl_set_u_r_l(REF, ARG0) :- 
+	object_call(REF, setURL, '.'(ARG0, []), _).
 
 validation_event_locator_impl_get_column_number(REF, OUT) :- 
 	object_call(REF, getColumnNumber, [], OUT).
 
-validation_event_locator_impl_set_column_number(REF, ARG0, OUT) :- 
-	object_call(REF, setColumnNumber, '.'(ARG0, []), OUT).
+validation_event_locator_impl_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-validation_event_locator_impl_set_object(REF, ARG0, OUT) :- 
-	object_call(REF, setObject, '.'(ARG0, []), OUT).
+validation_event_locator_impl_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-validation_event_locator_impl_set_line_number(REF, ARG0, OUT) :- 
-	object_call(REF, setLineNumber, '.'(ARG0, []), OUT).
-
-validation_event_locator_impl_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-validation_event_locator_impl_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-validation_event_locator_impl_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-validation_event_locator_impl_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+validation_event_locator_impl_get_object(REF, OUT) :- 
+	object_call(REF, getObject, [], OUT).
 
 validation_event_locator_impl_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -94,9 +85,18 @@ validation_event_locator_impl_hash_code(REF, OUT) :-
 validation_event_locator_impl_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-validation_event_locator_impl_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+validation_event_locator_impl_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-validation_event_locator_impl_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+validation_event_locator_impl_get_line_number(REF, OUT) :- 
+	object_call(REF, getLineNumber, [], OUT).
+
+validation_event_locator_impl_set_line_number(REF, ARG0) :- 
+	object_call(REF, setLineNumber, '.'(ARG0, []), _).
+
+validation_event_locator_impl_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+validation_event_locator_impl_wait(REF) :- 
+	object_call(REF, wait, [], _).
 

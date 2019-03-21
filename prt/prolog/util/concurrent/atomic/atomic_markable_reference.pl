@@ -25,51 +25,51 @@
 atomic_markable_reference(ARG0, ARG1, OUT) :- 
 	object_new('java.util.concurrent.atomic.AtomicMarkableReference', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-atomic_markable_reference_get(REF, ARG0, OUT) :- 
-	object_call(REF, get, '.'(ARG0, []), OUT).
-
-atomic_markable_reference_set(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, set, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-atomic_markable_reference_compare_and_set(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, compareAndSet, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
-atomic_markable_reference_weak_compare_and_set(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, weakCompareAndSet, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
 atomic_markable_reference_get_reference(REF, OUT) :- 
 	object_call(REF, getReference, [], OUT).
-
-atomic_markable_reference_is_marked(REF, OUT) :- 
-	object_call(REF, isMarked, [], OUT).
 
 atomic_markable_reference_attempt_mark(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, attemptMark, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-atomic_markable_reference_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+atomic_markable_reference_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-atomic_markable_reference_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-atomic_markable_reference_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-atomic_markable_reference_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+atomic_markable_reference_is_marked(REF, OUT) :- 
+	object_call(REF, isMarked, [], OUT).
 
 atomic_markable_reference_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-atomic_markable_reference_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+atomic_markable_reference_compare_and_set(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_call(REF, compareAndSet, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+
+atomic_markable_reference_set(REF, ARG0, ARG1) :- 
+	object_call(REF, set, '.'(ARG0, '.'(ARG1, [])), _).
+
+atomic_markable_reference_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 atomic_markable_reference_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-atomic_markable_reference_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+atomic_markable_reference_get(REF, ARG0, OUT) :- 
+	object_call(REF, get, '.'(ARG0, []), OUT).
 
-atomic_markable_reference_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+atomic_markable_reference_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+atomic_markable_reference_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+atomic_markable_reference_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+atomic_markable_reference_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+atomic_markable_reference_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+atomic_markable_reference_weak_compare_and_set(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_call(REF, weakCompareAndSet, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 

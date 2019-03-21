@@ -22,72 +22,72 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-j_a_x_b_marshal(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, marshal, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-j_a_x_b_marshal(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, marshal, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-j_a_x_b_marshal(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, marshal, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-j_a_x_b_marshal(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, marshal, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-j_a_x_b_marshal(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, marshal, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-j_a_x_b_marshal(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, marshal, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-j_a_x_b_marshal(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, marshal, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-j_a_x_b_unmarshal(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, unmarshal, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-j_a_x_b_unmarshal(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, unmarshal, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-j_a_x_b_unmarshal(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, unmarshal, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-j_a_x_b_unmarshal(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, unmarshal, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-j_a_x_b_unmarshal(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, unmarshal, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-j_a_x_b_unmarshal(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, unmarshal, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-j_a_x_b_unmarshal(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, unmarshal, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-j_a_x_b_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-j_a_x_b_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-j_a_x_b_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
 j_a_x_b_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-j_a_x_b_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
 
 j_a_x_b_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+j_a_x_b_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
 j_a_x_b_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-j_a_x_b_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+j_a_x_b_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-j_a_x_b_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+j_a_x_b_marshal(REF, ARG0, ARG1) :- 
+	object_call(REF, marshal, '.'(ARG0, '.'(ARG1, [])), _).
+
+j_a_x_b_marshal(REF, ARG0, ARG1) :- 
+	object_call(REF, marshal, '.'(ARG0, '.'(ARG1, [])), _).
+
+j_a_x_b_marshal(REF, ARG0, ARG1) :- 
+	object_call(REF, marshal, '.'(ARG0, '.'(ARG1, [])), _).
+
+j_a_x_b_marshal(REF, ARG0, ARG1) :- 
+	object_call(REF, marshal, '.'(ARG0, '.'(ARG1, [])), _).
+
+j_a_x_b_marshal(REF, ARG0, ARG1) :- 
+	object_call(REF, marshal, '.'(ARG0, '.'(ARG1, [])), _).
+
+j_a_x_b_marshal(REF, ARG0, ARG1) :- 
+	object_call(REF, marshal, '.'(ARG0, '.'(ARG1, [])), _).
+
+j_a_x_b_marshal(REF, ARG0, ARG1) :- 
+	object_call(REF, marshal, '.'(ARG0, '.'(ARG1, [])), _).
+
+j_a_x_b_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+j_a_x_b_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+j_a_x_b_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+j_a_x_b_unmarshal(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, unmarshal, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+j_a_x_b_unmarshal(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, unmarshal, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+j_a_x_b_unmarshal(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, unmarshal, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+j_a_x_b_unmarshal(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, unmarshal, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+j_a_x_b_unmarshal(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, unmarshal, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+j_a_x_b_unmarshal(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, unmarshal, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+j_a_x_b_unmarshal(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, unmarshal, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+j_a_x_b_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 

@@ -22,11 +22,11 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-size_sequence(ARG0, OUT) :- 
-	object_new('javax.swing.SizeSequence', '.'(ARG0, []), OUT).
-
 size_sequence(ARG0, ARG1, OUT) :- 
 	object_new('javax.swing.SizeSequence', '.'(ARG0, '.'(ARG1, [])), OUT).
+
+size_sequence(ARG0, OUT) :- 
+	object_new('javax.swing.SizeSequence', '.'(ARG0, []), OUT).
 
 size_sequence(ARG0, OUT) :- 
 	object_new('javax.swing.SizeSequence', '.'(ARG0, []), OUT).
@@ -34,41 +34,38 @@ size_sequence(ARG0, OUT) :-
 size_sequence(OUT) :- 
 	object_new('javax.swing.SizeSequence', [], OUT).
 
+size_sequence_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+size_sequence_remove_entries(REF, ARG0, ARG1) :- 
+	object_call(REF, removeEntries, '.'(ARG0, '.'(ARG1, [])), _).
+
+size_sequence_set_sizes(REF, ARG0) :- 
+	object_call(REF, setSizes, '.'(ARG0, []), _).
+
 size_sequence_get_size(REF, ARG0, OUT) :- 
 	object_call(REF, getSize, '.'(ARG0, []), OUT).
-
-size_sequence_set_size(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, setSize, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 size_sequence_get_index(REF, ARG0, OUT) :- 
 	object_call(REF, getIndex, '.'(ARG0, []), OUT).
 
-size_sequence_get_position(REF, ARG0, OUT) :- 
-	object_call(REF, getPosition, '.'(ARG0, []), OUT).
+size_sequence_insert_entries(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, insertEntries, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+size_sequence_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+size_sequence_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
+
+size_sequence_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+size_sequence_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 size_sequence_get_sizes(REF, OUT) :- 
 	object_call(REF, getSizes, [], OUT).
-
-size_sequence_insert_entries(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, insertEntries, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-size_sequence_remove_entries(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, removeEntries, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-size_sequence_set_sizes(REF, ARG0, OUT) :- 
-	object_call(REF, setSizes, '.'(ARG0, []), OUT).
-
-size_sequence_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-size_sequence_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-size_sequence_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-size_sequence_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 size_sequence_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
@@ -76,12 +73,15 @@ size_sequence_to_string(REF, OUT) :-
 size_sequence_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-size_sequence_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
+size_sequence_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-size_sequence_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+size_sequence_get_position(REF, ARG0, OUT) :- 
+	object_call(REF, getPosition, '.'(ARG0, []), OUT).
 
-size_sequence_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+size_sequence_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+size_sequence_set_size(REF, ARG0, ARG1) :- 
+	object_call(REF, setSize, '.'(ARG0, '.'(ARG1, [])), _).
 

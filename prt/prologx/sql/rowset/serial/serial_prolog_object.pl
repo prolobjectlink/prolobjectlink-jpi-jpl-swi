@@ -25,39 +25,39 @@
 serial_java_object(ARG0, OUT) :- 
 	object_new('javax.sql.rowset.serial.SerialJavaObject', '.'(ARG0, []), OUT).
 
+serial_java_object_get_fields(REF, OUT) :- 
+	object_call(REF, getFields, [], OUT).
+
+serial_java_object_get_object(REF, OUT) :- 
+	object_call(REF, getObject, [], OUT).
+
+serial_java_object_clone(REF, OUT) :- 
+	object_call(REF, clone, [], OUT).
+
 serial_java_object_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 serial_java_object_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-serial_java_object_clone(REF, OUT) :- 
-	object_call(REF, clone, [], OUT).
+serial_java_object_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-serial_java_object_get_object(REF, OUT) :- 
-	object_call(REF, getObject, [], OUT).
-
-serial_java_object_get_fields(REF, OUT) :- 
-	object_call(REF, getFields, [], OUT).
-
-serial_java_object_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-serial_java_object_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-serial_java_object_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-serial_java_object_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+serial_java_object_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 serial_java_object_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-serial_java_object_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+serial_java_object_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-serial_java_object_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+serial_java_object_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+serial_java_object_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+serial_java_object_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 

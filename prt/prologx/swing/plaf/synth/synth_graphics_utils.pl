@@ -25,63 +25,63 @@
 synth_graphics_utils(OUT) :- 
 	object_new('javax.swing.plaf.synth.SynthGraphicsUtils', [], OUT).
 
-synth_graphics_utils_draw_line(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, ARG6, OUT) :- 
-	object_call(REF, drawLine, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, '.'(ARG6, []))))))), OUT).
+synth_graphics_utils_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-synth_graphics_utils_draw_line(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, ARG6, ARG7, OUT) :- 
-	object_call(REF, drawLine, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, '.'(ARG6, '.'(ARG7, [])))))))), OUT).
-
-synth_graphics_utils_get_maximum_size(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, ARG6, ARG7, ARG8, ARG9, OUT) :- 
-	object_call(REF, getMaximumSize, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, '.'(ARG6, '.'(ARG7, '.'(ARG8, '.'(ARG9, [])))))))))), OUT).
+synth_graphics_utils_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 synth_graphics_utils_get_minimum_size(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, ARG6, ARG7, ARG8, ARG9, OUT) :- 
 	object_call(REF, getMinimumSize, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, '.'(ARG6, '.'(ARG7, '.'(ARG8, '.'(ARG9, [])))))))))), OUT).
 
-synth_graphics_utils_get_preferred_size(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, ARG6, ARG7, ARG8, ARG9, OUT) :- 
-	object_call(REF, getPreferredSize, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, '.'(ARG6, '.'(ARG7, '.'(ARG8, '.'(ARG9, [])))))))))), OUT).
-
-synth_graphics_utils_paint_text(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, ARG6, ARG7, ARG8, ARG9, ARG10, OUT) :- 
-	object_call(REF, paintText, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, '.'(ARG6, '.'(ARG7, '.'(ARG8, '.'(ARG9, '.'(ARG10, []))))))))))), OUT).
-
-synth_graphics_utils_paint_text(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
-	object_call(REF, paintText, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
-
-synth_graphics_utils_paint_text(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, OUT) :- 
-	object_call(REF, paintText, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), OUT).
-
 synth_graphics_utils_compute_string_width(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_call(REF, computeStringWidth, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
-synth_graphics_utils_get_maximum_char_height(REF, ARG0, OUT) :- 
-	object_call(REF, getMaximumCharHeight, '.'(ARG0, []), OUT).
+synth_graphics_utils_get_maximum_size(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, ARG6, ARG7, ARG8, ARG9, OUT) :- 
+	object_call(REF, getMaximumSize, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, '.'(ARG6, '.'(ARG7, '.'(ARG8, '.'(ARG9, [])))))))))), OUT).
 
-synth_graphics_utils_layout_text(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, ARG6, ARG7, ARG8, ARG9, ARG10, ARG11, OUT) :- 
-	object_call(REF, layoutText, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, '.'(ARG6, '.'(ARG7, '.'(ARG8, '.'(ARG9, '.'(ARG10, '.'(ARG11, [])))))))))))), OUT).
-
-synth_graphics_utils_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-synth_graphics_utils_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-synth_graphics_utils_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+synth_graphics_utils_get_preferred_size(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, ARG6, ARG7, ARG8, ARG9, OUT) :- 
+	object_call(REF, getPreferredSize, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, '.'(ARG6, '.'(ARG7, '.'(ARG8, '.'(ARG9, [])))))))))), OUT).
 
 synth_graphics_utils_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-synth_graphics_utils_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+synth_graphics_utils_paint_text(REF, ARG0, ARG1, ARG2, ARG3, ARG4) :- 
+	object_call(REF, paintText, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), _).
+
+synth_graphics_utils_draw_line(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, ARG6) :- 
+	object_call(REF, drawLine, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, '.'(ARG6, []))))))), _).
+
+synth_graphics_utils_paint_text(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5) :- 
+	object_call(REF, paintText, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), _).
+
+synth_graphics_utils_draw_line(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, ARG6, ARG7) :- 
+	object_call(REF, drawLine, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, '.'(ARG6, '.'(ARG7, [])))))))), _).
+
+synth_graphics_utils_layout_text(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, ARG6, ARG7, ARG8, ARG9, ARG10, ARG11, OUT) :- 
+	object_call(REF, layoutText, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, '.'(ARG6, '.'(ARG7, '.'(ARG8, '.'(ARG9, '.'(ARG10, '.'(ARG11, [])))))))))))), OUT).
+
+synth_graphics_utils_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+synth_graphics_utils_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+synth_graphics_utils_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+synth_graphics_utils_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 synth_graphics_utils_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+synth_graphics_utils_get_maximum_char_height(REF, ARG0, OUT) :- 
+	object_call(REF, getMaximumCharHeight, '.'(ARG0, []), OUT).
+
 synth_graphics_utils_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-synth_graphics_utils_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-synth_graphics_utils_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+synth_graphics_utils_paint_text(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, ARG6, ARG7, ARG8, ARG9, ARG10) :- 
+	object_call(REF, paintText, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, '.'(ARG6, '.'(ARG7, '.'(ARG8, '.'(ARG9, '.'(ARG10, []))))))))))), _).
 

@@ -22,26 +22,26 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-console_format(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, format, '.'(ARG0, '.'(ARG1, [])), OUT).
+console_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-console_flush(REF, OUT) :- 
-	object_call(REF, flush, [], OUT).
+console_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-console_read_line(REF, OUT) :- 
-	object_call(REF, readLine, [], OUT).
+console_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
-console_read_line(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, readLine, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-console_printf(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, printf, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-console_writer(REF, OUT) :- 
-	object_call(REF, writer, [], OUT).
+console_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 console_reader(REF, OUT) :- 
 	object_call(REF, reader, [], OUT).
+
+console_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+console_read_line(REF, OUT) :- 
+	object_call(REF, readLine, [], OUT).
 
 console_read_password(REF, OUT) :- 
 	object_call(REF, readPassword, [], OUT).
@@ -49,14 +49,11 @@ console_read_password(REF, OUT) :-
 console_read_password(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, readPassword, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-console_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+console_printf(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, printf, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-console_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-console_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+console_format(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, format, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 console_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
@@ -64,15 +61,18 @@ console_equals(REF, ARG0, OUT) :-
 console_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-console_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+console_writer(REF, OUT) :- 
+	object_call(REF, writer, [], OUT).
 
-console_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
+console_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-console_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+console_flush(REF) :- 
+	object_call(REF, flush, [], _).
 
-console_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+console_read_line(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, readLine, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+console_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

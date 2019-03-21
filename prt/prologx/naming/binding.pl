@@ -34,47 +34,32 @@ binding(ARG0, ARG1, ARG2, OUT) :-
 binding(ARG0, ARG1, OUT) :- 
 	object_new('javax.naming.Binding', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-binding_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+binding_set_relative(REF, ARG0) :- 
+	object_call(REF, setRelative, '.'(ARG0, []), _).
 
-binding_get_object(REF, OUT) :- 
-	object_call(REF, getObject, [], OUT).
+binding_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-binding_get_class_name(REF, OUT) :- 
-	object_call(REF, getClassName, [], OUT).
-
-binding_set_object(REF, ARG0, OUT) :- 
-	object_call(REF, setObject, '.'(ARG0, []), OUT).
+binding_set_object(REF, ARG0) :- 
+	object_call(REF, setObject, '.'(ARG0, []), _).
 
 binding_get_name(REF, OUT) :- 
 	object_call(REF, getName, [], OUT).
 
-binding_set_name(REF, ARG0, OUT) :- 
-	object_call(REF, setName, '.'(ARG0, []), OUT).
+binding_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-binding_set_class_name(REF, ARG0, OUT) :- 
-	object_call(REF, setClassName, '.'(ARG0, []), OUT).
+binding_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-binding_get_name_in_namespace(REF, OUT) :- 
-	object_call(REF, getNameInNamespace, [], OUT).
+binding_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-binding_is_relative(REF, OUT) :- 
-	object_call(REF, isRelative, [], OUT).
+binding_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-binding_set_name_in_namespace(REF, ARG0, OUT) :- 
-	object_call(REF, setNameInNamespace, '.'(ARG0, []), OUT).
-
-binding_set_relative(REF, ARG0, OUT) :- 
-	object_call(REF, setRelative, '.'(ARG0, []), OUT).
-
-binding_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-binding_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-binding_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+binding_set_class_name(REF, ARG0) :- 
+	object_call(REF, setClassName, '.'(ARG0, []), _).
 
 binding_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
@@ -82,12 +67,27 @@ binding_equals(REF, ARG0, OUT) :-
 binding_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+binding_is_relative(REF, OUT) :- 
+	object_call(REF, isRelative, [], OUT).
+
 binding_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-binding_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+binding_get_name_in_namespace(REF, OUT) :- 
+	object_call(REF, getNameInNamespace, [], OUT).
 
-binding_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+binding_set_name_in_namespace(REF, ARG0) :- 
+	object_call(REF, setNameInNamespace, '.'(ARG0, []), _).
+
+binding_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+binding_get_class_name(REF, OUT) :- 
+	object_call(REF, getClassName, [], OUT).
+
+binding_set_name(REF, ARG0) :- 
+	object_call(REF, setName, '.'(ARG0, []), _).
+
+binding_get_object(REF, OUT) :- 
+	object_call(REF, getObject, [], OUT).
 

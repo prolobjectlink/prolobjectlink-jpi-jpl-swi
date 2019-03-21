@@ -22,66 +22,66 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-objects_hash(REF, ARG0, OUT) :- 
-	object_call(REF, hash, '.'(ARG0, []), OUT).
-
-objects_equals(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-objects_to_string(REF, ARG0, OUT) :- 
-	object_call(REF, toString, '.'(ARG0, []), OUT).
-
-objects_to_string(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, toString, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-objects_hash_code(REF, ARG0, OUT) :- 
-	object_call(REF, hashCode, '.'(ARG0, []), OUT).
-
-objects_compare(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, compare, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-objects_require_non_null(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, requireNonNull, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-objects_require_non_null(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, requireNonNull, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-objects_require_non_null(REF, ARG0, OUT) :- 
-	object_call(REF, requireNonNull, '.'(ARG0, []), OUT).
-
-objects_deep_equals(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, deepEquals, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-objects_is_null(REF, ARG0, OUT) :- 
-	object_call(REF, isNull, '.'(ARG0, []), OUT).
-
-objects_non_null(REF, ARG0, OUT) :- 
-	object_call(REF, nonNull, '.'(ARG0, []), OUT).
-
-objects_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-objects_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-objects_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-objects_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-objects_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
 objects_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
 objects_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-objects_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+objects_hash_code(REF, ARG0, OUT) :- 
+	object_call(REF, hashCode, '.'(ARG0, []), OUT).
 
-objects_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+objects_equals(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+objects_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+objects_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+objects_compare(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, compare, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+objects_require_non_null(REF, ARG0, OUT) :- 
+	object_call(REF, requireNonNull, '.'(ARG0, []), OUT).
+
+objects_is_null(REF, ARG0, OUT) :- 
+	object_call(REF, isNull, '.'(ARG0, []), OUT).
+
+objects_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+objects_require_non_null(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, requireNonNull, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+objects_require_non_null(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, requireNonNull, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+objects_to_string(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, toString, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+objects_non_null(REF, ARG0, OUT) :- 
+	object_call(REF, nonNull, '.'(ARG0, []), OUT).
+
+objects_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+objects_to_string(REF, ARG0, OUT) :- 
+	object_call(REF, toString, '.'(ARG0, []), OUT).
+
+objects_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+objects_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+objects_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+objects_hash(REF, ARG0, OUT) :- 
+	object_call(REF, hash, '.'(ARG0, []), OUT).
+
+objects_deep_equals(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, deepEquals, '.'(ARG0, '.'(ARG1, [])), OUT).
 

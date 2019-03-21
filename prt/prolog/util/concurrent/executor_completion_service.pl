@@ -22,41 +22,35 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-executor_completion_service(ARG0, ARG1, OUT) :- 
-	object_new('java.util.concurrent.ExecutorCompletionService', '.'(ARG0, '.'(ARG1, [])), OUT).
-
 executor_completion_service(ARG0, OUT) :- 
 	object_new('java.util.concurrent.ExecutorCompletionService', '.'(ARG0, []), OUT).
 
-executor_completion_service_poll(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, poll, '.'(ARG0, '.'(ARG1, [])), OUT).
+executor_completion_service(ARG0, ARG1, OUT) :- 
+	object_new('java.util.concurrent.ExecutorCompletionService', '.'(ARG0, '.'(ARG1, [])), OUT).
 
 executor_completion_service_poll(REF, OUT) :- 
 	object_call(REF, poll, [], OUT).
 
-executor_completion_service_submit(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, submit, '.'(ARG0, '.'(ARG1, [])), OUT).
+executor_completion_service_poll(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, poll, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-executor_completion_service_submit(REF, ARG0, OUT) :- 
-	object_call(REF, submit, '.'(ARG0, []), OUT).
+executor_completion_service_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 executor_completion_service_take(REF, OUT) :- 
 	object_call(REF, take, [], OUT).
 
-executor_completion_service_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+executor_completion_service_submit(REF, ARG0, OUT) :- 
+	object_call(REF, submit, '.'(ARG0, []), OUT).
 
-executor_completion_service_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+executor_completion_service_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-executor_completion_service_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+executor_completion_service_submit(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, submit, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 executor_completion_service_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-executor_completion_service_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
 
 executor_completion_service_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -64,9 +58,15 @@ executor_completion_service_hash_code(REF, OUT) :-
 executor_completion_service_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-executor_completion_service_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+executor_completion_service_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-executor_completion_service_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+executor_completion_service_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+executor_completion_service_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+executor_completion_service_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 

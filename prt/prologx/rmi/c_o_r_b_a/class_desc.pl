@@ -25,20 +25,11 @@
 class_desc(OUT) :- 
 	object_new('javax.rmi.CORBA.ClassDesc', [], OUT).
 
-class_desc_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-class_desc_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-class_desc_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-class_desc_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
 class_desc_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
+
+class_desc_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 class_desc_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -46,9 +37,18 @@ class_desc_hash_code(REF, OUT) :-
 class_desc_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-class_desc_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+class_desc_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-class_desc_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+class_desc_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+class_desc_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+class_desc_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+class_desc_wait(REF) :- 
+	object_call(REF, wait, [], _).
 

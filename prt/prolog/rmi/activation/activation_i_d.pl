@@ -25,33 +25,33 @@
 activation_i_d(ARG0, OUT) :- 
 	object_new('java.rmi.activation.ActivationID', '.'(ARG0, []), OUT).
 
-activation_i_d_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+activation_i_d_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-activation_i_d_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+activation_i_d_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 activation_i_d_activate(REF, ARG0, OUT) :- 
 	object_call(REF, activate, '.'(ARG0, []), OUT).
 
-activation_i_d_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+activation_i_d_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-activation_i_d_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+activation_i_d_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-activation_i_d_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+activation_i_d_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 activation_i_d_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
+activation_i_d_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
 activation_i_d_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-activation_i_d_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-activation_i_d_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+activation_i_d_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 

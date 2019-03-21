@@ -22,35 +22,17 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-policy_error_holder(OUT) :- 
-	object_new('org.omg.CORBA.PolicyErrorHolder', [], OUT).
-
 policy_error_holder(ARG0, OUT) :- 
 	object_new('org.omg.CORBA.PolicyErrorHolder', '.'(ARG0, []), OUT).
 
-policy_error_holder__read(REF, ARG0, OUT) :- 
-	object_call(REF, '_read', '.'(ARG0, []), OUT).
+policy_error_holder(OUT) :- 
+	object_new('org.omg.CORBA.PolicyErrorHolder', [], OUT).
+
+policy_error_holder_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 policy_error_holder__type(REF, OUT) :- 
 	object_call(REF, '_type', [], OUT).
-
-policy_error_holder__write(REF, ARG0, OUT) :- 
-	object_call(REF, '_write', '.'(ARG0, []), OUT).
-
-policy_error_holder_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-policy_error_holder_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-policy_error_holder_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-policy_error_holder_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-policy_error_holder_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
 
 policy_error_holder_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -58,9 +40,27 @@ policy_error_holder_hash_code(REF, OUT) :-
 policy_error_holder_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-policy_error_holder_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+policy_error_holder__read(REF, ARG0) :- 
+	object_call(REF, '_read', '.'(ARG0, []), _).
 
-policy_error_holder_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+policy_error_holder_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+policy_error_holder_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+policy_error_holder_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+policy_error_holder__write(REF, ARG0) :- 
+	object_call(REF, '_write', '.'(ARG0, []), _).
+
+policy_error_holder_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+policy_error_holder_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+policy_error_holder_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 

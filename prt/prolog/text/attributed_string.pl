@@ -22,53 +22,35 @@
 
 :-consult('../../../obj/prolobject.pl').
 
+attributed_string(ARG0, ARG1, OUT) :- 
+	object_new('java.text.AttributedString', '.'(ARG0, '.'(ARG1, [])), OUT).
+
+attributed_string(ARG0, OUT) :- 
+	object_new('java.text.AttributedString', '.'(ARG0, []), OUT).
+
+attributed_string(ARG0, OUT) :- 
+	object_new('java.text.AttributedString', '.'(ARG0, []), OUT).
+
 attributed_string(ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_new('java.text.AttributedString', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
 attributed_string(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('java.text.AttributedString', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-attributed_string(ARG0, OUT) :- 
-	object_new('java.text.AttributedString', '.'(ARG0, []), OUT).
-
-attributed_string(ARG0, OUT) :- 
-	object_new('java.text.AttributedString', '.'(ARG0, []), OUT).
-
-attributed_string(ARG0, ARG1, OUT) :- 
-	object_new('java.text.AttributedString', '.'(ARG0, '.'(ARG1, [])), OUT).
-
-attributed_string_get_iterator(REF, ARG0, OUT) :- 
-	object_call(REF, getIterator, '.'(ARG0, []), OUT).
-
 attributed_string_get_iterator(REF, OUT) :- 
 	object_call(REF, getIterator, [], OUT).
 
-attributed_string_get_iterator(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, getIterator, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-attributed_string_add_attributes(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, addAttributes, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-attributed_string_add_attribute(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, addAttribute, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-attributed_string_add_attribute(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, addAttribute, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
-attributed_string_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-attributed_string_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-attributed_string_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-attributed_string_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
 attributed_string_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
+
+attributed_string_add_attribute(REF, ARG0, ARG1) :- 
+	object_call(REF, addAttribute, '.'(ARG0, '.'(ARG1, [])), _).
+
+attributed_string_add_attribute(REF, ARG0, ARG1, ARG2, ARG3) :- 
+	object_call(REF, addAttribute, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).
+
+attributed_string_add_attributes(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, addAttributes, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
 
 attributed_string_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -76,9 +58,27 @@ attributed_string_hash_code(REF, OUT) :-
 attributed_string_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-attributed_string_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+attributed_string_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-attributed_string_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+attributed_string_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+attributed_string_get_iterator(REF, ARG0, OUT) :- 
+	object_call(REF, getIterator, '.'(ARG0, []), OUT).
+
+attributed_string_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+attributed_string_get_iterator(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, getIterator, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+attributed_string_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+attributed_string_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+attributed_string_notify(REF) :- 
+	object_call(REF, notify, [], _).
 

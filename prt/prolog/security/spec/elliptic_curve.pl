@@ -22,23 +22,23 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-elliptic_curve(ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_new('java.security.spec.EllipticCurve', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
 elliptic_curve(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('java.security.spec.EllipticCurve', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-elliptic_curve_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+elliptic_curve(ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_new('java.security.spec.EllipticCurve', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
-elliptic_curve_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-elliptic_curve_get_field(REF, OUT) :- 
-	object_call(REF, getField, [], OUT).
+elliptic_curve_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 elliptic_curve_get_seed(REF, OUT) :- 
 	object_call(REF, getSeed, [], OUT).
+
+elliptic_curve_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+elliptic_curve_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
 elliptic_curve_get_a(REF, OUT) :- 
 	object_call(REF, getA, [], OUT).
@@ -46,24 +46,24 @@ elliptic_curve_get_a(REF, OUT) :-
 elliptic_curve_get_b(REF, OUT) :- 
 	object_call(REF, getB, [], OUT).
 
-elliptic_curve_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-elliptic_curve_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-elliptic_curve_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-elliptic_curve_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+elliptic_curve_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 elliptic_curve_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-elliptic_curve_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+elliptic_curve_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-elliptic_curve_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+elliptic_curve_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+elliptic_curve_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+elliptic_curve_get_field(REF, OUT) :- 
+	object_call(REF, getField, [], OUT).
+
+elliptic_curve_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 

@@ -25,84 +25,84 @@
 data_handler(ARG0, OUT) :- 
 	object_new('javax.activation.DataHandler', '.'(ARG0, []), OUT).
 
-data_handler(ARG0, ARG1, OUT) :- 
-	object_new('javax.activation.DataHandler', '.'(ARG0, '.'(ARG1, [])), OUT).
-
 data_handler(ARG0, OUT) :- 
 	object_new('javax.activation.DataHandler', '.'(ARG0, []), OUT).
 
-data_handler_get_name(REF, OUT) :- 
-	object_call(REF, getName, [], OUT).
-
-data_handler_get_input_stream(REF, OUT) :- 
-	object_call(REF, getInputStream, [], OUT).
-
-data_handler_get_content(REF, OUT) :- 
-	object_call(REF, getContent, [], OUT).
-
-data_handler_get_content_type(REF, OUT) :- 
-	object_call(REF, getContentType, [], OUT).
-
-data_handler_get_output_stream(REF, OUT) :- 
-	object_call(REF, getOutputStream, [], OUT).
-
-data_handler_write_to(REF, ARG0, OUT) :- 
-	object_call(REF, writeTo, '.'(ARG0, []), OUT).
-
-data_handler_get_transfer_data(REF, ARG0, OUT) :- 
-	object_call(REF, getTransferData, '.'(ARG0, []), OUT).
-
-data_handler_get_transfer_data_flavors(REF, OUT) :- 
-	object_call(REF, getTransferDataFlavors, [], OUT).
-
-data_handler_is_data_flavor_supported(REF, ARG0, OUT) :- 
-	object_call(REF, isDataFlavorSupported, '.'(ARG0, []), OUT).
-
-data_handler_get_all_commands(REF, OUT) :- 
-	object_call(REF, getAllCommands, [], OUT).
+data_handler(ARG0, ARG1, OUT) :- 
+	object_new('javax.activation.DataHandler', '.'(ARG0, '.'(ARG1, [])), OUT).
 
 data_handler_get_bean(REF, ARG0, OUT) :- 
 	object_call(REF, getBean, '.'(ARG0, []), OUT).
 
-data_handler_get_command(REF, ARG0, OUT) :- 
-	object_call(REF, getCommand, '.'(ARG0, []), OUT).
+data_handler_set_data_content_handler_factory(REF, ARG0) :- 
+	object_call(REF, setDataContentHandlerFactory, '.'(ARG0, []), _).
 
-data_handler_get_data_source(REF, OUT) :- 
-	object_call(REF, getDataSource, [], OUT).
-
-data_handler_get_preferred_commands(REF, OUT) :- 
-	object_call(REF, getPreferredCommands, [], OUT).
-
-data_handler_set_command_map(REF, ARG0, OUT) :- 
-	object_call(REF, setCommandMap, '.'(ARG0, []), OUT).
-
-data_handler_set_data_content_handler_factory(REF, ARG0, OUT) :- 
-	object_call(REF, setDataContentHandlerFactory, '.'(ARG0, []), OUT).
-
-data_handler_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-data_handler_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-data_handler_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-data_handler_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+data_handler_get_transfer_data(REF, ARG0, OUT) :- 
+	object_call(REF, getTransferData, '.'(ARG0, []), OUT).
 
 data_handler_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-data_handler_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+data_handler_get_content_type(REF, OUT) :- 
+	object_call(REF, getContentType, [], OUT).
+
+data_handler_is_data_flavor_supported(REF, ARG0, OUT) :- 
+	object_call(REF, isDataFlavorSupported, '.'(ARG0, []), OUT).
+
+data_handler_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+data_handler_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+data_handler_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+data_handler_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+data_handler_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+data_handler_get_name(REF, OUT) :- 
+	object_call(REF, getName, [], OUT).
 
 data_handler_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-data_handler_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+data_handler_set_command_map(REF, ARG0) :- 
+	object_call(REF, setCommandMap, '.'(ARG0, []), _).
 
-data_handler_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+data_handler_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+data_handler_get_preferred_commands(REF, OUT) :- 
+	object_call(REF, getPreferredCommands, [], OUT).
+
+data_handler_get_transfer_data_flavors(REF, OUT) :- 
+	object_call(REF, getTransferDataFlavors, [], OUT).
+
+data_handler_get_output_stream(REF, OUT) :- 
+	object_call(REF, getOutputStream, [], OUT).
+
+data_handler_get_command(REF, ARG0, OUT) :- 
+	object_call(REF, getCommand, '.'(ARG0, []), OUT).
+
+data_handler_get_content(REF, OUT) :- 
+	object_call(REF, getContent, [], OUT).
+
+data_handler_get_all_commands(REF, OUT) :- 
+	object_call(REF, getAllCommands, [], OUT).
+
+data_handler_get_input_stream(REF, OUT) :- 
+	object_call(REF, getInputStream, [], OUT).
+
+data_handler_write_to(REF, ARG0) :- 
+	object_call(REF, writeTo, '.'(ARG0, []), _).
+
+data_handler_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+data_handler_get_data_source(REF, OUT) :- 
+	object_call(REF, getDataSource, [], OUT).
 

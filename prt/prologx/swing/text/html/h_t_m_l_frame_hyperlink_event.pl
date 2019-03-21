@@ -22,8 +22,8 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-h_t_m_l_frame_hyperlink_event(ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, ARG6, OUT) :- 
-	object_new('javax.swing.text.html.HTMLFrameHyperlinkEvent', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, '.'(ARG6, []))))))), OUT).
+h_t_m_l_frame_hyperlink_event(ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_new('javax.swing.text.html.HTMLFrameHyperlinkEvent', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
 h_t_m_l_frame_hyperlink_event(ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, OUT) :- 
 	object_new('javax.swing.text.html.HTMLFrameHyperlinkEvent', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), OUT).
@@ -34,41 +34,29 @@ h_t_m_l_frame_hyperlink_event(ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :-
 h_t_m_l_frame_hyperlink_event(ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
 	object_new('javax.swing.text.html.HTMLFrameHyperlinkEvent', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
 
-h_t_m_l_frame_hyperlink_event(ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_new('javax.swing.text.html.HTMLFrameHyperlinkEvent', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
-h_t_m_l_frame_hyperlink_event_get_target(REF, OUT) :- 
-	object_call(REF, getTarget, [], OUT).
+h_t_m_l_frame_hyperlink_event(ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, ARG6, OUT) :- 
+	object_new('javax.swing.text.html.HTMLFrameHyperlinkEvent', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, '.'(ARG6, []))))))), OUT).
 
 h_t_m_l_frame_hyperlink_event_get_u_r_l(REF, OUT) :- 
 	object_call(REF, getURL, [], OUT).
 
-h_t_m_l_frame_hyperlink_event_get_event_type(REF, OUT) :- 
-	object_call(REF, getEventType, [], OUT).
-
-h_t_m_l_frame_hyperlink_event_get_input_event(REF, OUT) :- 
-	object_call(REF, getInputEvent, [], OUT).
-
-h_t_m_l_frame_hyperlink_event_get_source_element(REF, OUT) :- 
-	object_call(REF, getSourceElement, [], OUT).
-
-h_t_m_l_frame_hyperlink_event_get_description(REF, OUT) :- 
-	object_call(REF, getDescription, [], OUT).
+h_t_m_l_frame_hyperlink_event_get_target(REF, OUT) :- 
+	object_call(REF, getTarget, [], OUT).
 
 h_t_m_l_frame_hyperlink_event_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-h_t_m_l_frame_hyperlink_event_get_source(REF, OUT) :- 
-	object_call(REF, getSource, [], OUT).
+h_t_m_l_frame_hyperlink_event_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-h_t_m_l_frame_hyperlink_event_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+h_t_m_l_frame_hyperlink_event_get_source_element(REF, OUT) :- 
+	object_call(REF, getSourceElement, [], OUT).
 
-h_t_m_l_frame_hyperlink_event_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+h_t_m_l_frame_hyperlink_event_get_event_type(REF, OUT) :- 
+	object_call(REF, getEventType, [], OUT).
 
-h_t_m_l_frame_hyperlink_event_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+h_t_m_l_frame_hyperlink_event_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 h_t_m_l_frame_hyperlink_event_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
@@ -76,12 +64,24 @@ h_t_m_l_frame_hyperlink_event_equals(REF, ARG0, OUT) :-
 h_t_m_l_frame_hyperlink_event_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+h_t_m_l_frame_hyperlink_event_get_description(REF, OUT) :- 
+	object_call(REF, getDescription, [], OUT).
+
 h_t_m_l_frame_hyperlink_event_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-h_t_m_l_frame_hyperlink_event_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+h_t_m_l_frame_hyperlink_event_get_input_event(REF, OUT) :- 
+	object_call(REF, getInputEvent, [], OUT).
 
-h_t_m_l_frame_hyperlink_event_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+h_t_m_l_frame_hyperlink_event_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+h_t_m_l_frame_hyperlink_event_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+h_t_m_l_frame_hyperlink_event_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+h_t_m_l_frame_hyperlink_event_get_source(REF, OUT) :- 
+	object_call(REF, getSource, [], OUT).
 

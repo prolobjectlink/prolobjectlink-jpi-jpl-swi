@@ -25,26 +25,20 @@
 bean_context_service_available_event(ARG0, ARG1, OUT) :- 
 	object_new('java.beans.beancontext.BeanContextServiceAvailableEvent', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-bean_context_service_available_event_get_current_service_selectors(REF, OUT) :- 
-	object_call(REF, getCurrentServiceSelectors, [], OUT).
+bean_context_service_available_event_get_propagated_from(REF, OUT) :- 
+	object_call(REF, getPropagatedFrom, [], OUT).
 
-bean_context_service_available_event_get_service_class(REF, OUT) :- 
-	object_call(REF, getServiceClass, [], OUT).
+bean_context_service_available_event_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 bean_context_service_available_event_get_source_as_bean_context_services(REF, OUT) :- 
 	object_call(REF, getSourceAsBeanContextServices, [], OUT).
 
-bean_context_service_available_event_get_propagated_from(REF, OUT) :- 
-	object_call(REF, getPropagatedFrom, [], OUT).
+bean_context_service_available_event_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 bean_context_service_available_event_is_propagated(REF, OUT) :- 
 	object_call(REF, isPropagated, [], OUT).
-
-bean_context_service_available_event_set_propagated_from(REF, ARG0, OUT) :- 
-	object_call(REF, setPropagatedFrom, '.'(ARG0, []), OUT).
-
-bean_context_service_available_event_get_bean_context(REF, OUT) :- 
-	object_call(REF, getBeanContext, [], OUT).
 
 bean_context_service_available_event_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
@@ -52,27 +46,33 @@ bean_context_service_available_event_to_string(REF, OUT) :-
 bean_context_service_available_event_get_source(REF, OUT) :- 
 	object_call(REF, getSource, [], OUT).
 
-bean_context_service_available_event_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+bean_context_service_available_event_get_service_class(REF, OUT) :- 
+	object_call(REF, getServiceClass, [], OUT).
 
-bean_context_service_available_event_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+bean_context_service_available_event_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-bean_context_service_available_event_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+bean_context_service_available_event_get_current_service_selectors(REF, OUT) :- 
+	object_call(REF, getCurrentServiceSelectors, [], OUT).
 
-bean_context_service_available_event_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+bean_context_service_available_event_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+bean_context_service_available_event_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+bean_context_service_available_event_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 bean_context_service_available_event_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+bean_context_service_available_event_get_bean_context(REF, OUT) :- 
+	object_call(REF, getBeanContext, [], OUT).
+
+bean_context_service_available_event_set_propagated_from(REF, ARG0) :- 
+	object_call(REF, setPropagatedFrom, '.'(ARG0, []), _).
+
 bean_context_service_available_event_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-bean_context_service_available_event_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-bean_context_service_available_event_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

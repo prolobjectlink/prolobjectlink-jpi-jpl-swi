@@ -25,42 +25,42 @@
 hex_binary_adapter(OUT) :- 
 	object_new('javax.xml.bind.annotation.adapters.HexBinaryAdapter', [], OUT).
 
-hex_binary_adapter_marshal(REF, ARG0, OUT) :- 
-	object_call(REF, marshal, '.'(ARG0, []), OUT).
+hex_binary_adapter_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
-hex_binary_adapter_marshal(REF, ARG0, OUT) :- 
-	object_call(REF, marshal, '.'(ARG0, []), OUT).
-
-hex_binary_adapter_unmarshal(REF, ARG0, OUT) :- 
-	object_call(REF, unmarshal, '.'(ARG0, []), OUT).
-
-hex_binary_adapter_unmarshal(REF, ARG0, OUT) :- 
-	object_call(REF, unmarshal, '.'(ARG0, []), OUT).
-
-hex_binary_adapter_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-hex_binary_adapter_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-hex_binary_adapter_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-hex_binary_adapter_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-hex_binary_adapter_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+hex_binary_adapter_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 hex_binary_adapter_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-hex_binary_adapter_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
+hex_binary_adapter_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-hex_binary_adapter_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+hex_binary_adapter_unmarshal(REF, ARG0, OUT) :- 
+	object_call(REF, unmarshal, '.'(ARG0, []), OUT).
 
-hex_binary_adapter_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+hex_binary_adapter_unmarshal(REF, ARG0, OUT) :- 
+	object_call(REF, unmarshal, '.'(ARG0, []), OUT).
+
+hex_binary_adapter_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+hex_binary_adapter_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+hex_binary_adapter_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+hex_binary_adapter_marshal(REF, ARG0, OUT) :- 
+	object_call(REF, marshal, '.'(ARG0, []), OUT).
+
+hex_binary_adapter_marshal(REF, ARG0, OUT) :- 
+	object_call(REF, marshal, '.'(ARG0, []), OUT).
+
+hex_binary_adapter_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+hex_binary_adapter_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 

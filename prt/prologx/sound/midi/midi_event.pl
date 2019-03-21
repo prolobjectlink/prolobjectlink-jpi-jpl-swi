@@ -25,39 +25,39 @@
 midi_event(ARG0, ARG1, OUT) :- 
 	object_new('javax.sound.midi.MidiEvent', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-midi_event_get_message(REF, OUT) :- 
-	object_call(REF, getMessage, [], OUT).
-
-midi_event_get_tick(REF, OUT) :- 
-	object_call(REF, getTick, [], OUT).
-
-midi_event_set_tick(REF, ARG0, OUT) :- 
-	object_call(REF, setTick, '.'(ARG0, []), OUT).
-
-midi_event_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-midi_event_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-midi_event_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
 midi_event_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-midi_event_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+midi_event_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-midi_event_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+midi_event_set_tick(REF, ARG0) :- 
+	object_call(REF, setTick, '.'(ARG0, []), _).
+
+midi_event_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 midi_event_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-midi_event_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+midi_event_get_message(REF, OUT) :- 
+	object_call(REF, getMessage, [], OUT).
 
-midi_event_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+midi_event_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+midi_event_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+midi_event_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+midi_event_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+midi_event_get_tick(REF, OUT) :- 
+	object_call(REF, getTick, [], OUT).
+
+midi_event_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 

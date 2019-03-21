@@ -25,26 +25,20 @@
 menu_bar(OUT) :- 
 	object_new('java.awt.MenuBar', [], OUT).
 
-menu_bar_add(REF, ARG0, OUT) :- 
-	object_call(REF, add, '.'(ARG0, []), OUT).
+menu_bar_post_event(REF, ARG0, OUT) :- 
+	object_call(REF, postEvent, '.'(ARG0, []), OUT).
 
-menu_bar_remove(REF, ARG0, OUT) :- 
-	object_call(REF, remove, '.'(ARG0, []), OUT).
+menu_bar_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-menu_bar_remove(REF, ARG0, OUT) :- 
-	object_call(REF, remove, '.'(ARG0, []), OUT).
+menu_bar_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-menu_bar_add_notify(REF, OUT) :- 
-	object_call(REF, addNotify, [], OUT).
+menu_bar_remove_notify(REF) :- 
+	object_call(REF, removeNotify, [], _).
 
-menu_bar_get_accessible_context(REF, OUT) :- 
-	object_call(REF, getAccessibleContext, [], OUT).
-
-menu_bar_remove_notify(REF, OUT) :- 
-	object_call(REF, removeNotify, [], OUT).
-
-menu_bar_delete_shortcut(REF, ARG0, OUT) :- 
-	object_call(REF, deleteShortcut, '.'(ARG0, []), OUT).
+menu_bar_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 menu_bar_get_shortcut_menu_item(REF, ARG0, OUT) :- 
 	object_call(REF, getShortcutMenuItem, '.'(ARG0, []), OUT).
@@ -52,69 +46,75 @@ menu_bar_get_shortcut_menu_item(REF, ARG0, OUT) :-
 menu_bar_shortcuts(REF, OUT) :- 
 	object_call(REF, shortcuts, [], OUT).
 
-menu_bar_get_help_menu(REF, OUT) :- 
-	object_call(REF, getHelpMenu, [], OUT).
-
-menu_bar_get_menu(REF, ARG0, OUT) :- 
-	object_call(REF, getMenu, '.'(ARG0, []), OUT).
-
-menu_bar_get_menu_count(REF, OUT) :- 
-	object_call(REF, getMenuCount, [], OUT).
-
-menu_bar_set_help_menu(REF, ARG0, OUT) :- 
-	object_call(REF, setHelpMenu, '.'(ARG0, []), OUT).
-
-menu_bar_count_menus(REF, OUT) :- 
-	object_call(REF, countMenus, [], OUT).
-
-menu_bar_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-menu_bar_get_name(REF, OUT) :- 
-	object_call(REF, getName, [], OUT).
+menu_bar_get_peer(REF, OUT) :- 
+	object_call(REF, getPeer, [], OUT).
 
 menu_bar_get_parent(REF, OUT) :- 
 	object_call(REF, getParent, [], OUT).
 
-menu_bar_set_name(REF, ARG0, OUT) :- 
-	object_call(REF, setName, '.'(ARG0, []), OUT).
-
-menu_bar_dispatch_event(REF, ARG0, OUT) :- 
-	object_call(REF, dispatchEvent, '.'(ARG0, []), OUT).
-
 menu_bar_get_font(REF, OUT) :- 
 	object_call(REF, getFont, [], OUT).
 
-menu_bar_get_peer(REF, OUT) :- 
-	object_call(REF, getPeer, [], OUT).
-
-menu_bar_post_event(REF, ARG0, OUT) :- 
-	object_call(REF, postEvent, '.'(ARG0, []), OUT).
-
-menu_bar_set_font(REF, ARG0, OUT) :- 
-	object_call(REF, setFont, '.'(ARG0, []), OUT).
-
-menu_bar_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-menu_bar_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-menu_bar_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-menu_bar_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+menu_bar_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 menu_bar_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+menu_bar_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+menu_bar_set_help_menu(REF, ARG0) :- 
+	object_call(REF, setHelpMenu, '.'(ARG0, []), _).
+
+menu_bar_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+menu_bar_add(REF, ARG0, OUT) :- 
+	object_call(REF, add, '.'(ARG0, []), OUT).
+
+menu_bar_get_accessible_context(REF, OUT) :- 
+	object_call(REF, getAccessibleContext, [], OUT).
+
+menu_bar_set_name(REF, ARG0) :- 
+	object_call(REF, setName, '.'(ARG0, []), _).
+
+menu_bar_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+menu_bar_remove(REF, ARG0) :- 
+	object_call(REF, remove, '.'(ARG0, []), _).
+
+menu_bar_remove(REF, ARG0) :- 
+	object_call(REF, remove, '.'(ARG0, []), _).
+
+menu_bar_add_notify(REF) :- 
+	object_call(REF, addNotify, [], _).
+
+menu_bar_get_menu(REF, ARG0, OUT) :- 
+	object_call(REF, getMenu, '.'(ARG0, []), OUT).
+
+menu_bar_set_font(REF, ARG0) :- 
+	object_call(REF, setFont, '.'(ARG0, []), _).
+
+menu_bar_get_help_menu(REF, OUT) :- 
+	object_call(REF, getHelpMenu, [], OUT).
+
 menu_bar_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-menu_bar_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+menu_bar_get_menu_count(REF, OUT) :- 
+	object_call(REF, getMenuCount, [], OUT).
 
-menu_bar_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+menu_bar_get_name(REF, OUT) :- 
+	object_call(REF, getName, [], OUT).
+
+menu_bar_count_menus(REF, OUT) :- 
+	object_call(REF, countMenus, [], OUT).
+
+menu_bar_dispatch_event(REF, ARG0) :- 
+	object_call(REF, dispatchEvent, '.'(ARG0, []), _).
+
+menu_bar_delete_shortcut(REF, ARG0) :- 
+	object_call(REF, deleteShortcut, '.'(ARG0, []), _).
 

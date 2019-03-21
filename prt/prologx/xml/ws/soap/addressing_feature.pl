@@ -22,14 +22,8 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-addressing_feature_id(OUT) :- 
+addressing_feature_ID(OUT) :- 
 	object_get('javax.xml.ws.soap.AddressingFeature', id, OUT).
-
-addressing_feature(ARG0, ARG1, ARG2, OUT) :- 
-	object_new('javax.xml.ws.soap.AddressingFeature', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-addressing_feature(ARG0, ARG1, OUT) :- 
-	object_new('javax.xml.ws.soap.AddressingFeature', '.'(ARG0, '.'(ARG1, [])), OUT).
 
 addressing_feature(ARG0, OUT) :- 
 	object_new('javax.xml.ws.soap.AddressingFeature', '.'(ARG0, []), OUT).
@@ -37,26 +31,17 @@ addressing_feature(ARG0, OUT) :-
 addressing_feature(OUT) :- 
 	object_new('javax.xml.ws.soap.AddressingFeature', [], OUT).
 
+addressing_feature(ARG0, ARG1, ARG2, OUT) :- 
+	object_new('javax.xml.ws.soap.AddressingFeature', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+addressing_feature(ARG0, ARG1, OUT) :- 
+	object_new('javax.xml.ws.soap.AddressingFeature', '.'(ARG0, '.'(ARG1, [])), OUT).
+
 addressing_feature_get_i_d(REF, OUT) :- 
 	object_call(REF, getID, [], OUT).
 
-addressing_feature_get_responses(REF, OUT) :- 
-	object_call(REF, getResponses, [], OUT).
-
 addressing_feature_is_required(REF, OUT) :- 
 	object_call(REF, isRequired, [], OUT).
-
-addressing_feature_is_enabled(REF, OUT) :- 
-	object_call(REF, isEnabled, [], OUT).
-
-addressing_feature_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-addressing_feature_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-addressing_feature_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
 
 addressing_feature_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
@@ -64,15 +49,30 @@ addressing_feature_equals(REF, ARG0, OUT) :-
 addressing_feature_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
+addressing_feature_is_enabled(REF, OUT) :- 
+	object_call(REF, isEnabled, [], OUT).
+
+addressing_feature_get_responses(REF, OUT) :- 
+	object_call(REF, getResponses, [], OUT).
+
+addressing_feature_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+addressing_feature_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+addressing_feature_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+addressing_feature_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
 addressing_feature_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
 addressing_feature_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-addressing_feature_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-addressing_feature_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+addressing_feature_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

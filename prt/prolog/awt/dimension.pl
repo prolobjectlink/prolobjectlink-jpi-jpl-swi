@@ -22,63 +22,63 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-dimension(ARG0, OUT) :- 
-	object_new('java.awt.Dimension', '.'(ARG0, []), OUT).
-
 dimension(OUT) :- 
 	object_new('java.awt.Dimension', [], OUT).
 
 dimension(ARG0, ARG1, OUT) :- 
 	object_new('java.awt.Dimension', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-dimension_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+dimension(ARG0, OUT) :- 
+	object_new('java.awt.Dimension', '.'(ARG0, []), OUT).
 
 dimension_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
+dimension_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
 dimension_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
+
+dimension_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
+
+dimension_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+dimension_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+dimension_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+dimension_set_size(REF, ARG0) :- 
+	object_call(REF, setSize, '.'(ARG0, []), _).
+
+dimension_set_size(REF, ARG0) :- 
+	object_call(REF, setSize, '.'(ARG0, []), _).
+
+dimension_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+dimension_set_size(REF, ARG0, ARG1) :- 
+	object_call(REF, setSize, '.'(ARG0, '.'(ARG1, [])), _).
+
+dimension_set_size(REF, ARG0, ARG1) :- 
+	object_call(REF, setSize, '.'(ARG0, '.'(ARG1, [])), _).
 
 dimension_get_size(REF, OUT) :- 
 	object_call(REF, getSize, [], OUT).
 
-dimension_set_size(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, setSize, '.'(ARG0, '.'(ARG1, [])), OUT).
+dimension_clone(REF, OUT) :- 
+	object_call(REF, clone, [], OUT).
 
-dimension_set_size(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, setSize, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-dimension_set_size(REF, ARG0, OUT) :- 
-	object_call(REF, setSize, '.'(ARG0, []), OUT).
+dimension_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 dimension_get_height(REF, OUT) :- 
 	object_call(REF, getHeight, [], OUT).
 
 dimension_get_width(REF, OUT) :- 
 	object_call(REF, getWidth, [], OUT).
-
-dimension_clone(REF, OUT) :- 
-	object_call(REF, clone, [], OUT).
-
-dimension_set_size(REF, ARG0, OUT) :- 
-	object_call(REF, setSize, '.'(ARG0, []), OUT).
-
-dimension_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-dimension_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-dimension_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-dimension_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-dimension_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-dimension_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

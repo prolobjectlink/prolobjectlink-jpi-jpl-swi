@@ -22,37 +22,37 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-tab_stop_align_left(OUT) :- 
+tab_stop_ALIGN_LEFT(OUT) :- 
 	object_get('javax.swing.text.TabStop', align_left, OUT).
 
-tab_stop_align_right(OUT) :- 
+tab_stop_ALIGN_RIGHT(OUT) :- 
 	object_get('javax.swing.text.TabStop', align_right, OUT).
 
-tab_stop_align_center(OUT) :- 
+tab_stop_ALIGN_CENTER(OUT) :- 
 	object_get('javax.swing.text.TabStop', align_center, OUT).
 
-tab_stop_align_decimal(OUT) :- 
+tab_stop_ALIGN_DECIMAL(OUT) :- 
 	object_get('javax.swing.text.TabStop', align_decimal, OUT).
 
-tab_stop_align_bar(OUT) :- 
+tab_stop_ALIGN_BAR(OUT) :- 
 	object_get('javax.swing.text.TabStop', align_bar, OUT).
 
-tab_stop_lead_none(OUT) :- 
+tab_stop_LEAD_NONE(OUT) :- 
 	object_get('javax.swing.text.TabStop', lead_none, OUT).
 
-tab_stop_lead_dots(OUT) :- 
+tab_stop_LEAD_DOTS(OUT) :- 
 	object_get('javax.swing.text.TabStop', lead_dots, OUT).
 
-tab_stop_lead_hyphens(OUT) :- 
+tab_stop_LEAD_HYPHENS(OUT) :- 
 	object_get('javax.swing.text.TabStop', lead_hyphens, OUT).
 
-tab_stop_lead_underline(OUT) :- 
+tab_stop_LEAD_UNDERLINE(OUT) :- 
 	object_get('javax.swing.text.TabStop', lead_underline, OUT).
 
-tab_stop_lead_thickline(OUT) :- 
+tab_stop_LEAD_THICKLINE(OUT) :- 
 	object_get('javax.swing.text.TabStop', lead_thickline, OUT).
 
-tab_stop_lead_equals(OUT) :- 
+tab_stop_LEAD_EQUALS(OUT) :- 
 	object_get('javax.swing.text.TabStop', lead_equals, OUT).
 
 tab_stop(ARG0, OUT) :- 
@@ -61,39 +61,39 @@ tab_stop(ARG0, OUT) :-
 tab_stop(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('javax.swing.text.TabStop', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-tab_stop_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-tab_stop_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-tab_stop_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
 tab_stop_get_position(REF, OUT) :- 
 	object_call(REF, getPosition, [], OUT).
+
+tab_stop_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 tab_stop_get_alignment(REF, OUT) :- 
 	object_call(REF, getAlignment, [], OUT).
 
+tab_stop_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+tab_stop_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+tab_stop_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+tab_stop_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
 tab_stop_get_leader(REF, OUT) :- 
 	object_call(REF, getLeader, [], OUT).
 
-tab_stop_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+tab_stop_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-tab_stop_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-tab_stop_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+tab_stop_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
 tab_stop_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-tab_stop_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-tab_stop_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+tab_stop_wait(REF) :- 
+	object_call(REF, wait, [], _).
 

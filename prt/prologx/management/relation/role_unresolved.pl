@@ -25,38 +25,26 @@
 role_unresolved(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('javax.management.relation.RoleUnresolved', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-role_unresolved_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-role_unresolved_clone(REF, OUT) :- 
-	object_call(REF, clone, [], OUT).
-
 role_unresolved_get_role_name(REF, OUT) :- 
 	object_call(REF, getRoleName, [], OUT).
 
-role_unresolved_get_role_value(REF, OUT) :- 
-	object_call(REF, getRoleValue, [], OUT).
+role_unresolved_set_problem_type(REF, ARG0) :- 
+	object_call(REF, setProblemType, '.'(ARG0, []), _).
 
-role_unresolved_set_role_name(REF, ARG0, OUT) :- 
-	object_call(REF, setRoleName, '.'(ARG0, []), OUT).
+role_unresolved_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-role_unresolved_set_role_value(REF, ARG0, OUT) :- 
-	object_call(REF, setRoleValue, '.'(ARG0, []), OUT).
+role_unresolved_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-role_unresolved_get_problem_type(REF, OUT) :- 
-	object_call(REF, getProblemType, [], OUT).
+role_unresolved_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-role_unresolved_set_problem_type(REF, ARG0, OUT) :- 
-	object_call(REF, setProblemType, '.'(ARG0, []), OUT).
+role_unresolved_set_role_name(REF, ARG0) :- 
+	object_call(REF, setRoleName, '.'(ARG0, []), _).
 
-role_unresolved_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-role_unresolved_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-role_unresolved_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+role_unresolved_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 role_unresolved_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
@@ -64,12 +52,24 @@ role_unresolved_equals(REF, ARG0, OUT) :-
 role_unresolved_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+role_unresolved_clone(REF, OUT) :- 
+	object_call(REF, clone, [], OUT).
+
+role_unresolved_get_problem_type(REF, OUT) :- 
+	object_call(REF, getProblemType, [], OUT).
+
 role_unresolved_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-role_unresolved_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+role_unresolved_set_role_value(REF, ARG0) :- 
+	object_call(REF, setRoleValue, '.'(ARG0, []), _).
 
-role_unresolved_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+role_unresolved_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+role_unresolved_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+role_unresolved_get_role_value(REF, OUT) :- 
+	object_call(REF, getRoleValue, [], OUT).
 

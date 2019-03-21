@@ -22,6 +22,9 @@
 
 :-consult('../../../obj/prolobject.pl').
 
+priority_queue(OUT) :- 
+	object_new('java.util.PriorityQueue', [], OUT).
+
 priority_queue(ARG0, ARG1, OUT) :- 
 	object_new('java.util.PriorityQueue', '.'(ARG0, '.'(ARG1, [])), OUT).
 
@@ -34,89 +37,11 @@ priority_queue(ARG0, OUT) :-
 priority_queue(ARG0, OUT) :- 
 	object_new('java.util.PriorityQueue', '.'(ARG0, []), OUT).
 
-priority_queue(OUT) :- 
-	object_new('java.util.PriorityQueue', [], OUT).
-
 priority_queue(ARG0, OUT) :- 
 	object_new('java.util.PriorityQueue', '.'(ARG0, []), OUT).
 
 priority_queue(ARG0, OUT) :- 
 	object_new('java.util.PriorityQueue', '.'(ARG0, []), OUT).
-
-priority_queue_add(REF, ARG0, OUT) :- 
-	object_call(REF, add, '.'(ARG0, []), OUT).
-
-priority_queue_remove(REF, ARG0, OUT) :- 
-	object_call(REF, remove, '.'(ARG0, []), OUT).
-
-priority_queue_clear(REF, OUT) :- 
-	object_call(REF, clear, [], OUT).
-
-priority_queue_contains(REF, ARG0, OUT) :- 
-	object_call(REF, contains, '.'(ARG0, []), OUT).
-
-priority_queue_iterator(REF, OUT) :- 
-	object_call(REF, iterator, [], OUT).
-
-priority_queue_size(REF, OUT) :- 
-	object_call(REF, size, [], OUT).
-
-priority_queue_to_array(REF, ARG0, OUT) :- 
-	object_call(REF, toArray, '.'(ARG0, []), OUT).
-
-priority_queue_to_array(REF, OUT) :- 
-	object_call(REF, toArray, [], OUT).
-
-priority_queue_spliterator(REF, OUT) :- 
-	object_call(REF, spliterator, [], OUT).
-
-priority_queue_poll(REF, OUT) :- 
-	object_call(REF, poll, [], OUT).
-
-priority_queue_peek(REF, OUT) :- 
-	object_call(REF, peek, [], OUT).
-
-priority_queue_comparator(REF, OUT) :- 
-	object_call(REF, comparator, [], OUT).
-
-priority_queue_offer(REF, ARG0, OUT) :- 
-	object_call(REF, offer, '.'(ARG0, []), OUT).
-
-priority_queue_remove(REF, OUT) :- 
-	object_call(REF, remove, [], OUT).
-
-priority_queue_add_all(REF, ARG0, OUT) :- 
-	object_call(REF, addAll, '.'(ARG0, []), OUT).
-
-priority_queue_element(REF, OUT) :- 
-	object_call(REF, element, [], OUT).
-
-priority_queue_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-priority_queue_is_empty(REF, OUT) :- 
-	object_call(REF, isEmpty, [], OUT).
-
-priority_queue_contains_all(REF, ARG0, OUT) :- 
-	object_call(REF, containsAll, '.'(ARG0, []), OUT).
-
-priority_queue_remove_all(REF, ARG0, OUT) :- 
-	object_call(REF, removeAll, '.'(ARG0, []), OUT).
-
-priority_queue_retain_all(REF, ARG0, OUT) :- 
-	object_call(REF, retainAll, '.'(ARG0, []), OUT).
-
-priority_queue_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-priority_queue_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-priority_queue_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-priority_queue_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 priority_queue_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -124,21 +49,96 @@ priority_queue_hash_code(REF, OUT) :-
 priority_queue_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-priority_queue_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+priority_queue_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-priority_queue_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+priority_queue_element(REF, OUT) :- 
+	object_call(REF, element, [], OUT).
 
-priority_queue_stream(REF, OUT) :- 
-	object_call(REF, stream, [], OUT).
+priority_queue_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-priority_queue_remove_if(REF, ARG0, OUT) :- 
-	object_call(REF, removeIf, '.'(ARG0, []), OUT).
+priority_queue_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+priority_queue_remove_all(REF, ARG0, OUT) :- 
+	object_call(REF, removeAll, '.'(ARG0, []), OUT).
+
+priority_queue_to_array(REF, OUT) :- 
+	object_call(REF, toArray, [], OUT).
+
+priority_queue_iterator(REF, OUT) :- 
+	object_call(REF, iterator, [], OUT).
+
+priority_queue_spliterator(REF, OUT) :- 
+	object_call(REF, spliterator, [], OUT).
+
+priority_queue_poll(REF, OUT) :- 
+	object_call(REF, poll, [], OUT).
+
+priority_queue_comparator(REF, OUT) :- 
+	object_call(REF, comparator, [], OUT).
+
+priority_queue_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 priority_queue_parallel_stream(REF, OUT) :- 
 	object_call(REF, parallelStream, [], OUT).
 
-priority_queue_for_each(REF, ARG0, OUT) :- 
-	object_call(REF, forEach, '.'(ARG0, []), OUT).
+priority_queue_retain_all(REF, ARG0, OUT) :- 
+	object_call(REF, retainAll, '.'(ARG0, []), OUT).
+
+priority_queue_offer(REF, ARG0, OUT) :- 
+	object_call(REF, offer, '.'(ARG0, []), OUT).
+
+priority_queue_contains_all(REF, ARG0, OUT) :- 
+	object_call(REF, containsAll, '.'(ARG0, []), OUT).
+
+priority_queue_for_each(REF, ARG0) :- 
+	object_call(REF, forEach, '.'(ARG0, []), _).
+
+priority_queue_remove_if(REF, ARG0, OUT) :- 
+	object_call(REF, removeIf, '.'(ARG0, []), OUT).
+
+priority_queue_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+priority_queue_add(REF, ARG0, OUT) :- 
+	object_call(REF, add, '.'(ARG0, []), OUT).
+
+priority_queue_size(REF, OUT) :- 
+	object_call(REF, size, [], OUT).
+
+priority_queue_peek(REF, OUT) :- 
+	object_call(REF, peek, [], OUT).
+
+priority_queue_remove(REF, OUT) :- 
+	object_call(REF, remove, [], OUT).
+
+priority_queue_remove(REF, ARG0, OUT) :- 
+	object_call(REF, remove, '.'(ARG0, []), OUT).
+
+priority_queue_contains(REF, ARG0, OUT) :- 
+	object_call(REF, contains, '.'(ARG0, []), OUT).
+
+priority_queue_add_all(REF, ARG0, OUT) :- 
+	object_call(REF, addAll, '.'(ARG0, []), OUT).
+
+priority_queue_clear(REF) :- 
+	object_call(REF, clear, [], _).
+
+priority_queue_to_array(REF, ARG0, OUT) :- 
+	object_call(REF, toArray, '.'(ARG0, []), OUT).
+
+priority_queue_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+priority_queue_is_empty(REF, OUT) :- 
+	object_call(REF, isEmpty, [], OUT).
+
+priority_queue_stream(REF, OUT) :- 
+	object_call(REF, stream, [], OUT).
+
+priority_queue_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 

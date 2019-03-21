@@ -22,51 +22,51 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-component_orientation_left_to_right(OUT) :- 
+component_orientation_LEFT_TO_RIGHT(OUT) :- 
 	object_get('java.awt.ComponentOrientation', left_to_right, OUT).
 
-component_orientation_right_to_left(OUT) :- 
+component_orientation_RIGHT_TO_LEFT(OUT) :- 
 	object_get('java.awt.ComponentOrientation', right_to_left, OUT).
 
-component_orientation_unknown(OUT) :- 
+component_orientation_UNKNOWN(OUT) :- 
 	object_get('java.awt.ComponentOrientation', unknown, OUT).
-
-component_orientation_get_orientation(REF, ARG0, OUT) :- 
-	object_call(REF, getOrientation, '.'(ARG0, []), OUT).
-
-component_orientation_get_orientation(REF, ARG0, OUT) :- 
-	object_call(REF, getOrientation, '.'(ARG0, []), OUT).
-
-component_orientation_is_horizontal(REF, OUT) :- 
-	object_call(REF, isHorizontal, [], OUT).
-
-component_orientation_is_left_to_right(REF, OUT) :- 
-	object_call(REF, isLeftToRight, [], OUT).
-
-component_orientation_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-component_orientation_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-component_orientation_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-component_orientation_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 component_orientation_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-component_orientation_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+component_orientation_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+component_orientation_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+component_orientation_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+component_orientation_is_left_to_right(REF, OUT) :- 
+	object_call(REF, isLeftToRight, [], OUT).
+
+component_orientation_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 component_orientation_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-component_orientation_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+component_orientation_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
-component_orientation_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+component_orientation_is_horizontal(REF, OUT) :- 
+	object_call(REF, isHorizontal, [], OUT).
+
+component_orientation_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+component_orientation_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+component_orientation_get_orientation(REF, ARG0, OUT) :- 
+	object_call(REF, getOrientation, '.'(ARG0, []), OUT).
+
+component_orientation_get_orientation(REF, ARG0, OUT) :- 
+	object_call(REF, getOrientation, '.'(ARG0, []), OUT).
 

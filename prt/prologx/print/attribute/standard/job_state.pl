@@ -22,35 +22,32 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-job_state_unknown(OUT) :- 
+job_state_UNKNOWN(OUT) :- 
 	object_get('javax.print.attribute.standard.JobState', unknown, OUT).
 
-job_state_pending(OUT) :- 
+job_state_PENDING(OUT) :- 
 	object_get('javax.print.attribute.standard.JobState', pending, OUT).
 
-job_state_pending_held(OUT) :- 
+job_state_PENDING_HELD(OUT) :- 
 	object_get('javax.print.attribute.standard.JobState', pending_held, OUT).
 
-job_state_processing(OUT) :- 
+job_state_PROCESSING(OUT) :- 
 	object_get('javax.print.attribute.standard.JobState', processing, OUT).
 
-job_state_processing_stopped(OUT) :- 
+job_state_PROCESSING_STOPPED(OUT) :- 
 	object_get('javax.print.attribute.standard.JobState', processing_stopped, OUT).
 
-job_state_canceled(OUT) :- 
+job_state_CANCELED(OUT) :- 
 	object_get('javax.print.attribute.standard.JobState', canceled, OUT).
 
-job_state_aborted(OUT) :- 
+job_state_ABORTED(OUT) :- 
 	object_get('javax.print.attribute.standard.JobState', aborted, OUT).
 
-job_state_completed(OUT) :- 
+job_state_COMPLETED(OUT) :- 
 	object_get('javax.print.attribute.standard.JobState', completed, OUT).
 
-job_state_get_name(REF, OUT) :- 
-	object_call(REF, getName, [], OUT).
-
-job_state_get_category(REF, OUT) :- 
-	object_call(REF, getCategory, [], OUT).
+job_state_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 job_state_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
@@ -61,27 +58,30 @@ job_state_hash_code(REF, OUT) :-
 job_state_clone(REF, OUT) :- 
 	object_call(REF, clone, [], OUT).
 
-job_state_get_value(REF, OUT) :- 
-	object_call(REF, getValue, [], OUT).
+job_state_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-job_state_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+job_state_get_category(REF, OUT) :- 
+	object_call(REF, getCategory, [], OUT).
 
-job_state_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-job_state_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-job_state_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+job_state_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 job_state_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-job_state_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+job_state_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-job_state_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+job_state_get_value(REF, OUT) :- 
+	object_call(REF, getValue, [], OUT).
+
+job_state_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+job_state_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+job_state_get_name(REF, OUT) :- 
+	object_call(REF, getName, [], OUT).
 

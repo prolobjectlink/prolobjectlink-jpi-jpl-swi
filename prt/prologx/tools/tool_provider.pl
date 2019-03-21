@@ -22,39 +22,39 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-tool_provider_get_system_documentation_tool(REF, OUT) :- 
-	object_call(REF, getSystemDocumentationTool, [], OUT).
-
-tool_provider_get_system_java_compiler(REF, OUT) :- 
-	object_call(REF, getSystemJavaCompiler, [], OUT).
-
-tool_provider_get_system_tool_class_loader(REF, OUT) :- 
-	object_call(REF, getSystemToolClassLoader, [], OUT).
-
-tool_provider_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-tool_provider_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-tool_provider_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-tool_provider_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-tool_provider_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
 tool_provider_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
 tool_provider_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-tool_provider_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+tool_provider_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-tool_provider_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+tool_provider_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+tool_provider_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+tool_provider_get_system_documentation_tool(REF, OUT) :- 
+	object_call(REF, getSystemDocumentationTool, [], OUT).
+
+tool_provider_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+tool_provider_get_system_java_compiler(REF, OUT) :- 
+	object_call(REF, getSystemJavaCompiler, [], OUT).
+
+tool_provider_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+tool_provider_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+tool_provider_get_system_tool_class_loader(REF, OUT) :- 
+	object_call(REF, getSystemToolClassLoader, [], OUT).
+
+tool_provider_wait(REF) :- 
+	object_call(REF, wait, [], _).
 

@@ -22,51 +22,51 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-doc_flavor_hostencoding(OUT) :- 
+doc_flavor_HOSTENCODING(OUT) :- 
 	object_get('javax.print.DocFlavor', hostencoding, OUT).
 
 doc_flavor(ARG0, ARG1, OUT) :- 
 	object_new('javax.print.DocFlavor', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-doc_flavor_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
 doc_flavor_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
+
+doc_flavor_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 doc_flavor_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-doc_flavor_get_parameter(REF, ARG0, OUT) :- 
-	object_call(REF, getParameter, '.'(ARG0, []), OUT).
-
-doc_flavor_get_mime_type(REF, OUT) :- 
-	object_call(REF, getMimeType, [], OUT).
-
-doc_flavor_get_media_subtype(REF, OUT) :- 
-	object_call(REF, getMediaSubtype, [], OUT).
-
-doc_flavor_get_media_type(REF, OUT) :- 
-	object_call(REF, getMediaType, [], OUT).
+doc_flavor_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
 doc_flavor_get_representation_class_name(REF, OUT) :- 
 	object_call(REF, getRepresentationClassName, [], OUT).
 
-doc_flavor_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+doc_flavor_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-doc_flavor_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+doc_flavor_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-doc_flavor_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+doc_flavor_get_media_type(REF, OUT) :- 
+	object_call(REF, getMediaType, [], OUT).
 
-doc_flavor_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
+doc_flavor_get_mime_type(REF, OUT) :- 
+	object_call(REF, getMimeType, [], OUT).
 
-doc_flavor_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+doc_flavor_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-doc_flavor_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+doc_flavor_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+doc_flavor_get_parameter(REF, ARG0, OUT) :- 
+	object_call(REF, getParameter, '.'(ARG0, []), OUT).
+
+doc_flavor_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+doc_flavor_get_media_subtype(REF, OUT) :- 
+	object_call(REF, getMediaSubtype, [], OUT).
 

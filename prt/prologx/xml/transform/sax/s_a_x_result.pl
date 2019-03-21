@@ -22,13 +22,13 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-s_a_x_result_feature(OUT) :- 
+s_a_x_result_FEATURE(OUT) :- 
 	object_get('javax.xml.transform.sax.SAXResult', feature, OUT).
 
-s_a_x_result_pi_disable_output_escaping(OUT) :- 
+s_a_x_result_PI_DISABLE_OUTPUT_ESCAPING(OUT) :- 
 	object_get('javax.xml.transform.sax.SAXResult', pi_disable_output_escaping, OUT).
 
-s_a_x_result_pi_enable_output_escaping(OUT) :- 
+s_a_x_result_PI_ENABLE_OUTPUT_ESCAPING(OUT) :- 
 	object_get('javax.xml.transform.sax.SAXResult', pi_enable_output_escaping, OUT).
 
 s_a_x_result(OUT) :- 
@@ -37,38 +37,17 @@ s_a_x_result(OUT) :-
 s_a_x_result(ARG0, OUT) :- 
 	object_new('javax.xml.transform.sax.SAXResult', '.'(ARG0, []), OUT).
 
-s_a_x_result_get_handler(REF, OUT) :- 
-	object_call(REF, getHandler, [], OUT).
-
-s_a_x_result_set_handler(REF, ARG0, OUT) :- 
-	object_call(REF, setHandler, '.'(ARG0, []), OUT).
-
-s_a_x_result_get_lexical_handler(REF, OUT) :- 
-	object_call(REF, getLexicalHandler, [], OUT).
-
-s_a_x_result_set_lexical_handler(REF, ARG0, OUT) :- 
-	object_call(REF, setLexicalHandler, '.'(ARG0, []), OUT).
-
-s_a_x_result_get_system_id(REF, OUT) :- 
-	object_call(REF, getSystemId, [], OUT).
-
-s_a_x_result_set_system_id(REF, ARG0, OUT) :- 
-	object_call(REF, setSystemId, '.'(ARG0, []), OUT).
-
-s_a_x_result_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-s_a_x_result_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-s_a_x_result_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-s_a_x_result_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+s_a_x_result_set_handler(REF, ARG0) :- 
+	object_call(REF, setHandler, '.'(ARG0, []), _).
 
 s_a_x_result_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
+
+s_a_x_result_get_handler(REF, OUT) :- 
+	object_call(REF, getHandler, [], OUT).
+
+s_a_x_result_set_system_id(REF, ARG0) :- 
+	object_call(REF, setSystemId, '.'(ARG0, []), _).
 
 s_a_x_result_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -76,9 +55,30 @@ s_a_x_result_hash_code(REF, OUT) :-
 s_a_x_result_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-s_a_x_result_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+s_a_x_result_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-s_a_x_result_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+s_a_x_result_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+s_a_x_result_set_lexical_handler(REF, ARG0) :- 
+	object_call(REF, setLexicalHandler, '.'(ARG0, []), _).
+
+s_a_x_result_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+s_a_x_result_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+s_a_x_result_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+s_a_x_result_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+s_a_x_result_get_system_id(REF, OUT) :- 
+	object_call(REF, getSystemId, [], OUT).
+
+s_a_x_result_get_lexical_handler(REF, OUT) :- 
+	object_call(REF, getLexicalHandler, [], OUT).
 

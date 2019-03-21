@@ -25,66 +25,66 @@
 no_connection_pending_exception(OUT) :- 
 	object_new('java.nio.channels.NoConnectionPendingException', [], OUT).
 
-no_connection_pending_exception_print_stack_trace(REF, OUT) :- 
-	object_call(REF, printStackTrace, [], OUT).
+no_connection_pending_exception_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-no_connection_pending_exception_print_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, printStackTrace, '.'(ARG0, []), OUT).
-
-no_connection_pending_exception_print_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, printStackTrace, '.'(ARG0, []), OUT).
-
-no_connection_pending_exception_fill_in_stack_trace(REF, OUT) :- 
-	object_call(REF, fillInStackTrace, [], OUT).
+no_connection_pending_exception_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 no_connection_pending_exception_get_cause(REF, OUT) :- 
 	object_call(REF, getCause, [], OUT).
 
-no_connection_pending_exception_init_cause(REF, ARG0, OUT) :- 
-	object_call(REF, initCause, '.'(ARG0, []), OUT).
+no_connection_pending_exception_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-no_connection_pending_exception_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+no_connection_pending_exception_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-no_connection_pending_exception_add_suppressed(REF, ARG0, OUT) :- 
-	object_call(REF, addSuppressed, '.'(ARG0, []), OUT).
-
-no_connection_pending_exception_get_localized_message(REF, OUT) :- 
-	object_call(REF, getLocalizedMessage, [], OUT).
-
-no_connection_pending_exception_get_message(REF, OUT) :- 
-	object_call(REF, getMessage, [], OUT).
-
-no_connection_pending_exception_get_stack_trace(REF, OUT) :- 
-	object_call(REF, getStackTrace, [], OUT).
+no_connection_pending_exception_fill_in_stack_trace(REF, OUT) :- 
+	object_call(REF, fillInStackTrace, [], OUT).
 
 no_connection_pending_exception_get_suppressed(REF, OUT) :- 
 	object_call(REF, getSuppressed, [], OUT).
 
-no_connection_pending_exception_set_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, setStackTrace, '.'(ARG0, []), OUT).
+no_connection_pending_exception_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-no_connection_pending_exception_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+no_connection_pending_exception_print_stack_trace(REF) :- 
+	object_call(REF, printStackTrace, [], _).
 
-no_connection_pending_exception_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+no_connection_pending_exception_print_stack_trace(REF, ARG0) :- 
+	object_call(REF, printStackTrace, '.'(ARG0, []), _).
 
-no_connection_pending_exception_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+no_connection_pending_exception_print_stack_trace(REF, ARG0) :- 
+	object_call(REF, printStackTrace, '.'(ARG0, []), _).
+
+no_connection_pending_exception_init_cause(REF, ARG0, OUT) :- 
+	object_call(REF, initCause, '.'(ARG0, []), OUT).
+
+no_connection_pending_exception_set_stack_trace(REF, ARG0) :- 
+	object_call(REF, setStackTrace, '.'(ARG0, []), _).
 
 no_connection_pending_exception_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
+no_connection_pending_exception_get_localized_message(REF, OUT) :- 
+	object_call(REF, getLocalizedMessage, [], OUT).
+
+no_connection_pending_exception_add_suppressed(REF, ARG0) :- 
+	object_call(REF, addSuppressed, '.'(ARG0, []), _).
+
+no_connection_pending_exception_get_stack_trace(REF, OUT) :- 
+	object_call(REF, getStackTrace, [], OUT).
+
 no_connection_pending_exception_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
+
+no_connection_pending_exception_get_message(REF, OUT) :- 
+	object_call(REF, getMessage, [], OUT).
 
 no_connection_pending_exception_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-no_connection_pending_exception_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-no_connection_pending_exception_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+no_connection_pending_exception_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

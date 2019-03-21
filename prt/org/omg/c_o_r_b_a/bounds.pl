@@ -22,72 +22,72 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-bounds(OUT) :- 
-	object_new('org.omg.CORBA.Bounds', [], OUT).
-
 bounds(ARG0, OUT) :- 
 	object_new('org.omg.CORBA.Bounds', '.'(ARG0, []), OUT).
 
-bounds_print_stack_trace(REF, OUT) :- 
-	object_call(REF, printStackTrace, [], OUT).
+bounds(OUT) :- 
+	object_new('org.omg.CORBA.Bounds', [], OUT).
 
-bounds_print_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, printStackTrace, '.'(ARG0, []), OUT).
+bounds_print_stack_trace(REF, ARG0) :- 
+	object_call(REF, printStackTrace, '.'(ARG0, []), _).
 
-bounds_print_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, printStackTrace, '.'(ARG0, []), OUT).
+bounds_print_stack_trace(REF, ARG0) :- 
+	object_call(REF, printStackTrace, '.'(ARG0, []), _).
 
-bounds_fill_in_stack_trace(REF, OUT) :- 
-	object_call(REF, fillInStackTrace, [], OUT).
-
-bounds_get_cause(REF, OUT) :- 
-	object_call(REF, getCause, [], OUT).
-
-bounds_init_cause(REF, ARG0, OUT) :- 
-	object_call(REF, initCause, '.'(ARG0, []), OUT).
-
-bounds_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-bounds_add_suppressed(REF, ARG0, OUT) :- 
-	object_call(REF, addSuppressed, '.'(ARG0, []), OUT).
-
-bounds_get_localized_message(REF, OUT) :- 
-	object_call(REF, getLocalizedMessage, [], OUT).
-
-bounds_get_message(REF, OUT) :- 
-	object_call(REF, getMessage, [], OUT).
-
-bounds_get_stack_trace(REF, OUT) :- 
-	object_call(REF, getStackTrace, [], OUT).
+bounds_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 bounds_get_suppressed(REF, OUT) :- 
 	object_call(REF, getSuppressed, [], OUT).
 
-bounds_set_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, setStackTrace, '.'(ARG0, []), OUT).
+bounds_print_stack_trace(REF) :- 
+	object_call(REF, printStackTrace, [], _).
 
-bounds_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-bounds_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-bounds_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-bounds_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+bounds_get_message(REF, OUT) :- 
+	object_call(REF, getMessage, [], OUT).
 
 bounds_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+bounds_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
 bounds_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-bounds_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+bounds_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-bounds_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+bounds_fill_in_stack_trace(REF, OUT) :- 
+	object_call(REF, fillInStackTrace, [], OUT).
+
+bounds_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+bounds_init_cause(REF, ARG0, OUT) :- 
+	object_call(REF, initCause, '.'(ARG0, []), OUT).
+
+bounds_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+bounds_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+bounds_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+bounds_get_localized_message(REF, OUT) :- 
+	object_call(REF, getLocalizedMessage, [], OUT).
+
+bounds_get_stack_trace(REF, OUT) :- 
+	object_call(REF, getStackTrace, [], OUT).
+
+bounds_get_cause(REF, OUT) :- 
+	object_call(REF, getCause, [], OUT).
+
+bounds_set_stack_trace(REF, ARG0) :- 
+	object_call(REF, setStackTrace, '.'(ARG0, []), _).
+
+bounds_add_suppressed(REF, ARG0) :- 
+	object_call(REF, addSuppressed, '.'(ARG0, []), _).
 

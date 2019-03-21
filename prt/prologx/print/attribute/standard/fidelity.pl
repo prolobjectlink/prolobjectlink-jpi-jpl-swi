@@ -22,48 +22,48 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-fidelity_fidelity_true(OUT) :- 
+fidelity_FIDELITY_TRUE(OUT) :- 
 	object_get('javax.print.attribute.standard.Fidelity', fidelity_true, OUT).
 
-fidelity_fidelity_false(OUT) :- 
+fidelity_FIDELITY_FALSE(OUT) :- 
 	object_get('javax.print.attribute.standard.Fidelity', fidelity_false, OUT).
-
-fidelity_get_name(REF, OUT) :- 
-	object_call(REF, getName, [], OUT).
-
-fidelity_get_category(REF, OUT) :- 
-	object_call(REF, getCategory, [], OUT).
 
 fidelity_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-fidelity_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
 fidelity_clone(REF, OUT) :- 
 	object_call(REF, clone, [], OUT).
-
-fidelity_get_value(REF, OUT) :- 
-	object_call(REF, getValue, [], OUT).
-
-fidelity_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-fidelity_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-fidelity_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-fidelity_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 fidelity_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-fidelity_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+fidelity_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-fidelity_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+fidelity_get_value(REF, OUT) :- 
+	object_call(REF, getValue, [], OUT).
+
+fidelity_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+fidelity_get_name(REF, OUT) :- 
+	object_call(REF, getName, [], OUT).
+
+fidelity_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+fidelity_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+fidelity_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+fidelity_get_category(REF, OUT) :- 
+	object_call(REF, getCategory, [], OUT).
+
+fidelity_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+fidelity_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 

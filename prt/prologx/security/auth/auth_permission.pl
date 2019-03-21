@@ -28,45 +28,45 @@ auth_permission(ARG0, OUT) :-
 auth_permission(ARG0, ARG1, OUT) :- 
 	object_new('javax.security.auth.AuthPermission', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-auth_permission_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-auth_permission_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-auth_permission_get_actions(REF, OUT) :- 
-	object_call(REF, getActions, [], OUT).
-
 auth_permission_implies(REF, ARG0, OUT) :- 
 	object_call(REF, implies, '.'(ARG0, []), OUT).
-
-auth_permission_new_permission_collection(REF, OUT) :- 
-	object_call(REF, newPermissionCollection, [], OUT).
-
-auth_permission_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
 
 auth_permission_get_name(REF, OUT) :- 
 	object_call(REF, getName, [], OUT).
 
-auth_permission_check_guard(REF, ARG0, OUT) :- 
-	object_call(REF, checkGuard, '.'(ARG0, []), OUT).
+auth_permission_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-auth_permission_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+auth_permission_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-auth_permission_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+auth_permission_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-auth_permission_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+auth_permission_check_guard(REF, ARG0) :- 
+	object_call(REF, checkGuard, '.'(ARG0, []), _).
+
+auth_permission_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+auth_permission_new_permission_collection(REF, OUT) :- 
+	object_call(REF, newPermissionCollection, [], OUT).
+
+auth_permission_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+auth_permission_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 auth_permission_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-auth_permission_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+auth_permission_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
-auth_permission_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+auth_permission_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+auth_permission_get_actions(REF, OUT) :- 
+	object_call(REF, getActions, [], OUT).
 

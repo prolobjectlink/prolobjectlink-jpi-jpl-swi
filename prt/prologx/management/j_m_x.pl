@@ -22,62 +22,62 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-j_m_x_default_value_field(OUT) :- 
+j_m_x_DEFAULT_VALUE_FIELD(OUT) :- 
 	object_get('javax.management.JMX', default_value_field, OUT).
 
-j_m_x_immutable_info_field(OUT) :- 
+j_m_x_IMMUTABLE_INFO_FIELD(OUT) :- 
 	object_get('javax.management.JMX', immutable_info_field, OUT).
 
-j_m_x_interface_class_name_field(OUT) :- 
+j_m_x_INTERFACE_CLASS_NAME_FIELD(OUT) :- 
 	object_get('javax.management.JMX', interface_class_name_field, OUT).
 
-j_m_x_legal_values_field(OUT) :- 
+j_m_x_LEGAL_VALUES_FIELD(OUT) :- 
 	object_get('javax.management.JMX', legal_values_field, OUT).
 
-j_m_x_max_value_field(OUT) :- 
+j_m_x_MAX_VALUE_FIELD(OUT) :- 
 	object_get('javax.management.JMX', max_value_field, OUT).
 
-j_m_x_min_value_field(OUT) :- 
+j_m_x_MIN_VALUE_FIELD(OUT) :- 
 	object_get('javax.management.JMX', min_value_field, OUT).
 
-j_m_x_mxbean_field(OUT) :- 
+j_m_x_MXBEAN_FIELD(OUT) :- 
 	object_get('javax.management.JMX', mxbean_field, OUT).
 
-j_m_x_open_type_field(OUT) :- 
+j_m_x_OPEN_TYPE_FIELD(OUT) :- 
 	object_get('javax.management.JMX', open_type_field, OUT).
 
-j_m_x_original_type_field(OUT) :- 
+j_m_x_ORIGINAL_TYPE_FIELD(OUT) :- 
 	object_get('javax.management.JMX', original_type_field, OUT).
 
-j_m_x_new_m_x_bean_proxy(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, newMXBeanProxy, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+j_m_x_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+j_m_x_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+j_m_x_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 j_m_x_new_m_x_bean_proxy(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, newMXBeanProxy, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
+j_m_x_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+j_m_x_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+j_m_x_new_m_x_bean_proxy(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_call(REF, newMXBeanProxy, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+
 j_m_x_is_m_x_bean_interface(REF, ARG0, OUT) :- 
 	object_call(REF, isMXBeanInterface, '.'(ARG0, []), OUT).
-
-j_m_x_new_m_bean_proxy(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, newMBeanProxy, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
 j_m_x_new_m_bean_proxy(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_call(REF, newMBeanProxy, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
-j_m_x_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-j_m_x_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-j_m_x_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-j_m_x_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-j_m_x_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+j_m_x_new_m_bean_proxy(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, newMBeanProxy, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
 j_m_x_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -85,9 +85,9 @@ j_m_x_hash_code(REF, OUT) :-
 j_m_x_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-j_m_x_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+j_m_x_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-j_m_x_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+j_m_x_notify(REF) :- 
+	object_call(REF, notify, [], _).
 

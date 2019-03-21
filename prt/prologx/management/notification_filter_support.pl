@@ -25,35 +25,17 @@
 notification_filter_support(OUT) :- 
 	object_new('javax.management.NotificationFilterSupport', [], OUT).
 
+notification_filter_support_disable_all_types(REF) :- 
+	object_call(REF, disableAllTypes, [], _).
+
 notification_filter_support_is_notification_enabled(REF, ARG0, OUT) :- 
 	object_call(REF, isNotificationEnabled, '.'(ARG0, []), OUT).
 
-notification_filter_support_disable_all_types(REF, OUT) :- 
-	object_call(REF, disableAllTypes, [], OUT).
+notification_filter_support_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-notification_filter_support_disable_type(REF, ARG0, OUT) :- 
-	object_call(REF, disableType, '.'(ARG0, []), OUT).
-
-notification_filter_support_enable_type(REF, ARG0, OUT) :- 
-	object_call(REF, enableType, '.'(ARG0, []), OUT).
-
-notification_filter_support_get_enabled_types(REF, OUT) :- 
-	object_call(REF, getEnabledTypes, [], OUT).
-
-notification_filter_support_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-notification_filter_support_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-notification_filter_support_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-notification_filter_support_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-notification_filter_support_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+notification_filter_support_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 notification_filter_support_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -61,9 +43,27 @@ notification_filter_support_hash_code(REF, OUT) :-
 notification_filter_support_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-notification_filter_support_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+notification_filter_support_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-notification_filter_support_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+notification_filter_support_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+notification_filter_support_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+notification_filter_support_disable_type(REF, ARG0) :- 
+	object_call(REF, disableType, '.'(ARG0, []), _).
+
+notification_filter_support_get_enabled_types(REF, OUT) :- 
+	object_call(REF, getEnabledTypes, [], OUT).
+
+notification_filter_support_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+notification_filter_support_enable_type(REF, ARG0) :- 
+	object_call(REF, enableType, '.'(ARG0, []), _).
+
+notification_filter_support_notify(REF) :- 
+	object_call(REF, notify, [], _).
 

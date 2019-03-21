@@ -22,13 +22,13 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-sort_control_oid(OUT) :- 
+sort_control_OID(OUT) :- 
 	object_get('javax.naming.ldap.SortControl', oid, OUT).
 
-sort_control_critical(OUT) :- 
+sort_control_CRITICAL(OUT) :- 
 	object_get('javax.naming.ldap.SortControl', critical, OUT).
 
-sort_control_noncritical(OUT) :- 
+sort_control_NONCRITICAL(OUT) :- 
 	object_get('javax.naming.ldap.SortControl', noncritical, OUT).
 
 sort_control(ARG0, ARG1, OUT) :- 
@@ -43,26 +43,8 @@ sort_control(ARG0, ARG1, OUT) :-
 sort_control_get_i_d(REF, OUT) :- 
 	object_call(REF, getID, [], OUT).
 
-sort_control_is_critical(REF, OUT) :- 
-	object_call(REF, isCritical, [], OUT).
-
 sort_control_get_encoded_value(REF, OUT) :- 
 	object_call(REF, getEncodedValue, [], OUT).
-
-sort_control_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-sort_control_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-sort_control_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-sort_control_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-sort_control_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
 
 sort_control_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -70,9 +52,27 @@ sort_control_hash_code(REF, OUT) :-
 sort_control_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-sort_control_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+sort_control_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-sort_control_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+sort_control_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+sort_control_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+sort_control_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+sort_control_is_critical(REF, OUT) :- 
+	object_call(REF, isCritical, [], OUT).
+
+sort_control_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+sort_control_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+sort_control_notify(REF) :- 
+	object_call(REF, notify, [], _).
 

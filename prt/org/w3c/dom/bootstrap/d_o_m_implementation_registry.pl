@@ -22,45 +22,45 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-d_o_m_implementation_registry_property(OUT) :- 
+d_o_m_implementation_registry_PROPERTY(OUT) :- 
 	object_get('org.w3c.dom.bootstrap.DOMImplementationRegistry', property, OUT).
 
-d_o_m_implementation_registry_new_instance(REF, OUT) :- 
-	object_call(REF, newInstance, [], OUT).
-
-d_o_m_implementation_registry_get_d_o_m_implementation_list(REF, ARG0, OUT) :- 
-	object_call(REF, getDOMImplementationList, '.'(ARG0, []), OUT).
-
-d_o_m_implementation_registry_add_source(REF, ARG0, OUT) :- 
-	object_call(REF, addSource, '.'(ARG0, []), OUT).
+d_o_m_implementation_registry_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 d_o_m_implementation_registry_get_d_o_m_implementation(REF, ARG0, OUT) :- 
 	object_call(REF, getDOMImplementation, '.'(ARG0, []), OUT).
 
-d_o_m_implementation_registry_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-d_o_m_implementation_registry_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-d_o_m_implementation_registry_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
 d_o_m_implementation_registry_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+d_o_m_implementation_registry_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+d_o_m_implementation_registry_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 d_o_m_implementation_registry_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-d_o_m_implementation_registry_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+d_o_m_implementation_registry_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+d_o_m_implementation_registry_get_d_o_m_implementation_list(REF, ARG0, OUT) :- 
+	object_call(REF, getDOMImplementationList, '.'(ARG0, []), OUT).
 
 d_o_m_implementation_registry_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-d_o_m_implementation_registry_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+d_o_m_implementation_registry_new_instance(REF, OUT) :- 
+	object_call(REF, newInstance, [], OUT).
 
-d_o_m_implementation_registry_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+d_o_m_implementation_registry_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+d_o_m_implementation_registry_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+d_o_m_implementation_registry_add_source(REF, ARG0) :- 
+	object_call(REF, addSource, '.'(ARG0, []), _).
 

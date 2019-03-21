@@ -22,6 +22,21 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
+cert_store_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+cert_store_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+cert_store_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+cert_store_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
+
+cert_store_get_certificates(REF, ARG0, OUT) :- 
+	object_call(REF, getCertificates, '.'(ARG0, []), OUT).
+
 cert_store_get_instance(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, getInstance, '.'(ARG0, '.'(ARG1, [])), OUT).
 
@@ -31,14 +46,8 @@ cert_store_get_instance(REF, ARG0, ARG1, ARG2, OUT) :-
 cert_store_get_instance(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, getInstance, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-cert_store_get_certificates(REF, ARG0, OUT) :- 
-	object_call(REF, getCertificates, '.'(ARG0, []), OUT).
-
-cert_store_get_type(REF, OUT) :- 
-	object_call(REF, getType, [], OUT).
-
-cert_store_get_provider(REF, OUT) :- 
-	object_call(REF, getProvider, [], OUT).
+cert_store_get_cert_store_parameters(REF, OUT) :- 
+	object_call(REF, getCertStoreParameters, [], OUT).
 
 cert_store_get_default_type(REF, OUT) :- 
 	object_call(REF, getDefaultType, [], OUT).
@@ -46,33 +55,24 @@ cert_store_get_default_type(REF, OUT) :-
 cert_store_get_c_r_ls(REF, ARG0, OUT) :- 
 	object_call(REF, getCRLs, '.'(ARG0, []), OUT).
 
-cert_store_get_cert_store_parameters(REF, OUT) :- 
-	object_call(REF, getCertStoreParameters, [], OUT).
-
-cert_store_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-cert_store_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-cert_store_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
 cert_store_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+cert_store_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+cert_store_get_provider(REF, OUT) :- 
+	object_call(REF, getProvider, [], OUT).
 
 cert_store_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-cert_store_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+cert_store_get_type(REF, OUT) :- 
+	object_call(REF, getType, [], OUT).
 
-cert_store_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
+cert_store_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-cert_store_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-cert_store_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+cert_store_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

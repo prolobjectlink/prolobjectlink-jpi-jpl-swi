@@ -22,17 +22,26 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-ssl_r_m_i_server_socket_factory(ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_new('javax.rmi.ssl.SslRMIServerSocketFactory', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+ssl_r_m_i_server_socket_factory(OUT) :- 
+	object_new('javax.rmi.ssl.SslRMIServerSocketFactory', [], OUT).
 
 ssl_r_m_i_server_socket_factory(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('javax.rmi.ssl.SslRMIServerSocketFactory', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-ssl_r_m_i_server_socket_factory(OUT) :- 
-	object_new('javax.rmi.ssl.SslRMIServerSocketFactory', [], OUT).
+ssl_r_m_i_server_socket_factory(ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_new('javax.rmi.ssl.SslRMIServerSocketFactory', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
 ssl_r_m_i_server_socket_factory_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+ssl_r_m_i_server_socket_factory_get_enabled_cipher_suites(REF, OUT) :- 
+	object_call(REF, getEnabledCipherSuites, [], OUT).
+
+ssl_r_m_i_server_socket_factory_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+ssl_r_m_i_server_socket_factory_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
 ssl_r_m_i_server_socket_factory_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -40,33 +49,24 @@ ssl_r_m_i_server_socket_factory_hash_code(REF, OUT) :-
 ssl_r_m_i_server_socket_factory_create_server_socket(REF, ARG0, OUT) :- 
 	object_call(REF, createServerSocket, '.'(ARG0, []), OUT).
 
-ssl_r_m_i_server_socket_factory_get_enabled_cipher_suites(REF, OUT) :- 
-	object_call(REF, getEnabledCipherSuites, [], OUT).
+ssl_r_m_i_server_socket_factory_get_need_client_auth(REF, OUT) :- 
+	object_call(REF, getNeedClientAuth, [], OUT).
+
+ssl_r_m_i_server_socket_factory_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+ssl_r_m_i_server_socket_factory_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+ssl_r_m_i_server_socket_factory_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 ssl_r_m_i_server_socket_factory_get_enabled_protocols(REF, OUT) :- 
 	object_call(REF, getEnabledProtocols, [], OUT).
 
-ssl_r_m_i_server_socket_factory_get_need_client_auth(REF, OUT) :- 
-	object_call(REF, getNeedClientAuth, [], OUT).
-
-ssl_r_m_i_server_socket_factory_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-ssl_r_m_i_server_socket_factory_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-ssl_r_m_i_server_socket_factory_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+ssl_r_m_i_server_socket_factory_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 ssl_r_m_i_server_socket_factory_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
-
-ssl_r_m_i_server_socket_factory_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-ssl_r_m_i_server_socket_factory_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-ssl_r_m_i_server_socket_factory_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

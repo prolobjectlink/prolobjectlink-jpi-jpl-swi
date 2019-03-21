@@ -22,32 +22,47 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-reference_uri_schemes_supported_ftp(OUT) :- 
+reference_uri_schemes_supported_FTP(OUT) :- 
 	object_get('javax.print.attribute.standard.ReferenceUriSchemesSupported', ftp, OUT).
 
-reference_uri_schemes_supported_http(OUT) :- 
+reference_uri_schemes_supported_HTTP(OUT) :- 
 	object_get('javax.print.attribute.standard.ReferenceUriSchemesSupported', http, OUT).
 
-reference_uri_schemes_supported_https(OUT) :- 
+reference_uri_schemes_supported_HTTPS(OUT) :- 
 	object_get('javax.print.attribute.standard.ReferenceUriSchemesSupported', https, OUT).
 
-reference_uri_schemes_supported_gopher(OUT) :- 
+reference_uri_schemes_supported_GOPHER(OUT) :- 
 	object_get('javax.print.attribute.standard.ReferenceUriSchemesSupported', gopher, OUT).
 
-reference_uri_schemes_supported_news(OUT) :- 
+reference_uri_schemes_supported_NEWS(OUT) :- 
 	object_get('javax.print.attribute.standard.ReferenceUriSchemesSupported', news, OUT).
 
-reference_uri_schemes_supported_nntp(OUT) :- 
+reference_uri_schemes_supported_NNTP(OUT) :- 
 	object_get('javax.print.attribute.standard.ReferenceUriSchemesSupported', nntp, OUT).
 
-reference_uri_schemes_supported_wais(OUT) :- 
+reference_uri_schemes_supported_WAIS(OUT) :- 
 	object_get('javax.print.attribute.standard.ReferenceUriSchemesSupported', wais, OUT).
 
-reference_uri_schemes_supported_file(OUT) :- 
+reference_uri_schemes_supported_FILE(OUT) :- 
 	object_get('javax.print.attribute.standard.ReferenceUriSchemesSupported', file, OUT).
 
 reference_uri_schemes_supported_get_name(REF, OUT) :- 
 	object_call(REF, getName, [], OUT).
+
+reference_uri_schemes_supported_get_value(REF, OUT) :- 
+	object_call(REF, getValue, [], OUT).
+
+reference_uri_schemes_supported_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+reference_uri_schemes_supported_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+reference_uri_schemes_supported_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+reference_uri_schemes_supported_clone(REF, OUT) :- 
+	object_call(REF, clone, [], OUT).
 
 reference_uri_schemes_supported_get_category(REF, OUT) :- 
 	object_call(REF, getCategory, [], OUT).
@@ -55,33 +70,18 @@ reference_uri_schemes_supported_get_category(REF, OUT) :-
 reference_uri_schemes_supported_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-reference_uri_schemes_supported_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-reference_uri_schemes_supported_clone(REF, OUT) :- 
-	object_call(REF, clone, [], OUT).
-
-reference_uri_schemes_supported_get_value(REF, OUT) :- 
-	object_call(REF, getValue, [], OUT).
-
-reference_uri_schemes_supported_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-reference_uri_schemes_supported_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-reference_uri_schemes_supported_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+reference_uri_schemes_supported_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
 reference_uri_schemes_supported_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-reference_uri_schemes_supported_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
+reference_uri_schemes_supported_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
-reference_uri_schemes_supported_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+reference_uri_schemes_supported_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-reference_uri_schemes_supported_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+reference_uri_schemes_supported_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 

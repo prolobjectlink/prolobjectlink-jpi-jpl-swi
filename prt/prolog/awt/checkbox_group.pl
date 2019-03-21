@@ -25,42 +25,42 @@
 checkbox_group(OUT) :- 
 	object_new('java.awt.CheckboxGroup', [], OUT).
 
-checkbox_group_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-checkbox_group_get_selected_checkbox(REF, OUT) :- 
-	object_call(REF, getSelectedCheckbox, [], OUT).
-
-checkbox_group_set_selected_checkbox(REF, ARG0, OUT) :- 
-	object_call(REF, setSelectedCheckbox, '.'(ARG0, []), OUT).
-
 checkbox_group_get_current(REF, OUT) :- 
 	object_call(REF, getCurrent, [], OUT).
 
-checkbox_group_set_current(REF, ARG0, OUT) :- 
-	object_call(REF, setCurrent, '.'(ARG0, []), OUT).
-
-checkbox_group_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-checkbox_group_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-checkbox_group_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-checkbox_group_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+checkbox_group_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 checkbox_group_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+checkbox_group_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+checkbox_group_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
 checkbox_group_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-checkbox_group_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+checkbox_group_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-checkbox_group_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+checkbox_group_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+checkbox_group_get_selected_checkbox(REF, OUT) :- 
+	object_call(REF, getSelectedCheckbox, [], OUT).
+
+checkbox_group_set_current(REF, ARG0) :- 
+	object_call(REF, setCurrent, '.'(ARG0, []), _).
+
+checkbox_group_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+checkbox_group_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+checkbox_group_set_selected_checkbox(REF, ARG0) :- 
+	object_call(REF, setSelectedCheckbox, '.'(ARG0, []), _).
 

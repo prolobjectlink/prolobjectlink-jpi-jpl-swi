@@ -22,57 +22,57 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-notification_broadcaster_support(ARG0, ARG1, OUT) :- 
-	object_new('javax.management.NotificationBroadcasterSupport', '.'(ARG0, '.'(ARG1, [])), OUT).
-
-notification_broadcaster_support(ARG0, OUT) :- 
-	object_new('javax.management.NotificationBroadcasterSupport', '.'(ARG0, []), OUT).
-
-notification_broadcaster_support(ARG0, OUT) :- 
-	object_new('javax.management.NotificationBroadcasterSupport', '.'(ARG0, []), OUT).
-
 notification_broadcaster_support(OUT) :- 
 	object_new('javax.management.NotificationBroadcasterSupport', [], OUT).
 
-notification_broadcaster_support_add_notification_listener(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, addNotificationListener, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+notification_broadcaster_support(ARG0, OUT) :- 
+	object_new('javax.management.NotificationBroadcasterSupport', '.'(ARG0, []), OUT).
 
-notification_broadcaster_support_remove_notification_listener(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, removeNotificationListener, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+notification_broadcaster_support(ARG0, OUT) :- 
+	object_new('javax.management.NotificationBroadcasterSupport', '.'(ARG0, []), OUT).
 
-notification_broadcaster_support_remove_notification_listener(REF, ARG0, OUT) :- 
-	object_call(REF, removeNotificationListener, '.'(ARG0, []), OUT).
-
-notification_broadcaster_support_get_notification_info(REF, OUT) :- 
-	object_call(REF, getNotificationInfo, [], OUT).
-
-notification_broadcaster_support_send_notification(REF, ARG0, OUT) :- 
-	object_call(REF, sendNotification, '.'(ARG0, []), OUT).
-
-notification_broadcaster_support_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-notification_broadcaster_support_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-notification_broadcaster_support_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+notification_broadcaster_support(ARG0, ARG1, OUT) :- 
+	object_new('javax.management.NotificationBroadcasterSupport', '.'(ARG0, '.'(ARG1, [])), OUT).
 
 notification_broadcaster_support_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-notification_broadcaster_support_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+notification_broadcaster_support_remove_notification_listener(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, removeNotificationListener, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
 
-notification_broadcaster_support_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+notification_broadcaster_support_add_notification_listener(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, addNotificationListener, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
 
 notification_broadcaster_support_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-notification_broadcaster_support_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+notification_broadcaster_support_remove_notification_listener(REF, ARG0) :- 
+	object_call(REF, removeNotificationListener, '.'(ARG0, []), _).
 
-notification_broadcaster_support_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+notification_broadcaster_support_send_notification(REF, ARG0) :- 
+	object_call(REF, sendNotification, '.'(ARG0, []), _).
+
+notification_broadcaster_support_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+notification_broadcaster_support_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+notification_broadcaster_support_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+notification_broadcaster_support_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+notification_broadcaster_support_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+notification_broadcaster_support_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+notification_broadcaster_support_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+notification_broadcaster_support_get_notification_info(REF, OUT) :- 
+	object_call(REF, getNotificationInfo, [], OUT).
 

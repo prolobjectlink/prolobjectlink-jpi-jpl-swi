@@ -25,17 +25,17 @@
 long_summary_statistics(OUT) :- 
 	object_new('java.util.LongSummaryStatistics', [], OUT).
 
-long_summary_statistics_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+long_summary_statistics_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-long_summary_statistics_accept(REF, ARG0, OUT) :- 
-	object_call(REF, accept, '.'(ARG0, []), OUT).
+long_summary_statistics_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-long_summary_statistics_accept(REF, ARG0, OUT) :- 
-	object_call(REF, accept, '.'(ARG0, []), OUT).
+long_summary_statistics_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
-long_summary_statistics_combine(REF, ARG0, OUT) :- 
-	object_call(REF, combine, '.'(ARG0, []), OUT).
+long_summary_statistics_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 long_summary_statistics_get_count(REF, OUT) :- 
 	object_call(REF, getCount, [], OUT).
@@ -43,42 +43,42 @@ long_summary_statistics_get_count(REF, OUT) :-
 long_summary_statistics_get_max(REF, OUT) :- 
 	object_call(REF, getMax, [], OUT).
 
-long_summary_statistics_get_average(REF, OUT) :- 
-	object_call(REF, getAverage, [], OUT).
+long_summary_statistics_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-long_summary_statistics_get_min(REF, OUT) :- 
-	object_call(REF, getMin, [], OUT).
+long_summary_statistics_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-long_summary_statistics_get_sum(REF, OUT) :- 
-	object_call(REF, getSum, [], OUT).
-
-long_summary_statistics_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-long_summary_statistics_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-long_summary_statistics_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+long_summary_statistics_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 long_summary_statistics_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-long_summary_statistics_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+long_summary_statistics_combine(REF, ARG0) :- 
+	object_call(REF, combine, '.'(ARG0, []), _).
+
+long_summary_statistics_get_min(REF, OUT) :- 
+	object_call(REF, getMin, [], OUT).
+
+long_summary_statistics_and_then(REF, ARG0, OUT) :- 
+	object_call(REF, andThen, '.'(ARG0, []), OUT).
+
+long_summary_statistics_and_then(REF, ARG0, OUT) :- 
+	object_call(REF, andThen, '.'(ARG0, []), OUT).
+
+long_summary_statistics_get_sum(REF, OUT) :- 
+	object_call(REF, getSum, [], OUT).
+
+long_summary_statistics_get_average(REF, OUT) :- 
+	object_call(REF, getAverage, [], OUT).
+
+long_summary_statistics_accept(REF, ARG0) :- 
+	object_call(REF, accept, '.'(ARG0, []), _).
+
+long_summary_statistics_accept(REF, ARG0) :- 
+	object_call(REF, accept, '.'(ARG0, []), _).
 
 long_summary_statistics_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-long_summary_statistics_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-long_summary_statistics_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
-
-long_summary_statistics_and_then(REF, ARG0, OUT) :- 
-	object_call(REF, andThen, '.'(ARG0, []), OUT).
-
-long_summary_statistics_and_then(REF, ARG0, OUT) :- 
-	object_call(REF, andThen, '.'(ARG0, []), OUT).
 

@@ -28,45 +28,45 @@ net_permission(ARG0, OUT) :-
 net_permission(ARG0, ARG1, OUT) :- 
 	object_new('java.net.NetPermission', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-net_permission_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
 net_permission_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
-
-net_permission_get_actions(REF, OUT) :- 
-	object_call(REF, getActions, [], OUT).
-
-net_permission_implies(REF, ARG0, OUT) :- 
-	object_call(REF, implies, '.'(ARG0, []), OUT).
-
-net_permission_new_permission_collection(REF, OUT) :- 
-	object_call(REF, newPermissionCollection, [], OUT).
-
-net_permission_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-net_permission_get_name(REF, OUT) :- 
-	object_call(REF, getName, [], OUT).
-
-net_permission_check_guard(REF, ARG0, OUT) :- 
-	object_call(REF, checkGuard, '.'(ARG0, []), OUT).
-
-net_permission_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-net_permission_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-net_permission_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
 
 net_permission_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-net_permission_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+net_permission_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-net_permission_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+net_permission_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+net_permission_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+net_permission_check_guard(REF, ARG0) :- 
+	object_call(REF, checkGuard, '.'(ARG0, []), _).
+
+net_permission_implies(REF, ARG0, OUT) :- 
+	object_call(REF, implies, '.'(ARG0, []), OUT).
+
+net_permission_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+net_permission_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+net_permission_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+net_permission_get_actions(REF, OUT) :- 
+	object_call(REF, getActions, [], OUT).
+
+net_permission_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+net_permission_get_name(REF, OUT) :- 
+	object_call(REF, getName, [], OUT).
+
+net_permission_new_permission_collection(REF, OUT) :- 
+	object_call(REF, newPermissionCollection, [], OUT).
 

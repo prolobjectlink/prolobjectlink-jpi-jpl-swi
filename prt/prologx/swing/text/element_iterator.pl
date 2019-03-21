@@ -28,48 +28,48 @@ element_iterator(ARG0, OUT) :-
 element_iterator(ARG0, OUT) :- 
 	object_new('javax.swing.text.ElementIterator', '.'(ARG0, []), OUT).
 
-element_iterator_clone(REF, OUT) :- 
-	object_call(REF, clone, [], OUT).
-
-element_iterator_next(REF, OUT) :- 
-	object_call(REF, next, [], OUT).
-
-element_iterator_first(REF, OUT) :- 
-	object_call(REF, first, [], OUT).
-
-element_iterator_previous(REF, OUT) :- 
-	object_call(REF, previous, [], OUT).
-
 element_iterator_current(REF, OUT) :- 
 	object_call(REF, current, [], OUT).
 
 element_iterator_depth(REF, OUT) :- 
 	object_call(REF, depth, [], OUT).
 
-element_iterator_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-element_iterator_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-element_iterator_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-element_iterator_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+element_iterator_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 element_iterator_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
+element_iterator_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+element_iterator_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+element_iterator_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+element_iterator_first(REF, OUT) :- 
+	object_call(REF, first, [], OUT).
+
+element_iterator_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+element_iterator_next(REF, OUT) :- 
+	object_call(REF, next, [], OUT).
+
+element_iterator_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
 element_iterator_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
+
+element_iterator_previous(REF, OUT) :- 
+	object_call(REF, previous, [], OUT).
 
 element_iterator_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-element_iterator_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-element_iterator_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+element_iterator_clone(REF, OUT) :- 
+	object_call(REF, clone, [], OUT).
 

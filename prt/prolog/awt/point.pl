@@ -31,78 +31,78 @@ point(ARG0, OUT) :-
 point(OUT) :- 
 	object_new('java.awt.Point', [], OUT).
 
-point_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-point_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-point_get_location(REF, OUT) :- 
-	object_call(REF, getLocation, [], OUT).
-
-point_move(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, move, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-point_get_x(REF, OUT) :- 
-	object_call(REF, getX, [], OUT).
-
-point_get_y(REF, OUT) :- 
-	object_call(REF, getY, [], OUT).
-
-point_set_location(REF, ARG0, OUT) :- 
-	object_call(REF, setLocation, '.'(ARG0, []), OUT).
-
-point_set_location(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, setLocation, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-point_set_location(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, setLocation, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-point_translate(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, translate, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-point_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+point_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 point_clone(REF, OUT) :- 
 	object_call(REF, clone, [], OUT).
 
-point_distance(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, distance, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-point_distance(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, distance, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
-point_distance(REF, ARG0, OUT) :- 
-	object_call(REF, distance, '.'(ARG0, []), OUT).
-
-point_distance_sq(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, distanceSq, '.'(ARG0, '.'(ARG1, [])), OUT).
+point_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
 point_distance_sq(REF, ARG0, OUT) :- 
 	object_call(REF, distanceSq, '.'(ARG0, []), OUT).
 
+point_distance_sq(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, distanceSq, '.'(ARG0, '.'(ARG1, [])), OUT).
+
 point_distance_sq(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_call(REF, distanceSq, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
-point_set_location(REF, ARG0, OUT) :- 
-	object_call(REF, setLocation, '.'(ARG0, []), OUT).
+point_get_y(REF, OUT) :- 
+	object_call(REF, getY, [], OUT).
 
-point_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+point_translate(REF, ARG0, ARG1) :- 
+	object_call(REF, translate, '.'(ARG0, '.'(ARG1, [])), _).
 
-point_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+point_distance(REF, ARG0, OUT) :- 
+	object_call(REF, distance, '.'(ARG0, []), OUT).
 
-point_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+point_get_x(REF, OUT) :- 
+	object_call(REF, getX, [], OUT).
+
+point_distance(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, distance, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+point_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
 point_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-point_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+point_move(REF, ARG0, ARG1) :- 
+	object_call(REF, move, '.'(ARG0, '.'(ARG1, [])), _).
 
-point_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+point_get_location(REF, OUT) :- 
+	object_call(REF, getLocation, [], OUT).
+
+point_set_location(REF, ARG0, ARG1) :- 
+	object_call(REF, setLocation, '.'(ARG0, '.'(ARG1, [])), _).
+
+point_set_location(REF, ARG0, ARG1) :- 
+	object_call(REF, setLocation, '.'(ARG0, '.'(ARG1, [])), _).
+
+point_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+point_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+point_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+point_distance(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_call(REF, distance, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+
+point_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+point_set_location(REF, ARG0) :- 
+	object_call(REF, setLocation, '.'(ARG0, []), _).
+
+point_set_location(REF, ARG0) :- 
+	object_call(REF, setLocation, '.'(ARG0, []), _).
+
+point_wait(REF) :- 
+	object_call(REF, wait, [], _).
 

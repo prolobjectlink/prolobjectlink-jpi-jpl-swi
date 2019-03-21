@@ -22,71 +22,47 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-inet6_address_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-inet6_address_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-inet6_address_get_address(REF, OUT) :- 
-	object_call(REF, getAddress, [], OUT).
-
-inet6_address_get_host_address(REF, OUT) :- 
-	object_call(REF, getHostAddress, [], OUT).
-
-inet6_address_get_by_address(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, getByAddress, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-inet6_address_get_by_address(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, getByAddress, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-inet6_address_is_any_local_address(REF, OUT) :- 
-	object_call(REF, isAnyLocalAddress, [], OUT).
-
-inet6_address_is_link_local_address(REF, OUT) :- 
-	object_call(REF, isLinkLocalAddress, [], OUT).
-
-inet6_address_is_loopback_address(REF, OUT) :- 
-	object_call(REF, isLoopbackAddress, [], OUT).
-
-inet6_address_is_m_c_global(REF, OUT) :- 
-	object_call(REF, isMCGlobal, [], OUT).
-
-inet6_address_is_m_c_link_local(REF, OUT) :- 
-	object_call(REF, isMCLinkLocal, [], OUT).
-
-inet6_address_is_m_c_node_local(REF, OUT) :- 
-	object_call(REF, isMCNodeLocal, [], OUT).
-
-inet6_address_is_m_c_org_local(REF, OUT) :- 
-	object_call(REF, isMCOrgLocal, [], OUT).
-
 inet6_address_is_m_c_site_local(REF, OUT) :- 
 	object_call(REF, isMCSiteLocal, [], OUT).
 
 inet6_address_is_multicast_address(REF, OUT) :- 
 	object_call(REF, isMulticastAddress, [], OUT).
 
-inet6_address_is_site_local_address(REF, OUT) :- 
-	object_call(REF, isSiteLocalAddress, [], OUT).
+inet6_address_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+inet6_address_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+inet6_address_is_m_c_org_local(REF, OUT) :- 
+	object_call(REF, isMCOrgLocal, [], OUT).
+
+inet6_address_is_m_c_link_local(REF, OUT) :- 
+	object_call(REF, isMCLinkLocal, [], OUT).
+
+inet6_address_get_by_name(REF, ARG0, OUT) :- 
+	object_call(REF, getByName, '.'(ARG0, []), OUT).
+
+inet6_address_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+inet6_address_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+inet6_address_is_link_local_address(REF, OUT) :- 
+	object_call(REF, isLinkLocalAddress, [], OUT).
 
 inet6_address_get_scope_id(REF, OUT) :- 
 	object_call(REF, getScopeId, [], OUT).
 
-inet6_address_get_scoped_interface(REF, OUT) :- 
-	object_call(REF, getScopedInterface, [], OUT).
+inet6_address_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
-inet6_address_is_i_pv4_compatible_address(REF, OUT) :- 
-	object_call(REF, isIPv4CompatibleAddress, [], OUT).
+inet6_address_get_canonical_host_name(REF, OUT) :- 
+	object_call(REF, getCanonicalHostName, [], OUT).
 
-inet6_address_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-inet6_address_get_host_name(REF, OUT) :- 
-	object_call(REF, getHostName, [], OUT).
-
-inet6_address_get_by_name(REF, ARG0, OUT) :- 
-	object_call(REF, getByName, '.'(ARG0, []), OUT).
+inet6_address_is_m_c_node_local(REF, OUT) :- 
+	object_call(REF, isMCNodeLocal, [], OUT).
 
 inet6_address_get_all_by_name(REF, ARG0, OUT) :- 
 	object_call(REF, getAllByName, '.'(ARG0, []), OUT).
@@ -97,36 +73,60 @@ inet6_address_get_by_address(REF, ARG0, OUT) :-
 inet6_address_get_by_address(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, getByAddress, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-inet6_address_get_canonical_host_name(REF, OUT) :- 
-	object_call(REF, getCanonicalHostName, [], OUT).
-
 inet6_address_get_local_host(REF, OUT) :- 
 	object_call(REF, getLocalHost, [], OUT).
+
+inet6_address_get_by_address(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, getByAddress, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+inet6_address_get_by_address(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, getByAddress, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+inet6_address_is_loopback_address(REF, OUT) :- 
+	object_call(REF, isLoopbackAddress, [], OUT).
+
+inet6_address_is_m_c_global(REF, OUT) :- 
+	object_call(REF, isMCGlobal, [], OUT).
+
+inet6_address_get_address(REF, OUT) :- 
+	object_call(REF, getAddress, [], OUT).
 
 inet6_address_get_loopback_address(REF, OUT) :- 
 	object_call(REF, getLoopbackAddress, [], OUT).
 
-inet6_address_is_reachable(REF, ARG0, OUT) :- 
-	object_call(REF, isReachable, '.'(ARG0, []), OUT).
+inet6_address_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-inet6_address_is_reachable(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, isReachable, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+inet6_address_is_site_local_address(REF, OUT) :- 
+	object_call(REF, isSiteLocalAddress, [], OUT).
 
-inet6_address_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+inet6_address_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-inet6_address_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+inet6_address_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-inet6_address_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+inet6_address_get_host_name(REF, OUT) :- 
+	object_call(REF, getHostName, [], OUT).
+
+inet6_address_is_any_local_address(REF, OUT) :- 
+	object_call(REF, isAnyLocalAddress, [], OUT).
+
+inet6_address_get_scoped_interface(REF, OUT) :- 
+	object_call(REF, getScopedInterface, [], OUT).
 
 inet6_address_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-inet6_address_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+inet6_address_is_i_pv4_compatible_address(REF, OUT) :- 
+	object_call(REF, isIPv4CompatibleAddress, [], OUT).
 
-inet6_address_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+inet6_address_is_reachable(REF, ARG0, OUT) :- 
+	object_call(REF, isReachable, '.'(ARG0, []), OUT).
+
+inet6_address_get_host_address(REF, OUT) :- 
+	object_call(REF, getHostAddress, [], OUT).
+
+inet6_address_is_reachable(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, isReachable, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 

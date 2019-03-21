@@ -22,59 +22,83 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-finishings_none(OUT) :- 
+finishings_NONE(OUT) :- 
 	object_get('javax.print.attribute.standard.Finishings', none, OUT).
 
-finishings_staple(OUT) :- 
+finishings_STAPLE(OUT) :- 
 	object_get('javax.print.attribute.standard.Finishings', staple, OUT).
 
-finishings_cover(OUT) :- 
+finishings_COVER(OUT) :- 
 	object_get('javax.print.attribute.standard.Finishings', cover, OUT).
 
-finishings_bind(OUT) :- 
+finishings_BIND(OUT) :- 
 	object_get('javax.print.attribute.standard.Finishings', bind, OUT).
 
-finishings_saddle_stitch(OUT) :- 
+finishings_SADDLE_STITCH(OUT) :- 
 	object_get('javax.print.attribute.standard.Finishings', saddle_stitch, OUT).
 
-finishings_edge_stitch(OUT) :- 
+finishings_EDGE_STITCH(OUT) :- 
 	object_get('javax.print.attribute.standard.Finishings', edge_stitch, OUT).
 
-finishings_staple_top_left(OUT) :- 
+finishings_STAPLE_TOP_LEFT(OUT) :- 
 	object_get('javax.print.attribute.standard.Finishings', staple_top_left, OUT).
 
-finishings_staple_bottom_left(OUT) :- 
+finishings_STAPLE_BOTTOM_LEFT(OUT) :- 
 	object_get('javax.print.attribute.standard.Finishings', staple_bottom_left, OUT).
 
-finishings_staple_top_right(OUT) :- 
+finishings_STAPLE_TOP_RIGHT(OUT) :- 
 	object_get('javax.print.attribute.standard.Finishings', staple_top_right, OUT).
 
-finishings_staple_bottom_right(OUT) :- 
+finishings_STAPLE_BOTTOM_RIGHT(OUT) :- 
 	object_get('javax.print.attribute.standard.Finishings', staple_bottom_right, OUT).
 
-finishings_edge_stitch_left(OUT) :- 
+finishings_EDGE_STITCH_LEFT(OUT) :- 
 	object_get('javax.print.attribute.standard.Finishings', edge_stitch_left, OUT).
 
-finishings_edge_stitch_top(OUT) :- 
+finishings_EDGE_STITCH_TOP(OUT) :- 
 	object_get('javax.print.attribute.standard.Finishings', edge_stitch_top, OUT).
 
-finishings_edge_stitch_right(OUT) :- 
+finishings_EDGE_STITCH_RIGHT(OUT) :- 
 	object_get('javax.print.attribute.standard.Finishings', edge_stitch_right, OUT).
 
-finishings_edge_stitch_bottom(OUT) :- 
+finishings_EDGE_STITCH_BOTTOM(OUT) :- 
 	object_get('javax.print.attribute.standard.Finishings', edge_stitch_bottom, OUT).
 
-finishings_staple_dual_left(OUT) :- 
+finishings_STAPLE_DUAL_LEFT(OUT) :- 
 	object_get('javax.print.attribute.standard.Finishings', staple_dual_left, OUT).
 
-finishings_staple_dual_top(OUT) :- 
+finishings_STAPLE_DUAL_TOP(OUT) :- 
 	object_get('javax.print.attribute.standard.Finishings', staple_dual_top, OUT).
 
-finishings_staple_dual_right(OUT) :- 
+finishings_STAPLE_DUAL_RIGHT(OUT) :- 
 	object_get('javax.print.attribute.standard.Finishings', staple_dual_right, OUT).
 
-finishings_staple_dual_bottom(OUT) :- 
+finishings_STAPLE_DUAL_BOTTOM(OUT) :- 
 	object_get('javax.print.attribute.standard.Finishings', staple_dual_bottom, OUT).
+
+finishings_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+finishings_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+finishings_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+finishings_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+finishings_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+finishings_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+finishings_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+finishings_clone(REF, OUT) :- 
+	object_call(REF, clone, [], OUT).
 
 finishings_get_name(REF, OUT) :- 
 	object_call(REF, getName, [], OUT).
@@ -82,36 +106,12 @@ finishings_get_name(REF, OUT) :-
 finishings_get_category(REF, OUT) :- 
 	object_call(REF, getCategory, [], OUT).
 
-finishings_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-finishings_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-finishings_clone(REF, OUT) :- 
-	object_call(REF, clone, [], OUT).
-
 finishings_get_value(REF, OUT) :- 
 	object_call(REF, getValue, [], OUT).
-
-finishings_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-finishings_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-finishings_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-finishings_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 finishings_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-finishings_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-finishings_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+finishings_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 

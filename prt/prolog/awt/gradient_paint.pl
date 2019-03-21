@@ -22,29 +22,35 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-gradient_paint_opaque(OUT) :- 
+gradient_paint_OPAQUE(OUT) :- 
 	object_get('java.awt.GradientPaint', opaque, OUT).
 
-gradient_paint_bitmask(OUT) :- 
+gradient_paint_BITMASK(OUT) :- 
 	object_get('java.awt.GradientPaint', bitmask, OUT).
 
-gradient_paint_translucent(OUT) :- 
+gradient_paint_TRANSLUCENT(OUT) :- 
 	object_get('java.awt.GradientPaint', translucent, OUT).
-
-gradient_paint(ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
-	object_new('java.awt.GradientPaint', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
-
-gradient_paint(ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, ARG6, OUT) :- 
-	object_new('java.awt.GradientPaint', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, '.'(ARG6, []))))))), OUT).
 
 gradient_paint(ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_new('java.awt.GradientPaint', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
+gradient_paint(ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
+	object_new('java.awt.GradientPaint', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
+
 gradient_paint(ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, OUT) :- 
 	object_new('java.awt.GradientPaint', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), OUT).
 
-gradient_paint_get_transparency(REF, OUT) :- 
-	object_call(REF, getTransparency, [], OUT).
+gradient_paint(ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, ARG6, OUT) :- 
+	object_new('java.awt.GradientPaint', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, '.'(ARG6, []))))))), OUT).
+
+gradient_paint_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+gradient_paint_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+gradient_paint_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
 gradient_paint_create_context(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
 	object_call(REF, createContext, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
@@ -55,39 +61,33 @@ gradient_paint_get_color1(REF, OUT) :-
 gradient_paint_get_color2(REF, OUT) :- 
 	object_call(REF, getColor2, [], OUT).
 
-gradient_paint_get_point1(REF, OUT) :- 
-	object_call(REF, getPoint1, [], OUT).
-
-gradient_paint_get_point2(REF, OUT) :- 
-	object_call(REF, getPoint2, [], OUT).
-
 gradient_paint_is_cyclic(REF, OUT) :- 
 	object_call(REF, isCyclic, [], OUT).
-
-gradient_paint_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-gradient_paint_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-gradient_paint_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
 
 gradient_paint_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-gradient_paint_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+gradient_paint_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-gradient_paint_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+gradient_paint_get_point1(REF, OUT) :- 
+	object_call(REF, getPoint1, [], OUT).
+
+gradient_paint_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+gradient_paint_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 gradient_paint_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-gradient_paint_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+gradient_paint_get_transparency(REF, OUT) :- 
+	object_call(REF, getTransparency, [], OUT).
 
-gradient_paint_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+gradient_paint_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+gradient_paint_get_point2(REF, OUT) :- 
+	object_call(REF, getPoint2, [], OUT).
 

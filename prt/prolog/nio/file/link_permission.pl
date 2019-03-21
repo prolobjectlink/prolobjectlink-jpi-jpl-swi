@@ -22,51 +22,51 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-link_permission(ARG0, OUT) :- 
-	object_new('java.nio.file.LinkPermission', '.'(ARG0, []), OUT).
-
 link_permission(ARG0, ARG1, OUT) :- 
 	object_new('java.nio.file.LinkPermission', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-link_permission_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-link_permission_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+link_permission(ARG0, OUT) :- 
+	object_new('java.nio.file.LinkPermission', '.'(ARG0, []), OUT).
 
 link_permission_get_actions(REF, OUT) :- 
 	object_call(REF, getActions, [], OUT).
 
+link_permission_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
 link_permission_implies(REF, ARG0, OUT) :- 
 	object_call(REF, implies, '.'(ARG0, []), OUT).
 
-link_permission_new_permission_collection(REF, OUT) :- 
-	object_call(REF, newPermissionCollection, [], OUT).
+link_permission_check_guard(REF, ARG0) :- 
+	object_call(REF, checkGuard, '.'(ARG0, []), _).
 
-link_permission_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+link_permission_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+link_permission_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 link_permission_get_name(REF, OUT) :- 
 	object_call(REF, getName, [], OUT).
 
-link_permission_check_guard(REF, ARG0, OUT) :- 
-	object_call(REF, checkGuard, '.'(ARG0, []), OUT).
+link_permission_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-link_permission_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+link_permission_new_permission_collection(REF, OUT) :- 
+	object_call(REF, newPermissionCollection, [], OUT).
 
-link_permission_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+link_permission_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-link_permission_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+link_permission_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+link_permission_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+link_permission_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
 link_permission_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-link_permission_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-link_permission_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

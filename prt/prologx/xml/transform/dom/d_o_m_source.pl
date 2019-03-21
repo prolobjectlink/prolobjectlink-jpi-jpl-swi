@@ -22,54 +22,54 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-d_o_m_source_feature(OUT) :- 
+d_o_m_source_FEATURE(OUT) :- 
 	object_get('javax.xml.transform.dom.DOMSource', feature, OUT).
-
-d_o_m_source(ARG0, ARG1, OUT) :- 
-	object_new('javax.xml.transform.dom.DOMSource', '.'(ARG0, '.'(ARG1, [])), OUT).
-
-d_o_m_source(ARG0, OUT) :- 
-	object_new('javax.xml.transform.dom.DOMSource', '.'(ARG0, []), OUT).
 
 d_o_m_source(OUT) :- 
 	object_new('javax.xml.transform.dom.DOMSource', [], OUT).
 
-d_o_m_source_get_node(REF, OUT) :- 
-	object_call(REF, getNode, [], OUT).
+d_o_m_source(ARG0, OUT) :- 
+	object_new('javax.xml.transform.dom.DOMSource', '.'(ARG0, []), OUT).
 
-d_o_m_source_set_node(REF, ARG0, OUT) :- 
-	object_call(REF, setNode, '.'(ARG0, []), OUT).
-
-d_o_m_source_get_system_id(REF, OUT) :- 
-	object_call(REF, getSystemId, [], OUT).
-
-d_o_m_source_set_system_id(REF, ARG0, OUT) :- 
-	object_call(REF, setSystemId, '.'(ARG0, []), OUT).
-
-d_o_m_source_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-d_o_m_source_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-d_o_m_source_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-d_o_m_source_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-d_o_m_source_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-d_o_m_source_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+d_o_m_source(ARG0, ARG1, OUT) :- 
+	object_new('javax.xml.transform.dom.DOMSource', '.'(ARG0, '.'(ARG1, [])), OUT).
 
 d_o_m_source_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-d_o_m_source_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+d_o_m_source_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
-d_o_m_source_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+d_o_m_source_set_system_id(REF, ARG0) :- 
+	object_call(REF, setSystemId, '.'(ARG0, []), _).
+
+d_o_m_source_get_system_id(REF, OUT) :- 
+	object_call(REF, getSystemId, [], OUT).
+
+d_o_m_source_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+d_o_m_source_set_node(REF, ARG0) :- 
+	object_call(REF, setNode, '.'(ARG0, []), _).
+
+d_o_m_source_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+d_o_m_source_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+d_o_m_source_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+d_o_m_source_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+d_o_m_source_get_node(REF, OUT) :- 
+	object_call(REF, getNode, [], OUT).
+
+d_o_m_source_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+d_o_m_source_notify(REF) :- 
+	object_call(REF, notify, [], _).
 

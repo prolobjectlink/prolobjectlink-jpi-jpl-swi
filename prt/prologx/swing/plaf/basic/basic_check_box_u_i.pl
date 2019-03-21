@@ -25,78 +25,78 @@
 basic_check_box_u_i(OUT) :- 
 	object_new('javax.swing.plaf.basic.BasicCheckBoxUI', [], OUT).
 
-basic_check_box_u_i_create_u_i(REF, ARG0, OUT) :- 
-	object_call(REF, createUI, '.'(ARG0, []), OUT).
-
 basic_check_box_u_i_get_property_prefix(REF, OUT) :- 
 	object_call(REF, getPropertyPrefix, [], OUT).
-
-basic_check_box_u_i_get_preferred_size(REF, ARG0, OUT) :- 
-	object_call(REF, getPreferredSize, '.'(ARG0, []), OUT).
-
-basic_check_box_u_i_paint(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, paint, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-basic_check_box_u_i_get_default_icon(REF, OUT) :- 
-	object_call(REF, getDefaultIcon, [], OUT).
-
-basic_check_box_u_i_get_baseline(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, getBaseline, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-basic_check_box_u_i_get_baseline_resize_behavior(REF, ARG0, OUT) :- 
-	object_call(REF, getBaselineResizeBehavior, '.'(ARG0, []), OUT).
-
-basic_check_box_u_i_install_u_i(REF, ARG0, OUT) :- 
-	object_call(REF, installUI, '.'(ARG0, []), OUT).
-
-basic_check_box_u_i_uninstall_u_i(REF, ARG0, OUT) :- 
-	object_call(REF, uninstallUI, '.'(ARG0, []), OUT).
-
-basic_check_box_u_i_get_maximum_size(REF, ARG0, OUT) :- 
-	object_call(REF, getMaximumSize, '.'(ARG0, []), OUT).
-
-basic_check_box_u_i_get_minimum_size(REF, ARG0, OUT) :- 
-	object_call(REF, getMinimumSize, '.'(ARG0, []), OUT).
 
 basic_check_box_u_i_get_default_text_icon_gap(REF, ARG0, OUT) :- 
 	object_call(REF, getDefaultTextIconGap, '.'(ARG0, []), OUT).
 
-basic_check_box_u_i_update(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, update, '.'(ARG0, '.'(ARG1, [])), OUT).
+basic_check_box_u_i_install_u_i(REF, ARG0) :- 
+	object_call(REF, installUI, '.'(ARG0, []), _).
 
-basic_check_box_u_i_contains(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, contains, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+basic_check_box_u_i_get_maximum_size(REF, ARG0, OUT) :- 
+	object_call(REF, getMaximumSize, '.'(ARG0, []), OUT).
 
-basic_check_box_u_i_get_accessible_child(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getAccessibleChild, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-basic_check_box_u_i_get_accessible_children_count(REF, ARG0, OUT) :- 
-	object_call(REF, getAccessibleChildrenCount, '.'(ARG0, []), OUT).
-
-basic_check_box_u_i_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-basic_check_box_u_i_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-basic_check_box_u_i_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-basic_check_box_u_i_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+basic_check_box_u_i_update(REF, ARG0, ARG1) :- 
+	object_call(REF, update, '.'(ARG0, '.'(ARG1, [])), _).
 
 basic_check_box_u_i_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
+basic_check_box_u_i_get_accessible_children_count(REF, ARG0, OUT) :- 
+	object_call(REF, getAccessibleChildrenCount, '.'(ARG0, []), OUT).
+
+basic_check_box_u_i_create_u_i(REF, ARG0, OUT) :- 
+	object_call(REF, createUI, '.'(ARG0, []), OUT).
+
+basic_check_box_u_i_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+basic_check_box_u_i_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
 basic_check_box_u_i_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
+
+basic_check_box_u_i_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+basic_check_box_u_i_get_preferred_size(REF, ARG0, OUT) :- 
+	object_call(REF, getPreferredSize, '.'(ARG0, []), OUT).
+
+basic_check_box_u_i_get_accessible_child(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getAccessibleChild, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+basic_check_box_u_i_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+basic_check_box_u_i_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+basic_check_box_u_i_get_minimum_size(REF, ARG0, OUT) :- 
+	object_call(REF, getMinimumSize, '.'(ARG0, []), OUT).
+
+basic_check_box_u_i_get_baseline(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, getBaseline, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+basic_check_box_u_i_contains(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, contains, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+basic_check_box_u_i_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+basic_check_box_u_i_uninstall_u_i(REF, ARG0) :- 
+	object_call(REF, uninstallUI, '.'(ARG0, []), _).
+
+basic_check_box_u_i_get_default_icon(REF, OUT) :- 
+	object_call(REF, getDefaultIcon, [], OUT).
+
+basic_check_box_u_i_paint(REF, ARG0, ARG1) :- 
+	object_call(REF, paint, '.'(ARG0, '.'(ARG1, [])), _).
 
 basic_check_box_u_i_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-basic_check_box_u_i_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-basic_check_box_u_i_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+basic_check_box_u_i_get_baseline_resize_behavior(REF, ARG0, OUT) :- 
+	object_call(REF, getBaselineResizeBehavior, '.'(ARG0, []), OUT).
 

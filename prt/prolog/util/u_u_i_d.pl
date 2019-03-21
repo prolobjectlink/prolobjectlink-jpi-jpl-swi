@@ -25,66 +25,66 @@
 u_u_i_d(ARG0, ARG1, OUT) :- 
 	object_new('java.util.UUID', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-u_u_i_d_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-u_u_i_d_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-u_u_i_d_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+u_u_i_d_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 u_u_i_d_compare_to(REF, ARG0, OUT) :- 
 	object_call(REF, compareTo, '.'(ARG0, []), OUT).
 
 u_u_i_d_compare_to(REF, ARG0, OUT) :- 
 	object_call(REF, compareTo, '.'(ARG0, []), OUT).
-
-u_u_i_d_timestamp(REF, OUT) :- 
-	object_call(REF, timestamp, [], OUT).
-
-u_u_i_d_version(REF, OUT) :- 
-	object_call(REF, version, [], OUT).
-
-u_u_i_d_variant(REF, OUT) :- 
-	object_call(REF, variant, [], OUT).
-
-u_u_i_d_node(REF, OUT) :- 
-	object_call(REF, node, [], OUT).
-
-u_u_i_d_clock_sequence(REF, OUT) :- 
-	object_call(REF, clockSequence, [], OUT).
-
-u_u_i_d_get_least_significant_bits(REF, OUT) :- 
-	object_call(REF, getLeastSignificantBits, [], OUT).
-
-u_u_i_d_get_most_significant_bits(REF, OUT) :- 
-	object_call(REF, getMostSignificantBits, [], OUT).
-
-u_u_i_d_name_u_u_i_d_from_bytes(REF, ARG0, OUT) :- 
-	object_call(REF, nameUUIDFromBytes, '.'(ARG0, []), OUT).
-
-u_u_i_d_random_u_u_i_d(REF, OUT) :- 
-	object_call(REF, randomUUID, [], OUT).
 
 u_u_i_d_from_string(REF, ARG0, OUT) :- 
 	object_call(REF, fromString, '.'(ARG0, []), OUT).
 
-u_u_i_d_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+u_u_i_d_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-u_u_i_d_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+u_u_i_d_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-u_u_i_d_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+u_u_i_d_version(REF, OUT) :- 
+	object_call(REF, version, [], OUT).
+
+u_u_i_d_get_least_significant_bits(REF, OUT) :- 
+	object_call(REF, getLeastSignificantBits, [], OUT).
+
+u_u_i_d_name_u_u_i_d_from_bytes(REF, ARG0, OUT) :- 
+	object_call(REF, nameUUIDFromBytes, '.'(ARG0, []), OUT).
+
+u_u_i_d_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+u_u_i_d_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+u_u_i_d_variant(REF, OUT) :- 
+	object_call(REF, variant, [], OUT).
+
+u_u_i_d_get_most_significant_bits(REF, OUT) :- 
+	object_call(REF, getMostSignificantBits, [], OUT).
+
+u_u_i_d_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+u_u_i_d_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
 u_u_i_d_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-u_u_i_d_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+u_u_i_d_clock_sequence(REF, OUT) :- 
+	object_call(REF, clockSequence, [], OUT).
 
-u_u_i_d_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+u_u_i_d_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+u_u_i_d_timestamp(REF, OUT) :- 
+	object_call(REF, timestamp, [], OUT).
+
+u_u_i_d_node(REF, OUT) :- 
+	object_call(REF, node, [], OUT).
+
+u_u_i_d_random_u_u_i_d(REF, OUT) :- 
+	object_call(REF, randomUUID, [], OUT).
 

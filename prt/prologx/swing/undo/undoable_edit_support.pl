@@ -22,57 +22,57 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-undoable_edit_support(OUT) :- 
-	object_new('javax.swing.undo.UndoableEditSupport', [], OUT).
-
 undoable_edit_support(ARG0, OUT) :- 
 	object_new('javax.swing.undo.UndoableEditSupport', '.'(ARG0, []), OUT).
 
-undoable_edit_support_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+undoable_edit_support(OUT) :- 
+	object_new('javax.swing.undo.UndoableEditSupport', [], OUT).
 
-undoable_edit_support_add_undoable_edit_listener(REF, ARG0, OUT) :- 
-	object_call(REF, addUndoableEditListener, '.'(ARG0, []), OUT).
-
-undoable_edit_support_remove_undoable_edit_listener(REF, ARG0, OUT) :- 
-	object_call(REF, removeUndoableEditListener, '.'(ARG0, []), OUT).
-
-undoable_edit_support_get_undoable_edit_listeners(REF, OUT) :- 
-	object_call(REF, getUndoableEditListeners, [], OUT).
-
-undoable_edit_support_begin_update(REF, OUT) :- 
-	object_call(REF, beginUpdate, [], OUT).
-
-undoable_edit_support_end_update(REF, OUT) :- 
-	object_call(REF, endUpdate, [], OUT).
-
-undoable_edit_support_get_update_level(REF, OUT) :- 
-	object_call(REF, getUpdateLevel, [], OUT).
-
-undoable_edit_support_post_edit(REF, ARG0, OUT) :- 
-	object_call(REF, postEdit, '.'(ARG0, []), OUT).
-
-undoable_edit_support_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-undoable_edit_support_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-undoable_edit_support_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+undoable_edit_support_begin_update(REF) :- 
+	object_call(REF, beginUpdate, [], _).
 
 undoable_edit_support_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-undoable_edit_support_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+undoable_edit_support_remove_undoable_edit_listener(REF, ARG0) :- 
+	object_call(REF, removeUndoableEditListener, '.'(ARG0, []), _).
+
+undoable_edit_support_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+undoable_edit_support_end_update(REF) :- 
+	object_call(REF, endUpdate, [], _).
+
+undoable_edit_support_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+undoable_edit_support_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+undoable_edit_support_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+undoable_edit_support_get_update_level(REF, OUT) :- 
+	object_call(REF, getUpdateLevel, [], OUT).
+
+undoable_edit_support_add_undoable_edit_listener(REF, ARG0) :- 
+	object_call(REF, addUndoableEditListener, '.'(ARG0, []), _).
 
 undoable_edit_support_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-undoable_edit_support_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+undoable_edit_support_get_undoable_edit_listeners(REF, OUT) :- 
+	object_call(REF, getUndoableEditListeners, [], OUT).
 
-undoable_edit_support_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+undoable_edit_support_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+undoable_edit_support_post_edit(REF, ARG0) :- 
+	object_call(REF, postEdit, '.'(ARG0, []), _).
+
+undoable_edit_support_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+undoable_edit_support_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 

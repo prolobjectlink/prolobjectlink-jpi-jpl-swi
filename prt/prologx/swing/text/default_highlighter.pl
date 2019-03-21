@@ -22,69 +22,69 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-default_highlighter_defaultpainter(OUT) :- 
+default_highlighter_DEFAULTPAINTER(OUT) :- 
 	object_get('javax.swing.text.DefaultHighlighter', defaultpainter, OUT).
 
 default_highlighter(OUT) :- 
 	object_new('javax.swing.text.DefaultHighlighter', [], OUT).
 
-default_highlighter_install(REF, ARG0, OUT) :- 
-	object_call(REF, install, '.'(ARG0, []), OUT).
+default_highlighter_paint(REF, ARG0) :- 
+	object_call(REF, paint, '.'(ARG0, []), _).
 
-default_highlighter_deinstall(REF, ARG0, OUT) :- 
-	object_call(REF, deinstall, '.'(ARG0, []), OUT).
+default_highlighter_deinstall(REF, ARG0) :- 
+	object_call(REF, deinstall, '.'(ARG0, []), _).
 
-default_highlighter_add_highlight(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, addHighlight, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+default_highlighter_install(REF, ARG0) :- 
+	object_call(REF, install, '.'(ARG0, []), _).
 
-default_highlighter_change_highlight(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, changeHighlight, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+default_highlighter_remove_highlight(REF, ARG0) :- 
+	object_call(REF, removeHighlight, '.'(ARG0, []), _).
 
-default_highlighter_get_highlights(REF, OUT) :- 
-	object_call(REF, getHighlights, [], OUT).
-
-default_highlighter_remove_all_highlights(REF, OUT) :- 
-	object_call(REF, removeAllHighlights, [], OUT).
-
-default_highlighter_remove_highlight(REF, ARG0, OUT) :- 
-	object_call(REF, removeHighlight, '.'(ARG0, []), OUT).
-
-default_highlighter_paint(REF, ARG0, OUT) :- 
-	object_call(REF, paint, '.'(ARG0, []), OUT).
-
-default_highlighter_get_draws_layered_highlights(REF, OUT) :- 
-	object_call(REF, getDrawsLayeredHighlights, [], OUT).
-
-default_highlighter_set_draws_layered_highlights(REF, ARG0, OUT) :- 
-	object_call(REF, setDrawsLayeredHighlights, '.'(ARG0, []), OUT).
-
-default_highlighter_paint_layered_highlights(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, OUT) :- 
-	object_call(REF, paintLayeredHighlights, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), OUT).
-
-default_highlighter_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-default_highlighter_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-default_highlighter_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-default_highlighter_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+default_highlighter_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 default_highlighter_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-default_highlighter_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+default_highlighter_remove_all_highlights(REF) :- 
+	object_call(REF, removeAllHighlights, [], _).
+
+default_highlighter_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+default_highlighter_get_highlights(REF, OUT) :- 
+	object_call(REF, getHighlights, [], OUT).
+
+default_highlighter_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+default_highlighter_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+default_highlighter_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+default_highlighter_get_draws_layered_highlights(REF, OUT) :- 
+	object_call(REF, getDrawsLayeredHighlights, [], OUT).
 
 default_highlighter_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-default_highlighter_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+default_highlighter_set_draws_layered_highlights(REF, ARG0) :- 
+	object_call(REF, setDrawsLayeredHighlights, '.'(ARG0, []), _).
 
-default_highlighter_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+default_highlighter_paint_layered_highlights(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5) :- 
+	object_call(REF, paintLayeredHighlights, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), _).
+
+default_highlighter_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+default_highlighter_change_highlight(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, changeHighlight, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+default_highlighter_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+default_highlighter_add_highlight(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, addHighlight, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 

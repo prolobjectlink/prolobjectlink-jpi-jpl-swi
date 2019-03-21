@@ -25,47 +25,14 @@
 beans(OUT) :- 
 	object_new('java.beans.Beans', [], OUT).
 
-beans_get_instance_of(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getInstanceOf, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-beans_instantiate(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, instantiate, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-beans_instantiate(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, instantiate, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
-beans_instantiate(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, instantiate, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-beans_is_design_time(REF, OUT) :- 
-	object_call(REF, isDesignTime, [], OUT).
-
-beans_is_gui_available(REF, OUT) :- 
-	object_call(REF, isGuiAvailable, [], OUT).
-
-beans_set_design_time(REF, ARG0, OUT) :- 
-	object_call(REF, setDesignTime, '.'(ARG0, []), OUT).
-
-beans_set_gui_available(REF, ARG0, OUT) :- 
-	object_call(REF, setGuiAvailable, '.'(ARG0, []), OUT).
+beans_set_gui_available(REF, ARG0) :- 
+	object_call(REF, setGuiAvailable, '.'(ARG0, []), _).
 
 beans_is_instance_of(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, isInstanceOf, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-beans_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-beans_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-beans_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-beans_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-beans_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+beans_is_design_time(REF, OUT) :- 
+	object_call(REF, isDesignTime, [], OUT).
 
 beans_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -73,9 +40,42 @@ beans_hash_code(REF, OUT) :-
 beans_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-beans_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+beans_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-beans_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+beans_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+beans_instantiate(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_call(REF, instantiate, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+
+beans_set_design_time(REF, ARG0) :- 
+	object_call(REF, setDesignTime, '.'(ARG0, []), _).
+
+beans_instantiate(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, instantiate, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+beans_instantiate(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, instantiate, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+beans_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+beans_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+beans_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+beans_is_gui_available(REF, OUT) :- 
+	object_call(REF, isGuiAvailable, [], OUT).
+
+beans_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+beans_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+beans_get_instance_of(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getInstanceOf, '.'(ARG0, '.'(ARG1, [])), OUT).
 

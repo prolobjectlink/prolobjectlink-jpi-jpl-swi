@@ -31,63 +31,63 @@ file_input_stream(ARG0, OUT) :-
 file_input_stream(ARG0, OUT) :- 
 	object_new('java.io.FileInputStream', '.'(ARG0, []), OUT).
 
-file_input_stream_read(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, read, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
 file_input_stream_read(REF, ARG0, OUT) :- 
 	object_call(REF, read, '.'(ARG0, []), OUT).
 
 file_input_stream_read(REF, OUT) :- 
 	object_call(REF, read, [], OUT).
 
-file_input_stream_close(REF, OUT) :- 
-	object_call(REF, close, [], OUT).
+file_input_stream_skip(REF, ARG0, OUT) :- 
+	object_call(REF, skip, '.'(ARG0, []), OUT).
 
 file_input_stream_available(REF, OUT) :- 
 	object_call(REF, available, [], OUT).
 
-file_input_stream_skip(REF, ARG0, OUT) :- 
-	object_call(REF, skip, '.'(ARG0, []), OUT).
+file_input_stream_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 file_input_stream_get_channel(REF, OUT) :- 
 	object_call(REF, getChannel, [], OUT).
 
-file_input_stream_get_f_d(REF, OUT) :- 
-	object_call(REF, getFD, [], OUT).
+file_input_stream_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-file_input_stream_mark(REF, ARG0, OUT) :- 
-	object_call(REF, mark, '.'(ARG0, []), OUT).
+file_input_stream_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-file_input_stream_mark_supported(REF, OUT) :- 
-	object_call(REF, markSupported, [], OUT).
+file_input_stream_reset(REF) :- 
+	object_call(REF, reset, [], _).
 
-file_input_stream_reset(REF, OUT) :- 
-	object_call(REF, reset, [], OUT).
+file_input_stream_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-file_input_stream_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-file_input_stream_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-file_input_stream_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-file_input_stream_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+file_input_stream_mark(REF, ARG0) :- 
+	object_call(REF, mark, '.'(ARG0, []), _).
 
 file_input_stream_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
+file_input_stream_mark_supported(REF, OUT) :- 
+	object_call(REF, markSupported, [], OUT).
+
+file_input_stream_get_f_d(REF, OUT) :- 
+	object_call(REF, getFD, [], OUT).
+
+file_input_stream_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
 file_input_stream_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
+
+file_input_stream_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+file_input_stream_close(REF) :- 
+	object_call(REF, close, [], _).
 
 file_input_stream_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-file_input_stream_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-file_input_stream_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+file_input_stream_read(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, read, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 

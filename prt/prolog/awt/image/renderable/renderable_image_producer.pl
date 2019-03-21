@@ -25,51 +25,51 @@
 renderable_image_producer(ARG0, ARG1, OUT) :- 
 	object_new('java.awt.image.renderable.RenderableImageProducer', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-renderable_image_producer_run(REF, OUT) :- 
-	object_call(REF, run, [], OUT).
-
-renderable_image_producer_set_render_context(REF, ARG0, OUT) :- 
-	object_call(REF, setRenderContext, '.'(ARG0, []), OUT).
-
-renderable_image_producer_add_consumer(REF, ARG0, OUT) :- 
-	object_call(REF, addConsumer, '.'(ARG0, []), OUT).
-
-renderable_image_producer_is_consumer(REF, ARG0, OUT) :- 
-	object_call(REF, isConsumer, '.'(ARG0, []), OUT).
-
-renderable_image_producer_remove_consumer(REF, ARG0, OUT) :- 
-	object_call(REF, removeConsumer, '.'(ARG0, []), OUT).
-
-renderable_image_producer_request_top_down_left_right_resend(REF, ARG0, OUT) :- 
-	object_call(REF, requestTopDownLeftRightResend, '.'(ARG0, []), OUT).
-
-renderable_image_producer_start_production(REF, ARG0, OUT) :- 
-	object_call(REF, startProduction, '.'(ARG0, []), OUT).
-
-renderable_image_producer_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-renderable_image_producer_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-renderable_image_producer_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+renderable_image_producer_remove_consumer(REF, ARG0) :- 
+	object_call(REF, removeConsumer, '.'(ARG0, []), _).
 
 renderable_image_producer_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
+renderable_image_producer_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+renderable_image_producer_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
 renderable_image_producer_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
+
+renderable_image_producer_add_consumer(REF, ARG0) :- 
+	object_call(REF, addConsumer, '.'(ARG0, []), _).
+
+renderable_image_producer_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+renderable_image_producer_run(REF) :- 
+	object_call(REF, run, [], _).
+
+renderable_image_producer_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+renderable_image_producer_set_render_context(REF, ARG0) :- 
+	object_call(REF, setRenderContext, '.'(ARG0, []), _).
+
+renderable_image_producer_is_consumer(REF, ARG0, OUT) :- 
+	object_call(REF, isConsumer, '.'(ARG0, []), OUT).
+
+renderable_image_producer_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+renderable_image_producer_start_production(REF, ARG0) :- 
+	object_call(REF, startProduction, '.'(ARG0, []), _).
+
+renderable_image_producer_request_top_down_left_right_resend(REF, ARG0) :- 
+	object_call(REF, requestTopDownLeftRightResend, '.'(ARG0, []), _).
 
 renderable_image_producer_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
 renderable_image_producer_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-renderable_image_producer_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-renderable_image_producer_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

@@ -34,20 +34,44 @@ rdn(ARG0, OUT) :-
 rdn(ARG0, OUT) :- 
 	object_new('javax.naming.ldap.Rdn', '.'(ARG0, []), OUT).
 
+rdn_to_attributes(REF, OUT) :- 
+	object_call(REF, toAttributes, [], OUT).
+
+rdn_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+rdn_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+rdn_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
 rdn_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-rdn_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+rdn_get_value(REF, OUT) :- 
+	object_call(REF, getValue, [], OUT).
+
+rdn_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 rdn_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+rdn_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
+
 rdn_compare_to(REF, ARG0, OUT) :- 
 	object_call(REF, compareTo, '.'(ARG0, []), OUT).
 
-rdn_get_value(REF, OUT) :- 
-	object_call(REF, getValue, [], OUT).
+rdn_unescape_value(REF, ARG0, OUT) :- 
+	object_call(REF, unescapeValue, '.'(ARG0, []), OUT).
+
+rdn_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+rdn_escape_value(REF, ARG0, OUT) :- 
+	object_call(REF, escapeValue, '.'(ARG0, []), OUT).
 
 rdn_size(REF, OUT) :- 
 	object_call(REF, size, [], OUT).
@@ -55,30 +79,6 @@ rdn_size(REF, OUT) :-
 rdn_get_type(REF, OUT) :- 
 	object_call(REF, getType, [], OUT).
 
-rdn_escape_value(REF, ARG0, OUT) :- 
-	object_call(REF, escapeValue, '.'(ARG0, []), OUT).
-
-rdn_to_attributes(REF, OUT) :- 
-	object_call(REF, toAttributes, [], OUT).
-
-rdn_unescape_value(REF, ARG0, OUT) :- 
-	object_call(REF, unescapeValue, '.'(ARG0, []), OUT).
-
-rdn_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-rdn_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-rdn_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-rdn_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-rdn_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-rdn_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+rdn_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 

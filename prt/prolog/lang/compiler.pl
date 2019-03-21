@@ -22,45 +22,45 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-compiler_command(REF, ARG0, OUT) :- 
-	object_call(REF, command, '.'(ARG0, []), OUT).
-
 compiler_compile_class(REF, ARG0, OUT) :- 
 	object_call(REF, compileClass, '.'(ARG0, []), OUT).
 
 compiler_compile_classes(REF, ARG0, OUT) :- 
 	object_call(REF, compileClasses, '.'(ARG0, []), OUT).
 
-compiler_disable(REF, OUT) :- 
-	object_call(REF, disable, [], OUT).
+compiler_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-compiler_enable(REF, OUT) :- 
-	object_call(REF, enable, [], OUT).
+compiler_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-compiler_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+compiler_command(REF, ARG0, OUT) :- 
+	object_call(REF, command, '.'(ARG0, []), OUT).
 
-compiler_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+compiler_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-compiler_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+compiler_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+compiler_enable(REF) :- 
+	object_call(REF, enable, [], _).
 
 compiler_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-compiler_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+compiler_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-compiler_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+compiler_disable(REF) :- 
+	object_call(REF, disable, [], _).
 
 compiler_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-compiler_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+compiler_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
-compiler_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+compiler_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 

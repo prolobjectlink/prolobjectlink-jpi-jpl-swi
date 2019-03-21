@@ -22,20 +22,23 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-compression_none(OUT) :- 
+compression_NONE(OUT) :- 
 	object_get('javax.print.attribute.standard.Compression', none, OUT).
 
-compression_deflate(OUT) :- 
+compression_DEFLATE(OUT) :- 
 	object_get('javax.print.attribute.standard.Compression', deflate, OUT).
 
-compression_gzip(OUT) :- 
+compression_GZIP(OUT) :- 
 	object_get('javax.print.attribute.standard.Compression', gzip, OUT).
 
-compression_compress(OUT) :- 
+compression_COMPRESS(OUT) :- 
 	object_get('javax.print.attribute.standard.Compression', compress, OUT).
 
 compression_get_name(REF, OUT) :- 
 	object_call(REF, getName, [], OUT).
+
+compression_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 compression_get_category(REF, OUT) :- 
 	object_call(REF, getCategory, [], OUT).
@@ -43,23 +46,23 @@ compression_get_category(REF, OUT) :-
 compression_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-compression_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-compression_clone(REF, OUT) :- 
-	object_call(REF, clone, [], OUT).
+compression_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 compression_get_value(REF, OUT) :- 
 	object_call(REF, getValue, [], OUT).
 
-compression_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+compression_clone(REF, OUT) :- 
+	object_call(REF, clone, [], OUT).
 
-compression_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+compression_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-compression_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+compression_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+compression_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 compression_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
@@ -67,9 +70,6 @@ compression_equals(REF, ARG0, OUT) :-
 compression_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-compression_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-compression_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+compression_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 

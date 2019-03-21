@@ -28,39 +28,39 @@ attribute_value_exp(OUT) :-
 attribute_value_exp(ARG0, OUT) :- 
 	object_new('javax.management.AttributeValueExp', '.'(ARG0, []), OUT).
 
-attribute_value_exp_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+attribute_value_exp_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-attribute_value_exp_apply(REF, ARG0, OUT) :- 
-	object_call(REF, apply, '.'(ARG0, []), OUT).
-
-attribute_value_exp_set_m_bean_server(REF, ARG0, OUT) :- 
-	object_call(REF, setMBeanServer, '.'(ARG0, []), OUT).
-
-attribute_value_exp_get_attribute_name(REF, OUT) :- 
-	object_call(REF, getAttributeName, [], OUT).
-
-attribute_value_exp_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-attribute_value_exp_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-attribute_value_exp_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+attribute_value_exp_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 attribute_value_exp_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-attribute_value_exp_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+attribute_value_exp_set_m_bean_server(REF, ARG0) :- 
+	object_call(REF, setMBeanServer, '.'(ARG0, []), _).
+
+attribute_value_exp_apply(REF, ARG0, OUT) :- 
+	object_call(REF, apply, '.'(ARG0, []), OUT).
+
+attribute_value_exp_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+attribute_value_exp_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 attribute_value_exp_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-attribute_value_exp_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+attribute_value_exp_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-attribute_value_exp_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+attribute_value_exp_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+attribute_value_exp_get_attribute_name(REF, OUT) :- 
+	object_call(REF, getAttributeName, [], OUT).
+
+attribute_value_exp_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 

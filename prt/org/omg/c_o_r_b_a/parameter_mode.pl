@@ -22,54 +22,54 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-parameter_mode__param_in(OUT) :- 
+parameter_mode__PARAM_IN(OUT) :- 
 	object_get('org.omg.CORBA.ParameterMode', '_param_in', OUT).
 
-parameter_mode_param_in(OUT) :- 
+parameter_mode_PARAM_IN(OUT) :- 
 	object_get('org.omg.CORBA.ParameterMode', param_in, OUT).
 
-parameter_mode__param_out(OUT) :- 
+parameter_mode__PARAM_OUT(OUT) :- 
 	object_get('org.omg.CORBA.ParameterMode', '_param_out', OUT).
 
-parameter_mode_param_out(OUT) :- 
+parameter_mode_PARAM_OUT(OUT) :- 
 	object_get('org.omg.CORBA.ParameterMode', param_out, OUT).
 
-parameter_mode__param_inout(OUT) :- 
+parameter_mode__PARAM_INOUT(OUT) :- 
 	object_get('org.omg.CORBA.ParameterMode', '_param_inout', OUT).
 
-parameter_mode_param_inout(OUT) :- 
+parameter_mode_PARAM_INOUT(OUT) :- 
 	object_get('org.omg.CORBA.ParameterMode', param_inout, OUT).
 
-parameter_mode_value(REF, OUT) :- 
-	object_call(REF, value, [], OUT).
+parameter_mode_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+parameter_mode_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+parameter_mode_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+parameter_mode_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+parameter_mode_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 parameter_mode_from_int(REF, ARG0, OUT) :- 
 	object_call(REF, from_int, '.'(ARG0, []), OUT).
 
-parameter_mode_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-parameter_mode_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-parameter_mode_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+parameter_mode_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 parameter_mode_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-parameter_mode_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+parameter_mode_value(REF, OUT) :- 
+	object_call(REF, value, [], OUT).
 
 parameter_mode_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
 parameter_mode_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-parameter_mode_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-parameter_mode_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

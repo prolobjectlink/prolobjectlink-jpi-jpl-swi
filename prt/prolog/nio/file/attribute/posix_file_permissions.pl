@@ -22,39 +22,39 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-posix_file_permissions_to_string(REF, ARG0, OUT) :- 
-	object_call(REF, toString, '.'(ARG0, []), OUT).
-
-posix_file_permissions_as_file_attribute(REF, ARG0, OUT) :- 
-	object_call(REF, asFileAttribute, '.'(ARG0, []), OUT).
-
-posix_file_permissions_from_string(REF, ARG0, OUT) :- 
-	object_call(REF, fromString, '.'(ARG0, []), OUT).
-
-posix_file_permissions_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-posix_file_permissions_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-posix_file_permissions_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-posix_file_permissions_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+posix_file_permissions_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 posix_file_permissions_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-posix_file_permissions_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+posix_file_permissions_to_string(REF, ARG0, OUT) :- 
+	object_call(REF, toString, '.'(ARG0, []), OUT).
+
+posix_file_permissions_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+posix_file_permissions_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+posix_file_permissions_from_string(REF, ARG0, OUT) :- 
+	object_call(REF, fromString, '.'(ARG0, []), OUT).
 
 posix_file_permissions_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-posix_file_permissions_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+posix_file_permissions_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-posix_file_permissions_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+posix_file_permissions_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+posix_file_permissions_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+posix_file_permissions_as_file_attribute(REF, ARG0, OUT) :- 
+	object_call(REF, asFileAttribute, '.'(ARG0, []), OUT).
+
+posix_file_permissions_notify(REF) :- 
+	object_call(REF, notify, [], _).
 

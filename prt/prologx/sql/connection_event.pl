@@ -31,23 +31,14 @@ connection_event(ARG0, ARG1, OUT) :-
 connection_event_get_s_q_l_exception(REF, OUT) :- 
 	object_call(REF, getSQLException, [], OUT).
 
-connection_event_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+connection_event_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-connection_event_get_source(REF, OUT) :- 
-	object_call(REF, getSource, [], OUT).
+connection_event_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-connection_event_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-connection_event_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-connection_event_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-connection_event_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+connection_event_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 connection_event_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -55,9 +46,18 @@ connection_event_hash_code(REF, OUT) :-
 connection_event_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-connection_event_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+connection_event_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-connection_event_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+connection_event_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+connection_event_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+connection_event_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+connection_event_get_source(REF, OUT) :- 
+	object_call(REF, getSource, [], OUT).
 

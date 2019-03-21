@@ -25,53 +25,26 @@
 event_queue(OUT) :- 
 	object_new('java.awt.EventQueue', [], OUT).
 
-event_queue_push(REF, ARG0, OUT) :- 
-	object_call(REF, push, '.'(ARG0, []), OUT).
-
-event_queue_invoke_later(REF, ARG0, OUT) :- 
-	object_call(REF, invokeLater, '.'(ARG0, []), OUT).
-
-event_queue_get_current_event(REF, OUT) :- 
-	object_call(REF, getCurrentEvent, [], OUT).
-
-event_queue_create_secondary_loop(REF, OUT) :- 
-	object_call(REF, createSecondaryLoop, [], OUT).
-
-event_queue_invoke_and_wait(REF, ARG0, OUT) :- 
-	object_call(REF, invokeAndWait, '.'(ARG0, []), OUT).
-
-event_queue_get_most_recent_event_time(REF, OUT) :- 
-	object_call(REF, getMostRecentEventTime, [], OUT).
-
-event_queue_is_dispatch_thread(REF, OUT) :- 
-	object_call(REF, isDispatchThread, [], OUT).
-
-event_queue_post_event(REF, ARG0, OUT) :- 
-	object_call(REF, postEvent, '.'(ARG0, []), OUT).
-
-event_queue_get_next_event(REF, OUT) :- 
-	object_call(REF, getNextEvent, [], OUT).
+event_queue_peek_event(REF, ARG0, OUT) :- 
+	object_call(REF, peekEvent, '.'(ARG0, []), OUT).
 
 event_queue_peek_event(REF, OUT) :- 
 	object_call(REF, peekEvent, [], OUT).
 
-event_queue_peek_event(REF, ARG0, OUT) :- 
-	object_call(REF, peekEvent, '.'(ARG0, []), OUT).
+event_queue_push(REF, ARG0) :- 
+	object_call(REF, push, '.'(ARG0, []), _).
 
-event_queue_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-event_queue_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-event_queue_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+event_queue_invoke_and_wait(REF, ARG0) :- 
+	object_call(REF, invokeAndWait, '.'(ARG0, []), _).
 
 event_queue_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-event_queue_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+event_queue_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+event_queue_get_current_event(REF, OUT) :- 
+	object_call(REF, getCurrentEvent, [], OUT).
 
 event_queue_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -79,9 +52,36 @@ event_queue_hash_code(REF, OUT) :-
 event_queue_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-event_queue_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+event_queue_is_dispatch_thread(REF, OUT) :- 
+	object_call(REF, isDispatchThread, [], OUT).
 
-event_queue_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+event_queue_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+event_queue_post_event(REF, ARG0) :- 
+	object_call(REF, postEvent, '.'(ARG0, []), _).
+
+event_queue_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+event_queue_invoke_later(REF, ARG0) :- 
+	object_call(REF, invokeLater, '.'(ARG0, []), _).
+
+event_queue_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+event_queue_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+event_queue_get_next_event(REF, OUT) :- 
+	object_call(REF, getNextEvent, [], OUT).
+
+event_queue_get_most_recent_event_time(REF, OUT) :- 
+	object_call(REF, getMostRecentEventTime, [], OUT).
+
+event_queue_create_secondary_loop(REF, OUT) :- 
+	object_call(REF, createSecondaryLoop, [], OUT).
+
+event_queue_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 

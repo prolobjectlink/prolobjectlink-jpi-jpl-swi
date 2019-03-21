@@ -22,68 +22,44 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-socket_handler(ARG0, ARG1, OUT) :- 
-	object_new('java.util.logging.SocketHandler', '.'(ARG0, '.'(ARG1, [])), OUT).
-
 socket_handler(OUT) :- 
 	object_new('java.util.logging.SocketHandler', [], OUT).
 
-socket_handler_close(REF, OUT) :- 
-	object_call(REF, close, [], OUT).
-
-socket_handler_publish(REF, ARG0, OUT) :- 
-	object_call(REF, publish, '.'(ARG0, []), OUT).
-
-socket_handler_flush(REF, OUT) :- 
-	object_call(REF, flush, [], OUT).
-
-socket_handler_is_loggable(REF, ARG0, OUT) :- 
-	object_call(REF, isLoggable, '.'(ARG0, []), OUT).
-
-socket_handler_set_encoding(REF, ARG0, OUT) :- 
-	object_call(REF, setEncoding, '.'(ARG0, []), OUT).
-
-socket_handler_get_encoding(REF, OUT) :- 
-	object_call(REF, getEncoding, [], OUT).
-
-socket_handler_get_error_manager(REF, OUT) :- 
-	object_call(REF, getErrorManager, [], OUT).
+socket_handler(ARG0, ARG1, OUT) :- 
+	object_new('java.util.logging.SocketHandler', '.'(ARG0, '.'(ARG1, [])), OUT).
 
 socket_handler_get_filter(REF, OUT) :- 
 	object_call(REF, getFilter, [], OUT).
 
-socket_handler_get_formatter(REF, OUT) :- 
-	object_call(REF, getFormatter, [], OUT).
+socket_handler_get_error_manager(REF, OUT) :- 
+	object_call(REF, getErrorManager, [], OUT).
 
-socket_handler_set_error_manager(REF, ARG0, OUT) :- 
-	object_call(REF, setErrorManager, '.'(ARG0, []), OUT).
+socket_handler_close(REF) :- 
+	object_call(REF, close, [], _).
 
-socket_handler_set_filter(REF, ARG0, OUT) :- 
-	object_call(REF, setFilter, '.'(ARG0, []), OUT).
+socket_handler_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-socket_handler_set_level(REF, ARG0, OUT) :- 
-	object_call(REF, setLevel, '.'(ARG0, []), OUT).
-
-socket_handler_set_formatter(REF, ARG0, OUT) :- 
-	object_call(REF, setFormatter, '.'(ARG0, []), OUT).
-
-socket_handler_get_level(REF, OUT) :- 
-	object_call(REF, getLevel, [], OUT).
-
-socket_handler_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-socket_handler_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-socket_handler_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-socket_handler_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+socket_handler_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 socket_handler_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
+
+socket_handler_set_formatter(REF, ARG0) :- 
+	object_call(REF, setFormatter, '.'(ARG0, []), _).
+
+socket_handler_flush(REF) :- 
+	object_call(REF, flush, [], _).
+
+socket_handler_publish(REF, ARG0) :- 
+	object_call(REF, publish, '.'(ARG0, []), _).
+
+socket_handler_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+socket_handler_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 socket_handler_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -91,9 +67,33 @@ socket_handler_hash_code(REF, OUT) :-
 socket_handler_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-socket_handler_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+socket_handler_set_filter(REF, ARG0) :- 
+	object_call(REF, setFilter, '.'(ARG0, []), _).
 
-socket_handler_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+socket_handler_set_level(REF, ARG0) :- 
+	object_call(REF, setLevel, '.'(ARG0, []), _).
+
+socket_handler_set_error_manager(REF, ARG0) :- 
+	object_call(REF, setErrorManager, '.'(ARG0, []), _).
+
+socket_handler_get_level(REF, OUT) :- 
+	object_call(REF, getLevel, [], OUT).
+
+socket_handler_set_encoding(REF, ARG0) :- 
+	object_call(REF, setEncoding, '.'(ARG0, []), _).
+
+socket_handler_get_encoding(REF, OUT) :- 
+	object_call(REF, getEncoding, [], OUT).
+
+socket_handler_is_loggable(REF, ARG0, OUT) :- 
+	object_call(REF, isLoggable, '.'(ARG0, []), OUT).
+
+socket_handler_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+socket_handler_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+socket_handler_get_formatter(REF, OUT) :- 
+	object_call(REF, getFormatter, [], OUT).
 

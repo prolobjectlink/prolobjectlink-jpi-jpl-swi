@@ -22,54 +22,54 @@
 
 :-consult('../../../../../../obj/prolobject.pl').
 
-content_model(ARG0, ARG1, ARG2, OUT) :- 
-	object_new('javax.swing.text.html.parser.ContentModel', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-content_model(ARG0, ARG1, OUT) :- 
-	object_new('javax.swing.text.html.parser.ContentModel', '.'(ARG0, '.'(ARG1, [])), OUT).
-
 content_model(ARG0, OUT) :- 
 	object_new('javax.swing.text.html.parser.ContentModel', '.'(ARG0, []), OUT).
 
 content_model(OUT) :- 
 	object_new('javax.swing.text.html.parser.ContentModel', [], OUT).
 
-content_model_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+content_model(ARG0, ARG1, ARG2, OUT) :- 
+	object_new('javax.swing.text.html.parser.ContentModel', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-content_model_first(REF, OUT) :- 
-	object_call(REF, first, [], OUT).
+content_model(ARG0, ARG1, OUT) :- 
+	object_new('javax.swing.text.html.parser.ContentModel', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-content_model_first(REF, ARG0, OUT) :- 
-	object_call(REF, first, '.'(ARG0, []), OUT).
-
-content_model_empty(REF, OUT) :- 
-	object_call(REF, empty, [], OUT).
-
-content_model_get_elements(REF, ARG0, OUT) :- 
-	object_call(REF, getElements, '.'(ARG0, []), OUT).
-
-content_model_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-content_model_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-content_model_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+content_model_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 content_model_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
+content_model_empty(REF, OUT) :- 
+	object_call(REF, empty, [], OUT).
+
+content_model_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+content_model_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+content_model_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+content_model_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+content_model_first(REF, ARG0, OUT) :- 
+	object_call(REF, first, '.'(ARG0, []), OUT).
+
+content_model_get_elements(REF, ARG0) :- 
+	object_call(REF, getElements, '.'(ARG0, []), _).
+
+content_model_first(REF, OUT) :- 
+	object_call(REF, first, [], OUT).
+
 content_model_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+content_model_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
 content_model_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-content_model_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-content_model_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

@@ -22,26 +22,17 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-paths_get(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, get, '.'(ARG0, '.'(ARG1, [])), OUT).
+paths_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 paths_get(REF, ARG0, OUT) :- 
 	object_call(REF, get, '.'(ARG0, []), OUT).
 
-paths_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-paths_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-paths_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-paths_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
 paths_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
+
+paths_get(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, get, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 paths_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -49,9 +40,18 @@ paths_hash_code(REF, OUT) :-
 paths_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-paths_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+paths_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-paths_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+paths_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+paths_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+paths_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+paths_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

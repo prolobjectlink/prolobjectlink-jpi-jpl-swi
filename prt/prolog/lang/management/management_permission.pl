@@ -22,51 +22,51 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-management_permission(ARG0, OUT) :- 
-	object_new('java.lang.management.ManagementPermission', '.'(ARG0, []), OUT).
-
 management_permission(ARG0, ARG1, OUT) :- 
 	object_new('java.lang.management.ManagementPermission', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-management_permission_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-management_permission_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-management_permission_get_actions(REF, OUT) :- 
-	object_call(REF, getActions, [], OUT).
-
-management_permission_implies(REF, ARG0, OUT) :- 
-	object_call(REF, implies, '.'(ARG0, []), OUT).
-
-management_permission_new_permission_collection(REF, OUT) :- 
-	object_call(REF, newPermissionCollection, [], OUT).
-
-management_permission_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+management_permission(ARG0, OUT) :- 
+	object_new('java.lang.management.ManagementPermission', '.'(ARG0, []), OUT).
 
 management_permission_get_name(REF, OUT) :- 
 	object_call(REF, getName, [], OUT).
 
-management_permission_check_guard(REF, ARG0, OUT) :- 
-	object_call(REF, checkGuard, '.'(ARG0, []), OUT).
+management_permission_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-management_permission_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+management_permission_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-management_permission_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+management_permission_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-management_permission_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+management_permission_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+management_permission_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+management_permission_get_actions(REF, OUT) :- 
+	object_call(REF, getActions, [], OUT).
+
+management_permission_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+management_permission_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+management_permission_implies(REF, ARG0, OUT) :- 
+	object_call(REF, implies, '.'(ARG0, []), OUT).
 
 management_permission_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-management_permission_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+management_permission_check_guard(REF, ARG0) :- 
+	object_call(REF, checkGuard, '.'(ARG0, []), _).
 
-management_permission_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+management_permission_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+management_permission_new_permission_collection(REF, OUT) :- 
+	object_call(REF, newPermissionCollection, [], OUT).
 

@@ -28,50 +28,35 @@ char_array_reader(ARG0, OUT) :-
 char_array_reader(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('java.io.CharArrayReader', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-char_array_reader_read(REF, OUT) :- 
-	object_call(REF, read, [], OUT).
+char_array_reader_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-char_array_reader_read(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, read, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-char_array_reader_close(REF, OUT) :- 
-	object_call(REF, close, [], OUT).
-
-char_array_reader_mark(REF, ARG0, OUT) :- 
-	object_call(REF, mark, '.'(ARG0, []), OUT).
-
-char_array_reader_mark_supported(REF, OUT) :- 
-	object_call(REF, markSupported, [], OUT).
-
-char_array_reader_reset(REF, OUT) :- 
-	object_call(REF, reset, [], OUT).
-
-char_array_reader_skip(REF, ARG0, OUT) :- 
-	object_call(REF, skip, '.'(ARG0, []), OUT).
+char_array_reader_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 char_array_reader_ready(REF, OUT) :- 
 	object_call(REF, ready, [], OUT).
 
-char_array_reader_read(REF, ARG0, OUT) :- 
-	object_call(REF, read, '.'(ARG0, []), OUT).
-
-char_array_reader_read(REF, ARG0, OUT) :- 
-	object_call(REF, read, '.'(ARG0, []), OUT).
-
-char_array_reader_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-char_array_reader_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-char_array_reader_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+char_array_reader_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 char_array_reader_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-char_array_reader_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+char_array_reader_read(REF, OUT) :- 
+	object_call(REF, read, [], OUT).
+
+char_array_reader_mark(REF, ARG0) :- 
+	object_call(REF, mark, '.'(ARG0, []), _).
+
+char_array_reader_read(REF, ARG0, OUT) :- 
+	object_call(REF, read, '.'(ARG0, []), OUT).
+
+char_array_reader_read(REF, ARG0, OUT) :- 
+	object_call(REF, read, '.'(ARG0, []), OUT).
+
+char_array_reader_read(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, read, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
 char_array_reader_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -79,9 +64,24 @@ char_array_reader_hash_code(REF, OUT) :-
 char_array_reader_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-char_array_reader_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+char_array_reader_mark_supported(REF, OUT) :- 
+	object_call(REF, markSupported, [], OUT).
 
-char_array_reader_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+char_array_reader_reset(REF) :- 
+	object_call(REF, reset, [], _).
+
+char_array_reader_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+char_array_reader_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+char_array_reader_skip(REF, ARG0, OUT) :- 
+	object_call(REF, skip, '.'(ARG0, []), OUT).
+
+char_array_reader_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+char_array_reader_close(REF) :- 
+	object_call(REF, close, [], _).
 

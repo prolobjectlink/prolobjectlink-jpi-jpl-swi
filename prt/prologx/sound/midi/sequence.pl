@@ -22,41 +22,38 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-sequence_ppq(OUT) :- 
+sequence_PPQ(OUT) :- 
 	object_get('javax.sound.midi.Sequence', ppq, OUT).
 
-sequence_smpte_24(OUT) :- 
+sequence_SMPTE_24(OUT) :- 
 	object_get('javax.sound.midi.Sequence', smpte_24, OUT).
 
-sequence_smpte_25(OUT) :- 
+sequence_SMPTE_25(OUT) :- 
 	object_get('javax.sound.midi.Sequence', smpte_25, OUT).
 
-sequence_smpte_30drop(OUT) :- 
+sequence_SMPTE_30DROP(OUT) :- 
 	object_get('javax.sound.midi.Sequence', smpte_30drop, OUT).
 
-sequence_smpte_30(OUT) :- 
+sequence_SMPTE_30(OUT) :- 
 	object_get('javax.sound.midi.Sequence', smpte_30, OUT).
-
-sequence(ARG0, ARG1, OUT) :- 
-	object_new('javax.sound.midi.Sequence', '.'(ARG0, '.'(ARG1, [])), OUT).
 
 sequence(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('javax.sound.midi.Sequence', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-sequence_get_division_type(REF, OUT) :- 
-	object_call(REF, getDivisionType, [], OUT).
+sequence(ARG0, ARG1, OUT) :- 
+	object_new('javax.sound.midi.Sequence', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-sequence_get_microsecond_length(REF, OUT) :- 
-	object_call(REF, getMicrosecondLength, [], OUT).
+sequence_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-sequence_create_track(REF, OUT) :- 
-	object_call(REF, createTrack, [], OUT).
+sequence_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-sequence_delete_track(REF, ARG0, OUT) :- 
-	object_call(REF, deleteTrack, '.'(ARG0, []), OUT).
+sequence_get_resolution(REF, OUT) :- 
+	object_call(REF, getResolution, [], OUT).
 
-sequence_get_patch_list(REF, OUT) :- 
-	object_call(REF, getPatchList, [], OUT).
+sequence_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 sequence_get_tick_length(REF, OUT) :- 
 	object_call(REF, getTickLength, [], OUT).
@@ -64,33 +61,36 @@ sequence_get_tick_length(REF, OUT) :-
 sequence_get_tracks(REF, OUT) :- 
 	object_call(REF, getTracks, [], OUT).
 
-sequence_get_resolution(REF, OUT) :- 
-	object_call(REF, getResolution, [], OUT).
-
-sequence_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-sequence_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-sequence_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-sequence_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-sequence_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
 sequence_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
 sequence_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-sequence_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+sequence_create_track(REF, OUT) :- 
+	object_call(REF, createTrack, [], OUT).
 
-sequence_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+sequence_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+sequence_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+sequence_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+sequence_get_microsecond_length(REF, OUT) :- 
+	object_call(REF, getMicrosecondLength, [], OUT).
+
+sequence_delete_track(REF, ARG0, OUT) :- 
+	object_call(REF, deleteTrack, '.'(ARG0, []), OUT).
+
+sequence_get_division_type(REF, OUT) :- 
+	object_call(REF, getDivisionType, [], OUT).
+
+sequence_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+sequence_get_patch_list(REF, OUT) :- 
+	object_call(REF, getPatchList, [], OUT).
 

@@ -22,11 +22,23 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-i_d_n_allow_unassigned(OUT) :- 
+i_d_n_ALLOW_UNASSIGNED(OUT) :- 
 	object_get('java.net.IDN', allow_unassigned, OUT).
 
-i_d_n_use_std3_ascii_rules(OUT) :- 
+i_d_n_USE_STD3_ASCII_RULES(OUT) :- 
 	object_get('java.net.IDN', use_std3_ascii_rules, OUT).
+
+i_d_n_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+i_d_n_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+i_d_n_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+i_d_n_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 i_d_n_to_a_s_c_i_i(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, toASCII, '.'(ARG0, '.'(ARG1, [])), OUT).
@@ -37,23 +49,11 @@ i_d_n_to_a_s_c_i_i(REF, ARG0, OUT) :-
 i_d_n_to_unicode(REF, ARG0, OUT) :- 
 	object_call(REF, toUnicode, '.'(ARG0, []), OUT).
 
-i_d_n_to_unicode(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, toUnicode, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-i_d_n_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-i_d_n_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-i_d_n_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-i_d_n_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
 i_d_n_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
+
+i_d_n_to_unicode(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, toUnicode, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 i_d_n_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -61,9 +61,9 @@ i_d_n_hash_code(REF, OUT) :-
 i_d_n_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-i_d_n_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+i_d_n_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-i_d_n_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+i_d_n_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

@@ -28,48 +28,48 @@ string_content(OUT) :-
 string_content(ARG0, OUT) :- 
 	object_new('javax.swing.text.StringContent', '.'(ARG0, []), OUT).
 
-string_content_remove(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, remove, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-string_content_get_chars(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, getChars, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
 string_content_length(REF, OUT) :- 
 	object_call(REF, length, [], OUT).
 
+string_content_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+string_content_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+string_content_remove(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, remove, '.'(ARG0, '.'(ARG1, [])), OUT).
+
 string_content_get_string(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, getString, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+string_content_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
+
+string_content_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+string_content_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+string_content_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+string_content_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+string_content_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+string_content_get_chars(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, getChars, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+string_content_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
 string_content_create_position(REF, ARG0, OUT) :- 
 	object_call(REF, createPosition, '.'(ARG0, []), OUT).
 
 string_content_insert_string(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, insertString, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-string_content_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-string_content_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-string_content_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-string_content_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-string_content_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-string_content_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-string_content_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-string_content_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-string_content_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

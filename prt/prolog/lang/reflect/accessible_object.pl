@@ -22,50 +22,8 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-accessible_object_get_annotation(REF, ARG0, OUT) :- 
-	object_call(REF, getAnnotation, '.'(ARG0, []), OUT).
-
-accessible_object_get_annotations(REF, OUT) :- 
-	object_call(REF, getAnnotations, [], OUT).
-
-accessible_object_get_annotations_by_type(REF, ARG0, OUT) :- 
-	object_call(REF, getAnnotationsByType, '.'(ARG0, []), OUT).
-
-accessible_object_get_declared_annotation(REF, ARG0, OUT) :- 
-	object_call(REF, getDeclaredAnnotation, '.'(ARG0, []), OUT).
-
-accessible_object_get_declared_annotations(REF, OUT) :- 
-	object_call(REF, getDeclaredAnnotations, [], OUT).
-
-accessible_object_get_declared_annotations_by_type(REF, ARG0, OUT) :- 
-	object_call(REF, getDeclaredAnnotationsByType, '.'(ARG0, []), OUT).
-
-accessible_object_is_annotation_present(REF, ARG0, OUT) :- 
-	object_call(REF, isAnnotationPresent, '.'(ARG0, []), OUT).
-
 accessible_object_is_accessible(REF, OUT) :- 
 	object_call(REF, isAccessible, [], OUT).
-
-accessible_object_set_accessible(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, setAccessible, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-accessible_object_set_accessible(REF, ARG0, OUT) :- 
-	object_call(REF, setAccessible, '.'(ARG0, []), OUT).
-
-accessible_object_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-accessible_object_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-accessible_object_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-accessible_object_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-accessible_object_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
 
 accessible_object_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -73,9 +31,51 @@ accessible_object_hash_code(REF, OUT) :-
 accessible_object_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-accessible_object_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+accessible_object_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-accessible_object_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+accessible_object_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+accessible_object_get_declared_annotations(REF, OUT) :- 
+	object_call(REF, getDeclaredAnnotations, [], OUT).
+
+accessible_object_is_annotation_present(REF, ARG0, OUT) :- 
+	object_call(REF, isAnnotationPresent, '.'(ARG0, []), OUT).
+
+accessible_object_set_accessible(REF, ARG0, ARG1) :- 
+	object_call(REF, setAccessible, '.'(ARG0, '.'(ARG1, [])), _).
+
+accessible_object_set_accessible(REF, ARG0) :- 
+	object_call(REF, setAccessible, '.'(ARG0, []), _).
+
+accessible_object_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+accessible_object_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+accessible_object_get_declared_annotation(REF, ARG0, OUT) :- 
+	object_call(REF, getDeclaredAnnotation, '.'(ARG0, []), OUT).
+
+accessible_object_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+accessible_object_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+accessible_object_get_annotations(REF, OUT) :- 
+	object_call(REF, getAnnotations, [], OUT).
+
+accessible_object_get_declared_annotations_by_type(REF, ARG0, OUT) :- 
+	object_call(REF, getDeclaredAnnotationsByType, '.'(ARG0, []), OUT).
+
+accessible_object_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+accessible_object_get_annotations_by_type(REF, ARG0, OUT) :- 
+	object_call(REF, getAnnotationsByType, '.'(ARG0, []), OUT).
+
+accessible_object_get_annotation(REF, ARG0, OUT) :- 
+	object_call(REF, getAnnotation, '.'(ARG0, []), OUT).
 

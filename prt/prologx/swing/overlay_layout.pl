@@ -28,60 +28,60 @@ overlay_layout(ARG0, OUT) :-
 overlay_layout_get_target(REF, OUT) :- 
 	object_call(REF, getTarget, [], OUT).
 
-overlay_layout_add_layout_component(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, addLayoutComponent, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-overlay_layout_add_layout_component(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, addLayoutComponent, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-overlay_layout_get_layout_alignment_x(REF, ARG0, OUT) :- 
-	object_call(REF, getLayoutAlignmentX, '.'(ARG0, []), OUT).
-
-overlay_layout_get_layout_alignment_y(REF, ARG0, OUT) :- 
-	object_call(REF, getLayoutAlignmentY, '.'(ARG0, []), OUT).
-
-overlay_layout_invalidate_layout(REF, ARG0, OUT) :- 
-	object_call(REF, invalidateLayout, '.'(ARG0, []), OUT).
-
-overlay_layout_layout_container(REF, ARG0, OUT) :- 
-	object_call(REF, layoutContainer, '.'(ARG0, []), OUT).
-
-overlay_layout_maximum_layout_size(REF, ARG0, OUT) :- 
-	object_call(REF, maximumLayoutSize, '.'(ARG0, []), OUT).
+overlay_layout_preferred_layout_size(REF, ARG0, OUT) :- 
+	object_call(REF, preferredLayoutSize, '.'(ARG0, []), OUT).
 
 overlay_layout_minimum_layout_size(REF, ARG0, OUT) :- 
 	object_call(REF, minimumLayoutSize, '.'(ARG0, []), OUT).
 
-overlay_layout_preferred_layout_size(REF, ARG0, OUT) :- 
-	object_call(REF, preferredLayoutSize, '.'(ARG0, []), OUT).
-
-overlay_layout_remove_layout_component(REF, ARG0, OUT) :- 
-	object_call(REF, removeLayoutComponent, '.'(ARG0, []), OUT).
-
-overlay_layout_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-overlay_layout_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-overlay_layout_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+overlay_layout_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
 overlay_layout_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-overlay_layout_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+overlay_layout_layout_container(REF, ARG0) :- 
+	object_call(REF, layoutContainer, '.'(ARG0, []), _).
+
+overlay_layout_maximum_layout_size(REF, ARG0, OUT) :- 
+	object_call(REF, maximumLayoutSize, '.'(ARG0, []), OUT).
+
+overlay_layout_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+overlay_layout_add_layout_component(REF, ARG0, ARG1) :- 
+	object_call(REF, addLayoutComponent, '.'(ARG0, '.'(ARG1, [])), _).
+
+overlay_layout_add_layout_component(REF, ARG0, ARG1) :- 
+	object_call(REF, addLayoutComponent, '.'(ARG0, '.'(ARG1, [])), _).
+
+overlay_layout_remove_layout_component(REF, ARG0) :- 
+	object_call(REF, removeLayoutComponent, '.'(ARG0, []), _).
+
+overlay_layout_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+overlay_layout_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 overlay_layout_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-overlay_layout_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
+overlay_layout_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-overlay_layout_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+overlay_layout_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-overlay_layout_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+overlay_layout_invalidate_layout(REF, ARG0) :- 
+	object_call(REF, invalidateLayout, '.'(ARG0, []), _).
+
+overlay_layout_get_layout_alignment_y(REF, ARG0, OUT) :- 
+	object_call(REF, getLayoutAlignmentY, '.'(ARG0, []), OUT).
+
+overlay_layout_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+overlay_layout_get_layout_alignment_x(REF, ARG0, OUT) :- 
+	object_call(REF, getLayoutAlignmentX, '.'(ARG0, []), OUT).
 

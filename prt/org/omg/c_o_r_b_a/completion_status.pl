@@ -22,54 +22,54 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-completion_status__completed_yes(OUT) :- 
+completion_status__COMPLETED_YES(OUT) :- 
 	object_get('org.omg.CORBA.CompletionStatus', '_completed_yes', OUT).
 
-completion_status__completed_no(OUT) :- 
+completion_status__COMPLETED_NO(OUT) :- 
 	object_get('org.omg.CORBA.CompletionStatus', '_completed_no', OUT).
 
-completion_status__completed_maybe(OUT) :- 
+completion_status__COMPLETED_MAYBE(OUT) :- 
 	object_get('org.omg.CORBA.CompletionStatus', '_completed_maybe', OUT).
 
-completion_status_completed_yes(OUT) :- 
+completion_status_COMPLETED_YES(OUT) :- 
 	object_get('org.omg.CORBA.CompletionStatus', completed_yes, OUT).
 
-completion_status_completed_no(OUT) :- 
+completion_status_COMPLETED_NO(OUT) :- 
 	object_get('org.omg.CORBA.CompletionStatus', completed_no, OUT).
 
-completion_status_completed_maybe(OUT) :- 
+completion_status_COMPLETED_MAYBE(OUT) :- 
 	object_get('org.omg.CORBA.CompletionStatus', completed_maybe, OUT).
 
-completion_status_value(REF, OUT) :- 
-	object_call(REF, value, [], OUT).
+completion_status_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-completion_status_from_int(REF, ARG0, OUT) :- 
-	object_call(REF, from_int, '.'(ARG0, []), OUT).
+completion_status_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-completion_status_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-completion_status_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-completion_status_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+completion_status_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 completion_status_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-completion_status_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-completion_status_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+completion_status_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 completion_status_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-completion_status_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+completion_status_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-completion_status_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+completion_status_from_int(REF, ARG0, OUT) :- 
+	object_call(REF, from_int, '.'(ARG0, []), OUT).
+
+completion_status_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+completion_status_value(REF, OUT) :- 
+	object_call(REF, value, [], OUT).
+
+completion_status_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

@@ -25,33 +25,33 @@
 service_u_i(OUT) :- 
 	object_new('javax.print.ServiceUI', [], OUT).
 
-service_u_i_print_dialog(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, ARG6, OUT) :- 
-	object_call(REF, printDialog, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, '.'(ARG6, []))))))), OUT).
+service_u_i_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-service_u_i_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-service_u_i_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-service_u_i_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+service_u_i_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 service_u_i_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-service_u_i_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
 service_u_i_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
+
+service_u_i_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 service_u_i_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-service_u_i_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+service_u_i_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-service_u_i_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+service_u_i_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+service_u_i_print_dialog(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, ARG6, OUT) :- 
+	object_call(REF, printDialog, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, '.'(ARG6, []))))))), OUT).
+
+service_u_i_notify(REF) :- 
+	object_call(REF, notify, [], _).
 

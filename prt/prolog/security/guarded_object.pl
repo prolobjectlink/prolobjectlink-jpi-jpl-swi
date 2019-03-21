@@ -25,33 +25,33 @@
 guarded_object(ARG0, ARG1, OUT) :- 
 	object_new('java.security.GuardedObject', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-guarded_object_get_object(REF, OUT) :- 
-	object_call(REF, getObject, [], OUT).
-
-guarded_object_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-guarded_object_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-guarded_object_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-guarded_object_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+guarded_object_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 guarded_object_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-guarded_object_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
 guarded_object_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-guarded_object_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+guarded_object_get_object(REF, OUT) :- 
+	object_call(REF, getObject, [], OUT).
 
-guarded_object_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+guarded_object_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+guarded_object_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+guarded_object_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+guarded_object_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+guarded_object_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+guarded_object_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 

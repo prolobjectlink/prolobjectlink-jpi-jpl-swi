@@ -25,39 +25,39 @@
 vetoable_change_listener_proxy(ARG0, ARG1, OUT) :- 
 	object_new('java.beans.VetoableChangeListenerProxy', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-vetoable_change_listener_proxy_vetoable_change(REF, ARG0, OUT) :- 
-	object_call(REF, vetoableChange, '.'(ARG0, []), OUT).
+vetoable_change_listener_proxy_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+vetoable_change_listener_proxy_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 vetoable_change_listener_proxy_get_property_name(REF, OUT) :- 
 	object_call(REF, getPropertyName, [], OUT).
 
-vetoable_change_listener_proxy_get_listener(REF, OUT) :- 
-	object_call(REF, getListener, [], OUT).
-
-vetoable_change_listener_proxy_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-vetoable_change_listener_proxy_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-vetoable_change_listener_proxy_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+vetoable_change_listener_proxy_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
 vetoable_change_listener_proxy_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-vetoable_change_listener_proxy_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+vetoable_change_listener_proxy_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-vetoable_change_listener_proxy_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+vetoable_change_listener_proxy_get_listener(REF, OUT) :- 
+	object_call(REF, getListener, [], OUT).
+
+vetoable_change_listener_proxy_vetoable_change(REF, ARG0) :- 
+	object_call(REF, vetoableChange, '.'(ARG0, []), _).
+
+vetoable_change_listener_proxy_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 vetoable_change_listener_proxy_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-vetoable_change_listener_proxy_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+vetoable_change_listener_proxy_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-vetoable_change_listener_proxy_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+vetoable_change_listener_proxy_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 

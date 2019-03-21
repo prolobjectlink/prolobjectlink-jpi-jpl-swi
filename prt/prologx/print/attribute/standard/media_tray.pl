@@ -22,66 +22,66 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-media_tray_top(OUT) :- 
+media_tray_TOP(OUT) :- 
 	object_get('javax.print.attribute.standard.MediaTray', top, OUT).
 
-media_tray_middle(OUT) :- 
+media_tray_MIDDLE(OUT) :- 
 	object_get('javax.print.attribute.standard.MediaTray', middle, OUT).
 
-media_tray_bottom(OUT) :- 
+media_tray_BOTTOM(OUT) :- 
 	object_get('javax.print.attribute.standard.MediaTray', bottom, OUT).
 
-media_tray_envelope(OUT) :- 
+media_tray_ENVELOPE(OUT) :- 
 	object_get('javax.print.attribute.standard.MediaTray', envelope, OUT).
 
-media_tray_manual(OUT) :- 
+media_tray_MANUAL(OUT) :- 
 	object_get('javax.print.attribute.standard.MediaTray', manual, OUT).
 
-media_tray_large_capacity(OUT) :- 
+media_tray_LARGE_CAPACITY(OUT) :- 
 	object_get('javax.print.attribute.standard.MediaTray', large_capacity, OUT).
 
-media_tray_main(OUT) :- 
+media_tray_MAIN(OUT) :- 
 	object_get('javax.print.attribute.standard.MediaTray', main, OUT).
 
-media_tray_side(OUT) :- 
+media_tray_SIDE(OUT) :- 
 	object_get('javax.print.attribute.standard.MediaTray', side, OUT).
 
-media_tray_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+media_tray_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 media_tray_get_name(REF, OUT) :- 
 	object_call(REF, getName, [], OUT).
 
-media_tray_get_category(REF, OUT) :- 
-	object_call(REF, getCategory, [], OUT).
-
 media_tray_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
-
-media_tray_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
 
 media_tray_clone(REF, OUT) :- 
 	object_call(REF, clone, [], OUT).
 
-media_tray_get_value(REF, OUT) :- 
-	object_call(REF, getValue, [], OUT).
+media_tray_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-media_tray_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+media_tray_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-media_tray_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+media_tray_get_category(REF, OUT) :- 
+	object_call(REF, getCategory, [], OUT).
 
-media_tray_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+media_tray_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
 media_tray_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-media_tray_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+media_tray_get_value(REF, OUT) :- 
+	object_call(REF, getValue, [], OUT).
 
-media_tray_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+media_tray_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+media_tray_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+media_tray_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 

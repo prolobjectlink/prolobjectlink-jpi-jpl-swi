@@ -25,32 +25,32 @@
 x509_c_r_l_selector(OUT) :- 
 	object_new('java.security.cert.X509CRLSelector', [], OUT).
 
-x509_c_r_l_selector_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+x509_c_r_l_selector_get_certificate_checking(REF, OUT) :- 
+	object_call(REF, getCertificateChecking, [], OUT).
 
-x509_c_r_l_selector_clone(REF, OUT) :- 
-	object_call(REF, clone, [], OUT).
+x509_c_r_l_selector_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+x509_c_r_l_selector_get_max_c_r_l(REF, OUT) :- 
+	object_call(REF, getMaxCRL, [], OUT).
 
 x509_c_r_l_selector_match(REF, ARG0, OUT) :- 
 	object_call(REF, match, '.'(ARG0, []), OUT).
 
-x509_c_r_l_selector_set_date_and_time(REF, ARG0, OUT) :- 
-	object_call(REF, setDateAndTime, '.'(ARG0, []), OUT).
+x509_c_r_l_selector_set_min_c_r_l_number(REF, ARG0) :- 
+	object_call(REF, setMinCRLNumber, '.'(ARG0, []), _).
 
-x509_c_r_l_selector_add_issuer(REF, ARG0, OUT) :- 
-	object_call(REF, addIssuer, '.'(ARG0, []), OUT).
+x509_c_r_l_selector_set_date_and_time(REF, ARG0) :- 
+	object_call(REF, setDateAndTime, '.'(ARG0, []), _).
 
-x509_c_r_l_selector_add_issuer_name(REF, ARG0, OUT) :- 
-	object_call(REF, addIssuerName, '.'(ARG0, []), OUT).
+x509_c_r_l_selector_set_certificate_checking(REF, ARG0) :- 
+	object_call(REF, setCertificateChecking, '.'(ARG0, []), _).
 
-x509_c_r_l_selector_add_issuer_name(REF, ARG0, OUT) :- 
-	object_call(REF, addIssuerName, '.'(ARG0, []), OUT).
+x509_c_r_l_selector_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
-x509_c_r_l_selector_get_certificate_checking(REF, OUT) :- 
-	object_call(REF, getCertificateChecking, [], OUT).
-
-x509_c_r_l_selector_get_date_and_time(REF, OUT) :- 
-	object_call(REF, getDateAndTime, [], OUT).
+x509_c_r_l_selector_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 x509_c_r_l_selector_get_issuer_names(REF, OUT) :- 
 	object_call(REF, getIssuerNames, [], OUT).
@@ -58,48 +58,48 @@ x509_c_r_l_selector_get_issuer_names(REF, OUT) :-
 x509_c_r_l_selector_get_issuers(REF, OUT) :- 
 	object_call(REF, getIssuers, [], OUT).
 
-x509_c_r_l_selector_get_max_c_r_l(REF, OUT) :- 
-	object_call(REF, getMaxCRL, [], OUT).
+x509_c_r_l_selector_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+x509_c_r_l_selector_clone(REF, OUT) :- 
+	object_call(REF, clone, [], OUT).
+
+x509_c_r_l_selector_set_issuers(REF, ARG0) :- 
+	object_call(REF, setIssuers, '.'(ARG0, []), _).
+
+x509_c_r_l_selector_set_issuer_names(REF, ARG0) :- 
+	object_call(REF, setIssuerNames, '.'(ARG0, []), _).
+
+x509_c_r_l_selector_add_issuer_name(REF, ARG0) :- 
+	object_call(REF, addIssuerName, '.'(ARG0, []), _).
+
+x509_c_r_l_selector_add_issuer_name(REF, ARG0) :- 
+	object_call(REF, addIssuerName, '.'(ARG0, []), _).
 
 x509_c_r_l_selector_get_min_c_r_l(REF, OUT) :- 
 	object_call(REF, getMinCRL, [], OUT).
 
-x509_c_r_l_selector_set_certificate_checking(REF, ARG0, OUT) :- 
-	object_call(REF, setCertificateChecking, '.'(ARG0, []), OUT).
+x509_c_r_l_selector_set_max_c_r_l_number(REF, ARG0) :- 
+	object_call(REF, setMaxCRLNumber, '.'(ARG0, []), _).
 
-x509_c_r_l_selector_set_issuer_names(REF, ARG0, OUT) :- 
-	object_call(REF, setIssuerNames, '.'(ARG0, []), OUT).
+x509_c_r_l_selector_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-x509_c_r_l_selector_set_issuers(REF, ARG0, OUT) :- 
-	object_call(REF, setIssuers, '.'(ARG0, []), OUT).
+x509_c_r_l_selector_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-x509_c_r_l_selector_set_max_c_r_l_number(REF, ARG0, OUT) :- 
-	object_call(REF, setMaxCRLNumber, '.'(ARG0, []), OUT).
+x509_c_r_l_selector_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-x509_c_r_l_selector_set_min_c_r_l_number(REF, ARG0, OUT) :- 
-	object_call(REF, setMinCRLNumber, '.'(ARG0, []), OUT).
+x509_c_r_l_selector_add_issuer(REF, ARG0) :- 
+	object_call(REF, addIssuer, '.'(ARG0, []), _).
 
-x509_c_r_l_selector_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+x509_c_r_l_selector_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-x509_c_r_l_selector_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+x509_c_r_l_selector_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-x509_c_r_l_selector_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-x509_c_r_l_selector_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-x509_c_r_l_selector_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-x509_c_r_l_selector_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-x509_c_r_l_selector_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-x509_c_r_l_selector_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+x509_c_r_l_selector_get_date_and_time(REF, OUT) :- 
+	object_call(REF, getDateAndTime, [], OUT).
 

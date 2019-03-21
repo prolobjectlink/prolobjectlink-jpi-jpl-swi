@@ -22,11 +22,11 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-color_convert_op(ARG0, ARG1, OUT) :- 
-	object_new('java.awt.image.ColorConvertOp', '.'(ARG0, '.'(ARG1, [])), OUT).
-
 color_convert_op(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('java.awt.image.ColorConvertOp', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+color_convert_op(ARG0, ARG1, OUT) :- 
+	object_new('java.awt.image.ColorConvertOp', '.'(ARG0, '.'(ARG1, [])), OUT).
 
 color_convert_op(ARG0, ARG1, OUT) :- 
 	object_new('java.awt.image.ColorConvertOp', '.'(ARG0, '.'(ARG1, [])), OUT).
@@ -34,57 +34,57 @@ color_convert_op(ARG0, ARG1, OUT) :-
 color_convert_op(ARG0, OUT) :- 
 	object_new('java.awt.image.ColorConvertOp', '.'(ARG0, []), OUT).
 
-color_convert_op_filter(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, filter, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-color_convert_op_filter(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, filter, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-color_convert_op_get_i_c_c__profiles(REF, OUT) :- 
-	object_call(REF, getICC_Profiles, [], OUT).
-
-color_convert_op_get_bounds2_d(REF, ARG0, OUT) :- 
-	object_call(REF, getBounds2D, '.'(ARG0, []), OUT).
-
-color_convert_op_get_bounds2_d(REF, ARG0, OUT) :- 
-	object_call(REF, getBounds2D, '.'(ARG0, []), OUT).
+color_convert_op_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 color_convert_op_get_rendering_hints(REF, OUT) :- 
 	object_call(REF, getRenderingHints, [], OUT).
 
-color_convert_op_create_compatible_dest_image(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, createCompatibleDestImage, '.'(ARG0, '.'(ARG1, [])), OUT).
+color_convert_op_get_point2_d(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getPoint2D, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+color_convert_op_get_i_c_c__profiles(REF, OUT) :- 
+	object_call(REF, getICC_Profiles, [], OUT).
 
 color_convert_op_create_compatible_dest_raster(REF, ARG0, OUT) :- 
 	object_call(REF, createCompatibleDestRaster, '.'(ARG0, []), OUT).
 
-color_convert_op_get_point2_d(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getPoint2D, '.'(ARG0, '.'(ARG1, [])), OUT).
+color_convert_op_filter(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, filter, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-color_convert_op_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+color_convert_op_filter(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, filter, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-color_convert_op_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-color_convert_op_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+color_convert_op_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
 color_convert_op_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-color_convert_op_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+color_convert_op_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+color_convert_op_create_compatible_dest_image(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, createCompatibleDestImage, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+color_convert_op_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+color_convert_op_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+color_convert_op_get_bounds2_d(REF, ARG0, OUT) :- 
+	object_call(REF, getBounds2D, '.'(ARG0, []), OUT).
+
+color_convert_op_get_bounds2_d(REF, ARG0, OUT) :- 
+	object_call(REF, getBounds2D, '.'(ARG0, []), OUT).
+
+color_convert_op_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 color_convert_op_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
 color_convert_op_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-color_convert_op_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-color_convert_op_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

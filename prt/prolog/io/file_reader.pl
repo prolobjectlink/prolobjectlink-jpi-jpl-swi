@@ -31,47 +31,35 @@ file_reader(ARG0, OUT) :-
 file_reader(ARG0, OUT) :- 
 	object_new('java.io.FileReader', '.'(ARG0, []), OUT).
 
-file_reader_read(REF, OUT) :- 
-	object_call(REF, read, [], OUT).
+file_reader_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 file_reader_read(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, read, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-file_reader_close(REF, OUT) :- 
-	object_call(REF, close, [], OUT).
+file_reader_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+file_reader_read(REF, OUT) :- 
+	object_call(REF, read, [], OUT).
+
+file_reader_read(REF, ARG0, OUT) :- 
+	object_call(REF, read, '.'(ARG0, []), OUT).
+
+file_reader_read(REF, ARG0, OUT) :- 
+	object_call(REF, read, '.'(ARG0, []), OUT).
 
 file_reader_get_encoding(REF, OUT) :- 
 	object_call(REF, getEncoding, [], OUT).
 
-file_reader_ready(REF, OUT) :- 
-	object_call(REF, ready, [], OUT).
-
-file_reader_read(REF, ARG0, OUT) :- 
-	object_call(REF, read, '.'(ARG0, []), OUT).
-
-file_reader_read(REF, ARG0, OUT) :- 
-	object_call(REF, read, '.'(ARG0, []), OUT).
-
-file_reader_mark(REF, ARG0, OUT) :- 
-	object_call(REF, mark, '.'(ARG0, []), OUT).
+file_reader_reset(REF) :- 
+	object_call(REF, reset, [], _).
 
 file_reader_mark_supported(REF, OUT) :- 
 	object_call(REF, markSupported, [], OUT).
 
-file_reader_reset(REF, OUT) :- 
-	object_call(REF, reset, [], OUT).
-
-file_reader_skip(REF, ARG0, OUT) :- 
-	object_call(REF, skip, '.'(ARG0, []), OUT).
-
-file_reader_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-file_reader_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-file_reader_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+file_reader_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 file_reader_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
@@ -79,15 +67,27 @@ file_reader_equals(REF, ARG0, OUT) :-
 file_reader_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-file_reader_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
 file_reader_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-file_reader_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+file_reader_ready(REF, OUT) :- 
+	object_call(REF, ready, [], OUT).
 
-file_reader_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+file_reader_mark(REF, ARG0) :- 
+	object_call(REF, mark, '.'(ARG0, []), _).
+
+file_reader_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+file_reader_skip(REF, ARG0, OUT) :- 
+	object_call(REF, skip, '.'(ARG0, []), OUT).
+
+file_reader_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+file_reader_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+file_reader_close(REF) :- 
+	object_call(REF, close, [], _).
 

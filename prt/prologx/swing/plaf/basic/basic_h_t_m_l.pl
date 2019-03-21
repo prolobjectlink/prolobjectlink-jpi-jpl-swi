@@ -22,10 +22,10 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-basic_h_t_m_l_propertykey(OUT) :- 
+basic_h_t_m_l_PROPERTYKEY(OUT) :- 
 	object_get('javax.swing.plaf.basic.BasicHTML', propertykey, OUT).
 
-basic_h_t_m_l_documentbasekey(OUT) :- 
+basic_h_t_m_l_DOCUMENTBASEKEY(OUT) :- 
 	object_get('javax.swing.plaf.basic.BasicHTML', documentbasekey, OUT).
 
 basic_h_t_m_l(OUT) :- 
@@ -34,39 +34,39 @@ basic_h_t_m_l(OUT) :-
 basic_h_t_m_l_get_h_t_m_l_baseline(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, getHTMLBaseline, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-basic_h_t_m_l_create_h_t_m_l_view(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, createHTMLView, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-basic_h_t_m_l_is_h_t_m_l_string(REF, ARG0, OUT) :- 
-	object_call(REF, isHTMLString, '.'(ARG0, []), OUT).
-
-basic_h_t_m_l_update_renderer(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, updateRenderer, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-basic_h_t_m_l_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-basic_h_t_m_l_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-basic_h_t_m_l_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-basic_h_t_m_l_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-basic_h_t_m_l_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-basic_h_t_m_l_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+basic_h_t_m_l_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 basic_h_t_m_l_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-basic_h_t_m_l_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+basic_h_t_m_l_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-basic_h_t_m_l_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+basic_h_t_m_l_update_renderer(REF, ARG0, ARG1) :- 
+	object_call(REF, updateRenderer, '.'(ARG0, '.'(ARG1, [])), _).
+
+basic_h_t_m_l_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+basic_h_t_m_l_is_h_t_m_l_string(REF, ARG0, OUT) :- 
+	object_call(REF, isHTMLString, '.'(ARG0, []), OUT).
+
+basic_h_t_m_l_create_h_t_m_l_view(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, createHTMLView, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+basic_h_t_m_l_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+basic_h_t_m_l_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+basic_h_t_m_l_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+basic_h_t_m_l_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+basic_h_t_m_l_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 

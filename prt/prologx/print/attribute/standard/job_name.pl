@@ -25,42 +25,42 @@
 job_name(ARG0, ARG1, OUT) :- 
 	object_new('javax.print.attribute.standard.JobName', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-job_name_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-job_name_get_name(REF, OUT) :- 
-	object_call(REF, getName, [], OUT).
-
 job_name_get_category(REF, OUT) :- 
 	object_call(REF, getCategory, [], OUT).
 
-job_name_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-job_name_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+job_name_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 job_name_get_value(REF, OUT) :- 
 	object_call(REF, getValue, [], OUT).
 
-job_name_get_locale(REF, OUT) :- 
-	object_call(REF, getLocale, [], OUT).
-
-job_name_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-job_name_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-job_name_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+job_name_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
 job_name_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-job_name_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+job_name_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-job_name_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+job_name_get_name(REF, OUT) :- 
+	object_call(REF, getName, [], OUT).
+
+job_name_get_locale(REF, OUT) :- 
+	object_call(REF, getLocale, [], OUT).
+
+job_name_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+job_name_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+job_name_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+job_name_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+job_name_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 

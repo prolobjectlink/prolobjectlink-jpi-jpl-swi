@@ -22,74 +22,32 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-output_stream_writer(ARG0, ARG1, OUT) :- 
-	object_new('java.io.OutputStreamWriter', '.'(ARG0, '.'(ARG1, [])), OUT).
-
-output_stream_writer(ARG0, ARG1, OUT) :- 
-	object_new('java.io.OutputStreamWriter', '.'(ARG0, '.'(ARG1, [])), OUT).
-
 output_stream_writer(ARG0, OUT) :- 
 	object_new('java.io.OutputStreamWriter', '.'(ARG0, []), OUT).
 
 output_stream_writer(ARG0, ARG1, OUT) :- 
 	object_new('java.io.OutputStreamWriter', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-output_stream_writer_write(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, write, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+output_stream_writer(ARG0, ARG1, OUT) :- 
+	object_new('java.io.OutputStreamWriter', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-output_stream_writer_write(REF, ARG0, OUT) :- 
-	object_call(REF, write, '.'(ARG0, []), OUT).
+output_stream_writer(ARG0, ARG1, OUT) :- 
+	object_new('java.io.OutputStreamWriter', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-output_stream_writer_write(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, write, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+output_stream_writer_write(REF, ARG0) :- 
+	object_call(REF, write, '.'(ARG0, []), _).
 
-output_stream_writer_close(REF, OUT) :- 
-	object_call(REF, close, [], OUT).
+output_stream_writer_write(REF, ARG0) :- 
+	object_call(REF, write, '.'(ARG0, []), _).
 
-output_stream_writer_flush(REF, OUT) :- 
-	object_call(REF, flush, [], OUT).
+output_stream_writer_write(REF, ARG0) :- 
+	object_call(REF, write, '.'(ARG0, []), _).
 
-output_stream_writer_get_encoding(REF, OUT) :- 
-	object_call(REF, getEncoding, [], OUT).
-
-output_stream_writer_append(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, append, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-output_stream_writer_append(REF, ARG0, OUT) :- 
-	object_call(REF, append, '.'(ARG0, []), OUT).
-
-output_stream_writer_append(REF, ARG0, OUT) :- 
-	object_call(REF, append, '.'(ARG0, []), OUT).
-
-output_stream_writer_append(REF, ARG0, OUT) :- 
-	object_call(REF, append, '.'(ARG0, []), OUT).
-
-output_stream_writer_append(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, append, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-output_stream_writer_append(REF, ARG0, OUT) :- 
-	object_call(REF, append, '.'(ARG0, []), OUT).
-
-output_stream_writer_write(REF, ARG0, OUT) :- 
-	object_call(REF, write, '.'(ARG0, []), OUT).
-
-output_stream_writer_write(REF, ARG0, OUT) :- 
-	object_call(REF, write, '.'(ARG0, []), OUT).
-
-output_stream_writer_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-output_stream_writer_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-output_stream_writer_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+output_stream_writer_flush(REF) :- 
+	object_call(REF, flush, [], _).
 
 output_stream_writer_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-output_stream_writer_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
 
 output_stream_writer_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -97,9 +55,51 @@ output_stream_writer_hash_code(REF, OUT) :-
 output_stream_writer_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-output_stream_writer_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+output_stream_writer_write(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, write, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
 
-output_stream_writer_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+output_stream_writer_write(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, write, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+output_stream_writer_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+output_stream_writer_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+output_stream_writer_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+output_stream_writer_append(REF, ARG0, OUT) :- 
+	object_call(REF, append, '.'(ARG0, []), OUT).
+
+output_stream_writer_append(REF, ARG0, OUT) :- 
+	object_call(REF, append, '.'(ARG0, []), OUT).
+
+output_stream_writer_append(REF, ARG0, OUT) :- 
+	object_call(REF, append, '.'(ARG0, []), OUT).
+
+output_stream_writer_append(REF, ARG0, OUT) :- 
+	object_call(REF, append, '.'(ARG0, []), OUT).
+
+output_stream_writer_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+output_stream_writer_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+output_stream_writer_get_encoding(REF, OUT) :- 
+	object_call(REF, getEncoding, [], OUT).
+
+output_stream_writer_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+output_stream_writer_append(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, append, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+output_stream_writer_append(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, append, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+output_stream_writer_close(REF) :- 
+	object_call(REF, close, [], _).
 

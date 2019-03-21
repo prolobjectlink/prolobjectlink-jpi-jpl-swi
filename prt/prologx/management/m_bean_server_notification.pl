@@ -22,62 +22,35 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-m_bean_server_notification_registration_notification(OUT) :- 
+m_bean_server_notification_REGISTRATION_NOTIFICATION(OUT) :- 
 	object_get('javax.management.MBeanServerNotification', registration_notification, OUT).
 
-m_bean_server_notification_unregistration_notification(OUT) :- 
+m_bean_server_notification_UNREGISTRATION_NOTIFICATION(OUT) :- 
 	object_get('javax.management.MBeanServerNotification', unregistration_notification, OUT).
 
 m_bean_server_notification(ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_new('javax.management.MBeanServerNotification', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
-m_bean_server_notification_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-m_bean_server_notification_get_m_bean_name(REF, OUT) :- 
-	object_call(REF, getMBeanName, [], OUT).
-
-m_bean_server_notification_get_message(REF, OUT) :- 
-	object_call(REF, getMessage, [], OUT).
-
-m_bean_server_notification_get_type(REF, OUT) :- 
-	object_call(REF, getType, [], OUT).
-
-m_bean_server_notification_get_sequence_number(REF, OUT) :- 
-	object_call(REF, getSequenceNumber, [], OUT).
-
-m_bean_server_notification_set_source(REF, ARG0, OUT) :- 
-	object_call(REF, setSource, '.'(ARG0, []), OUT).
-
-m_bean_server_notification_set_sequence_number(REF, ARG0, OUT) :- 
-	object_call(REF, setSequenceNumber, '.'(ARG0, []), OUT).
-
-m_bean_server_notification_get_time_stamp(REF, OUT) :- 
-	object_call(REF, getTimeStamp, [], OUT).
-
-m_bean_server_notification_set_time_stamp(REF, ARG0, OUT) :- 
-	object_call(REF, setTimeStamp, '.'(ARG0, []), OUT).
-
-m_bean_server_notification_get_user_data(REF, OUT) :- 
-	object_call(REF, getUserData, [], OUT).
-
-m_bean_server_notification_set_user_data(REF, ARG0, OUT) :- 
-	object_call(REF, setUserData, '.'(ARG0, []), OUT).
+m_bean_server_notification_set_source(REF, ARG0) :- 
+	object_call(REF, setSource, '.'(ARG0, []), _).
 
 m_bean_server_notification_get_source(REF, OUT) :- 
 	object_call(REF, getSource, [], OUT).
 
-m_bean_server_notification_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-m_bean_server_notification_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-m_bean_server_notification_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
 m_bean_server_notification_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+m_bean_server_notification_get_time_stamp(REF, OUT) :- 
+	object_call(REF, getTimeStamp, [], OUT).
+
+m_bean_server_notification_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+m_bean_server_notification_get_user_data(REF, OUT) :- 
+	object_call(REF, getUserData, [], OUT).
+
+m_bean_server_notification_get_sequence_number(REF, OUT) :- 
+	object_call(REF, getSequenceNumber, [], OUT).
 
 m_bean_server_notification_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -85,9 +58,36 @@ m_bean_server_notification_hash_code(REF, OUT) :-
 m_bean_server_notification_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-m_bean_server_notification_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+m_bean_server_notification_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-m_bean_server_notification_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+m_bean_server_notification_get_type(REF, OUT) :- 
+	object_call(REF, getType, [], OUT).
+
+m_bean_server_notification_set_time_stamp(REF, ARG0) :- 
+	object_call(REF, setTimeStamp, '.'(ARG0, []), _).
+
+m_bean_server_notification_set_user_data(REF, ARG0) :- 
+	object_call(REF, setUserData, '.'(ARG0, []), _).
+
+m_bean_server_notification_get_m_bean_name(REF, OUT) :- 
+	object_call(REF, getMBeanName, [], OUT).
+
+m_bean_server_notification_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+m_bean_server_notification_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+m_bean_server_notification_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+m_bean_server_notification_set_sequence_number(REF, ARG0) :- 
+	object_call(REF, setSequenceNumber, '.'(ARG0, []), _).
+
+m_bean_server_notification_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+m_bean_server_notification_get_message(REF, OUT) :- 
+	object_call(REF, getMessage, [], OUT).
 

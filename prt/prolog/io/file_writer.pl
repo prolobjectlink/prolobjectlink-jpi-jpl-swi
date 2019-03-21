@@ -22,8 +22,8 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-file_writer(ARG0, OUT) :- 
-	object_new('java.io.FileWriter', '.'(ARG0, []), OUT).
+file_writer(ARG0, ARG1, OUT) :- 
+	object_new('java.io.FileWriter', '.'(ARG0, '.'(ARG1, [])), OUT).
 
 file_writer(ARG0, ARG1, OUT) :- 
 	object_new('java.io.FileWriter', '.'(ARG0, '.'(ARG1, [])), OUT).
@@ -31,62 +31,29 @@ file_writer(ARG0, ARG1, OUT) :-
 file_writer(ARG0, OUT) :- 
 	object_new('java.io.FileWriter', '.'(ARG0, []), OUT).
 
-file_writer(ARG0, ARG1, OUT) :- 
-	object_new('java.io.FileWriter', '.'(ARG0, '.'(ARG1, [])), OUT).
+file_writer(ARG0, OUT) :- 
+	object_new('java.io.FileWriter', '.'(ARG0, []), OUT).
 
 file_writer(ARG0, OUT) :- 
 	object_new('java.io.FileWriter', '.'(ARG0, []), OUT).
 
-file_writer_write(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, write, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+file_writer_write(REF, ARG0) :- 
+	object_call(REF, write, '.'(ARG0, []), _).
 
-file_writer_write(REF, ARG0, OUT) :- 
-	object_call(REF, write, '.'(ARG0, []), OUT).
+file_writer_write(REF, ARG0) :- 
+	object_call(REF, write, '.'(ARG0, []), _).
 
-file_writer_write(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, write, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+file_writer_write(REF, ARG0) :- 
+	object_call(REF, write, '.'(ARG0, []), _).
 
-file_writer_close(REF, OUT) :- 
-	object_call(REF, close, [], OUT).
+file_writer_write(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, write, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
 
-file_writer_flush(REF, OUT) :- 
-	object_call(REF, flush, [], OUT).
+file_writer_write(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, write, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
 
-file_writer_get_encoding(REF, OUT) :- 
-	object_call(REF, getEncoding, [], OUT).
-
-file_writer_append(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, append, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-file_writer_append(REF, ARG0, OUT) :- 
-	object_call(REF, append, '.'(ARG0, []), OUT).
-
-file_writer_append(REF, ARG0, OUT) :- 
-	object_call(REF, append, '.'(ARG0, []), OUT).
-
-file_writer_append(REF, ARG0, OUT) :- 
-	object_call(REF, append, '.'(ARG0, []), OUT).
-
-file_writer_append(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, append, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-file_writer_append(REF, ARG0, OUT) :- 
-	object_call(REF, append, '.'(ARG0, []), OUT).
-
-file_writer_write(REF, ARG0, OUT) :- 
-	object_call(REF, write, '.'(ARG0, []), OUT).
-
-file_writer_write(REF, ARG0, OUT) :- 
-	object_call(REF, write, '.'(ARG0, []), OUT).
-
-file_writer_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-file_writer_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-file_writer_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+file_writer_close(REF) :- 
+	object_call(REF, close, [], _).
 
 file_writer_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
@@ -94,15 +61,48 @@ file_writer_equals(REF, ARG0, OUT) :-
 file_writer_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
+file_writer_get_encoding(REF, OUT) :- 
+	object_call(REF, getEncoding, [], OUT).
+
+file_writer_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
 file_writer_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
 file_writer_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-file_writer_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+file_writer_flush(REF) :- 
+	object_call(REF, flush, [], _).
 
-file_writer_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+file_writer_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+file_writer_append(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, append, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+file_writer_append(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, append, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+file_writer_append(REF, ARG0, OUT) :- 
+	object_call(REF, append, '.'(ARG0, []), OUT).
+
+file_writer_append(REF, ARG0, OUT) :- 
+	object_call(REF, append, '.'(ARG0, []), OUT).
+
+file_writer_append(REF, ARG0, OUT) :- 
+	object_call(REF, append, '.'(ARG0, []), OUT).
+
+file_writer_append(REF, ARG0, OUT) :- 
+	object_call(REF, append, '.'(ARG0, []), OUT).
+
+file_writer_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+file_writer_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+file_writer_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 

@@ -22,32 +22,44 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-print_job_event_job_canceled(OUT) :- 
+print_job_event_JOB_CANCELED(OUT) :- 
 	object_get('javax.print.event.PrintJobEvent', job_canceled, OUT).
 
-print_job_event_job_complete(OUT) :- 
+print_job_event_JOB_COMPLETE(OUT) :- 
 	object_get('javax.print.event.PrintJobEvent', job_complete, OUT).
 
-print_job_event_job_failed(OUT) :- 
+print_job_event_JOB_FAILED(OUT) :- 
 	object_get('javax.print.event.PrintJobEvent', job_failed, OUT).
 
-print_job_event_requires_attention(OUT) :- 
+print_job_event_REQUIRES_ATTENTION(OUT) :- 
 	object_get('javax.print.event.PrintJobEvent', requires_attention, OUT).
 
-print_job_event_no_more_events(OUT) :- 
+print_job_event_NO_MORE_EVENTS(OUT) :- 
 	object_get('javax.print.event.PrintJobEvent', no_more_events, OUT).
 
-print_job_event_data_transfer_complete(OUT) :- 
+print_job_event_DATA_TRANSFER_COMPLETE(OUT) :- 
 	object_get('javax.print.event.PrintJobEvent', data_transfer_complete, OUT).
 
 print_job_event(ARG0, ARG1, OUT) :- 
 	object_new('javax.print.event.PrintJobEvent', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-print_job_event_get_print_job(REF, OUT) :- 
-	object_call(REF, getPrintJob, [], OUT).
+print_job_event_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+print_job_event_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 print_job_event_get_print_event_type(REF, OUT) :- 
 	object_call(REF, getPrintEventType, [], OUT).
+
+print_job_event_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+print_job_event_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+print_job_event_get_print_job(REF, OUT) :- 
+	object_call(REF, getPrintJob, [], OUT).
 
 print_job_event_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
@@ -55,17 +67,8 @@ print_job_event_to_string(REF, OUT) :-
 print_job_event_get_source(REF, OUT) :- 
 	object_call(REF, getSource, [], OUT).
 
-print_job_event_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-print_job_event_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-print_job_event_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-print_job_event_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+print_job_event_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 print_job_event_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -73,9 +76,6 @@ print_job_event_hash_code(REF, OUT) :-
 print_job_event_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-print_job_event_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-print_job_event_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+print_job_event_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 

@@ -22,42 +22,42 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-transform_attribute_identity(OUT) :- 
+transform_attribute_IDENTITY(OUT) :- 
 	object_get('java.awt.font.TransformAttribute', identity, OUT).
 
 transform_attribute(ARG0, OUT) :- 
 	object_new('java.awt.font.TransformAttribute', '.'(ARG0, []), OUT).
 
-transform_attribute_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-transform_attribute_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-transform_attribute_is_identity(REF, OUT) :- 
-	object_call(REF, isIdentity, [], OUT).
-
-transform_attribute_get_transform(REF, OUT) :- 
-	object_call(REF, getTransform, [], OUT).
-
-transform_attribute_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-transform_attribute_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-transform_attribute_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+transform_attribute_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 transform_attribute_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
+transform_attribute_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+transform_attribute_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+transform_attribute_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+transform_attribute_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+transform_attribute_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+transform_attribute_get_transform(REF, OUT) :- 
+	object_call(REF, getTransform, [], OUT).
+
+transform_attribute_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
 transform_attribute_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-transform_attribute_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-transform_attribute_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+transform_attribute_is_identity(REF, OUT) :- 
+	object_call(REF, isIdentity, [], OUT).
 

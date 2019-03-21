@@ -25,117 +25,117 @@
 variable_height_layout_cache(OUT) :- 
 	object_new('javax.swing.tree.VariableHeightLayoutCache', [], OUT).
 
-variable_height_layout_cache_get_path_for_row(REF, ARG0, OUT) :- 
-	object_call(REF, getPathForRow, '.'(ARG0, []), OUT).
-
-variable_height_layout_cache_get_row_for_path(REF, ARG0, OUT) :- 
-	object_call(REF, getRowForPath, '.'(ARG0, []), OUT).
-
-variable_height_layout_cache_get_bounds(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getBounds, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-variable_height_layout_cache_get_row_count(REF, OUT) :- 
-	object_call(REF, getRowCount, [], OUT).
-
-variable_height_layout_cache_set_model(REF, ARG0, OUT) :- 
-	object_call(REF, setModel, '.'(ARG0, []), OUT).
-
-variable_height_layout_cache_is_expanded(REF, ARG0, OUT) :- 
-	object_call(REF, isExpanded, '.'(ARG0, []), OUT).
-
-variable_height_layout_cache_set_expanded_state(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, setExpandedState, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-variable_height_layout_cache_set_root_visible(REF, ARG0, OUT) :- 
-	object_call(REF, setRootVisible, '.'(ARG0, []), OUT).
-
-variable_height_layout_cache_set_row_height(REF, ARG0, OUT) :- 
-	object_call(REF, setRowHeight, '.'(ARG0, []), OUT).
-
-variable_height_layout_cache_get_preferred_width(REF, ARG0, OUT) :- 
-	object_call(REF, getPreferredWidth, '.'(ARG0, []), OUT).
-
-variable_height_layout_cache_get_expanded_state(REF, ARG0, OUT) :- 
-	object_call(REF, getExpandedState, '.'(ARG0, []), OUT).
-
-variable_height_layout_cache_get_visible_paths_from(REF, ARG0, OUT) :- 
-	object_call(REF, getVisiblePathsFrom, '.'(ARG0, []), OUT).
-
-variable_height_layout_cache_get_path_closest_to(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getPathClosestTo, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 variable_height_layout_cache_get_preferred_height(REF, OUT) :- 
 	object_call(REF, getPreferredHeight, [], OUT).
 
-variable_height_layout_cache_get_visible_child_count(REF, ARG0, OUT) :- 
-	object_call(REF, getVisibleChildCount, '.'(ARG0, []), OUT).
-
-variable_height_layout_cache_invalidate_path_bounds(REF, ARG0, OUT) :- 
-	object_call(REF, invalidatePathBounds, '.'(ARG0, []), OUT).
-
-variable_height_layout_cache_invalidate_sizes(REF, OUT) :- 
-	object_call(REF, invalidateSizes, [], OUT).
-
-variable_height_layout_cache_set_node_dimensions(REF, ARG0, OUT) :- 
-	object_call(REF, setNodeDimensions, '.'(ARG0, []), OUT).
-
-variable_height_layout_cache_tree_nodes_changed(REF, ARG0, OUT) :- 
-	object_call(REF, treeNodesChanged, '.'(ARG0, []), OUT).
-
-variable_height_layout_cache_tree_nodes_inserted(REF, ARG0, OUT) :- 
-	object_call(REF, treeNodesInserted, '.'(ARG0, []), OUT).
-
-variable_height_layout_cache_tree_nodes_removed(REF, ARG0, OUT) :- 
-	object_call(REF, treeNodesRemoved, '.'(ARG0, []), OUT).
-
-variable_height_layout_cache_tree_structure_changed(REF, ARG0, OUT) :- 
-	object_call(REF, treeStructureChanged, '.'(ARG0, []), OUT).
-
-variable_height_layout_cache_get_model(REF, OUT) :- 
-	object_call(REF, getModel, [], OUT).
+variable_height_layout_cache_tree_nodes_inserted(REF, ARG0) :- 
+	object_call(REF, treeNodesInserted, '.'(ARG0, []), _).
 
 variable_height_layout_cache_get_selection_model(REF, OUT) :- 
 	object_call(REF, getSelectionModel, [], OUT).
 
-variable_height_layout_cache_set_selection_model(REF, ARG0, OUT) :- 
-	object_call(REF, setSelectionModel, '.'(ARG0, []), OUT).
+variable_height_layout_cache_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-variable_height_layout_cache_get_row_height(REF, OUT) :- 
-	object_call(REF, getRowHeight, [], OUT).
+variable_height_layout_cache_invalidate_path_bounds(REF, ARG0) :- 
+	object_call(REF, invalidatePathBounds, '.'(ARG0, []), _).
 
-variable_height_layout_cache_is_root_visible(REF, OUT) :- 
-	object_call(REF, isRootVisible, [], OUT).
+variable_height_layout_cache_set_root_visible(REF, ARG0) :- 
+	object_call(REF, setRootVisible, '.'(ARG0, []), _).
 
-variable_height_layout_cache_get_node_dimensions(REF, OUT) :- 
-	object_call(REF, getNodeDimensions, [], OUT).
+variable_height_layout_cache_set_expanded_state(REF, ARG0, ARG1) :- 
+	object_call(REF, setExpandedState, '.'(ARG0, '.'(ARG1, [])), _).
+
+variable_height_layout_cache_get_visible_child_count(REF, ARG0, OUT) :- 
+	object_call(REF, getVisibleChildCount, '.'(ARG0, []), OUT).
 
 variable_height_layout_cache_get_rows_for_paths(REF, ARG0, OUT) :- 
 	object_call(REF, getRowsForPaths, '.'(ARG0, []), OUT).
 
-variable_height_layout_cache_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+variable_height_layout_cache_tree_structure_changed(REF, ARG0) :- 
+	object_call(REF, treeStructureChanged, '.'(ARG0, []), _).
 
-variable_height_layout_cache_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+variable_height_layout_cache_invalidate_sizes(REF) :- 
+	object_call(REF, invalidateSizes, [], _).
 
-variable_height_layout_cache_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-variable_height_layout_cache_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-variable_height_layout_cache_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+variable_height_layout_cache_set_selection_model(REF, ARG0) :- 
+	object_call(REF, setSelectionModel, '.'(ARG0, []), _).
 
 variable_height_layout_cache_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+variable_height_layout_cache_is_expanded(REF, ARG0, OUT) :- 
+	object_call(REF, isExpanded, '.'(ARG0, []), OUT).
+
+variable_height_layout_cache_get_path_for_row(REF, ARG0, OUT) :- 
+	object_call(REF, getPathForRow, '.'(ARG0, []), OUT).
+
+variable_height_layout_cache_get_row_height(REF, OUT) :- 
+	object_call(REF, getRowHeight, [], OUT).
+
+variable_height_layout_cache_get_bounds(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getBounds, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+variable_height_layout_cache_get_row_for_path(REF, ARG0, OUT) :- 
+	object_call(REF, getRowForPath, '.'(ARG0, []), OUT).
+
+variable_height_layout_cache_get_visible_paths_from(REF, ARG0, OUT) :- 
+	object_call(REF, getVisiblePathsFrom, '.'(ARG0, []), OUT).
+
+variable_height_layout_cache_get_expanded_state(REF, ARG0, OUT) :- 
+	object_call(REF, getExpandedState, '.'(ARG0, []), OUT).
+
+variable_height_layout_cache_tree_nodes_removed(REF, ARG0) :- 
+	object_call(REF, treeNodesRemoved, '.'(ARG0, []), _).
+
+variable_height_layout_cache_tree_nodes_changed(REF, ARG0) :- 
+	object_call(REF, treeNodesChanged, '.'(ARG0, []), _).
+
+variable_height_layout_cache_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+variable_height_layout_cache_get_preferred_width(REF, ARG0, OUT) :- 
+	object_call(REF, getPreferredWidth, '.'(ARG0, []), OUT).
+
+variable_height_layout_cache_set_row_height(REF, ARG0) :- 
+	object_call(REF, setRowHeight, '.'(ARG0, []), _).
+
+variable_height_layout_cache_get_model(REF, OUT) :- 
+	object_call(REF, getModel, [], OUT).
+
+variable_height_layout_cache_get_row_count(REF, OUT) :- 
+	object_call(REF, getRowCount, [], OUT).
+
+variable_height_layout_cache_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+variable_height_layout_cache_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+variable_height_layout_cache_set_model(REF, ARG0) :- 
+	object_call(REF, setModel, '.'(ARG0, []), _).
+
+variable_height_layout_cache_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+variable_height_layout_cache_get_path_closest_to(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getPathClosestTo, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+variable_height_layout_cache_set_node_dimensions(REF, ARG0) :- 
+	object_call(REF, setNodeDimensions, '.'(ARG0, []), _).
+
+variable_height_layout_cache_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+variable_height_layout_cache_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
 variable_height_layout_cache_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-variable_height_layout_cache_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+variable_height_layout_cache_get_node_dimensions(REF, OUT) :- 
+	object_call(REF, getNodeDimensions, [], OUT).
 
-variable_height_layout_cache_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+variable_height_layout_cache_is_root_visible(REF, OUT) :- 
+	object_call(REF, isRootVisible, [], OUT).
 

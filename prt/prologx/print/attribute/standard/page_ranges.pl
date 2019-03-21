@@ -34,8 +34,23 @@ page_ranges(ARG0, OUT) :-
 page_ranges(ARG0, OUT) :- 
 	object_new('javax.print.attribute.standard.PageRanges', '.'(ARG0, []), OUT).
 
+page_ranges_next(REF, ARG0, OUT) :- 
+	object_call(REF, next, '.'(ARG0, []), OUT).
+
 page_ranges_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+page_ranges_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+page_ranges_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+page_ranges_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
+
+page_ranges_get_members(REF, OUT) :- 
+	object_call(REF, getMembers, [], OUT).
 
 page_ranges_get_name(REF, OUT) :- 
 	object_call(REF, getName, [], OUT).
@@ -43,39 +58,24 @@ page_ranges_get_name(REF, OUT) :-
 page_ranges_get_category(REF, OUT) :- 
 	object_call(REF, getCategory, [], OUT).
 
+page_ranges_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
 page_ranges_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-page_ranges_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
 page_ranges_contains(REF, ARG0, OUT) :- 
 	object_call(REF, contains, '.'(ARG0, []), OUT).
 
 page_ranges_contains(REF, ARG0, OUT) :- 
 	object_call(REF, contains, '.'(ARG0, []), OUT).
 
-page_ranges_next(REF, ARG0, OUT) :- 
-	object_call(REF, next, '.'(ARG0, []), OUT).
+page_ranges_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-page_ranges_get_members(REF, OUT) :- 
-	object_call(REF, getMembers, [], OUT).
+page_ranges_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-page_ranges_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-page_ranges_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-page_ranges_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-page_ranges_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-page_ranges_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-page_ranges_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+page_ranges_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

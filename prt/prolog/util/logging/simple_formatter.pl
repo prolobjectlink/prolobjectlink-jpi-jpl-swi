@@ -25,42 +25,42 @@
 simple_formatter(OUT) :- 
 	object_new('java.util.logging.SimpleFormatter', [], OUT).
 
-simple_formatter_format(REF, ARG0, OUT) :- 
-	object_call(REF, format, '.'(ARG0, []), OUT).
+simple_formatter_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+simple_formatter_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+simple_formatter_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+simple_formatter_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 simple_formatter_format_message(REF, ARG0, OUT) :- 
 	object_call(REF, formatMessage, '.'(ARG0, []), OUT).
 
-simple_formatter_get_head(REF, ARG0, OUT) :- 
-	object_call(REF, getHead, '.'(ARG0, []), OUT).
-
-simple_formatter_get_tail(REF, ARG0, OUT) :- 
-	object_call(REF, getTail, '.'(ARG0, []), OUT).
-
-simple_formatter_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-simple_formatter_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-simple_formatter_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-simple_formatter_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-simple_formatter_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-simple_formatter_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+simple_formatter_format(REF, ARG0, OUT) :- 
+	object_call(REF, format, '.'(ARG0, []), OUT).
 
 simple_formatter_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-simple_formatter_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+simple_formatter_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
-simple_formatter_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+simple_formatter_get_head(REF, ARG0, OUT) :- 
+	object_call(REF, getHead, '.'(ARG0, []), OUT).
+
+simple_formatter_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+simple_formatter_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+simple_formatter_get_tail(REF, ARG0, OUT) :- 
+	object_call(REF, getTail, '.'(ARG0, []), OUT).
+
+simple_formatter_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 

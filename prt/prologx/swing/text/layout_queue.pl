@@ -25,26 +25,23 @@
 layout_queue(OUT) :- 
 	object_new('javax.swing.text.LayoutQueue', [], OUT).
 
-layout_queue_set_default_queue(REF, ARG0, OUT) :- 
-	object_call(REF, setDefaultQueue, '.'(ARG0, []), OUT).
+layout_queue_add_task(REF, ARG0) :- 
+	object_call(REF, addTask, '.'(ARG0, []), _).
 
-layout_queue_add_task(REF, ARG0, OUT) :- 
-	object_call(REF, addTask, '.'(ARG0, []), OUT).
+layout_queue_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+layout_queue_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 layout_queue_get_default_queue(REF, OUT) :- 
 	object_call(REF, getDefaultQueue, [], OUT).
 
-layout_queue_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+layout_queue_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-layout_queue_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-layout_queue_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-layout_queue_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+layout_queue_set_default_queue(REF, ARG0) :- 
+	object_call(REF, setDefaultQueue, '.'(ARG0, []), _).
 
 layout_queue_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
@@ -55,9 +52,12 @@ layout_queue_hash_code(REF, OUT) :-
 layout_queue_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-layout_queue_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+layout_queue_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-layout_queue_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+layout_queue_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+layout_queue_wait(REF) :- 
+	object_call(REF, wait, [], _).
 

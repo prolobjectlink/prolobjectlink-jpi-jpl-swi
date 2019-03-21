@@ -22,155 +22,122 @@
 
 :-consult('../../../../../../obj/prolobject.pl').
 
-attribute_list_cdata(OUT) :- 
+attribute_list_CDATA(OUT) :- 
 	object_get('javax.swing.text.html.parser.AttributeList', cdata, OUT).
 
-attribute_list_entity(OUT) :- 
+attribute_list_ENTITY(OUT) :- 
 	object_get('javax.swing.text.html.parser.AttributeList', entity, OUT).
 
-attribute_list_entities(OUT) :- 
+attribute_list_ENTITIES(OUT) :- 
 	object_get('javax.swing.text.html.parser.AttributeList', entities, OUT).
 
-attribute_list_id(OUT) :- 
+attribute_list_ID(OUT) :- 
 	object_get('javax.swing.text.html.parser.AttributeList', id, OUT).
 
-attribute_list_idref(OUT) :- 
+attribute_list_IDREF(OUT) :- 
 	object_get('javax.swing.text.html.parser.AttributeList', idref, OUT).
 
-attribute_list_idrefs(OUT) :- 
+attribute_list_IDREFS(OUT) :- 
 	object_get('javax.swing.text.html.parser.AttributeList', idrefs, OUT).
 
-attribute_list_name(OUT) :- 
+attribute_list_NAME(OUT) :- 
 	object_get('javax.swing.text.html.parser.AttributeList', name, OUT).
 
-attribute_list_names(OUT) :- 
+attribute_list_NAMES(OUT) :- 
 	object_get('javax.swing.text.html.parser.AttributeList', names, OUT).
 
-attribute_list_nmtoken(OUT) :- 
+attribute_list_NMTOKEN(OUT) :- 
 	object_get('javax.swing.text.html.parser.AttributeList', nmtoken, OUT).
 
-attribute_list_nmtokens(OUT) :- 
+attribute_list_NMTOKENS(OUT) :- 
 	object_get('javax.swing.text.html.parser.AttributeList', nmtokens, OUT).
 
-attribute_list_notation(OUT) :- 
+attribute_list_NOTATION(OUT) :- 
 	object_get('javax.swing.text.html.parser.AttributeList', notation, OUT).
 
-attribute_list_number(OUT) :- 
+attribute_list_NUMBER(OUT) :- 
 	object_get('javax.swing.text.html.parser.AttributeList', number, OUT).
 
-attribute_list_numbers(OUT) :- 
+attribute_list_NUMBERS(OUT) :- 
 	object_get('javax.swing.text.html.parser.AttributeList', numbers, OUT).
 
-attribute_list_nutoken(OUT) :- 
+attribute_list_NUTOKEN(OUT) :- 
 	object_get('javax.swing.text.html.parser.AttributeList', nutoken, OUT).
 
-attribute_list_nutokens(OUT) :- 
+attribute_list_NUTOKENS(OUT) :- 
 	object_get('javax.swing.text.html.parser.AttributeList', nutokens, OUT).
 
-attribute_list_rcdata(OUT) :- 
+attribute_list_RCDATA(OUT) :- 
 	object_get('javax.swing.text.html.parser.AttributeList', rcdata, OUT).
 
-attribute_list_empty(OUT) :- 
+attribute_list_EMPTY(OUT) :- 
 	object_get('javax.swing.text.html.parser.AttributeList', empty, OUT).
 
-attribute_list_model(OUT) :- 
+attribute_list_MODEL(OUT) :- 
 	object_get('javax.swing.text.html.parser.AttributeList', model, OUT).
 
-attribute_list_any(OUT) :- 
+attribute_list_ANY(OUT) :- 
 	object_get('javax.swing.text.html.parser.AttributeList', any, OUT).
 
-attribute_list_fixed(OUT) :- 
+attribute_list_FIXED(OUT) :- 
 	object_get('javax.swing.text.html.parser.AttributeList', fixed, OUT).
 
-attribute_list_required(OUT) :- 
+attribute_list_REQUIRED(OUT) :- 
 	object_get('javax.swing.text.html.parser.AttributeList', required, OUT).
 
-attribute_list_current(OUT) :- 
+attribute_list_CURRENT(OUT) :- 
 	object_get('javax.swing.text.html.parser.AttributeList', current, OUT).
 
-attribute_list_conref(OUT) :- 
+attribute_list_CONREF(OUT) :- 
 	object_get('javax.swing.text.html.parser.AttributeList', conref, OUT).
 
-attribute_list_implied(OUT) :- 
+attribute_list_IMPLIED(OUT) :- 
 	object_get('javax.swing.text.html.parser.AttributeList', implied, OUT).
 
-attribute_list_public(OUT) :- 
+attribute_list_PUBLIC(OUT) :- 
 	object_get('javax.swing.text.html.parser.AttributeList', public, OUT).
 
-attribute_list_sdata(OUT) :- 
+attribute_list_SDATA(OUT) :- 
 	object_get('javax.swing.text.html.parser.AttributeList', sdata, OUT).
 
-attribute_list_pi(OUT) :- 
+attribute_list_PI(OUT) :- 
 	object_get('javax.swing.text.html.parser.AttributeList', pi, OUT).
 
-attribute_list_starttag(OUT) :- 
+attribute_list_STARTTAG(OUT) :- 
 	object_get('javax.swing.text.html.parser.AttributeList', starttag, OUT).
 
-attribute_list_endtag(OUT) :- 
+attribute_list_ENDTAG(OUT) :- 
 	object_get('javax.swing.text.html.parser.AttributeList', endtag, OUT).
 
-attribute_list_ms(OUT) :- 
+attribute_list_MS(OUT) :- 
 	object_get('javax.swing.text.html.parser.AttributeList', ms, OUT).
 
-attribute_list_md(OUT) :- 
+attribute_list_MD(OUT) :- 
 	object_get('javax.swing.text.html.parser.AttributeList', md, OUT).
 
-attribute_list_system(OUT) :- 
+attribute_list_SYSTEM(OUT) :- 
 	object_get('javax.swing.text.html.parser.AttributeList', system, OUT).
 
-attribute_list_general(OUT) :- 
+attribute_list_GENERAL(OUT) :- 
 	object_get('javax.swing.text.html.parser.AttributeList', general, OUT).
 
-attribute_list_default(OUT) :- 
+attribute_list_DEFAULT(OUT) :- 
 	object_get('javax.swing.text.html.parser.AttributeList', default, OUT).
 
-attribute_list_parameter(OUT) :- 
+attribute_list_PARAMETER(OUT) :- 
 	object_get('javax.swing.text.html.parser.AttributeList', parameter, OUT).
-
-attribute_list(ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, OUT) :- 
-	object_new('javax.swing.text.html.parser.AttributeList', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), OUT).
 
 attribute_list(ARG0, OUT) :- 
 	object_new('javax.swing.text.html.parser.AttributeList', '.'(ARG0, []), OUT).
 
-attribute_list_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-attribute_list_get_name(REF, OUT) :- 
-	object_call(REF, getName, [], OUT).
-
-attribute_list_get_value(REF, OUT) :- 
-	object_call(REF, getValue, [], OUT).
-
-attribute_list_get_type(REF, OUT) :- 
-	object_call(REF, getType, [], OUT).
-
-attribute_list_get_modifier(REF, OUT) :- 
-	object_call(REF, getModifier, [], OUT).
+attribute_list(ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, OUT) :- 
+	object_new('javax.swing.text.html.parser.AttributeList', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), OUT).
 
 attribute_list_get_next(REF, OUT) :- 
 	object_call(REF, getNext, [], OUT).
 
-attribute_list_name2type(REF, ARG0, OUT) :- 
-	object_call(REF, name2type, '.'(ARG0, []), OUT).
-
-attribute_list_type2name(REF, ARG0, OUT) :- 
-	object_call(REF, type2name, '.'(ARG0, []), OUT).
-
 attribute_list_get_values(REF, OUT) :- 
 	object_call(REF, getValues, [], OUT).
-
-attribute_list_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-attribute_list_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-attribute_list_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-attribute_list_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 attribute_list_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -178,9 +145,42 @@ attribute_list_hash_code(REF, OUT) :-
 attribute_list_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-attribute_list_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+attribute_list_get_value(REF, OUT) :- 
+	object_call(REF, getValue, [], OUT).
 
-attribute_list_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+attribute_list_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+attribute_list_get_type(REF, OUT) :- 
+	object_call(REF, getType, [], OUT).
+
+attribute_list_get_name(REF, OUT) :- 
+	object_call(REF, getName, [], OUT).
+
+attribute_list_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+attribute_list_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+attribute_list_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+attribute_list_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+attribute_list_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+attribute_list_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+attribute_list_name2type(REF, ARG0, OUT) :- 
+	object_call(REF, name2type, '.'(ARG0, []), OUT).
+
+attribute_list_get_modifier(REF, OUT) :- 
+	object_call(REF, getModifier, [], OUT).
+
+attribute_list_type2name(REF, ARG0, OUT) :- 
+	object_call(REF, type2name, '.'(ARG0, []), OUT).
 

@@ -22,9 +22,6 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-hyperlink_event(ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, OUT) :- 
-	object_new('javax.swing.event.HyperlinkEvent', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), OUT).
-
 hyperlink_event(ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
 	object_new('javax.swing.event.HyperlinkEvent', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
 
@@ -34,48 +31,51 @@ hyperlink_event(ARG0, ARG1, ARG2, ARG3, OUT) :-
 hyperlink_event(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('javax.swing.event.HyperlinkEvent', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
+hyperlink_event(ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, OUT) :- 
+	object_new('javax.swing.event.HyperlinkEvent', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), OUT).
+
 hyperlink_event_get_u_r_l(REF, OUT) :- 
 	object_call(REF, getURL, [], OUT).
-
-hyperlink_event_get_event_type(REF, OUT) :- 
-	object_call(REF, getEventType, [], OUT).
 
 hyperlink_event_get_input_event(REF, OUT) :- 
 	object_call(REF, getInputEvent, [], OUT).
 
-hyperlink_event_get_source_element(REF, OUT) :- 
-	object_call(REF, getSourceElement, [], OUT).
+hyperlink_event_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-hyperlink_event_get_description(REF, OUT) :- 
-	object_call(REF, getDescription, [], OUT).
+hyperlink_event_get_event_type(REF, OUT) :- 
+	object_call(REF, getEventType, [], OUT).
 
-hyperlink_event_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+hyperlink_event_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 hyperlink_event_get_source(REF, OUT) :- 
 	object_call(REF, getSource, [], OUT).
 
-hyperlink_event_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-hyperlink_event_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-hyperlink_event_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-hyperlink_event_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+hyperlink_event_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
 hyperlink_event_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-hyperlink_event_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
+hyperlink_event_get_description(REF, OUT) :- 
+	object_call(REF, getDescription, [], OUT).
 
-hyperlink_event_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+hyperlink_event_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-hyperlink_event_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+hyperlink_event_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+hyperlink_event_get_source_element(REF, OUT) :- 
+	object_call(REF, getSourceElement, [], OUT).
+
+hyperlink_event_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+hyperlink_event_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+hyperlink_event_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 

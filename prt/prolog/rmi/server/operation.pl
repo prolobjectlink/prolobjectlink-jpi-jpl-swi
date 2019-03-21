@@ -25,33 +25,33 @@
 operation(ARG0, OUT) :- 
 	object_new('java.rmi.server.Operation', '.'(ARG0, []), OUT).
 
-operation_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-operation_get_operation(REF, OUT) :- 
-	object_call(REF, getOperation, [], OUT).
-
-operation_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-operation_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-operation_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-operation_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+operation_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
 operation_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-operation_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
+operation_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-operation_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+operation_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-operation_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+operation_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+operation_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+operation_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+operation_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+operation_get_operation(REF, OUT) :- 
+	object_call(REF, getOperation, [], OUT).
+
+operation_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

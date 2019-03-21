@@ -25,29 +25,17 @@
 w3_c_endpoint_reference(ARG0, OUT) :- 
 	object_new('javax.xml.ws.wsaddressing.W3CEndpointReference', '.'(ARG0, []), OUT).
 
-w3_c_endpoint_reference_write_to(REF, ARG0, OUT) :- 
-	object_call(REF, writeTo, '.'(ARG0, []), OUT).
-
-w3_c_endpoint_reference_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-w3_c_endpoint_reference_get_port(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getPort, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-w3_c_endpoint_reference_read_from(REF, ARG0, OUT) :- 
-	object_call(REF, readFrom, '.'(ARG0, []), OUT).
-
-w3_c_endpoint_reference_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-w3_c_endpoint_reference_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-w3_c_endpoint_reference_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+w3_c_endpoint_reference_write_to(REF, ARG0) :- 
+	object_call(REF, writeTo, '.'(ARG0, []), _).
 
 w3_c_endpoint_reference_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+w3_c_endpoint_reference_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+w3_c_endpoint_reference_read_from(REF, ARG0, OUT) :- 
+	object_call(REF, readFrom, '.'(ARG0, []), OUT).
 
 w3_c_endpoint_reference_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -55,9 +43,21 @@ w3_c_endpoint_reference_hash_code(REF, OUT) :-
 w3_c_endpoint_reference_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-w3_c_endpoint_reference_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+w3_c_endpoint_reference_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-w3_c_endpoint_reference_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+w3_c_endpoint_reference_get_port(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getPort, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+w3_c_endpoint_reference_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+w3_c_endpoint_reference_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+w3_c_endpoint_reference_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+w3_c_endpoint_reference_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 

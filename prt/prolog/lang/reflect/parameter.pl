@@ -22,29 +22,8 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-parameter_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-parameter_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-parameter_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-parameter_get_modifiers(REF, OUT) :- 
-	object_call(REF, getModifiers, [], OUT).
-
 parameter_get_name(REF, OUT) :- 
 	object_call(REF, getName, [], OUT).
-
-parameter_get_annotation(REF, ARG0, OUT) :- 
-	object_call(REF, getAnnotation, '.'(ARG0, []), OUT).
-
-parameter_get_annotations(REF, OUT) :- 
-	object_call(REF, getAnnotations, [], OUT).
-
-parameter_get_annotations_by_type(REF, ARG0, OUT) :- 
-	object_call(REF, getAnnotationsByType, '.'(ARG0, []), OUT).
 
 parameter_get_declared_annotation(REF, ARG0, OUT) :- 
 	object_call(REF, getDeclaredAnnotation, '.'(ARG0, []), OUT).
@@ -52,17 +31,65 @@ parameter_get_declared_annotation(REF, ARG0, OUT) :-
 parameter_get_declared_annotations(REF, OUT) :- 
 	object_call(REF, getDeclaredAnnotations, [], OUT).
 
+parameter_is_annotation_present(REF, ARG0, OUT) :- 
+	object_call(REF, isAnnotationPresent, '.'(ARG0, []), OUT).
+
+parameter_get_annotations(REF, OUT) :- 
+	object_call(REF, getAnnotations, [], OUT).
+
 parameter_get_declared_annotations_by_type(REF, ARG0, OUT) :- 
 	object_call(REF, getDeclaredAnnotationsByType, '.'(ARG0, []), OUT).
-
-parameter_is_synthetic(REF, OUT) :- 
-	object_call(REF, isSynthetic, [], OUT).
 
 parameter_get_annotated_type(REF, OUT) :- 
 	object_call(REF, getAnnotatedType, [], OUT).
 
+parameter_get_modifiers(REF, OUT) :- 
+	object_call(REF, getModifiers, [], OUT).
+
+parameter_is_synthetic(REF, OUT) :- 
+	object_call(REF, isSynthetic, [], OUT).
+
+parameter_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+parameter_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+parameter_is_var_args(REF, OUT) :- 
+	object_call(REF, isVarArgs, [], OUT).
+
 parameter_get_type(REF, OUT) :- 
 	object_call(REF, getType, [], OUT).
+
+parameter_get_annotation(REF, ARG0, OUT) :- 
+	object_call(REF, getAnnotation, '.'(ARG0, []), OUT).
+
+parameter_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+parameter_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+parameter_get_annotations_by_type(REF, ARG0, OUT) :- 
+	object_call(REF, getAnnotationsByType, '.'(ARG0, []), OUT).
+
+parameter_is_name_present(REF, OUT) :- 
+	object_call(REF, isNamePresent, [], OUT).
+
+parameter_is_implicit(REF, OUT) :- 
+	object_call(REF, isImplicit, [], OUT).
+
+parameter_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+parameter_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+parameter_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
+
+parameter_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 parameter_get_declaring_executable(REF, OUT) :- 
 	object_call(REF, getDeclaringExecutable, [], OUT).
@@ -70,33 +97,6 @@ parameter_get_declaring_executable(REF, OUT) :-
 parameter_get_parameterized_type(REF, OUT) :- 
 	object_call(REF, getParameterizedType, [], OUT).
 
-parameter_is_implicit(REF, OUT) :- 
-	object_call(REF, isImplicit, [], OUT).
-
-parameter_is_name_present(REF, OUT) :- 
-	object_call(REF, isNamePresent, [], OUT).
-
-parameter_is_var_args(REF, OUT) :- 
-	object_call(REF, isVarArgs, [], OUT).
-
-parameter_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-parameter_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-parameter_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-parameter_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-parameter_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-parameter_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
-
-parameter_is_annotation_present(REF, ARG0, OUT) :- 
-	object_call(REF, isAnnotationPresent, '.'(ARG0, []), OUT).
+parameter_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 

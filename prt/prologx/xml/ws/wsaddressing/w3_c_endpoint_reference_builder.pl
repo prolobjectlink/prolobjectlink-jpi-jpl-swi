@@ -25,60 +25,60 @@
 w3_c_endpoint_reference_builder(OUT) :- 
 	object_new('javax.xml.ws.wsaddressing.W3CEndpointReferenceBuilder', [], OUT).
 
-w3_c_endpoint_reference_builder_address(REF, ARG0, OUT) :- 
-	object_call(REF, address, '.'(ARG0, []), OUT).
-
-w3_c_endpoint_reference_builder_element(REF, ARG0, OUT) :- 
-	object_call(REF, element, '.'(ARG0, []), OUT).
-
-w3_c_endpoint_reference_builder_build(REF, OUT) :- 
-	object_call(REF, build, [], OUT).
-
 w3_c_endpoint_reference_builder_attribute(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, attribute, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-w3_c_endpoint_reference_builder_service_name(REF, ARG0, OUT) :- 
-	object_call(REF, serviceName, '.'(ARG0, []), OUT).
-
-w3_c_endpoint_reference_builder_wsdl_document_location(REF, ARG0, OUT) :- 
-	object_call(REF, wsdlDocumentLocation, '.'(ARG0, []), OUT).
-
-w3_c_endpoint_reference_builder_interface_name(REF, ARG0, OUT) :- 
-	object_call(REF, interfaceName, '.'(ARG0, []), OUT).
-
-w3_c_endpoint_reference_builder_endpoint_name(REF, ARG0, OUT) :- 
-	object_call(REF, endpointName, '.'(ARG0, []), OUT).
-
-w3_c_endpoint_reference_builder_reference_parameter(REF, ARG0, OUT) :- 
-	object_call(REF, referenceParameter, '.'(ARG0, []), OUT).
-
-w3_c_endpoint_reference_builder_metadata(REF, ARG0, OUT) :- 
-	object_call(REF, metadata, '.'(ARG0, []), OUT).
-
-w3_c_endpoint_reference_builder_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-w3_c_endpoint_reference_builder_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-w3_c_endpoint_reference_builder_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-w3_c_endpoint_reference_builder_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+w3_c_endpoint_reference_builder_address(REF, ARG0, OUT) :- 
+	object_call(REF, address, '.'(ARG0, []), OUT).
 
 w3_c_endpoint_reference_builder_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
+w3_c_endpoint_reference_builder_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+w3_c_endpoint_reference_builder_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+w3_c_endpoint_reference_builder_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+w3_c_endpoint_reference_builder_metadata(REF, ARG0, OUT) :- 
+	object_call(REF, metadata, '.'(ARG0, []), OUT).
+
 w3_c_endpoint_reference_builder_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
+
+w3_c_endpoint_reference_builder_endpoint_name(REF, ARG0, OUT) :- 
+	object_call(REF, endpointName, '.'(ARG0, []), OUT).
 
 w3_c_endpoint_reference_builder_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-w3_c_endpoint_reference_builder_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+w3_c_endpoint_reference_builder_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-w3_c_endpoint_reference_builder_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+w3_c_endpoint_reference_builder_build(REF, OUT) :- 
+	object_call(REF, build, [], OUT).
+
+w3_c_endpoint_reference_builder_service_name(REF, ARG0, OUT) :- 
+	object_call(REF, serviceName, '.'(ARG0, []), OUT).
+
+w3_c_endpoint_reference_builder_element(REF, ARG0, OUT) :- 
+	object_call(REF, element, '.'(ARG0, []), OUT).
+
+w3_c_endpoint_reference_builder_interface_name(REF, ARG0, OUT) :- 
+	object_call(REF, interfaceName, '.'(ARG0, []), OUT).
+
+w3_c_endpoint_reference_builder_reference_parameter(REF, ARG0, OUT) :- 
+	object_call(REF, referenceParameter, '.'(ARG0, []), OUT).
+
+w3_c_endpoint_reference_builder_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+w3_c_endpoint_reference_builder_wsdl_document_location(REF, ARG0, OUT) :- 
+	object_call(REF, wsdlDocumentLocation, '.'(ARG0, []), OUT).
+
+w3_c_endpoint_reference_builder_notify(REF) :- 
+	object_call(REF, notify, [], _).
 

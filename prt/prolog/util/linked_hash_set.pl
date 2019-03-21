@@ -22,11 +22,11 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-linked_hash_set(ARG0, OUT) :- 
-	object_new('java.util.LinkedHashSet', '.'(ARG0, []), OUT).
-
 linked_hash_set(OUT) :- 
 	object_new('java.util.LinkedHashSet', [], OUT).
+
+linked_hash_set(ARG0, OUT) :- 
+	object_new('java.util.LinkedHashSet', '.'(ARG0, []), OUT).
 
 linked_hash_set(ARG0, OUT) :- 
 	object_new('java.util.LinkedHashSet', '.'(ARG0, []), OUT).
@@ -34,23 +34,11 @@ linked_hash_set(ARG0, OUT) :-
 linked_hash_set(ARG0, ARG1, OUT) :- 
 	object_new('java.util.LinkedHashSet', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-linked_hash_set_spliterator(REF, OUT) :- 
-	object_call(REF, spliterator, [], OUT).
+linked_hash_set_to_array(REF, OUT) :- 
+	object_call(REF, toArray, [], OUT).
 
-linked_hash_set_add(REF, ARG0, OUT) :- 
-	object_call(REF, add, '.'(ARG0, []), OUT).
-
-linked_hash_set_remove(REF, ARG0, OUT) :- 
-	object_call(REF, remove, '.'(ARG0, []), OUT).
-
-linked_hash_set_clone(REF, OUT) :- 
-	object_call(REF, clone, [], OUT).
-
-linked_hash_set_clear(REF, OUT) :- 
-	object_call(REF, clear, [], OUT).
-
-linked_hash_set_contains(REF, ARG0, OUT) :- 
-	object_call(REF, contains, '.'(ARG0, []), OUT).
+linked_hash_set_to_array(REF, ARG0, OUT) :- 
+	object_call(REF, toArray, '.'(ARG0, []), OUT).
 
 linked_hash_set_is_empty(REF, OUT) :- 
 	object_call(REF, isEmpty, [], OUT).
@@ -58,63 +46,75 @@ linked_hash_set_is_empty(REF, OUT) :-
 linked_hash_set_iterator(REF, OUT) :- 
 	object_call(REF, iterator, [], OUT).
 
-linked_hash_set_size(REF, OUT) :- 
-	object_call(REF, size, [], OUT).
-
-linked_hash_set_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-linked_hash_set_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-linked_hash_set_remove_all(REF, ARG0, OUT) :- 
-	object_call(REF, removeAll, '.'(ARG0, []), OUT).
-
 linked_hash_set_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
-
-linked_hash_set_to_array(REF, ARG0, OUT) :- 
-	object_call(REF, toArray, '.'(ARG0, []), OUT).
-
-linked_hash_set_to_array(REF, OUT) :- 
-	object_call(REF, toArray, [], OUT).
-
-linked_hash_set_add_all(REF, ARG0, OUT) :- 
-	object_call(REF, addAll, '.'(ARG0, []), OUT).
-
-linked_hash_set_contains_all(REF, ARG0, OUT) :- 
-	object_call(REF, containsAll, '.'(ARG0, []), OUT).
-
-linked_hash_set_retain_all(REF, ARG0, OUT) :- 
-	object_call(REF, retainAll, '.'(ARG0, []), OUT).
-
-linked_hash_set_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-linked_hash_set_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-linked_hash_set_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-linked_hash_set_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-linked_hash_set_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-linked_hash_set_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
-
-linked_hash_set_stream(REF, OUT) :- 
-	object_call(REF, stream, [], OUT).
-
-linked_hash_set_remove_if(REF, ARG0, OUT) :- 
-	object_call(REF, removeIf, '.'(ARG0, []), OUT).
 
 linked_hash_set_parallel_stream(REF, OUT) :- 
 	object_call(REF, parallelStream, [], OUT).
 
-linked_hash_set_for_each(REF, ARG0, OUT) :- 
-	object_call(REF, forEach, '.'(ARG0, []), OUT).
+linked_hash_set_spliterator(REF, OUT) :- 
+	object_call(REF, spliterator, [], OUT).
+
+linked_hash_set_contains_all(REF, ARG0, OUT) :- 
+	object_call(REF, containsAll, '.'(ARG0, []), OUT).
+
+linked_hash_set_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+linked_hash_set_remove_if(REF, ARG0, OUT) :- 
+	object_call(REF, removeIf, '.'(ARG0, []), OUT).
+
+linked_hash_set_add_all(REF, ARG0, OUT) :- 
+	object_call(REF, addAll, '.'(ARG0, []), OUT).
+
+linked_hash_set_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+linked_hash_set_add(REF, ARG0, OUT) :- 
+	object_call(REF, add, '.'(ARG0, []), OUT).
+
+linked_hash_set_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+linked_hash_set_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
+
+linked_hash_set_remove_all(REF, ARG0, OUT) :- 
+	object_call(REF, removeAll, '.'(ARG0, []), OUT).
+
+linked_hash_set_contains(REF, ARG0, OUT) :- 
+	object_call(REF, contains, '.'(ARG0, []), OUT).
+
+linked_hash_set_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+linked_hash_set_for_each(REF, ARG0) :- 
+	object_call(REF, forEach, '.'(ARG0, []), _).
+
+linked_hash_set_remove(REF, ARG0, OUT) :- 
+	object_call(REF, remove, '.'(ARG0, []), OUT).
+
+linked_hash_set_clone(REF, OUT) :- 
+	object_call(REF, clone, [], OUT).
+
+linked_hash_set_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+linked_hash_set_retain_all(REF, ARG0, OUT) :- 
+	object_call(REF, retainAll, '.'(ARG0, []), OUT).
+
+linked_hash_set_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+linked_hash_set_clear(REF) :- 
+	object_call(REF, clear, [], _).
+
+linked_hash_set_size(REF, OUT) :- 
+	object_call(REF, size, [], OUT).
+
+linked_hash_set_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+linked_hash_set_stream(REF, OUT) :- 
+	object_call(REF, stream, [], OUT).
 

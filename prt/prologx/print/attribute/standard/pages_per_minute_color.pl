@@ -25,14 +25,32 @@
 pages_per_minute_color(ARG0, OUT) :- 
 	object_new('javax.print.attribute.standard.PagesPerMinuteColor', '.'(ARG0, []), OUT).
 
-pages_per_minute_color_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+pages_per_minute_color_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-pages_per_minute_color_get_name(REF, OUT) :- 
-	object_call(REF, getName, [], OUT).
+pages_per_minute_color_get_value(REF, OUT) :- 
+	object_call(REF, getValue, [], OUT).
 
 pages_per_minute_color_get_category(REF, OUT) :- 
 	object_call(REF, getCategory, [], OUT).
+
+pages_per_minute_color_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+pages_per_minute_color_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+pages_per_minute_color_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+pages_per_minute_color_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+pages_per_minute_color_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+pages_per_minute_color_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
 pages_per_minute_color_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
@@ -40,24 +58,6 @@ pages_per_minute_color_to_string(REF, OUT) :-
 pages_per_minute_color_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-pages_per_minute_color_get_value(REF, OUT) :- 
-	object_call(REF, getValue, [], OUT).
-
-pages_per_minute_color_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-pages_per_minute_color_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-pages_per_minute_color_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-pages_per_minute_color_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-pages_per_minute_color_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-pages_per_minute_color_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+pages_per_minute_color_get_name(REF, OUT) :- 
+	object_call(REF, getName, [], OUT).
 

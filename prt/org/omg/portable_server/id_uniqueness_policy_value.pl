@@ -22,35 +22,26 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-id_uniqueness_policy_value__unique_id(OUT) :- 
+id_uniqueness_policy_value__UNIQUE_ID(OUT) :- 
 	object_get('org.omg.PortableServer.IdUniquenessPolicyValue', '_unique_id', OUT).
 
-id_uniqueness_policy_value_unique_id(OUT) :- 
+id_uniqueness_policy_value_UNIQUE_ID(OUT) :- 
 	object_get('org.omg.PortableServer.IdUniquenessPolicyValue', unique_id, OUT).
 
-id_uniqueness_policy_value__multiple_id(OUT) :- 
+id_uniqueness_policy_value__MULTIPLE_ID(OUT) :- 
 	object_get('org.omg.PortableServer.IdUniquenessPolicyValue', '_multiple_id', OUT).
 
-id_uniqueness_policy_value_multiple_id(OUT) :- 
+id_uniqueness_policy_value_MULTIPLE_ID(OUT) :- 
 	object_get('org.omg.PortableServer.IdUniquenessPolicyValue', multiple_id, OUT).
+
+id_uniqueness_policy_value_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 id_uniqueness_policy_value_value(REF, OUT) :- 
 	object_call(REF, value, [], OUT).
 
-id_uniqueness_policy_value_from_int(REF, ARG0, OUT) :- 
-	object_call(REF, from_int, '.'(ARG0, []), OUT).
-
-id_uniqueness_policy_value_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-id_uniqueness_policy_value_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-id_uniqueness_policy_value_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-id_uniqueness_policy_value_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+id_uniqueness_policy_value_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 id_uniqueness_policy_value_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
@@ -61,9 +52,18 @@ id_uniqueness_policy_value_hash_code(REF, OUT) :-
 id_uniqueness_policy_value_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-id_uniqueness_policy_value_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+id_uniqueness_policy_value_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-id_uniqueness_policy_value_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+id_uniqueness_policy_value_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+id_uniqueness_policy_value_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+id_uniqueness_policy_value_from_int(REF, ARG0, OUT) :- 
+	object_call(REF, from_int, '.'(ARG0, []), OUT).
+
+id_uniqueness_policy_value_wait(REF) :- 
+	object_call(REF, wait, [], _).
 

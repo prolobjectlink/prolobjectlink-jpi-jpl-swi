@@ -22,6 +22,9 @@
 
 :-consult('../../../obj/prolobject.pl').
 
+timer(ARG0, ARG1, OUT) :- 
+	object_new('java.util.Timer', '.'(ARG0, '.'(ARG1, [])), OUT).
+
 timer(ARG0, OUT) :- 
 	object_new('java.util.Timer', '.'(ARG0, []), OUT).
 
@@ -31,57 +34,54 @@ timer(ARG0, OUT) :-
 timer(OUT) :- 
 	object_new('java.util.Timer', [], OUT).
 
-timer(ARG0, ARG1, OUT) :- 
-	object_new('java.util.Timer', '.'(ARG0, '.'(ARG1, [])), OUT).
-
-timer_cancel(REF, OUT) :- 
-	object_call(REF, cancel, [], OUT).
-
 timer_purge(REF, OUT) :- 
 	object_call(REF, purge, [], OUT).
-
-timer_schedule_at_fixed_rate(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, scheduleAtFixedRate, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-timer_schedule_at_fixed_rate(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, scheduleAtFixedRate, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-timer_schedule(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, schedule, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-timer_schedule(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, schedule, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-timer_schedule(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, schedule, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-timer_schedule(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, schedule, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-timer_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-timer_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-timer_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-timer_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 timer_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-timer_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+timer_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+timer_cancel(REF) :- 
+	object_call(REF, cancel, [], _).
+
+timer_schedule(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, schedule, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+timer_schedule(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, schedule, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+timer_schedule(REF, ARG0, ARG1) :- 
+	object_call(REF, schedule, '.'(ARG0, '.'(ARG1, [])), _).
+
+timer_schedule(REF, ARG0, ARG1) :- 
+	object_call(REF, schedule, '.'(ARG0, '.'(ARG1, [])), _).
+
+timer_schedule_at_fixed_rate(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, scheduleAtFixedRate, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+timer_schedule_at_fixed_rate(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, scheduleAtFixedRate, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+timer_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+timer_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+timer_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+timer_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 timer_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-timer_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+timer_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
-timer_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+timer_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

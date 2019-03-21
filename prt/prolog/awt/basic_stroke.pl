@@ -22,84 +22,84 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-basic_stroke_join_miter(OUT) :- 
+basic_stroke_JOIN_MITER(OUT) :- 
 	object_get('java.awt.BasicStroke', join_miter, OUT).
 
-basic_stroke_join_round(OUT) :- 
+basic_stroke_JOIN_ROUND(OUT) :- 
 	object_get('java.awt.BasicStroke', join_round, OUT).
 
-basic_stroke_join_bevel(OUT) :- 
+basic_stroke_JOIN_BEVEL(OUT) :- 
 	object_get('java.awt.BasicStroke', join_bevel, OUT).
 
-basic_stroke_cap_butt(OUT) :- 
+basic_stroke_CAP_BUTT(OUT) :- 
 	object_get('java.awt.BasicStroke', cap_butt, OUT).
 
-basic_stroke_cap_round(OUT) :- 
+basic_stroke_CAP_ROUND(OUT) :- 
 	object_get('java.awt.BasicStroke', cap_round, OUT).
 
-basic_stroke_cap_square(OUT) :- 
+basic_stroke_CAP_SQUARE(OUT) :- 
 	object_get('java.awt.BasicStroke', cap_square, OUT).
-
-basic_stroke(OUT) :- 
-	object_new('java.awt.BasicStroke', [], OUT).
-
-basic_stroke(ARG0, OUT) :- 
-	object_new('java.awt.BasicStroke', '.'(ARG0, []), OUT).
-
-basic_stroke(ARG0, ARG1, ARG2, OUT) :- 
-	object_new('java.awt.BasicStroke', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-basic_stroke(ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_new('java.awt.BasicStroke', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
 basic_stroke(ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, OUT) :- 
 	object_new('java.awt.BasicStroke', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), OUT).
 
-basic_stroke_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+basic_stroke(ARG0, OUT) :- 
+	object_new('java.awt.BasicStroke', '.'(ARG0, []), OUT).
+
+basic_stroke(OUT) :- 
+	object_new('java.awt.BasicStroke', [], OUT).
+
+basic_stroke(ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_new('java.awt.BasicStroke', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+
+basic_stroke(ARG0, ARG1, ARG2, OUT) :- 
+	object_new('java.awt.BasicStroke', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+basic_stroke_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+basic_stroke_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+basic_stroke_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 basic_stroke_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-basic_stroke_get_line_width(REF, OUT) :- 
-	object_call(REF, getLineWidth, [], OUT).
+basic_stroke_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
-basic_stroke_create_stroked_shape(REF, ARG0, OUT) :- 
-	object_call(REF, createStrokedShape, '.'(ARG0, []), OUT).
-
-basic_stroke_get_dash_array(REF, OUT) :- 
-	object_call(REF, getDashArray, [], OUT).
-
-basic_stroke_get_dash_phase(REF, OUT) :- 
-	object_call(REF, getDashPhase, [], OUT).
-
-basic_stroke_get_end_cap(REF, OUT) :- 
-	object_call(REF, getEndCap, [], OUT).
-
-basic_stroke_get_line_join(REF, OUT) :- 
-	object_call(REF, getLineJoin, [], OUT).
-
-basic_stroke_get_miter_limit(REF, OUT) :- 
-	object_call(REF, getMiterLimit, [], OUT).
-
-basic_stroke_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-basic_stroke_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-basic_stroke_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+basic_stroke_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 basic_stroke_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-basic_stroke_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
+basic_stroke_get_line_width(REF, OUT) :- 
+	object_call(REF, getLineWidth, [], OUT).
 
-basic_stroke_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+basic_stroke_get_end_cap(REF, OUT) :- 
+	object_call(REF, getEndCap, [], OUT).
 
-basic_stroke_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+basic_stroke_create_stroked_shape(REF, ARG0, OUT) :- 
+	object_call(REF, createStrokedShape, '.'(ARG0, []), OUT).
+
+basic_stroke_get_miter_limit(REF, OUT) :- 
+	object_call(REF, getMiterLimit, [], OUT).
+
+basic_stroke_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+basic_stroke_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+basic_stroke_get_dash_phase(REF, OUT) :- 
+	object_call(REF, getDashPhase, [], OUT).
+
+basic_stroke_get_line_join(REF, OUT) :- 
+	object_call(REF, getLineJoin, [], OUT).
+
+basic_stroke_get_dash_array(REF, OUT) :- 
+	object_call(REF, getDashArray, [], OUT).
 

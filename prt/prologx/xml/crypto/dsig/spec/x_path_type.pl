@@ -22,45 +22,45 @@
 
 :-consult('../../../../../../obj/prolobject.pl').
 
-x_path_type(ARG0, ARG1, OUT) :- 
-	object_new('javax.xml.crypto.dsig.spec.XPathType', '.'(ARG0, '.'(ARG1, [])), OUT).
-
 x_path_type(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('javax.xml.crypto.dsig.spec.XPathType', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+x_path_type(ARG0, ARG1, OUT) :- 
+	object_new('javax.xml.crypto.dsig.spec.XPathType', '.'(ARG0, '.'(ARG1, [])), OUT).
 
 x_path_type_get_filter(REF, OUT) :- 
 	object_call(REF, getFilter, [], OUT).
 
-x_path_type_get_namespace_map(REF, OUT) :- 
-	object_call(REF, getNamespaceMap, [], OUT).
+x_path_type_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-x_path_type_get_expression(REF, OUT) :- 
-	object_call(REF, getExpression, [], OUT).
+x_path_type_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-x_path_type_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+x_path_type_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-x_path_type_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-x_path_type_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+x_path_type_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 x_path_type_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
+x_path_type_get_expression(REF, OUT) :- 
+	object_call(REF, getExpression, [], OUT).
+
 x_path_type_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
-
-x_path_type_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
 
 x_path_type_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-x_path_type_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+x_path_type_get_namespace_map(REF, OUT) :- 
+	object_call(REF, getNamespaceMap, [], OUT).
 
-x_path_type_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+x_path_type_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+x_path_type_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 

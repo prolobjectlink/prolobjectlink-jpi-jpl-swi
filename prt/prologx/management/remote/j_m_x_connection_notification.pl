@@ -22,65 +22,62 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-j_m_x_connection_notification_opened(OUT) :- 
+j_m_x_connection_notification_OPENED(OUT) :- 
 	object_get('javax.management.remote.JMXConnectionNotification', opened, OUT).
 
-j_m_x_connection_notification_closed(OUT) :- 
+j_m_x_connection_notification_CLOSED(OUT) :- 
 	object_get('javax.management.remote.JMXConnectionNotification', closed, OUT).
 
-j_m_x_connection_notification_failed(OUT) :- 
+j_m_x_connection_notification_FAILED(OUT) :- 
 	object_get('javax.management.remote.JMXConnectionNotification', failed, OUT).
 
-j_m_x_connection_notification_notifs_lost(OUT) :- 
+j_m_x_connection_notification_NOTIFS_LOST(OUT) :- 
 	object_get('javax.management.remote.JMXConnectionNotification', notifs_lost, OUT).
 
 j_m_x_connection_notification(ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, OUT) :- 
 	object_new('javax.management.remote.JMXConnectionNotification', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), OUT).
 
-j_m_x_connection_notification_get_connection_id(REF, OUT) :- 
-	object_call(REF, getConnectionId, [], OUT).
+j_m_x_connection_notification_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-j_m_x_connection_notification_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+j_m_x_connection_notification_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-j_m_x_connection_notification_get_message(REF, OUT) :- 
-	object_call(REF, getMessage, [], OUT).
-
-j_m_x_connection_notification_get_type(REF, OUT) :- 
-	object_call(REF, getType, [], OUT).
-
-j_m_x_connection_notification_get_sequence_number(REF, OUT) :- 
-	object_call(REF, getSequenceNumber, [], OUT).
-
-j_m_x_connection_notification_set_source(REF, ARG0, OUT) :- 
-	object_call(REF, setSource, '.'(ARG0, []), OUT).
-
-j_m_x_connection_notification_set_sequence_number(REF, ARG0, OUT) :- 
-	object_call(REF, setSequenceNumber, '.'(ARG0, []), OUT).
-
-j_m_x_connection_notification_get_time_stamp(REF, OUT) :- 
-	object_call(REF, getTimeStamp, [], OUT).
-
-j_m_x_connection_notification_set_time_stamp(REF, ARG0, OUT) :- 
-	object_call(REF, setTimeStamp, '.'(ARG0, []), OUT).
+j_m_x_connection_notification_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 j_m_x_connection_notification_get_user_data(REF, OUT) :- 
 	object_call(REF, getUserData, [], OUT).
 
-j_m_x_connection_notification_set_user_data(REF, ARG0, OUT) :- 
-	object_call(REF, setUserData, '.'(ARG0, []), OUT).
+j_m_x_connection_notification_set_user_data(REF, ARG0) :- 
+	object_call(REF, setUserData, '.'(ARG0, []), _).
 
-j_m_x_connection_notification_get_source(REF, OUT) :- 
-	object_call(REF, getSource, [], OUT).
+j_m_x_connection_notification_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-j_m_x_connection_notification_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+j_m_x_connection_notification_get_sequence_number(REF, OUT) :- 
+	object_call(REF, getSequenceNumber, [], OUT).
 
-j_m_x_connection_notification_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+j_m_x_connection_notification_get_type(REF, OUT) :- 
+	object_call(REF, getType, [], OUT).
 
-j_m_x_connection_notification_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+j_m_x_connection_notification_set_time_stamp(REF, ARG0) :- 
+	object_call(REF, setTimeStamp, '.'(ARG0, []), _).
+
+j_m_x_connection_notification_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+j_m_x_connection_notification_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+j_m_x_connection_notification_set_sequence_number(REF, ARG0) :- 
+	object_call(REF, setSequenceNumber, '.'(ARG0, []), _).
+
+j_m_x_connection_notification_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
+
+j_m_x_connection_notification_set_source(REF, ARG0) :- 
+	object_call(REF, setSource, '.'(ARG0, []), _).
 
 j_m_x_connection_notification_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
@@ -88,12 +85,15 @@ j_m_x_connection_notification_equals(REF, ARG0, OUT) :-
 j_m_x_connection_notification_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-j_m_x_connection_notification_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
+j_m_x_connection_notification_get_time_stamp(REF, OUT) :- 
+	object_call(REF, getTimeStamp, [], OUT).
 
-j_m_x_connection_notification_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+j_m_x_connection_notification_get_message(REF, OUT) :- 
+	object_call(REF, getMessage, [], OUT).
 
-j_m_x_connection_notification_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+j_m_x_connection_notification_get_source(REF, OUT) :- 
+	object_call(REF, getSource, [], OUT).
+
+j_m_x_connection_notification_get_connection_id(REF, OUT) :- 
+	object_call(REF, getConnectionId, [], OUT).
 

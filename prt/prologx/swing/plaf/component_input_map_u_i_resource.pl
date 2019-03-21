@@ -25,50 +25,44 @@
 component_input_map_u_i_resource(ARG0, OUT) :- 
 	object_new('javax.swing.plaf.ComponentInputMapUIResource', '.'(ARG0, []), OUT).
 
-component_input_map_u_i_resource_remove(REF, ARG0, OUT) :- 
-	object_call(REF, remove, '.'(ARG0, []), OUT).
+component_input_map_u_i_resource_put(REF, ARG0, ARG1) :- 
+	object_call(REF, put, '.'(ARG0, '.'(ARG1, [])), _).
 
-component_input_map_u_i_resource_put(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, put, '.'(ARG0, '.'(ARG1, [])), OUT).
+component_input_map_u_i_resource_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-component_input_map_u_i_resource_clear(REF, OUT) :- 
-	object_call(REF, clear, [], OUT).
-
-component_input_map_u_i_resource_set_parent(REF, ARG0, OUT) :- 
-	object_call(REF, setParent, '.'(ARG0, []), OUT).
-
-component_input_map_u_i_resource_get_component(REF, OUT) :- 
-	object_call(REF, getComponent, [], OUT).
-
-component_input_map_u_i_resource_get(REF, ARG0, OUT) :- 
-	object_call(REF, get, '.'(ARG0, []), OUT).
-
-component_input_map_u_i_resource_size(REF, OUT) :- 
-	object_call(REF, size, [], OUT).
-
-component_input_map_u_i_resource_get_parent(REF, OUT) :- 
-	object_call(REF, getParent, [], OUT).
-
-component_input_map_u_i_resource_keys(REF, OUT) :- 
-	object_call(REF, keys, [], OUT).
-
-component_input_map_u_i_resource_all_keys(REF, OUT) :- 
-	object_call(REF, allKeys, [], OUT).
-
-component_input_map_u_i_resource_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-component_input_map_u_i_resource_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-component_input_map_u_i_resource_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+component_input_map_u_i_resource_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 component_input_map_u_i_resource_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
+component_input_map_u_i_resource_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+component_input_map_u_i_resource_get_parent(REF, OUT) :- 
+	object_call(REF, getParent, [], OUT).
+
+component_input_map_u_i_resource_clear(REF) :- 
+	object_call(REF, clear, [], _).
+
 component_input_map_u_i_resource_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
+
+component_input_map_u_i_resource_get(REF, ARG0, OUT) :- 
+	object_call(REF, get, '.'(ARG0, []), OUT).
+
+component_input_map_u_i_resource_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+component_input_map_u_i_resource_set_parent(REF, ARG0) :- 
+	object_call(REF, setParent, '.'(ARG0, []), _).
+
+component_input_map_u_i_resource_size(REF, OUT) :- 
+	object_call(REF, size, [], OUT).
+
+component_input_map_u_i_resource_remove(REF, ARG0) :- 
+	object_call(REF, remove, '.'(ARG0, []), _).
 
 component_input_map_u_i_resource_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -76,9 +70,15 @@ component_input_map_u_i_resource_hash_code(REF, OUT) :-
 component_input_map_u_i_resource_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-component_input_map_u_i_resource_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+component_input_map_u_i_resource_keys(REF, OUT) :- 
+	object_call(REF, keys, [], OUT).
 
-component_input_map_u_i_resource_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+component_input_map_u_i_resource_all_keys(REF, OUT) :- 
+	object_call(REF, allKeys, [], OUT).
+
+component_input_map_u_i_resource_get_component(REF, OUT) :- 
+	object_call(REF, getComponent, [], OUT).
+
+component_input_map_u_i_resource_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

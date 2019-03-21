@@ -31,17 +31,26 @@ mime_type(ARG0, OUT) :-
 mime_type(OUT) :- 
 	object_new('javax.activation.MimeType', [], OUT).
 
+mime_type_read_external(REF, ARG0) :- 
+	object_call(REF, readExternal, '.'(ARG0, []), _).
+
+mime_type_remove_parameter(REF, ARG0) :- 
+	object_call(REF, removeParameter, '.'(ARG0, []), _).
+
+mime_type_set_sub_type(REF, ARG0) :- 
+	object_call(REF, setSubType, '.'(ARG0, []), _).
+
+mime_type_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+mime_type_write_external(REF, ARG0) :- 
+	object_call(REF, writeExternal, '.'(ARG0, []), _).
+
+mime_type_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
 mime_type_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
-
-mime_type_get_parameters(REF, OUT) :- 
-	object_call(REF, getParameters, [], OUT).
-
-mime_type_match(REF, ARG0, OUT) :- 
-	object_call(REF, match, '.'(ARG0, []), OUT).
-
-mime_type_match(REF, ARG0, OUT) :- 
-	object_call(REF, match, '.'(ARG0, []), OUT).
 
 mime_type_get_parameter(REF, ARG0, OUT) :- 
 	object_call(REF, getParameter, '.'(ARG0, []), OUT).
@@ -49,51 +58,42 @@ mime_type_get_parameter(REF, ARG0, OUT) :-
 mime_type_get_base_type(REF, OUT) :- 
 	object_call(REF, getBaseType, [], OUT).
 
-mime_type_get_primary_type(REF, OUT) :- 
-	object_call(REF, getPrimaryType, [], OUT).
-
 mime_type_get_sub_type(REF, OUT) :- 
 	object_call(REF, getSubType, [], OUT).
 
-mime_type_read_external(REF, ARG0, OUT) :- 
-	object_call(REF, readExternal, '.'(ARG0, []), OUT).
-
-mime_type_remove_parameter(REF, ARG0, OUT) :- 
-	object_call(REF, removeParameter, '.'(ARG0, []), OUT).
-
-mime_type_set_parameter(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, setParameter, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-mime_type_write_external(REF, ARG0, OUT) :- 
-	object_call(REF, writeExternal, '.'(ARG0, []), OUT).
-
-mime_type_set_primary_type(REF, ARG0, OUT) :- 
-	object_call(REF, setPrimaryType, '.'(ARG0, []), OUT).
-
-mime_type_set_sub_type(REF, ARG0, OUT) :- 
-	object_call(REF, setSubType, '.'(ARG0, []), OUT).
-
-mime_type_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-mime_type_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-mime_type_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+mime_type_set_primary_type(REF, ARG0) :- 
+	object_call(REF, setPrimaryType, '.'(ARG0, []), _).
 
 mime_type_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
+mime_type_get_primary_type(REF, OUT) :- 
+	object_call(REF, getPrimaryType, [], OUT).
+
+mime_type_match(REF, ARG0, OUT) :- 
+	object_call(REF, match, '.'(ARG0, []), OUT).
+
+mime_type_match(REF, ARG0, OUT) :- 
+	object_call(REF, match, '.'(ARG0, []), OUT).
+
+mime_type_get_parameters(REF, OUT) :- 
+	object_call(REF, getParameters, [], OUT).
+
+mime_type_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
 mime_type_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+mime_type_set_parameter(REF, ARG0, ARG1) :- 
+	object_call(REF, setParameter, '.'(ARG0, '.'(ARG1, [])), _).
+
+mime_type_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+mime_type_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
 mime_type_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-mime_type_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-mime_type_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

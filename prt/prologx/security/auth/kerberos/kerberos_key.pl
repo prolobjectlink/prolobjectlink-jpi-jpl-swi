@@ -22,38 +22,26 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-kerberos_key_serialversionuid(OUT) :- 
+kerberos_key_SERIALVERSIONUID(OUT) :- 
 	object_get('javax.security.auth.kerberos.KerberosKey', serialversionuid, OUT).
-
-kerberos_key_serialversionuid(OUT) :- 
-	object_get('javax.security.auth.kerberos.KerberosKey', serialversionuid, OUT).
-
-kerberos_key(ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_new('javax.security.auth.kerberos.KerberosKey', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
 kerberos_key(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('javax.security.auth.kerberos.KerberosKey', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-kerberos_key_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+kerberos_key(ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_new('javax.security.auth.kerberos.KerberosKey', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
-kerberos_key_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+kerberos_key_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-kerberos_key_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+kerberos_key_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-kerberos_key_destroy(REF, OUT) :- 
-	object_call(REF, destroy, [], OUT).
+kerberos_key_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-kerberos_key_is_destroyed(REF, OUT) :- 
-	object_call(REF, isDestroyed, [], OUT).
-
-kerberos_key_get_encoded(REF, OUT) :- 
-	object_call(REF, getEncoded, [], OUT).
-
-kerberos_key_get_format(REF, OUT) :- 
-	object_call(REF, getFormat, [], OUT).
+kerberos_key_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 kerberos_key_get_algorithm(REF, OUT) :- 
 	object_call(REF, getAlgorithm, [], OUT).
@@ -61,27 +49,36 @@ kerberos_key_get_algorithm(REF, OUT) :-
 kerberos_key_get_key_type(REF, OUT) :- 
 	object_call(REF, getKeyType, [], OUT).
 
-kerberos_key_get_version_number(REF, OUT) :- 
-	object_call(REF, getVersionNumber, [], OUT).
+kerberos_key_get_encoded(REF, OUT) :- 
+	object_call(REF, getEncoded, [], OUT).
 
-kerberos_key_get_principal(REF, OUT) :- 
-	object_call(REF, getPrincipal, [], OUT).
-
-kerberos_key_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-kerberos_key_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-kerberos_key_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+kerberos_key_destroy(REF) :- 
+	object_call(REF, destroy, [], _).
 
 kerberos_key_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-kerberos_key_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+kerberos_key_get_format(REF, OUT) :- 
+	object_call(REF, getFormat, [], OUT).
 
-kerberos_key_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+kerberos_key_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+kerberos_key_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+kerberos_key_get_principal(REF, OUT) :- 
+	object_call(REF, getPrincipal, [], OUT).
+
+kerberos_key_get_version_number(REF, OUT) :- 
+	object_call(REF, getVersionNumber, [], OUT).
+
+kerberos_key_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+kerberos_key_is_destroyed(REF, OUT) :- 
+	object_call(REF, isDestroyed, [], OUT).
+
+kerberos_key_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 

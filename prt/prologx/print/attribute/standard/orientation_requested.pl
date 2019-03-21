@@ -22,20 +22,17 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-orientation_requested_portrait(OUT) :- 
+orientation_requested_PORTRAIT(OUT) :- 
 	object_get('javax.print.attribute.standard.OrientationRequested', portrait, OUT).
 
-orientation_requested_landscape(OUT) :- 
+orientation_requested_LANDSCAPE(OUT) :- 
 	object_get('javax.print.attribute.standard.OrientationRequested', landscape, OUT).
 
-orientation_requested_reverse_landscape(OUT) :- 
+orientation_requested_REVERSE_LANDSCAPE(OUT) :- 
 	object_get('javax.print.attribute.standard.OrientationRequested', reverse_landscape, OUT).
 
-orientation_requested_reverse_portrait(OUT) :- 
+orientation_requested_REVERSE_PORTRAIT(OUT) :- 
 	object_get('javax.print.attribute.standard.OrientationRequested', reverse_portrait, OUT).
-
-orientation_requested_get_name(REF, OUT) :- 
-	object_call(REF, getName, [], OUT).
 
 orientation_requested_get_category(REF, OUT) :- 
 	object_call(REF, getCategory, [], OUT).
@@ -43,33 +40,36 @@ orientation_requested_get_category(REF, OUT) :-
 orientation_requested_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
+orientation_requested_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
 orientation_requested_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-orientation_requested_clone(REF, OUT) :- 
-	object_call(REF, clone, [], OUT).
+orientation_requested_get_name(REF, OUT) :- 
+	object_call(REF, getName, [], OUT).
 
-orientation_requested_get_value(REF, OUT) :- 
-	object_call(REF, getValue, [], OUT).
-
-orientation_requested_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-orientation_requested_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-orientation_requested_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-orientation_requested_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+orientation_requested_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 orientation_requested_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-orientation_requested_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+orientation_requested_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-orientation_requested_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+orientation_requested_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+orientation_requested_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+orientation_requested_get_value(REF, OUT) :- 
+	object_call(REF, getValue, [], OUT).
+
+orientation_requested_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+orientation_requested_clone(REF, OUT) :- 
+	object_call(REF, clone, [], OUT).
 

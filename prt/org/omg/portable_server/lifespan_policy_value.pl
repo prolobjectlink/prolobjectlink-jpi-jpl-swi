@@ -22,16 +22,16 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-lifespan_policy_value__transient(OUT) :- 
+lifespan_policy_value__TRANSIENT(OUT) :- 
 	object_get('org.omg.PortableServer.LifespanPolicyValue', '_transient', OUT).
 
-lifespan_policy_value_transient(OUT) :- 
+lifespan_policy_value_TRANSIENT(OUT) :- 
 	object_get('org.omg.PortableServer.LifespanPolicyValue', transient, OUT).
 
-lifespan_policy_value__persistent(OUT) :- 
+lifespan_policy_value__PERSISTENT(OUT) :- 
 	object_get('org.omg.PortableServer.LifespanPolicyValue', '_persistent', OUT).
 
-lifespan_policy_value_persistent(OUT) :- 
+lifespan_policy_value_PERSISTENT(OUT) :- 
 	object_get('org.omg.PortableServer.LifespanPolicyValue', persistent, OUT).
 
 lifespan_policy_value_value(REF, OUT) :- 
@@ -40,30 +40,30 @@ lifespan_policy_value_value(REF, OUT) :-
 lifespan_policy_value_from_int(REF, ARG0, OUT) :- 
 	object_call(REF, from_int, '.'(ARG0, []), OUT).
 
-lifespan_policy_value_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+lifespan_policy_value_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
-lifespan_policy_value_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+lifespan_policy_value_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-lifespan_policy_value_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-lifespan_policy_value_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-lifespan_policy_value_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+lifespan_policy_value_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 lifespan_policy_value_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-lifespan_policy_value_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
+lifespan_policy_value_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-lifespan_policy_value_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+lifespan_policy_value_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-lifespan_policy_value_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+lifespan_policy_value_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+lifespan_policy_value_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+lifespan_policy_value_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 

@@ -22,41 +22,23 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-default_color_selection_model(OUT) :- 
-	object_new('javax.swing.colorchooser.DefaultColorSelectionModel', [], OUT).
-
 default_color_selection_model(ARG0, OUT) :- 
 	object_new('javax.swing.colorchooser.DefaultColorSelectionModel', '.'(ARG0, []), OUT).
 
-default_color_selection_model_add_change_listener(REF, ARG0, OUT) :- 
-	object_call(REF, addChangeListener, '.'(ARG0, []), OUT).
-
-default_color_selection_model_get_change_listeners(REF, OUT) :- 
-	object_call(REF, getChangeListeners, [], OUT).
-
-default_color_selection_model_remove_change_listener(REF, ARG0, OUT) :- 
-	object_call(REF, removeChangeListener, '.'(ARG0, []), OUT).
+default_color_selection_model(OUT) :- 
+	object_new('javax.swing.colorchooser.DefaultColorSelectionModel', [], OUT).
 
 default_color_selection_model_get_selected_color(REF, OUT) :- 
 	object_call(REF, getSelectedColor, [], OUT).
 
-default_color_selection_model_set_selected_color(REF, ARG0, OUT) :- 
-	object_call(REF, setSelectedColor, '.'(ARG0, []), OUT).
+default_color_selection_model_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-default_color_selection_model_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+default_color_selection_model_set_selected_color(REF, ARG0) :- 
+	object_call(REF, setSelectedColor, '.'(ARG0, []), _).
 
-default_color_selection_model_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-default_color_selection_model_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-default_color_selection_model_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-default_color_selection_model_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+default_color_selection_model_get_change_listeners(REF, OUT) :- 
+	object_call(REF, getChangeListeners, [], OUT).
 
 default_color_selection_model_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -64,9 +46,27 @@ default_color_selection_model_hash_code(REF, OUT) :-
 default_color_selection_model_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-default_color_selection_model_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+default_color_selection_model_add_change_listener(REF, ARG0) :- 
+	object_call(REF, addChangeListener, '.'(ARG0, []), _).
 
-default_color_selection_model_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+default_color_selection_model_remove_change_listener(REF, ARG0) :- 
+	object_call(REF, removeChangeListener, '.'(ARG0, []), _).
+
+default_color_selection_model_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+default_color_selection_model_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+default_color_selection_model_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+default_color_selection_model_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+default_color_selection_model_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+default_color_selection_model_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 

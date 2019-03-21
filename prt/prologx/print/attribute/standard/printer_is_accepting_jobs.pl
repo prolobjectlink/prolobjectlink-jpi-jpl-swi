@@ -22,48 +22,48 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-printer_is_accepting_jobs_not_accepting_jobs(OUT) :- 
+printer_is_accepting_jobs_NOT_ACCEPTING_JOBS(OUT) :- 
 	object_get('javax.print.attribute.standard.PrinterIsAcceptingJobs', not_accepting_jobs, OUT).
 
-printer_is_accepting_jobs_accepting_jobs(OUT) :- 
+printer_is_accepting_jobs_ACCEPTING_JOBS(OUT) :- 
 	object_get('javax.print.attribute.standard.PrinterIsAcceptingJobs', accepting_jobs, OUT).
-
-printer_is_accepting_jobs_get_name(REF, OUT) :- 
-	object_call(REF, getName, [], OUT).
-
-printer_is_accepting_jobs_get_category(REF, OUT) :- 
-	object_call(REF, getCategory, [], OUT).
-
-printer_is_accepting_jobs_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-printer_is_accepting_jobs_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
 
 printer_is_accepting_jobs_clone(REF, OUT) :- 
 	object_call(REF, clone, [], OUT).
 
+printer_is_accepting_jobs_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+printer_is_accepting_jobs_get_category(REF, OUT) :- 
+	object_call(REF, getCategory, [], OUT).
+
 printer_is_accepting_jobs_get_value(REF, OUT) :- 
 	object_call(REF, getValue, [], OUT).
 
-printer_is_accepting_jobs_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+printer_is_accepting_jobs_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-printer_is_accepting_jobs_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+printer_is_accepting_jobs_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-printer_is_accepting_jobs_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+printer_is_accepting_jobs_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-printer_is_accepting_jobs_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+printer_is_accepting_jobs_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+printer_is_accepting_jobs_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+printer_is_accepting_jobs_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 printer_is_accepting_jobs_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-printer_is_accepting_jobs_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+printer_is_accepting_jobs_get_name(REF, OUT) :- 
+	object_call(REF, getName, [], OUT).
 
-printer_is_accepting_jobs_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+printer_is_accepting_jobs_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 

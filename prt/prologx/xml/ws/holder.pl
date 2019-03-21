@@ -22,36 +22,36 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-holder(OUT) :- 
-	object_new('javax.xml.ws.Holder', [], OUT).
-
 holder(ARG0, OUT) :- 
 	object_new('javax.xml.ws.Holder', '.'(ARG0, []), OUT).
 
-holder_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+holder(OUT) :- 
+	object_new('javax.xml.ws.Holder', [], OUT).
 
-holder_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-holder_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+holder_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 holder_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-holder_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+holder_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+holder_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 holder_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+holder_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+holder_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+holder_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
 holder_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-holder_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-holder_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

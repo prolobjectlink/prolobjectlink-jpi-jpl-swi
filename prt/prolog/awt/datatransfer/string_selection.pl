@@ -25,8 +25,11 @@
 string_selection(ARG0, OUT) :- 
 	object_new('java.awt.datatransfer.StringSelection', '.'(ARG0, []), OUT).
 
-string_selection_get_transfer_data(REF, ARG0, OUT) :- 
-	object_call(REF, getTransferData, '.'(ARG0, []), OUT).
+string_selection_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+string_selection_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 string_selection_get_transfer_data_flavors(REF, OUT) :- 
 	object_call(REF, getTransferDataFlavors, [], OUT).
@@ -34,33 +37,30 @@ string_selection_get_transfer_data_flavors(REF, OUT) :-
 string_selection_is_data_flavor_supported(REF, ARG0, OUT) :- 
 	object_call(REF, isDataFlavorSupported, '.'(ARG0, []), OUT).
 
-string_selection_lost_ownership(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, lostOwnership, '.'(ARG0, '.'(ARG1, [])), OUT).
+string_selection_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-string_selection_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+string_selection_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-string_selection_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+string_selection_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-string_selection_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+string_selection_get_transfer_data(REF, ARG0, OUT) :- 
+	object_call(REF, getTransferData, '.'(ARG0, []), OUT).
+
+string_selection_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 string_selection_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-string_selection_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-string_selection_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+string_selection_lost_ownership(REF, ARG0, ARG1) :- 
+	object_call(REF, lostOwnership, '.'(ARG0, '.'(ARG1, [])), _).
 
 string_selection_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-string_selection_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-string_selection_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+string_selection_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 

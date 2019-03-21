@@ -25,45 +25,45 @@
 filter_output_stream(ARG0, OUT) :- 
 	object_new('java.io.FilterOutputStream', '.'(ARG0, []), OUT).
 
-filter_output_stream_write(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, write, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-filter_output_stream_write(REF, ARG0, OUT) :- 
-	object_call(REF, write, '.'(ARG0, []), OUT).
-
-filter_output_stream_write(REF, ARG0, OUT) :- 
-	object_call(REF, write, '.'(ARG0, []), OUT).
-
-filter_output_stream_close(REF, OUT) :- 
-	object_call(REF, close, [], OUT).
-
-filter_output_stream_flush(REF, OUT) :- 
-	object_call(REF, flush, [], OUT).
-
-filter_output_stream_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-filter_output_stream_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-filter_output_stream_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-filter_output_stream_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-filter_output_stream_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
 filter_output_stream_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
 filter_output_stream_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-filter_output_stream_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+filter_output_stream_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-filter_output_stream_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+filter_output_stream_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+filter_output_stream_write(REF, ARG0) :- 
+	object_call(REF, write, '.'(ARG0, []), _).
+
+filter_output_stream_write(REF, ARG0) :- 
+	object_call(REF, write, '.'(ARG0, []), _).
+
+filter_output_stream_write(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, write, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+filter_output_stream_flush(REF) :- 
+	object_call(REF, flush, [], _).
+
+filter_output_stream_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+filter_output_stream_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+filter_output_stream_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+filter_output_stream_close(REF) :- 
+	object_call(REF, close, [], _).
+
+filter_output_stream_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+filter_output_stream_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 

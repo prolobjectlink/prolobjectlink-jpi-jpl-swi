@@ -22,36 +22,36 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-row_set_provider_new_factory(REF, OUT) :- 
-	object_call(REF, newFactory, [], OUT).
+row_set_provider_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
-row_set_provider_new_factory(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, newFactory, '.'(ARG0, '.'(ARG1, [])), OUT).
+row_set_provider_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-row_set_provider_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-row_set_provider_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-row_set_provider_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-row_set_provider_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+row_set_provider_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 row_set_provider_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-row_set_provider_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+row_set_provider_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+row_set_provider_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 row_set_provider_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-row_set_provider_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+row_set_provider_new_factory(REF, OUT) :- 
+	object_call(REF, newFactory, [], OUT).
 
-row_set_provider_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+row_set_provider_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+row_set_provider_new_factory(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, newFactory, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+row_set_provider_wait(REF) :- 
+	object_call(REF, wait, [], _).
 

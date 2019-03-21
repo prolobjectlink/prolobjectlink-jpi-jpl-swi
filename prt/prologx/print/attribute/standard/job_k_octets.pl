@@ -25,8 +25,32 @@
 job_k_octets(ARG0, OUT) :- 
 	object_new('javax.print.attribute.standard.JobKOctets', '.'(ARG0, []), OUT).
 
+job_k_octets_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
 job_k_octets_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+job_k_octets_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+job_k_octets_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+job_k_octets_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+job_k_octets_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+job_k_octets_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
+
+job_k_octets_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+job_k_octets_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 job_k_octets_get_name(REF, OUT) :- 
 	object_call(REF, getName, [], OUT).
@@ -34,30 +58,6 @@ job_k_octets_get_name(REF, OUT) :-
 job_k_octets_get_category(REF, OUT) :- 
 	object_call(REF, getCategory, [], OUT).
 
-job_k_octets_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-job_k_octets_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
 job_k_octets_get_value(REF, OUT) :- 
 	object_call(REF, getValue, [], OUT).
-
-job_k_octets_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-job_k_octets_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-job_k_octets_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-job_k_octets_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-job_k_octets_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-job_k_octets_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

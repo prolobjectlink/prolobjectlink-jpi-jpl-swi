@@ -22,20 +22,14 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-command_a_p_d_u(ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
-	object_new('javax.smartcardio.CommandAPDU', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
+command_a_p_d_u(ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_new('javax.smartcardio.CommandAPDU', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
 command_a_p_d_u(ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
 	object_new('javax.smartcardio.CommandAPDU', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
 
-command_a_p_d_u(ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, ARG6, OUT) :- 
-	object_new('javax.smartcardio.CommandAPDU', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, '.'(ARG6, []))))))), OUT).
-
-command_a_p_d_u(ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, OUT) :- 
-	object_new('javax.smartcardio.CommandAPDU', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), OUT).
-
-command_a_p_d_u(ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, ARG6, ARG7, OUT) :- 
-	object_new('javax.smartcardio.CommandAPDU', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, '.'(ARG6, '.'(ARG7, [])))))))), OUT).
+command_a_p_d_u(ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
+	object_new('javax.smartcardio.CommandAPDU', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
 
 command_a_p_d_u(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('javax.smartcardio.CommandAPDU', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
@@ -46,32 +40,20 @@ command_a_p_d_u(ARG0, OUT) :-
 command_a_p_d_u(ARG0, OUT) :- 
 	object_new('javax.smartcardio.CommandAPDU', '.'(ARG0, []), OUT).
 
-command_a_p_d_u(ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_new('javax.smartcardio.CommandAPDU', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+command_a_p_d_u(ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, ARG6, ARG7, OUT) :- 
+	object_new('javax.smartcardio.CommandAPDU', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, '.'(ARG6, '.'(ARG7, [])))))))), OUT).
 
-command_a_p_d_u_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+command_a_p_d_u(ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, OUT) :- 
+	object_new('javax.smartcardio.CommandAPDU', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), OUT).
+
+command_a_p_d_u(ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, ARG6, OUT) :- 
+	object_new('javax.smartcardio.CommandAPDU', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, '.'(ARG6, []))))))), OUT).
 
 command_a_p_d_u_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-command_a_p_d_u_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-command_a_p_d_u_get_bytes(REF, OUT) :- 
-	object_call(REF, getBytes, [], OUT).
-
-command_a_p_d_u_get_c_l_a(REF, OUT) :- 
-	object_call(REF, getCLA, [], OUT).
-
-command_a_p_d_u_get_i_n_s(REF, OUT) :- 
-	object_call(REF, getINS, [], OUT).
-
-command_a_p_d_u_get_nc(REF, OUT) :- 
-	object_call(REF, getNc, [], OUT).
-
-command_a_p_d_u_get_ne(REF, OUT) :- 
-	object_call(REF, getNe, [], OUT).
+command_a_p_d_u_get_p2(REF, OUT) :- 
+	object_call(REF, getP2, [], OUT).
 
 command_a_p_d_u_get_data(REF, OUT) :- 
 	object_call(REF, getData, [], OUT).
@@ -79,24 +61,42 @@ command_a_p_d_u_get_data(REF, OUT) :-
 command_a_p_d_u_get_p1(REF, OUT) :- 
 	object_call(REF, getP1, [], OUT).
 
-command_a_p_d_u_get_p2(REF, OUT) :- 
-	object_call(REF, getP2, [], OUT).
+command_a_p_d_u_get_c_l_a(REF, OUT) :- 
+	object_call(REF, getCLA, [], OUT).
 
-command_a_p_d_u_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+command_a_p_d_u_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-command_a_p_d_u_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+command_a_p_d_u_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
-command_a_p_d_u_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+command_a_p_d_u_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+command_a_p_d_u_get_bytes(REF, OUT) :- 
+	object_call(REF, getBytes, [], OUT).
+
+command_a_p_d_u_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 command_a_p_d_u_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-command_a_p_d_u_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+command_a_p_d_u_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-command_a_p_d_u_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+command_a_p_d_u_get_i_n_s(REF, OUT) :- 
+	object_call(REF, getINS, [], OUT).
+
+command_a_p_d_u_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+command_a_p_d_u_get_ne(REF, OUT) :- 
+	object_call(REF, getNe, [], OUT).
+
+command_a_p_d_u_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+command_a_p_d_u_get_nc(REF, OUT) :- 
+	object_call(REF, getNc, [], OUT).
 

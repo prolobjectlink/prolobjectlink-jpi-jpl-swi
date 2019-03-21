@@ -28,17 +28,20 @@ validation_event_impl(ARG0, ARG1, ARG2, OUT) :-
 validation_event_impl(ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_new('javax.xml.bind.helpers.ValidationEventImpl', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
-validation_event_impl_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+validation_event_impl_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-validation_event_impl_get_message(REF, OUT) :- 
-	object_call(REF, getMessage, [], OUT).
+validation_event_impl_set_message(REF, ARG0) :- 
+	object_call(REF, setMessage, '.'(ARG0, []), _).
 
-validation_event_impl_get_linked_exception(REF, OUT) :- 
-	object_call(REF, getLinkedException, [], OUT).
+validation_event_impl_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-validation_event_impl_set_linked_exception(REF, ARG0, OUT) :- 
-	object_call(REF, setLinkedException, '.'(ARG0, []), OUT).
+validation_event_impl_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+validation_event_impl_set_severity(REF, ARG0) :- 
+	object_call(REF, setSeverity, '.'(ARG0, []), _).
 
 validation_event_impl_get_locator(REF, OUT) :- 
 	object_call(REF, getLocator, [], OUT).
@@ -46,36 +49,33 @@ validation_event_impl_get_locator(REF, OUT) :-
 validation_event_impl_get_severity(REF, OUT) :- 
 	object_call(REF, getSeverity, [], OUT).
 
-validation_event_impl_set_locator(REF, ARG0, OUT) :- 
-	object_call(REF, setLocator, '.'(ARG0, []), OUT).
+validation_event_impl_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-validation_event_impl_set_severity(REF, ARG0, OUT) :- 
-	object_call(REF, setSeverity, '.'(ARG0, []), OUT).
+validation_event_impl_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-validation_event_impl_set_message(REF, ARG0, OUT) :- 
-	object_call(REF, setMessage, '.'(ARG0, []), OUT).
-
-validation_event_impl_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-validation_event_impl_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-validation_event_impl_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-validation_event_impl_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-validation_event_impl_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+validation_event_impl_get_message(REF, OUT) :- 
+	object_call(REF, getMessage, [], OUT).
 
 validation_event_impl_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-validation_event_impl_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+validation_event_impl_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
-validation_event_impl_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+validation_event_impl_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+validation_event_impl_get_linked_exception(REF, OUT) :- 
+	object_call(REF, getLinkedException, [], OUT).
+
+validation_event_impl_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+validation_event_impl_set_linked_exception(REF, ARG0) :- 
+	object_call(REF, setLinkedException, '.'(ARG0, []), _).
+
+validation_event_impl_set_locator(REF, ARG0) :- 
+	object_call(REF, setLocator, '.'(ARG0, []), _).
 

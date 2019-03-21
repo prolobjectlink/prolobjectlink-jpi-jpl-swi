@@ -25,26 +25,17 @@
 naming_list(REF, ARG0, OUT) :- 
 	object_call(REF, list, '.'(ARG0, []), OUT).
 
-naming_rebind(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, rebind, '.'(ARG0, '.'(ARG1, [])), OUT).
+naming_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-naming_lookup(REF, ARG0, OUT) :- 
-	object_call(REF, lookup, '.'(ARG0, []), OUT).
+naming_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-naming_bind(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, bind, '.'(ARG0, '.'(ARG1, [])), OUT).
+naming_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-naming_unbind(REF, ARG0, OUT) :- 
-	object_call(REF, unbind, '.'(ARG0, []), OUT).
-
-naming_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-naming_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-naming_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+naming_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 naming_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
@@ -52,15 +43,24 @@ naming_equals(REF, ARG0, OUT) :-
 naming_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
+naming_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+naming_unbind(REF, ARG0) :- 
+	object_call(REF, unbind, '.'(ARG0, []), _).
+
+naming_rebind(REF, ARG0, ARG1) :- 
+	object_call(REF, rebind, '.'(ARG0, '.'(ARG1, [])), _).
+
+naming_bind(REF, ARG0, ARG1) :- 
+	object_call(REF, bind, '.'(ARG0, '.'(ARG1, [])), _).
+
+naming_lookup(REF, ARG0, OUT) :- 
+	object_call(REF, lookup, '.'(ARG0, []), OUT).
+
 naming_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
 naming_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-naming_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-naming_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

@@ -22,38 +22,62 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-method_type_return_type(REF, OUT) :- 
-	object_call(REF, returnType, [], OUT).
+method_type_parameter_type(REF, ARG0, OUT) :- 
+	object_call(REF, parameterType, '.'(ARG0, []), OUT).
+
+method_type_append_parameter_types(REF, ARG0, OUT) :- 
+	object_call(REF, appendParameterTypes, '.'(ARG0, []), OUT).
+
+method_type_append_parameter_types(REF, ARG0, OUT) :- 
+	object_call(REF, appendParameterTypes, '.'(ARG0, []), OUT).
 
 method_type_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-method_type_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+method_type_wrap(REF, OUT) :- 
+	object_call(REF, wrap, [], OUT).
+
+method_type_to_method_descriptor_string(REF, OUT) :- 
+	object_call(REF, toMethodDescriptorString, [], OUT).
+
+method_type_parameter_count(REF, OUT) :- 
+	object_call(REF, parameterCount, [], OUT).
+
+method_type_has_wrappers(REF, OUT) :- 
+	object_call(REF, hasWrappers, [], OUT).
+
+method_type_insert_parameter_types(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, insertParameterTypes, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+method_type_insert_parameter_types(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, insertParameterTypes, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+method_type_return_type(REF, OUT) :- 
+	object_call(REF, returnType, [], OUT).
+
+method_type_erase(REF, OUT) :- 
+	object_call(REF, erase, [], OUT).
 
 method_type_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-method_type_wrap(REF, OUT) :- 
-	object_call(REF, wrap, [], OUT).
+method_type_unwrap(REF, OUT) :- 
+	object_call(REF, unwrap, [], OUT).
 
-method_type_append_parameter_types(REF, ARG0, OUT) :- 
-	object_call(REF, appendParameterTypes, '.'(ARG0, []), OUT).
+method_type_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-method_type_append_parameter_types(REF, ARG0, OUT) :- 
-	object_call(REF, appendParameterTypes, '.'(ARG0, []), OUT).
+method_type_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+method_type_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 method_type_change_return_type(REF, ARG0, OUT) :- 
 	object_call(REF, changeReturnType, '.'(ARG0, []), OUT).
 
-method_type_drop_parameter_types(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, dropParameterTypes, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-method_type_insert_parameter_types(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, insertParameterTypes, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-method_type_insert_parameter_types(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, insertParameterTypes, '.'(ARG0, '.'(ARG1, [])), OUT).
+method_type_method_type(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, methodType, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 method_type_method_type(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, methodType, '.'(ARG0, '.'(ARG1, [])), OUT).
@@ -67,69 +91,45 @@ method_type_method_type(REF, ARG0, ARG1, OUT) :-
 method_type_method_type(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, methodType, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-method_type_method_type(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, methodType, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-method_type_method_type(REF, ARG0, OUT) :- 
-	object_call(REF, methodType, '.'(ARG0, []), OUT).
-
-method_type_parameter_count(REF, OUT) :- 
-	object_call(REF, parameterCount, [], OUT).
-
-method_type_generic_method_type(REF, ARG0, OUT) :- 
-	object_call(REF, genericMethodType, '.'(ARG0, []), OUT).
-
-method_type_generic_method_type(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, genericMethodType, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-method_type_parameter_type(REF, ARG0, OUT) :- 
-	object_call(REF, parameterType, '.'(ARG0, []), OUT).
-
-method_type_erase(REF, OUT) :- 
-	object_call(REF, erase, [], OUT).
+method_type_change_parameter_type(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, changeParameterType, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 method_type_from_method_descriptor_string(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, fromMethodDescriptorString, '.'(ARG0, '.'(ARG1, [])), OUT).
 
+method_type_method_type(REF, ARG0, OUT) :- 
+	object_call(REF, methodType, '.'(ARG0, []), OUT).
+
+method_type_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
 method_type_parameter_array(REF, OUT) :- 
 	object_call(REF, parameterArray, [], OUT).
-
-method_type_parameter_list(REF, OUT) :- 
-	object_call(REF, parameterList, [], OUT).
-
-method_type_change_parameter_type(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, changeParameterType, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-method_type_generic(REF, OUT) :- 
-	object_call(REF, generic, [], OUT).
 
 method_type_has_primitives(REF, OUT) :- 
 	object_call(REF, hasPrimitives, [], OUT).
 
-method_type_has_wrappers(REF, OUT) :- 
-	object_call(REF, hasWrappers, [], OUT).
+method_type_generic(REF, OUT) :- 
+	object_call(REF, generic, [], OUT).
 
-method_type_to_method_descriptor_string(REF, OUT) :- 
-	object_call(REF, toMethodDescriptorString, [], OUT).
-
-method_type_unwrap(REF, OUT) :- 
-	object_call(REF, unwrap, [], OUT).
-
-method_type_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-method_type_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-method_type_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+method_type_parameter_list(REF, OUT) :- 
+	object_call(REF, parameterList, [], OUT).
 
 method_type_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-method_type_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+method_type_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-method_type_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+method_type_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+method_type_drop_parameter_types(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, dropParameterTypes, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+method_type_generic_method_type(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, genericMethodType, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+method_type_generic_method_type(REF, ARG0, OUT) :- 
+	object_call(REF, genericMethodType, '.'(ARG0, []), OUT).
 

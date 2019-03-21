@@ -22,36 +22,36 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-union_member(OUT) :- 
-	object_new('org.omg.CORBA.UnionMember', [], OUT).
-
 union_member(ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_new('org.omg.CORBA.UnionMember', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
-union_member_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+union_member(OUT) :- 
+	object_new('org.omg.CORBA.UnionMember', [], OUT).
 
-union_member_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+union_member_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-union_member_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+union_member_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 union_member_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-union_member_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-union_member_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
 union_member_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-union_member_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+union_member_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-union_member_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+union_member_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+union_member_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+union_member_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+union_member_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 

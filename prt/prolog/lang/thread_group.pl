@@ -22,14 +22,65 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-thread_group(ARG0, ARG1, OUT) :- 
-	object_new('java.lang.ThreadGroup', '.'(ARG0, '.'(ARG1, [])), OUT).
-
 thread_group(ARG0, OUT) :- 
 	object_new('java.lang.ThreadGroup', '.'(ARG0, []), OUT).
 
-thread_group_uncaught_exception(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, uncaughtException, '.'(ARG0, '.'(ARG1, [])), OUT).
+thread_group(ARG0, ARG1, OUT) :- 
+	object_new('java.lang.ThreadGroup', '.'(ARG0, '.'(ARG1, [])), OUT).
+
+thread_group_allow_thread_suspension(REF, ARG0, OUT) :- 
+	object_call(REF, allowThreadSuspension, '.'(ARG0, []), OUT).
+
+thread_group_uncaught_exception(REF, ARG0, ARG1) :- 
+	object_call(REF, uncaughtException, '.'(ARG0, '.'(ARG1, [])), _).
+
+thread_group_active_count(REF, OUT) :- 
+	object_call(REF, activeCount, [], OUT).
+
+thread_group_set_daemon(REF, ARG0) :- 
+	object_call(REF, setDaemon, '.'(ARG0, []), _).
+
+thread_group_get_max_priority(REF, OUT) :- 
+	object_call(REF, getMaxPriority, [], OUT).
+
+thread_group_resume(REF) :- 
+	object_call(REF, resume, [], _).
+
+thread_group_check_access(REF) :- 
+	object_call(REF, checkAccess, [], _).
+
+thread_group_is_destroyed(REF, OUT) :- 
+	object_call(REF, isDestroyed, [], OUT).
+
+thread_group_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+thread_group_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+thread_group_get_parent(REF, OUT) :- 
+	object_call(REF, getParent, [], OUT).
+
+thread_group_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+thread_group_set_max_priority(REF, ARG0) :- 
+	object_call(REF, setMaxPriority, '.'(ARG0, []), _).
+
+thread_group_is_daemon(REF, OUT) :- 
+	object_call(REF, isDaemon, [], OUT).
+
+thread_group_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+thread_group_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+thread_group_parent_of(REF, ARG0, OUT) :- 
+	object_call(REF, parentOf, '.'(ARG0, []), OUT).
+
+thread_group_destroy(REF) :- 
+	object_call(REF, destroy, [], _).
 
 thread_group_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
@@ -37,90 +88,39 @@ thread_group_to_string(REF, OUT) :-
 thread_group_get_name(REF, OUT) :- 
 	object_call(REF, getName, [], OUT).
 
-thread_group_get_parent(REF, OUT) :- 
-	object_call(REF, getParent, [], OUT).
+thread_group_list(REF) :- 
+	object_call(REF, list, [], _).
 
-thread_group_check_access(REF, OUT) :- 
-	object_call(REF, checkAccess, [], OUT).
+thread_group_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-thread_group_set_daemon(REF, ARG0, OUT) :- 
-	object_call(REF, setDaemon, '.'(ARG0, []), OUT).
+thread_group_suspend(REF) :- 
+	object_call(REF, suspend, [], _).
 
-thread_group_active_count(REF, OUT) :- 
-	object_call(REF, activeCount, [], OUT).
-
-thread_group_destroy(REF, OUT) :- 
-	object_call(REF, destroy, [], OUT).
-
-thread_group_enumerate(REF, ARG0, OUT) :- 
-	object_call(REF, enumerate, '.'(ARG0, []), OUT).
+thread_group_interrupt(REF) :- 
+	object_call(REF, interrupt, [], _).
 
 thread_group_enumerate(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, enumerate, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 thread_group_enumerate(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, enumerate, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-thread_group_enumerate(REF, ARG0, OUT) :- 
-	object_call(REF, enumerate, '.'(ARG0, []), OUT).
-
-thread_group_get_max_priority(REF, OUT) :- 
-	object_call(REF, getMaxPriority, [], OUT).
-
-thread_group_interrupt(REF, OUT) :- 
-	object_call(REF, interrupt, [], OUT).
-
-thread_group_is_daemon(REF, OUT) :- 
-	object_call(REF, isDaemon, [], OUT).
-
-thread_group_resume(REF, OUT) :- 
-	object_call(REF, resume, [], OUT).
-
-thread_group_stop(REF, OUT) :- 
-	object_call(REF, stop, [], OUT).
-
-thread_group_suspend(REF, OUT) :- 
-	object_call(REF, suspend, [], OUT).
-
-thread_group_active_group_count(REF, OUT) :- 
-	object_call(REF, activeGroupCount, [], OUT).
-
-thread_group_allow_thread_suspension(REF, ARG0, OUT) :- 
-	object_call(REF, allowThreadSuspension, '.'(ARG0, []), OUT).
-
-thread_group_is_destroyed(REF, OUT) :- 
-	object_call(REF, isDestroyed, [], OUT).
-
-thread_group_list(REF, OUT) :- 
-	object_call(REF, list, [], OUT).
-
-thread_group_parent_of(REF, ARG0, OUT) :- 
-	object_call(REF, parentOf, '.'(ARG0, []), OUT).
-
-thread_group_set_max_priority(REF, ARG0, OUT) :- 
-	object_call(REF, setMaxPriority, '.'(ARG0, []), OUT).
-
-thread_group_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-thread_group_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-thread_group_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
 
 thread_group_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-thread_group_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+thread_group_enumerate(REF, ARG0, OUT) :- 
+	object_call(REF, enumerate, '.'(ARG0, []), OUT).
+
+thread_group_enumerate(REF, ARG0, OUT) :- 
+	object_call(REF, enumerate, '.'(ARG0, []), OUT).
 
 thread_group_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-thread_group_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+thread_group_active_group_count(REF, OUT) :- 
+	object_call(REF, activeGroupCount, [], OUT).
 
-thread_group_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+thread_group_stop(REF) :- 
+	object_call(REF, stop, [], _).
 

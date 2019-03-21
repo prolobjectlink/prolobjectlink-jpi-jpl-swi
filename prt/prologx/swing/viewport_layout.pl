@@ -25,45 +25,45 @@
 viewport_layout(OUT) :- 
 	object_new('javax.swing.ViewportLayout', [], OUT).
 
-viewport_layout_add_layout_component(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, addLayoutComponent, '.'(ARG0, '.'(ARG1, [])), OUT).
+viewport_layout_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-viewport_layout_layout_container(REF, ARG0, OUT) :- 
-	object_call(REF, layoutContainer, '.'(ARG0, []), OUT).
+viewport_layout_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-viewport_layout_minimum_layout_size(REF, ARG0, OUT) :- 
-	object_call(REF, minimumLayoutSize, '.'(ARG0, []), OUT).
-
-viewport_layout_preferred_layout_size(REF, ARG0, OUT) :- 
-	object_call(REF, preferredLayoutSize, '.'(ARG0, []), OUT).
-
-viewport_layout_remove_layout_component(REF, ARG0, OUT) :- 
-	object_call(REF, removeLayoutComponent, '.'(ARG0, []), OUT).
-
-viewport_layout_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-viewport_layout_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-viewport_layout_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-viewport_layout_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-viewport_layout_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+viewport_layout_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 viewport_layout_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+viewport_layout_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+viewport_layout_layout_container(REF, ARG0) :- 
+	object_call(REF, layoutContainer, '.'(ARG0, []), _).
+
+viewport_layout_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+viewport_layout_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
 viewport_layout_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-viewport_layout_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+viewport_layout_preferred_layout_size(REF, ARG0, OUT) :- 
+	object_call(REF, preferredLayoutSize, '.'(ARG0, []), OUT).
 
-viewport_layout_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+viewport_layout_remove_layout_component(REF, ARG0) :- 
+	object_call(REF, removeLayoutComponent, '.'(ARG0, []), _).
+
+viewport_layout_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+viewport_layout_minimum_layout_size(REF, ARG0, OUT) :- 
+	object_call(REF, minimumLayoutSize, '.'(ARG0, []), OUT).
+
+viewport_layout_add_layout_component(REF, ARG0, ARG1) :- 
+	object_call(REF, addLayoutComponent, '.'(ARG0, '.'(ARG1, [])), _).
 

@@ -22,48 +22,48 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-chromaticity_monochrome(OUT) :- 
+chromaticity_MONOCHROME(OUT) :- 
 	object_get('javax.print.attribute.standard.Chromaticity', monochrome, OUT).
 
-chromaticity_color(OUT) :- 
+chromaticity_COLOR(OUT) :- 
 	object_get('javax.print.attribute.standard.Chromaticity', color, OUT).
-
-chromaticity_get_name(REF, OUT) :- 
-	object_call(REF, getName, [], OUT).
-
-chromaticity_get_category(REF, OUT) :- 
-	object_call(REF, getCategory, [], OUT).
-
-chromaticity_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-chromaticity_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-chromaticity_clone(REF, OUT) :- 
-	object_call(REF, clone, [], OUT).
-
-chromaticity_get_value(REF, OUT) :- 
-	object_call(REF, getValue, [], OUT).
-
-chromaticity_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-chromaticity_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-chromaticity_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
 
 chromaticity_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
+chromaticity_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+chromaticity_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+chromaticity_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
 chromaticity_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-chromaticity_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+chromaticity_get_name(REF, OUT) :- 
+	object_call(REF, getName, [], OUT).
 
-chromaticity_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+chromaticity_clone(REF, OUT) :- 
+	object_call(REF, clone, [], OUT).
+
+chromaticity_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+chromaticity_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+chromaticity_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+chromaticity_get_value(REF, OUT) :- 
+	object_call(REF, getValue, [], OUT).
+
+chromaticity_get_category(REF, OUT) :- 
+	object_call(REF, getCategory, [], OUT).
+
+chromaticity_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

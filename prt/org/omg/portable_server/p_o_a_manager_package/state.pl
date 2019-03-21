@@ -22,60 +22,60 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-state__holding(OUT) :- 
+state__HOLDING(OUT) :- 
 	object_get('org.omg.PortableServer.POAManagerPackage.State', '_holding', OUT).
 
-state_holding(OUT) :- 
+state_HOLDING(OUT) :- 
 	object_get('org.omg.PortableServer.POAManagerPackage.State', holding, OUT).
 
-state__active(OUT) :- 
+state__ACTIVE(OUT) :- 
 	object_get('org.omg.PortableServer.POAManagerPackage.State', '_active', OUT).
 
-state_active(OUT) :- 
+state_ACTIVE(OUT) :- 
 	object_get('org.omg.PortableServer.POAManagerPackage.State', active, OUT).
 
-state__discarding(OUT) :- 
+state__DISCARDING(OUT) :- 
 	object_get('org.omg.PortableServer.POAManagerPackage.State', '_discarding', OUT).
 
-state_discarding(OUT) :- 
+state_DISCARDING(OUT) :- 
 	object_get('org.omg.PortableServer.POAManagerPackage.State', discarding, OUT).
 
-state__inactive(OUT) :- 
+state__INACTIVE(OUT) :- 
 	object_get('org.omg.PortableServer.POAManagerPackage.State', '_inactive', OUT).
 
-state_inactive(OUT) :- 
+state_INACTIVE(OUT) :- 
 	object_get('org.omg.PortableServer.POAManagerPackage.State', inactive, OUT).
+
+state_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+state_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+state_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 state_value(REF, OUT) :- 
 	object_call(REF, value, [], OUT).
 
-state_from_int(REF, ARG0, OUT) :- 
-	object_call(REF, from_int, '.'(ARG0, []), OUT).
-
-state_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-state_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-state_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-state_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-state_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+state_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 state_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+state_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+state_from_int(REF, ARG0, OUT) :- 
+	object_call(REF, from_int, '.'(ARG0, []), OUT).
+
+state_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
 state_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-state_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-state_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+state_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 

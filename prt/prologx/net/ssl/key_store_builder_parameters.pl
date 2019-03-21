@@ -28,33 +28,33 @@ key_store_builder_parameters(ARG0, OUT) :-
 key_store_builder_parameters(ARG0, OUT) :- 
 	object_new('javax.net.ssl.KeyStoreBuilderParameters', '.'(ARG0, []), OUT).
 
-key_store_builder_parameters_get_parameters(REF, OUT) :- 
-	object_call(REF, getParameters, [], OUT).
-
-key_store_builder_parameters_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-key_store_builder_parameters_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-key_store_builder_parameters_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
 key_store_builder_parameters_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-key_store_builder_parameters_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+key_store_builder_parameters_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+key_store_builder_parameters_get_parameters(REF, OUT) :- 
+	object_call(REF, getParameters, [], OUT).
 
 key_store_builder_parameters_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+key_store_builder_parameters_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
 key_store_builder_parameters_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-key_store_builder_parameters_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+key_store_builder_parameters_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-key_store_builder_parameters_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+key_store_builder_parameters_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+key_store_builder_parameters_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+key_store_builder_parameters_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 

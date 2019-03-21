@@ -25,33 +25,6 @@
 memory_usage(ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_new('java.lang.management.MemoryUsage', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
-memory_usage_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-memory_usage_from(REF, ARG0, OUT) :- 
-	object_call(REF, from, '.'(ARG0, []), OUT).
-
-memory_usage_get_committed(REF, OUT) :- 
-	object_call(REF, getCommitted, [], OUT).
-
-memory_usage_get_init(REF, OUT) :- 
-	object_call(REF, getInit, [], OUT).
-
-memory_usage_get_max(REF, OUT) :- 
-	object_call(REF, getMax, [], OUT).
-
-memory_usage_get_used(REF, OUT) :- 
-	object_call(REF, getUsed, [], OUT).
-
-memory_usage_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-memory_usage_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-memory_usage_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
 memory_usage_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
@@ -61,9 +34,36 @@ memory_usage_hash_code(REF, OUT) :-
 memory_usage_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-memory_usage_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+memory_usage_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-memory_usage_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+memory_usage_from(REF, ARG0, OUT) :- 
+	object_call(REF, from, '.'(ARG0, []), OUT).
+
+memory_usage_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+memory_usage_get_used(REF, OUT) :- 
+	object_call(REF, getUsed, [], OUT).
+
+memory_usage_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+memory_usage_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+memory_usage_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+memory_usage_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+memory_usage_get_max(REF, OUT) :- 
+	object_call(REF, getMax, [], OUT).
+
+memory_usage_get_committed(REF, OUT) :- 
+	object_call(REF, getCommitted, [], OUT).
+
+memory_usage_get_init(REF, OUT) :- 
+	object_call(REF, getInit, [], OUT).
 

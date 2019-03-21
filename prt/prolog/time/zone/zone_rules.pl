@@ -22,75 +22,75 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-zone_rules_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-zone_rules_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-zone_rules_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-zone_rules_of(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
-	object_call(REF, of, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
+zone_rules_previous_transition(REF, ARG0, OUT) :- 
+	object_call(REF, previousTransition, '.'(ARG0, []), OUT).
 
 zone_rules_of(REF, ARG0, OUT) :- 
 	object_call(REF, of, '.'(ARG0, []), OUT).
 
-zone_rules_get_offset(REF, ARG0, OUT) :- 
-	object_call(REF, getOffset, '.'(ARG0, []), OUT).
-
-zone_rules_get_offset(REF, ARG0, OUT) :- 
-	object_call(REF, getOffset, '.'(ARG0, []), OUT).
-
-zone_rules_is_fixed_offset(REF, OUT) :- 
-	object_call(REF, isFixedOffset, [], OUT).
-
-zone_rules_get_valid_offsets(REF, ARG0, OUT) :- 
-	object_call(REF, getValidOffsets, '.'(ARG0, []), OUT).
-
-zone_rules_is_valid_offset(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, isValidOffset, '.'(ARG0, '.'(ARG1, [])), OUT).
+zone_rules_get_transition(REF, ARG0, OUT) :- 
+	object_call(REF, getTransition, '.'(ARG0, []), OUT).
 
 zone_rules_get_standard_offset(REF, ARG0, OUT) :- 
 	object_call(REF, getStandardOffset, '.'(ARG0, []), OUT).
 
+zone_rules_next_transition(REF, ARG0, OUT) :- 
+	object_call(REF, nextTransition, '.'(ARG0, []), OUT).
+
+zone_rules_get_offset(REF, ARG0, OUT) :- 
+	object_call(REF, getOffset, '.'(ARG0, []), OUT).
+
+zone_rules_get_offset(REF, ARG0, OUT) :- 
+	object_call(REF, getOffset, '.'(ARG0, []), OUT).
+
+zone_rules_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+zone_rules_of(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
+	object_call(REF, of, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
+
+zone_rules_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
 zone_rules_get_daylight_savings(REF, ARG0, OUT) :- 
 	object_call(REF, getDaylightSavings, '.'(ARG0, []), OUT).
 
-zone_rules_get_transition_rules(REF, OUT) :- 
-	object_call(REF, getTransitionRules, [], OUT).
+zone_rules_is_fixed_offset(REF, OUT) :- 
+	object_call(REF, isFixedOffset, [], OUT).
 
-zone_rules_get_transitions(REF, OUT) :- 
-	object_call(REF, getTransitions, [], OUT).
+zone_rules_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 zone_rules_is_daylight_savings(REF, ARG0, OUT) :- 
 	object_call(REF, isDaylightSavings, '.'(ARG0, []), OUT).
 
-zone_rules_next_transition(REF, ARG0, OUT) :- 
-	object_call(REF, nextTransition, '.'(ARG0, []), OUT).
+zone_rules_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-zone_rules_previous_transition(REF, ARG0, OUT) :- 
-	object_call(REF, previousTransition, '.'(ARG0, []), OUT).
+zone_rules_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-zone_rules_get_transition(REF, ARG0, OUT) :- 
-	object_call(REF, getTransition, '.'(ARG0, []), OUT).
+zone_rules_get_valid_offsets(REF, ARG0, OUT) :- 
+	object_call(REF, getValidOffsets, '.'(ARG0, []), OUT).
 
-zone_rules_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+zone_rules_get_transitions(REF, OUT) :- 
+	object_call(REF, getTransitions, [], OUT).
 
-zone_rules_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-zone_rules_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+zone_rules_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 zone_rules_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-zone_rules_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+zone_rules_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-zone_rules_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+zone_rules_is_valid_offset(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, isValidOffset, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+zone_rules_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+zone_rules_get_transition_rules(REF, OUT) :- 
+	object_call(REF, getTransitionRules, [], OUT).
 

@@ -28,42 +28,42 @@ volatile_call_site(ARG0, OUT) :-
 volatile_call_site(ARG0, OUT) :- 
 	object_new('java.lang.invoke.VolatileCallSite', '.'(ARG0, []), OUT).
 
-volatile_call_site_dynamic_invoker(REF, OUT) :- 
-	object_call(REF, dynamicInvoker, [], OUT).
+volatile_call_site_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-volatile_call_site_get_target(REF, OUT) :- 
-	object_call(REF, getTarget, [], OUT).
-
-volatile_call_site_set_target(REF, ARG0, OUT) :- 
-	object_call(REF, setTarget, '.'(ARG0, []), OUT).
+volatile_call_site_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 volatile_call_site_type(REF, OUT) :- 
 	object_call(REF, type, [], OUT).
 
-volatile_call_site_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+volatile_call_site_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-volatile_call_site_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-volatile_call_site_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-volatile_call_site_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+volatile_call_site_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 volatile_call_site_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-volatile_call_site_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+volatile_call_site_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+volatile_call_site_get_target(REF, OUT) :- 
+	object_call(REF, getTarget, [], OUT).
 
 volatile_call_site_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-volatile_call_site_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+volatile_call_site_dynamic_invoker(REF, OUT) :- 
+	object_call(REF, dynamicInvoker, [], OUT).
 
-volatile_call_site_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+volatile_call_site_set_target(REF, ARG0) :- 
+	object_call(REF, setTarget, '.'(ARG0, []), _).
+
+volatile_call_site_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+volatile_call_site_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 

@@ -25,36 +25,36 @@
 m_bean_server_builder(OUT) :- 
 	object_new('javax.management.MBeanServerBuilder', [], OUT).
 
-m_bean_server_builder_new_m_bean_server(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, newMBeanServer, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-m_bean_server_builder_new_m_bean_server_delegate(REF, OUT) :- 
-	object_call(REF, newMBeanServerDelegate, [], OUT).
-
-m_bean_server_builder_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-m_bean_server_builder_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-m_bean_server_builder_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-m_bean_server_builder_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-m_bean_server_builder_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
 m_bean_server_builder_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
 m_bean_server_builder_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-m_bean_server_builder_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+m_bean_server_builder_new_m_bean_server(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, newMBeanServer, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-m_bean_server_builder_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+m_bean_server_builder_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+m_bean_server_builder_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+m_bean_server_builder_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+m_bean_server_builder_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+m_bean_server_builder_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+m_bean_server_builder_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+m_bean_server_builder_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+m_bean_server_builder_new_m_bean_server_delegate(REF, OUT) :- 
+	object_call(REF, newMBeanServerDelegate, [], OUT).
 

@@ -25,29 +25,17 @@
 file_name_extension_filter(ARG0, ARG1, OUT) :- 
 	object_new('javax.swing.filechooser.FileNameExtensionFilter', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-file_name_extension_filter_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-file_name_extension_filter_accept(REF, ARG0, OUT) :- 
-	object_call(REF, accept, '.'(ARG0, []), OUT).
-
-file_name_extension_filter_get_extensions(REF, OUT) :- 
-	object_call(REF, getExtensions, [], OUT).
-
-file_name_extension_filter_get_description(REF, OUT) :- 
-	object_call(REF, getDescription, [], OUT).
-
-file_name_extension_filter_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-file_name_extension_filter_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-file_name_extension_filter_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
 file_name_extension_filter_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+file_name_extension_filter_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+file_name_extension_filter_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+file_name_extension_filter_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 file_name_extension_filter_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -55,9 +43,21 @@ file_name_extension_filter_hash_code(REF, OUT) :-
 file_name_extension_filter_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-file_name_extension_filter_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+file_name_extension_filter_get_description(REF, OUT) :- 
+	object_call(REF, getDescription, [], OUT).
 
-file_name_extension_filter_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+file_name_extension_filter_get_extensions(REF, OUT) :- 
+	object_call(REF, getExtensions, [], OUT).
+
+file_name_extension_filter_accept(REF, ARG0, OUT) :- 
+	object_call(REF, accept, '.'(ARG0, []), OUT).
+
+file_name_extension_filter_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+file_name_extension_filter_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+file_name_extension_filter_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

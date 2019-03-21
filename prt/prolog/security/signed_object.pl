@@ -25,32 +25,35 @@
 signed_object(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('java.security.SignedObject', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-signed_object_get_object(REF, OUT) :- 
-	object_call(REF, getObject, [], OUT).
-
-signed_object_get_signature(REF, OUT) :- 
-	object_call(REF, getSignature, [], OUT).
-
-signed_object_verify(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, verify, '.'(ARG0, '.'(ARG1, [])), OUT).
+signed_object_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 signed_object_get_algorithm(REF, OUT) :- 
 	object_call(REF, getAlgorithm, [], OUT).
 
-signed_object_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+signed_object_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-signed_object_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+signed_object_get_object(REF, OUT) :- 
+	object_call(REF, getObject, [], OUT).
 
-signed_object_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+signed_object_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+signed_object_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 signed_object_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
+signed_object_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
 signed_object_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
+
+signed_object_verify(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, verify, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 signed_object_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -58,9 +61,6 @@ signed_object_hash_code(REF, OUT) :-
 signed_object_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-signed_object_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-signed_object_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+signed_object_get_signature(REF, OUT) :- 
+	object_call(REF, getSignature, [], OUT).
 

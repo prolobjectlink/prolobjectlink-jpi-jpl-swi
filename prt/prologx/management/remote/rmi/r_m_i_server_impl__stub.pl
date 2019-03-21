@@ -25,8 +25,17 @@
 r_m_i_server_impl__stub(ARG0, OUT) :- 
 	object_new('javax.management.remote.rmi.RMIServerImpl_Stub', '.'(ARG0, []), OUT).
 
-r_m_i_server_impl__stub_get_version(REF, OUT) :- 
-	object_call(REF, getVersion, [], OUT).
+r_m_i_server_impl__stub_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+r_m_i_server_impl__stub_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+r_m_i_server_impl__stub_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+r_m_i_server_impl__stub_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 r_m_i_server_impl__stub_new_client(REF, ARG0, OUT) :- 
 	object_call(REF, newClient, '.'(ARG0, []), OUT).
@@ -34,8 +43,17 @@ r_m_i_server_impl__stub_new_client(REF, ARG0, OUT) :-
 r_m_i_server_impl__stub_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
+r_m_i_server_impl__stub_to_stub(REF, ARG0, OUT) :- 
+	object_call(REF, toStub, '.'(ARG0, []), OUT).
+
+r_m_i_server_impl__stub_get_version(REF, OUT) :- 
+	object_call(REF, getVersion, [], OUT).
+
 r_m_i_server_impl__stub_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
+
+r_m_i_server_impl__stub_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
 r_m_i_server_impl__stub_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -43,24 +61,6 @@ r_m_i_server_impl__stub_hash_code(REF, OUT) :-
 r_m_i_server_impl__stub_get_ref(REF, OUT) :- 
 	object_call(REF, getRef, [], OUT).
 
-r_m_i_server_impl__stub_to_stub(REF, ARG0, OUT) :- 
-	object_call(REF, toStub, '.'(ARG0, []), OUT).
-
-r_m_i_server_impl__stub_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-r_m_i_server_impl__stub_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-r_m_i_server_impl__stub_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-r_m_i_server_impl__stub_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-r_m_i_server_impl__stub_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-r_m_i_server_impl__stub_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+r_m_i_server_impl__stub_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

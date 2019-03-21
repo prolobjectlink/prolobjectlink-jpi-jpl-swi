@@ -28,71 +28,59 @@ property_resource_bundle(ARG0, OUT) :-
 property_resource_bundle(ARG0, OUT) :- 
 	object_new('java.util.PropertyResourceBundle', '.'(ARG0, []), OUT).
 
-property_resource_bundle_get_keys(REF, OUT) :- 
-	object_call(REF, getKeys, [], OUT).
-
 property_resource_bundle_handle_get_object(REF, ARG0, OUT) :- 
 	object_call(REF, handleGetObject, '.'(ARG0, []), OUT).
-
-property_resource_bundle_get_object(REF, ARG0, OUT) :- 
-	object_call(REF, getObject, '.'(ARG0, []), OUT).
-
-property_resource_bundle_key_set(REF, OUT) :- 
-	object_call(REF, keySet, [], OUT).
-
-property_resource_bundle_contains_key(REF, ARG0, OUT) :- 
-	object_call(REF, containsKey, '.'(ARG0, []), OUT).
-
-property_resource_bundle_get_base_bundle_name(REF, OUT) :- 
-	object_call(REF, getBaseBundleName, [], OUT).
-
-property_resource_bundle_get_bundle(REF, ARG0, OUT) :- 
-	object_call(REF, getBundle, '.'(ARG0, []), OUT).
-
-property_resource_bundle_get_bundle(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getBundle, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-property_resource_bundle_get_bundle(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, getBundle, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
-property_resource_bundle_get_bundle(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, getBundle, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-property_resource_bundle_get_bundle(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, getBundle, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-property_resource_bundle_get_bundle(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getBundle, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-property_resource_bundle_get_locale(REF, OUT) :- 
-	object_call(REF, getLocale, [], OUT).
-
-property_resource_bundle_get_string(REF, ARG0, OUT) :- 
-	object_call(REF, getString, '.'(ARG0, []), OUT).
-
-property_resource_bundle_get_string_array(REF, ARG0, OUT) :- 
-	object_call(REF, getStringArray, '.'(ARG0, []), OUT).
-
-property_resource_bundle_clear_cache(REF, OUT) :- 
-	object_call(REF, clearCache, [], OUT).
-
-property_resource_bundle_clear_cache(REF, ARG0, OUT) :- 
-	object_call(REF, clearCache, '.'(ARG0, []), OUT).
-
-property_resource_bundle_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-property_resource_bundle_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-property_resource_bundle_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
 
 property_resource_bundle_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
+property_resource_bundle_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+property_resource_bundle_contains_key(REF, ARG0, OUT) :- 
+	object_call(REF, containsKey, '.'(ARG0, []), OUT).
+
+property_resource_bundle_get_object(REF, ARG0, OUT) :- 
+	object_call(REF, getObject, '.'(ARG0, []), OUT).
+
 property_resource_bundle_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
+
+property_resource_bundle_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+property_resource_bundle_get_locale(REF, OUT) :- 
+	object_call(REF, getLocale, [], OUT).
+
+property_resource_bundle_get_base_bundle_name(REF, OUT) :- 
+	object_call(REF, getBaseBundleName, [], OUT).
+
+property_resource_bundle_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+property_resource_bundle_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+property_resource_bundle_key_set(REF, OUT) :- 
+	object_call(REF, keySet, [], OUT).
+
+property_resource_bundle_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+property_resource_bundle_get_string(REF, ARG0, OUT) :- 
+	object_call(REF, getString, '.'(ARG0, []), OUT).
+
+property_resource_bundle_get_keys(REF, OUT) :- 
+	object_call(REF, getKeys, [], OUT).
+
+property_resource_bundle_get_string_array(REF, ARG0, OUT) :- 
+	object_call(REF, getStringArray, '.'(ARG0, []), OUT).
+
+property_resource_bundle_get_bundle(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, getBundle, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+property_resource_bundle_get_bundle(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, getBundle, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
 property_resource_bundle_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -100,9 +88,21 @@ property_resource_bundle_hash_code(REF, OUT) :-
 property_resource_bundle_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-property_resource_bundle_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+property_resource_bundle_get_bundle(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getBundle, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-property_resource_bundle_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+property_resource_bundle_get_bundle(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getBundle, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+property_resource_bundle_clear_cache(REF, ARG0) :- 
+	object_call(REF, clearCache, '.'(ARG0, []), _).
+
+property_resource_bundle_get_bundle(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_call(REF, getBundle, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+
+property_resource_bundle_clear_cache(REF) :- 
+	object_call(REF, clearCache, [], _).
+
+property_resource_bundle_get_bundle(REF, ARG0, OUT) :- 
+	object_call(REF, getBundle, '.'(ARG0, []), OUT).
 

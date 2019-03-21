@@ -25,42 +25,42 @@
 count_down_latch(ARG0, OUT) :- 
 	object_new('java.util.concurrent.CountDownLatch', '.'(ARG0, []), OUT).
 
-count_down_latch_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-count_down_latch_count_down(REF, OUT) :- 
-	object_call(REF, countDown, [], OUT).
+count_down_latch_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
 count_down_latch_get_count(REF, OUT) :- 
 	object_call(REF, getCount, [], OUT).
 
-count_down_latch_await(REF, OUT) :- 
-	object_call(REF, await, [], OUT).
-
 count_down_latch_await(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, await, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-count_down_latch_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-count_down_latch_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-count_down_latch_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
 
 count_down_latch_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-count_down_latch_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+count_down_latch_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+count_down_latch_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+count_down_latch_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 count_down_latch_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-count_down_latch_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+count_down_latch_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-count_down_latch_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+count_down_latch_await(REF) :- 
+	object_call(REF, await, [], _).
+
+count_down_latch_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+count_down_latch_count_down(REF) :- 
+	object_call(REF, countDown, [], _).
+
+count_down_latch_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 

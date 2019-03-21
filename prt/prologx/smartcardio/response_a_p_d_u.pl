@@ -25,48 +25,48 @@
 response_a_p_d_u(ARG0, OUT) :- 
 	object_new('javax.smartcardio.ResponseAPDU', '.'(ARG0, []), OUT).
 
-response_a_p_d_u_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-response_a_p_d_u_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-response_a_p_d_u_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-response_a_p_d_u_get_bytes(REF, OUT) :- 
-	object_call(REF, getBytes, [], OUT).
-
-response_a_p_d_u_get_nr(REF, OUT) :- 
-	object_call(REF, getNr, [], OUT).
-
-response_a_p_d_u_get_s_w(REF, OUT) :- 
-	object_call(REF, getSW, [], OUT).
-
-response_a_p_d_u_get_s_w1(REF, OUT) :- 
-	object_call(REF, getSW1, [], OUT).
-
-response_a_p_d_u_get_s_w2(REF, OUT) :- 
-	object_call(REF, getSW2, [], OUT).
+response_a_p_d_u_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 response_a_p_d_u_get_data(REF, OUT) :- 
 	object_call(REF, getData, [], OUT).
 
-response_a_p_d_u_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+response_a_p_d_u_get_s_w1(REF, OUT) :- 
+	object_call(REF, getSW1, [], OUT).
 
-response_a_p_d_u_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+response_a_p_d_u_get_bytes(REF, OUT) :- 
+	object_call(REF, getBytes, [], OUT).
 
-response_a_p_d_u_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+response_a_p_d_u_get_s_w2(REF, OUT) :- 
+	object_call(REF, getSW2, [], OUT).
+
+response_a_p_d_u_get_s_w(REF, OUT) :- 
+	object_call(REF, getSW, [], OUT).
+
+response_a_p_d_u_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
 response_a_p_d_u_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-response_a_p_d_u_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+response_a_p_d_u_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-response_a_p_d_u_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+response_a_p_d_u_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+response_a_p_d_u_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+response_a_p_d_u_get_nr(REF, OUT) :- 
+	object_call(REF, getNr, [], OUT).
+
+response_a_p_d_u_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+response_a_p_d_u_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+response_a_p_d_u_wait(REF) :- 
+	object_call(REF, wait, [], _).
 

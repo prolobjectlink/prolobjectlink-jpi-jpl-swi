@@ -22,20 +22,35 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-j_m_x_service_u_r_l(ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_new('javax.management.remote.JMXServiceURL', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+j_m_x_service_u_r_l(ARG0, OUT) :- 
+	object_new('javax.management.remote.JMXServiceURL', '.'(ARG0, []), OUT).
 
 j_m_x_service_u_r_l(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('javax.management.remote.JMXServiceURL', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-j_m_x_service_u_r_l(ARG0, OUT) :- 
-	object_new('javax.management.remote.JMXServiceURL', '.'(ARG0, []), OUT).
+j_m_x_service_u_r_l(ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_new('javax.management.remote.JMXServiceURL', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
-j_m_x_service_u_r_l_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+j_m_x_service_u_r_l_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+j_m_x_service_u_r_l_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+j_m_x_service_u_r_l_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+j_m_x_service_u_r_l_get_u_r_l_path(REF, OUT) :- 
+	object_call(REF, getURLPath, [], OUT).
 
 j_m_x_service_u_r_l_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
+
+j_m_x_service_u_r_l_get_protocol(REF, OUT) :- 
+	object_call(REF, getProtocol, [], OUT).
+
+j_m_x_service_u_r_l_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 j_m_x_service_u_r_l_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -43,30 +58,15 @@ j_m_x_service_u_r_l_hash_code(REF, OUT) :-
 j_m_x_service_u_r_l_get_host(REF, OUT) :- 
 	object_call(REF, getHost, [], OUT).
 
-j_m_x_service_u_r_l_get_protocol(REF, OUT) :- 
-	object_call(REF, getProtocol, [], OUT).
-
 j_m_x_service_u_r_l_get_port(REF, OUT) :- 
 	object_call(REF, getPort, [], OUT).
 
-j_m_x_service_u_r_l_get_u_r_l_path(REF, OUT) :- 
-	object_call(REF, getURLPath, [], OUT).
-
-j_m_x_service_u_r_l_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-j_m_x_service_u_r_l_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-j_m_x_service_u_r_l_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+j_m_x_service_u_r_l_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 j_m_x_service_u_r_l_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-j_m_x_service_u_r_l_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-j_m_x_service_u_r_l_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+j_m_x_service_u_r_l_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 

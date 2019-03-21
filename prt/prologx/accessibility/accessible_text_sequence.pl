@@ -25,30 +25,30 @@
 accessible_text_sequence(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('javax.accessibility.AccessibleTextSequence', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-accessible_text_sequence_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-accessible_text_sequence_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-accessible_text_sequence_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-accessible_text_sequence_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-accessible_text_sequence_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-accessible_text_sequence_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+accessible_text_sequence_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 accessible_text_sequence_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-accessible_text_sequence_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+accessible_text_sequence_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-accessible_text_sequence_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+accessible_text_sequence_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+accessible_text_sequence_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+accessible_text_sequence_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+accessible_text_sequence_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+accessible_text_sequence_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+accessible_text_sequence_notify(REF) :- 
+	object_call(REF, notify, [], _).
 

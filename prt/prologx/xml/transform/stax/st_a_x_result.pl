@@ -22,13 +22,13 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-st_a_x_result_feature(OUT) :- 
+st_a_x_result_FEATURE(OUT) :- 
 	object_get('javax.xml.transform.stax.StAXResult', feature, OUT).
 
-st_a_x_result_pi_disable_output_escaping(OUT) :- 
+st_a_x_result_PI_DISABLE_OUTPUT_ESCAPING(OUT) :- 
 	object_get('javax.xml.transform.stax.StAXResult', pi_disable_output_escaping, OUT).
 
-st_a_x_result_pi_enable_output_escaping(OUT) :- 
+st_a_x_result_PI_ENABLE_OUTPUT_ESCAPING(OUT) :- 
 	object_get('javax.xml.transform.stax.StAXResult', pi_enable_output_escaping, OUT).
 
 st_a_x_result(ARG0, OUT) :- 
@@ -37,32 +37,35 @@ st_a_x_result(ARG0, OUT) :-
 st_a_x_result(ARG0, OUT) :- 
 	object_new('javax.xml.transform.stax.StAXResult', '.'(ARG0, []), OUT).
 
+st_a_x_result_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+st_a_x_result_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
 st_a_x_result_get_system_id(REF, OUT) :- 
 	object_call(REF, getSystemId, [], OUT).
-
-st_a_x_result_set_system_id(REF, ARG0, OUT) :- 
-	object_call(REF, setSystemId, '.'(ARG0, []), OUT).
-
-st_a_x_result_get_x_m_l_event_writer(REF, OUT) :- 
-	object_call(REF, getXMLEventWriter, [], OUT).
 
 st_a_x_result_get_x_m_l_stream_writer(REF, OUT) :- 
 	object_call(REF, getXMLStreamWriter, [], OUT).
 
-st_a_x_result_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+st_a_x_result_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-st_a_x_result_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+st_a_x_result_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-st_a_x_result_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+st_a_x_result_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+st_a_x_result_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+st_a_x_result_get_x_m_l_event_writer(REF, OUT) :- 
+	object_call(REF, getXMLEventWriter, [], OUT).
 
 st_a_x_result_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-st_a_x_result_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
 
 st_a_x_result_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -70,9 +73,6 @@ st_a_x_result_hash_code(REF, OUT) :-
 st_a_x_result_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-st_a_x_result_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-st_a_x_result_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+st_a_x_result_set_system_id(REF, ARG0) :- 
+	object_call(REF, setSystemId, '.'(ARG0, []), _).
 

@@ -22,48 +22,48 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-implicit_activation_policy_value__implicit_activation(OUT) :- 
+implicit_activation_policy_value__IMPLICIT_ACTIVATION(OUT) :- 
 	object_get('org.omg.PortableServer.ImplicitActivationPolicyValue', '_implicit_activation', OUT).
 
-implicit_activation_policy_value_implicit_activation(OUT) :- 
+implicit_activation_policy_value_IMPLICIT_ACTIVATION(OUT) :- 
 	object_get('org.omg.PortableServer.ImplicitActivationPolicyValue', implicit_activation, OUT).
 
-implicit_activation_policy_value__no_implicit_activation(OUT) :- 
+implicit_activation_policy_value__NO_IMPLICIT_ACTIVATION(OUT) :- 
 	object_get('org.omg.PortableServer.ImplicitActivationPolicyValue', '_no_implicit_activation', OUT).
 
-implicit_activation_policy_value_no_implicit_activation(OUT) :- 
+implicit_activation_policy_value_NO_IMPLICIT_ACTIVATION(OUT) :- 
 	object_get('org.omg.PortableServer.ImplicitActivationPolicyValue', no_implicit_activation, OUT).
-
-implicit_activation_policy_value_value(REF, OUT) :- 
-	object_call(REF, value, [], OUT).
-
-implicit_activation_policy_value_from_int(REF, ARG0, OUT) :- 
-	object_call(REF, from_int, '.'(ARG0, []), OUT).
-
-implicit_activation_policy_value_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-implicit_activation_policy_value_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-implicit_activation_policy_value_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
 
 implicit_activation_policy_value_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-implicit_activation_policy_value_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+implicit_activation_policy_value_value(REF, OUT) :- 
+	object_call(REF, value, [], OUT).
 
-implicit_activation_policy_value_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+implicit_activation_policy_value_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 implicit_activation_policy_value_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-implicit_activation_policy_value_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+implicit_activation_policy_value_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-implicit_activation_policy_value_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+implicit_activation_policy_value_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+implicit_activation_policy_value_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+implicit_activation_policy_value_from_int(REF, ARG0, OUT) :- 
+	object_call(REF, from_int, '.'(ARG0, []), OUT).
+
+implicit_activation_policy_value_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+implicit_activation_policy_value_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+implicit_activation_policy_value_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 

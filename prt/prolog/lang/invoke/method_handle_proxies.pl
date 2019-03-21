@@ -22,8 +22,14 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-method_handle_proxies_as_interface_instance(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, asInterfaceInstance, '.'(ARG0, '.'(ARG1, [])), OUT).
+method_handle_proxies_wrapper_instance_type(REF, ARG0, OUT) :- 
+	object_call(REF, wrapperInstanceType, '.'(ARG0, []), OUT).
+
+method_handle_proxies_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+method_handle_proxies_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 method_handle_proxies_is_wrapper_instance(REF, ARG0, OUT) :- 
 	object_call(REF, isWrapperInstance, '.'(ARG0, []), OUT).
@@ -31,33 +37,27 @@ method_handle_proxies_is_wrapper_instance(REF, ARG0, OUT) :-
 method_handle_proxies_wrapper_instance_target(REF, ARG0, OUT) :- 
 	object_call(REF, wrapperInstanceTarget, '.'(ARG0, []), OUT).
 
-method_handle_proxies_wrapper_instance_type(REF, ARG0, OUT) :- 
-	object_call(REF, wrapperInstanceType, '.'(ARG0, []), OUT).
+method_handle_proxies_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-method_handle_proxies_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+method_handle_proxies_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-method_handle_proxies_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+method_handle_proxies_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-method_handle_proxies_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+method_handle_proxies_as_interface_instance(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, asInterfaceInstance, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+method_handle_proxies_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 method_handle_proxies_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-method_handle_proxies_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
 
 method_handle_proxies_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
 method_handle_proxies_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-method_handle_proxies_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-method_handle_proxies_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

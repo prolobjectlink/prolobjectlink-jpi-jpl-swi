@@ -25,35 +25,8 @@
 attribute_change_notification_filter(OUT) :- 
 	object_new('javax.management.AttributeChangeNotificationFilter', [], OUT).
 
-attribute_change_notification_filter_disable_all_attributes(REF, OUT) :- 
-	object_call(REF, disableAllAttributes, [], OUT).
-
-attribute_change_notification_filter_disable_attribute(REF, ARG0, OUT) :- 
-	object_call(REF, disableAttribute, '.'(ARG0, []), OUT).
-
-attribute_change_notification_filter_enable_attribute(REF, ARG0, OUT) :- 
-	object_call(REF, enableAttribute, '.'(ARG0, []), OUT).
-
 attribute_change_notification_filter_get_enabled_attributes(REF, OUT) :- 
 	object_call(REF, getEnabledAttributes, [], OUT).
-
-attribute_change_notification_filter_is_notification_enabled(REF, ARG0, OUT) :- 
-	object_call(REF, isNotificationEnabled, '.'(ARG0, []), OUT).
-
-attribute_change_notification_filter_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-attribute_change_notification_filter_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-attribute_change_notification_filter_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-attribute_change_notification_filter_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-attribute_change_notification_filter_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
 
 attribute_change_notification_filter_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -61,9 +34,36 @@ attribute_change_notification_filter_hash_code(REF, OUT) :-
 attribute_change_notification_filter_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-attribute_change_notification_filter_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+attribute_change_notification_filter_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-attribute_change_notification_filter_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+attribute_change_notification_filter_disable_all_attributes(REF) :- 
+	object_call(REF, disableAllAttributes, [], _).
+
+attribute_change_notification_filter_is_notification_enabled(REF, ARG0, OUT) :- 
+	object_call(REF, isNotificationEnabled, '.'(ARG0, []), OUT).
+
+attribute_change_notification_filter_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+attribute_change_notification_filter_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+attribute_change_notification_filter_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+attribute_change_notification_filter_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+attribute_change_notification_filter_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+attribute_change_notification_filter_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+attribute_change_notification_filter_enable_attribute(REF, ARG0) :- 
+	object_call(REF, enableAttribute, '.'(ARG0, []), _).
+
+attribute_change_notification_filter_disable_attribute(REF, ARG0) :- 
+	object_call(REF, disableAttribute, '.'(ARG0, []), _).
 

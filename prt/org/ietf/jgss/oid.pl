@@ -31,36 +31,36 @@ oid(ARG0, OUT) :-
 oid(ARG0, OUT) :- 
 	object_new('org.ietf.jgss.Oid', '.'(ARG0, []), OUT).
 
-oid_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
 oid_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
-
-oid_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
 
 oid_contained_in(REF, ARG0, OUT) :- 
 	object_call(REF, containedIn, '.'(ARG0, []), OUT).
 
+oid_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+oid_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+oid_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+oid_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+oid_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+oid_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
 oid_get_d_e_r(REF, OUT) :- 
 	object_call(REF, getDER, [], OUT).
-
-oid_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-oid_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-oid_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
 
 oid_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-oid_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-oid_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+oid_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 

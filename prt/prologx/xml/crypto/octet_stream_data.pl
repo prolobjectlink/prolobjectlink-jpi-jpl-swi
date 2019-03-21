@@ -22,45 +22,45 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-octet_stream_data(ARG0, OUT) :- 
-	object_new('javax.xml.crypto.OctetStreamData', '.'(ARG0, []), OUT).
-
 octet_stream_data(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('javax.xml.crypto.OctetStreamData', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-octet_stream_data_get_octet_stream(REF, OUT) :- 
-	object_call(REF, getOctetStream, [], OUT).
-
-octet_stream_data_get_mime_type(REF, OUT) :- 
-	object_call(REF, getMimeType, [], OUT).
-
-octet_stream_data_get_u_r_i(REF, OUT) :- 
-	object_call(REF, getURI, [], OUT).
-
-octet_stream_data_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-octet_stream_data_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-octet_stream_data_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-octet_stream_data_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+octet_stream_data(ARG0, OUT) :- 
+	object_new('javax.xml.crypto.OctetStreamData', '.'(ARG0, []), OUT).
 
 octet_stream_data_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
+octet_stream_data_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+octet_stream_data_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+octet_stream_data_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+octet_stream_data_get_mime_type(REF, OUT) :- 
+	object_call(REF, getMimeType, [], OUT).
+
+octet_stream_data_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+octet_stream_data_get_u_r_i(REF, OUT) :- 
+	object_call(REF, getURI, [], OUT).
+
+octet_stream_data_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
 octet_stream_data_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
+
+octet_stream_data_get_octet_stream(REF, OUT) :- 
+	object_call(REF, getOctetStream, [], OUT).
 
 octet_stream_data_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-octet_stream_data_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-octet_stream_data_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+octet_stream_data_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

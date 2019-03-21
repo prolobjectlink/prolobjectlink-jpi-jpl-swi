@@ -25,54 +25,54 @@
 default_single_selection_model(OUT) :- 
 	object_new('javax.swing.DefaultSingleSelectionModel', [], OUT).
 
-default_single_selection_model_add_change_listener(REF, ARG0, OUT) :- 
-	object_call(REF, addChangeListener, '.'(ARG0, []), OUT).
-
-default_single_selection_model_get_change_listeners(REF, OUT) :- 
-	object_call(REF, getChangeListeners, [], OUT).
-
-default_single_selection_model_remove_change_listener(REF, ARG0, OUT) :- 
-	object_call(REF, removeChangeListener, '.'(ARG0, []), OUT).
-
-default_single_selection_model_get_listeners(REF, ARG0, OUT) :- 
-	object_call(REF, getListeners, '.'(ARG0, []), OUT).
-
-default_single_selection_model_set_selected_index(REF, ARG0, OUT) :- 
-	object_call(REF, setSelectedIndex, '.'(ARG0, []), OUT).
-
-default_single_selection_model_get_selected_index(REF, OUT) :- 
-	object_call(REF, getSelectedIndex, [], OUT).
-
-default_single_selection_model_is_selected(REF, OUT) :- 
-	object_call(REF, isSelected, [], OUT).
-
-default_single_selection_model_clear_selection(REF, OUT) :- 
-	object_call(REF, clearSelection, [], OUT).
-
-default_single_selection_model_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-default_single_selection_model_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-default_single_selection_model_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+default_single_selection_model_add_change_listener(REF, ARG0) :- 
+	object_call(REF, addChangeListener, '.'(ARG0, []), _).
 
 default_single_selection_model_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-default_single_selection_model_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+default_single_selection_model_get_change_listeners(REF, OUT) :- 
+	object_call(REF, getChangeListeners, [], OUT).
 
-default_single_selection_model_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+default_single_selection_model_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+default_single_selection_model_clear_selection(REF) :- 
+	object_call(REF, clearSelection, [], _).
+
+default_single_selection_model_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+default_single_selection_model_set_selected_index(REF, ARG0) :- 
+	object_call(REF, setSelectedIndex, '.'(ARG0, []), _).
+
+default_single_selection_model_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+default_single_selection_model_get_selected_index(REF, OUT) :- 
+	object_call(REF, getSelectedIndex, [], OUT).
+
+default_single_selection_model_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+default_single_selection_model_is_selected(REF, OUT) :- 
+	object_call(REF, isSelected, [], OUT).
+
+default_single_selection_model_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 default_single_selection_model_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-default_single_selection_model_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+default_single_selection_model_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-default_single_selection_model_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+default_single_selection_model_get_listeners(REF, ARG0, OUT) :- 
+	object_call(REF, getListeners, '.'(ARG0, []), OUT).
+
+default_single_selection_model_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+default_single_selection_model_remove_change_listener(REF, ARG0) :- 
+	object_call(REF, removeChangeListener, '.'(ARG0, []), _).
 

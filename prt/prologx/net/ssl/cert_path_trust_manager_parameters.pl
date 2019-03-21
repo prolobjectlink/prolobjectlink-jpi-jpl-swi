@@ -25,23 +25,17 @@
 cert_path_trust_manager_parameters(ARG0, OUT) :- 
 	object_new('javax.net.ssl.CertPathTrustManagerParameters', '.'(ARG0, []), OUT).
 
+cert_path_trust_manager_parameters_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
 cert_path_trust_manager_parameters_get_parameters(REF, OUT) :- 
 	object_call(REF, getParameters, [], OUT).
 
-cert_path_trust_manager_parameters_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+cert_path_trust_manager_parameters_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-cert_path_trust_manager_parameters_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-cert_path_trust_manager_parameters_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-cert_path_trust_manager_parameters_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-cert_path_trust_manager_parameters_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+cert_path_trust_manager_parameters_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 cert_path_trust_manager_parameters_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -49,9 +43,15 @@ cert_path_trust_manager_parameters_hash_code(REF, OUT) :-
 cert_path_trust_manager_parameters_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-cert_path_trust_manager_parameters_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+cert_path_trust_manager_parameters_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-cert_path_trust_manager_parameters_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+cert_path_trust_manager_parameters_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+cert_path_trust_manager_parameters_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+cert_path_trust_manager_parameters_wait(REF) :- 
+	object_call(REF, wait, [], _).
 

@@ -22,14 +22,32 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-print_quality_draft(OUT) :- 
+print_quality_DRAFT(OUT) :- 
 	object_get('javax.print.attribute.standard.PrintQuality', draft, OUT).
 
-print_quality_normal(OUT) :- 
+print_quality_NORMAL(OUT) :- 
 	object_get('javax.print.attribute.standard.PrintQuality', normal, OUT).
 
-print_quality_high(OUT) :- 
+print_quality_HIGH(OUT) :- 
 	object_get('javax.print.attribute.standard.PrintQuality', high, OUT).
+
+print_quality_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+print_quality_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+print_quality_get_value(REF, OUT) :- 
+	object_call(REF, getValue, [], OUT).
+
+print_quality_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
+
+print_quality_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+print_quality_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
 print_quality_get_name(REF, OUT) :- 
 	object_call(REF, getName, [], OUT).
@@ -37,36 +55,18 @@ print_quality_get_name(REF, OUT) :-
 print_quality_get_category(REF, OUT) :- 
 	object_call(REF, getCategory, [], OUT).
 
-print_quality_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+print_quality_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-print_quality_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+print_quality_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 print_quality_clone(REF, OUT) :- 
 	object_call(REF, clone, [], OUT).
 
-print_quality_get_value(REF, OUT) :- 
-	object_call(REF, getValue, [], OUT).
+print_quality_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-print_quality_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-print_quality_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-print_quality_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-print_quality_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-print_quality_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-print_quality_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-print_quality_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+print_quality_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 

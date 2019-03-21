@@ -25,32 +25,35 @@
 inheritable_thread_local(OUT) :- 
 	object_new('java.lang.InheritableThreadLocal', [], OUT).
 
-inheritable_thread_local_remove(REF, OUT) :- 
-	object_call(REF, remove, [], OUT).
-
-inheritable_thread_local_get(REF, OUT) :- 
-	object_call(REF, get, [], OUT).
-
-inheritable_thread_local_set(REF, ARG0, OUT) :- 
-	object_call(REF, set, '.'(ARG0, []), OUT).
-
-inheritable_thread_local_with_initial(REF, ARG0, OUT) :- 
-	object_call(REF, withInitial, '.'(ARG0, []), OUT).
-
-inheritable_thread_local_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-inheritable_thread_local_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-inheritable_thread_local_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+inheritable_thread_local_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
 inheritable_thread_local_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-inheritable_thread_local_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+inheritable_thread_local_remove(REF) :- 
+	object_call(REF, remove, [], _).
+
+inheritable_thread_local_with_initial(REF, ARG0, OUT) :- 
+	object_call(REF, withInitial, '.'(ARG0, []), OUT).
+
+inheritable_thread_local_set(REF, ARG0) :- 
+	object_call(REF, set, '.'(ARG0, []), _).
+
+inheritable_thread_local_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+inheritable_thread_local_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+inheritable_thread_local_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+inheritable_thread_local_get(REF, OUT) :- 
+	object_call(REF, get, [], OUT).
+
+inheritable_thread_local_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 inheritable_thread_local_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -58,9 +61,6 @@ inheritable_thread_local_hash_code(REF, OUT) :-
 inheritable_thread_local_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-inheritable_thread_local_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-inheritable_thread_local_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+inheritable_thread_local_notify(REF) :- 
+	object_call(REF, notify, [], _).
 

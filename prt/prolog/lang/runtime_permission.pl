@@ -22,51 +22,51 @@
 
 :-consult('../../../obj/prolobject.pl').
 
+runtime_permission(ARG0, ARG1, OUT) :- 
+	object_new('java.lang.RuntimePermission', '.'(ARG0, '.'(ARG1, [])), OUT).
+
 runtime_permission(ARG0, OUT) :- 
 	object_new('java.lang.RuntimePermission', '.'(ARG0, []), OUT).
 
-runtime_permission(ARG0, ARG1, OUT) :- 
-	object_new('java.lang.RuntimePermission', '.'(ARG0, '.'(ARG1, [])), OUT).
+runtime_permission_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+runtime_permission_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 runtime_permission_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-runtime_permission_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-runtime_permission_get_actions(REF, OUT) :- 
-	object_call(REF, getActions, [], OUT).
-
-runtime_permission_implies(REF, ARG0, OUT) :- 
-	object_call(REF, implies, '.'(ARG0, []), OUT).
-
-runtime_permission_new_permission_collection(REF, OUT) :- 
-	object_call(REF, newPermissionCollection, [], OUT).
-
 runtime_permission_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-runtime_permission_get_name(REF, OUT) :- 
-	object_call(REF, getName, [], OUT).
-
-runtime_permission_check_guard(REF, ARG0, OUT) :- 
-	object_call(REF, checkGuard, '.'(ARG0, []), OUT).
-
-runtime_permission_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-runtime_permission_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-runtime_permission_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+runtime_permission_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
 runtime_permission_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-runtime_permission_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+runtime_permission_get_name(REF, OUT) :- 
+	object_call(REF, getName, [], OUT).
 
-runtime_permission_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+runtime_permission_implies(REF, ARG0, OUT) :- 
+	object_call(REF, implies, '.'(ARG0, []), OUT).
+
+runtime_permission_check_guard(REF, ARG0) :- 
+	object_call(REF, checkGuard, '.'(ARG0, []), _).
+
+runtime_permission_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+runtime_permission_new_permission_collection(REF, OUT) :- 
+	object_call(REF, newPermissionCollection, [], OUT).
+
+runtime_permission_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+runtime_permission_get_actions(REF, OUT) :- 
+	object_call(REF, getActions, [], OUT).
+
+runtime_permission_wait(REF) :- 
+	object_call(REF, wait, [], _).
 

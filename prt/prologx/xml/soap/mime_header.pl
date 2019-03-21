@@ -25,26 +25,23 @@
 mime_header(ARG0, ARG1, OUT) :- 
 	object_new('javax.xml.soap.MimeHeader', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-mime_header_get_name(REF, OUT) :- 
-	object_call(REF, getName, [], OUT).
-
 mime_header_get_value(REF, OUT) :- 
 	object_call(REF, getValue, [], OUT).
 
-mime_header_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+mime_header_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-mime_header_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+mime_header_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-mime_header_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+mime_header_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-mime_header_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+mime_header_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-mime_header_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+mime_header_get_name(REF, OUT) :- 
+	object_call(REF, getName, [], OUT).
 
 mime_header_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -52,9 +49,12 @@ mime_header_hash_code(REF, OUT) :-
 mime_header_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-mime_header_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+mime_header_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-mime_header_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+mime_header_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+mime_header_notify(REF) :- 
+	object_call(REF, notify, [], _).
 

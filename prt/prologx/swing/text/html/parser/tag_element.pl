@@ -22,11 +22,17 @@
 
 :-consult('../../../../../../obj/prolobject.pl').
 
+tag_element(ARG0, ARG1, OUT) :- 
+	object_new('javax.swing.text.html.parser.TagElement', '.'(ARG0, '.'(ARG1, [])), OUT).
+
 tag_element(ARG0, OUT) :- 
 	object_new('javax.swing.text.html.parser.TagElement', '.'(ARG0, []), OUT).
 
-tag_element(ARG0, ARG1, OUT) :- 
-	object_new('javax.swing.text.html.parser.TagElement', '.'(ARG0, '.'(ARG1, [])), OUT).
+tag_element_is_preformatted(REF, OUT) :- 
+	object_call(REF, isPreformatted, [], OUT).
+
+tag_element_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 tag_element_fictional(REF, OUT) :- 
 	object_call(REF, fictional, [], OUT).
@@ -34,39 +40,33 @@ tag_element_fictional(REF, OUT) :-
 tag_element_get_h_t_m_l_tag(REF, OUT) :- 
 	object_call(REF, getHTMLTag, [], OUT).
 
-tag_element_breaks_flow(REF, OUT) :- 
-	object_call(REF, breaksFlow, [], OUT).
-
-tag_element_is_preformatted(REF, OUT) :- 
-	object_call(REF, isPreformatted, [], OUT).
-
-tag_element_get_element(REF, OUT) :- 
-	object_call(REF, getElement, [], OUT).
-
-tag_element_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-tag_element_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-tag_element_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-tag_element_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
 tag_element_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-tag_element_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+tag_element_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 tag_element_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-tag_element_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+tag_element_breaks_flow(REF, OUT) :- 
+	object_call(REF, breaksFlow, [], OUT).
 
-tag_element_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+tag_element_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+tag_element_get_element(REF, OUT) :- 
+	object_call(REF, getElement, [], OUT).
+
+tag_element_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+tag_element_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+tag_element_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+tag_element_notify(REF) :- 
+	object_call(REF, notify, [], _).
 

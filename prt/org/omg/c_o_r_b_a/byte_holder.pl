@@ -22,45 +22,45 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-byte_holder(OUT) :- 
-	object_new('org.omg.CORBA.ByteHolder', [], OUT).
-
 byte_holder(ARG0, OUT) :- 
 	object_new('org.omg.CORBA.ByteHolder', '.'(ARG0, []), OUT).
 
-byte_holder__read(REF, ARG0, OUT) :- 
-	object_call(REF, '_read', '.'(ARG0, []), OUT).
+byte_holder(OUT) :- 
+	object_new('org.omg.CORBA.ByteHolder', [], OUT).
 
-byte_holder__type(REF, OUT) :- 
-	object_call(REF, '_type', [], OUT).
-
-byte_holder__write(REF, ARG0, OUT) :- 
-	object_call(REF, '_write', '.'(ARG0, []), OUT).
-
-byte_holder_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-byte_holder_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-byte_holder_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-byte_holder_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-byte_holder_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-byte_holder_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+byte_holder_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 byte_holder_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-byte_holder_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+byte_holder__read(REF, ARG0) :- 
+	object_call(REF, '_read', '.'(ARG0, []), _).
 
-byte_holder_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+byte_holder_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+byte_holder_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+byte_holder_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+byte_holder_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+byte_holder_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+byte_holder__write(REF, ARG0) :- 
+	object_call(REF, '_write', '.'(ARG0, []), _).
+
+byte_holder__type(REF, OUT) :- 
+	object_call(REF, '_type', [], OUT).
+
+byte_holder_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+byte_holder_notify(REF) :- 
+	object_call(REF, notify, [], _).
 

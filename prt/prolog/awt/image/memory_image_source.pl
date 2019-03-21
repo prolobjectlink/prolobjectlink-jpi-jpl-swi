@@ -25,81 +25,81 @@
 memory_image_source(ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, OUT) :- 
 	object_new('java.awt.image.MemoryImageSource', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), OUT).
 
+memory_image_source(ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, OUT) :- 
+	object_new('java.awt.image.MemoryImageSource', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), OUT).
+
+memory_image_source(ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, OUT) :- 
+	object_new('java.awt.image.MemoryImageSource', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), OUT).
+
+memory_image_source(ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, ARG6, OUT) :- 
+	object_new('java.awt.image.MemoryImageSource', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, '.'(ARG6, []))))))), OUT).
+
+memory_image_source(ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, ARG6, OUT) :- 
+	object_new('java.awt.image.MemoryImageSource', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, '.'(ARG6, []))))))), OUT).
+
 memory_image_source(ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
 	object_new('java.awt.image.MemoryImageSource', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
 
-memory_image_source(ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, ARG6, OUT) :- 
-	object_new('java.awt.image.MemoryImageSource', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, '.'(ARG6, []))))))), OUT).
+memory_image_source_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-memory_image_source(ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, OUT) :- 
-	object_new('java.awt.image.MemoryImageSource', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), OUT).
-
-memory_image_source(ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, ARG6, OUT) :- 
-	object_new('java.awt.image.MemoryImageSource', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, '.'(ARG6, []))))))), OUT).
-
-memory_image_source(ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, OUT) :- 
-	object_new('java.awt.image.MemoryImageSource', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), OUT).
-
-memory_image_source_new_pixels(REF, OUT) :- 
-	object_call(REF, newPixels, [], OUT).
-
-memory_image_source_new_pixels(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, newPixels, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
-memory_image_source_new_pixels(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
-	object_call(REF, newPixels, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
-
-memory_image_source_new_pixels(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, newPixels, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
-memory_image_source_new_pixels(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, newPixels, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
-memory_image_source_set_animated(REF, ARG0, OUT) :- 
-	object_call(REF, setAnimated, '.'(ARG0, []), OUT).
-
-memory_image_source_set_full_buffer_updates(REF, ARG0, OUT) :- 
-	object_call(REF, setFullBufferUpdates, '.'(ARG0, []), OUT).
-
-memory_image_source_add_consumer(REF, ARG0, OUT) :- 
-	object_call(REF, addConsumer, '.'(ARG0, []), OUT).
-
-memory_image_source_is_consumer(REF, ARG0, OUT) :- 
-	object_call(REF, isConsumer, '.'(ARG0, []), OUT).
-
-memory_image_source_remove_consumer(REF, ARG0, OUT) :- 
-	object_call(REF, removeConsumer, '.'(ARG0, []), OUT).
-
-memory_image_source_request_top_down_left_right_resend(REF, ARG0, OUT) :- 
-	object_call(REF, requestTopDownLeftRightResend, '.'(ARG0, []), OUT).
-
-memory_image_source_start_production(REF, ARG0, OUT) :- 
-	object_call(REF, startProduction, '.'(ARG0, []), OUT).
-
-memory_image_source_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-memory_image_source_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-memory_image_source_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-memory_image_source_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-memory_image_source_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+memory_image_source_set_animated(REF, ARG0) :- 
+	object_call(REF, setAnimated, '.'(ARG0, []), _).
 
 memory_image_source_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+memory_image_source_start_production(REF, ARG0) :- 
+	object_call(REF, startProduction, '.'(ARG0, []), _).
+
+memory_image_source_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+memory_image_source_add_consumer(REF, ARG0) :- 
+	object_call(REF, addConsumer, '.'(ARG0, []), _).
+
+memory_image_source_new_pixels(REF, ARG0, ARG1, ARG2, ARG3, ARG4) :- 
+	object_call(REF, newPixels, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), _).
+
+memory_image_source_is_consumer(REF, ARG0, OUT) :- 
+	object_call(REF, isConsumer, '.'(ARG0, []), OUT).
+
+memory_image_source_new_pixels(REF, ARG0, ARG1, ARG2, ARG3) :- 
+	object_call(REF, newPixels, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).
+
+memory_image_source_new_pixels(REF, ARG0, ARG1, ARG2, ARG3) :- 
+	object_call(REF, newPixels, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).
+
+memory_image_source_new_pixels(REF, ARG0, ARG1, ARG2, ARG3) :- 
+	object_call(REF, newPixels, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).
+
+memory_image_source_new_pixels(REF) :- 
+	object_call(REF, newPixels, [], _).
+
+memory_image_source_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+memory_image_source_set_full_buffer_updates(REF, ARG0) :- 
+	object_call(REF, setFullBufferUpdates, '.'(ARG0, []), _).
+
+memory_image_source_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+memory_image_source_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+memory_image_source_remove_consumer(REF, ARG0) :- 
+	object_call(REF, removeConsumer, '.'(ARG0, []), _).
+
+memory_image_source_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+memory_image_source_request_top_down_left_right_resend(REF, ARG0) :- 
+	object_call(REF, requestTopDownLeftRightResend, '.'(ARG0, []), _).
+
+memory_image_source_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
 memory_image_source_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-memory_image_source_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-memory_image_source_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

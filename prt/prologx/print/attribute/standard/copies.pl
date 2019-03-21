@@ -31,11 +31,11 @@ copies_equals(REF, ARG0, OUT) :-
 copies_get_name(REF, OUT) :- 
 	object_call(REF, getName, [], OUT).
 
+copies_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
 copies_get_category(REF, OUT) :- 
 	object_call(REF, getCategory, [], OUT).
-
-copies_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
 
 copies_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -43,21 +43,21 @@ copies_hash_code(REF, OUT) :-
 copies_get_value(REF, OUT) :- 
 	object_call(REF, getValue, [], OUT).
 
-copies_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+copies_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-copies_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+copies_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-copies_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+copies_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+copies_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+copies_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 copies_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-copies_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-copies_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

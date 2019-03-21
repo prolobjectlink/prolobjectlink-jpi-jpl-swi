@@ -28,54 +28,54 @@ w3_c_dom_handler(OUT) :-
 w3_c_dom_handler(ARG0, OUT) :- 
 	object_new('javax.xml.bind.annotation.W3CDomHandler', '.'(ARG0, []), OUT).
 
-w3_c_dom_handler_marshal(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, marshal, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-w3_c_dom_handler_marshal(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, marshal, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-w3_c_dom_handler_create_unmarshaller(REF, ARG0, OUT) :- 
-	object_call(REF, createUnmarshaller, '.'(ARG0, []), OUT).
-
-w3_c_dom_handler_create_unmarshaller(REF, ARG0, OUT) :- 
-	object_call(REF, createUnmarshaller, '.'(ARG0, []), OUT).
-
-w3_c_dom_handler_get_builder(REF, OUT) :- 
-	object_call(REF, getBuilder, [], OUT).
-
-w3_c_dom_handler_set_builder(REF, ARG0, OUT) :- 
-	object_call(REF, setBuilder, '.'(ARG0, []), OUT).
-
-w3_c_dom_handler_get_element(REF, ARG0, OUT) :- 
-	object_call(REF, getElement, '.'(ARG0, []), OUT).
-
-w3_c_dom_handler_get_element(REF, ARG0, OUT) :- 
-	object_call(REF, getElement, '.'(ARG0, []), OUT).
-
-w3_c_dom_handler_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-w3_c_dom_handler_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-w3_c_dom_handler_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
 w3_c_dom_handler_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-w3_c_dom_handler_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
 
 w3_c_dom_handler_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+w3_c_dom_handler_get_builder(REF, OUT) :- 
+	object_call(REF, getBuilder, [], OUT).
+
+w3_c_dom_handler_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+w3_c_dom_handler_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+w3_c_dom_handler_set_builder(REF, ARG0) :- 
+	object_call(REF, setBuilder, '.'(ARG0, []), _).
+
+w3_c_dom_handler_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+w3_c_dom_handler_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+w3_c_dom_handler_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+w3_c_dom_handler_get_element(REF, ARG0, OUT) :- 
+	object_call(REF, getElement, '.'(ARG0, []), OUT).
+
+w3_c_dom_handler_get_element(REF, ARG0, OUT) :- 
+	object_call(REF, getElement, '.'(ARG0, []), OUT).
+
+w3_c_dom_handler_marshal(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, marshal, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+w3_c_dom_handler_marshal(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, marshal, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+w3_c_dom_handler_create_unmarshaller(REF, ARG0, OUT) :- 
+	object_call(REF, createUnmarshaller, '.'(ARG0, []), OUT).
+
+w3_c_dom_handler_create_unmarshaller(REF, ARG0, OUT) :- 
+	object_call(REF, createUnmarshaller, '.'(ARG0, []), OUT).
+
 w3_c_dom_handler_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-w3_c_dom_handler_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-w3_c_dom_handler_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+w3_c_dom_handler_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

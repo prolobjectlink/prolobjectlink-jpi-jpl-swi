@@ -22,51 +22,51 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-reflect_permission(ARG0, OUT) :- 
-	object_new('java.lang.reflect.ReflectPermission', '.'(ARG0, []), OUT).
-
 reflect_permission(ARG0, ARG1, OUT) :- 
 	object_new('java.lang.reflect.ReflectPermission', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-reflect_permission_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-reflect_permission_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-reflect_permission_get_actions(REF, OUT) :- 
-	object_call(REF, getActions, [], OUT).
-
-reflect_permission_implies(REF, ARG0, OUT) :- 
-	object_call(REF, implies, '.'(ARG0, []), OUT).
-
-reflect_permission_new_permission_collection(REF, OUT) :- 
-	object_call(REF, newPermissionCollection, [], OUT).
-
-reflect_permission_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-reflect_permission_get_name(REF, OUT) :- 
-	object_call(REF, getName, [], OUT).
-
-reflect_permission_check_guard(REF, ARG0, OUT) :- 
-	object_call(REF, checkGuard, '.'(ARG0, []), OUT).
-
-reflect_permission_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-reflect_permission_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-reflect_permission_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+reflect_permission(ARG0, OUT) :- 
+	object_new('java.lang.reflect.ReflectPermission', '.'(ARG0, []), OUT).
 
 reflect_permission_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-reflect_permission_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+reflect_permission_new_permission_collection(REF, OUT) :- 
+	object_call(REF, newPermissionCollection, [], OUT).
 
-reflect_permission_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+reflect_permission_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+reflect_permission_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+reflect_permission_check_guard(REF, ARG0) :- 
+	object_call(REF, checkGuard, '.'(ARG0, []), _).
+
+reflect_permission_get_actions(REF, OUT) :- 
+	object_call(REF, getActions, [], OUT).
+
+reflect_permission_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+reflect_permission_get_name(REF, OUT) :- 
+	object_call(REF, getName, [], OUT).
+
+reflect_permission_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+reflect_permission_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+reflect_permission_implies(REF, ARG0, OUT) :- 
+	object_call(REF, implies, '.'(ARG0, []), OUT).
+
+reflect_permission_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+reflect_permission_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+reflect_permission_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 

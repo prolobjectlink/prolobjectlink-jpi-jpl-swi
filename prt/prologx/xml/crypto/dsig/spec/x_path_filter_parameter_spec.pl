@@ -22,42 +22,42 @@
 
 :-consult('../../../../../../obj/prolobject.pl').
 
+x_path_filter_parameter_spec(ARG0, ARG1, OUT) :- 
+	object_new('javax.xml.crypto.dsig.spec.XPathFilterParameterSpec', '.'(ARG0, '.'(ARG1, [])), OUT).
+
 x_path_filter_parameter_spec(ARG0, OUT) :- 
 	object_new('javax.xml.crypto.dsig.spec.XPathFilterParameterSpec', '.'(ARG0, []), OUT).
 
-x_path_filter_parameter_spec(ARG0, ARG1, OUT) :- 
-	object_new('javax.xml.crypto.dsig.spec.XPathFilterParameterSpec', '.'(ARG0, '.'(ARG1, [])), OUT).
+x_path_filter_parameter_spec_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+x_path_filter_parameter_spec_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+x_path_filter_parameter_spec_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+x_path_filter_parameter_spec_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+x_path_filter_parameter_spec_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+x_path_filter_parameter_spec_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+x_path_filter_parameter_spec_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
+
+x_path_filter_parameter_spec_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+x_path_filter_parameter_spec_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
 x_path_filter_parameter_spec_get_namespace_map(REF, OUT) :- 
 	object_call(REF, getNamespaceMap, [], OUT).
 
 x_path_filter_parameter_spec_get_x_path(REF, OUT) :- 
 	object_call(REF, getXPath, [], OUT).
-
-x_path_filter_parameter_spec_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-x_path_filter_parameter_spec_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-x_path_filter_parameter_spec_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-x_path_filter_parameter_spec_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-x_path_filter_parameter_spec_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-x_path_filter_parameter_spec_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-x_path_filter_parameter_spec_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-x_path_filter_parameter_spec_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-x_path_filter_parameter_spec_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

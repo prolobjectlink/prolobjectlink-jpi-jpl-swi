@@ -22,62 +22,17 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-m_bean_server_delegate_delegate_name(OUT) :- 
+m_bean_server_delegate_DELEGATE_NAME(OUT) :- 
 	object_get('javax.management.MBeanServerDelegate', delegate_name, OUT).
 
 m_bean_server_delegate(OUT) :- 
 	object_new('javax.management.MBeanServerDelegate', [], OUT).
 
-m_bean_server_delegate_get_implementation_vendor(REF, OUT) :- 
-	object_call(REF, getImplementationVendor, [], OUT).
-
-m_bean_server_delegate_get_implementation_version(REF, OUT) :- 
-	object_call(REF, getImplementationVersion, [], OUT).
-
-m_bean_server_delegate_get_specification_vendor(REF, OUT) :- 
-	object_call(REF, getSpecificationVendor, [], OUT).
-
-m_bean_server_delegate_get_specification_version(REF, OUT) :- 
-	object_call(REF, getSpecificationVersion, [], OUT).
-
-m_bean_server_delegate_add_notification_listener(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, addNotificationListener, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-m_bean_server_delegate_remove_notification_listener(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, removeNotificationListener, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-m_bean_server_delegate_remove_notification_listener(REF, ARG0, OUT) :- 
-	object_call(REF, removeNotificationListener, '.'(ARG0, []), OUT).
-
-m_bean_server_delegate_get_implementation_name(REF, OUT) :- 
-	object_call(REF, getImplementationName, [], OUT).
-
 m_bean_server_delegate_get_m_bean_server_id(REF, OUT) :- 
 	object_call(REF, getMBeanServerId, [], OUT).
 
-m_bean_server_delegate_get_notification_info(REF, OUT) :- 
-	object_call(REF, getNotificationInfo, [], OUT).
-
-m_bean_server_delegate_get_specification_name(REF, OUT) :- 
-	object_call(REF, getSpecificationName, [], OUT).
-
-m_bean_server_delegate_send_notification(REF, ARG0, OUT) :- 
-	object_call(REF, sendNotification, '.'(ARG0, []), OUT).
-
-m_bean_server_delegate_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-m_bean_server_delegate_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-m_bean_server_delegate_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
 m_bean_server_delegate_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-m_bean_server_delegate_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
 
 m_bean_server_delegate_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -85,9 +40,54 @@ m_bean_server_delegate_hash_code(REF, OUT) :-
 m_bean_server_delegate_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-m_bean_server_delegate_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+m_bean_server_delegate_get_implementation_version(REF, OUT) :- 
+	object_call(REF, getImplementationVersion, [], OUT).
 
-m_bean_server_delegate_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+m_bean_server_delegate_add_notification_listener(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, addNotificationListener, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+m_bean_server_delegate_get_specification_vendor(REF, OUT) :- 
+	object_call(REF, getSpecificationVendor, [], OUT).
+
+m_bean_server_delegate_get_implementation_name(REF, OUT) :- 
+	object_call(REF, getImplementationName, [], OUT).
+
+m_bean_server_delegate_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+m_bean_server_delegate_get_specification_version(REF, OUT) :- 
+	object_call(REF, getSpecificationVersion, [], OUT).
+
+m_bean_server_delegate_get_specification_name(REF, OUT) :- 
+	object_call(REF, getSpecificationName, [], OUT).
+
+m_bean_server_delegate_send_notification(REF, ARG0) :- 
+	object_call(REF, sendNotification, '.'(ARG0, []), _).
+
+m_bean_server_delegate_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+m_bean_server_delegate_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+m_bean_server_delegate_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+m_bean_server_delegate_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+m_bean_server_delegate_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+m_bean_server_delegate_get_implementation_vendor(REF, OUT) :- 
+	object_call(REF, getImplementationVendor, [], OUT).
+
+m_bean_server_delegate_remove_notification_listener(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, removeNotificationListener, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+m_bean_server_delegate_remove_notification_listener(REF, ARG0) :- 
+	object_call(REF, removeNotificationListener, '.'(ARG0, []), _).
+
+m_bean_server_delegate_get_notification_info(REF, OUT) :- 
+	object_call(REF, getNotificationInfo, [], OUT).
 

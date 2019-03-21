@@ -25,36 +25,36 @@
 subject_domain_combiner(ARG0, OUT) :- 
 	object_new('javax.security.auth.SubjectDomainCombiner', '.'(ARG0, []), OUT).
 
-subject_domain_combiner_combine(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, combine, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-subject_domain_combiner_get_subject(REF, OUT) :- 
-	object_call(REF, getSubject, [], OUT).
-
-subject_domain_combiner_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-subject_domain_combiner_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-subject_domain_combiner_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
 subject_domain_combiner_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-subject_domain_combiner_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+subject_domain_combiner_combine(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, combine, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+subject_domain_combiner_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+subject_domain_combiner_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+subject_domain_combiner_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 subject_domain_combiner_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+subject_domain_combiner_get_subject(REF, OUT) :- 
+	object_call(REF, getSubject, [], OUT).
+
+subject_domain_combiner_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+subject_domain_combiner_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
 subject_domain_combiner_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-subject_domain_combiner_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-subject_domain_combiner_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+subject_domain_combiner_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 

@@ -25,32 +25,29 @@
 file_systems_get_default(REF, OUT) :- 
 	object_call(REF, getDefault, [], OUT).
 
-file_systems_get_file_system(REF, ARG0, OUT) :- 
-	object_call(REF, getFileSystem, '.'(ARG0, []), OUT).
+file_systems_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-file_systems_new_file_system(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, newFileSystem, '.'(ARG0, '.'(ARG1, [])), OUT).
+file_systems_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
 file_systems_new_file_system(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, newFileSystem, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
+file_systems_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
 file_systems_new_file_system(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, newFileSystem, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-file_systems_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+file_systems_new_file_system(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, newFileSystem, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-file_systems_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+file_systems_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-file_systems_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-file_systems_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-file_systems_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+file_systems_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 file_systems_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -58,9 +55,12 @@ file_systems_hash_code(REF, OUT) :-
 file_systems_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-file_systems_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+file_systems_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-file_systems_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+file_systems_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+file_systems_get_file_system(REF, ARG0, OUT) :- 
+	object_call(REF, getFileSystem, '.'(ARG0, []), OUT).
 

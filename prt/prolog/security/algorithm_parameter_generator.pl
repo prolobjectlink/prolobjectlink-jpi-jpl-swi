@@ -22,47 +22,20 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-algorithm_parameter_generator_get_instance(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getInstance, '.'(ARG0, '.'(ARG1, [])), OUT).
+algorithm_parameter_generator_init(REF, ARG0) :- 
+	object_call(REF, init, '.'(ARG0, []), _).
 
-algorithm_parameter_generator_get_instance(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getInstance, '.'(ARG0, '.'(ARG1, [])), OUT).
+algorithm_parameter_generator_init(REF, ARG0) :- 
+	object_call(REF, init, '.'(ARG0, []), _).
 
-algorithm_parameter_generator_get_instance(REF, ARG0, OUT) :- 
-	object_call(REF, getInstance, '.'(ARG0, []), OUT).
+algorithm_parameter_generator_init(REF, ARG0, ARG1) :- 
+	object_call(REF, init, '.'(ARG0, '.'(ARG1, [])), _).
 
-algorithm_parameter_generator_init(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, init, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-algorithm_parameter_generator_init(REF, ARG0, OUT) :- 
-	object_call(REF, init, '.'(ARG0, []), OUT).
-
-algorithm_parameter_generator_init(REF, ARG0, OUT) :- 
-	object_call(REF, init, '.'(ARG0, []), OUT).
-
-algorithm_parameter_generator_init(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, init, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-algorithm_parameter_generator_get_provider(REF, OUT) :- 
-	object_call(REF, getProvider, [], OUT).
+algorithm_parameter_generator_init(REF, ARG0, ARG1) :- 
+	object_call(REF, init, '.'(ARG0, '.'(ARG1, [])), _).
 
 algorithm_parameter_generator_get_algorithm(REF, OUT) :- 
 	object_call(REF, getAlgorithm, [], OUT).
-
-algorithm_parameter_generator_generate_parameters(REF, OUT) :- 
-	object_call(REF, generateParameters, [], OUT).
-
-algorithm_parameter_generator_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-algorithm_parameter_generator_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-algorithm_parameter_generator_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-algorithm_parameter_generator_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 algorithm_parameter_generator_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
@@ -73,9 +46,36 @@ algorithm_parameter_generator_hash_code(REF, OUT) :-
 algorithm_parameter_generator_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-algorithm_parameter_generator_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+algorithm_parameter_generator_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-algorithm_parameter_generator_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+algorithm_parameter_generator_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+algorithm_parameter_generator_get_instance(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getInstance, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+algorithm_parameter_generator_get_instance(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getInstance, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+algorithm_parameter_generator_get_instance(REF, ARG0, OUT) :- 
+	object_call(REF, getInstance, '.'(ARG0, []), OUT).
+
+algorithm_parameter_generator_get_provider(REF, OUT) :- 
+	object_call(REF, getProvider, [], OUT).
+
+algorithm_parameter_generator_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+algorithm_parameter_generator_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+algorithm_parameter_generator_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+algorithm_parameter_generator_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+algorithm_parameter_generator_generate_parameters(REF, OUT) :- 
+	object_call(REF, generateParameters, [], OUT).
 

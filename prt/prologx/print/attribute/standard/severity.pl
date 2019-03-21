@@ -22,51 +22,51 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-severity_report(OUT) :- 
+severity_REPORT(OUT) :- 
 	object_get('javax.print.attribute.standard.Severity', report, OUT).
 
-severity_warning(OUT) :- 
+severity_WARNING(OUT) :- 
 	object_get('javax.print.attribute.standard.Severity', warning, OUT).
 
-severity_error(OUT) :- 
+severity_ERROR(OUT) :- 
 	object_get('javax.print.attribute.standard.Severity', error, OUT).
 
 severity_get_name(REF, OUT) :- 
 	object_call(REF, getName, [], OUT).
 
-severity_get_category(REF, OUT) :- 
-	object_call(REF, getCategory, [], OUT).
+severity_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
 severity_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
+severity_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+severity_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
 severity_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-severity_clone(REF, OUT) :- 
-	object_call(REF, clone, [], OUT).
+severity_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-severity_get_value(REF, OUT) :- 
-	object_call(REF, getValue, [], OUT).
+severity_get_category(REF, OUT) :- 
+	object_call(REF, getCategory, [], OUT).
 
-severity_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-severity_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-severity_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+severity_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 severity_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-severity_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
+severity_clone(REF, OUT) :- 
+	object_call(REF, clone, [], OUT).
 
-severity_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+severity_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-severity_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+severity_get_value(REF, OUT) :- 
+	object_call(REF, getValue, [], OUT).
 

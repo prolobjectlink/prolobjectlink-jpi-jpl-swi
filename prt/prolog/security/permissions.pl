@@ -25,35 +25,8 @@
 permissions(OUT) :- 
 	object_new('java.security.Permissions', [], OUT).
 
-permissions_add(REF, ARG0, OUT) :- 
-	object_call(REF, add, '.'(ARG0, []), OUT).
-
-permissions_elements(REF, OUT) :- 
-	object_call(REF, elements, [], OUT).
-
-permissions_implies(REF, ARG0, OUT) :- 
-	object_call(REF, implies, '.'(ARG0, []), OUT).
-
-permissions_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-permissions_set_read_only(REF, OUT) :- 
-	object_call(REF, setReadOnly, [], OUT).
-
-permissions_is_read_only(REF, OUT) :- 
-	object_call(REF, isReadOnly, [], OUT).
-
-permissions_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-permissions_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-permissions_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-permissions_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+permissions_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 permissions_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -61,9 +34,36 @@ permissions_hash_code(REF, OUT) :-
 permissions_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-permissions_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+permissions_is_read_only(REF, OUT) :- 
+	object_call(REF, isReadOnly, [], OUT).
 
-permissions_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+permissions_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+permissions_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+permissions_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+permissions_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+permissions_elements(REF, OUT) :- 
+	object_call(REF, elements, [], OUT).
+
+permissions_add(REF, ARG0) :- 
+	object_call(REF, add, '.'(ARG0, []), _).
+
+permissions_set_read_only(REF) :- 
+	object_call(REF, setReadOnly, [], _).
+
+permissions_implies(REF, ARG0, OUT) :- 
+	object_call(REF, implies, '.'(ARG0, []), OUT).
+
+permissions_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+permissions_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

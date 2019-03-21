@@ -25,29 +25,11 @@
 icon_u_i_resource(ARG0, OUT) :- 
 	object_new('javax.swing.plaf.IconUIResource', '.'(ARG0, []), OUT).
 
-icon_u_i_resource_get_icon_height(REF, OUT) :- 
-	object_call(REF, getIconHeight, [], OUT).
-
 icon_u_i_resource_get_icon_width(REF, OUT) :- 
 	object_call(REF, getIconWidth, [], OUT).
 
-icon_u_i_resource_paint_icon(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, paintIcon, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
-icon_u_i_resource_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-icon_u_i_resource_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-icon_u_i_resource_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-icon_u_i_resource_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-icon_u_i_resource_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+icon_u_i_resource_paint_icon(REF, ARG0, ARG1, ARG2, ARG3) :- 
+	object_call(REF, paintIcon, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).
 
 icon_u_i_resource_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -55,9 +37,27 @@ icon_u_i_resource_hash_code(REF, OUT) :-
 icon_u_i_resource_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-icon_u_i_resource_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+icon_u_i_resource_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-icon_u_i_resource_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+icon_u_i_resource_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+icon_u_i_resource_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+icon_u_i_resource_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+icon_u_i_resource_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+icon_u_i_resource_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+icon_u_i_resource_get_icon_height(REF, OUT) :- 
+	object_call(REF, getIconHeight, [], OUT).
+
+icon_u_i_resource_wait(REF) :- 
+	object_call(REF, wait, [], _).
 

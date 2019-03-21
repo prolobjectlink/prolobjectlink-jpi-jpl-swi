@@ -28,33 +28,33 @@ a_t_r(ARG0, OUT) :-
 a_t_r_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-a_t_r_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-a_t_r_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
 a_t_r_get_bytes(REF, OUT) :- 
 	object_call(REF, getBytes, [], OUT).
 
 a_t_r_get_historical_bytes(REF, OUT) :- 
 	object_call(REF, getHistoricalBytes, [], OUT).
 
-a_t_r_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+a_t_r_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
-a_t_r_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-a_t_r_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+a_t_r_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 a_t_r_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-a_t_r_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+a_t_r_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-a_t_r_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+a_t_r_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+a_t_r_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+a_t_r_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+a_t_r_notify(REF) :- 
+	object_call(REF, notify, [], _).
 

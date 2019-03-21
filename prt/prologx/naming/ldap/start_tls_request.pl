@@ -22,45 +22,45 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-start_tls_request_oid(OUT) :- 
+start_tls_request_OID(OUT) :- 
 	object_get('javax.naming.ldap.StartTlsRequest', oid, OUT).
 
 start_tls_request(OUT) :- 
 	object_new('javax.naming.ldap.StartTlsRequest', [], OUT).
 
-start_tls_request_get_i_d(REF, OUT) :- 
-	object_call(REF, getID, [], OUT).
+start_tls_request_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-start_tls_request_get_encoded_value(REF, OUT) :- 
-	object_call(REF, getEncodedValue, [], OUT).
-
-start_tls_request_create_extended_response(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, createExtendedResponse, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
-start_tls_request_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-start_tls_request_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-start_tls_request_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-start_tls_request_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+start_tls_request_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 start_tls_request_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-start_tls_request_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+start_tls_request_create_extended_response(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_call(REF, createExtendedResponse, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
 start_tls_request_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-start_tls_request_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+start_tls_request_get_encoded_value(REF, OUT) :- 
+	object_call(REF, getEncodedValue, [], OUT).
 
-start_tls_request_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+start_tls_request_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+start_tls_request_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+start_tls_request_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+start_tls_request_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+start_tls_request_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+start_tls_request_get_i_d(REF, OUT) :- 
+	object_call(REF, getID, [], OUT).
 

@@ -25,57 +25,57 @@
 unresolved_permission(ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_new('java.security.UnresolvedPermission', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
-unresolved_permission_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
 unresolved_permission_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-unresolved_permission_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-unresolved_permission_get_actions(REF, OUT) :- 
-	object_call(REF, getActions, [], OUT).
-
-unresolved_permission_implies(REF, ARG0, OUT) :- 
-	object_call(REF, implies, '.'(ARG0, []), OUT).
-
-unresolved_permission_new_permission_collection(REF, OUT) :- 
-	object_call(REF, newPermissionCollection, [], OUT).
-
-unresolved_permission_get_unresolved_actions(REF, OUT) :- 
-	object_call(REF, getUnresolvedActions, [], OUT).
-
-unresolved_permission_get_unresolved_certs(REF, OUT) :- 
-	object_call(REF, getUnresolvedCerts, [], OUT).
-
-unresolved_permission_get_unresolved_name(REF, OUT) :- 
-	object_call(REF, getUnresolvedName, [], OUT).
-
-unresolved_permission_get_unresolved_type(REF, OUT) :- 
-	object_call(REF, getUnresolvedType, [], OUT).
-
-unresolved_permission_get_name(REF, OUT) :- 
-	object_call(REF, getName, [], OUT).
-
-unresolved_permission_check_guard(REF, ARG0, OUT) :- 
-	object_call(REF, checkGuard, '.'(ARG0, []), OUT).
-
-unresolved_permission_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-unresolved_permission_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-unresolved_permission_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+unresolved_permission_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 unresolved_permission_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-unresolved_permission_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+unresolved_permission_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
-unresolved_permission_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+unresolved_permission_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+unresolved_permission_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+unresolved_permission_implies(REF, ARG0, OUT) :- 
+	object_call(REF, implies, '.'(ARG0, []), OUT).
+
+unresolved_permission_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+unresolved_permission_get_name(REF, OUT) :- 
+	object_call(REF, getName, [], OUT).
+
+unresolved_permission_get_actions(REF, OUT) :- 
+	object_call(REF, getActions, [], OUT).
+
+unresolved_permission_get_unresolved_type(REF, OUT) :- 
+	object_call(REF, getUnresolvedType, [], OUT).
+
+unresolved_permission_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+unresolved_permission_get_unresolved_actions(REF, OUT) :- 
+	object_call(REF, getUnresolvedActions, [], OUT).
+
+unresolved_permission_get_unresolved_name(REF, OUT) :- 
+	object_call(REF, getUnresolvedName, [], OUT).
+
+unresolved_permission_new_permission_collection(REF, OUT) :- 
+	object_call(REF, newPermissionCollection, [], OUT).
+
+unresolved_permission_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+unresolved_permission_get_unresolved_certs(REF, OUT) :- 
+	object_call(REF, getUnresolvedCerts, [], OUT).
+
+unresolved_permission_check_guard(REF, ARG0) :- 
+	object_call(REF, checkGuard, '.'(ARG0, []), _).
 

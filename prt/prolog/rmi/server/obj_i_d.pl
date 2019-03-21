@@ -22,51 +22,51 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-obj_i_d_registry_id(OUT) :- 
+obj_i_d_REGISTRY_ID(OUT) :- 
 	object_get('java.rmi.server.ObjID', registry_id, OUT).
 
-obj_i_d_activator_id(OUT) :- 
+obj_i_d_ACTIVATOR_ID(OUT) :- 
 	object_get('java.rmi.server.ObjID', activator_id, OUT).
 
-obj_i_d_dgc_id(OUT) :- 
+obj_i_d_DGC_ID(OUT) :- 
 	object_get('java.rmi.server.ObjID', dgc_id, OUT).
-
-obj_i_d(ARG0, OUT) :- 
-	object_new('java.rmi.server.ObjID', '.'(ARG0, []), OUT).
 
 obj_i_d(OUT) :- 
 	object_new('java.rmi.server.ObjID', [], OUT).
 
+obj_i_d(ARG0, OUT) :- 
+	object_new('java.rmi.server.ObjID', '.'(ARG0, []), OUT).
+
 obj_i_d_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-obj_i_d_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
 
 obj_i_d_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-obj_i_d_write(REF, ARG0, OUT) :- 
-	object_call(REF, write, '.'(ARG0, []), OUT).
+obj_i_d_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+obj_i_d_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+obj_i_d_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+obj_i_d_write(REF, ARG0) :- 
+	object_call(REF, write, '.'(ARG0, []), _).
+
+obj_i_d_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+obj_i_d_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+obj_i_d_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
 obj_i_d_read(REF, ARG0, OUT) :- 
 	object_call(REF, read, '.'(ARG0, []), OUT).
 
-obj_i_d_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-obj_i_d_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-obj_i_d_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
 obj_i_d_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-obj_i_d_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-obj_i_d_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

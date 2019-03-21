@@ -25,36 +25,36 @@
 diagnostic_collector(OUT) :- 
 	object_new('javax.tools.DiagnosticCollector', [], OUT).
 
-diagnostic_collector_report(REF, ARG0, OUT) :- 
-	object_call(REF, report, '.'(ARG0, []), OUT).
+diagnostic_collector_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-diagnostic_collector_get_diagnostics(REF, OUT) :- 
-	object_call(REF, getDiagnostics, [], OUT).
+diagnostic_collector_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-diagnostic_collector_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+diagnostic_collector_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-diagnostic_collector_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+diagnostic_collector_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-diagnostic_collector_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+diagnostic_collector_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-diagnostic_collector_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+diagnostic_collector_report(REF, ARG0) :- 
+	object_call(REF, report, '.'(ARG0, []), _).
 
 diagnostic_collector_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-diagnostic_collector_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+diagnostic_collector_get_diagnostics(REF, OUT) :- 
+	object_call(REF, getDiagnostics, [], OUT).
+
+diagnostic_collector_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 diagnostic_collector_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-diagnostic_collector_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-diagnostic_collector_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+diagnostic_collector_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 

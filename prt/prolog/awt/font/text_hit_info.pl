@@ -22,38 +22,8 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-text_hit_info_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-text_hit_info_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-text_hit_info_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-text_hit_info_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-text_hit_info_after_offset(REF, ARG0, OUT) :- 
-	object_call(REF, afterOffset, '.'(ARG0, []), OUT).
-
-text_hit_info_get_char_index(REF, OUT) :- 
-	object_call(REF, getCharIndex, [], OUT).
-
-text_hit_info_get_insertion_index(REF, OUT) :- 
-	object_call(REF, getInsertionIndex, [], OUT).
-
-text_hit_info_get_other_hit(REF, OUT) :- 
-	object_call(REF, getOtherHit, [], OUT).
-
-text_hit_info_is_leading_edge(REF, OUT) :- 
-	object_call(REF, isLeadingEdge, [], OUT).
-
 text_hit_info_leading(REF, ARG0, OUT) :- 
 	object_call(REF, leading, '.'(ARG0, []), OUT).
-
-text_hit_info_trailing(REF, ARG0, OUT) :- 
-	object_call(REF, trailing, '.'(ARG0, []), OUT).
 
 text_hit_info_before_offset(REF, ARG0, OUT) :- 
 	object_call(REF, beforeOffset, '.'(ARG0, []), OUT).
@@ -61,21 +31,51 @@ text_hit_info_before_offset(REF, ARG0, OUT) :-
 text_hit_info_get_offset_hit(REF, ARG0, OUT) :- 
 	object_call(REF, getOffsetHit, '.'(ARG0, []), OUT).
 
-text_hit_info_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+text_hit_info_get_insertion_index(REF, OUT) :- 
+	object_call(REF, getInsertionIndex, [], OUT).
 
-text_hit_info_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+text_hit_info_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-text_hit_info_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+text_hit_info_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+text_hit_info_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+text_hit_info_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+text_hit_info_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+text_hit_info_get_other_hit(REF, OUT) :- 
+	object_call(REF, getOtherHit, [], OUT).
+
+text_hit_info_trailing(REF, ARG0, OUT) :- 
+	object_call(REF, trailing, '.'(ARG0, []), OUT).
+
+text_hit_info_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+text_hit_info_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+text_hit_info_after_offset(REF, ARG0, OUT) :- 
+	object_call(REF, afterOffset, '.'(ARG0, []), OUT).
+
+text_hit_info_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
 text_hit_info_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-text_hit_info_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+text_hit_info_get_char_index(REF, OUT) :- 
+	object_call(REF, getCharIndex, [], OUT).
 
-text_hit_info_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+text_hit_info_is_leading_edge(REF, OUT) :- 
+	object_call(REF, isLeadingEdge, [], OUT).
+
+text_hit_info_notify(REF) :- 
+	object_call(REF, notify, [], _).
 

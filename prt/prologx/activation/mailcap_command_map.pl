@@ -31,69 +31,69 @@ mailcap_command_map(ARG0, OUT) :-
 mailcap_command_map(OUT) :- 
 	object_new('javax.activation.MailcapCommandMap', [], OUT).
 
-mailcap_command_map_get_mime_types(REF, OUT) :- 
-	object_call(REF, getMimeTypes, [], OUT).
-
-mailcap_command_map_create_data_content_handler(REF, ARG0, OUT) :- 
-	object_call(REF, createDataContentHandler, '.'(ARG0, []), OUT).
-
-mailcap_command_map_get_all_commands(REF, ARG0, OUT) :- 
-	object_call(REF, getAllCommands, '.'(ARG0, []), OUT).
-
-mailcap_command_map_get_command(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getCommand, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-mailcap_command_map_get_preferred_commands(REF, ARG0, OUT) :- 
-	object_call(REF, getPreferredCommands, '.'(ARG0, []), OUT).
-
-mailcap_command_map_add_mailcap(REF, ARG0, OUT) :- 
-	object_call(REF, addMailcap, '.'(ARG0, []), OUT).
-
-mailcap_command_map_get_native_commands(REF, ARG0, OUT) :- 
-	object_call(REF, getNativeCommands, '.'(ARG0, []), OUT).
+mailcap_command_map_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
 mailcap_command_map_create_data_content_handler(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, createDataContentHandler, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-mailcap_command_map_get_all_commands(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getAllCommands, '.'(ARG0, '.'(ARG1, [])), OUT).
+mailcap_command_map_set_default_command_map(REF, ARG0) :- 
+	object_call(REF, setDefaultCommandMap, '.'(ARG0, []), _).
 
-mailcap_command_map_get_command(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, getCommand, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+mailcap_command_map_create_data_content_handler(REF, ARG0, OUT) :- 
+	object_call(REF, createDataContentHandler, '.'(ARG0, []), OUT).
 
-mailcap_command_map_get_default_command_map(REF, OUT) :- 
-	object_call(REF, getDefaultCommandMap, [], OUT).
-
-mailcap_command_map_get_preferred_commands(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getPreferredCommands, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-mailcap_command_map_set_default_command_map(REF, ARG0, OUT) :- 
-	object_call(REF, setDefaultCommandMap, '.'(ARG0, []), OUT).
-
-mailcap_command_map_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-mailcap_command_map_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-mailcap_command_map_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+mailcap_command_map_get_preferred_commands(REF, ARG0, OUT) :- 
+	object_call(REF, getPreferredCommands, '.'(ARG0, []), OUT).
 
 mailcap_command_map_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-mailcap_command_map_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+mailcap_command_map_get_preferred_commands(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getPreferredCommands, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-mailcap_command_map_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+mailcap_command_map_get_default_command_map(REF, OUT) :- 
+	object_call(REF, getDefaultCommandMap, [], OUT).
 
 mailcap_command_map_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-mailcap_command_map_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+mailcap_command_map_get_command(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, getCommand, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-mailcap_command_map_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+mailcap_command_map_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+mailcap_command_map_get_command(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getCommand, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+mailcap_command_map_get_mime_types(REF, OUT) :- 
+	object_call(REF, getMimeTypes, [], OUT).
+
+mailcap_command_map_get_all_commands(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getAllCommands, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+mailcap_command_map_get_all_commands(REF, ARG0, OUT) :- 
+	object_call(REF, getAllCommands, '.'(ARG0, []), OUT).
+
+mailcap_command_map_get_native_commands(REF, ARG0, OUT) :- 
+	object_call(REF, getNativeCommands, '.'(ARG0, []), OUT).
+
+mailcap_command_map_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+mailcap_command_map_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+mailcap_command_map_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+mailcap_command_map_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+mailcap_command_map_add_mailcap(REF, ARG0) :- 
+	object_call(REF, addMailcap, '.'(ARG0, []), _).
+
+mailcap_command_map_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 

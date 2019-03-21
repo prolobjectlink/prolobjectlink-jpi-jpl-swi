@@ -22,60 +22,60 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-line_break_measurer(ARG0, ARG1, OUT) :- 
-	object_new('java.awt.font.LineBreakMeasurer', '.'(ARG0, '.'(ARG1, [])), OUT).
-
 line_break_measurer(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('java.awt.font.LineBreakMeasurer', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+line_break_measurer(ARG0, ARG1, OUT) :- 
+	object_new('java.awt.font.LineBreakMeasurer', '.'(ARG0, '.'(ARG1, [])), OUT).
 
 line_break_measurer_next_offset(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, nextOffset, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
+line_break_measurer_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
+
 line_break_measurer_next_offset(REF, ARG0, OUT) :- 
 	object_call(REF, nextOffset, '.'(ARG0, []), OUT).
 
-line_break_measurer_get_position(REF, OUT) :- 
-	object_call(REF, getPosition, [], OUT).
-
-line_break_measurer_delete_char(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, deleteChar, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-line_break_measurer_insert_char(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, insertChar, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-line_break_measurer_next_layout(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, nextLayout, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-line_break_measurer_next_layout(REF, ARG0, OUT) :- 
-	object_call(REF, nextLayout, '.'(ARG0, []), OUT).
-
-line_break_measurer_set_position(REF, ARG0, OUT) :- 
-	object_call(REF, setPosition, '.'(ARG0, []), OUT).
-
-line_break_measurer_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-line_break_measurer_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-line_break_measurer_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-line_break_measurer_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+line_break_measurer_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 line_break_measurer_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
+line_break_measurer_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+line_break_measurer_insert_char(REF, ARG0, ARG1) :- 
+	object_call(REF, insertChar, '.'(ARG0, '.'(ARG1, [])), _).
+
 line_break_measurer_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-line_break_measurer_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
+line_break_measurer_next_layout(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, nextLayout, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-line_break_measurer_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+line_break_measurer_set_position(REF, ARG0) :- 
+	object_call(REF, setPosition, '.'(ARG0, []), _).
 
-line_break_measurer_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+line_break_measurer_next_layout(REF, ARG0, OUT) :- 
+	object_call(REF, nextLayout, '.'(ARG0, []), OUT).
+
+line_break_measurer_delete_char(REF, ARG0, ARG1) :- 
+	object_call(REF, deleteChar, '.'(ARG0, '.'(ARG1, [])), _).
+
+line_break_measurer_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+line_break_measurer_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+line_break_measurer_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+line_break_measurer_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+line_break_measurer_get_position(REF, OUT) :- 
+	object_call(REF, getPosition, [], OUT).
 

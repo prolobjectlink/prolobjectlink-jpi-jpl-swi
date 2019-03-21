@@ -28,35 +28,17 @@ protection_domain(ARG0, ARG1, OUT) :-
 protection_domain(ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_new('java.security.ProtectionDomain', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
-protection_domain_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
 protection_domain_get_class_loader(REF, OUT) :- 
 	object_call(REF, getClassLoader, [], OUT).
 
-protection_domain_get_code_source(REF, OUT) :- 
-	object_call(REF, getCodeSource, [], OUT).
+protection_domain_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+protection_domain_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 protection_domain_get_permissions(REF, OUT) :- 
 	object_call(REF, getPermissions, [], OUT).
-
-protection_domain_get_principals(REF, OUT) :- 
-	object_call(REF, getPrincipals, [], OUT).
-
-protection_domain_implies(REF, ARG0, OUT) :- 
-	object_call(REF, implies, '.'(ARG0, []), OUT).
-
-protection_domain_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-protection_domain_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-protection_domain_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-protection_domain_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 protection_domain_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -64,9 +46,27 @@ protection_domain_hash_code(REF, OUT) :-
 protection_domain_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-protection_domain_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+protection_domain_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-protection_domain_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+protection_domain_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+protection_domain_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+protection_domain_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+protection_domain_get_code_source(REF, OUT) :- 
+	object_call(REF, getCodeSource, [], OUT).
+
+protection_domain_get_principals(REF, OUT) :- 
+	object_call(REF, getPrincipals, [], OUT).
+
+protection_domain_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+protection_domain_implies(REF, ARG0, OUT) :- 
+	object_call(REF, implies, '.'(ARG0, []), OUT).
 

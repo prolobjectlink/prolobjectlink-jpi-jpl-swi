@@ -25,36 +25,36 @@
 c_s_s(OUT) :- 
 	object_new('javax.swing.text.html.CSS', [], OUT).
 
-c_s_s_get_attribute(REF, ARG0, OUT) :- 
-	object_call(REF, getAttribute, '.'(ARG0, []), OUT).
-
-c_s_s_get_all_attribute_keys(REF, OUT) :- 
-	object_call(REF, getAllAttributeKeys, [], OUT).
-
-c_s_s_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-c_s_s_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-c_s_s_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-c_s_s_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-c_s_s_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
 c_s_s_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
 c_s_s_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-c_s_s_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+c_s_s_get_all_attribute_keys(REF, OUT) :- 
+	object_call(REF, getAllAttributeKeys, [], OUT).
 
-c_s_s_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+c_s_s_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+c_s_s_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+c_s_s_get_attribute(REF, ARG0, OUT) :- 
+	object_call(REF, getAttribute, '.'(ARG0, []), OUT).
+
+c_s_s_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+c_s_s_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+c_s_s_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+c_s_s_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+c_s_s_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

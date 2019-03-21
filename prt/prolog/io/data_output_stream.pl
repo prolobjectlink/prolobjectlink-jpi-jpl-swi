@@ -25,71 +25,11 @@
 data_output_stream(ARG0, OUT) :- 
 	object_new('java.io.DataOutputStream', '.'(ARG0, []), OUT).
 
-data_output_stream_size(REF, OUT) :- 
-	object_call(REF, size, [], OUT).
+data_output_stream_write_double(REF, ARG0) :- 
+	object_call(REF, writeDouble, '.'(ARG0, []), _).
 
-data_output_stream_write(REF, ARG0, OUT) :- 
-	object_call(REF, write, '.'(ARG0, []), OUT).
-
-data_output_stream_write(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, write, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-data_output_stream_flush(REF, OUT) :- 
-	object_call(REF, flush, [], OUT).
-
-data_output_stream_write_int(REF, ARG0, OUT) :- 
-	object_call(REF, writeInt, '.'(ARG0, []), OUT).
-
-data_output_stream_write_char(REF, ARG0, OUT) :- 
-	object_call(REF, writeChar, '.'(ARG0, []), OUT).
-
-data_output_stream_write_bytes(REF, ARG0, OUT) :- 
-	object_call(REF, writeBytes, '.'(ARG0, []), OUT).
-
-data_output_stream_write_u_t_f(REF, ARG0, OUT) :- 
-	object_call(REF, writeUTF, '.'(ARG0, []), OUT).
-
-data_output_stream_write_float(REF, ARG0, OUT) :- 
-	object_call(REF, writeFloat, '.'(ARG0, []), OUT).
-
-data_output_stream_write_long(REF, ARG0, OUT) :- 
-	object_call(REF, writeLong, '.'(ARG0, []), OUT).
-
-data_output_stream_write_boolean(REF, ARG0, OUT) :- 
-	object_call(REF, writeBoolean, '.'(ARG0, []), OUT).
-
-data_output_stream_write_byte(REF, ARG0, OUT) :- 
-	object_call(REF, writeByte, '.'(ARG0, []), OUT).
-
-data_output_stream_write_chars(REF, ARG0, OUT) :- 
-	object_call(REF, writeChars, '.'(ARG0, []), OUT).
-
-data_output_stream_write_double(REF, ARG0, OUT) :- 
-	object_call(REF, writeDouble, '.'(ARG0, []), OUT).
-
-data_output_stream_write_short(REF, ARG0, OUT) :- 
-	object_call(REF, writeShort, '.'(ARG0, []), OUT).
-
-data_output_stream_write(REF, ARG0, OUT) :- 
-	object_call(REF, write, '.'(ARG0, []), OUT).
-
-data_output_stream_close(REF, OUT) :- 
-	object_call(REF, close, [], OUT).
-
-data_output_stream_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-data_output_stream_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-data_output_stream_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-data_output_stream_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-data_output_stream_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+data_output_stream_write_chars(REF, ARG0) :- 
+	object_call(REF, writeChars, '.'(ARG0, []), _).
 
 data_output_stream_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -97,9 +37,69 @@ data_output_stream_hash_code(REF, OUT) :-
 data_output_stream_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-data_output_stream_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+data_output_stream_write_float(REF, ARG0) :- 
+	object_call(REF, writeFloat, '.'(ARG0, []), _).
 
-data_output_stream_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+data_output_stream_close(REF) :- 
+	object_call(REF, close, [], _).
+
+data_output_stream_write_char(REF, ARG0) :- 
+	object_call(REF, writeChar, '.'(ARG0, []), _).
+
+data_output_stream_write_long(REF, ARG0) :- 
+	object_call(REF, writeLong, '.'(ARG0, []), _).
+
+data_output_stream_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+data_output_stream_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+data_output_stream_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+data_output_stream_size(REF, OUT) :- 
+	object_call(REF, size, [], OUT).
+
+data_output_stream_write(REF, ARG0) :- 
+	object_call(REF, write, '.'(ARG0, []), _).
+
+data_output_stream_write(REF, ARG0) :- 
+	object_call(REF, write, '.'(ARG0, []), _).
+
+data_output_stream_flush(REF) :- 
+	object_call(REF, flush, [], _).
+
+data_output_stream_write_short(REF, ARG0) :- 
+	object_call(REF, writeShort, '.'(ARG0, []), _).
+
+data_output_stream_write_u_t_f(REF, ARG0) :- 
+	object_call(REF, writeUTF, '.'(ARG0, []), _).
+
+data_output_stream_write(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, write, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+data_output_stream_write_boolean(REF, ARG0) :- 
+	object_call(REF, writeBoolean, '.'(ARG0, []), _).
+
+data_output_stream_write_byte(REF, ARG0) :- 
+	object_call(REF, writeByte, '.'(ARG0, []), _).
+
+data_output_stream_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+data_output_stream_write_int(REF, ARG0) :- 
+	object_call(REF, writeInt, '.'(ARG0, []), _).
+
+data_output_stream_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+data_output_stream_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+data_output_stream_write_bytes(REF, ARG0) :- 
+	object_call(REF, writeBytes, '.'(ARG0, []), _).
+
+data_output_stream_notify(REF) :- 
+	object_call(REF, notify, [], _).
 

@@ -22,144 +22,144 @@
 
 :-consult('../../../../../../obj/prolobject.pl').
 
-parser_cdata(OUT) :- 
+parser_CDATA(OUT) :- 
 	object_get('javax.swing.text.html.parser.Parser', cdata, OUT).
 
-parser_entity(OUT) :- 
+parser_ENTITY(OUT) :- 
 	object_get('javax.swing.text.html.parser.Parser', entity, OUT).
 
-parser_entities(OUT) :- 
+parser_ENTITIES(OUT) :- 
 	object_get('javax.swing.text.html.parser.Parser', entities, OUT).
 
-parser_id(OUT) :- 
+parser_ID(OUT) :- 
 	object_get('javax.swing.text.html.parser.Parser', id, OUT).
 
-parser_idref(OUT) :- 
+parser_IDREF(OUT) :- 
 	object_get('javax.swing.text.html.parser.Parser', idref, OUT).
 
-parser_idrefs(OUT) :- 
+parser_IDREFS(OUT) :- 
 	object_get('javax.swing.text.html.parser.Parser', idrefs, OUT).
 
-parser_name(OUT) :- 
+parser_NAME(OUT) :- 
 	object_get('javax.swing.text.html.parser.Parser', name, OUT).
 
-parser_names(OUT) :- 
+parser_NAMES(OUT) :- 
 	object_get('javax.swing.text.html.parser.Parser', names, OUT).
 
-parser_nmtoken(OUT) :- 
+parser_NMTOKEN(OUT) :- 
 	object_get('javax.swing.text.html.parser.Parser', nmtoken, OUT).
 
-parser_nmtokens(OUT) :- 
+parser_NMTOKENS(OUT) :- 
 	object_get('javax.swing.text.html.parser.Parser', nmtokens, OUT).
 
-parser_notation(OUT) :- 
+parser_NOTATION(OUT) :- 
 	object_get('javax.swing.text.html.parser.Parser', notation, OUT).
 
-parser_number(OUT) :- 
+parser_NUMBER(OUT) :- 
 	object_get('javax.swing.text.html.parser.Parser', number, OUT).
 
-parser_numbers(OUT) :- 
+parser_NUMBERS(OUT) :- 
 	object_get('javax.swing.text.html.parser.Parser', numbers, OUT).
 
-parser_nutoken(OUT) :- 
+parser_NUTOKEN(OUT) :- 
 	object_get('javax.swing.text.html.parser.Parser', nutoken, OUT).
 
-parser_nutokens(OUT) :- 
+parser_NUTOKENS(OUT) :- 
 	object_get('javax.swing.text.html.parser.Parser', nutokens, OUT).
 
-parser_rcdata(OUT) :- 
+parser_RCDATA(OUT) :- 
 	object_get('javax.swing.text.html.parser.Parser', rcdata, OUT).
 
-parser_empty(OUT) :- 
+parser_EMPTY(OUT) :- 
 	object_get('javax.swing.text.html.parser.Parser', empty, OUT).
 
-parser_model(OUT) :- 
+parser_MODEL(OUT) :- 
 	object_get('javax.swing.text.html.parser.Parser', model, OUT).
 
-parser_any(OUT) :- 
+parser_ANY(OUT) :- 
 	object_get('javax.swing.text.html.parser.Parser', any, OUT).
 
-parser_fixed(OUT) :- 
+parser_FIXED(OUT) :- 
 	object_get('javax.swing.text.html.parser.Parser', fixed, OUT).
 
-parser_required(OUT) :- 
+parser_REQUIRED(OUT) :- 
 	object_get('javax.swing.text.html.parser.Parser', required, OUT).
 
-parser_current(OUT) :- 
+parser_CURRENT(OUT) :- 
 	object_get('javax.swing.text.html.parser.Parser', current, OUT).
 
-parser_conref(OUT) :- 
+parser_CONREF(OUT) :- 
 	object_get('javax.swing.text.html.parser.Parser', conref, OUT).
 
-parser_implied(OUT) :- 
+parser_IMPLIED(OUT) :- 
 	object_get('javax.swing.text.html.parser.Parser', implied, OUT).
 
-parser_public(OUT) :- 
+parser_PUBLIC(OUT) :- 
 	object_get('javax.swing.text.html.parser.Parser', public, OUT).
 
-parser_sdata(OUT) :- 
+parser_SDATA(OUT) :- 
 	object_get('javax.swing.text.html.parser.Parser', sdata, OUT).
 
-parser_pi(OUT) :- 
+parser_PI(OUT) :- 
 	object_get('javax.swing.text.html.parser.Parser', pi, OUT).
 
-parser_starttag(OUT) :- 
+parser_STARTTAG(OUT) :- 
 	object_get('javax.swing.text.html.parser.Parser', starttag, OUT).
 
-parser_endtag(OUT) :- 
+parser_ENDTAG(OUT) :- 
 	object_get('javax.swing.text.html.parser.Parser', endtag, OUT).
 
-parser_ms(OUT) :- 
+parser_MS(OUT) :- 
 	object_get('javax.swing.text.html.parser.Parser', ms, OUT).
 
-parser_md(OUT) :- 
+parser_MD(OUT) :- 
 	object_get('javax.swing.text.html.parser.Parser', md, OUT).
 
-parser_system(OUT) :- 
+parser_SYSTEM(OUT) :- 
 	object_get('javax.swing.text.html.parser.Parser', system, OUT).
 
-parser_general(OUT) :- 
+parser_GENERAL(OUT) :- 
 	object_get('javax.swing.text.html.parser.Parser', general, OUT).
 
-parser_default(OUT) :- 
+parser_DEFAULT(OUT) :- 
 	object_get('javax.swing.text.html.parser.Parser', default, OUT).
 
-parser_parameter(OUT) :- 
+parser_PARAMETER(OUT) :- 
 	object_get('javax.swing.text.html.parser.Parser', parameter, OUT).
 
 parser(ARG0, OUT) :- 
 	object_new('javax.swing.text.html.parser.Parser', '.'(ARG0, []), OUT).
 
-parser_parse(REF, ARG0, OUT) :- 
-	object_call(REF, parse, '.'(ARG0, []), OUT).
-
 parser_parse_d_t_d_markup(REF, OUT) :- 
 	object_call(REF, parseDTDMarkup, [], OUT).
 
-parser_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+parser_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-parser_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+parser_parse(REF, ARG0) :- 
+	object_call(REF, parse, '.'(ARG0, []), _).
 
-parser_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-parser_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+parser_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 parser_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
+parser_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
 parser_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
+
+parser_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+parser_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 parser_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-parser_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-parser_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+parser_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 

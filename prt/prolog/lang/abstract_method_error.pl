@@ -22,72 +22,72 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-abstract_method_error(OUT) :- 
-	object_new('java.lang.AbstractMethodError', [], OUT).
-
 abstract_method_error(ARG0, OUT) :- 
 	object_new('java.lang.AbstractMethodError', '.'(ARG0, []), OUT).
 
-abstract_method_error_print_stack_trace(REF, OUT) :- 
-	object_call(REF, printStackTrace, [], OUT).
-
-abstract_method_error_print_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, printStackTrace, '.'(ARG0, []), OUT).
-
-abstract_method_error_print_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, printStackTrace, '.'(ARG0, []), OUT).
-
-abstract_method_error_fill_in_stack_trace(REF, OUT) :- 
-	object_call(REF, fillInStackTrace, [], OUT).
-
-abstract_method_error_get_cause(REF, OUT) :- 
-	object_call(REF, getCause, [], OUT).
-
-abstract_method_error_init_cause(REF, ARG0, OUT) :- 
-	object_call(REF, initCause, '.'(ARG0, []), OUT).
+abstract_method_error(OUT) :- 
+	object_new('java.lang.AbstractMethodError', [], OUT).
 
 abstract_method_error_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-abstract_method_error_add_suppressed(REF, ARG0, OUT) :- 
-	object_call(REF, addSuppressed, '.'(ARG0, []), OUT).
-
-abstract_method_error_get_localized_message(REF, OUT) :- 
-	object_call(REF, getLocalizedMessage, [], OUT).
-
 abstract_method_error_get_message(REF, OUT) :- 
 	object_call(REF, getMessage, [], OUT).
 
-abstract_method_error_get_stack_trace(REF, OUT) :- 
-	object_call(REF, getStackTrace, [], OUT).
+abstract_method_error_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-abstract_method_error_get_suppressed(REF, OUT) :- 
-	object_call(REF, getSuppressed, [], OUT).
+abstract_method_error_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-abstract_method_error_set_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, setStackTrace, '.'(ARG0, []), OUT).
+abstract_method_error_add_suppressed(REF, ARG0) :- 
+	object_call(REF, addSuppressed, '.'(ARG0, []), _).
 
-abstract_method_error_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-abstract_method_error_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-abstract_method_error_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-abstract_method_error_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+abstract_method_error_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 abstract_method_error_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+abstract_method_error_set_stack_trace(REF, ARG0) :- 
+	object_call(REF, setStackTrace, '.'(ARG0, []), _).
+
 abstract_method_error_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-abstract_method_error_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+abstract_method_error_init_cause(REF, ARG0, OUT) :- 
+	object_call(REF, initCause, '.'(ARG0, []), OUT).
 
-abstract_method_error_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+abstract_method_error_print_stack_trace(REF) :- 
+	object_call(REF, printStackTrace, [], _).
+
+abstract_method_error_get_cause(REF, OUT) :- 
+	object_call(REF, getCause, [], OUT).
+
+abstract_method_error_print_stack_trace(REF, ARG0) :- 
+	object_call(REF, printStackTrace, '.'(ARG0, []), _).
+
+abstract_method_error_print_stack_trace(REF, ARG0) :- 
+	object_call(REF, printStackTrace, '.'(ARG0, []), _).
+
+abstract_method_error_fill_in_stack_trace(REF, OUT) :- 
+	object_call(REF, fillInStackTrace, [], OUT).
+
+abstract_method_error_get_stack_trace(REF, OUT) :- 
+	object_call(REF, getStackTrace, [], OUT).
+
+abstract_method_error_get_localized_message(REF, OUT) :- 
+	object_call(REF, getLocalizedMessage, [], OUT).
+
+abstract_method_error_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+abstract_method_error_get_suppressed(REF, OUT) :- 
+	object_call(REF, getSuppressed, [], OUT).
+
+abstract_method_error_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+abstract_method_error_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

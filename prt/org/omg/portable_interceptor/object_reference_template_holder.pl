@@ -28,26 +28,29 @@ object_reference_template_holder(OUT) :-
 object_reference_template_holder(ARG0, OUT) :- 
 	object_new('org.omg.PortableInterceptor.ObjectReferenceTemplateHolder', '.'(ARG0, []), OUT).
 
-object_reference_template_holder__read(REF, ARG0, OUT) :- 
-	object_call(REF, '_read', '.'(ARG0, []), OUT).
+object_reference_template_holder__write(REF, ARG0) :- 
+	object_call(REF, '_write', '.'(ARG0, []), _).
+
+object_reference_template_holder_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+object_reference_template_holder_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 object_reference_template_holder__type(REF, OUT) :- 
 	object_call(REF, '_type', [], OUT).
 
-object_reference_template_holder__write(REF, ARG0, OUT) :- 
-	object_call(REF, '_write', '.'(ARG0, []), OUT).
+object_reference_template_holder_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-object_reference_template_holder_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-object_reference_template_holder_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-object_reference_template_holder_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+object_reference_template_holder_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 object_reference_template_holder_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+object_reference_template_holder_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
 object_reference_template_holder_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
@@ -55,12 +58,9 @@ object_reference_template_holder_to_string(REF, OUT) :-
 object_reference_template_holder_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-object_reference_template_holder_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
+object_reference_template_holder__read(REF, ARG0) :- 
+	object_call(REF, '_read', '.'(ARG0, []), _).
 
-object_reference_template_holder_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-object_reference_template_holder_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+object_reference_template_holder_notify(REF) :- 
+	object_call(REF, notify, [], _).
 

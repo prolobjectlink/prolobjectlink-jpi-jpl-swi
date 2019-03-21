@@ -25,44 +25,32 @@
 button_group(OUT) :- 
 	object_new('javax.swing.ButtonGroup', [], OUT).
 
-button_group_add(REF, ARG0, OUT) :- 
-	object_call(REF, add, '.'(ARG0, []), OUT).
-
-button_group_remove(REF, ARG0, OUT) :- 
-	object_call(REF, remove, '.'(ARG0, []), OUT).
+button_group_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 button_group_get_elements(REF, OUT) :- 
 	object_call(REF, getElements, [], OUT).
 
-button_group_set_selected(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, setSelected, '.'(ARG0, '.'(ARG1, [])), OUT).
+button_group_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-button_group_is_selected(REF, ARG0, OUT) :- 
-	object_call(REF, isSelected, '.'(ARG0, []), OUT).
+button_group_set_selected(REF, ARG0, ARG1) :- 
+	object_call(REF, setSelected, '.'(ARG0, '.'(ARG1, [])), _).
 
-button_group_clear_selection(REF, OUT) :- 
-	object_call(REF, clearSelection, [], OUT).
-
-button_group_get_button_count(REF, OUT) :- 
-	object_call(REF, getButtonCount, [], OUT).
-
-button_group_get_selection(REF, OUT) :- 
-	object_call(REF, getSelection, [], OUT).
-
-button_group_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-button_group_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-button_group_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+button_group_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 button_group_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-button_group_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+button_group_get_selection(REF, OUT) :- 
+	object_call(REF, getSelection, [], OUT).
+
+button_group_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+button_group_get_button_count(REF, OUT) :- 
+	object_call(REF, getButtonCount, [], OUT).
 
 button_group_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -70,9 +58,21 @@ button_group_hash_code(REF, OUT) :-
 button_group_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-button_group_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+button_group_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-button_group_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+button_group_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+button_group_is_selected(REF, ARG0, OUT) :- 
+	object_call(REF, isSelected, '.'(ARG0, []), OUT).
+
+button_group_remove(REF, ARG0) :- 
+	object_call(REF, remove, '.'(ARG0, []), _).
+
+button_group_add(REF, ARG0) :- 
+	object_call(REF, add, '.'(ARG0, []), _).
+
+button_group_clear_selection(REF) :- 
+	object_call(REF, clearSelection, [], _).
 

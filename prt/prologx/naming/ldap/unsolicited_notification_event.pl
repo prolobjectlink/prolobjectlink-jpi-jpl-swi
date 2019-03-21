@@ -25,39 +25,39 @@
 unsolicited_notification_event(ARG0, ARG1, OUT) :- 
 	object_new('javax.naming.ldap.UnsolicitedNotificationEvent', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-unsolicited_notification_event_dispatch(REF, ARG0, OUT) :- 
-	object_call(REF, dispatch, '.'(ARG0, []), OUT).
+unsolicited_notification_event_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
 unsolicited_notification_event_get_notification(REF, OUT) :- 
 	object_call(REF, getNotification, [], OUT).
 
-unsolicited_notification_event_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+unsolicited_notification_event_dispatch(REF, ARG0) :- 
+	object_call(REF, dispatch, '.'(ARG0, []), _).
+
+unsolicited_notification_event_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+unsolicited_notification_event_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 unsolicited_notification_event_get_source(REF, OUT) :- 
 	object_call(REF, getSource, [], OUT).
 
-unsolicited_notification_event_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+unsolicited_notification_event_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-unsolicited_notification_event_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-unsolicited_notification_event_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+unsolicited_notification_event_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 unsolicited_notification_event_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-unsolicited_notification_event_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
 unsolicited_notification_event_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-unsolicited_notification_event_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+unsolicited_notification_event_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-unsolicited_notification_event_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+unsolicited_notification_event_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 

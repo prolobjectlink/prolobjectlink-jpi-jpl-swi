@@ -31,69 +31,69 @@ grid_layout(ARG0, ARG1, OUT) :-
 grid_layout(OUT) :- 
 	object_new('java.awt.GridLayout', [], OUT).
 
-grid_layout_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-grid_layout_add_layout_component(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, addLayoutComponent, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-grid_layout_layout_container(REF, ARG0, OUT) :- 
-	object_call(REF, layoutContainer, '.'(ARG0, []), OUT).
-
-grid_layout_minimum_layout_size(REF, ARG0, OUT) :- 
-	object_call(REF, minimumLayoutSize, '.'(ARG0, []), OUT).
-
-grid_layout_preferred_layout_size(REF, ARG0, OUT) :- 
-	object_call(REF, preferredLayoutSize, '.'(ARG0, []), OUT).
-
-grid_layout_remove_layout_component(REF, ARG0, OUT) :- 
-	object_call(REF, removeLayoutComponent, '.'(ARG0, []), OUT).
-
-grid_layout_get_rows(REF, OUT) :- 
-	object_call(REF, getRows, [], OUT).
-
-grid_layout_get_columns(REF, OUT) :- 
-	object_call(REF, getColumns, [], OUT).
-
-grid_layout_set_columns(REF, ARG0, OUT) :- 
-	object_call(REF, setColumns, '.'(ARG0, []), OUT).
-
-grid_layout_set_rows(REF, ARG0, OUT) :- 
-	object_call(REF, setRows, '.'(ARG0, []), OUT).
-
-grid_layout_get_hgap(REF, OUT) :- 
-	object_call(REF, getHgap, [], OUT).
-
 grid_layout_get_vgap(REF, OUT) :- 
 	object_call(REF, getVgap, [], OUT).
 
-grid_layout_set_hgap(REF, ARG0, OUT) :- 
-	object_call(REF, setHgap, '.'(ARG0, []), OUT).
+grid_layout_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-grid_layout_set_vgap(REF, ARG0, OUT) :- 
-	object_call(REF, setVgap, '.'(ARG0, []), OUT).
+grid_layout_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-grid_layout_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-grid_layout_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-grid_layout_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+grid_layout_set_rows(REF, ARG0) :- 
+	object_call(REF, setRows, '.'(ARG0, []), _).
 
 grid_layout_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-grid_layout_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+grid_layout_get_columns(REF, OUT) :- 
+	object_call(REF, getColumns, [], OUT).
+
+grid_layout_add_layout_component(REF, ARG0, ARG1) :- 
+	object_call(REF, addLayoutComponent, '.'(ARG0, '.'(ARG1, [])), _).
+
+grid_layout_set_vgap(REF, ARG0) :- 
+	object_call(REF, setVgap, '.'(ARG0, []), _).
+
+grid_layout_minimum_layout_size(REF, ARG0, OUT) :- 
+	object_call(REF, minimumLayoutSize, '.'(ARG0, []), OUT).
+
+grid_layout_set_columns(REF, ARG0) :- 
+	object_call(REF, setColumns, '.'(ARG0, []), _).
+
+grid_layout_layout_container(REF, ARG0) :- 
+	object_call(REF, layoutContainer, '.'(ARG0, []), _).
+
+grid_layout_get_rows(REF, OUT) :- 
+	object_call(REF, getRows, [], OUT).
 
 grid_layout_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-grid_layout_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+grid_layout_get_hgap(REF, OUT) :- 
+	object_call(REF, getHgap, [], OUT).
 
-grid_layout_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+grid_layout_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+grid_layout_preferred_layout_size(REF, ARG0, OUT) :- 
+	object_call(REF, preferredLayoutSize, '.'(ARG0, []), OUT).
+
+grid_layout_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+grid_layout_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+grid_layout_set_hgap(REF, ARG0) :- 
+	object_call(REF, setHgap, '.'(ARG0, []), _).
+
+grid_layout_remove_layout_component(REF, ARG0) :- 
+	object_call(REF, removeLayoutComponent, '.'(ARG0, []), _).
+
+grid_layout_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+grid_layout_wait(REF) :- 
+	object_call(REF, wait, [], _).
 

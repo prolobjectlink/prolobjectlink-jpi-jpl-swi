@@ -25,8 +25,11 @@
 s_s_l_engine_result(ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_new('javax.net.ssl.SSLEngineResult', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
-s_s_l_engine_result_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+s_s_l_engine_result_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+s_s_l_engine_result_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
 s_s_l_engine_result_get_status(REF, OUT) :- 
 	object_call(REF, getStatus, [], OUT).
@@ -34,33 +37,30 @@ s_s_l_engine_result_get_status(REF, OUT) :-
 s_s_l_engine_result_get_handshake_status(REF, OUT) :- 
 	object_call(REF, getHandshakeStatus, [], OUT).
 
-s_s_l_engine_result_bytes_consumed(REF, OUT) :- 
-	object_call(REF, bytesConsumed, [], OUT).
+s_s_l_engine_result_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 s_s_l_engine_result_bytes_produced(REF, OUT) :- 
 	object_call(REF, bytesProduced, [], OUT).
 
-s_s_l_engine_result_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-s_s_l_engine_result_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-s_s_l_engine_result_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
 s_s_l_engine_result_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-s_s_l_engine_result_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+s_s_l_engine_result_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+s_s_l_engine_result_bytes_consumed(REF, OUT) :- 
+	object_call(REF, bytesConsumed, [], OUT).
+
+s_s_l_engine_result_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+s_s_l_engine_result_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+s_s_l_engine_result_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 s_s_l_engine_result_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-s_s_l_engine_result_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-s_s_l_engine_result_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

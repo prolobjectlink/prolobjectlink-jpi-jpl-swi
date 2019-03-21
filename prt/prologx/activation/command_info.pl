@@ -25,29 +25,11 @@
 command_info(ARG0, ARG1, OUT) :- 
 	object_new('javax.activation.CommandInfo', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-command_info_get_command_class(REF, OUT) :- 
-	object_call(REF, getCommandClass, [], OUT).
-
-command_info_get_command_name(REF, OUT) :- 
-	object_call(REF, getCommandName, [], OUT).
-
 command_info_get_command_object(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, getCommandObject, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-command_info_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-command_info_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-command_info_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-command_info_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-command_info_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+command_info_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 command_info_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -55,9 +37,27 @@ command_info_hash_code(REF, OUT) :-
 command_info_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-command_info_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+command_info_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-command_info_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+command_info_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+command_info_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+command_info_get_command_name(REF, OUT) :- 
+	object_call(REF, getCommandName, [], OUT).
+
+command_info_get_command_class(REF, OUT) :- 
+	object_call(REF, getCommandClass, [], OUT).
+
+command_info_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+command_info_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+command_info_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 

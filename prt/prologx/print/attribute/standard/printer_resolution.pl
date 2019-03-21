@@ -22,60 +22,60 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-printer_resolution_dpi(OUT) :- 
+printer_resolution_DPI(OUT) :- 
 	object_get('javax.print.attribute.standard.PrinterResolution', dpi, OUT).
 
-printer_resolution_dpcm(OUT) :- 
+printer_resolution_DPCM(OUT) :- 
 	object_get('javax.print.attribute.standard.PrinterResolution', dpcm, OUT).
 
 printer_resolution(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('javax.print.attribute.standard.PrinterResolution', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-printer_resolution_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
 printer_resolution_get_name(REF, OUT) :- 
 	object_call(REF, getName, [], OUT).
+
+printer_resolution_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 printer_resolution_get_category(REF, OUT) :- 
 	object_call(REF, getCategory, [], OUT).
 
-printer_resolution_to_string(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, toString, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-printer_resolution_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
 printer_resolution_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-printer_resolution_get_cross_feed_resolution(REF, ARG0, OUT) :- 
-	object_call(REF, getCrossFeedResolution, '.'(ARG0, []), OUT).
-
-printer_resolution_get_feed_resolution(REF, ARG0, OUT) :- 
-	object_call(REF, getFeedResolution, '.'(ARG0, []), OUT).
-
-printer_resolution_get_resolution(REF, ARG0, OUT) :- 
-	object_call(REF, getResolution, '.'(ARG0, []), OUT).
+printer_resolution_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 printer_resolution_less_than_or_equals(REF, ARG0, OUT) :- 
 	object_call(REF, lessThanOrEquals, '.'(ARG0, []), OUT).
 
-printer_resolution_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+printer_resolution_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-printer_resolution_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+printer_resolution_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-printer_resolution_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+printer_resolution_get_resolution(REF, ARG0, OUT) :- 
+	object_call(REF, getResolution, '.'(ARG0, []), OUT).
+
+printer_resolution_to_string(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, toString, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+printer_resolution_get_feed_resolution(REF, ARG0, OUT) :- 
+	object_call(REF, getFeedResolution, '.'(ARG0, []), OUT).
 
 printer_resolution_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-printer_resolution_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+printer_resolution_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-printer_resolution_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+printer_resolution_get_cross_feed_resolution(REF, ARG0, OUT) :- 
+	object_call(REF, getCrossFeedResolution, '.'(ARG0, []), OUT).
+
+printer_resolution_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+printer_resolution_notify(REF) :- 
+	object_call(REF, notify, [], _).
 

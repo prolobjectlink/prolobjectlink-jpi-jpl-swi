@@ -25,41 +25,32 @@
 paper(OUT) :- 
 	object_new('java.awt.print.Paper', [], OUT).
 
-paper_clone(REF, OUT) :- 
-	object_call(REF, clone, [], OUT).
-
-paper_set_size(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, setSize, '.'(ARG0, '.'(ARG1, [])), OUT).
+paper_get_imageable_y(REF, OUT) :- 
+	object_call(REF, getImageableY, [], OUT).
 
 paper_get_imageable_height(REF, OUT) :- 
 	object_call(REF, getImageableHeight, [], OUT).
 
-paper_get_imageable_width(REF, OUT) :- 
-	object_call(REF, getImageableWidth, [], OUT).
+paper_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+paper_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 paper_get_imageable_x(REF, OUT) :- 
 	object_call(REF, getImageableX, [], OUT).
 
-paper_get_imageable_y(REF, OUT) :- 
-	object_call(REF, getImageableY, [], OUT).
-
-paper_set_imageable_area(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, setImageableArea, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
 paper_get_height(REF, OUT) :- 
 	object_call(REF, getHeight, [], OUT).
 
-paper_get_width(REF, OUT) :- 
-	object_call(REF, getWidth, [], OUT).
+paper_get_imageable_width(REF, OUT) :- 
+	object_call(REF, getImageableWidth, [], OUT).
 
-paper_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+paper_set_size(REF, ARG0, ARG1) :- 
+	object_call(REF, setSize, '.'(ARG0, '.'(ARG1, [])), _).
 
-paper_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-paper_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+paper_set_imageable_area(REF, ARG0, ARG1, ARG2, ARG3) :- 
+	object_call(REF, setImageableArea, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).
 
 paper_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
@@ -73,9 +64,18 @@ paper_hash_code(REF, OUT) :-
 paper_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-paper_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+paper_get_width(REF, OUT) :- 
+	object_call(REF, getWidth, [], OUT).
 
-paper_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+paper_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+paper_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+paper_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+paper_clone(REF, OUT) :- 
+	object_call(REF, clone, [], OUT).
 

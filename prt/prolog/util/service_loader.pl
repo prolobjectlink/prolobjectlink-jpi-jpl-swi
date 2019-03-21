@@ -22,51 +22,51 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-service_loader_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+service_loader_reload(REF) :- 
+	object_call(REF, reload, [], _).
 
-service_loader_iterator(REF, OUT) :- 
-	object_call(REF, iterator, [], OUT).
+service_loader_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-service_loader_load(REF, ARG0, OUT) :- 
-	object_call(REF, load, '.'(ARG0, []), OUT).
+service_loader_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-service_loader_load(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, load, '.'(ARG0, '.'(ARG1, [])), OUT).
+service_loader_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+service_loader_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+service_loader_for_each(REF, ARG0) :- 
+	object_call(REF, forEach, '.'(ARG0, []), _).
+
+service_loader_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 service_loader_load_installed(REF, ARG0, OUT) :- 
 	object_call(REF, loadInstalled, '.'(ARG0, []), OUT).
 
-service_loader_reload(REF, OUT) :- 
-	object_call(REF, reload, [], OUT).
-
-service_loader_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-service_loader_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-service_loader_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+service_loader_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
 service_loader_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-service_loader_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+service_loader_load(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, load, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+service_loader_load(REF, ARG0, OUT) :- 
+	object_call(REF, load, '.'(ARG0, []), OUT).
 
 service_loader_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-service_loader_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-service_loader_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
-
 service_loader_spliterator(REF, OUT) :- 
 	object_call(REF, spliterator, [], OUT).
 
-service_loader_for_each(REF, ARG0, OUT) :- 
-	object_call(REF, forEach, '.'(ARG0, []), OUT).
+service_loader_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+service_loader_iterator(REF, OUT) :- 
+	object_call(REF, iterator, [], OUT).
 

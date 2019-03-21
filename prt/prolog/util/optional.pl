@@ -22,66 +22,66 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-optional_get(REF, OUT) :- 
-	object_call(REF, get, [], OUT).
-
-optional_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-optional_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
 optional_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-optional_of(REF, ARG0, OUT) :- 
-	object_call(REF, of, '.'(ARG0, []), OUT).
-
-optional_empty(REF, OUT) :- 
-	object_call(REF, empty, [], OUT).
-
-optional_filter(REF, ARG0, OUT) :- 
-	object_call(REF, filter, '.'(ARG0, []), OUT).
-
-optional_map(REF, ARG0, OUT) :- 
-	object_call(REF, map, '.'(ARG0, []), OUT).
-
-optional_flat_map(REF, ARG0, OUT) :- 
-	object_call(REF, flatMap, '.'(ARG0, []), OUT).
-
-optional_if_present(REF, ARG0, OUT) :- 
-	object_call(REF, ifPresent, '.'(ARG0, []), OUT).
-
-optional_is_present(REF, OUT) :- 
-	object_call(REF, isPresent, [], OUT).
-
-optional_of_nullable(REF, ARG0, OUT) :- 
-	object_call(REF, ofNullable, '.'(ARG0, []), OUT).
-
-optional_or_else(REF, ARG0, OUT) :- 
-	object_call(REF, orElse, '.'(ARG0, []), OUT).
-
-optional_or_else_get(REF, ARG0, OUT) :- 
-	object_call(REF, orElseGet, '.'(ARG0, []), OUT).
-
-optional_or_else_throw(REF, ARG0, OUT) :- 
-	object_call(REF, orElseThrow, '.'(ARG0, []), OUT).
-
-optional_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-optional_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-optional_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+optional_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 optional_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-optional_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+optional_flat_map(REF, ARG0, OUT) :- 
+	object_call(REF, flatMap, '.'(ARG0, []), OUT).
 
-optional_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+optional_if_present(REF, ARG0) :- 
+	object_call(REF, ifPresent, '.'(ARG0, []), _).
+
+optional_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+optional_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+optional_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+optional_of_nullable(REF, ARG0, OUT) :- 
+	object_call(REF, ofNullable, '.'(ARG0, []), OUT).
+
+optional_get(REF, OUT) :- 
+	object_call(REF, get, [], OUT).
+
+optional_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+optional_or_else_throw(REF, ARG0, OUT) :- 
+	object_call(REF, orElseThrow, '.'(ARG0, []), OUT).
+
+optional_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+optional_empty(REF, OUT) :- 
+	object_call(REF, empty, [], OUT).
+
+optional_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+optional_of(REF, ARG0, OUT) :- 
+	object_call(REF, of, '.'(ARG0, []), OUT).
+
+optional_filter(REF, ARG0, OUT) :- 
+	object_call(REF, filter, '.'(ARG0, []), OUT).
+
+optional_or_else(REF, ARG0, OUT) :- 
+	object_call(REF, orElse, '.'(ARG0, []), OUT).
+
+optional_map(REF, ARG0, OUT) :- 
+	object_call(REF, map, '.'(ARG0, []), OUT).
+
+optional_or_else_get(REF, ARG0, OUT) :- 
+	object_call(REF, orElseGet, '.'(ARG0, []), OUT).
+
+optional_is_present(REF, OUT) :- 
+	object_call(REF, isPresent, [], OUT).
 

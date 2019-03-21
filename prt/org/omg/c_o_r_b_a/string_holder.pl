@@ -22,29 +22,26 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-string_holder(OUT) :- 
-	object_new('org.omg.CORBA.StringHolder', [], OUT).
-
 string_holder(ARG0, OUT) :- 
 	object_new('org.omg.CORBA.StringHolder', '.'(ARG0, []), OUT).
 
-string_holder__read(REF, ARG0, OUT) :- 
-	object_call(REF, '_read', '.'(ARG0, []), OUT).
+string_holder(OUT) :- 
+	object_new('org.omg.CORBA.StringHolder', [], OUT).
 
-string_holder__type(REF, OUT) :- 
-	object_call(REF, '_type', [], OUT).
+string_holder__write(REF, ARG0) :- 
+	object_call(REF, '_write', '.'(ARG0, []), _).
 
-string_holder__write(REF, ARG0, OUT) :- 
-	object_call(REF, '_write', '.'(ARG0, []), OUT).
+string_holder_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-string_holder_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+string_holder_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
-string_holder_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+string_holder_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-string_holder_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+string_holder_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 string_holder_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
@@ -52,15 +49,18 @@ string_holder_equals(REF, ARG0, OUT) :-
 string_holder_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
+string_holder_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+string_holder_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+string_holder__read(REF, ARG0) :- 
+	object_call(REF, '_read', '.'(ARG0, []), _).
+
+string_holder__type(REF, OUT) :- 
+	object_call(REF, '_type', [], OUT).
+
 string_holder_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
-
-string_holder_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-string_holder_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-string_holder_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

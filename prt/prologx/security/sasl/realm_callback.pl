@@ -22,38 +22,14 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-realm_callback(ARG0, OUT) :- 
-	object_new('javax.security.sasl.RealmCallback', '.'(ARG0, []), OUT).
-
 realm_callback(ARG0, ARG1, OUT) :- 
 	object_new('javax.security.sasl.RealmCallback', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-realm_callback_get_prompt(REF, OUT) :- 
-	object_call(REF, getPrompt, [], OUT).
+realm_callback(ARG0, OUT) :- 
+	object_new('javax.security.sasl.RealmCallback', '.'(ARG0, []), OUT).
 
-realm_callback_get_default_text(REF, OUT) :- 
-	object_call(REF, getDefaultText, [], OUT).
-
-realm_callback_get_text(REF, OUT) :- 
-	object_call(REF, getText, [], OUT).
-
-realm_callback_set_text(REF, ARG0, OUT) :- 
-	object_call(REF, setText, '.'(ARG0, []), OUT).
-
-realm_callback_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-realm_callback_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-realm_callback_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-realm_callback_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-realm_callback_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+realm_callback_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 realm_callback_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -61,9 +37,33 @@ realm_callback_hash_code(REF, OUT) :-
 realm_callback_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-realm_callback_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+realm_callback_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-realm_callback_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+realm_callback_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+realm_callback_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+realm_callback_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+realm_callback_get_prompt(REF, OUT) :- 
+	object_call(REF, getPrompt, [], OUT).
+
+realm_callback_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+realm_callback_get_text(REF, OUT) :- 
+	object_call(REF, getText, [], OUT).
+
+realm_callback_set_text(REF, ARG0) :- 
+	object_call(REF, setText, '.'(ARG0, []), _).
+
+realm_callback_get_default_text(REF, OUT) :- 
+	object_call(REF, getDefaultText, [], OUT).
+
+realm_callback_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 

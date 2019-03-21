@@ -28,56 +28,53 @@ invalid_type_for_encoding(OUT) :-
 invalid_type_for_encoding(ARG0, OUT) :- 
 	object_new('org.omg.IOP.CodecPackage.InvalidTypeForEncoding', '.'(ARG0, []), OUT).
 
-invalid_type_for_encoding_print_stack_trace(REF, OUT) :- 
-	object_call(REF, printStackTrace, [], OUT).
+invalid_type_for_encoding_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-invalid_type_for_encoding_print_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, printStackTrace, '.'(ARG0, []), OUT).
-
-invalid_type_for_encoding_print_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, printStackTrace, '.'(ARG0, []), OUT).
-
-invalid_type_for_encoding_fill_in_stack_trace(REF, OUT) :- 
-	object_call(REF, fillInStackTrace, [], OUT).
-
-invalid_type_for_encoding_get_cause(REF, OUT) :- 
-	object_call(REF, getCause, [], OUT).
-
-invalid_type_for_encoding_init_cause(REF, ARG0, OUT) :- 
-	object_call(REF, initCause, '.'(ARG0, []), OUT).
+invalid_type_for_encoding_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 invalid_type_for_encoding_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-invalid_type_for_encoding_add_suppressed(REF, ARG0, OUT) :- 
-	object_call(REF, addSuppressed, '.'(ARG0, []), OUT).
+invalid_type_for_encoding_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-invalid_type_for_encoding_get_localized_message(REF, OUT) :- 
-	object_call(REF, getLocalizedMessage, [], OUT).
+invalid_type_for_encoding_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+invalid_type_for_encoding_get_cause(REF, OUT) :- 
+	object_call(REF, getCause, [], OUT).
 
 invalid_type_for_encoding_get_message(REF, OUT) :- 
 	object_call(REF, getMessage, [], OUT).
 
-invalid_type_for_encoding_get_stack_trace(REF, OUT) :- 
-	object_call(REF, getStackTrace, [], OUT).
+invalid_type_for_encoding_fill_in_stack_trace(REF, OUT) :- 
+	object_call(REF, fillInStackTrace, [], OUT).
+
+invalid_type_for_encoding_print_stack_trace(REF) :- 
+	object_call(REF, printStackTrace, [], _).
+
+invalid_type_for_encoding_init_cause(REF, ARG0, OUT) :- 
+	object_call(REF, initCause, '.'(ARG0, []), OUT).
+
+invalid_type_for_encoding_print_stack_trace(REF, ARG0) :- 
+	object_call(REF, printStackTrace, '.'(ARG0, []), _).
+
+invalid_type_for_encoding_print_stack_trace(REF, ARG0) :- 
+	object_call(REF, printStackTrace, '.'(ARG0, []), _).
+
+invalid_type_for_encoding_get_localized_message(REF, OUT) :- 
+	object_call(REF, getLocalizedMessage, [], OUT).
+
+invalid_type_for_encoding_add_suppressed(REF, ARG0) :- 
+	object_call(REF, addSuppressed, '.'(ARG0, []), _).
+
+invalid_type_for_encoding_set_stack_trace(REF, ARG0) :- 
+	object_call(REF, setStackTrace, '.'(ARG0, []), _).
 
 invalid_type_for_encoding_get_suppressed(REF, OUT) :- 
 	object_call(REF, getSuppressed, [], OUT).
-
-invalid_type_for_encoding_set_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, setStackTrace, '.'(ARG0, []), OUT).
-
-invalid_type_for_encoding_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-invalid_type_for_encoding_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-invalid_type_for_encoding_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-invalid_type_for_encoding_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 invalid_type_for_encoding_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -85,9 +82,12 @@ invalid_type_for_encoding_hash_code(REF, OUT) :-
 invalid_type_for_encoding_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-invalid_type_for_encoding_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+invalid_type_for_encoding_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-invalid_type_for_encoding_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+invalid_type_for_encoding_get_stack_trace(REF, OUT) :- 
+	object_call(REF, getStackTrace, [], OUT).
+
+invalid_type_for_encoding_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

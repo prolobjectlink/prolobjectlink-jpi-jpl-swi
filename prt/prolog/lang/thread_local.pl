@@ -25,42 +25,42 @@
 thread_local(OUT) :- 
 	object_new('java.lang.ThreadLocal', [], OUT).
 
-thread_local_remove(REF, OUT) :- 
-	object_call(REF, remove, [], OUT).
+thread_local_remove(REF) :- 
+	object_call(REF, remove, [], _).
 
-thread_local_get(REF, OUT) :- 
-	object_call(REF, get, [], OUT).
+thread_local_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-thread_local_set(REF, ARG0, OUT) :- 
-	object_call(REF, set, '.'(ARG0, []), OUT).
+thread_local_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+thread_local_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 thread_local_with_initial(REF, ARG0, OUT) :- 
 	object_call(REF, withInitial, '.'(ARG0, []), OUT).
 
-thread_local_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-thread_local_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-thread_local_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
 thread_local_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+thread_local_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 thread_local_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-thread_local_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
 thread_local_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-thread_local_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+thread_local_get(REF, OUT) :- 
+	object_call(REF, get, [], OUT).
 
-thread_local_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+thread_local_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+thread_local_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+thread_local_set(REF, ARG0) :- 
+	object_call(REF, set, '.'(ARG0, []), _).
 

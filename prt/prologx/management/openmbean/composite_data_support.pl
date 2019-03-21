@@ -22,54 +22,54 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-composite_data_support(ARG0, ARG1, OUT) :- 
-	object_new('javax.management.openmbean.CompositeDataSupport', '.'(ARG0, '.'(ARG1, [])), OUT).
-
 composite_data_support(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('javax.management.openmbean.CompositeDataSupport', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-composite_data_support_get(REF, ARG0, OUT) :- 
-	object_call(REF, get, '.'(ARG0, []), OUT).
+composite_data_support(ARG0, ARG1, OUT) :- 
+	object_new('javax.management.openmbean.CompositeDataSupport', '.'(ARG0, '.'(ARG1, [])), OUT).
+
+composite_data_support_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 composite_data_support_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-composite_data_support_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
 composite_data_support_values(REF, OUT) :- 
 	object_call(REF, values, [], OUT).
 
-composite_data_support_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-composite_data_support_contains_key(REF, ARG0, OUT) :- 
-	object_call(REF, containsKey, '.'(ARG0, []), OUT).
-
-composite_data_support_contains_value(REF, ARG0, OUT) :- 
-	object_call(REF, containsValue, '.'(ARG0, []), OUT).
+composite_data_support_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
 composite_data_support_get_all(REF, ARG0, OUT) :- 
 	object_call(REF, getAll, '.'(ARG0, []), OUT).
 
+composite_data_support_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+composite_data_support_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+composite_data_support_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+composite_data_support_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+composite_data_support_contains_value(REF, ARG0, OUT) :- 
+	object_call(REF, containsValue, '.'(ARG0, []), OUT).
+
+composite_data_support_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+composite_data_support_get(REF, ARG0, OUT) :- 
+	object_call(REF, get, '.'(ARG0, []), OUT).
+
 composite_data_support_get_composite_type(REF, OUT) :- 
 	object_call(REF, getCompositeType, [], OUT).
 
-composite_data_support_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-composite_data_support_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-composite_data_support_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+composite_data_support_contains_key(REF, ARG0, OUT) :- 
+	object_call(REF, containsKey, '.'(ARG0, []), OUT).
 
 composite_data_support_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-composite_data_support_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-composite_data_support_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

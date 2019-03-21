@@ -28,66 +28,66 @@ buffered_reader(ARG0, ARG1, OUT) :-
 buffered_reader(ARG0, OUT) :- 
 	object_new('java.io.BufferedReader', '.'(ARG0, []), OUT).
 
-buffered_reader_read(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, read, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-buffered_reader_read(REF, OUT) :- 
-	object_call(REF, read, [], OUT).
-
-buffered_reader_close(REF, OUT) :- 
-	object_call(REF, close, [], OUT).
-
-buffered_reader_read_line(REF, OUT) :- 
-	object_call(REF, readLine, [], OUT).
-
-buffered_reader_mark(REF, ARG0, OUT) :- 
-	object_call(REF, mark, '.'(ARG0, []), OUT).
-
-buffered_reader_mark_supported(REF, OUT) :- 
-	object_call(REF, markSupported, [], OUT).
-
-buffered_reader_reset(REF, OUT) :- 
-	object_call(REF, reset, [], OUT).
-
-buffered_reader_skip(REF, ARG0, OUT) :- 
-	object_call(REF, skip, '.'(ARG0, []), OUT).
-
-buffered_reader_lines(REF, OUT) :- 
-	object_call(REF, lines, [], OUT).
-
-buffered_reader_ready(REF, OUT) :- 
-	object_call(REF, ready, [], OUT).
-
-buffered_reader_read(REF, ARG0, OUT) :- 
-	object_call(REF, read, '.'(ARG0, []), OUT).
-
-buffered_reader_read(REF, ARG0, OUT) :- 
-	object_call(REF, read, '.'(ARG0, []), OUT).
-
-buffered_reader_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-buffered_reader_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-buffered_reader_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+buffered_reader_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
 buffered_reader_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-buffered_reader_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+buffered_reader_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-buffered_reader_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+buffered_reader_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+buffered_reader_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+buffered_reader_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+buffered_reader_mark_supported(REF, OUT) :- 
+	object_call(REF, markSupported, [], OUT).
+
+buffered_reader_lines(REF, OUT) :- 
+	object_call(REF, lines, [], OUT).
+
+buffered_reader_read(REF, ARG0, OUT) :- 
+	object_call(REF, read, '.'(ARG0, []), OUT).
+
+buffered_reader_read(REF, ARG0, OUT) :- 
+	object_call(REF, read, '.'(ARG0, []), OUT).
+
+buffered_reader_read(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, read, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+buffered_reader_read_line(REF, OUT) :- 
+	object_call(REF, readLine, [], OUT).
+
+buffered_reader_read(REF, OUT) :- 
+	object_call(REF, read, [], OUT).
+
+buffered_reader_ready(REF, OUT) :- 
+	object_call(REF, ready, [], OUT).
+
+buffered_reader_mark(REF, ARG0) :- 
+	object_call(REF, mark, '.'(ARG0, []), _).
+
+buffered_reader_reset(REF) :- 
+	object_call(REF, reset, [], _).
+
+buffered_reader_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+buffered_reader_skip(REF, ARG0, OUT) :- 
+	object_call(REF, skip, '.'(ARG0, []), OUT).
 
 buffered_reader_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-buffered_reader_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+buffered_reader_close(REF) :- 
+	object_call(REF, close, [], _).
 
-buffered_reader_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+buffered_reader_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 

@@ -25,11 +25,17 @@
 printer_more_info_manufacturer(ARG0, OUT) :- 
 	object_new('javax.print.attribute.standard.PrinterMoreInfoManufacturer', '.'(ARG0, []), OUT).
 
-printer_more_info_manufacturer_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+printer_more_info_manufacturer_get_u_r_i(REF, OUT) :- 
+	object_call(REF, getURI, [], OUT).
+
+printer_more_info_manufacturer_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 printer_more_info_manufacturer_get_name(REF, OUT) :- 
 	object_call(REF, getName, [], OUT).
+
+printer_more_info_manufacturer_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 printer_more_info_manufacturer_get_category(REF, OUT) :- 
 	object_call(REF, getCategory, [], OUT).
@@ -37,27 +43,21 @@ printer_more_info_manufacturer_get_category(REF, OUT) :-
 printer_more_info_manufacturer_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
+printer_more_info_manufacturer_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+printer_more_info_manufacturer_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+printer_more_info_manufacturer_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
 printer_more_info_manufacturer_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-printer_more_info_manufacturer_get_u_r_i(REF, OUT) :- 
-	object_call(REF, getURI, [], OUT).
-
-printer_more_info_manufacturer_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-printer_more_info_manufacturer_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-printer_more_info_manufacturer_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+printer_more_info_manufacturer_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 printer_more_info_manufacturer_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-printer_more_info_manufacturer_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-printer_more_info_manufacturer_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

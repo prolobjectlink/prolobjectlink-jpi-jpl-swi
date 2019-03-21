@@ -22,93 +22,93 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-cursor_default_cursor(OUT) :- 
+cursor_DEFAULT_CURSOR(OUT) :- 
 	object_get('java.awt.Cursor', default_cursor, OUT).
 
-cursor_crosshair_cursor(OUT) :- 
+cursor_CROSSHAIR_CURSOR(OUT) :- 
 	object_get('java.awt.Cursor', crosshair_cursor, OUT).
 
-cursor_text_cursor(OUT) :- 
+cursor_TEXT_CURSOR(OUT) :- 
 	object_get('java.awt.Cursor', text_cursor, OUT).
 
-cursor_wait_cursor(OUT) :- 
+cursor_WAIT_CURSOR(OUT) :- 
 	object_get('java.awt.Cursor', wait_cursor, OUT).
 
-cursor_sw_resize_cursor(OUT) :- 
+cursor_SW_RESIZE_CURSOR(OUT) :- 
 	object_get('java.awt.Cursor', sw_resize_cursor, OUT).
 
-cursor_se_resize_cursor(OUT) :- 
+cursor_SE_RESIZE_CURSOR(OUT) :- 
 	object_get('java.awt.Cursor', se_resize_cursor, OUT).
 
-cursor_nw_resize_cursor(OUT) :- 
+cursor_NW_RESIZE_CURSOR(OUT) :- 
 	object_get('java.awt.Cursor', nw_resize_cursor, OUT).
 
-cursor_ne_resize_cursor(OUT) :- 
+cursor_NE_RESIZE_CURSOR(OUT) :- 
 	object_get('java.awt.Cursor', ne_resize_cursor, OUT).
 
-cursor_n_resize_cursor(OUT) :- 
+cursor_N_RESIZE_CURSOR(OUT) :- 
 	object_get('java.awt.Cursor', n_resize_cursor, OUT).
 
-cursor_s_resize_cursor(OUT) :- 
+cursor_S_RESIZE_CURSOR(OUT) :- 
 	object_get('java.awt.Cursor', s_resize_cursor, OUT).
 
-cursor_w_resize_cursor(OUT) :- 
+cursor_W_RESIZE_CURSOR(OUT) :- 
 	object_get('java.awt.Cursor', w_resize_cursor, OUT).
 
-cursor_e_resize_cursor(OUT) :- 
+cursor_E_RESIZE_CURSOR(OUT) :- 
 	object_get('java.awt.Cursor', e_resize_cursor, OUT).
 
-cursor_hand_cursor(OUT) :- 
+cursor_HAND_CURSOR(OUT) :- 
 	object_get('java.awt.Cursor', hand_cursor, OUT).
 
-cursor_move_cursor(OUT) :- 
+cursor_MOVE_CURSOR(OUT) :- 
 	object_get('java.awt.Cursor', move_cursor, OUT).
 
-cursor_custom_cursor(OUT) :- 
+cursor_CUSTOM_CURSOR(OUT) :- 
 	object_get('java.awt.Cursor', custom_cursor, OUT).
 
 cursor(ARG0, OUT) :- 
 	object_new('java.awt.Cursor', '.'(ARG0, []), OUT).
 
-cursor_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
 cursor_get_name(REF, OUT) :- 
 	object_call(REF, getName, [], OUT).
-
-cursor_get_type(REF, OUT) :- 
-	object_call(REF, getType, [], OUT).
-
-cursor_get_default_cursor(REF, OUT) :- 
-	object_call(REF, getDefaultCursor, [], OUT).
-
-cursor_get_system_custom_cursor(REF, ARG0, OUT) :- 
-	object_call(REF, getSystemCustomCursor, '.'(ARG0, []), OUT).
-
-cursor_get_predefined_cursor(REF, ARG0, OUT) :- 
-	object_call(REF, getPredefinedCursor, '.'(ARG0, []), OUT).
-
-cursor_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-cursor_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-cursor_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
 
 cursor_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-cursor_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+cursor_get_system_custom_cursor(REF, ARG0, OUT) :- 
+	object_call(REF, getSystemCustomCursor, '.'(ARG0, []), OUT).
+
+cursor_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+cursor_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+cursor_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+cursor_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+cursor_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+cursor_get_default_cursor(REF, OUT) :- 
+	object_call(REF, getDefaultCursor, [], OUT).
 
 cursor_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-cursor_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+cursor_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
-cursor_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+cursor_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+cursor_get_type(REF, OUT) :- 
+	object_call(REF, getType, [], OUT).
+
+cursor_get_predefined_cursor(REF, ARG0, OUT) :- 
+	object_call(REF, getPredefinedCursor, '.'(ARG0, []), OUT).
 

@@ -25,54 +25,54 @@
 basic_icon_factory(OUT) :- 
 	object_new('javax.swing.plaf.basic.BasicIconFactory', [], OUT).
 
+basic_icon_factory_get_check_box_menu_item_icon(REF, OUT) :- 
+	object_call(REF, getCheckBoxMenuItemIcon, [], OUT).
+
 basic_icon_factory_create_empty_frame_icon(REF, OUT) :- 
 	object_call(REF, createEmptyFrameIcon, [], OUT).
 
 basic_icon_factory_get_check_box_icon(REF, OUT) :- 
 	object_call(REF, getCheckBoxIcon, [], OUT).
 
-basic_icon_factory_get_check_box_menu_item_icon(REF, OUT) :- 
-	object_call(REF, getCheckBoxMenuItemIcon, [], OUT).
-
-basic_icon_factory_get_menu_arrow_icon(REF, OUT) :- 
-	object_call(REF, getMenuArrowIcon, [], OUT).
-
-basic_icon_factory_get_menu_item_arrow_icon(REF, OUT) :- 
-	object_call(REF, getMenuItemArrowIcon, [], OUT).
-
-basic_icon_factory_get_menu_item_check_icon(REF, OUT) :- 
-	object_call(REF, getMenuItemCheckIcon, [], OUT).
-
-basic_icon_factory_get_radio_button_icon(REF, OUT) :- 
-	object_call(REF, getRadioButtonIcon, [], OUT).
-
 basic_icon_factory_get_radio_button_menu_item_icon(REF, OUT) :- 
 	object_call(REF, getRadioButtonMenuItemIcon, [], OUT).
-
-basic_icon_factory_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-basic_icon_factory_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-basic_icon_factory_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-basic_icon_factory_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 basic_icon_factory_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
+basic_icon_factory_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
 basic_icon_factory_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+basic_icon_factory_get_menu_arrow_icon(REF, OUT) :- 
+	object_call(REF, getMenuArrowIcon, [], OUT).
+
+basic_icon_factory_get_menu_item_check_icon(REF, OUT) :- 
+	object_call(REF, getMenuItemCheckIcon, [], OUT).
+
+basic_icon_factory_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+basic_icon_factory_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+basic_icon_factory_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+basic_icon_factory_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+basic_icon_factory_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+basic_icon_factory_get_menu_item_arrow_icon(REF, OUT) :- 
+	object_call(REF, getMenuItemArrowIcon, [], OUT).
+
+basic_icon_factory_get_radio_button_icon(REF, OUT) :- 
+	object_call(REF, getRadioButtonIcon, [], OUT).
+
 basic_icon_factory_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-basic_icon_factory_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-basic_icon_factory_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

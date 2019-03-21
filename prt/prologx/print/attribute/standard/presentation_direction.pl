@@ -22,32 +22,29 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-presentation_direction_tobottom_toright(OUT) :- 
+presentation_direction_TOBOTTOM_TORIGHT(OUT) :- 
 	object_get('javax.print.attribute.standard.PresentationDirection', tobottom_toright, OUT).
 
-presentation_direction_tobottom_toleft(OUT) :- 
+presentation_direction_TOBOTTOM_TOLEFT(OUT) :- 
 	object_get('javax.print.attribute.standard.PresentationDirection', tobottom_toleft, OUT).
 
-presentation_direction_totop_toright(OUT) :- 
+presentation_direction_TOTOP_TORIGHT(OUT) :- 
 	object_get('javax.print.attribute.standard.PresentationDirection', totop_toright, OUT).
 
-presentation_direction_totop_toleft(OUT) :- 
+presentation_direction_TOTOP_TOLEFT(OUT) :- 
 	object_get('javax.print.attribute.standard.PresentationDirection', totop_toleft, OUT).
 
-presentation_direction_toright_tobottom(OUT) :- 
+presentation_direction_TORIGHT_TOBOTTOM(OUT) :- 
 	object_get('javax.print.attribute.standard.PresentationDirection', toright_tobottom, OUT).
 
-presentation_direction_toright_totop(OUT) :- 
+presentation_direction_TORIGHT_TOTOP(OUT) :- 
 	object_get('javax.print.attribute.standard.PresentationDirection', toright_totop, OUT).
 
-presentation_direction_toleft_tobottom(OUT) :- 
+presentation_direction_TOLEFT_TOBOTTOM(OUT) :- 
 	object_get('javax.print.attribute.standard.PresentationDirection', toleft_tobottom, OUT).
 
-presentation_direction_toleft_totop(OUT) :- 
+presentation_direction_TOLEFT_TOTOP(OUT) :- 
 	object_get('javax.print.attribute.standard.PresentationDirection', toleft_totop, OUT).
-
-presentation_direction_get_name(REF, OUT) :- 
-	object_call(REF, getName, [], OUT).
 
 presentation_direction_get_category(REF, OUT) :- 
 	object_call(REF, getCategory, [], OUT).
@@ -55,33 +52,36 @@ presentation_direction_get_category(REF, OUT) :-
 presentation_direction_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
+presentation_direction_get_name(REF, OUT) :- 
+	object_call(REF, getName, [], OUT).
+
+presentation_direction_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
+
 presentation_direction_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
 presentation_direction_clone(REF, OUT) :- 
 	object_call(REF, clone, [], OUT).
 
+presentation_direction_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
 presentation_direction_get_value(REF, OUT) :- 
 	object_call(REF, getValue, [], OUT).
 
-presentation_direction_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+presentation_direction_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-presentation_direction_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-presentation_direction_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+presentation_direction_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 presentation_direction_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-presentation_direction_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
+presentation_direction_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-presentation_direction_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-presentation_direction_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+presentation_direction_wait(REF) :- 
+	object_call(REF, wait, [], _).
 

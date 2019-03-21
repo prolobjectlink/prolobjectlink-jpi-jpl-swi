@@ -22,23 +22,14 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-simple_type_visitor6_visit_array(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, visitArray, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-simple_type_visitor6_visit_executable(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, visitExecutable, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 simple_type_visitor6_visit_declared(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, visitDeclared, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 simple_type_visitor6_visit_error(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, visitError, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-simple_type_visitor6_visit_no_type(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, visitNoType, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-simple_type_visitor6_visit_null(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, visitNull, '.'(ARG0, '.'(ARG1, [])), OUT).
+simple_type_visitor6_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 simple_type_visitor6_visit_primitive(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, visitPrimitive, '.'(ARG0, '.'(ARG1, [])), OUT).
@@ -46,38 +37,11 @@ simple_type_visitor6_visit_primitive(REF, ARG0, ARG1, OUT) :-
 simple_type_visitor6_visit_type_variable(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, visitTypeVariable, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-simple_type_visitor6_visit_wildcard(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, visitWildcard, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-simple_type_visitor6_visit(REF, ARG0, OUT) :- 
-	object_call(REF, visit, '.'(ARG0, []), OUT).
-
-simple_type_visitor6_visit(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, visit, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 simple_type_visitor6_visit_unknown(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, visitUnknown, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-simple_type_visitor6_visit_intersection(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, visitIntersection, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-simple_type_visitor6_visit_union(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, visitUnion, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-simple_type_visitor6_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-simple_type_visitor6_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-simple_type_visitor6_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-simple_type_visitor6_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-simple_type_visitor6_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+simple_type_visitor6_visit_executable(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, visitExecutable, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 simple_type_visitor6_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -85,9 +49,45 @@ simple_type_visitor6_hash_code(REF, OUT) :-
 simple_type_visitor6_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-simple_type_visitor6_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+simple_type_visitor6_visit(REF, ARG0, OUT) :- 
+	object_call(REF, visit, '.'(ARG0, []), OUT).
 
-simple_type_visitor6_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+simple_type_visitor6_visit(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, visit, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+simple_type_visitor6_visit_null(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, visitNull, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+simple_type_visitor6_visit_array(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, visitArray, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+simple_type_visitor6_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+simple_type_visitor6_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+simple_type_visitor6_visit_no_type(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, visitNoType, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+simple_type_visitor6_visit_union(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, visitUnion, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+simple_type_visitor6_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+simple_type_visitor6_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+simple_type_visitor6_visit_intersection(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, visitIntersection, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+simple_type_visitor6_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+simple_type_visitor6_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+simple_type_visitor6_visit_wildcard(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, visitWildcard, '.'(ARG0, '.'(ARG1, [])), OUT).
 

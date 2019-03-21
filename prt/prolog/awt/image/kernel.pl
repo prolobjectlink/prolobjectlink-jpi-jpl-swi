@@ -25,38 +25,14 @@
 kernel(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('java.awt.image.Kernel', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-kernel_clone(REF, OUT) :- 
-	object_call(REF, clone, [], OUT).
-
-kernel_get_kernel_data(REF, ARG0, OUT) :- 
-	object_call(REF, getKernelData, '.'(ARG0, []), OUT).
-
-kernel_get_x_origin(REF, OUT) :- 
-	object_call(REF, getXOrigin, [], OUT).
-
-kernel_get_y_origin(REF, OUT) :- 
-	object_call(REF, getYOrigin, [], OUT).
-
 kernel_get_height(REF, OUT) :- 
 	object_call(REF, getHeight, [], OUT).
-
-kernel_get_width(REF, OUT) :- 
-	object_call(REF, getWidth, [], OUT).
-
-kernel_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-kernel_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-kernel_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
 
 kernel_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-kernel_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+kernel_clone(REF, OUT) :- 
+	object_call(REF, clone, [], OUT).
 
 kernel_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -64,9 +40,33 @@ kernel_hash_code(REF, OUT) :-
 kernel_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-kernel_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+kernel_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-kernel_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+kernel_get_y_origin(REF, OUT) :- 
+	object_call(REF, getYOrigin, [], OUT).
+
+kernel_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+kernel_get_kernel_data(REF, ARG0, OUT) :- 
+	object_call(REF, getKernelData, '.'(ARG0, []), OUT).
+
+kernel_get_x_origin(REF, OUT) :- 
+	object_call(REF, getXOrigin, [], OUT).
+
+kernel_get_width(REF, OUT) :- 
+	object_call(REF, getWidth, [], OUT).
+
+kernel_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+kernel_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+kernel_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+kernel_wait(REF) :- 
+	object_call(REF, wait, [], _).
 

@@ -25,41 +25,17 @@
 observable(OUT) :- 
 	object_new('java.util.Observable', [], OUT).
 
-observable_add_observer(REF, ARG0, OUT) :- 
-	object_call(REF, addObserver, '.'(ARG0, []), OUT).
+observable_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+observable_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 observable_count_observers(REF, OUT) :- 
 	object_call(REF, countObservers, [], OUT).
 
-observable_delete_observer(REF, ARG0, OUT) :- 
-	object_call(REF, deleteObserver, '.'(ARG0, []), OUT).
-
-observable_delete_observers(REF, OUT) :- 
-	object_call(REF, deleteObservers, [], OUT).
-
-observable_has_changed(REF, OUT) :- 
-	object_call(REF, hasChanged, [], OUT).
-
-observable_notify_observers(REF, ARG0, OUT) :- 
-	object_call(REF, notifyObservers, '.'(ARG0, []), OUT).
-
-observable_notify_observers(REF, OUT) :- 
-	object_call(REF, notifyObservers, [], OUT).
-
-observable_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-observable_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-observable_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-observable_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-observable_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+observable_notify_observers(REF) :- 
+	object_call(REF, notifyObservers, [], _).
 
 observable_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -67,9 +43,33 @@ observable_hash_code(REF, OUT) :-
 observable_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-observable_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+observable_notify_observers(REF, ARG0) :- 
+	object_call(REF, notifyObservers, '.'(ARG0, []), _).
 
-observable_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+observable_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+observable_delete_observers(REF) :- 
+	object_call(REF, deleteObservers, [], _).
+
+observable_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+observable_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+observable_delete_observer(REF, ARG0) :- 
+	object_call(REF, deleteObserver, '.'(ARG0, []), _).
+
+observable_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+observable_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+observable_has_changed(REF, OUT) :- 
+	object_call(REF, hasChanged, [], OUT).
+
+observable_add_observer(REF, ARG0) :- 
+	object_call(REF, addObserver, '.'(ARG0, []), _).
 

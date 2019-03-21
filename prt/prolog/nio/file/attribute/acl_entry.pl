@@ -22,48 +22,48 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-acl_entry_type(REF, OUT) :- 
-	object_call(REF, type, [], OUT).
-
-acl_entry_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-acl_entry_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-acl_entry_flags(REF, OUT) :- 
-	object_call(REF, flags, [], OUT).
-
-acl_entry_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-acl_entry_permissions(REF, OUT) :- 
-	object_call(REF, permissions, [], OUT).
-
-acl_entry_new_builder(REF, ARG0, OUT) :- 
-	object_call(REF, newBuilder, '.'(ARG0, []), OUT).
-
-acl_entry_new_builder(REF, OUT) :- 
-	object_call(REF, newBuilder, [], OUT).
+acl_entry_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 acl_entry_principal(REF, OUT) :- 
 	object_call(REF, principal, [], OUT).
 
-acl_entry_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+acl_entry_type(REF, OUT) :- 
+	object_call(REF, type, [], OUT).
 
-acl_entry_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+acl_entry_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-acl_entry_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+acl_entry_flags(REF, OUT) :- 
+	object_call(REF, flags, [], OUT).
+
+acl_entry_new_builder(REF, OUT) :- 
+	object_call(REF, newBuilder, [], OUT).
 
 acl_entry_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-acl_entry_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+acl_entry_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-acl_entry_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+acl_entry_new_builder(REF, ARG0, OUT) :- 
+	object_call(REF, newBuilder, '.'(ARG0, []), OUT).
+
+acl_entry_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+acl_entry_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+acl_entry_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+acl_entry_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+acl_entry_permissions(REF, OUT) :- 
+	object_call(REF, permissions, [], OUT).
+
+acl_entry_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 

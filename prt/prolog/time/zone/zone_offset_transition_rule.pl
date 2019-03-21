@@ -22,63 +22,63 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
+zone_offset_transition_rule_get_month(REF, OUT) :- 
+	object_call(REF, getMonth, [], OUT).
+
+zone_offset_transition_rule_create_transition(REF, ARG0, OUT) :- 
+	object_call(REF, createTransition, '.'(ARG0, []), OUT).
+
+zone_offset_transition_rule_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+zone_offset_transition_rule_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+zone_offset_transition_rule_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+zone_offset_transition_rule_get_offset_after(REF, OUT) :- 
+	object_call(REF, getOffsetAfter, [], OUT).
+
+zone_offset_transition_rule_get_time_definition(REF, OUT) :- 
+	object_call(REF, getTimeDefinition, [], OUT).
+
+zone_offset_transition_rule_get_local_time(REF, OUT) :- 
+	object_call(REF, getLocalTime, [], OUT).
+
+zone_offset_transition_rule_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
+
+zone_offset_transition_rule_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+zone_offset_transition_rule_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+zone_offset_transition_rule_get_day_of_week(REF, OUT) :- 
+	object_call(REF, getDayOfWeek, [], OUT).
+
+zone_offset_transition_rule_get_standard_offset(REF, OUT) :- 
+	object_call(REF, getStandardOffset, [], OUT).
+
+zone_offset_transition_rule_of(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, ARG6, ARG7, ARG8, OUT) :- 
+	object_call(REF, of, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, '.'(ARG6, '.'(ARG7, '.'(ARG8, []))))))))), OUT).
+
 zone_offset_transition_rule_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 zone_offset_transition_rule_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-zone_offset_transition_rule_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-zone_offset_transition_rule_of(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, ARG6, ARG7, ARG8, OUT) :- 
-	object_call(REF, of, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, '.'(ARG6, '.'(ARG7, '.'(ARG8, []))))))))), OUT).
-
-zone_offset_transition_rule_get_offset_after(REF, OUT) :- 
-	object_call(REF, getOffsetAfter, [], OUT).
+zone_offset_transition_rule_is_midnight_end_of_day(REF, OUT) :- 
+	object_call(REF, isMidnightEndOfDay, [], OUT).
 
 zone_offset_transition_rule_get_offset_before(REF, OUT) :- 
 	object_call(REF, getOffsetBefore, [], OUT).
 
-zone_offset_transition_rule_get_day_of_week(REF, OUT) :- 
-	object_call(REF, getDayOfWeek, [], OUT).
-
-zone_offset_transition_rule_get_month(REF, OUT) :- 
-	object_call(REF, getMonth, [], OUT).
-
-zone_offset_transition_rule_get_standard_offset(REF, OUT) :- 
-	object_call(REF, getStandardOffset, [], OUT).
-
-zone_offset_transition_rule_create_transition(REF, ARG0, OUT) :- 
-	object_call(REF, createTransition, '.'(ARG0, []), OUT).
+zone_offset_transition_rule_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 zone_offset_transition_rule_get_day_of_month_indicator(REF, OUT) :- 
 	object_call(REF, getDayOfMonthIndicator, [], OUT).
-
-zone_offset_transition_rule_get_local_time(REF, OUT) :- 
-	object_call(REF, getLocalTime, [], OUT).
-
-zone_offset_transition_rule_get_time_definition(REF, OUT) :- 
-	object_call(REF, getTimeDefinition, [], OUT).
-
-zone_offset_transition_rule_is_midnight_end_of_day(REF, OUT) :- 
-	object_call(REF, isMidnightEndOfDay, [], OUT).
-
-zone_offset_transition_rule_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-zone_offset_transition_rule_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-zone_offset_transition_rule_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-zone_offset_transition_rule_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-zone_offset_transition_rule_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-zone_offset_transition_rule_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

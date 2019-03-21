@@ -28,47 +28,35 @@ checked_input_stream(ARG0, ARG1, OUT) :-
 checked_input_stream_read(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, read, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
+checked_input_stream_read(REF, ARG0, OUT) :- 
+	object_call(REF, read, '.'(ARG0, []), OUT).
+
+checked_input_stream_reset(REF) :- 
+	object_call(REF, reset, [], _).
+
+checked_input_stream_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
 checked_input_stream_read(REF, OUT) :- 
 	object_call(REF, read, [], OUT).
 
 checked_input_stream_skip(REF, ARG0, OUT) :- 
 	object_call(REF, skip, '.'(ARG0, []), OUT).
 
-checked_input_stream_get_checksum(REF, OUT) :- 
-	object_call(REF, getChecksum, [], OUT).
+checked_input_stream_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-checked_input_stream_read(REF, ARG0, OUT) :- 
-	object_call(REF, read, '.'(ARG0, []), OUT).
+checked_input_stream_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-checked_input_stream_close(REF, OUT) :- 
-	object_call(REF, close, [], OUT).
-
-checked_input_stream_available(REF, OUT) :- 
-	object_call(REF, available, [], OUT).
-
-checked_input_stream_mark(REF, ARG0, OUT) :- 
-	object_call(REF, mark, '.'(ARG0, []), OUT).
+checked_input_stream_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 checked_input_stream_mark_supported(REF, OUT) :- 
 	object_call(REF, markSupported, [], OUT).
 
-checked_input_stream_reset(REF, OUT) :- 
-	object_call(REF, reset, [], OUT).
-
-checked_input_stream_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-checked_input_stream_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-checked_input_stream_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-checked_input_stream_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-checked_input_stream_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+checked_input_stream_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 checked_input_stream_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -76,9 +64,21 @@ checked_input_stream_hash_code(REF, OUT) :-
 checked_input_stream_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-checked_input_stream_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+checked_input_stream_mark(REF, ARG0) :- 
+	object_call(REF, mark, '.'(ARG0, []), _).
 
-checked_input_stream_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+checked_input_stream_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+checked_input_stream_close(REF) :- 
+	object_call(REF, close, [], _).
+
+checked_input_stream_get_checksum(REF, OUT) :- 
+	object_call(REF, getChecksum, [], OUT).
+
+checked_input_stream_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+checked_input_stream_available(REF, OUT) :- 
+	object_call(REF, available, [], OUT).
 

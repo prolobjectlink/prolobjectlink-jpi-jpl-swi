@@ -22,26 +22,29 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-standard_watch_event_kinds_overflow(OUT) :- 
+standard_watch_event_kinds_OVERFLOW(OUT) :- 
 	object_get('java.nio.file.StandardWatchEventKinds', overflow, OUT).
 
-standard_watch_event_kinds_entry_create(OUT) :- 
+standard_watch_event_kinds_ENTRY_CREATE(OUT) :- 
 	object_get('java.nio.file.StandardWatchEventKinds', entry_create, OUT).
 
-standard_watch_event_kinds_entry_delete(OUT) :- 
+standard_watch_event_kinds_ENTRY_DELETE(OUT) :- 
 	object_get('java.nio.file.StandardWatchEventKinds', entry_delete, OUT).
 
-standard_watch_event_kinds_entry_modify(OUT) :- 
+standard_watch_event_kinds_ENTRY_MODIFY(OUT) :- 
 	object_get('java.nio.file.StandardWatchEventKinds', entry_modify, OUT).
 
-standard_watch_event_kinds_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+standard_watch_event_kinds_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
-standard_watch_event_kinds_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+standard_watch_event_kinds_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-standard_watch_event_kinds_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+standard_watch_event_kinds_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+standard_watch_event_kinds_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
 standard_watch_event_kinds_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
@@ -49,15 +52,12 @@ standard_watch_event_kinds_equals(REF, ARG0, OUT) :-
 standard_watch_event_kinds_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-standard_watch_event_kinds_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+standard_watch_event_kinds_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-standard_watch_event_kinds_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
+standard_watch_event_kinds_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-standard_watch_event_kinds_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-standard_watch_event_kinds_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+standard_watch_event_kinds_wait(REF) :- 
+	object_call(REF, wait, [], _).
 

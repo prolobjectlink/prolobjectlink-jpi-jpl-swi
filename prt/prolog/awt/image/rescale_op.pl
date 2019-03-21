@@ -28,17 +28,20 @@ rescale_op(ARG0, ARG1, ARG2, OUT) :-
 rescale_op(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('java.awt.image.RescaleOp', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-rescale_op_filter(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, filter, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-rescale_op_filter(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, filter, '.'(ARG0, '.'(ARG1, [])), OUT).
+rescale_op_create_compatible_dest_image(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, createCompatibleDestImage, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 rescale_op_get_offsets(REF, ARG0, OUT) :- 
 	object_call(REF, getOffsets, '.'(ARG0, []), OUT).
 
-rescale_op_get_num_factors(REF, OUT) :- 
-	object_call(REF, getNumFactors, [], OUT).
+rescale_op_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+rescale_op_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+rescale_op_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
 rescale_op_get_scale_factors(REF, ARG0, OUT) :- 
 	object_call(REF, getScaleFactors, '.'(ARG0, []), OUT).
@@ -49,42 +52,39 @@ rescale_op_get_bounds2_d(REF, ARG0, OUT) :-
 rescale_op_get_bounds2_d(REF, ARG0, OUT) :- 
 	object_call(REF, getBounds2D, '.'(ARG0, []), OUT).
 
-rescale_op_get_rendering_hints(REF, OUT) :- 
-	object_call(REF, getRenderingHints, [], OUT).
-
-rescale_op_create_compatible_dest_image(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, createCompatibleDestImage, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-rescale_op_create_compatible_dest_raster(REF, ARG0, OUT) :- 
-	object_call(REF, createCompatibleDestRaster, '.'(ARG0, []), OUT).
+rescale_op_get_num_factors(REF, OUT) :- 
+	object_call(REF, getNumFactors, [], OUT).
 
 rescale_op_get_point2_d(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, getPoint2D, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-rescale_op_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+rescale_op_create_compatible_dest_raster(REF, ARG0, OUT) :- 
+	object_call(REF, createCompatibleDestRaster, '.'(ARG0, []), OUT).
 
-rescale_op_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+rescale_op_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-rescale_op_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+rescale_op_get_rendering_hints(REF, OUT) :- 
+	object_call(REF, getRenderingHints, [], OUT).
 
 rescale_op_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-rescale_op_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+rescale_op_filter(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, filter, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-rescale_op_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+rescale_op_filter(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, filter, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 rescale_op_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-rescale_op_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+rescale_op_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-rescale_op_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+rescale_op_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+rescale_op_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 

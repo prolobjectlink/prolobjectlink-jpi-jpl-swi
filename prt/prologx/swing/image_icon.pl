@@ -22,14 +22,17 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-image_icon(ARG0, OUT) :- 
-	object_new('javax.swing.ImageIcon', '.'(ARG0, []), OUT).
+image_icon(ARG0, ARG1, OUT) :- 
+	object_new('javax.swing.ImageIcon', '.'(ARG0, '.'(ARG1, [])), OUT).
 
 image_icon(ARG0, ARG1, OUT) :- 
 	object_new('javax.swing.ImageIcon', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-image_icon(ARG0, OUT) :- 
-	object_new('javax.swing.ImageIcon', '.'(ARG0, []), OUT).
+image_icon(ARG0, ARG1, OUT) :- 
+	object_new('javax.swing.ImageIcon', '.'(ARG0, '.'(ARG1, [])), OUT).
+
+image_icon(ARG0, ARG1, OUT) :- 
+	object_new('javax.swing.ImageIcon', '.'(ARG0, '.'(ARG1, [])), OUT).
 
 image_icon(OUT) :- 
 	object_new('javax.swing.ImageIcon', [], OUT).
@@ -37,23 +40,32 @@ image_icon(OUT) :-
 image_icon(ARG0, OUT) :- 
 	object_new('javax.swing.ImageIcon', '.'(ARG0, []), OUT).
 
-image_icon(ARG0, ARG1, OUT) :- 
-	object_new('javax.swing.ImageIcon', '.'(ARG0, '.'(ARG1, [])), OUT).
-
-image_icon(ARG0, ARG1, OUT) :- 
-	object_new('javax.swing.ImageIcon', '.'(ARG0, '.'(ARG1, [])), OUT).
+image_icon(ARG0, OUT) :- 
+	object_new('javax.swing.ImageIcon', '.'(ARG0, []), OUT).
 
 image_icon(ARG0, OUT) :- 
 	object_new('javax.swing.ImageIcon', '.'(ARG0, []), OUT).
 
-image_icon(ARG0, ARG1, OUT) :- 
-	object_new('javax.swing.ImageIcon', '.'(ARG0, '.'(ARG1, [])), OUT).
+image_icon(ARG0, OUT) :- 
+	object_new('javax.swing.ImageIcon', '.'(ARG0, []), OUT).
+
+image_icon_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+image_icon_get_description(REF, OUT) :- 
+	object_call(REF, getDescription, [], OUT).
 
 image_icon_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-image_icon_get_image(REF, OUT) :- 
-	object_call(REF, getImage, [], OUT).
+image_icon_paint_icon(REF, ARG0, ARG1, ARG2, ARG3) :- 
+	object_call(REF, paintIcon, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).
+
+image_icon_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+image_icon_set_image_observer(REF, ARG0) :- 
+	object_call(REF, setImageObserver, '.'(ARG0, []), _).
 
 image_icon_get_accessible_context(REF, OUT) :- 
 	object_call(REF, getAccessibleContext, [], OUT).
@@ -61,51 +73,39 @@ image_icon_get_accessible_context(REF, OUT) :-
 image_icon_get_icon_height(REF, OUT) :- 
 	object_call(REF, getIconHeight, [], OUT).
 
-image_icon_get_icon_width(REF, OUT) :- 
-	object_call(REF, getIconWidth, [], OUT).
-
-image_icon_paint_icon(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, paintIcon, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
-image_icon_set_image(REF, ARG0, OUT) :- 
-	object_call(REF, setImage, '.'(ARG0, []), OUT).
-
-image_icon_get_image_load_status(REF, OUT) :- 
-	object_call(REF, getImageLoadStatus, [], OUT).
-
 image_icon_get_image_observer(REF, OUT) :- 
 	object_call(REF, getImageObserver, [], OUT).
 
-image_icon_set_description(REF, ARG0, OUT) :- 
-	object_call(REF, setDescription, '.'(ARG0, []), OUT).
+image_icon_set_description(REF, ARG0) :- 
+	object_call(REF, setDescription, '.'(ARG0, []), _).
 
-image_icon_set_image_observer(REF, ARG0, OUT) :- 
-	object_call(REF, setImageObserver, '.'(ARG0, []), OUT).
+image_icon_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-image_icon_get_description(REF, OUT) :- 
-	object_call(REF, getDescription, [], OUT).
+image_icon_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-image_icon_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+image_icon_get_icon_width(REF, OUT) :- 
+	object_call(REF, getIconWidth, [], OUT).
 
-image_icon_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+image_icon_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-image_icon_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+image_icon_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-image_icon_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-image_icon_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+image_icon_get_image(REF, OUT) :- 
+	object_call(REF, getImage, [], OUT).
 
 image_icon_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-image_icon_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+image_icon_set_image(REF, ARG0) :- 
+	object_call(REF, setImage, '.'(ARG0, []), _).
 
-image_icon_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+image_icon_get_image_load_status(REF, OUT) :- 
+	object_call(REF, getImageLoadStatus, [], OUT).
+
+image_icon_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 

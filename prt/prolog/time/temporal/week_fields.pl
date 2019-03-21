@@ -22,66 +22,66 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-week_fields_iso(OUT) :- 
+week_fields_ISO(OUT) :- 
 	object_get('java.time.temporal.WeekFields', iso, OUT).
 
-week_fields_sunday_start(OUT) :- 
+week_fields_SUNDAY_START(OUT) :- 
 	object_get('java.time.temporal.WeekFields', sunday_start, OUT).
 
-week_fields_week_based_years(OUT) :- 
+week_fields_WEEK_BASED_YEARS(OUT) :- 
 	object_get('java.time.temporal.WeekFields', week_based_years, OUT).
-
-week_fields_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 week_fields_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
+week_fields_week_of_year(REF, OUT) :- 
+	object_call(REF, weekOfYear, [], OUT).
+
+week_fields_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+week_fields_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+week_fields_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+week_fields_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+week_fields_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+week_fields_day_of_week(REF, OUT) :- 
+	object_call(REF, dayOfWeek, [], OUT).
+
+week_fields_get_minimal_days_in_first_week(REF, OUT) :- 
+	object_call(REF, getMinimalDaysInFirstWeek, [], OUT).
+
+week_fields_week_of_week_based_year(REF, OUT) :- 
+	object_call(REF, weekOfWeekBasedYear, [], OUT).
+
+week_fields_get_first_day_of_week(REF, OUT) :- 
+	object_call(REF, getFirstDayOfWeek, [], OUT).
+
+week_fields_week_of_month(REF, OUT) :- 
+	object_call(REF, weekOfMonth, [], OUT).
+
+week_fields_week_based_year(REF, OUT) :- 
+	object_call(REF, weekBasedYear, [], OUT).
+
+week_fields_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
 week_fields_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
+
+week_fields_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
 week_fields_of(REF, ARG0, OUT) :- 
 	object_call(REF, of, '.'(ARG0, []), OUT).
 
 week_fields_of(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, of, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-week_fields_day_of_week(REF, OUT) :- 
-	object_call(REF, dayOfWeek, [], OUT).
-
-week_fields_get_first_day_of_week(REF, OUT) :- 
-	object_call(REF, getFirstDayOfWeek, [], OUT).
-
-week_fields_get_minimal_days_in_first_week(REF, OUT) :- 
-	object_call(REF, getMinimalDaysInFirstWeek, [], OUT).
-
-week_fields_week_based_year(REF, OUT) :- 
-	object_call(REF, weekBasedYear, [], OUT).
-
-week_fields_week_of_month(REF, OUT) :- 
-	object_call(REF, weekOfMonth, [], OUT).
-
-week_fields_week_of_week_based_year(REF, OUT) :- 
-	object_call(REF, weekOfWeekBasedYear, [], OUT).
-
-week_fields_week_of_year(REF, OUT) :- 
-	object_call(REF, weekOfYear, [], OUT).
-
-week_fields_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-week_fields_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-week_fields_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-week_fields_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-week_fields_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-week_fields_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

@@ -25,41 +25,20 @@
 buffer_capabilities(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('java.awt.BufferCapabilities', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-buffer_capabilities_clone(REF, OUT) :- 
-	object_call(REF, clone, [], OUT).
+buffer_capabilities_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-buffer_capabilities_get_back_buffer_capabilities(REF, OUT) :- 
-	object_call(REF, getBackBufferCapabilities, [], OUT).
-
-buffer_capabilities_get_flip_contents(REF, OUT) :- 
-	object_call(REF, getFlipContents, [], OUT).
-
-buffer_capabilities_get_front_buffer_capabilities(REF, OUT) :- 
-	object_call(REF, getFrontBufferCapabilities, [], OUT).
-
-buffer_capabilities_is_full_screen_required(REF, OUT) :- 
-	object_call(REF, isFullScreenRequired, [], OUT).
-
-buffer_capabilities_is_multi_buffer_available(REF, OUT) :- 
-	object_call(REF, isMultiBufferAvailable, [], OUT).
-
-buffer_capabilities_is_page_flipping(REF, OUT) :- 
-	object_call(REF, isPageFlipping, [], OUT).
-
-buffer_capabilities_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-buffer_capabilities_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-buffer_capabilities_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+buffer_capabilities_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 buffer_capabilities_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-buffer_capabilities_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+buffer_capabilities_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+buffer_capabilities_is_multi_buffer_available(REF, OUT) :- 
+	object_call(REF, isMultiBufferAvailable, [], OUT).
 
 buffer_capabilities_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -67,9 +46,30 @@ buffer_capabilities_hash_code(REF, OUT) :-
 buffer_capabilities_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-buffer_capabilities_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+buffer_capabilities_get_front_buffer_capabilities(REF, OUT) :- 
+	object_call(REF, getFrontBufferCapabilities, [], OUT).
 
-buffer_capabilities_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+buffer_capabilities_is_full_screen_required(REF, OUT) :- 
+	object_call(REF, isFullScreenRequired, [], OUT).
+
+buffer_capabilities_get_flip_contents(REF, OUT) :- 
+	object_call(REF, getFlipContents, [], OUT).
+
+buffer_capabilities_is_page_flipping(REF, OUT) :- 
+	object_call(REF, isPageFlipping, [], OUT).
+
+buffer_capabilities_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+buffer_capabilities_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+buffer_capabilities_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+buffer_capabilities_get_back_buffer_capabilities(REF, OUT) :- 
+	object_call(REF, getBackBufferCapabilities, [], OUT).
+
+buffer_capabilities_clone(REF, OUT) :- 
+	object_call(REF, clone, [], OUT).
 

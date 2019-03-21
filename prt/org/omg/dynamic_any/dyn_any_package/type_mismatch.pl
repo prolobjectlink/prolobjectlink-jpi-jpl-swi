@@ -28,56 +28,20 @@ type_mismatch(OUT) :-
 type_mismatch(ARG0, OUT) :- 
 	object_new('org.omg.DynamicAny.DynAnyPackage.TypeMismatch', '.'(ARG0, []), OUT).
 
-type_mismatch_print_stack_trace(REF, OUT) :- 
-	object_call(REF, printStackTrace, [], OUT).
-
-type_mismatch_print_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, printStackTrace, '.'(ARG0, []), OUT).
-
-type_mismatch_print_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, printStackTrace, '.'(ARG0, []), OUT).
-
-type_mismatch_fill_in_stack_trace(REF, OUT) :- 
-	object_call(REF, fillInStackTrace, [], OUT).
-
-type_mismatch_get_cause(REF, OUT) :- 
-	object_call(REF, getCause, [], OUT).
-
 type_mismatch_init_cause(REF, ARG0, OUT) :- 
 	object_call(REF, initCause, '.'(ARG0, []), OUT).
 
-type_mismatch_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-type_mismatch_add_suppressed(REF, ARG0, OUT) :- 
-	object_call(REF, addSuppressed, '.'(ARG0, []), OUT).
-
-type_mismatch_get_localized_message(REF, OUT) :- 
-	object_call(REF, getLocalizedMessage, [], OUT).
-
-type_mismatch_get_message(REF, OUT) :- 
-	object_call(REF, getMessage, [], OUT).
-
-type_mismatch_get_stack_trace(REF, OUT) :- 
-	object_call(REF, getStackTrace, [], OUT).
-
-type_mismatch_get_suppressed(REF, OUT) :- 
-	object_call(REF, getSuppressed, [], OUT).
-
-type_mismatch_set_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, setStackTrace, '.'(ARG0, []), OUT).
-
-type_mismatch_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-type_mismatch_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-type_mismatch_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+type_mismatch_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 type_mismatch_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+type_mismatch_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+type_mismatch_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 type_mismatch_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -85,9 +49,45 @@ type_mismatch_hash_code(REF, OUT) :-
 type_mismatch_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-type_mismatch_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+type_mismatch_get_message(REF, OUT) :- 
+	object_call(REF, getMessage, [], OUT).
 
-type_mismatch_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+type_mismatch_get_localized_message(REF, OUT) :- 
+	object_call(REF, getLocalizedMessage, [], OUT).
+
+type_mismatch_set_stack_trace(REF, ARG0) :- 
+	object_call(REF, setStackTrace, '.'(ARG0, []), _).
+
+type_mismatch_print_stack_trace(REF) :- 
+	object_call(REF, printStackTrace, [], _).
+
+type_mismatch_print_stack_trace(REF, ARG0) :- 
+	object_call(REF, printStackTrace, '.'(ARG0, []), _).
+
+type_mismatch_print_stack_trace(REF, ARG0) :- 
+	object_call(REF, printStackTrace, '.'(ARG0, []), _).
+
+type_mismatch_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+type_mismatch_get_suppressed(REF, OUT) :- 
+	object_call(REF, getSuppressed, [], OUT).
+
+type_mismatch_get_cause(REF, OUT) :- 
+	object_call(REF, getCause, [], OUT).
+
+type_mismatch_fill_in_stack_trace(REF, OUT) :- 
+	object_call(REF, fillInStackTrace, [], OUT).
+
+type_mismatch_get_stack_trace(REF, OUT) :- 
+	object_call(REF, getStackTrace, [], OUT).
+
+type_mismatch_add_suppressed(REF, ARG0) :- 
+	object_call(REF, addSuppressed, '.'(ARG0, []), _).
+
+type_mismatch_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+type_mismatch_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

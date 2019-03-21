@@ -25,120 +25,120 @@
 default_handler2(OUT) :- 
 	object_new('org.xml.sax.ext.DefaultHandler2', [], OUT).
 
-default_handler2_comment(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, comment, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+default_handler2_fatal_error(REF, ARG0) :- 
+	object_call(REF, fatalError, '.'(ARG0, []), _).
 
-default_handler2_end_c_d_a_t_a(REF, OUT) :- 
-	object_call(REF, endCDATA, [], OUT).
-
-default_handler2_end_d_t_d(REF, OUT) :- 
-	object_call(REF, endDTD, [], OUT).
-
-default_handler2_end_entity(REF, ARG0, OUT) :- 
-	object_call(REF, endEntity, '.'(ARG0, []), OUT).
-
-default_handler2_start_c_d_a_t_a(REF, OUT) :- 
-	object_call(REF, startCDATA, [], OUT).
-
-default_handler2_start_d_t_d(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, startDTD, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-default_handler2_start_entity(REF, ARG0, OUT) :- 
-	object_call(REF, startEntity, '.'(ARG0, []), OUT).
-
-default_handler2_resolve_entity(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, resolveEntity, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
-default_handler2_resolve_entity(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, resolveEntity, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-default_handler2_attribute_decl(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
-	object_call(REF, attributeDecl, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
-
-default_handler2_element_decl(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, elementDecl, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-default_handler2_external_entity_decl(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, externalEntityDecl, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-default_handler2_internal_entity_decl(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, internalEntityDecl, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-default_handler2_get_external_subset(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getExternalSubset, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-default_handler2_error(REF, ARG0, OUT) :- 
-	object_call(REF, error, '.'(ARG0, []), OUT).
-
-default_handler2_warning(REF, ARG0, OUT) :- 
-	object_call(REF, warning, '.'(ARG0, []), OUT).
-
-default_handler2_characters(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, characters, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-default_handler2_end_document(REF, OUT) :- 
-	object_call(REF, endDocument, [], OUT).
-
-default_handler2_end_element(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, endElement, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-default_handler2_end_prefix_mapping(REF, ARG0, OUT) :- 
-	object_call(REF, endPrefixMapping, '.'(ARG0, []), OUT).
-
-default_handler2_fatal_error(REF, ARG0, OUT) :- 
-	object_call(REF, fatalError, '.'(ARG0, []), OUT).
-
-default_handler2_ignorable_whitespace(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, ignorableWhitespace, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-default_handler2_notation_decl(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, notationDecl, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-default_handler2_processing_instruction(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, processingInstruction, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-default_handler2_set_document_locator(REF, ARG0, OUT) :- 
-	object_call(REF, setDocumentLocator, '.'(ARG0, []), OUT).
-
-default_handler2_skipped_entity(REF, ARG0, OUT) :- 
-	object_call(REF, skippedEntity, '.'(ARG0, []), OUT).
-
-default_handler2_start_document(REF, OUT) :- 
-	object_call(REF, startDocument, [], OUT).
-
-default_handler2_start_element(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, startElement, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
-default_handler2_start_prefix_mapping(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, startPrefixMapping, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-default_handler2_unparsed_entity_decl(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, unparsedEntityDecl, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
-default_handler2_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-default_handler2_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-default_handler2_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-default_handler2_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+default_handler2_attribute_decl(REF, ARG0, ARG1, ARG2, ARG3, ARG4) :- 
+	object_call(REF, attributeDecl, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), _).
 
 default_handler2_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
+default_handler2_start_document(REF) :- 
+	object_call(REF, startDocument, [], _).
+
+default_handler2_end_prefix_mapping(REF, ARG0) :- 
+	object_call(REF, endPrefixMapping, '.'(ARG0, []), _).
+
+default_handler2_end_d_t_d(REF) :- 
+	object_call(REF, endDTD, [], _).
+
+default_handler2_end_c_d_a_t_a(REF) :- 
+	object_call(REF, endCDATA, [], _).
+
+default_handler2_set_document_locator(REF, ARG0) :- 
+	object_call(REF, setDocumentLocator, '.'(ARG0, []), _).
+
+default_handler2_start_c_d_a_t_a(REF) :- 
+	object_call(REF, startCDATA, [], _).
+
+default_handler2_processing_instruction(REF, ARG0, ARG1) :- 
+	object_call(REF, processingInstruction, '.'(ARG0, '.'(ARG1, [])), _).
+
+default_handler2_start_d_t_d(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, startDTD, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
 default_handler2_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
+
+default_handler2_warning(REF, ARG0) :- 
+	object_call(REF, warning, '.'(ARG0, []), _).
+
+default_handler2_external_entity_decl(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, externalEntityDecl, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+default_handler2_end_document(REF) :- 
+	object_call(REF, endDocument, [], _).
+
+default_handler2_start_prefix_mapping(REF, ARG0, ARG1) :- 
+	object_call(REF, startPrefixMapping, '.'(ARG0, '.'(ARG1, [])), _).
+
+default_handler2_characters(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, characters, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+default_handler2_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 default_handler2_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-default_handler2_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+default_handler2_start_entity(REF, ARG0) :- 
+	object_call(REF, startEntity, '.'(ARG0, []), _).
 
-default_handler2_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+default_handler2_end_element(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, endElement, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+default_handler2_comment(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, comment, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+default_handler2_get_external_subset(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getExternalSubset, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+default_handler2_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+default_handler2_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+default_handler2_element_decl(REF, ARG0, ARG1) :- 
+	object_call(REF, elementDecl, '.'(ARG0, '.'(ARG1, [])), _).
+
+default_handler2_internal_entity_decl(REF, ARG0, ARG1) :- 
+	object_call(REF, internalEntityDecl, '.'(ARG0, '.'(ARG1, [])), _).
+
+default_handler2_unparsed_entity_decl(REF, ARG0, ARG1, ARG2, ARG3) :- 
+	object_call(REF, unparsedEntityDecl, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).
+
+default_handler2_ignorable_whitespace(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, ignorableWhitespace, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+default_handler2_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+default_handler2_resolve_entity(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, resolveEntity, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+default_handler2_end_entity(REF, ARG0) :- 
+	object_call(REF, endEntity, '.'(ARG0, []), _).
+
+default_handler2_skipped_entity(REF, ARG0) :- 
+	object_call(REF, skippedEntity, '.'(ARG0, []), _).
+
+default_handler2_resolve_entity(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_call(REF, resolveEntity, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+
+default_handler2_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+default_handler2_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+default_handler2_error(REF, ARG0) :- 
+	object_call(REF, error, '.'(ARG0, []), _).
+
+default_handler2_notation_decl(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, notationDecl, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+default_handler2_start_element(REF, ARG0, ARG1, ARG2, ARG3) :- 
+	object_call(REF, startElement, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).
 

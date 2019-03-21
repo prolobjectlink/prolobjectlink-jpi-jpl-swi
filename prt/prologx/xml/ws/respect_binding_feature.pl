@@ -22,45 +22,45 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-respect_binding_feature_id(OUT) :- 
+respect_binding_feature_ID(OUT) :- 
 	object_get('javax.xml.ws.RespectBindingFeature', id, OUT).
-
-respect_binding_feature(OUT) :- 
-	object_new('javax.xml.ws.RespectBindingFeature', [], OUT).
 
 respect_binding_feature(ARG0, OUT) :- 
 	object_new('javax.xml.ws.RespectBindingFeature', '.'(ARG0, []), OUT).
 
-respect_binding_feature_get_i_d(REF, OUT) :- 
-	object_call(REF, getID, [], OUT).
+respect_binding_feature(OUT) :- 
+	object_new('javax.xml.ws.RespectBindingFeature', [], OUT).
 
-respect_binding_feature_is_enabled(REF, OUT) :- 
-	object_call(REF, isEnabled, [], OUT).
+respect_binding_feature_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-respect_binding_feature_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-respect_binding_feature_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-respect_binding_feature_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+respect_binding_feature_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 respect_binding_feature_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-respect_binding_feature_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+respect_binding_feature_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
+
+respect_binding_feature_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+respect_binding_feature_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 respect_binding_feature_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-respect_binding_feature_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
+respect_binding_feature_get_i_d(REF, OUT) :- 
+	object_call(REF, getID, [], OUT).
 
-respect_binding_feature_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+respect_binding_feature_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-respect_binding_feature_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+respect_binding_feature_is_enabled(REF, OUT) :- 
+	object_call(REF, isEnabled, [], OUT).
+
+respect_binding_feature_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

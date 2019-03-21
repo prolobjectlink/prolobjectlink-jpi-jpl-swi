@@ -22,62 +22,32 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-illegal_access_error(OUT) :- 
-	object_new('java.lang.IllegalAccessError', [], OUT).
-
 illegal_access_error(ARG0, OUT) :- 
 	object_new('java.lang.IllegalAccessError', '.'(ARG0, []), OUT).
 
-illegal_access_error_print_stack_trace(REF, OUT) :- 
-	object_call(REF, printStackTrace, [], OUT).
+illegal_access_error(OUT) :- 
+	object_new('java.lang.IllegalAccessError', [], OUT).
 
-illegal_access_error_print_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, printStackTrace, '.'(ARG0, []), OUT).
+illegal_access_error_print_stack_trace(REF, ARG0) :- 
+	object_call(REF, printStackTrace, '.'(ARG0, []), _).
 
-illegal_access_error_print_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, printStackTrace, '.'(ARG0, []), OUT).
+illegal_access_error_print_stack_trace(REF, ARG0) :- 
+	object_call(REF, printStackTrace, '.'(ARG0, []), _).
 
-illegal_access_error_fill_in_stack_trace(REF, OUT) :- 
-	object_call(REF, fillInStackTrace, [], OUT).
+illegal_access_error_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-illegal_access_error_get_cause(REF, OUT) :- 
-	object_call(REF, getCause, [], OUT).
+illegal_access_error_print_stack_trace(REF) :- 
+	object_call(REF, printStackTrace, [], _).
+
+illegal_access_error_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 illegal_access_error_init_cause(REF, ARG0, OUT) :- 
 	object_call(REF, initCause, '.'(ARG0, []), OUT).
 
-illegal_access_error_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-illegal_access_error_add_suppressed(REF, ARG0, OUT) :- 
-	object_call(REF, addSuppressed, '.'(ARG0, []), OUT).
-
-illegal_access_error_get_localized_message(REF, OUT) :- 
-	object_call(REF, getLocalizedMessage, [], OUT).
-
-illegal_access_error_get_message(REF, OUT) :- 
-	object_call(REF, getMessage, [], OUT).
-
-illegal_access_error_get_stack_trace(REF, OUT) :- 
-	object_call(REF, getStackTrace, [], OUT).
-
-illegal_access_error_get_suppressed(REF, OUT) :- 
-	object_call(REF, getSuppressed, [], OUT).
-
-illegal_access_error_set_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, setStackTrace, '.'(ARG0, []), OUT).
-
-illegal_access_error_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-illegal_access_error_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-illegal_access_error_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-illegal_access_error_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+illegal_access_error_set_stack_trace(REF, ARG0) :- 
+	object_call(REF, setStackTrace, '.'(ARG0, []), _).
 
 illegal_access_error_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -85,9 +55,39 @@ illegal_access_error_hash_code(REF, OUT) :-
 illegal_access_error_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-illegal_access_error_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+illegal_access_error_get_message(REF, OUT) :- 
+	object_call(REF, getMessage, [], OUT).
 
-illegal_access_error_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+illegal_access_error_get_suppressed(REF, OUT) :- 
+	object_call(REF, getSuppressed, [], OUT).
+
+illegal_access_error_get_localized_message(REF, OUT) :- 
+	object_call(REF, getLocalizedMessage, [], OUT).
+
+illegal_access_error_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+illegal_access_error_add_suppressed(REF, ARG0) :- 
+	object_call(REF, addSuppressed, '.'(ARG0, []), _).
+
+illegal_access_error_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+illegal_access_error_get_stack_trace(REF, OUT) :- 
+	object_call(REF, getStackTrace, [], OUT).
+
+illegal_access_error_get_cause(REF, OUT) :- 
+	object_call(REF, getCause, [], OUT).
+
+illegal_access_error_fill_in_stack_trace(REF, OUT) :- 
+	object_call(REF, fillInStackTrace, [], OUT).
+
+illegal_access_error_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+illegal_access_error_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+illegal_access_error_notify(REF) :- 
+	object_call(REF, notify, [], _).
 

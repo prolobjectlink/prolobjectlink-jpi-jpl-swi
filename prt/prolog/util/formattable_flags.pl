@@ -22,29 +22,14 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-formattable_flags_left_justify(OUT) :- 
+formattable_flags_LEFT_JUSTIFY(OUT) :- 
 	object_get('java.util.FormattableFlags', left_justify, OUT).
 
-formattable_flags_uppercase(OUT) :- 
+formattable_flags_UPPERCASE(OUT) :- 
 	object_get('java.util.FormattableFlags', uppercase, OUT).
 
-formattable_flags_alternate(OUT) :- 
+formattable_flags_ALTERNATE(OUT) :- 
 	object_get('java.util.FormattableFlags', alternate, OUT).
-
-formattable_flags_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-formattable_flags_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-formattable_flags_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-formattable_flags_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-formattable_flags_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
 
 formattable_flags_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -52,9 +37,24 @@ formattable_flags_hash_code(REF, OUT) :-
 formattable_flags_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-formattable_flags_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+formattable_flags_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-formattable_flags_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+formattable_flags_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+formattable_flags_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+formattable_flags_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+formattable_flags_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+formattable_flags_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+formattable_flags_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 

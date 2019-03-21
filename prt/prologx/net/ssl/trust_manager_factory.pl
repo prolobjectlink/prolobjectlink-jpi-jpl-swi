@@ -22,8 +22,23 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-trust_manager_factory_get_instance(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getInstance, '.'(ARG0, '.'(ARG1, [])), OUT).
+trust_manager_factory_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+trust_manager_factory_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+trust_manager_factory_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+trust_manager_factory_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+trust_manager_factory_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+trust_manager_factory_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 trust_manager_factory_get_instance(REF, ARG0, OUT) :- 
 	object_call(REF, getInstance, '.'(ARG0, []), OUT).
@@ -31,48 +46,33 @@ trust_manager_factory_get_instance(REF, ARG0, OUT) :-
 trust_manager_factory_get_instance(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, getInstance, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-trust_manager_factory_init(REF, ARG0, OUT) :- 
-	object_call(REF, init, '.'(ARG0, []), OUT).
-
-trust_manager_factory_init(REF, ARG0, OUT) :- 
-	object_call(REF, init, '.'(ARG0, []), OUT).
-
-trust_manager_factory_get_provider(REF, OUT) :- 
-	object_call(REF, getProvider, [], OUT).
-
-trust_manager_factory_get_algorithm(REF, OUT) :- 
-	object_call(REF, getAlgorithm, [], OUT).
-
-trust_manager_factory_get_trust_managers(REF, OUT) :- 
-	object_call(REF, getTrustManagers, [], OUT).
+trust_manager_factory_get_instance(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getInstance, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 trust_manager_factory_get_default_algorithm(REF, OUT) :- 
 	object_call(REF, getDefaultAlgorithm, [], OUT).
 
-trust_manager_factory_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-trust_manager_factory_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-trust_manager_factory_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-trust_manager_factory_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-trust_manager_factory_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
 trust_manager_factory_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
+
+trust_manager_factory_get_algorithm(REF, OUT) :- 
+	object_call(REF, getAlgorithm, [], OUT).
 
 trust_manager_factory_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-trust_manager_factory_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+trust_manager_factory_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-trust_manager_factory_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+trust_manager_factory_get_trust_managers(REF, OUT) :- 
+	object_call(REF, getTrustManagers, [], OUT).
+
+trust_manager_factory_init(REF, ARG0) :- 
+	object_call(REF, init, '.'(ARG0, []), _).
+
+trust_manager_factory_init(REF, ARG0) :- 
+	object_call(REF, init, '.'(ARG0, []), _).
+
+trust_manager_factory_get_provider(REF, OUT) :- 
+	object_call(REF, getProvider, [], OUT).
 

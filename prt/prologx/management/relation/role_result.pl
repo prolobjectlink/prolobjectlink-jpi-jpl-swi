@@ -25,42 +25,42 @@
 role_result(ARG0, ARG1, OUT) :- 
 	object_new('javax.management.relation.RoleResult', '.'(ARG0, '.'(ARG1, [])), OUT).
 
+role_result_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+role_result_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+role_result_set_roles(REF, ARG0) :- 
+	object_call(REF, setRoles, '.'(ARG0, []), _).
+
+role_result_set_roles_unresolved(REF, ARG0) :- 
+	object_call(REF, setRolesUnresolved, '.'(ARG0, []), _).
+
+role_result_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
 role_result_get_roles(REF, OUT) :- 
 	object_call(REF, getRoles, [], OUT).
-
-role_result_set_roles(REF, ARG0, OUT) :- 
-	object_call(REF, setRoles, '.'(ARG0, []), OUT).
-
-role_result_get_roles_unresolved(REF, OUT) :- 
-	object_call(REF, getRolesUnresolved, [], OUT).
-
-role_result_set_roles_unresolved(REF, ARG0, OUT) :- 
-	object_call(REF, setRolesUnresolved, '.'(ARG0, []), OUT).
-
-role_result_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-role_result_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-role_result_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
 
 role_result_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
+role_result_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
 role_result_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
-
-role_result_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
 
 role_result_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-role_result_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+role_result_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
-role_result_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+role_result_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+role_result_get_roles_unresolved(REF, OUT) :- 
+	object_call(REF, getRolesUnresolved, [], OUT).
 

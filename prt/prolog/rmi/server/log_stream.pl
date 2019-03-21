@@ -22,131 +22,83 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-log_stream_silent(OUT) :- 
+log_stream_SILENT(OUT) :- 
 	object_get('java.rmi.server.LogStream', silent, OUT).
 
-log_stream_brief(OUT) :- 
+log_stream_BRIEF(OUT) :- 
 	object_get('java.rmi.server.LogStream', brief, OUT).
 
-log_stream_verbose(OUT) :- 
+log_stream_VERBOSE(OUT) :- 
 	object_get('java.rmi.server.LogStream', verbose, OUT).
 
-log_stream_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+log_stream_print(REF, ARG0) :- 
+	object_call(REF, print, '.'(ARG0, []), _).
+
+log_stream_print(REF, ARG0) :- 
+	object_call(REF, print, '.'(ARG0, []), _).
+
+log_stream_print(REF, ARG0) :- 
+	object_call(REF, print, '.'(ARG0, []), _).
+
+log_stream_print(REF, ARG0) :- 
+	object_call(REF, print, '.'(ARG0, []), _).
+
+log_stream_print(REF, ARG0) :- 
+	object_call(REF, print, '.'(ARG0, []), _).
+
+log_stream_print(REF, ARG0) :- 
+	object_call(REF, print, '.'(ARG0, []), _).
+
+log_stream_print(REF, ARG0) :- 
+	object_call(REF, print, '.'(ARG0, []), _).
+
+log_stream_print(REF, ARG0) :- 
+	object_call(REF, print, '.'(ARG0, []), _).
+
+log_stream_print(REF, ARG0) :- 
+	object_call(REF, print, '.'(ARG0, []), _).
+
+log_stream_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+log_stream_set_default_stream(REF, ARG0) :- 
+	object_call(REF, setDefaultStream, '.'(ARG0, []), _).
 
 log_stream_log(REF, ARG0, OUT) :- 
 	object_call(REF, log, '.'(ARG0, []), OUT).
 
-log_stream_write(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, write, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+log_stream_println(REF) :- 
+	object_call(REF, println, [], _).
 
-log_stream_write(REF, ARG0, OUT) :- 
-	object_call(REF, write, '.'(ARG0, []), OUT).
+log_stream_println(REF, ARG0) :- 
+	object_call(REF, println, '.'(ARG0, []), _).
 
-log_stream_set_output_stream(REF, ARG0, OUT) :- 
-	object_call(REF, setOutputStream, '.'(ARG0, []), OUT).
+log_stream_println(REF, ARG0) :- 
+	object_call(REF, println, '.'(ARG0, []), _).
 
-log_stream_get_output_stream(REF, OUT) :- 
-	object_call(REF, getOutputStream, [], OUT).
+log_stream_println(REF, ARG0) :- 
+	object_call(REF, println, '.'(ARG0, []), _).
 
-log_stream_parse_level(REF, ARG0, OUT) :- 
-	object_call(REF, parseLevel, '.'(ARG0, []), OUT).
+log_stream_println(REF, ARG0) :- 
+	object_call(REF, println, '.'(ARG0, []), _).
 
-log_stream_get_default_stream(REF, OUT) :- 
-	object_call(REF, getDefaultStream, [], OUT).
+log_stream_println(REF, ARG0) :- 
+	object_call(REF, println, '.'(ARG0, []), _).
 
-log_stream_set_default_stream(REF, ARG0, OUT) :- 
-	object_call(REF, setDefaultStream, '.'(ARG0, []), OUT).
+log_stream_println(REF, ARG0) :- 
+	object_call(REF, println, '.'(ARG0, []), _).
 
-log_stream_println(REF, ARG0, OUT) :- 
-	object_call(REF, println, '.'(ARG0, []), OUT).
+log_stream_println(REF, ARG0) :- 
+	object_call(REF, println, '.'(ARG0, []), _).
 
-log_stream_println(REF, ARG0, OUT) :- 
-	object_call(REF, println, '.'(ARG0, []), OUT).
+log_stream_println(REF, ARG0) :- 
+	object_call(REF, println, '.'(ARG0, []), _).
 
-log_stream_println(REF, ARG0, OUT) :- 
-	object_call(REF, println, '.'(ARG0, []), OUT).
+log_stream_println(REF, ARG0) :- 
+	object_call(REF, println, '.'(ARG0, []), _).
 
-log_stream_println(REF, ARG0, OUT) :- 
-	object_call(REF, println, '.'(ARG0, []), OUT).
-
-log_stream_println(REF, ARG0, OUT) :- 
-	object_call(REF, println, '.'(ARG0, []), OUT).
-
-log_stream_println(REF, ARG0, OUT) :- 
-	object_call(REF, println, '.'(ARG0, []), OUT).
-
-log_stream_println(REF, OUT) :- 
-	object_call(REF, println, [], OUT).
-
-log_stream_println(REF, ARG0, OUT) :- 
-	object_call(REF, println, '.'(ARG0, []), OUT).
-
-log_stream_println(REF, ARG0, OUT) :- 
-	object_call(REF, println, '.'(ARG0, []), OUT).
-
-log_stream_println(REF, ARG0, OUT) :- 
-	object_call(REF, println, '.'(ARG0, []), OUT).
-
-log_stream_append(REF, ARG0, OUT) :- 
-	object_call(REF, append, '.'(ARG0, []), OUT).
-
-log_stream_append(REF, ARG0, OUT) :- 
-	object_call(REF, append, '.'(ARG0, []), OUT).
-
-log_stream_append(REF, ARG0, OUT) :- 
-	object_call(REF, append, '.'(ARG0, []), OUT).
-
-log_stream_append(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, append, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-log_stream_append(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, append, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-log_stream_append(REF, ARG0, OUT) :- 
-	object_call(REF, append, '.'(ARG0, []), OUT).
-
-log_stream_format(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, format, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-log_stream_format(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, format, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-log_stream_print(REF, ARG0, OUT) :- 
-	object_call(REF, print, '.'(ARG0, []), OUT).
-
-log_stream_print(REF, ARG0, OUT) :- 
-	object_call(REF, print, '.'(ARG0, []), OUT).
-
-log_stream_print(REF, ARG0, OUT) :- 
-	object_call(REF, print, '.'(ARG0, []), OUT).
-
-log_stream_print(REF, ARG0, OUT) :- 
-	object_call(REF, print, '.'(ARG0, []), OUT).
-
-log_stream_print(REF, ARG0, OUT) :- 
-	object_call(REF, print, '.'(ARG0, []), OUT).
-
-log_stream_print(REF, ARG0, OUT) :- 
-	object_call(REF, print, '.'(ARG0, []), OUT).
-
-log_stream_print(REF, ARG0, OUT) :- 
-	object_call(REF, print, '.'(ARG0, []), OUT).
-
-log_stream_print(REF, ARG0, OUT) :- 
-	object_call(REF, print, '.'(ARG0, []), OUT).
-
-log_stream_print(REF, ARG0, OUT) :- 
-	object_call(REF, print, '.'(ARG0, []), OUT).
-
-log_stream_close(REF, OUT) :- 
-	object_call(REF, close, [], OUT).
-
-log_stream_flush(REF, OUT) :- 
-	object_call(REF, flush, [], OUT).
-
-log_stream_check_error(REF, OUT) :- 
-	object_call(REF, checkError, [], OUT).
+log_stream_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
 log_stream_printf(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, printf, '.'(ARG0, '.'(ARG1, [])), OUT).
@@ -154,30 +106,78 @@ log_stream_printf(REF, ARG0, ARG1, OUT) :-
 log_stream_printf(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, printf, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-log_stream_write(REF, ARG0, OUT) :- 
-	object_call(REF, write, '.'(ARG0, []), OUT).
+log_stream_format(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, format, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-log_stream_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-log_stream_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-log_stream_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+log_stream_format(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, format, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 log_stream_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-log_stream_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+log_stream_set_output_stream(REF, ARG0) :- 
+	object_call(REF, setOutputStream, '.'(ARG0, []), _).
 
-log_stream_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
+log_stream_get_output_stream(REF, OUT) :- 
+	object_call(REF, getOutputStream, [], OUT).
 
-log_stream_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+log_stream_check_error(REF, OUT) :- 
+	object_call(REF, checkError, [], OUT).
 
-log_stream_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+log_stream_flush(REF) :- 
+	object_call(REF, flush, [], _).
+
+log_stream_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+log_stream_get_default_stream(REF, OUT) :- 
+	object_call(REF, getDefaultStream, [], OUT).
+
+log_stream_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+log_stream_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+log_stream_write(REF, ARG0) :- 
+	object_call(REF, write, '.'(ARG0, []), _).
+
+log_stream_write(REF, ARG0) :- 
+	object_call(REF, write, '.'(ARG0, []), _).
+
+log_stream_close(REF) :- 
+	object_call(REF, close, [], _).
+
+log_stream_write(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, write, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+log_stream_append(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, append, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+log_stream_append(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, append, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+log_stream_append(REF, ARG0, OUT) :- 
+	object_call(REF, append, '.'(ARG0, []), OUT).
+
+log_stream_append(REF, ARG0, OUT) :- 
+	object_call(REF, append, '.'(ARG0, []), OUT).
+
+log_stream_append(REF, ARG0, OUT) :- 
+	object_call(REF, append, '.'(ARG0, []), OUT).
+
+log_stream_append(REF, ARG0, OUT) :- 
+	object_call(REF, append, '.'(ARG0, []), OUT).
+
+log_stream_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+log_stream_parse_level(REF, ARG0, OUT) :- 
+	object_call(REF, parseLevel, '.'(ARG0, []), OUT).
+
+log_stream_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+log_stream_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 

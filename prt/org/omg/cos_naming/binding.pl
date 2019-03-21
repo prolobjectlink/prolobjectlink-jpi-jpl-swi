@@ -22,26 +22,14 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-binding(OUT) :- 
-	object_new('org.omg.CosNaming.Binding', [], OUT).
-
 binding(ARG0, ARG1, OUT) :- 
 	object_new('org.omg.CosNaming.Binding', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-binding_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-binding_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-binding_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+binding(OUT) :- 
+	object_new('org.omg.CosNaming.Binding', [], OUT).
 
 binding_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-binding_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
 
 binding_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -49,9 +37,21 @@ binding_hash_code(REF, OUT) :-
 binding_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-binding_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+binding_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-binding_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+binding_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+binding_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+binding_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+binding_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+binding_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 

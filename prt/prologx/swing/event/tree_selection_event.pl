@@ -28,11 +28,8 @@ tree_selection_event(ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :-
 tree_selection_event(ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
 	object_new('javax.swing.event.TreeSelectionEvent', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
 
-tree_selection_event_get_path(REF, OUT) :- 
-	object_call(REF, getPath, [], OUT).
-
-tree_selection_event_clone_with_source(REF, ARG0, OUT) :- 
-	object_call(REF, cloneWithSource, '.'(ARG0, []), OUT).
+tree_selection_event_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 tree_selection_event_get_new_lead_selection_path(REF, OUT) :- 
 	object_call(REF, getNewLeadSelectionPath, [], OUT).
@@ -40,14 +37,17 @@ tree_selection_event_get_new_lead_selection_path(REF, OUT) :-
 tree_selection_event_get_old_lead_selection_path(REF, OUT) :- 
 	object_call(REF, getOldLeadSelectionPath, [], OUT).
 
-tree_selection_event_get_paths(REF, OUT) :- 
-	object_call(REF, getPaths, [], OUT).
+tree_selection_event_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+tree_selection_event_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+tree_selection_event_get_path(REF, OUT) :- 
+	object_call(REF, getPath, [], OUT).
 
 tree_selection_event_is_added_path(REF, ARG0, OUT) :- 
 	object_call(REF, isAddedPath, '.'(ARG0, []), OUT).
-
-tree_selection_event_is_added_path(REF, OUT) :- 
-	object_call(REF, isAddedPath, [], OUT).
 
 tree_selection_event_is_added_path(REF, ARG0, OUT) :- 
 	object_call(REF, isAddedPath, '.'(ARG0, []), OUT).
@@ -55,20 +55,8 @@ tree_selection_event_is_added_path(REF, ARG0, OUT) :-
 tree_selection_event_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-tree_selection_event_get_source(REF, OUT) :- 
-	object_call(REF, getSource, [], OUT).
-
-tree_selection_event_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-tree_selection_event_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-tree_selection_event_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-tree_selection_event_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+tree_selection_event_is_added_path(REF, OUT) :- 
+	object_call(REF, isAddedPath, [], OUT).
 
 tree_selection_event_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -76,9 +64,21 @@ tree_selection_event_hash_code(REF, OUT) :-
 tree_selection_event_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-tree_selection_event_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+tree_selection_event_get_paths(REF, OUT) :- 
+	object_call(REF, getPaths, [], OUT).
 
-tree_selection_event_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+tree_selection_event_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+tree_selection_event_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+tree_selection_event_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+tree_selection_event_clone_with_source(REF, ARG0, OUT) :- 
+	object_call(REF, cloneWithSource, '.'(ARG0, []), OUT).
+
+tree_selection_event_get_source(REF, OUT) :- 
+	object_call(REF, getSource, [], OUT).
 

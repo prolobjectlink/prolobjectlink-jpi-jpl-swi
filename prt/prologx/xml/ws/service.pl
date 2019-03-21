@@ -22,12 +22,6 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-service_create(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, create, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-service_create(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, create, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 service_create(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, create, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
@@ -37,47 +31,29 @@ service_create(REF, ARG0, OUT) :-
 service_get_port(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, getPort, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-service_get_port(REF, ARG0, OUT) :- 
-	object_call(REF, getPort, '.'(ARG0, []), OUT).
-
-service_get_port(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, getPort, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-service_get_port(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, getPort, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
 service_get_port(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, getPort, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-service_get_executor(REF, OUT) :- 
-	object_call(REF, getExecutor, [], OUT).
+service_create(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, create, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-service_set_executor(REF, ARG0, OUT) :- 
-	object_call(REF, setExecutor, '.'(ARG0, []), OUT).
+service_create(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, create, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-service_add_port(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, addPort, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+service_get_port(REF, ARG0, OUT) :- 
+	object_call(REF, getPort, '.'(ARG0, []), OUT).
 
-service_create_dispatch(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, createDispatch, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+service_get_w_s_d_l_document_location(REF, OUT) :- 
+	object_call(REF, getWSDLDocumentLocation, [], OUT).
 
-service_create_dispatch(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, createDispatch, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+service_set_handler_resolver(REF, ARG0) :- 
+	object_call(REF, setHandlerResolver, '.'(ARG0, []), _).
 
-service_create_dispatch(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, createDispatch, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+service_get_port(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, getPort, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-service_create_dispatch(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, createDispatch, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
-service_create_dispatch(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, createDispatch, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-service_create_dispatch(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, createDispatch, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-service_get_handler_resolver(REF, OUT) :- 
-	object_call(REF, getHandlerResolver, [], OUT).
+service_get_port(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, getPort, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
 service_get_ports(REF, OUT) :- 
 	object_call(REF, getPorts, [], OUT).
@@ -85,36 +61,60 @@ service_get_ports(REF, OUT) :-
 service_get_service_name(REF, OUT) :- 
 	object_call(REF, getServiceName, [], OUT).
 
-service_get_w_s_d_l_document_location(REF, OUT) :- 
-	object_call(REF, getWSDLDocumentLocation, [], OUT).
+service_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-service_set_handler_resolver(REF, ARG0, OUT) :- 
-	object_call(REF, setHandlerResolver, '.'(ARG0, []), OUT).
-
-service_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-service_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-service_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-service_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+service_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 service_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-service_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+service_set_executor(REF, ARG0) :- 
+	object_call(REF, setExecutor, '.'(ARG0, []), _).
+
+service_add_port(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, addPort, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+service_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 service_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-service_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+service_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-service_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+service_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+service_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+service_get_handler_resolver(REF, OUT) :- 
+	object_call(REF, getHandlerResolver, [], OUT).
+
+service_create_dispatch(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, createDispatch, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+service_create_dispatch(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, createDispatch, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+service_get_executor(REF, OUT) :- 
+	object_call(REF, getExecutor, [], OUT).
+
+service_create_dispatch(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_call(REF, createDispatch, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+
+service_create_dispatch(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_call(REF, createDispatch, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+
+service_create_dispatch(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_call(REF, createDispatch, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+
+service_create_dispatch(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_call(REF, createDispatch, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+
+service_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 

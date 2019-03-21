@@ -25,8 +25,29 @@
 drag_gesture_event(ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_new('java.awt.dnd.DragGestureEvent', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
+drag_gesture_event_start_drag(REF, ARG0, ARG1, ARG2, ARG3, ARG4) :- 
+	object_call(REF, startDrag, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), _).
+
 drag_gesture_event_iterator(REF, OUT) :- 
 	object_call(REF, iterator, [], OUT).
+
+drag_gesture_event_get_source_as_drag_gesture_recognizer(REF, OUT) :- 
+	object_call(REF, getSourceAsDragGestureRecognizer, [], OUT).
+
+drag_gesture_event_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+drag_gesture_event_start_drag(REF, ARG0, ARG1) :- 
+	object_call(REF, startDrag, '.'(ARG0, '.'(ARG1, [])), _).
+
+drag_gesture_event_start_drag(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, startDrag, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+drag_gesture_event_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+drag_gesture_event_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 drag_gesture_event_to_array(REF, ARG0, OUT) :- 
 	object_call(REF, toArray, '.'(ARG0, []), OUT).
@@ -34,50 +55,17 @@ drag_gesture_event_to_array(REF, ARG0, OUT) :-
 drag_gesture_event_to_array(REF, OUT) :- 
 	object_call(REF, toArray, [], OUT).
 
-drag_gesture_event_get_component(REF, OUT) :- 
-	object_call(REF, getComponent, [], OUT).
-
-drag_gesture_event_get_drag_action(REF, OUT) :- 
-	object_call(REF, getDragAction, [], OUT).
-
-drag_gesture_event_get_drag_origin(REF, OUT) :- 
-	object_call(REF, getDragOrigin, [], OUT).
-
-drag_gesture_event_get_drag_source(REF, OUT) :- 
-	object_call(REF, getDragSource, [], OUT).
-
-drag_gesture_event_get_source_as_drag_gesture_recognizer(REF, OUT) :- 
-	object_call(REF, getSourceAsDragGestureRecognizer, [], OUT).
-
-drag_gesture_event_get_trigger_event(REF, OUT) :- 
-	object_call(REF, getTriggerEvent, [], OUT).
-
-drag_gesture_event_start_drag(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, startDrag, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-drag_gesture_event_start_drag(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, startDrag, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-drag_gesture_event_start_drag(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
-	object_call(REF, startDrag, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
-
-drag_gesture_event_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+drag_gesture_event_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 drag_gesture_event_get_source(REF, OUT) :- 
 	object_call(REF, getSource, [], OUT).
 
-drag_gesture_event_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+drag_gesture_event_get_drag_source(REF, OUT) :- 
+	object_call(REF, getDragSource, [], OUT).
 
-drag_gesture_event_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-drag_gesture_event_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-drag_gesture_event_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+drag_gesture_event_get_drag_origin(REF, OUT) :- 
+	object_call(REF, getDragOrigin, [], OUT).
 
 drag_gesture_event_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -85,9 +73,21 @@ drag_gesture_event_hash_code(REF, OUT) :-
 drag_gesture_event_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-drag_gesture_event_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+drag_gesture_event_get_trigger_event(REF, OUT) :- 
+	object_call(REF, getTriggerEvent, [], OUT).
 
-drag_gesture_event_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+drag_gesture_event_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+drag_gesture_event_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+drag_gesture_event_get_component(REF, OUT) :- 
+	object_call(REF, getComponent, [], OUT).
+
+drag_gesture_event_get_drag_action(REF, OUT) :- 
+	object_call(REF, getDragAction, [], OUT).
+
+drag_gesture_event_notify(REF) :- 
+	object_call(REF, notify, [], _).
 

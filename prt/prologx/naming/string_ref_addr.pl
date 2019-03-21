@@ -25,36 +25,36 @@
 string_ref_addr(ARG0, ARG1, OUT) :- 
 	object_new('javax.naming.StringRefAddr', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-string_ref_addr_get_content(REF, OUT) :- 
-	object_call(REF, getContent, [], OUT).
+string_ref_addr_get_type(REF, OUT) :- 
+	object_call(REF, getType, [], OUT).
 
 string_ref_addr_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-string_ref_addr_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+string_ref_addr_get_content(REF, OUT) :- 
+	object_call(REF, getContent, [], OUT).
+
+string_ref_addr_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 string_ref_addr_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-string_ref_addr_get_type(REF, OUT) :- 
-	object_call(REF, getType, [], OUT).
+string_ref_addr_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-string_ref_addr_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+string_ref_addr_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-string_ref_addr_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-string_ref_addr_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+string_ref_addr_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 string_ref_addr_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-string_ref_addr_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+string_ref_addr_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-string_ref_addr_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+string_ref_addr_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 

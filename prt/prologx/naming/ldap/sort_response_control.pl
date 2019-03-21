@@ -22,53 +22,56 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-sort_response_control_oid(OUT) :- 
+sort_response_control_OID(OUT) :- 
 	object_get('javax.naming.ldap.SortResponseControl', oid, OUT).
 
-sort_response_control_critical(OUT) :- 
+sort_response_control_CRITICAL(OUT) :- 
 	object_get('javax.naming.ldap.SortResponseControl', critical, OUT).
 
-sort_response_control_noncritical(OUT) :- 
+sort_response_control_NONCRITICAL(OUT) :- 
 	object_get('javax.naming.ldap.SortResponseControl', noncritical, OUT).
 
 sort_response_control(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('javax.naming.ldap.SortResponseControl', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-sort_response_control_get_exception(REF, OUT) :- 
-	object_call(REF, getException, [], OUT).
-
 sort_response_control_get_attribute_i_d(REF, OUT) :- 
 	object_call(REF, getAttributeID, [], OUT).
-
-sort_response_control_get_result_code(REF, OUT) :- 
-	object_call(REF, getResultCode, [], OUT).
-
-sort_response_control_is_sorted(REF, OUT) :- 
-	object_call(REF, isSorted, [], OUT).
 
 sort_response_control_get_i_d(REF, OUT) :- 
 	object_call(REF, getID, [], OUT).
 
-sort_response_control_is_critical(REF, OUT) :- 
-	object_call(REF, isCritical, [], OUT).
+sort_response_control_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+sort_response_control_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+sort_response_control_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+sort_response_control_get_exception(REF, OUT) :- 
+	object_call(REF, getException, [], OUT).
 
 sort_response_control_get_encoded_value(REF, OUT) :- 
 	object_call(REF, getEncodedValue, [], OUT).
 
-sort_response_control_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+sort_response_control_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-sort_response_control_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+sort_response_control_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-sort_response_control_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+sort_response_control_is_sorted(REF, OUT) :- 
+	object_call(REF, isSorted, [], OUT).
+
+sort_response_control_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+sort_response_control_get_result_code(REF, OUT) :- 
+	object_call(REF, getResultCode, [], OUT).
 
 sort_response_control_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-sort_response_control_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
 
 sort_response_control_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -76,9 +79,6 @@ sort_response_control_hash_code(REF, OUT) :-
 sort_response_control_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-sort_response_control_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-sort_response_control_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+sort_response_control_is_critical(REF, OUT) :- 
+	object_call(REF, isCritical, [], OUT).
 

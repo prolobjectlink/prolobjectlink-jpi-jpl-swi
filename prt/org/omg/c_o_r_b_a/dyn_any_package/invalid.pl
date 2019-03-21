@@ -22,72 +22,72 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-invalid(OUT) :- 
-	object_new('org.omg.CORBA.DynAnyPackage.Invalid', [], OUT).
-
 invalid(ARG0, OUT) :- 
 	object_new('org.omg.CORBA.DynAnyPackage.Invalid', '.'(ARG0, []), OUT).
 
-invalid_print_stack_trace(REF, OUT) :- 
-	object_call(REF, printStackTrace, [], OUT).
-
-invalid_print_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, printStackTrace, '.'(ARG0, []), OUT).
-
-invalid_print_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, printStackTrace, '.'(ARG0, []), OUT).
-
-invalid_fill_in_stack_trace(REF, OUT) :- 
-	object_call(REF, fillInStackTrace, [], OUT).
-
-invalid_get_cause(REF, OUT) :- 
-	object_call(REF, getCause, [], OUT).
+invalid(OUT) :- 
+	object_new('org.omg.CORBA.DynAnyPackage.Invalid', [], OUT).
 
 invalid_init_cause(REF, ARG0, OUT) :- 
 	object_call(REF, initCause, '.'(ARG0, []), OUT).
 
-invalid_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+invalid_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-invalid_add_suppressed(REF, ARG0, OUT) :- 
-	object_call(REF, addSuppressed, '.'(ARG0, []), OUT).
-
-invalid_get_localized_message(REF, OUT) :- 
-	object_call(REF, getLocalizedMessage, [], OUT).
+invalid_add_suppressed(REF, ARG0) :- 
+	object_call(REF, addSuppressed, '.'(ARG0, []), _).
 
 invalid_get_message(REF, OUT) :- 
 	object_call(REF, getMessage, [], OUT).
 
+invalid_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+invalid_get_localized_message(REF, OUT) :- 
+	object_call(REF, getLocalizedMessage, [], OUT).
+
+invalid_print_stack_trace(REF) :- 
+	object_call(REF, printStackTrace, [], _).
+
+invalid_set_stack_trace(REF, ARG0) :- 
+	object_call(REF, setStackTrace, '.'(ARG0, []), _).
+
+invalid_print_stack_trace(REF, ARG0) :- 
+	object_call(REF, printStackTrace, '.'(ARG0, []), _).
+
+invalid_print_stack_trace(REF, ARG0) :- 
+	object_call(REF, printStackTrace, '.'(ARG0, []), _).
+
+invalid_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
 invalid_get_stack_trace(REF, OUT) :- 
 	object_call(REF, getStackTrace, [], OUT).
-
-invalid_get_suppressed(REF, OUT) :- 
-	object_call(REF, getSuppressed, [], OUT).
-
-invalid_set_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, setStackTrace, '.'(ARG0, []), OUT).
-
-invalid_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-invalid_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-invalid_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
 
 invalid_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
+invalid_get_cause(REF, OUT) :- 
+	object_call(REF, getCause, [], OUT).
+
 invalid_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
+
+invalid_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+invalid_get_suppressed(REF, OUT) :- 
+	object_call(REF, getSuppressed, [], OUT).
+
+invalid_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+invalid_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 invalid_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-invalid_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-invalid_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+invalid_fill_in_stack_trace(REF, OUT) :- 
+	object_call(REF, fillInStackTrace, [], OUT).
 

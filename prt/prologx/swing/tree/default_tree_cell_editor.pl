@@ -28,75 +28,75 @@ default_tree_cell_editor(ARG0, ARG1, OUT) :-
 default_tree_cell_editor(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('javax.swing.tree.DefaultTreeCellEditor', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-default_tree_cell_editor_get_cell_editor_listeners(REF, OUT) :- 
-	object_call(REF, getCellEditorListeners, [], OUT).
-
-default_tree_cell_editor_value_changed(REF, ARG0, OUT) :- 
-	object_call(REF, valueChanged, '.'(ARG0, []), OUT).
-
-default_tree_cell_editor_action_performed(REF, ARG0, OUT) :- 
-	object_call(REF, actionPerformed, '.'(ARG0, []), OUT).
-
-default_tree_cell_editor_get_font(REF, OUT) :- 
-	object_call(REF, getFont, [], OUT).
-
-default_tree_cell_editor_set_font(REF, ARG0, OUT) :- 
-	object_call(REF, setFont, '.'(ARG0, []), OUT).
-
-default_tree_cell_editor_get_border_selection_color(REF, OUT) :- 
-	object_call(REF, getBorderSelectionColor, [], OUT).
-
-default_tree_cell_editor_set_border_selection_color(REF, ARG0, OUT) :- 
-	object_call(REF, setBorderSelectionColor, '.'(ARG0, []), OUT).
-
-default_tree_cell_editor_add_cell_editor_listener(REF, ARG0, OUT) :- 
-	object_call(REF, addCellEditorListener, '.'(ARG0, []), OUT).
-
-default_tree_cell_editor_cancel_cell_editing(REF, OUT) :- 
-	object_call(REF, cancelCellEditing, [], OUT).
-
-default_tree_cell_editor_get_cell_editor_value(REF, OUT) :- 
-	object_call(REF, getCellEditorValue, [], OUT).
-
-default_tree_cell_editor_get_tree_cell_editor_component(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, OUT) :- 
-	object_call(REF, getTreeCellEditorComponent, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), OUT).
-
-default_tree_cell_editor_is_cell_editable(REF, ARG0, OUT) :- 
-	object_call(REF, isCellEditable, '.'(ARG0, []), OUT).
-
-default_tree_cell_editor_remove_cell_editor_listener(REF, ARG0, OUT) :- 
-	object_call(REF, removeCellEditorListener, '.'(ARG0, []), OUT).
-
-default_tree_cell_editor_should_select_cell(REF, ARG0, OUT) :- 
-	object_call(REF, shouldSelectCell, '.'(ARG0, []), OUT).
-
-default_tree_cell_editor_stop_cell_editing(REF, OUT) :- 
-	object_call(REF, stopCellEditing, [], OUT).
-
-default_tree_cell_editor_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-default_tree_cell_editor_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-default_tree_cell_editor_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
 default_tree_cell_editor_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-default_tree_cell_editor_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
 
 default_tree_cell_editor_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+default_tree_cell_editor_get_border_selection_color(REF, OUT) :- 
+	object_call(REF, getBorderSelectionColor, [], OUT).
+
+default_tree_cell_editor_get_tree_cell_editor_component(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, OUT) :- 
+	object_call(REF, getTreeCellEditorComponent, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), OUT).
+
+default_tree_cell_editor_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+default_tree_cell_editor_action_performed(REF, ARG0) :- 
+	object_call(REF, actionPerformed, '.'(ARG0, []), _).
+
+default_tree_cell_editor_get_cell_editor_value(REF, OUT) :- 
+	object_call(REF, getCellEditorValue, [], OUT).
+
 default_tree_cell_editor_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-default_tree_cell_editor_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+default_tree_cell_editor_value_changed(REF, ARG0) :- 
+	object_call(REF, valueChanged, '.'(ARG0, []), _).
 
-default_tree_cell_editor_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+default_tree_cell_editor_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+default_tree_cell_editor_cancel_cell_editing(REF) :- 
+	object_call(REF, cancelCellEditing, [], _).
+
+default_tree_cell_editor_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+default_tree_cell_editor_set_border_selection_color(REF, ARG0) :- 
+	object_call(REF, setBorderSelectionColor, '.'(ARG0, []), _).
+
+default_tree_cell_editor_stop_cell_editing(REF, OUT) :- 
+	object_call(REF, stopCellEditing, [], OUT).
+
+default_tree_cell_editor_add_cell_editor_listener(REF, ARG0) :- 
+	object_call(REF, addCellEditorListener, '.'(ARG0, []), _).
+
+default_tree_cell_editor_get_cell_editor_listeners(REF, OUT) :- 
+	object_call(REF, getCellEditorListeners, [], OUT).
+
+default_tree_cell_editor_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+default_tree_cell_editor_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+default_tree_cell_editor_remove_cell_editor_listener(REF, ARG0) :- 
+	object_call(REF, removeCellEditorListener, '.'(ARG0, []), _).
+
+default_tree_cell_editor_is_cell_editable(REF, ARG0, OUT) :- 
+	object_call(REF, isCellEditable, '.'(ARG0, []), OUT).
+
+default_tree_cell_editor_set_font(REF, ARG0) :- 
+	object_call(REF, setFont, '.'(ARG0, []), _).
+
+default_tree_cell_editor_should_select_cell(REF, ARG0, OUT) :- 
+	object_call(REF, shouldSelectCell, '.'(ARG0, []), OUT).
+
+default_tree_cell_editor_get_font(REF, OUT) :- 
+	object_call(REF, getFont, [], OUT).
+
+default_tree_cell_editor_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 

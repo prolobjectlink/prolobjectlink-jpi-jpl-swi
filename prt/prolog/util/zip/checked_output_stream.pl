@@ -25,35 +25,35 @@
 checked_output_stream(ARG0, ARG1, OUT) :- 
 	object_new('java.util.zip.CheckedOutputStream', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-checked_output_stream_write(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, write, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+checked_output_stream_close(REF) :- 
+	object_call(REF, close, [], _).
 
-checked_output_stream_write(REF, ARG0, OUT) :- 
-	object_call(REF, write, '.'(ARG0, []), OUT).
+checked_output_stream_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+checked_output_stream_flush(REF) :- 
+	object_call(REF, flush, [], _).
+
+checked_output_stream_write(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, write, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
 
 checked_output_stream_get_checksum(REF, OUT) :- 
 	object_call(REF, getChecksum, [], OUT).
 
-checked_output_stream_write(REF, ARG0, OUT) :- 
-	object_call(REF, write, '.'(ARG0, []), OUT).
-
-checked_output_stream_close(REF, OUT) :- 
-	object_call(REF, close, [], OUT).
-
-checked_output_stream_flush(REF, OUT) :- 
-	object_call(REF, flush, [], OUT).
-
-checked_output_stream_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-checked_output_stream_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-checked_output_stream_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+checked_output_stream_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 checked_output_stream_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+checked_output_stream_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+checked_output_stream_write(REF, ARG0) :- 
+	object_call(REF, write, '.'(ARG0, []), _).
+
+checked_output_stream_write(REF, ARG0) :- 
+	object_call(REF, write, '.'(ARG0, []), _).
 
 checked_output_stream_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
@@ -64,9 +64,9 @@ checked_output_stream_hash_code(REF, OUT) :-
 checked_output_stream_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-checked_output_stream_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+checked_output_stream_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-checked_output_stream_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+checked_output_stream_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 

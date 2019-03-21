@@ -25,39 +25,39 @@
 lock_info(ARG0, ARG1, OUT) :- 
 	object_new('java.lang.management.LockInfo', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-lock_info_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-lock_info_get_class_name(REF, OUT) :- 
-	object_call(REF, getClassName, [], OUT).
+lock_info_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
 lock_info_from(REF, ARG0, OUT) :- 
 	object_call(REF, from, '.'(ARG0, []), OUT).
 
+lock_info_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
 lock_info_get_identity_hash_code(REF, OUT) :- 
 	object_call(REF, getIdentityHashCode, [], OUT).
 
-lock_info_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+lock_info_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-lock_info_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+lock_info_get_class_name(REF, OUT) :- 
+	object_call(REF, getClassName, [], OUT).
 
-lock_info_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+lock_info_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+lock_info_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 lock_info_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
+lock_info_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
 lock_info_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-lock_info_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-lock_info_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-lock_info_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+lock_info_wait(REF) :- 
+	object_call(REF, wait, [], _).
 

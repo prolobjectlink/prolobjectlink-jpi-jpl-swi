@@ -25,33 +25,33 @@
 default_validation_event_handler(OUT) :- 
 	object_new('javax.xml.bind.helpers.DefaultValidationEventHandler', [], OUT).
 
-default_validation_event_handler_handle_event(REF, ARG0, OUT) :- 
-	object_call(REF, handleEvent, '.'(ARG0, []), OUT).
-
-default_validation_event_handler_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-default_validation_event_handler_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-default_validation_event_handler_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+default_validation_event_handler_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 default_validation_event_handler_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-default_validation_event_handler_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-default_validation_event_handler_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+default_validation_event_handler_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 default_validation_event_handler_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-default_validation_event_handler_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+default_validation_event_handler_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-default_validation_event_handler_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+default_validation_event_handler_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+default_validation_event_handler_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+default_validation_event_handler_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+default_validation_event_handler_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+default_validation_event_handler_handle_event(REF, ARG0, OUT) :- 
+	object_call(REF, handleEvent, '.'(ARG0, []), OUT).
 

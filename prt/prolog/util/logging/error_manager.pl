@@ -22,54 +22,54 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-error_manager_generic_failure(OUT) :- 
+error_manager_GENERIC_FAILURE(OUT) :- 
 	object_get('java.util.logging.ErrorManager', generic_failure, OUT).
 
-error_manager_write_failure(OUT) :- 
+error_manager_WRITE_FAILURE(OUT) :- 
 	object_get('java.util.logging.ErrorManager', write_failure, OUT).
 
-error_manager_flush_failure(OUT) :- 
+error_manager_FLUSH_FAILURE(OUT) :- 
 	object_get('java.util.logging.ErrorManager', flush_failure, OUT).
 
-error_manager_close_failure(OUT) :- 
+error_manager_CLOSE_FAILURE(OUT) :- 
 	object_get('java.util.logging.ErrorManager', close_failure, OUT).
 
-error_manager_open_failure(OUT) :- 
+error_manager_OPEN_FAILURE(OUT) :- 
 	object_get('java.util.logging.ErrorManager', open_failure, OUT).
 
-error_manager_format_failure(OUT) :- 
+error_manager_FORMAT_FAILURE(OUT) :- 
 	object_get('java.util.logging.ErrorManager', format_failure, OUT).
 
 error_manager(OUT) :- 
 	object_new('java.util.logging.ErrorManager', [], OUT).
 
-error_manager_error(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, error, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-error_manager_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-error_manager_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-error_manager_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-error_manager_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+error_manager_error(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, error, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
 
 error_manager_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-error_manager_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+error_manager_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+error_manager_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 error_manager_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-error_manager_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+error_manager_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-error_manager_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+error_manager_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+error_manager_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+error_manager_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+error_manager_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 

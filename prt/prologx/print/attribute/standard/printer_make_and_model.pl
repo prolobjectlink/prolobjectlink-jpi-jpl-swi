@@ -25,42 +25,42 @@
 printer_make_and_model(ARG0, ARG1, OUT) :- 
 	object_new('javax.print.attribute.standard.PrinterMakeAndModel', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-printer_make_and_model_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-printer_make_and_model_get_name(REF, OUT) :- 
-	object_call(REF, getName, [], OUT).
-
-printer_make_and_model_get_category(REF, OUT) :- 
-	object_call(REF, getCategory, [], OUT).
-
-printer_make_and_model_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-printer_make_and_model_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-printer_make_and_model_get_value(REF, OUT) :- 
-	object_call(REF, getValue, [], OUT).
-
-printer_make_and_model_get_locale(REF, OUT) :- 
-	object_call(REF, getLocale, [], OUT).
-
-printer_make_and_model_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-printer_make_and_model_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-printer_make_and_model_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+printer_make_and_model_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 printer_make_and_model_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-printer_make_and_model_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+printer_make_and_model_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-printer_make_and_model_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+printer_make_and_model_get_locale(REF, OUT) :- 
+	object_call(REF, getLocale, [], OUT).
+
+printer_make_and_model_get_name(REF, OUT) :- 
+	object_call(REF, getName, [], OUT).
+
+printer_make_and_model_get_value(REF, OUT) :- 
+	object_call(REF, getValue, [], OUT).
+
+printer_make_and_model_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+printer_make_and_model_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+printer_make_and_model_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+printer_make_and_model_get_category(REF, OUT) :- 
+	object_call(REF, getCategory, [], OUT).
+
+printer_make_and_model_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+printer_make_and_model_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+printer_make_and_model_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 

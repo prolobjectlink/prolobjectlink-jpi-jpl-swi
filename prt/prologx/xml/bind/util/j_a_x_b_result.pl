@@ -22,13 +22,13 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-j_a_x_b_result_feature(OUT) :- 
+j_a_x_b_result_FEATURE(OUT) :- 
 	object_get('javax.xml.bind.util.JAXBResult', feature, OUT).
 
-j_a_x_b_result_pi_disable_output_escaping(OUT) :- 
+j_a_x_b_result_PI_DISABLE_OUTPUT_ESCAPING(OUT) :- 
 	object_get('javax.xml.bind.util.JAXBResult', pi_disable_output_escaping, OUT).
 
-j_a_x_b_result_pi_enable_output_escaping(OUT) :- 
+j_a_x_b_result_PI_ENABLE_OUTPUT_ESCAPING(OUT) :- 
 	object_get('javax.xml.bind.util.JAXBResult', pi_enable_output_escaping, OUT).
 
 j_a_x_b_result(ARG0, OUT) :- 
@@ -37,41 +37,44 @@ j_a_x_b_result(ARG0, OUT) :-
 j_a_x_b_result(ARG0, OUT) :- 
 	object_new('javax.xml.bind.util.JAXBResult', '.'(ARG0, []), OUT).
 
-j_a_x_b_result_get_result(REF, OUT) :- 
-	object_call(REF, getResult, [], OUT).
-
-j_a_x_b_result_get_handler(REF, OUT) :- 
-	object_call(REF, getHandler, [], OUT).
-
-j_a_x_b_result_set_handler(REF, ARG0, OUT) :- 
-	object_call(REF, setHandler, '.'(ARG0, []), OUT).
-
-j_a_x_b_result_get_lexical_handler(REF, OUT) :- 
-	object_call(REF, getLexicalHandler, [], OUT).
-
-j_a_x_b_result_set_lexical_handler(REF, ARG0, OUT) :- 
-	object_call(REF, setLexicalHandler, '.'(ARG0, []), OUT).
-
-j_a_x_b_result_get_system_id(REF, OUT) :- 
-	object_call(REF, getSystemId, [], OUT).
-
-j_a_x_b_result_set_system_id(REF, ARG0, OUT) :- 
-	object_call(REF, setSystemId, '.'(ARG0, []), OUT).
-
-j_a_x_b_result_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-j_a_x_b_result_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-j_a_x_b_result_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+j_a_x_b_result_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
 j_a_x_b_result_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-j_a_x_b_result_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+j_a_x_b_result_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+j_a_x_b_result_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+j_a_x_b_result_set_system_id(REF, ARG0) :- 
+	object_call(REF, setSystemId, '.'(ARG0, []), _).
+
+j_a_x_b_result_get_handler(REF, OUT) :- 
+	object_call(REF, getHandler, [], OUT).
+
+j_a_x_b_result_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+j_a_x_b_result_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+j_a_x_b_result_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+j_a_x_b_result_get_lexical_handler(REF, OUT) :- 
+	object_call(REF, getLexicalHandler, [], OUT).
+
+j_a_x_b_result_get_result(REF, OUT) :- 
+	object_call(REF, getResult, [], OUT).
+
+j_a_x_b_result_set_handler(REF, ARG0) :- 
+	object_call(REF, setHandler, '.'(ARG0, []), _).
+
+j_a_x_b_result_set_lexical_handler(REF, ARG0) :- 
+	object_call(REF, setLexicalHandler, '.'(ARG0, []), _).
 
 j_a_x_b_result_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -79,9 +82,6 @@ j_a_x_b_result_hash_code(REF, OUT) :-
 j_a_x_b_result_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-j_a_x_b_result_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-j_a_x_b_result_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+j_a_x_b_result_get_system_id(REF, OUT) :- 
+	object_call(REF, getSystemId, [], OUT).
 

@@ -22,35 +22,11 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-unknown_user_exception_holder(OUT) :- 
-	object_new('org.omg.CORBA.UnknownUserExceptionHolder', [], OUT).
-
 unknown_user_exception_holder(ARG0, OUT) :- 
 	object_new('org.omg.CORBA.UnknownUserExceptionHolder', '.'(ARG0, []), OUT).
 
-unknown_user_exception_holder__read(REF, ARG0, OUT) :- 
-	object_call(REF, '_read', '.'(ARG0, []), OUT).
-
-unknown_user_exception_holder__type(REF, OUT) :- 
-	object_call(REF, '_type', [], OUT).
-
-unknown_user_exception_holder__write(REF, ARG0, OUT) :- 
-	object_call(REF, '_write', '.'(ARG0, []), OUT).
-
-unknown_user_exception_holder_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-unknown_user_exception_holder_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-unknown_user_exception_holder_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-unknown_user_exception_holder_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-unknown_user_exception_holder_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+unknown_user_exception_holder(OUT) :- 
+	object_new('org.omg.CORBA.UnknownUserExceptionHolder', [], OUT).
 
 unknown_user_exception_holder_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -58,9 +34,33 @@ unknown_user_exception_holder_hash_code(REF, OUT) :-
 unknown_user_exception_holder_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-unknown_user_exception_holder_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+unknown_user_exception_holder__write(REF, ARG0) :- 
+	object_call(REF, '_write', '.'(ARG0, []), _).
 
-unknown_user_exception_holder_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+unknown_user_exception_holder__read(REF, ARG0) :- 
+	object_call(REF, '_read', '.'(ARG0, []), _).
+
+unknown_user_exception_holder_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+unknown_user_exception_holder__type(REF, OUT) :- 
+	object_call(REF, '_type', [], OUT).
+
+unknown_user_exception_holder_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+unknown_user_exception_holder_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+unknown_user_exception_holder_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+unknown_user_exception_holder_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+unknown_user_exception_holder_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+unknown_user_exception_holder_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 

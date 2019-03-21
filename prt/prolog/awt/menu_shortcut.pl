@@ -34,33 +34,33 @@ menu_shortcut_equals(REF, ARG0, OUT) :-
 menu_shortcut_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-menu_shortcut_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-menu_shortcut_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
 menu_shortcut_get_key(REF, OUT) :- 
 	object_call(REF, getKey, [], OUT).
 
-menu_shortcut_uses_shift_modifier(REF, OUT) :- 
-	object_call(REF, usesShiftModifier, [], OUT).
+menu_shortcut_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-menu_shortcut_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+menu_shortcut_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-menu_shortcut_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+menu_shortcut_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-menu_shortcut_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+menu_shortcut_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
 menu_shortcut_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-menu_shortcut_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+menu_shortcut_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
-menu_shortcut_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+menu_shortcut_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+menu_shortcut_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+menu_shortcut_uses_shift_modifier(REF, OUT) :- 
+	object_call(REF, usesShiftModifier, [], OUT).
 

@@ -25,17 +25,32 @@
 date_time_at_creation(ARG0, OUT) :- 
 	object_new('javax.print.attribute.standard.DateTimeAtCreation', '.'(ARG0, []), OUT).
 
+date_time_at_creation_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
 date_time_at_creation_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-date_time_at_creation_get_name(REF, OUT) :- 
-	object_call(REF, getName, [], OUT).
 
 date_time_at_creation_get_category(REF, OUT) :- 
 	object_call(REF, getCategory, [], OUT).
 
-date_time_at_creation_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+date_time_at_creation_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+date_time_at_creation_get_name(REF, OUT) :- 
+	object_call(REF, getName, [], OUT).
+
+date_time_at_creation_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+date_time_at_creation_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+date_time_at_creation_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+date_time_at_creation_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
 date_time_at_creation_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -43,21 +58,6 @@ date_time_at_creation_hash_code(REF, OUT) :-
 date_time_at_creation_get_value(REF, OUT) :- 
 	object_call(REF, getValue, [], OUT).
 
-date_time_at_creation_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-date_time_at_creation_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-date_time_at_creation_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-date_time_at_creation_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-date_time_at_creation_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-date_time_at_creation_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+date_time_at_creation_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 

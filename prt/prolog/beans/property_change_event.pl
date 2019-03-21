@@ -25,48 +25,48 @@
 property_change_event(ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_new('java.beans.PropertyChangeEvent', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
-property_change_event_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-property_change_event_get_new_value(REF, OUT) :- 
-	object_call(REF, getNewValue, [], OUT).
+property_change_event_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 property_change_event_get_old_value(REF, OUT) :- 
 	object_call(REF, getOldValue, [], OUT).
 
-property_change_event_get_propagation_id(REF, OUT) :- 
-	object_call(REF, getPropagationId, [], OUT).
+property_change_event_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
 property_change_event_get_property_name(REF, OUT) :- 
 	object_call(REF, getPropertyName, [], OUT).
 
-property_change_event_set_propagation_id(REF, ARG0, OUT) :- 
-	object_call(REF, setPropagationId, '.'(ARG0, []), OUT).
-
-property_change_event_get_source(REF, OUT) :- 
-	object_call(REF, getSource, [], OUT).
-
-property_change_event_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-property_change_event_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-property_change_event_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-property_change_event_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+property_change_event_get_new_value(REF, OUT) :- 
+	object_call(REF, getNewValue, [], OUT).
 
 property_change_event_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-property_change_event_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
+property_change_event_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-property_change_event_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+property_change_event_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-property_change_event_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+property_change_event_set_propagation_id(REF, ARG0) :- 
+	object_call(REF, setPropagationId, '.'(ARG0, []), _).
+
+property_change_event_get_propagation_id(REF, OUT) :- 
+	object_call(REF, getPropagationId, [], OUT).
+
+property_change_event_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+property_change_event_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+property_change_event_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+property_change_event_get_source(REF, OUT) :- 
+	object_call(REF, getSource, [], OUT).
+
+property_change_event_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 

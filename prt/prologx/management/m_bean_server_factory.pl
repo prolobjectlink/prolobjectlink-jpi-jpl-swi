@@ -22,51 +22,51 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-m_bean_server_factory_create_m_bean_server(REF, OUT) :- 
-	object_call(REF, createMBeanServer, [], OUT).
-
-m_bean_server_factory_create_m_bean_server(REF, ARG0, OUT) :- 
-	object_call(REF, createMBeanServer, '.'(ARG0, []), OUT).
-
-m_bean_server_factory_get_class_loader_repository(REF, ARG0, OUT) :- 
-	object_call(REF, getClassLoaderRepository, '.'(ARG0, []), OUT).
-
-m_bean_server_factory_new_m_bean_server(REF, ARG0, OUT) :- 
-	object_call(REF, newMBeanServer, '.'(ARG0, []), OUT).
-
-m_bean_server_factory_new_m_bean_server(REF, OUT) :- 
-	object_call(REF, newMBeanServer, [], OUT).
-
 m_bean_server_factory_find_m_bean_server(REF, ARG0, OUT) :- 
 	object_call(REF, findMBeanServer, '.'(ARG0, []), OUT).
-
-m_bean_server_factory_release_m_bean_server(REF, ARG0, OUT) :- 
-	object_call(REF, releaseMBeanServer, '.'(ARG0, []), OUT).
-
-m_bean_server_factory_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-m_bean_server_factory_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-m_bean_server_factory_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-m_bean_server_factory_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-m_bean_server_factory_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
 
 m_bean_server_factory_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+m_bean_server_factory_create_m_bean_server(REF, OUT) :- 
+	object_call(REF, createMBeanServer, [], OUT).
+
+m_bean_server_factory_release_m_bean_server(REF, ARG0) :- 
+	object_call(REF, releaseMBeanServer, '.'(ARG0, []), _).
+
+m_bean_server_factory_create_m_bean_server(REF, ARG0, OUT) :- 
+	object_call(REF, createMBeanServer, '.'(ARG0, []), OUT).
+
+m_bean_server_factory_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
 m_bean_server_factory_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-m_bean_server_factory_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+m_bean_server_factory_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-m_bean_server_factory_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+m_bean_server_factory_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+m_bean_server_factory_get_class_loader_repository(REF, ARG0, OUT) :- 
+	object_call(REF, getClassLoaderRepository, '.'(ARG0, []), OUT).
+
+m_bean_server_factory_new_m_bean_server(REF, OUT) :- 
+	object_call(REF, newMBeanServer, [], OUT).
+
+m_bean_server_factory_new_m_bean_server(REF, ARG0, OUT) :- 
+	object_call(REF, newMBeanServer, '.'(ARG0, []), OUT).
+
+m_bean_server_factory_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+m_bean_server_factory_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+m_bean_server_factory_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+m_bean_server_factory_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 

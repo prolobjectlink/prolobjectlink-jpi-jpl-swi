@@ -22,48 +22,48 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-reverb_type_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-reverb_type_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-reverb_type_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-reverb_type_get_name(REF, OUT) :- 
-	object_call(REF, getName, [], OUT).
-
-reverb_type_get_decay_time(REF, OUT) :- 
-	object_call(REF, getDecayTime, [], OUT).
-
-reverb_type_get_early_reflection_delay(REF, OUT) :- 
-	object_call(REF, getEarlyReflectionDelay, [], OUT).
-
 reverb_type_get_early_reflection_intensity(REF, OUT) :- 
 	object_call(REF, getEarlyReflectionIntensity, [], OUT).
 
-reverb_type_get_late_reflection_delay(REF, OUT) :- 
-	object_call(REF, getLateReflectionDelay, [], OUT).
-
-reverb_type_get_late_reflection_intensity(REF, OUT) :- 
-	object_call(REF, getLateReflectionIntensity, [], OUT).
-
-reverb_type_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-reverb_type_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-reverb_type_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+reverb_type_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 reverb_type_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-reverb_type_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+reverb_type_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-reverb_type_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+reverb_type_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+reverb_type_get_early_reflection_delay(REF, OUT) :- 
+	object_call(REF, getEarlyReflectionDelay, [], OUT).
+
+reverb_type_get_name(REF, OUT) :- 
+	object_call(REF, getName, [], OUT).
+
+reverb_type_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+reverb_type_get_late_reflection_intensity(REF, OUT) :- 
+	object_call(REF, getLateReflectionIntensity, [], OUT).
+
+reverb_type_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+reverb_type_get_late_reflection_delay(REF, OUT) :- 
+	object_call(REF, getLateReflectionDelay, [], OUT).
+
+reverb_type_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+reverb_type_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+reverb_type_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+reverb_type_get_decay_time(REF, OUT) :- 
+	object_call(REF, getDecayTime, [], OUT).
 

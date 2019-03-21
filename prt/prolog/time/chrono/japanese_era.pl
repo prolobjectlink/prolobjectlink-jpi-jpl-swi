@@ -22,44 +22,59 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-japanese_era_meiji(OUT) :- 
+japanese_era_MEIJI(OUT) :- 
 	object_get('java.time.chrono.JapaneseEra', meiji, OUT).
 
-japanese_era_taisho(OUT) :- 
+japanese_era_TAISHO(OUT) :- 
 	object_get('java.time.chrono.JapaneseEra', taisho, OUT).
 
-japanese_era_showa(OUT) :- 
+japanese_era_SHOWA(OUT) :- 
 	object_get('java.time.chrono.JapaneseEra', showa, OUT).
 
-japanese_era_heisei(OUT) :- 
+japanese_era_HEISEI(OUT) :- 
 	object_get('java.time.chrono.JapaneseEra', heisei, OUT).
-
-japanese_era_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-japanese_era_values(REF, OUT) :- 
-	object_call(REF, values, [], OUT).
-
-japanese_era_value_of(REF, ARG0, OUT) :- 
-	object_call(REF, valueOf, '.'(ARG0, []), OUT).
-
-japanese_era_get_value(REF, OUT) :- 
-	object_call(REF, getValue, [], OUT).
 
 japanese_era_of(REF, ARG0, OUT) :- 
 	object_call(REF, of, '.'(ARG0, []), OUT).
 
+japanese_era_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+japanese_era_get_display_name(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getDisplayName, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+japanese_era_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+japanese_era_get_long(REF, ARG0, OUT) :- 
+	object_call(REF, getLong, '.'(ARG0, []), OUT).
+
+japanese_era_get(REF, ARG0, OUT) :- 
+	object_call(REF, get, '.'(ARG0, []), OUT).
+
+japanese_era_is_supported(REF, ARG0, OUT) :- 
+	object_call(REF, isSupported, '.'(ARG0, []), OUT).
+
+japanese_era_adjust_into(REF, ARG0, OUT) :- 
+	object_call(REF, adjustInto, '.'(ARG0, []), OUT).
+
+japanese_era_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+japanese_era_query(REF, ARG0, OUT) :- 
+	object_call(REF, query, '.'(ARG0, []), OUT).
+
+japanese_era_get_value(REF, OUT) :- 
+	object_call(REF, getValue, [], OUT).
+
+japanese_era_value_of(REF, ARG0, OUT) :- 
+	object_call(REF, valueOf, '.'(ARG0, []), OUT).
+
+japanese_era_values(REF, OUT) :- 
+	object_call(REF, values, [], OUT).
+
 japanese_era_range(REF, ARG0, OUT) :- 
 	object_call(REF, range, '.'(ARG0, []), OUT).
-
-japanese_era_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-japanese_era_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-japanese_era_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
 
 japanese_era_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
@@ -70,27 +85,12 @@ japanese_era_hash_code(REF, OUT) :-
 japanese_era_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-japanese_era_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+japanese_era_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-japanese_era_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+japanese_era_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-japanese_era_get(REF, ARG0, OUT) :- 
-	object_call(REF, get, '.'(ARG0, []), OUT).
-
-japanese_era_get_long(REF, ARG0, OUT) :- 
-	object_call(REF, getLong, '.'(ARG0, []), OUT).
-
-japanese_era_query(REF, ARG0, OUT) :- 
-	object_call(REF, query, '.'(ARG0, []), OUT).
-
-japanese_era_is_supported(REF, ARG0, OUT) :- 
-	object_call(REF, isSupported, '.'(ARG0, []), OUT).
-
-japanese_era_get_display_name(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getDisplayName, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-japanese_era_adjust_into(REF, ARG0, OUT) :- 
-	object_call(REF, adjustInto, '.'(ARG0, []), OUT).
+japanese_era_wait(REF) :- 
+	object_call(REF, wait, [], _).
 

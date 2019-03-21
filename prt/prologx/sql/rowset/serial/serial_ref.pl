@@ -25,45 +25,45 @@
 serial_ref(ARG0, OUT) :- 
 	object_new('javax.sql.rowset.serial.SerialRef', '.'(ARG0, []), OUT).
 
-serial_ref_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-serial_ref_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
 serial_ref_clone(REF, OUT) :- 
 	object_call(REF, clone, [], OUT).
-
-serial_ref_get_object(REF, ARG0, OUT) :- 
-	object_call(REF, getObject, '.'(ARG0, []), OUT).
-
-serial_ref_get_object(REF, OUT) :- 
-	object_call(REF, getObject, [], OUT).
-
-serial_ref_get_base_type_name(REF, OUT) :- 
-	object_call(REF, getBaseTypeName, [], OUT).
-
-serial_ref_set_object(REF, ARG0, OUT) :- 
-	object_call(REF, setObject, '.'(ARG0, []), OUT).
-
-serial_ref_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-serial_ref_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-serial_ref_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-serial_ref_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
 
 serial_ref_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-serial_ref_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+serial_ref_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-serial_ref_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+serial_ref_get_base_type_name(REF, OUT) :- 
+	object_call(REF, getBaseTypeName, [], OUT).
+
+serial_ref_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+serial_ref_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+serial_ref_get_object(REF, ARG0, OUT) :- 
+	object_call(REF, getObject, '.'(ARG0, []), OUT).
+
+serial_ref_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+serial_ref_get_object(REF, OUT) :- 
+	object_call(REF, getObject, [], OUT).
+
+serial_ref_set_object(REF, ARG0) :- 
+	object_call(REF, setObject, '.'(ARG0, []), _).
+
+serial_ref_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+serial_ref_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+serial_ref_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+serial_ref_wait(REF) :- 
+	object_call(REF, wait, [], _).
 

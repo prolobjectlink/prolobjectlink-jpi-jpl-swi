@@ -22,56 +22,35 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-compound_border(OUT) :- 
-	object_new('javax.swing.border.CompoundBorder', [], OUT).
-
 compound_border(ARG0, ARG1, OUT) :- 
 	object_new('javax.swing.border.CompoundBorder', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-compound_border_get_border_insets(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getBorderInsets, '.'(ARG0, '.'(ARG1, [])), OUT).
+compound_border(OUT) :- 
+	object_new('javax.swing.border.CompoundBorder', [], OUT).
 
-compound_border_paint_border(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, OUT) :- 
-	object_call(REF, paintBorder, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), OUT).
-
-compound_border_is_border_opaque(REF, OUT) :- 
-	object_call(REF, isBorderOpaque, [], OUT).
-
-compound_border_get_inside_border(REF, OUT) :- 
-	object_call(REF, getInsideBorder, [], OUT).
+compound_border_paint_border(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5) :- 
+	object_call(REF, paintBorder, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), _).
 
 compound_border_get_outside_border(REF, OUT) :- 
 	object_call(REF, getOutsideBorder, [], OUT).
 
-compound_border_get_baseline(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, getBaseline, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
 compound_border_get_baseline_resize_behavior(REF, ARG0, OUT) :- 
 	object_call(REF, getBaselineResizeBehavior, '.'(ARG0, []), OUT).
 
-compound_border_get_border_insets(REF, ARG0, OUT) :- 
-	object_call(REF, getBorderInsets, '.'(ARG0, []), OUT).
+compound_border_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-compound_border_get_interior_rectangle(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
-	object_call(REF, getInteriorRectangle, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
+compound_border_get_baseline(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, getBaseline, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-compound_border_get_interior_rectangle(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, OUT) :- 
-	object_call(REF, getInteriorRectangle, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), OUT).
+compound_border_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-compound_border_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+compound_border_get_inside_border(REF, OUT) :- 
+	object_call(REF, getInsideBorder, [], OUT).
 
-compound_border_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-compound_border_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-compound_border_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-compound_border_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+compound_border_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 compound_border_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -79,9 +58,30 @@ compound_border_hash_code(REF, OUT) :-
 compound_border_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-compound_border_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+compound_border_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-compound_border_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+compound_border_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+compound_border_is_border_opaque(REF, OUT) :- 
+	object_call(REF, isBorderOpaque, [], OUT).
+
+compound_border_get_border_insets(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getBorderInsets, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+compound_border_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+compound_border_get_border_insets(REF, ARG0, OUT) :- 
+	object_call(REF, getBorderInsets, '.'(ARG0, []), OUT).
+
+compound_border_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+compound_border_get_interior_rectangle(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
+	object_call(REF, getInteriorRectangle, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
+
+compound_border_get_interior_rectangle(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, OUT) :- 
+	object_call(REF, getInteriorRectangle, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), OUT).
 

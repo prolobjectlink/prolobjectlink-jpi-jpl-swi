@@ -28,14 +28,14 @@ name_value_pair(OUT) :-
 name_value_pair(ARG0, ARG1, OUT) :- 
 	object_new('org.omg.DynamicAny.NameValuePair', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-name_value_pair_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+name_value_pair_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-name_value_pair_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+name_value_pair_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-name_value_pair_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+name_value_pair_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 name_value_pair_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
@@ -49,9 +49,9 @@ name_value_pair_hash_code(REF, OUT) :-
 name_value_pair_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-name_value_pair_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+name_value_pair_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-name_value_pair_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+name_value_pair_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

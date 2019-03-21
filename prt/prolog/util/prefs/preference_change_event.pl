@@ -25,42 +25,42 @@
 preference_change_event(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('java.util.prefs.PreferenceChangeEvent', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-preference_change_event_get_key(REF, OUT) :- 
-	object_call(REF, getKey, [], OUT).
-
-preference_change_event_get_node(REF, OUT) :- 
-	object_call(REF, getNode, [], OUT).
-
-preference_change_event_get_new_value(REF, OUT) :- 
-	object_call(REF, getNewValue, [], OUT).
-
-preference_change_event_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+preference_change_event_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
 preference_change_event_get_source(REF, OUT) :- 
 	object_call(REF, getSource, [], OUT).
 
-preference_change_event_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+preference_change_event_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-preference_change_event_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+preference_change_event_get_node(REF, OUT) :- 
+	object_call(REF, getNode, [], OUT).
 
-preference_change_event_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+preference_change_event_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
 preference_change_event_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-preference_change_event_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+preference_change_event_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+preference_change_event_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+preference_change_event_get_new_value(REF, OUT) :- 
+	object_call(REF, getNewValue, [], OUT).
+
+preference_change_event_get_key(REF, OUT) :- 
+	object_call(REF, getKey, [], OUT).
+
+preference_change_event_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+preference_change_event_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 preference_change_event_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-preference_change_event_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-preference_change_event_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

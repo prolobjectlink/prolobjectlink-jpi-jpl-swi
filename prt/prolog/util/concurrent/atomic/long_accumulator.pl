@@ -25,60 +25,60 @@
 long_accumulator(ARG0, ARG1, OUT) :- 
 	object_new('java.util.concurrent.atomic.LongAccumulator', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-long_accumulator_get(REF, OUT) :- 
-	object_call(REF, get, [], OUT).
-
 long_accumulator_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
-
-long_accumulator_int_value(REF, OUT) :- 
-	object_call(REF, intValue, [], OUT).
 
 long_accumulator_long_value(REF, OUT) :- 
 	object_call(REF, longValue, [], OUT).
 
-long_accumulator_float_value(REF, OUT) :- 
-	object_call(REF, floatValue, [], OUT).
-
-long_accumulator_double_value(REF, OUT) :- 
-	object_call(REF, doubleValue, [], OUT).
-
-long_accumulator_reset(REF, OUT) :- 
-	object_call(REF, reset, [], OUT).
-
-long_accumulator_accumulate(REF, ARG0, OUT) :- 
-	object_call(REF, accumulate, '.'(ARG0, []), OUT).
-
-long_accumulator_get_then_reset(REF, OUT) :- 
-	object_call(REF, getThenReset, [], OUT).
-
-long_accumulator_byte_value(REF, OUT) :- 
-	object_call(REF, byteValue, [], OUT).
-
-long_accumulator_short_value(REF, OUT) :- 
-	object_call(REF, shortValue, [], OUT).
-
-long_accumulator_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-long_accumulator_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-long_accumulator_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+long_accumulator_reset(REF) :- 
+	object_call(REF, reset, [], _).
 
 long_accumulator_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-long_accumulator_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+long_accumulator_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+long_accumulator_byte_value(REF, OUT) :- 
+	object_call(REF, byteValue, [], OUT).
+
+long_accumulator_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+long_accumulator_float_value(REF, OUT) :- 
+	object_call(REF, floatValue, [], OUT).
+
+long_accumulator_get_then_reset(REF, OUT) :- 
+	object_call(REF, getThenReset, [], OUT).
+
+long_accumulator_short_value(REF, OUT) :- 
+	object_call(REF, shortValue, [], OUT).
 
 long_accumulator_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-long_accumulator_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+long_accumulator_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-long_accumulator_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+long_accumulator_get(REF, OUT) :- 
+	object_call(REF, get, [], OUT).
+
+long_accumulator_double_value(REF, OUT) :- 
+	object_call(REF, doubleValue, [], OUT).
+
+long_accumulator_accumulate(REF, ARG0) :- 
+	object_call(REF, accumulate, '.'(ARG0, []), _).
+
+long_accumulator_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+long_accumulator_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+long_accumulator_int_value(REF, OUT) :- 
+	object_call(REF, intValue, [], OUT).
+
+long_accumulator_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 

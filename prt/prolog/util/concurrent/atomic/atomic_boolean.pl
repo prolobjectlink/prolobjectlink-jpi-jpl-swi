@@ -22,54 +22,54 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-atomic_boolean(ARG0, OUT) :- 
-	object_new('java.util.concurrent.atomic.AtomicBoolean', '.'(ARG0, []), OUT).
-
 atomic_boolean(OUT) :- 
 	object_new('java.util.concurrent.atomic.AtomicBoolean', [], OUT).
 
-atomic_boolean_get(REF, OUT) :- 
-	object_call(REF, get, [], OUT).
-
-atomic_boolean_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-atomic_boolean_set(REF, ARG0, OUT) :- 
-	object_call(REF, set, '.'(ARG0, []), OUT).
-
-atomic_boolean_lazy_set(REF, ARG0, OUT) :- 
-	object_call(REF, lazySet, '.'(ARG0, []), OUT).
-
-atomic_boolean_compare_and_set(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, compareAndSet, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-atomic_boolean_get_and_set(REF, ARG0, OUT) :- 
-	object_call(REF, getAndSet, '.'(ARG0, []), OUT).
-
-atomic_boolean_weak_compare_and_set(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, weakCompareAndSet, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-atomic_boolean_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-atomic_boolean_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-atomic_boolean_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-atomic_boolean_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-atomic_boolean_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+atomic_boolean(ARG0, OUT) :- 
+	object_new('java.util.concurrent.atomic.AtomicBoolean', '.'(ARG0, []), OUT).
 
 atomic_boolean_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-atomic_boolean_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+atomic_boolean_weak_compare_and_set(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, weakCompareAndSet, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-atomic_boolean_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+atomic_boolean_compare_and_set(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, compareAndSet, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+atomic_boolean_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+atomic_boolean_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+atomic_boolean_get_and_set(REF, ARG0, OUT) :- 
+	object_call(REF, getAndSet, '.'(ARG0, []), OUT).
+
+atomic_boolean_get(REF, OUT) :- 
+	object_call(REF, get, [], OUT).
+
+atomic_boolean_lazy_set(REF, ARG0) :- 
+	object_call(REF, lazySet, '.'(ARG0, []), _).
+
+atomic_boolean_set(REF, ARG0) :- 
+	object_call(REF, set, '.'(ARG0, []), _).
+
+atomic_boolean_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+atomic_boolean_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+atomic_boolean_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+atomic_boolean_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+atomic_boolean_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+atomic_boolean_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 

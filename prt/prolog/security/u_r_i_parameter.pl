@@ -25,33 +25,33 @@
 u_r_i_parameter(ARG0, OUT) :- 
 	object_new('java.security.URIParameter', '.'(ARG0, []), OUT).
 
-u_r_i_parameter_get_u_r_i(REF, OUT) :- 
-	object_call(REF, getURI, [], OUT).
+u_r_i_parameter_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-u_r_i_parameter_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+u_r_i_parameter_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-u_r_i_parameter_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+u_r_i_parameter_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-u_r_i_parameter_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+u_r_i_parameter_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+u_r_i_parameter_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 u_r_i_parameter_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-u_r_i_parameter_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+u_r_i_parameter_get_u_r_i(REF, OUT) :- 
+	object_call(REF, getURI, [], OUT).
+
+u_r_i_parameter_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 u_r_i_parameter_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
 u_r_i_parameter_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-u_r_i_parameter_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-u_r_i_parameter_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

@@ -22,13 +22,13 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-affine_transform_op_type_nearest_neighbor(OUT) :- 
+affine_transform_op_TYPE_NEAREST_NEIGHBOR(OUT) :- 
 	object_get('java.awt.image.AffineTransformOp', type_nearest_neighbor, OUT).
 
-affine_transform_op_type_bilinear(OUT) :- 
+affine_transform_op_TYPE_BILINEAR(OUT) :- 
 	object_get('java.awt.image.AffineTransformOp', type_bilinear, OUT).
 
-affine_transform_op_type_bicubic(OUT) :- 
+affine_transform_op_TYPE_BICUBIC(OUT) :- 
 	object_get('java.awt.image.AffineTransformOp', type_bicubic, OUT).
 
 affine_transform_op(ARG0, ARG1, OUT) :- 
@@ -37,50 +37,53 @@ affine_transform_op(ARG0, ARG1, OUT) :-
 affine_transform_op(ARG0, ARG1, OUT) :- 
 	object_new('java.awt.image.AffineTransformOp', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-affine_transform_op_filter(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, filter, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-affine_transform_op_filter(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, filter, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-affine_transform_op_get_bounds2_d(REF, ARG0, OUT) :- 
-	object_call(REF, getBounds2D, '.'(ARG0, []), OUT).
-
-affine_transform_op_get_bounds2_d(REF, ARG0, OUT) :- 
-	object_call(REF, getBounds2D, '.'(ARG0, []), OUT).
-
-affine_transform_op_get_transform(REF, OUT) :- 
-	object_call(REF, getTransform, [], OUT).
-
-affine_transform_op_get_rendering_hints(REF, OUT) :- 
-	object_call(REF, getRenderingHints, [], OUT).
-
-affine_transform_op_create_compatible_dest_image(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, createCompatibleDestImage, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-affine_transform_op_create_compatible_dest_raster(REF, ARG0, OUT) :- 
-	object_call(REF, createCompatibleDestRaster, '.'(ARG0, []), OUT).
-
-affine_transform_op_get_interpolation_type(REF, OUT) :- 
-	object_call(REF, getInterpolationType, [], OUT).
+affine_transform_op_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
 affine_transform_op_get_point2_d(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, getPoint2D, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-affine_transform_op_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+affine_transform_op_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-affine_transform_op_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+affine_transform_op_filter(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, filter, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-affine_transform_op_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+affine_transform_op_filter(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, filter, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+affine_transform_op_get_rendering_hints(REF, OUT) :- 
+	object_call(REF, getRenderingHints, [], OUT).
 
 affine_transform_op_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-affine_transform_op_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+affine_transform_op_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+affine_transform_op_create_compatible_dest_image(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, createCompatibleDestImage, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+affine_transform_op_get_bounds2_d(REF, ARG0, OUT) :- 
+	object_call(REF, getBounds2D, '.'(ARG0, []), OUT).
+
+affine_transform_op_get_bounds2_d(REF, ARG0, OUT) :- 
+	object_call(REF, getBounds2D, '.'(ARG0, []), OUT).
+
+affine_transform_op_get_interpolation_type(REF, OUT) :- 
+	object_call(REF, getInterpolationType, [], OUT).
+
+affine_transform_op_get_transform(REF, OUT) :- 
+	object_call(REF, getTransform, [], OUT).
+
+affine_transform_op_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+affine_transform_op_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+affine_transform_op_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 affine_transform_op_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -88,9 +91,6 @@ affine_transform_op_hash_code(REF, OUT) :-
 affine_transform_op_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-affine_transform_op_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-affine_transform_op_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+affine_transform_op_create_compatible_dest_raster(REF, ARG0, OUT) :- 
+	object_call(REF, createCompatibleDestRaster, '.'(ARG0, []), OUT).
 

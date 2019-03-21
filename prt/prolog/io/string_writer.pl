@@ -22,87 +22,87 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-string_writer(OUT) :- 
-	object_new('java.io.StringWriter', [], OUT).
-
 string_writer(ARG0, OUT) :- 
 	object_new('java.io.StringWriter', '.'(ARG0, []), OUT).
 
-string_writer_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+string_writer(OUT) :- 
+	object_new('java.io.StringWriter', [], OUT).
 
-string_writer_append(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, append, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+string_writer_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-string_writer_append(REF, ARG0, OUT) :- 
-	object_call(REF, append, '.'(ARG0, []), OUT).
-
-string_writer_append(REF, ARG0, OUT) :- 
-	object_call(REF, append, '.'(ARG0, []), OUT).
-
-string_writer_append(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, append, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-string_writer_append(REF, ARG0, OUT) :- 
-	object_call(REF, append, '.'(ARG0, []), OUT).
-
-string_writer_append(REF, ARG0, OUT) :- 
-	object_call(REF, append, '.'(ARG0, []), OUT).
-
-string_writer_append(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, append, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-string_writer_append(REF, ARG0, OUT) :- 
-	object_call(REF, append, '.'(ARG0, []), OUT).
-
-string_writer_append(REF, ARG0, OUT) :- 
-	object_call(REF, append, '.'(ARG0, []), OUT).
-
-string_writer_write(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, write, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-string_writer_write(REF, ARG0, OUT) :- 
-	object_call(REF, write, '.'(ARG0, []), OUT).
-
-string_writer_write(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, write, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-string_writer_write(REF, ARG0, OUT) :- 
-	object_call(REF, write, '.'(ARG0, []), OUT).
-
-string_writer_close(REF, OUT) :- 
-	object_call(REF, close, [], OUT).
-
-string_writer_flush(REF, OUT) :- 
-	object_call(REF, flush, [], OUT).
-
-string_writer_get_buffer(REF, OUT) :- 
-	object_call(REF, getBuffer, [], OUT).
-
-string_writer_write(REF, ARG0, OUT) :- 
-	object_call(REF, write, '.'(ARG0, []), OUT).
-
-string_writer_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-string_writer_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-string_writer_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-string_writer_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-string_writer_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+string_writer_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 string_writer_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-string_writer_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+string_writer_append(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, append, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-string_writer_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+string_writer_append(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, append, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+string_writer_append(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, append, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+string_writer_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+string_writer_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+string_writer_append(REF, ARG0, OUT) :- 
+	object_call(REF, append, '.'(ARG0, []), OUT).
+
+string_writer_append(REF, ARG0, OUT) :- 
+	object_call(REF, append, '.'(ARG0, []), OUT).
+
+string_writer_append(REF, ARG0, OUT) :- 
+	object_call(REF, append, '.'(ARG0, []), OUT).
+
+string_writer_append(REF, ARG0, OUT) :- 
+	object_call(REF, append, '.'(ARG0, []), OUT).
+
+string_writer_append(REF, ARG0, OUT) :- 
+	object_call(REF, append, '.'(ARG0, []), OUT).
+
+string_writer_append(REF, ARG0, OUT) :- 
+	object_call(REF, append, '.'(ARG0, []), OUT).
+
+string_writer_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+string_writer_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+string_writer_close(REF) :- 
+	object_call(REF, close, [], _).
+
+string_writer_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+string_writer_get_buffer(REF, OUT) :- 
+	object_call(REF, getBuffer, [], OUT).
+
+string_writer_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+string_writer_write(REF, ARG0) :- 
+	object_call(REF, write, '.'(ARG0, []), _).
+
+string_writer_write(REF, ARG0) :- 
+	object_call(REF, write, '.'(ARG0, []), _).
+
+string_writer_write(REF, ARG0) :- 
+	object_call(REF, write, '.'(ARG0, []), _).
+
+string_writer_write(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, write, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+string_writer_write(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, write, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+string_writer_flush(REF) :- 
+	object_call(REF, flush, [], _).
 

@@ -22,119 +22,119 @@
 
 :-consult('../../../../../../obj/prolobject.pl').
 
-entity_cdata(OUT) :- 
+entity_CDATA(OUT) :- 
 	object_get('javax.swing.text.html.parser.Entity', cdata, OUT).
 
-entity_entity(OUT) :- 
+entity_ENTITY(OUT) :- 
 	object_get('javax.swing.text.html.parser.Entity', entity, OUT).
 
-entity_entities(OUT) :- 
+entity_ENTITIES(OUT) :- 
 	object_get('javax.swing.text.html.parser.Entity', entities, OUT).
 
-entity_id(OUT) :- 
+entity_ID(OUT) :- 
 	object_get('javax.swing.text.html.parser.Entity', id, OUT).
 
-entity_idref(OUT) :- 
+entity_IDREF(OUT) :- 
 	object_get('javax.swing.text.html.parser.Entity', idref, OUT).
 
-entity_idrefs(OUT) :- 
+entity_IDREFS(OUT) :- 
 	object_get('javax.swing.text.html.parser.Entity', idrefs, OUT).
 
-entity_name(OUT) :- 
+entity_NAME(OUT) :- 
 	object_get('javax.swing.text.html.parser.Entity', name, OUT).
 
-entity_names(OUT) :- 
+entity_NAMES(OUT) :- 
 	object_get('javax.swing.text.html.parser.Entity', names, OUT).
 
-entity_nmtoken(OUT) :- 
+entity_NMTOKEN(OUT) :- 
 	object_get('javax.swing.text.html.parser.Entity', nmtoken, OUT).
 
-entity_nmtokens(OUT) :- 
+entity_NMTOKENS(OUT) :- 
 	object_get('javax.swing.text.html.parser.Entity', nmtokens, OUT).
 
-entity_notation(OUT) :- 
+entity_NOTATION(OUT) :- 
 	object_get('javax.swing.text.html.parser.Entity', notation, OUT).
 
-entity_number(OUT) :- 
+entity_NUMBER(OUT) :- 
 	object_get('javax.swing.text.html.parser.Entity', number, OUT).
 
-entity_numbers(OUT) :- 
+entity_NUMBERS(OUT) :- 
 	object_get('javax.swing.text.html.parser.Entity', numbers, OUT).
 
-entity_nutoken(OUT) :- 
+entity_NUTOKEN(OUT) :- 
 	object_get('javax.swing.text.html.parser.Entity', nutoken, OUT).
 
-entity_nutokens(OUT) :- 
+entity_NUTOKENS(OUT) :- 
 	object_get('javax.swing.text.html.parser.Entity', nutokens, OUT).
 
-entity_rcdata(OUT) :- 
+entity_RCDATA(OUT) :- 
 	object_get('javax.swing.text.html.parser.Entity', rcdata, OUT).
 
-entity_empty(OUT) :- 
+entity_EMPTY(OUT) :- 
 	object_get('javax.swing.text.html.parser.Entity', empty, OUT).
 
-entity_model(OUT) :- 
+entity_MODEL(OUT) :- 
 	object_get('javax.swing.text.html.parser.Entity', model, OUT).
 
-entity_any(OUT) :- 
+entity_ANY(OUT) :- 
 	object_get('javax.swing.text.html.parser.Entity', any, OUT).
 
-entity_fixed(OUT) :- 
+entity_FIXED(OUT) :- 
 	object_get('javax.swing.text.html.parser.Entity', fixed, OUT).
 
-entity_required(OUT) :- 
+entity_REQUIRED(OUT) :- 
 	object_get('javax.swing.text.html.parser.Entity', required, OUT).
 
-entity_current(OUT) :- 
+entity_CURRENT(OUT) :- 
 	object_get('javax.swing.text.html.parser.Entity', current, OUT).
 
-entity_conref(OUT) :- 
+entity_CONREF(OUT) :- 
 	object_get('javax.swing.text.html.parser.Entity', conref, OUT).
 
-entity_implied(OUT) :- 
+entity_IMPLIED(OUT) :- 
 	object_get('javax.swing.text.html.parser.Entity', implied, OUT).
 
-entity_public(OUT) :- 
+entity_PUBLIC(OUT) :- 
 	object_get('javax.swing.text.html.parser.Entity', public, OUT).
 
-entity_sdata(OUT) :- 
+entity_SDATA(OUT) :- 
 	object_get('javax.swing.text.html.parser.Entity', sdata, OUT).
 
-entity_pi(OUT) :- 
+entity_PI(OUT) :- 
 	object_get('javax.swing.text.html.parser.Entity', pi, OUT).
 
-entity_starttag(OUT) :- 
+entity_STARTTAG(OUT) :- 
 	object_get('javax.swing.text.html.parser.Entity', starttag, OUT).
 
-entity_endtag(OUT) :- 
+entity_ENDTAG(OUT) :- 
 	object_get('javax.swing.text.html.parser.Entity', endtag, OUT).
 
-entity_ms(OUT) :- 
+entity_MS(OUT) :- 
 	object_get('javax.swing.text.html.parser.Entity', ms, OUT).
 
-entity_md(OUT) :- 
+entity_MD(OUT) :- 
 	object_get('javax.swing.text.html.parser.Entity', md, OUT).
 
-entity_system(OUT) :- 
+entity_SYSTEM(OUT) :- 
 	object_get('javax.swing.text.html.parser.Entity', system, OUT).
 
-entity_general(OUT) :- 
+entity_GENERAL(OUT) :- 
 	object_get('javax.swing.text.html.parser.Entity', general, OUT).
 
-entity_default(OUT) :- 
+entity_DEFAULT(OUT) :- 
 	object_get('javax.swing.text.html.parser.Entity', default, OUT).
 
-entity_parameter(OUT) :- 
+entity_PARAMETER(OUT) :- 
 	object_get('javax.swing.text.html.parser.Entity', parameter, OUT).
 
 entity(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('javax.swing.text.html.parser.Entity', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-entity_get_name(REF, OUT) :- 
-	object_call(REF, getName, [], OUT).
+entity_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-entity_get_type(REF, OUT) :- 
-	object_call(REF, getType, [], OUT).
+entity_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
 entity_get_string(REF, OUT) :- 
 	object_call(REF, getString, [], OUT).
@@ -145,36 +145,36 @@ entity_get_data(REF, OUT) :-
 entity_name2type(REF, ARG0, OUT) :- 
 	object_call(REF, name2type, '.'(ARG0, []), OUT).
 
-entity_is_general(REF, OUT) :- 
-	object_call(REF, isGeneral, [], OUT).
+entity_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+entity_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+entity_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+entity_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+entity_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 entity_is_parameter(REF, OUT) :- 
 	object_call(REF, isParameter, [], OUT).
 
-entity_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-entity_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-entity_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-entity_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-entity_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-entity_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+entity_is_general(REF, OUT) :- 
+	object_call(REF, isGeneral, [], OUT).
 
 entity_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-entity_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+entity_get_name(REF, OUT) :- 
+	object_call(REF, getName, [], OUT).
 
-entity_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+entity_get_type(REF, OUT) :- 
+	object_call(REF, getType, [], OUT).
+
+entity_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 

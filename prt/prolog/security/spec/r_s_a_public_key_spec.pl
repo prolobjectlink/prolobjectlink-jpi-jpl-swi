@@ -25,26 +25,23 @@
 r_s_a_public_key_spec(ARG0, ARG1, OUT) :- 
 	object_new('java.security.spec.RSAPublicKeySpec', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-r_s_a_public_key_spec_get_modulus(REF, OUT) :- 
-	object_call(REF, getModulus, [], OUT).
-
-r_s_a_public_key_spec_get_public_exponent(REF, OUT) :- 
-	object_call(REF, getPublicExponent, [], OUT).
-
-r_s_a_public_key_spec_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-r_s_a_public_key_spec_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-r_s_a_public_key_spec_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
 r_s_a_public_key_spec_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-r_s_a_public_key_spec_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+r_s_a_public_key_spec_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+r_s_a_public_key_spec_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+r_s_a_public_key_spec_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+r_s_a_public_key_spec_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+r_s_a_public_key_spec_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 r_s_a_public_key_spec_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -52,9 +49,12 @@ r_s_a_public_key_spec_hash_code(REF, OUT) :-
 r_s_a_public_key_spec_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-r_s_a_public_key_spec_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+r_s_a_public_key_spec_get_public_exponent(REF, OUT) :- 
+	object_call(REF, getPublicExponent, [], OUT).
 
-r_s_a_public_key_spec_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+r_s_a_public_key_spec_get_modulus(REF, OUT) :- 
+	object_call(REF, getModulus, [], OUT).
+
+r_s_a_public_key_spec_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 

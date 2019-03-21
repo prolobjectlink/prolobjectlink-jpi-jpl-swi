@@ -22,45 +22,45 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-short_holder(OUT) :- 
-	object_new('org.omg.CORBA.ShortHolder', [], OUT).
-
 short_holder(ARG0, OUT) :- 
 	object_new('org.omg.CORBA.ShortHolder', '.'(ARG0, []), OUT).
 
-short_holder__read(REF, ARG0, OUT) :- 
-	object_call(REF, '_read', '.'(ARG0, []), OUT).
-
-short_holder__type(REF, OUT) :- 
-	object_call(REF, '_type', [], OUT).
-
-short_holder__write(REF, ARG0, OUT) :- 
-	object_call(REF, '_write', '.'(ARG0, []), OUT).
-
-short_holder_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-short_holder_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-short_holder_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-short_holder_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-short_holder_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-short_holder_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+short_holder(OUT) :- 
+	object_new('org.omg.CORBA.ShortHolder', [], OUT).
 
 short_holder_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-short_holder_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+short_holder__type(REF, OUT) :- 
+	object_call(REF, '_type', [], OUT).
 
-short_holder_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+short_holder_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+short_holder_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+short_holder__read(REF, ARG0) :- 
+	object_call(REF, '_read', '.'(ARG0, []), _).
+
+short_holder_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+short_holder_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+short_holder_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+short_holder_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+short_holder_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+short_holder__write(REF, ARG0) :- 
+	object_call(REF, '_write', '.'(ARG0, []), _).
+
+short_holder_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 

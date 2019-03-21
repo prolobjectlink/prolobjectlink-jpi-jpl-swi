@@ -22,33 +22,33 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-standard_constants_sni_host_name(OUT) :- 
+standard_constants_SNI_HOST_NAME(OUT) :- 
 	object_get('javax.net.ssl.StandardConstants', sni_host_name, OUT).
 
-standard_constants_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+standard_constants_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
-standard_constants_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+standard_constants_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-standard_constants_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+standard_constants_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+standard_constants_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+standard_constants_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+standard_constants_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+standard_constants_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
 standard_constants_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 standard_constants_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
-
-standard_constants_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-standard_constants_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-standard_constants_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-standard_constants_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

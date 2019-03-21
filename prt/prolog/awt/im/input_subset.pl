@@ -22,35 +22,50 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-input_subset_latin(OUT) :- 
+input_subset_LATIN(OUT) :- 
 	object_get('java.awt.im.InputSubset', latin, OUT).
 
-input_subset_latin_digits(OUT) :- 
+input_subset_LATIN_DIGITS(OUT) :- 
 	object_get('java.awt.im.InputSubset', latin_digits, OUT).
 
-input_subset_traditional_hanzi(OUT) :- 
+input_subset_TRADITIONAL_HANZI(OUT) :- 
 	object_get('java.awt.im.InputSubset', traditional_hanzi, OUT).
 
-input_subset_simplified_hanzi(OUT) :- 
+input_subset_SIMPLIFIED_HANZI(OUT) :- 
 	object_get('java.awt.im.InputSubset', simplified_hanzi, OUT).
 
-input_subset_kanji(OUT) :- 
+input_subset_KANJI(OUT) :- 
 	object_get('java.awt.im.InputSubset', kanji, OUT).
 
-input_subset_hanja(OUT) :- 
+input_subset_HANJA(OUT) :- 
 	object_get('java.awt.im.InputSubset', hanja, OUT).
 
-input_subset_halfwidth_katakana(OUT) :- 
+input_subset_HALFWIDTH_KATAKANA(OUT) :- 
 	object_get('java.awt.im.InputSubset', halfwidth_katakana, OUT).
 
-input_subset_fullwidth_latin(OUT) :- 
+input_subset_FULLWIDTH_LATIN(OUT) :- 
 	object_get('java.awt.im.InputSubset', fullwidth_latin, OUT).
 
-input_subset_fullwidth_digits(OUT) :- 
+input_subset_FULLWIDTH_DIGITS(OUT) :- 
 	object_get('java.awt.im.InputSubset', fullwidth_digits, OUT).
+
+input_subset_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+input_subset_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+input_subset_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 input_subset_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+input_subset_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
+
+input_subset_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 input_subset_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
@@ -58,21 +73,6 @@ input_subset_to_string(REF, OUT) :-
 input_subset_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-input_subset_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-input_subset_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-input_subset_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-input_subset_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-input_subset_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-input_subset_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+input_subset_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 

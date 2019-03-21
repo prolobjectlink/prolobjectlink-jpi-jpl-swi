@@ -22,81 +22,81 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-thread_info_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-thread_info_get_stack_trace(REF, OUT) :- 
-	object_call(REF, getStackTrace, [], OUT).
-
-thread_info_from(REF, ARG0, OUT) :- 
-	object_call(REF, from, '.'(ARG0, []), OUT).
-
-thread_info_get_lock_info(REF, OUT) :- 
-	object_call(REF, getLockInfo, [], OUT).
-
-thread_info_get_blocked_count(REF, OUT) :- 
-	object_call(REF, getBlockedCount, [], OUT).
-
-thread_info_get_blocked_time(REF, OUT) :- 
-	object_call(REF, getBlockedTime, [], OUT).
+thread_info_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 thread_info_get_lock_name(REF, OUT) :- 
 	object_call(REF, getLockName, [], OUT).
 
-thread_info_get_lock_owner_id(REF, OUT) :- 
-	object_call(REF, getLockOwnerId, [], OUT).
+thread_info_get_waited_time(REF, OUT) :- 
+	object_call(REF, getWaitedTime, [], OUT).
 
-thread_info_get_lock_owner_name(REF, OUT) :- 
-	object_call(REF, getLockOwnerName, [], OUT).
+thread_info_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-thread_info_get_locked_monitors(REF, OUT) :- 
-	object_call(REF, getLockedMonitors, [], OUT).
-
-thread_info_get_locked_synchronizers(REF, OUT) :- 
-	object_call(REF, getLockedSynchronizers, [], OUT).
-
-thread_info_get_thread_id(REF, OUT) :- 
-	object_call(REF, getThreadId, [], OUT).
-
-thread_info_get_thread_name(REF, OUT) :- 
-	object_call(REF, getThreadName, [], OUT).
+thread_info_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 thread_info_get_thread_state(REF, OUT) :- 
 	object_call(REF, getThreadState, [], OUT).
 
-thread_info_get_waited_count(REF, OUT) :- 
-	object_call(REF, getWaitedCount, [], OUT).
-
-thread_info_get_waited_time(REF, OUT) :- 
-	object_call(REF, getWaitedTime, [], OUT).
-
 thread_info_is_in_native(REF, OUT) :- 
 	object_call(REF, isInNative, [], OUT).
 
-thread_info_is_suspended(REF, OUT) :- 
-	object_call(REF, isSuspended, [], OUT).
+thread_info_get_lock_owner_id(REF, OUT) :- 
+	object_call(REF, getLockOwnerId, [], OUT).
 
-thread_info_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-thread_info_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-thread_info_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-thread_info_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-thread_info_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+thread_info_from(REF, ARG0, OUT) :- 
+	object_call(REF, from, '.'(ARG0, []), OUT).
 
 thread_info_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-thread_info_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+thread_info_get_waited_count(REF, OUT) :- 
+	object_call(REF, getWaitedCount, [], OUT).
 
-thread_info_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+thread_info_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+thread_info_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+thread_info_get_lock_owner_name(REF, OUT) :- 
+	object_call(REF, getLockOwnerName, [], OUT).
+
+thread_info_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+thread_info_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+thread_info_get_stack_trace(REF, OUT) :- 
+	object_call(REF, getStackTrace, [], OUT).
+
+thread_info_is_suspended(REF, OUT) :- 
+	object_call(REF, isSuspended, [], OUT).
+
+thread_info_get_blocked_count(REF, OUT) :- 
+	object_call(REF, getBlockedCount, [], OUT).
+
+thread_info_get_locked_synchronizers(REF, OUT) :- 
+	object_call(REF, getLockedSynchronizers, [], OUT).
+
+thread_info_get_lock_info(REF, OUT) :- 
+	object_call(REF, getLockInfo, [], OUT).
+
+thread_info_get_thread_name(REF, OUT) :- 
+	object_call(REF, getThreadName, [], OUT).
+
+thread_info_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+thread_info_get_thread_id(REF, OUT) :- 
+	object_call(REF, getThreadId, [], OUT).
+
+thread_info_get_blocked_time(REF, OUT) :- 
+	object_call(REF, getBlockedTime, [], OUT).
+
+thread_info_get_locked_monitors(REF, OUT) :- 
+	object_call(REF, getLockedMonitors, [], OUT).
 

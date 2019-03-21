@@ -22,17 +22,17 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-e_c_point_point_infinity(OUT) :- 
+e_c_point_POINT_INFINITY(OUT) :- 
 	object_get('java.security.spec.ECPoint', point_infinity, OUT).
 
 e_c_point(ARG0, ARG1, OUT) :- 
 	object_new('java.security.spec.ECPoint', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-e_c_point_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+e_c_point_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-e_c_point_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+e_c_point_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
 e_c_point_get_affine_x(REF, OUT) :- 
 	object_call(REF, getAffineX, [], OUT).
@@ -40,24 +40,24 @@ e_c_point_get_affine_x(REF, OUT) :-
 e_c_point_get_affine_y(REF, OUT) :- 
 	object_call(REF, getAffineY, [], OUT).
 
-e_c_point_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+e_c_point_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-e_c_point_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+e_c_point_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-e_c_point_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+e_c_point_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-e_c_point_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+e_c_point_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+e_c_point_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
 e_c_point_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-e_c_point_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-e_c_point_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+e_c_point_notify(REF) :- 
+	object_call(REF, notify, [], _).
 

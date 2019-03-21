@@ -22,17 +22,17 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-color_supported_not_supported(OUT) :- 
+color_supported_NOT_SUPPORTED(OUT) :- 
 	object_get('javax.print.attribute.standard.ColorSupported', not_supported, OUT).
 
-color_supported_supported(OUT) :- 
+color_supported_SUPPORTED(OUT) :- 
 	object_get('javax.print.attribute.standard.ColorSupported', supported, OUT).
 
-color_supported_get_name(REF, OUT) :- 
-	object_call(REF, getName, [], OUT).
+color_supported_clone(REF, OUT) :- 
+	object_call(REF, clone, [], OUT).
 
-color_supported_get_category(REF, OUT) :- 
-	object_call(REF, getCategory, [], OUT).
+color_supported_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 color_supported_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
@@ -40,30 +40,30 @@ color_supported_to_string(REF, OUT) :-
 color_supported_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-color_supported_clone(REF, OUT) :- 
-	object_call(REF, clone, [], OUT).
-
-color_supported_get_value(REF, OUT) :- 
-	object_call(REF, getValue, [], OUT).
-
-color_supported_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-color_supported_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-color_supported_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+color_supported_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
 color_supported_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-color_supported_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
+color_supported_get_category(REF, OUT) :- 
+	object_call(REF, getCategory, [], OUT).
 
-color_supported_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+color_supported_get_value(REF, OUT) :- 
+	object_call(REF, getValue, [], OUT).
 
-color_supported_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+color_supported_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+color_supported_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+color_supported_get_name(REF, OUT) :- 
+	object_call(REF, getName, [], OUT).
+
+color_supported_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+color_supported_wait(REF) :- 
+	object_call(REF, wait, [], _).
 

@@ -25,65 +25,56 @@
 search_result(ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
 	object_new('javax.naming.directory.SearchResult', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
 
-search_result(ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_new('javax.naming.directory.SearchResult', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
-search_result(ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_new('javax.naming.directory.SearchResult', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
 search_result(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('javax.naming.directory.SearchResult', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+search_result(ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_new('javax.naming.directory.SearchResult', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+
+search_result(ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_new('javax.naming.directory.SearchResult', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
 search_result_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-search_result_get_attributes(REF, OUT) :- 
-	object_call(REF, getAttributes, [], OUT).
+search_result_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-search_result_set_attributes(REF, ARG0, OUT) :- 
-	object_call(REF, setAttributes, '.'(ARG0, []), OUT).
+search_result_set_name_in_namespace(REF, ARG0) :- 
+	object_call(REF, setNameInNamespace, '.'(ARG0, []), _).
 
-search_result_get_object(REF, OUT) :- 
-	object_call(REF, getObject, [], OUT).
+search_result_set_name(REF, ARG0) :- 
+	object_call(REF, setName, '.'(ARG0, []), _).
 
 search_result_get_class_name(REF, OUT) :- 
 	object_call(REF, getClassName, [], OUT).
 
-search_result_set_object(REF, ARG0, OUT) :- 
-	object_call(REF, setObject, '.'(ARG0, []), OUT).
-
 search_result_get_name(REF, OUT) :- 
 	object_call(REF, getName, [], OUT).
 
-search_result_set_name(REF, ARG0, OUT) :- 
-	object_call(REF, setName, '.'(ARG0, []), OUT).
+search_result_set_class_name(REF, ARG0) :- 
+	object_call(REF, setClassName, '.'(ARG0, []), _).
 
-search_result_set_class_name(REF, ARG0, OUT) :- 
-	object_call(REF, setClassName, '.'(ARG0, []), OUT).
+search_result_set_attributes(REF, ARG0) :- 
+	object_call(REF, setAttributes, '.'(ARG0, []), _).
+
+search_result_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+search_result_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+search_result_get_object(REF, OUT) :- 
+	object_call(REF, getObject, [], OUT).
 
 search_result_get_name_in_namespace(REF, OUT) :- 
 	object_call(REF, getNameInNamespace, [], OUT).
 
+search_result_get_attributes(REF, OUT) :- 
+	object_call(REF, getAttributes, [], OUT).
+
 search_result_is_relative(REF, OUT) :- 
 	object_call(REF, isRelative, [], OUT).
-
-search_result_set_name_in_namespace(REF, ARG0, OUT) :- 
-	object_call(REF, setNameInNamespace, '.'(ARG0, []), OUT).
-
-search_result_set_relative(REF, ARG0, OUT) :- 
-	object_call(REF, setRelative, '.'(ARG0, []), OUT).
-
-search_result_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-search_result_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-search_result_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-search_result_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 search_result_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -91,9 +82,18 @@ search_result_hash_code(REF, OUT) :-
 search_result_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-search_result_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+search_result_set_object(REF, ARG0) :- 
+	object_call(REF, setObject, '.'(ARG0, []), _).
 
-search_result_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+search_result_set_relative(REF, ARG0) :- 
+	object_call(REF, setRelative, '.'(ARG0, []), _).
+
+search_result_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+search_result_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+search_result_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 

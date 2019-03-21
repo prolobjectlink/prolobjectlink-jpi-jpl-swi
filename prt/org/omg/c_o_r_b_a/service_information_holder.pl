@@ -22,35 +22,23 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-service_information_holder(OUT) :- 
-	object_new('org.omg.CORBA.ServiceInformationHolder', [], OUT).
-
 service_information_holder(ARG0, OUT) :- 
 	object_new('org.omg.CORBA.ServiceInformationHolder', '.'(ARG0, []), OUT).
 
-service_information_holder__read(REF, ARG0, OUT) :- 
-	object_call(REF, '_read', '.'(ARG0, []), OUT).
+service_information_holder(OUT) :- 
+	object_new('org.omg.CORBA.ServiceInformationHolder', [], OUT).
 
-service_information_holder__type(REF, OUT) :- 
-	object_call(REF, '_type', [], OUT).
-
-service_information_holder__write(REF, ARG0, OUT) :- 
-	object_call(REF, '_write', '.'(ARG0, []), OUT).
-
-service_information_holder_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-service_information_holder_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-service_information_holder_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+service_information_holder_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 service_information_holder_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-service_information_holder_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+service_information_holder__type(REF, OUT) :- 
+	object_call(REF, '_type', [], OUT).
+
+service_information_holder_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 service_information_holder_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -58,9 +46,21 @@ service_information_holder_hash_code(REF, OUT) :-
 service_information_holder_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-service_information_holder_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+service_information_holder_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-service_information_holder_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+service_information_holder__read(REF, ARG0) :- 
+	object_call(REF, '_read', '.'(ARG0, []), _).
+
+service_information_holder_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+service_information_holder_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+service_information_holder__write(REF, ARG0) :- 
+	object_call(REF, '_write', '.'(ARG0, []), _).
+
+service_information_holder_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 

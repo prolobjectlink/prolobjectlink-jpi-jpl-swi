@@ -22,54 +22,54 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-terminal_factory_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-terminal_factory_get_default(REF, OUT) :- 
-	object_call(REF, getDefault, [], OUT).
-
-terminal_factory_get_instance(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, getInstance, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-terminal_factory_get_instance(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getInstance, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-terminal_factory_get_instance(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, getInstance, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-terminal_factory_get_type(REF, OUT) :- 
-	object_call(REF, getType, [], OUT).
-
-terminal_factory_terminals(REF, OUT) :- 
-	object_call(REF, terminals, [], OUT).
-
-terminal_factory_get_provider(REF, OUT) :- 
-	object_call(REF, getProvider, [], OUT).
+terminal_factory_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 terminal_factory_get_default_type(REF, OUT) :- 
 	object_call(REF, getDefaultType, [], OUT).
 
-terminal_factory_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+terminal_factory_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-terminal_factory_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+terminal_factory_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-terminal_factory_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+terminal_factory_get_default(REF, OUT) :- 
+	object_call(REF, getDefault, [], OUT).
 
-terminal_factory_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+terminal_factory_get_provider(REF, OUT) :- 
+	object_call(REF, getProvider, [], OUT).
+
+terminal_factory_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+terminal_factory_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+terminal_factory_get_type(REF, OUT) :- 
+	object_call(REF, getType, [], OUT).
 
 terminal_factory_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+terminal_factory_terminals(REF, OUT) :- 
+	object_call(REF, terminals, [], OUT).
+
+terminal_factory_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+terminal_factory_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+terminal_factory_get_instance(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, getInstance, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+terminal_factory_get_instance(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, getInstance, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
 terminal_factory_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-terminal_factory_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-terminal_factory_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+terminal_factory_get_instance(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getInstance, '.'(ARG0, '.'(ARG1, [])), OUT).
 

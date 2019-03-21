@@ -22,69 +22,69 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-forwarding_java_file_object_get_kind(REF, OUT) :- 
-	object_call(REF, getKind, [], OUT).
-
-forwarding_java_file_object_get_nesting_kind(REF, OUT) :- 
-	object_call(REF, getNestingKind, [], OUT).
-
 forwarding_java_file_object_get_access_level(REF, OUT) :- 
 	object_call(REF, getAccessLevel, [], OUT).
-
-forwarding_java_file_object_is_name_compatible(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, isNameCompatible, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-forwarding_java_file_object_get_name(REF, OUT) :- 
-	object_call(REF, getName, [], OUT).
-
-forwarding_java_file_object_delete(REF, OUT) :- 
-	object_call(REF, delete, [], OUT).
-
-forwarding_java_file_object_to_uri(REF, OUT) :- 
-	object_call(REF, toUri, [], OUT).
-
-forwarding_java_file_object_get_last_modified(REF, OUT) :- 
-	object_call(REF, getLastModified, [], OUT).
-
-forwarding_java_file_object_get_char_content(REF, ARG0, OUT) :- 
-	object_call(REF, getCharContent, '.'(ARG0, []), OUT).
-
-forwarding_java_file_object_open_input_stream(REF, OUT) :- 
-	object_call(REF, openInputStream, [], OUT).
-
-forwarding_java_file_object_open_output_stream(REF, OUT) :- 
-	object_call(REF, openOutputStream, [], OUT).
-
-forwarding_java_file_object_open_reader(REF, ARG0, OUT) :- 
-	object_call(REF, openReader, '.'(ARG0, []), OUT).
-
-forwarding_java_file_object_open_writer(REF, OUT) :- 
-	object_call(REF, openWriter, [], OUT).
-
-forwarding_java_file_object_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-forwarding_java_file_object_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-forwarding_java_file_object_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-forwarding_java_file_object_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-forwarding_java_file_object_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-forwarding_java_file_object_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
 
 forwarding_java_file_object_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-forwarding_java_file_object_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+forwarding_java_file_object_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
-forwarding_java_file_object_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+forwarding_java_file_object_open_input_stream(REF, OUT) :- 
+	object_call(REF, openInputStream, [], OUT).
+
+forwarding_java_file_object_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+forwarding_java_file_object_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+forwarding_java_file_object_to_uri(REF, OUT) :- 
+	object_call(REF, toUri, [], OUT).
+
+forwarding_java_file_object_open_output_stream(REF, OUT) :- 
+	object_call(REF, openOutputStream, [], OUT).
+
+forwarding_java_file_object_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+forwarding_java_file_object_get_last_modified(REF, OUT) :- 
+	object_call(REF, getLastModified, [], OUT).
+
+forwarding_java_file_object_delete(REF, OUT) :- 
+	object_call(REF, delete, [], OUT).
+
+forwarding_java_file_object_get_nesting_kind(REF, OUT) :- 
+	object_call(REF, getNestingKind, [], OUT).
+
+forwarding_java_file_object_get_name(REF, OUT) :- 
+	object_call(REF, getName, [], OUT).
+
+forwarding_java_file_object_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+forwarding_java_file_object_get_char_content(REF, ARG0, OUT) :- 
+	object_call(REF, getCharContent, '.'(ARG0, []), OUT).
+
+forwarding_java_file_object_open_writer(REF, OUT) :- 
+	object_call(REF, openWriter, [], OUT).
+
+forwarding_java_file_object_get_kind(REF, OUT) :- 
+	object_call(REF, getKind, [], OUT).
+
+forwarding_java_file_object_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+forwarding_java_file_object_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+forwarding_java_file_object_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+forwarding_java_file_object_is_name_compatible(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, isNameCompatible, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+forwarding_java_file_object_open_reader(REF, ARG0, OUT) :- 
+	object_call(REF, openReader, '.'(ARG0, []), OUT).
 

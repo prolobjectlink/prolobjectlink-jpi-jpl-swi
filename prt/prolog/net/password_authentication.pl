@@ -25,23 +25,26 @@
 password_authentication(ARG0, ARG1, OUT) :- 
 	object_new('java.net.PasswordAuthentication', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-password_authentication_get_user_name(REF, OUT) :- 
-	object_call(REF, getUserName, [], OUT).
+password_authentication_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 password_authentication_get_password(REF, OUT) :- 
 	object_call(REF, getPassword, [], OUT).
 
-password_authentication_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-password_authentication_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-password_authentication_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
 password_authentication_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+password_authentication_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+password_authentication_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+password_authentication_get_user_name(REF, OUT) :- 
+	object_call(REF, getUserName, [], OUT).
+
+password_authentication_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 password_authentication_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
@@ -52,9 +55,6 @@ password_authentication_hash_code(REF, OUT) :-
 password_authentication_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-password_authentication_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-password_authentication_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+password_authentication_wait(REF) :- 
+	object_call(REF, wait, [], _).
 

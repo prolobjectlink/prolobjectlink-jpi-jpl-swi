@@ -22,78 +22,78 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-simple_annotation_value_visitor7_visit_annotation(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, visitAnnotation, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-simple_annotation_value_visitor7_visit_array(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, visitArray, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-simple_annotation_value_visitor7_visit_boolean(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, visitBoolean, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 simple_annotation_value_visitor7_visit_byte(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, visitByte, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-simple_annotation_value_visitor7_visit_char(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, visitChar, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-simple_annotation_value_visitor7_visit_double(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, visitDouble, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-simple_annotation_value_visitor7_visit_enum_constant(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, visitEnumConstant, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-simple_annotation_value_visitor7_visit_float(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, visitFloat, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-simple_annotation_value_visitor7_visit_int(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, visitInt, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-simple_annotation_value_visitor7_visit_long(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, visitLong, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-simple_annotation_value_visitor7_visit_short(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, visitShort, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-simple_annotation_value_visitor7_visit_string(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, visitString, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-simple_annotation_value_visitor7_visit_type(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, visitType, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-simple_annotation_value_visitor7_visit(REF, ARG0, OUT) :- 
-	object_call(REF, visit, '.'(ARG0, []), OUT).
-
-simple_annotation_value_visitor7_visit(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, visit, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-simple_annotation_value_visitor7_visit_unknown(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, visitUnknown, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-simple_annotation_value_visitor7_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-simple_annotation_value_visitor7_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-simple_annotation_value_visitor7_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-simple_annotation_value_visitor7_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+simple_annotation_value_visitor7_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 simple_annotation_value_visitor7_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-simple_annotation_value_visitor7_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+simple_annotation_value_visitor7_visit_boolean(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, visitBoolean, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+simple_annotation_value_visitor7_visit_unknown(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, visitUnknown, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+simple_annotation_value_visitor7_visit_type(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, visitType, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+simple_annotation_value_visitor7_visit_array(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, visitArray, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+simple_annotation_value_visitor7_visit_string(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, visitString, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+simple_annotation_value_visitor7_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 simple_annotation_value_visitor7_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-simple_annotation_value_visitor7_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+simple_annotation_value_visitor7_visit_enum_constant(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, visitEnumConstant, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-simple_annotation_value_visitor7_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+simple_annotation_value_visitor7_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+simple_annotation_value_visitor7_visit_char(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, visitChar, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+simple_annotation_value_visitor7_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+simple_annotation_value_visitor7_visit_annotation(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, visitAnnotation, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+simple_annotation_value_visitor7_visit_int(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, visitInt, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+simple_annotation_value_visitor7_visit_short(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, visitShort, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+simple_annotation_value_visitor7_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+simple_annotation_value_visitor7_visit_double(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, visitDouble, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+simple_annotation_value_visitor7_visit_long(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, visitLong, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+simple_annotation_value_visitor7_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+simple_annotation_value_visitor7_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+simple_annotation_value_visitor7_visit(REF, ARG0, OUT) :- 
+	object_call(REF, visit, '.'(ARG0, []), OUT).
+
+simple_annotation_value_visitor7_visit_float(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, visitFloat, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+simple_annotation_value_visitor7_visit(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, visit, '.'(ARG0, '.'(ARG1, [])), OUT).
 

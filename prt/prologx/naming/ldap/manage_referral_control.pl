@@ -22,13 +22,13 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-manage_referral_control_oid(OUT) :- 
+manage_referral_control_OID(OUT) :- 
 	object_get('javax.naming.ldap.ManageReferralControl', oid, OUT).
 
-manage_referral_control_critical(OUT) :- 
+manage_referral_control_CRITICAL(OUT) :- 
 	object_get('javax.naming.ldap.ManageReferralControl', critical, OUT).
 
-manage_referral_control_noncritical(OUT) :- 
+manage_referral_control_NONCRITICAL(OUT) :- 
 	object_get('javax.naming.ldap.ManageReferralControl', noncritical, OUT).
 
 manage_referral_control(OUT) :- 
@@ -37,26 +37,29 @@ manage_referral_control(OUT) :-
 manage_referral_control(ARG0, OUT) :- 
 	object_new('javax.naming.ldap.ManageReferralControl', '.'(ARG0, []), OUT).
 
-manage_referral_control_get_i_d(REF, OUT) :- 
-	object_call(REF, getID, [], OUT).
+manage_referral_control_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-manage_referral_control_is_critical(REF, OUT) :- 
-	object_call(REF, isCritical, [], OUT).
+manage_referral_control_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+manage_referral_control_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 manage_referral_control_get_encoded_value(REF, OUT) :- 
 	object_call(REF, getEncodedValue, [], OUT).
 
-manage_referral_control_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-manage_referral_control_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-manage_referral_control_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
 manage_referral_control_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+manage_referral_control_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+manage_referral_control_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+manage_referral_control_get_i_d(REF, OUT) :- 
+	object_call(REF, getID, [], OUT).
 
 manage_referral_control_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
@@ -67,9 +70,6 @@ manage_referral_control_hash_code(REF, OUT) :-
 manage_referral_control_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-manage_referral_control_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-manage_referral_control_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+manage_referral_control_is_critical(REF, OUT) :- 
+	object_call(REF, isCritical, [], OUT).
 

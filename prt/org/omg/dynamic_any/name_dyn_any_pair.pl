@@ -22,36 +22,36 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-name_dyn_any_pair(OUT) :- 
-	object_new('org.omg.DynamicAny.NameDynAnyPair', [], OUT).
-
 name_dyn_any_pair(ARG0, ARG1, OUT) :- 
 	object_new('org.omg.DynamicAny.NameDynAnyPair', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-name_dyn_any_pair_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-name_dyn_any_pair_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-name_dyn_any_pair_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-name_dyn_any_pair_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+name_dyn_any_pair(OUT) :- 
+	object_new('org.omg.DynamicAny.NameDynAnyPair', [], OUT).
 
 name_dyn_any_pair_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
+name_dyn_any_pair_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+name_dyn_any_pair_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
 name_dyn_any_pair_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+name_dyn_any_pair_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+name_dyn_any_pair_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+name_dyn_any_pair_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+name_dyn_any_pair_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
 name_dyn_any_pair_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-name_dyn_any_pair_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-name_dyn_any_pair_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

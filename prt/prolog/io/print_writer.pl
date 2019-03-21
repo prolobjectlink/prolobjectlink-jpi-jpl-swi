@@ -22,8 +22,11 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-print_writer(ARG0, ARG1, OUT) :- 
-	object_new('java.io.PrintWriter', '.'(ARG0, '.'(ARG1, [])), OUT).
+print_writer(ARG0, OUT) :- 
+	object_new('java.io.PrintWriter', '.'(ARG0, []), OUT).
+
+print_writer(ARG0, OUT) :- 
+	object_new('java.io.PrintWriter', '.'(ARG0, []), OUT).
 
 print_writer(ARG0, OUT) :- 
 	object_new('java.io.PrintWriter', '.'(ARG0, []), OUT).
@@ -37,125 +40,38 @@ print_writer(ARG0, ARG1, OUT) :-
 print_writer(ARG0, ARG1, OUT) :- 
 	object_new('java.io.PrintWriter', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-print_writer(ARG0, OUT) :- 
-	object_new('java.io.PrintWriter', '.'(ARG0, []), OUT).
-
-print_writer(ARG0, OUT) :- 
-	object_new('java.io.PrintWriter', '.'(ARG0, []), OUT).
+print_writer(ARG0, ARG1, OUT) :- 
+	object_new('java.io.PrintWriter', '.'(ARG0, '.'(ARG1, [])), OUT).
 
 print_writer(ARG0, ARG1, OUT) :- 
 	object_new('java.io.PrintWriter', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-print_writer_println(REF, ARG0, OUT) :- 
-	object_call(REF, println, '.'(ARG0, []), OUT).
+print_writer_print(REF, ARG0) :- 
+	object_call(REF, print, '.'(ARG0, []), _).
 
-print_writer_println(REF, ARG0, OUT) :- 
-	object_call(REF, println, '.'(ARG0, []), OUT).
+print_writer_print(REF, ARG0) :- 
+	object_call(REF, print, '.'(ARG0, []), _).
 
-print_writer_println(REF, ARG0, OUT) :- 
-	object_call(REF, println, '.'(ARG0, []), OUT).
+print_writer_print(REF, ARG0) :- 
+	object_call(REF, print, '.'(ARG0, []), _).
 
-print_writer_println(REF, ARG0, OUT) :- 
-	object_call(REF, println, '.'(ARG0, []), OUT).
+print_writer_print(REF, ARG0) :- 
+	object_call(REF, print, '.'(ARG0, []), _).
 
-print_writer_println(REF, ARG0, OUT) :- 
-	object_call(REF, println, '.'(ARG0, []), OUT).
+print_writer_print(REF, ARG0) :- 
+	object_call(REF, print, '.'(ARG0, []), _).
 
-print_writer_println(REF, ARG0, OUT) :- 
-	object_call(REF, println, '.'(ARG0, []), OUT).
+print_writer_print(REF, ARG0) :- 
+	object_call(REF, print, '.'(ARG0, []), _).
 
-print_writer_println(REF, ARG0, OUT) :- 
-	object_call(REF, println, '.'(ARG0, []), OUT).
+print_writer_print(REF, ARG0) :- 
+	object_call(REF, print, '.'(ARG0, []), _).
 
-print_writer_println(REF, ARG0, OUT) :- 
-	object_call(REF, println, '.'(ARG0, []), OUT).
+print_writer_print(REF, ARG0) :- 
+	object_call(REF, print, '.'(ARG0, []), _).
 
-print_writer_println(REF, OUT) :- 
-	object_call(REF, println, [], OUT).
-
-print_writer_println(REF, ARG0, OUT) :- 
-	object_call(REF, println, '.'(ARG0, []), OUT).
-
-print_writer_append(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, append, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-print_writer_append(REF, ARG0, OUT) :- 
-	object_call(REF, append, '.'(ARG0, []), OUT).
-
-print_writer_append(REF, ARG0, OUT) :- 
-	object_call(REF, append, '.'(ARG0, []), OUT).
-
-print_writer_append(REF, ARG0, OUT) :- 
-	object_call(REF, append, '.'(ARG0, []), OUT).
-
-print_writer_append(REF, ARG0, OUT) :- 
-	object_call(REF, append, '.'(ARG0, []), OUT).
-
-print_writer_append(REF, ARG0, OUT) :- 
-	object_call(REF, append, '.'(ARG0, []), OUT).
-
-print_writer_append(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, append, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-print_writer_append(REF, ARG0, OUT) :- 
-	object_call(REF, append, '.'(ARG0, []), OUT).
-
-print_writer_append(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, append, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-print_writer_format(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, format, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-print_writer_format(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, format, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-print_writer_write(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, write, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-print_writer_write(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, write, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-print_writer_write(REF, ARG0, OUT) :- 
-	object_call(REF, write, '.'(ARG0, []), OUT).
-
-print_writer_write(REF, ARG0, OUT) :- 
-	object_call(REF, write, '.'(ARG0, []), OUT).
-
-print_writer_write(REF, ARG0, OUT) :- 
-	object_call(REF, write, '.'(ARG0, []), OUT).
-
-print_writer_print(REF, ARG0, OUT) :- 
-	object_call(REF, print, '.'(ARG0, []), OUT).
-
-print_writer_print(REF, ARG0, OUT) :- 
-	object_call(REF, print, '.'(ARG0, []), OUT).
-
-print_writer_print(REF, ARG0, OUT) :- 
-	object_call(REF, print, '.'(ARG0, []), OUT).
-
-print_writer_print(REF, ARG0, OUT) :- 
-	object_call(REF, print, '.'(ARG0, []), OUT).
-
-print_writer_print(REF, ARG0, OUT) :- 
-	object_call(REF, print, '.'(ARG0, []), OUT).
-
-print_writer_print(REF, ARG0, OUT) :- 
-	object_call(REF, print, '.'(ARG0, []), OUT).
-
-print_writer_print(REF, ARG0, OUT) :- 
-	object_call(REF, print, '.'(ARG0, []), OUT).
-
-print_writer_print(REF, ARG0, OUT) :- 
-	object_call(REF, print, '.'(ARG0, []), OUT).
-
-print_writer_print(REF, ARG0, OUT) :- 
-	object_call(REF, print, '.'(ARG0, []), OUT).
-
-print_writer_close(REF, OUT) :- 
-	object_call(REF, close, [], OUT).
-
-print_writer_flush(REF, OUT) :- 
-	object_call(REF, flush, [], OUT).
+print_writer_print(REF, ARG0) :- 
+	object_call(REF, print, '.'(ARG0, []), _).
 
 print_writer_check_error(REF, OUT) :- 
 	object_call(REF, checkError, [], OUT).
@@ -166,20 +82,20 @@ print_writer_printf(REF, ARG0, ARG1, OUT) :-
 print_writer_printf(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, printf, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-print_writer_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-print_writer_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-print_writer_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-print_writer_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+print_writer_close(REF) :- 
+	object_call(REF, close, [], _).
 
 print_writer_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
+
+print_writer_write(REF, ARG0) :- 
+	object_call(REF, write, '.'(ARG0, []), _).
+
+print_writer_write(REF, ARG0) :- 
+	object_call(REF, write, '.'(ARG0, []), _).
+
+print_writer_write(REF, ARG0) :- 
+	object_call(REF, write, '.'(ARG0, []), _).
 
 print_writer_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -187,9 +103,93 @@ print_writer_hash_code(REF, OUT) :-
 print_writer_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-print_writer_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+print_writer_println(REF, ARG0) :- 
+	object_call(REF, println, '.'(ARG0, []), _).
 
-print_writer_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+print_writer_println(REF, ARG0) :- 
+	object_call(REF, println, '.'(ARG0, []), _).
+
+print_writer_println(REF, ARG0) :- 
+	object_call(REF, println, '.'(ARG0, []), _).
+
+print_writer_println(REF, ARG0) :- 
+	object_call(REF, println, '.'(ARG0, []), _).
+
+print_writer_println(REF, ARG0) :- 
+	object_call(REF, println, '.'(ARG0, []), _).
+
+print_writer_println(REF, ARG0) :- 
+	object_call(REF, println, '.'(ARG0, []), _).
+
+print_writer_println(REF, ARG0) :- 
+	object_call(REF, println, '.'(ARG0, []), _).
+
+print_writer_println(REF, ARG0) :- 
+	object_call(REF, println, '.'(ARG0, []), _).
+
+print_writer_println(REF, ARG0) :- 
+	object_call(REF, println, '.'(ARG0, []), _).
+
+print_writer_println(REF) :- 
+	object_call(REF, println, [], _).
+
+print_writer_format(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, format, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+print_writer_format(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, format, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+print_writer_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+print_writer_write(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, write, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+print_writer_write(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, write, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+print_writer_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+print_writer_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+print_writer_flush(REF) :- 
+	object_call(REF, flush, [], _).
+
+print_writer_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+print_writer_append(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, append, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+print_writer_append(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, append, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+print_writer_append(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, append, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+print_writer_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+print_writer_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+print_writer_append(REF, ARG0, OUT) :- 
+	object_call(REF, append, '.'(ARG0, []), OUT).
+
+print_writer_append(REF, ARG0, OUT) :- 
+	object_call(REF, append, '.'(ARG0, []), OUT).
+
+print_writer_append(REF, ARG0, OUT) :- 
+	object_call(REF, append, '.'(ARG0, []), OUT).
+
+print_writer_append(REF, ARG0, OUT) :- 
+	object_call(REF, append, '.'(ARG0, []), OUT).
+
+print_writer_append(REF, ARG0, OUT) :- 
+	object_call(REF, append, '.'(ARG0, []), OUT).
+
+print_writer_append(REF, ARG0, OUT) :- 
+	object_call(REF, append, '.'(ARG0, []), OUT).
 

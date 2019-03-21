@@ -25,39 +25,39 @@
 job_priority_supported(ARG0, OUT) :- 
 	object_new('javax.print.attribute.standard.JobPrioritySupported', '.'(ARG0, []), OUT).
 
-job_priority_supported_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+job_priority_supported_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 job_priority_supported_get_name(REF, OUT) :- 
 	object_call(REF, getName, [], OUT).
 
+job_priority_supported_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
 job_priority_supported_get_category(REF, OUT) :- 
 	object_call(REF, getCategory, [], OUT).
+
+job_priority_supported_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+job_priority_supported_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 job_priority_supported_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-job_priority_supported_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
 job_priority_supported_get_value(REF, OUT) :- 
 	object_call(REF, getValue, [], OUT).
 
-job_priority_supported_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+job_priority_supported_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-job_priority_supported_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+job_priority_supported_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-job_priority_supported_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+job_priority_supported_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
 job_priority_supported_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-job_priority_supported_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-job_priority_supported_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

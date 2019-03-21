@@ -22,8 +22,8 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-file_output_stream(ARG0, OUT) :- 
-	object_new('java.io.FileOutputStream', '.'(ARG0, []), OUT).
+file_output_stream(ARG0, ARG1, OUT) :- 
+	object_new('java.io.FileOutputStream', '.'(ARG0, '.'(ARG1, [])), OUT).
 
 file_output_stream(ARG0, ARG1, OUT) :- 
 	object_new('java.io.FileOutputStream', '.'(ARG0, '.'(ARG1, [])), OUT).
@@ -31,23 +31,32 @@ file_output_stream(ARG0, ARG1, OUT) :-
 file_output_stream(ARG0, OUT) :- 
 	object_new('java.io.FileOutputStream', '.'(ARG0, []), OUT).
 
-file_output_stream(ARG0, ARG1, OUT) :- 
-	object_new('java.io.FileOutputStream', '.'(ARG0, '.'(ARG1, [])), OUT).
+file_output_stream(ARG0, OUT) :- 
+	object_new('java.io.FileOutputStream', '.'(ARG0, []), OUT).
 
 file_output_stream(ARG0, OUT) :- 
 	object_new('java.io.FileOutputStream', '.'(ARG0, []), OUT).
 
-file_output_stream_write(REF, ARG0, OUT) :- 
-	object_call(REF, write, '.'(ARG0, []), OUT).
+file_output_stream_flush(REF) :- 
+	object_call(REF, flush, [], _).
 
-file_output_stream_write(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, write, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+file_output_stream_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-file_output_stream_write(REF, ARG0, OUT) :- 
-	object_call(REF, write, '.'(ARG0, []), OUT).
+file_output_stream_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-file_output_stream_close(REF, OUT) :- 
-	object_call(REF, close, [], OUT).
+file_output_stream_close(REF) :- 
+	object_call(REF, close, [], _).
+
+file_output_stream_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+file_output_stream_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+file_output_stream_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 file_output_stream_get_channel(REF, OUT) :- 
 	object_call(REF, getChannel, [], OUT).
@@ -55,33 +64,24 @@ file_output_stream_get_channel(REF, OUT) :-
 file_output_stream_get_f_d(REF, OUT) :- 
 	object_call(REF, getFD, [], OUT).
 
-file_output_stream_flush(REF, OUT) :- 
-	object_call(REF, flush, [], OUT).
+file_output_stream_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
-file_output_stream_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-file_output_stream_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-file_output_stream_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+file_output_stream_write(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, write, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
 
 file_output_stream_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-file_output_stream_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+file_output_stream_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-file_output_stream_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+file_output_stream_write(REF, ARG0) :- 
+	object_call(REF, write, '.'(ARG0, []), _).
+
+file_output_stream_write(REF, ARG0) :- 
+	object_call(REF, write, '.'(ARG0, []), _).
 
 file_output_stream_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-file_output_stream_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-file_output_stream_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

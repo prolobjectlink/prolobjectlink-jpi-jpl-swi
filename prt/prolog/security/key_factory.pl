@@ -22,6 +22,42 @@
 
 :-consult('../../../obj/prolobject.pl').
 
+key_factory_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+key_factory_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
+
+key_factory_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+key_factory_translate_key(REF, ARG0, OUT) :- 
+	object_call(REF, translateKey, '.'(ARG0, []), OUT).
+
+key_factory_get_provider(REF, OUT) :- 
+	object_call(REF, getProvider, [], OUT).
+
+key_factory_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+key_factory_get_algorithm(REF, OUT) :- 
+	object_call(REF, getAlgorithm, [], OUT).
+
+key_factory_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+key_factory_generate_public(REF, ARG0, OUT) :- 
+	object_call(REF, generatePublic, '.'(ARG0, []), OUT).
+
+key_factory_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+key_factory_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+key_factory_generate_private(REF, ARG0, OUT) :- 
+	object_call(REF, generatePrivate, '.'(ARG0, []), OUT).
+
 key_factory_get_instance(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, getInstance, '.'(ARG0, '.'(ARG1, [])), OUT).
 
@@ -31,48 +67,12 @@ key_factory_get_instance(REF, ARG0, ARG1, OUT) :-
 key_factory_get_instance(REF, ARG0, OUT) :- 
 	object_call(REF, getInstance, '.'(ARG0, []), OUT).
 
-key_factory_get_provider(REF, OUT) :- 
-	object_call(REF, getProvider, [], OUT).
-
-key_factory_get_algorithm(REF, OUT) :- 
-	object_call(REF, getAlgorithm, [], OUT).
-
-key_factory_generate_private(REF, ARG0, OUT) :- 
-	object_call(REF, generatePrivate, '.'(ARG0, []), OUT).
-
-key_factory_generate_public(REF, ARG0, OUT) :- 
-	object_call(REF, generatePublic, '.'(ARG0, []), OUT).
-
-key_factory_get_key_spec(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getKeySpec, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-key_factory_translate_key(REF, ARG0, OUT) :- 
-	object_call(REF, translateKey, '.'(ARG0, []), OUT).
-
-key_factory_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-key_factory_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-key_factory_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+key_factory_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 key_factory_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-key_factory_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-key_factory_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-key_factory_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-key_factory_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-key_factory_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+key_factory_get_key_spec(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getKeySpec, '.'(ARG0, '.'(ARG1, [])), OUT).
 

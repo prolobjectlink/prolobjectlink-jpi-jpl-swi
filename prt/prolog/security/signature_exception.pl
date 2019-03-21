@@ -22,11 +22,11 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-signature_exception(ARG0, OUT) :- 
-	object_new('java.security.SignatureException', '.'(ARG0, []), OUT).
-
 signature_exception(ARG0, ARG1, OUT) :- 
 	object_new('java.security.SignatureException', '.'(ARG0, '.'(ARG1, [])), OUT).
+
+signature_exception(ARG0, OUT) :- 
+	object_new('java.security.SignatureException', '.'(ARG0, []), OUT).
 
 signature_exception(ARG0, OUT) :- 
 	object_new('java.security.SignatureException', '.'(ARG0, []), OUT).
@@ -34,56 +34,50 @@ signature_exception(ARG0, OUT) :-
 signature_exception(OUT) :- 
 	object_new('java.security.SignatureException', [], OUT).
 
-signature_exception_print_stack_trace(REF, OUT) :- 
-	object_call(REF, printStackTrace, [], OUT).
-
-signature_exception_print_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, printStackTrace, '.'(ARG0, []), OUT).
-
-signature_exception_print_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, printStackTrace, '.'(ARG0, []), OUT).
-
-signature_exception_fill_in_stack_trace(REF, OUT) :- 
-	object_call(REF, fillInStackTrace, [], OUT).
-
-signature_exception_get_cause(REF, OUT) :- 
-	object_call(REF, getCause, [], OUT).
-
-signature_exception_init_cause(REF, ARG0, OUT) :- 
-	object_call(REF, initCause, '.'(ARG0, []), OUT).
-
-signature_exception_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-signature_exception_add_suppressed(REF, ARG0, OUT) :- 
-	object_call(REF, addSuppressed, '.'(ARG0, []), OUT).
-
 signature_exception_get_localized_message(REF, OUT) :- 
 	object_call(REF, getLocalizedMessage, [], OUT).
-
-signature_exception_get_message(REF, OUT) :- 
-	object_call(REF, getMessage, [], OUT).
 
 signature_exception_get_stack_trace(REF, OUT) :- 
 	object_call(REF, getStackTrace, [], OUT).
 
-signature_exception_get_suppressed(REF, OUT) :- 
-	object_call(REF, getSuppressed, [], OUT).
+signature_exception_fill_in_stack_trace(REF, OUT) :- 
+	object_call(REF, fillInStackTrace, [], OUT).
 
-signature_exception_set_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, setStackTrace, '.'(ARG0, []), OUT).
+signature_exception_add_suppressed(REF, ARG0) :- 
+	object_call(REF, addSuppressed, '.'(ARG0, []), _).
 
-signature_exception_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+signature_exception_init_cause(REF, ARG0, OUT) :- 
+	object_call(REF, initCause, '.'(ARG0, []), OUT).
 
-signature_exception_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+signature_exception_get_message(REF, OUT) :- 
+	object_call(REF, getMessage, [], OUT).
 
-signature_exception_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+signature_exception_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+signature_exception_get_cause(REF, OUT) :- 
+	object_call(REF, getCause, [], OUT).
 
 signature_exception_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+signature_exception_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+signature_exception_get_suppressed(REF, OUT) :- 
+	object_call(REF, getSuppressed, [], OUT).
+
+signature_exception_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+signature_exception_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+signature_exception_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+signature_exception_print_stack_trace(REF) :- 
+	object_call(REF, printStackTrace, [], _).
 
 signature_exception_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -91,9 +85,15 @@ signature_exception_hash_code(REF, OUT) :-
 signature_exception_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-signature_exception_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+signature_exception_print_stack_trace(REF, ARG0) :- 
+	object_call(REF, printStackTrace, '.'(ARG0, []), _).
 
-signature_exception_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+signature_exception_print_stack_trace(REF, ARG0) :- 
+	object_call(REF, printStackTrace, '.'(ARG0, []), _).
+
+signature_exception_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+signature_exception_set_stack_trace(REF, ARG0) :- 
+	object_call(REF, setStackTrace, '.'(ARG0, []), _).
 

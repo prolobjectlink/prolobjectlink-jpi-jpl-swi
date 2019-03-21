@@ -22,45 +22,45 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-glyph_justification_info_priority_kashida(OUT) :- 
+glyph_justification_info_PRIORITY_KASHIDA(OUT) :- 
 	object_get('java.awt.font.GlyphJustificationInfo', priority_kashida, OUT).
 
-glyph_justification_info_priority_whitespace(OUT) :- 
+glyph_justification_info_PRIORITY_WHITESPACE(OUT) :- 
 	object_get('java.awt.font.GlyphJustificationInfo', priority_whitespace, OUT).
 
-glyph_justification_info_priority_interchar(OUT) :- 
+glyph_justification_info_PRIORITY_INTERCHAR(OUT) :- 
 	object_get('java.awt.font.GlyphJustificationInfo', priority_interchar, OUT).
 
-glyph_justification_info_priority_none(OUT) :- 
+glyph_justification_info_PRIORITY_NONE(OUT) :- 
 	object_get('java.awt.font.GlyphJustificationInfo', priority_none, OUT).
 
 glyph_justification_info(ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, ARG6, ARG7, ARG8, OUT) :- 
 	object_new('java.awt.font.GlyphJustificationInfo', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, '.'(ARG6, '.'(ARG7, '.'(ARG8, []))))))))), OUT).
 
-glyph_justification_info_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+glyph_justification_info_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-glyph_justification_info_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-glyph_justification_info_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-glyph_justification_info_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+glyph_justification_info_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 glyph_justification_info_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-glyph_justification_info_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+glyph_justification_info_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 glyph_justification_info_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-glyph_justification_info_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+glyph_justification_info_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
-glyph_justification_info_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+glyph_justification_info_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+glyph_justification_info_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+glyph_justification_info_notify(REF) :- 
+	object_call(REF, notify, [], _).
 

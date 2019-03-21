@@ -28,60 +28,60 @@ abstract_undoable_edit(OUT) :-
 abstract_undoable_edit_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-abstract_undoable_edit_can_redo(REF, OUT) :- 
-	object_call(REF, canRedo, [], OUT).
+abstract_undoable_edit_die(REF) :- 
+	object_call(REF, die, [], _).
 
-abstract_undoable_edit_can_undo(REF, OUT) :- 
-	object_call(REF, canUndo, [], OUT).
-
-abstract_undoable_edit_die(REF, OUT) :- 
-	object_call(REF, die, [], OUT).
-
-abstract_undoable_edit_get_presentation_name(REF, OUT) :- 
-	object_call(REF, getPresentationName, [], OUT).
+abstract_undoable_edit_redo(REF) :- 
+	object_call(REF, redo, [], _).
 
 abstract_undoable_edit_get_redo_presentation_name(REF, OUT) :- 
 	object_call(REF, getRedoPresentationName, [], OUT).
 
-abstract_undoable_edit_get_undo_presentation_name(REF, OUT) :- 
-	object_call(REF, getUndoPresentationName, [], OUT).
+abstract_undoable_edit_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-abstract_undoable_edit_is_significant(REF, OUT) :- 
-	object_call(REF, isSignificant, [], OUT).
+abstract_undoable_edit_can_redo(REF, OUT) :- 
+	object_call(REF, canRedo, [], OUT).
 
-abstract_undoable_edit_redo(REF, OUT) :- 
-	object_call(REF, redo, [], OUT).
-
-abstract_undoable_edit_replace_edit(REF, ARG0, OUT) :- 
-	object_call(REF, replaceEdit, '.'(ARG0, []), OUT).
-
-abstract_undoable_edit_undo(REF, OUT) :- 
-	object_call(REF, undo, [], OUT).
-
-abstract_undoable_edit_add_edit(REF, ARG0, OUT) :- 
-	object_call(REF, addEdit, '.'(ARG0, []), OUT).
-
-abstract_undoable_edit_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-abstract_undoable_edit_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-abstract_undoable_edit_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-abstract_undoable_edit_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-abstract_undoable_edit_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+abstract_undoable_edit_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 abstract_undoable_edit_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-abstract_undoable_edit_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+abstract_undoable_edit_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
-abstract_undoable_edit_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+abstract_undoable_edit_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+abstract_undoable_edit_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+abstract_undoable_edit_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+abstract_undoable_edit_get_presentation_name(REF, OUT) :- 
+	object_call(REF, getPresentationName, [], OUT).
+
+abstract_undoable_edit_add_edit(REF, ARG0, OUT) :- 
+	object_call(REF, addEdit, '.'(ARG0, []), OUT).
+
+abstract_undoable_edit_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+abstract_undoable_edit_is_significant(REF, OUT) :- 
+	object_call(REF, isSignificant, [], OUT).
+
+abstract_undoable_edit_undo(REF) :- 
+	object_call(REF, undo, [], _).
+
+abstract_undoable_edit_can_undo(REF, OUT) :- 
+	object_call(REF, canUndo, [], OUT).
+
+abstract_undoable_edit_get_undo_presentation_name(REF, OUT) :- 
+	object_call(REF, getUndoPresentationName, [], OUT).
+
+abstract_undoable_edit_replace_edit(REF, ARG0, OUT) :- 
+	object_call(REF, replaceEdit, '.'(ARG0, []), OUT).
 

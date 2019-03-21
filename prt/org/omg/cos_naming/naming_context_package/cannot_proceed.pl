@@ -22,65 +22,59 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-cannot_proceed(OUT) :- 
-	object_new('org.omg.CosNaming.NamingContextPackage.CannotProceed', [], OUT).
+cannot_proceed(ARG0, ARG1, ARG2, OUT) :- 
+	object_new('org.omg.CosNaming.NamingContextPackage.CannotProceed', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
 cannot_proceed(ARG0, ARG1, OUT) :- 
 	object_new('org.omg.CosNaming.NamingContextPackage.CannotProceed', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-cannot_proceed(ARG0, ARG1, ARG2, OUT) :- 
-	object_new('org.omg.CosNaming.NamingContextPackage.CannotProceed', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+cannot_proceed(OUT) :- 
+	object_new('org.omg.CosNaming.NamingContextPackage.CannotProceed', [], OUT).
 
-cannot_proceed_print_stack_trace(REF, OUT) :- 
-	object_call(REF, printStackTrace, [], OUT).
-
-cannot_proceed_print_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, printStackTrace, '.'(ARG0, []), OUT).
-
-cannot_proceed_print_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, printStackTrace, '.'(ARG0, []), OUT).
-
-cannot_proceed_fill_in_stack_trace(REF, OUT) :- 
-	object_call(REF, fillInStackTrace, [], OUT).
+cannot_proceed_add_suppressed(REF, ARG0) :- 
+	object_call(REF, addSuppressed, '.'(ARG0, []), _).
 
 cannot_proceed_get_cause(REF, OUT) :- 
 	object_call(REF, getCause, [], OUT).
 
+cannot_proceed_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
 cannot_proceed_init_cause(REF, ARG0, OUT) :- 
 	object_call(REF, initCause, '.'(ARG0, []), OUT).
-
-cannot_proceed_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-cannot_proceed_add_suppressed(REF, ARG0, OUT) :- 
-	object_call(REF, addSuppressed, '.'(ARG0, []), OUT).
 
 cannot_proceed_get_localized_message(REF, OUT) :- 
 	object_call(REF, getLocalizedMessage, [], OUT).
 
-cannot_proceed_get_message(REF, OUT) :- 
-	object_call(REF, getMessage, [], OUT).
-
-cannot_proceed_get_stack_trace(REF, OUT) :- 
-	object_call(REF, getStackTrace, [], OUT).
+cannot_proceed_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
 cannot_proceed_get_suppressed(REF, OUT) :- 
 	object_call(REF, getSuppressed, [], OUT).
 
-cannot_proceed_set_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, setStackTrace, '.'(ARG0, []), OUT).
+cannot_proceed_print_stack_trace(REF, ARG0) :- 
+	object_call(REF, printStackTrace, '.'(ARG0, []), _).
 
-cannot_proceed_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+cannot_proceed_print_stack_trace(REF, ARG0) :- 
+	object_call(REF, printStackTrace, '.'(ARG0, []), _).
 
-cannot_proceed_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+cannot_proceed_print_stack_trace(REF) :- 
+	object_call(REF, printStackTrace, [], _).
 
-cannot_proceed_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+cannot_proceed_get_stack_trace(REF, OUT) :- 
+	object_call(REF, getStackTrace, [], OUT).
 
-cannot_proceed_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+cannot_proceed_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+cannot_proceed_fill_in_stack_trace(REF, OUT) :- 
+	object_call(REF, fillInStackTrace, [], OUT).
+
+cannot_proceed_set_stack_trace(REF, ARG0) :- 
+	object_call(REF, setStackTrace, '.'(ARG0, []), _).
+
+cannot_proceed_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 cannot_proceed_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -88,9 +82,15 @@ cannot_proceed_hash_code(REF, OUT) :-
 cannot_proceed_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-cannot_proceed_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+cannot_proceed_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-cannot_proceed_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+cannot_proceed_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+cannot_proceed_get_message(REF, OUT) :- 
+	object_call(REF, getMessage, [], OUT).
+
+cannot_proceed_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 

@@ -22,23 +22,44 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-namespace_support_xmlns(OUT) :- 
+namespace_support_XMLNS(OUT) :- 
 	object_get('org.xml.sax.helpers.NamespaceSupport', xmlns, OUT).
 
-namespace_support_nsdecl(OUT) :- 
+namespace_support_NSDECL(OUT) :- 
 	object_get('org.xml.sax.helpers.NamespaceSupport', nsdecl, OUT).
 
 namespace_support(OUT) :- 
 	object_new('org.xml.sax.helpers.NamespaceSupport', [], OUT).
 
-namespace_support_reset(REF, OUT) :- 
-	object_call(REF, reset, [], OUT).
-
 namespace_support_get_u_r_i(REF, ARG0, OUT) :- 
 	object_call(REF, getURI, '.'(ARG0, []), OUT).
 
+namespace_support_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+namespace_support_set_namespace_decl_uris(REF, ARG0) :- 
+	object_call(REF, setNamespaceDeclUris, '.'(ARG0, []), _).
+
+namespace_support_is_namespace_decl_uris(REF, OUT) :- 
+	object_call(REF, isNamespaceDeclUris, [], OUT).
+
 namespace_support_get_prefix(REF, ARG0, OUT) :- 
 	object_call(REF, getPrefix, '.'(ARG0, []), OUT).
+
+namespace_support_get_prefixes(REF, OUT) :- 
+	object_call(REF, getPrefixes, [], OUT).
+
+namespace_support_get_prefixes(REF, ARG0, OUT) :- 
+	object_call(REF, getPrefixes, '.'(ARG0, []), OUT).
+
+namespace_support_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+namespace_support_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+namespace_support_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 namespace_support_declare_prefix(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, declarePrefix, '.'(ARG0, '.'(ARG1, [])), OUT).
@@ -46,51 +67,30 @@ namespace_support_declare_prefix(REF, ARG0, ARG1, OUT) :-
 namespace_support_get_declared_prefixes(REF, OUT) :- 
 	object_call(REF, getDeclaredPrefixes, [], OUT).
 
-namespace_support_is_namespace_decl_uris(REF, OUT) :- 
-	object_call(REF, isNamespaceDeclUris, [], OUT).
-
-namespace_support_pop_context(REF, OUT) :- 
-	object_call(REF, popContext, [], OUT).
+namespace_support_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
 namespace_support_process_name(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, processName, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-namespace_support_push_context(REF, OUT) :- 
-	object_call(REF, pushContext, [], OUT).
-
-namespace_support_set_namespace_decl_uris(REF, ARG0, OUT) :- 
-	object_call(REF, setNamespaceDeclUris, '.'(ARG0, []), OUT).
-
-namespace_support_get_prefixes(REF, ARG0, OUT) :- 
-	object_call(REF, getPrefixes, '.'(ARG0, []), OUT).
-
-namespace_support_get_prefixes(REF, OUT) :- 
-	object_call(REF, getPrefixes, [], OUT).
-
-namespace_support_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-namespace_support_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-namespace_support_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-namespace_support_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-namespace_support_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+namespace_support_reset(REF) :- 
+	object_call(REF, reset, [], _).
 
 namespace_support_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-namespace_support_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
+namespace_support_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-namespace_support_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+namespace_support_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-namespace_support_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+namespace_support_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+namespace_support_push_context(REF) :- 
+	object_call(REF, pushContext, [], _).
+
+namespace_support_pop_context(REF) :- 
+	object_call(REF, popContext, [], _).
 

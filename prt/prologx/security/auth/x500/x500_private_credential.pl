@@ -22,51 +22,51 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-x500_private_credential(ARG0, ARG1, OUT) :- 
-	object_new('javax.security.auth.x500.X500PrivateCredential', '.'(ARG0, '.'(ARG1, [])), OUT).
-
 x500_private_credential(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('javax.security.auth.x500.X500PrivateCredential', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-x500_private_credential_destroy(REF, OUT) :- 
-	object_call(REF, destroy, [], OUT).
-
-x500_private_credential_is_destroyed(REF, OUT) :- 
-	object_call(REF, isDestroyed, [], OUT).
+x500_private_credential(ARG0, ARG1, OUT) :- 
+	object_new('javax.security.auth.x500.X500PrivateCredential', '.'(ARG0, '.'(ARG1, [])), OUT).
 
 x500_private_credential_get_certificate(REF, OUT) :- 
 	object_call(REF, getCertificate, [], OUT).
 
-x500_private_credential_get_alias(REF, OUT) :- 
-	object_call(REF, getAlias, [], OUT).
+x500_private_credential_destroy(REF) :- 
+	object_call(REF, destroy, [], _).
 
 x500_private_credential_get_private_key(REF, OUT) :- 
 	object_call(REF, getPrivateKey, [], OUT).
 
-x500_private_credential_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+x500_private_credential_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-x500_private_credential_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+x500_private_credential_get_alias(REF, OUT) :- 
+	object_call(REF, getAlias, [], OUT).
 
-x500_private_credential_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+x500_private_credential_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-x500_private_credential_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+x500_private_credential_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-x500_private_credential_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-x500_private_credential_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+x500_private_credential_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 x500_private_credential_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-x500_private_credential_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+x500_private_credential_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-x500_private_credential_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+x500_private_credential_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+x500_private_credential_is_destroyed(REF, OUT) :- 
+	object_call(REF, isDestroyed, [], OUT).
+
+x500_private_credential_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+x500_private_credential_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 

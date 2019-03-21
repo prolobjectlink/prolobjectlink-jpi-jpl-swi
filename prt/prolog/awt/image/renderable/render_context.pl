@@ -22,75 +22,75 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-render_context(ARG0, ARG1, OUT) :- 
-	object_new('java.awt.image.renderable.RenderContext', '.'(ARG0, '.'(ARG1, [])), OUT).
-
-render_context(ARG0, ARG1, OUT) :- 
-	object_new('java.awt.image.renderable.RenderContext', '.'(ARG0, '.'(ARG1, [])), OUT).
-
 render_context(ARG0, OUT) :- 
 	object_new('java.awt.image.renderable.RenderContext', '.'(ARG0, []), OUT).
+
+render_context(ARG0, ARG1, OUT) :- 
+	object_new('java.awt.image.renderable.RenderContext', '.'(ARG0, '.'(ARG1, [])), OUT).
+
+render_context(ARG0, ARG1, OUT) :- 
+	object_new('java.awt.image.renderable.RenderContext', '.'(ARG0, '.'(ARG1, [])), OUT).
 
 render_context(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('java.awt.image.renderable.RenderContext', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-render_context_clone(REF, OUT) :- 
-	object_call(REF, clone, [], OUT).
-
-render_context_concatenate_transform(REF, ARG0, OUT) :- 
-	object_call(REF, concatenateTransform, '.'(ARG0, []), OUT).
-
-render_context_concetenate_transform(REF, ARG0, OUT) :- 
-	object_call(REF, concetenateTransform, '.'(ARG0, []), OUT).
-
-render_context_get_area_of_interest(REF, OUT) :- 
-	object_call(REF, getAreaOfInterest, [], OUT).
-
-render_context_pre_concatenate_transform(REF, ARG0, OUT) :- 
-	object_call(REF, preConcatenateTransform, '.'(ARG0, []), OUT).
-
-render_context_pre_concetenate_transform(REF, ARG0, OUT) :- 
-	object_call(REF, preConcetenateTransform, '.'(ARG0, []), OUT).
-
-render_context_set_area_of_interest(REF, ARG0, OUT) :- 
-	object_call(REF, setAreaOfInterest, '.'(ARG0, []), OUT).
-
 render_context_get_transform(REF, OUT) :- 
 	object_call(REF, getTransform, [], OUT).
-
-render_context_set_transform(REF, ARG0, OUT) :- 
-	object_call(REF, setTransform, '.'(ARG0, []), OUT).
-
-render_context_get_rendering_hints(REF, OUT) :- 
-	object_call(REF, getRenderingHints, [], OUT).
-
-render_context_set_rendering_hints(REF, ARG0, OUT) :- 
-	object_call(REF, setRenderingHints, '.'(ARG0, []), OUT).
-
-render_context_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-render_context_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-render_context_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
 
 render_context_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
+render_context_pre_concetenate_transform(REF, ARG0) :- 
+	object_call(REF, preConcetenateTransform, '.'(ARG0, []), _).
+
+render_context_clone(REF, OUT) :- 
+	object_call(REF, clone, [], OUT).
+
 render_context_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
+
+render_context_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+render_context_concetenate_transform(REF, ARG0) :- 
+	object_call(REF, concetenateTransform, '.'(ARG0, []), _).
+
+render_context_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+render_context_pre_concatenate_transform(REF, ARG0) :- 
+	object_call(REF, preConcatenateTransform, '.'(ARG0, []), _).
+
+render_context_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+render_context_set_transform(REF, ARG0) :- 
+	object_call(REF, setTransform, '.'(ARG0, []), _).
+
+render_context_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+render_context_set_area_of_interest(REF, ARG0) :- 
+	object_call(REF, setAreaOfInterest, '.'(ARG0, []), _).
+
+render_context_get_rendering_hints(REF, OUT) :- 
+	object_call(REF, getRenderingHints, [], OUT).
+
+render_context_get_area_of_interest(REF, OUT) :- 
+	object_call(REF, getAreaOfInterest, [], OUT).
+
+render_context_concatenate_transform(REF, ARG0) :- 
+	object_call(REF, concatenateTransform, '.'(ARG0, []), _).
+
+render_context_set_rendering_hints(REF, ARG0) :- 
+	object_call(REF, setRenderingHints, '.'(ARG0, []), _).
+
+render_context_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 render_context_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
 render_context_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-render_context_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-render_context_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

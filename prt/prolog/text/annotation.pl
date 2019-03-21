@@ -25,33 +25,33 @@
 annotation(ARG0, OUT) :- 
 	object_new('java.text.Annotation', '.'(ARG0, []), OUT).
 
-annotation_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-annotation_get_value(REF, OUT) :- 
-	object_call(REF, getValue, [], OUT).
-
-annotation_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-annotation_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-annotation_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
 annotation_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-annotation_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
 
 annotation_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-annotation_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+annotation_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-annotation_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+annotation_get_value(REF, OUT) :- 
+	object_call(REF, getValue, [], OUT).
+
+annotation_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+annotation_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+annotation_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+annotation_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+annotation_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+annotation_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 

@@ -22,69 +22,69 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-input_method_highlight_raw_text(OUT) :- 
+input_method_highlight_RAW_TEXT(OUT) :- 
 	object_get('java.awt.im.InputMethodHighlight', raw_text, OUT).
 
-input_method_highlight_converted_text(OUT) :- 
+input_method_highlight_CONVERTED_TEXT(OUT) :- 
 	object_get('java.awt.im.InputMethodHighlight', converted_text, OUT).
 
-input_method_highlight_unselected_raw_text_highlight(OUT) :- 
+input_method_highlight_UNSELECTED_RAW_TEXT_HIGHLIGHT(OUT) :- 
 	object_get('java.awt.im.InputMethodHighlight', unselected_raw_text_highlight, OUT).
 
-input_method_highlight_selected_raw_text_highlight(OUT) :- 
+input_method_highlight_SELECTED_RAW_TEXT_HIGHLIGHT(OUT) :- 
 	object_get('java.awt.im.InputMethodHighlight', selected_raw_text_highlight, OUT).
 
-input_method_highlight_unselected_converted_text_highlight(OUT) :- 
+input_method_highlight_UNSELECTED_CONVERTED_TEXT_HIGHLIGHT(OUT) :- 
 	object_get('java.awt.im.InputMethodHighlight', unselected_converted_text_highlight, OUT).
 
-input_method_highlight_selected_converted_text_highlight(OUT) :- 
+input_method_highlight_SELECTED_CONVERTED_TEXT_HIGHLIGHT(OUT) :- 
 	object_get('java.awt.im.InputMethodHighlight', selected_converted_text_highlight, OUT).
 
 input_method_highlight(ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_new('java.awt.im.InputMethodHighlight', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
-input_method_highlight(ARG0, ARG1, ARG2, OUT) :- 
-	object_new('java.awt.im.InputMethodHighlight', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
 input_method_highlight(ARG0, ARG1, OUT) :- 
 	object_new('java.awt.im.InputMethodHighlight', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-input_method_highlight_get_state(REF, OUT) :- 
-	object_call(REF, getState, [], OUT).
+input_method_highlight(ARG0, ARG1, ARG2, OUT) :- 
+	object_new('java.awt.im.InputMethodHighlight', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-input_method_highlight_get_style(REF, OUT) :- 
-	object_call(REF, getStyle, [], OUT).
+input_method_highlight_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 input_method_highlight_is_selected(REF, OUT) :- 
 	object_call(REF, isSelected, [], OUT).
 
-input_method_highlight_get_variation(REF, OUT) :- 
-	object_call(REF, getVariation, [], OUT).
-
-input_method_highlight_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-input_method_highlight_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-input_method_highlight_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
 input_method_highlight_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-input_method_highlight_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+input_method_highlight_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-input_method_highlight_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+input_method_highlight_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 input_method_highlight_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-input_method_highlight_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+input_method_highlight_get_state(REF, OUT) :- 
+	object_call(REF, getState, [], OUT).
 
-input_method_highlight_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+input_method_highlight_get_variation(REF, OUT) :- 
+	object_call(REF, getVariation, [], OUT).
+
+input_method_highlight_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+input_method_highlight_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+input_method_highlight_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+input_method_highlight_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+input_method_highlight_get_style(REF, OUT) :- 
+	object_call(REF, getStyle, [], OUT).
 

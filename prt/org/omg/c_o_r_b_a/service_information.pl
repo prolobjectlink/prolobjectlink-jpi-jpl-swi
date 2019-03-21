@@ -22,36 +22,36 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-service_information(OUT) :- 
-	object_new('org.omg.CORBA.ServiceInformation', [], OUT).
-
 service_information(ARG0, ARG1, OUT) :- 
 	object_new('org.omg.CORBA.ServiceInformation', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-service_information_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+service_information(OUT) :- 
+	object_new('org.omg.CORBA.ServiceInformation', [], OUT).
 
-service_information_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-service_information_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+service_information_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
 service_information_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-service_information_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+service_information_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+service_information_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+service_information_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+service_information_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+service_information_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 service_information_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
 service_information_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-service_information_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-service_information_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

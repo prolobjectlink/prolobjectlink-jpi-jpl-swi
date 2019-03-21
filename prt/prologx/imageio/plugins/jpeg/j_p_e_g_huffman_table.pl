@@ -22,51 +22,51 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-j_p_e_g_huffman_table_stddcluminance(OUT) :- 
+j_p_e_g_huffman_table_STDDCLUMINANCE(OUT) :- 
 	object_get('javax.imageio.plugins.jpeg.JPEGHuffmanTable', stddcluminance, OUT).
 
-j_p_e_g_huffman_table_stddcchrominance(OUT) :- 
+j_p_e_g_huffman_table_STDDCCHROMINANCE(OUT) :- 
 	object_get('javax.imageio.plugins.jpeg.JPEGHuffmanTable', stddcchrominance, OUT).
 
-j_p_e_g_huffman_table_stdacluminance(OUT) :- 
+j_p_e_g_huffman_table_STDACLUMINANCE(OUT) :- 
 	object_get('javax.imageio.plugins.jpeg.JPEGHuffmanTable', stdacluminance, OUT).
 
-j_p_e_g_huffman_table_stdacchrominance(OUT) :- 
+j_p_e_g_huffman_table_STDACCHROMINANCE(OUT) :- 
 	object_get('javax.imageio.plugins.jpeg.JPEGHuffmanTable', stdacchrominance, OUT).
 
 j_p_e_g_huffman_table(ARG0, ARG1, OUT) :- 
 	object_new('javax.imageio.plugins.jpeg.JPEGHuffmanTable', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-j_p_e_g_huffman_table_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
 j_p_e_g_huffman_table_get_values(REF, OUT) :- 
 	object_call(REF, getValues, [], OUT).
+
+j_p_e_g_huffman_table_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+j_p_e_g_huffman_table_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 j_p_e_g_huffman_table_get_lengths(REF, OUT) :- 
 	object_call(REF, getLengths, [], OUT).
 
-j_p_e_g_huffman_table_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+j_p_e_g_huffman_table_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-j_p_e_g_huffman_table_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-j_p_e_g_huffman_table_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+j_p_e_g_huffman_table_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 j_p_e_g_huffman_table_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-j_p_e_g_huffman_table_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
 j_p_e_g_huffman_table_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-j_p_e_g_huffman_table_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+j_p_e_g_huffman_table_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-j_p_e_g_huffman_table_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+j_p_e_g_huffman_table_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+j_p_e_g_huffman_table_notify(REF) :- 
+	object_call(REF, notify, [], _).
 

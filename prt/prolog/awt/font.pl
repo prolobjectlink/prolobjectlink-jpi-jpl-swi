@@ -22,131 +22,62 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-font_dialog(OUT) :- 
+font_DIALOG(OUT) :- 
 	object_get('java.awt.Font', dialog, OUT).
 
-font_dialog_input(OUT) :- 
+font_DIALOG_INPUT(OUT) :- 
 	object_get('java.awt.Font', dialog_input, OUT).
 
-font_sans_serif(OUT) :- 
+font_SANS_SERIF(OUT) :- 
 	object_get('java.awt.Font', sans_serif, OUT).
 
-font_serif(OUT) :- 
+font_SERIF(OUT) :- 
 	object_get('java.awt.Font', serif, OUT).
 
-font_monospaced(OUT) :- 
+font_MONOSPACED(OUT) :- 
 	object_get('java.awt.Font', monospaced, OUT).
 
-font_plain(OUT) :- 
+font_PLAIN(OUT) :- 
 	object_get('java.awt.Font', plain, OUT).
 
-font_bold(OUT) :- 
+font_BOLD(OUT) :- 
 	object_get('java.awt.Font', bold, OUT).
 
-font_italic(OUT) :- 
+font_ITALIC(OUT) :- 
 	object_get('java.awt.Font', italic, OUT).
 
-font_roman_baseline(OUT) :- 
+font_ROMAN_BASELINE(OUT) :- 
 	object_get('java.awt.Font', roman_baseline, OUT).
 
-font_center_baseline(OUT) :- 
+font_CENTER_BASELINE(OUT) :- 
 	object_get('java.awt.Font', center_baseline, OUT).
 
-font_hanging_baseline(OUT) :- 
+font_HANGING_BASELINE(OUT) :- 
 	object_get('java.awt.Font', hanging_baseline, OUT).
 
-font_truetype_font(OUT) :- 
+font_TRUETYPE_FONT(OUT) :- 
 	object_get('java.awt.Font', truetype_font, OUT).
 
-font_type1_font(OUT) :- 
+font_TYPE1_FONT(OUT) :- 
 	object_get('java.awt.Font', type1_font, OUT).
 
-font_layout_left_to_right(OUT) :- 
+font_LAYOUT_LEFT_TO_RIGHT(OUT) :- 
 	object_get('java.awt.Font', layout_left_to_right, OUT).
 
-font_layout_right_to_left(OUT) :- 
+font_LAYOUT_RIGHT_TO_LEFT(OUT) :- 
 	object_get('java.awt.Font', layout_right_to_left, OUT).
 
-font_layout_no_start_context(OUT) :- 
+font_LAYOUT_NO_START_CONTEXT(OUT) :- 
 	object_get('java.awt.Font', layout_no_start_context, OUT).
 
-font_layout_no_limit_context(OUT) :- 
+font_LAYOUT_NO_LIMIT_CONTEXT(OUT) :- 
 	object_get('java.awt.Font', layout_no_limit_context, OUT).
-
-font(ARG0, OUT) :- 
-	object_new('java.awt.Font', '.'(ARG0, []), OUT).
 
 font(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('java.awt.Font', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-font_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-font_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-font_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-font_get_name(REF, OUT) :- 
-	object_call(REF, getName, [], OUT).
-
-font_decode(REF, ARG0, OUT) :- 
-	object_call(REF, decode, '.'(ARG0, []), OUT).
-
-font_get_size(REF, OUT) :- 
-	object_call(REF, getSize, [], OUT).
-
-font_get_attributes(REF, OUT) :- 
-	object_call(REF, getAttributes, [], OUT).
-
-font_get_family(REF, OUT) :- 
-	object_call(REF, getFamily, [], OUT).
-
-font_get_family(REF, ARG0, OUT) :- 
-	object_call(REF, getFamily, '.'(ARG0, []), OUT).
-
-font_get_font(REF, ARG0, OUT) :- 
-	object_call(REF, getFont, '.'(ARG0, []), OUT).
-
-font_get_font(REF, ARG0, OUT) :- 
-	object_call(REF, getFont, '.'(ARG0, []), OUT).
-
-font_get_font(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getFont, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-font_can_display(REF, ARG0, OUT) :- 
-	object_call(REF, canDisplay, '.'(ARG0, []), OUT).
-
-font_can_display(REF, ARG0, OUT) :- 
-	object_call(REF, canDisplay, '.'(ARG0, []), OUT).
-
-font_can_display_up_to(REF, ARG0, OUT) :- 
-	object_call(REF, canDisplayUpTo, '.'(ARG0, []), OUT).
-
-font_can_display_up_to(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, canDisplayUpTo, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-font_can_display_up_to(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, canDisplayUpTo, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-font_create_font(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, createFont, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-font_create_font(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, createFont, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-font_create_glyph_vector(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, createGlyphVector, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-font_create_glyph_vector(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, createGlyphVector, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-font_create_glyph_vector(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, createGlyphVector, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-font_create_glyph_vector(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, createGlyphVector, '.'(ARG0, '.'(ARG1, [])), OUT).
+font(ARG0, OUT) :- 
+	object_new('java.awt.Font', '.'(ARG0, []), OUT).
 
 font_derive_font(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, deriveFont, '.'(ARG0, '.'(ARG1, [])), OUT).
@@ -165,106 +96,175 @@ font_derive_font(REF, ARG0, OUT) :-
 
 font_derive_font(REF, ARG0, OUT) :- 
 	object_call(REF, deriveFont, '.'(ARG0, []), OUT).
-
-font_get_available_attributes(REF, OUT) :- 
-	object_call(REF, getAvailableAttributes, [], OUT).
 
 font_get_baseline_for(REF, ARG0, OUT) :- 
 	object_call(REF, getBaselineFor, '.'(ARG0, []), OUT).
 
-font_get_font_name(REF, OUT) :- 
-	object_call(REF, getFontName, [], OUT).
-
-font_get_font_name(REF, ARG0, OUT) :- 
-	object_call(REF, getFontName, '.'(ARG0, []), OUT).
-
 font_get_italic_angle(REF, OUT) :- 
 	object_call(REF, getItalicAngle, [], OUT).
 
-font_get_line_metrics(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, getLineMetrics, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
-font_get_line_metrics(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getLineMetrics, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-font_get_line_metrics(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, getLineMetrics, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
-font_get_line_metrics(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, getLineMetrics, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
-font_get_max_char_bounds(REF, ARG0, OUT) :- 
-	object_call(REF, getMaxCharBounds, '.'(ARG0, []), OUT).
-
-font_get_missing_glyph_code(REF, OUT) :- 
-	object_call(REF, getMissingGlyphCode, [], OUT).
-
-font_get_num_glyphs(REF, OUT) :- 
-	object_call(REF, getNumGlyphs, [], OUT).
-
-font_get_p_s_name(REF, OUT) :- 
-	object_call(REF, getPSName, [], OUT).
-
-font_get_size2_d(REF, OUT) :- 
-	object_call(REF, getSize2D, [], OUT).
-
-font_get_string_bounds(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, getStringBounds, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
-font_get_string_bounds(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, getStringBounds, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
-font_get_string_bounds(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, getStringBounds, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
-font_get_string_bounds(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getStringBounds, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-font_get_style(REF, OUT) :- 
-	object_call(REF, getStyle, [], OUT).
-
-font_get_transform(REF, OUT) :- 
-	object_call(REF, getTransform, [], OUT).
+font_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 font_has_layout_attributes(REF, OUT) :- 
 	object_call(REF, hasLayoutAttributes, [], OUT).
 
-font_has_uniform_line_metrics(REF, OUT) :- 
-	object_call(REF, hasUniformLineMetrics, [], OUT).
+font_get_font(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getFont, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-font_is_bold(REF, OUT) :- 
-	object_call(REF, isBold, [], OUT).
+font_get_size2_d(REF, OUT) :- 
+	object_call(REF, getSize2D, [], OUT).
 
-font_is_italic(REF, OUT) :- 
-	object_call(REF, isItalic, [], OUT).
+font_get_font(REF, ARG0, OUT) :- 
+	object_call(REF, getFont, '.'(ARG0, []), OUT).
 
-font_is_plain(REF, OUT) :- 
-	object_call(REF, isPlain, [], OUT).
+font_get_font(REF, ARG0, OUT) :- 
+	object_call(REF, getFont, '.'(ARG0, []), OUT).
 
-font_is_transformed(REF, OUT) :- 
-	object_call(REF, isTransformed, [], OUT).
-
-font_layout_glyph_vector(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
-	object_call(REF, layoutGlyphVector, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
-
-font_get_peer(REF, OUT) :- 
-	object_call(REF, getPeer, [], OUT).
-
-font_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-font_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-font_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+font_get_font_name(REF, ARG0, OUT) :- 
+	object_call(REF, getFontName, '.'(ARG0, []), OUT).
 
 font_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-font_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+font_get_font_name(REF, OUT) :- 
+	object_call(REF, getFontName, [], OUT).
 
-font_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+font_create_font(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, createFont, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+font_create_font(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, createFont, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+font_get_num_glyphs(REF, OUT) :- 
+	object_call(REF, getNumGlyphs, [], OUT).
+
+font_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+font_get_size(REF, OUT) :- 
+	object_call(REF, getSize, [], OUT).
+
+font_can_display_up_to(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, canDisplayUpTo, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+font_can_display_up_to(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, canDisplayUpTo, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+font_can_display_up_to(REF, ARG0, OUT) :- 
+	object_call(REF, canDisplayUpTo, '.'(ARG0, []), OUT).
+
+font_get_style(REF, OUT) :- 
+	object_call(REF, getStyle, [], OUT).
+
+font_is_transformed(REF, OUT) :- 
+	object_call(REF, isTransformed, [], OUT).
+
+font_get_family(REF, ARG0, OUT) :- 
+	object_call(REF, getFamily, '.'(ARG0, []), OUT).
+
+font_has_uniform_line_metrics(REF, OUT) :- 
+	object_call(REF, hasUniformLineMetrics, [], OUT).
+
+font_get_family(REF, OUT) :- 
+	object_call(REF, getFamily, [], OUT).
+
+font_get_peer(REF, OUT) :- 
+	object_call(REF, getPeer, [], OUT).
+
+font_get_max_char_bounds(REF, ARG0, OUT) :- 
+	object_call(REF, getMaxCharBounds, '.'(ARG0, []), OUT).
+
+font_get_name(REF, OUT) :- 
+	object_call(REF, getName, [], OUT).
+
+font_layout_glyph_vector(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
+	object_call(REF, layoutGlyphVector, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
+
+font_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+font_get_missing_glyph_code(REF, OUT) :- 
+	object_call(REF, getMissingGlyphCode, [], OUT).
+
+font_create_glyph_vector(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, createGlyphVector, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+font_create_glyph_vector(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, createGlyphVector, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+font_create_glyph_vector(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, createGlyphVector, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+font_create_glyph_vector(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, createGlyphVector, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+font_get_p_s_name(REF, OUT) :- 
+	object_call(REF, getPSName, [], OUT).
+
+font_get_attributes(REF, OUT) :- 
+	object_call(REF, getAttributes, [], OUT).
+
+font_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+font_decode(REF, ARG0, OUT) :- 
+	object_call(REF, decode, '.'(ARG0, []), OUT).
+
+font_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+font_get_available_attributes(REF, OUT) :- 
+	object_call(REF, getAvailableAttributes, [], OUT).
+
+font_can_display(REF, ARG0, OUT) :- 
+	object_call(REF, canDisplay, '.'(ARG0, []), OUT).
+
+font_can_display(REF, ARG0, OUT) :- 
+	object_call(REF, canDisplay, '.'(ARG0, []), OUT).
+
+font_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+font_is_italic(REF, OUT) :- 
+	object_call(REF, isItalic, [], OUT).
+
+font_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+font_get_line_metrics(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_call(REF, getLineMetrics, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+
+font_get_line_metrics(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_call(REF, getLineMetrics, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+
+font_get_line_metrics(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_call(REF, getLineMetrics, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+
+font_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+font_get_line_metrics(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getLineMetrics, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+font_get_string_bounds(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getStringBounds, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+font_is_bold(REF, OUT) :- 
+	object_call(REF, isBold, [], OUT).
+
+font_get_transform(REF, OUT) :- 
+	object_call(REF, getTransform, [], OUT).
+
+font_is_plain(REF, OUT) :- 
+	object_call(REF, isPlain, [], OUT).
+
+font_get_string_bounds(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_call(REF, getStringBounds, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+
+font_get_string_bounds(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_call(REF, getStringBounds, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+
+font_get_string_bounds(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_call(REF, getStringBounds, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 

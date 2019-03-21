@@ -28,72 +28,72 @@ robot(OUT) :-
 robot(ARG0, OUT) :- 
 	object_new('java.awt.Robot', '.'(ARG0, []), OUT).
 
-robot_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+robot_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-robot_mouse_move(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, mouseMove, '.'(ARG0, '.'(ARG1, [])), OUT).
+robot_wait_for_idle(REF) :- 
+	object_call(REF, waitForIdle, [], _).
 
-robot_create_screen_capture(REF, ARG0, OUT) :- 
-	object_call(REF, createScreenCapture, '.'(ARG0, []), OUT).
+robot_key_press(REF, ARG0) :- 
+	object_call(REF, keyPress, '.'(ARG0, []), _).
 
-robot_delay(REF, ARG0, OUT) :- 
-	object_call(REF, delay, '.'(ARG0, []), OUT).
-
-robot_get_auto_delay(REF, OUT) :- 
-	object_call(REF, getAutoDelay, [], OUT).
+robot_set_auto_delay(REF, ARG0) :- 
+	object_call(REF, setAutoDelay, '.'(ARG0, []), _).
 
 robot_get_pixel_color(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, getPixelColor, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-robot_is_auto_wait_for_idle(REF, OUT) :- 
-	object_call(REF, isAutoWaitForIdle, [], OUT).
+robot_get_auto_delay(REF, OUT) :- 
+	object_call(REF, getAutoDelay, [], OUT).
 
-robot_key_press(REF, ARG0, OUT) :- 
-	object_call(REF, keyPress, '.'(ARG0, []), OUT).
+robot_create_screen_capture(REF, ARG0, OUT) :- 
+	object_call(REF, createScreenCapture, '.'(ARG0, []), OUT).
 
-robot_key_release(REF, ARG0, OUT) :- 
-	object_call(REF, keyRelease, '.'(ARG0, []), OUT).
+robot_mouse_release(REF, ARG0) :- 
+	object_call(REF, mouseRelease, '.'(ARG0, []), _).
 
-robot_mouse_press(REF, ARG0, OUT) :- 
-	object_call(REF, mousePress, '.'(ARG0, []), OUT).
+robot_delay(REF, ARG0) :- 
+	object_call(REF, delay, '.'(ARG0, []), _).
 
-robot_mouse_release(REF, ARG0, OUT) :- 
-	object_call(REF, mouseRelease, '.'(ARG0, []), OUT).
+robot_mouse_wheel(REF, ARG0) :- 
+	object_call(REF, mouseWheel, '.'(ARG0, []), _).
 
-robot_mouse_wheel(REF, ARG0, OUT) :- 
-	object_call(REF, mouseWheel, '.'(ARG0, []), OUT).
+robot_set_auto_wait_for_idle(REF, ARG0) :- 
+	object_call(REF, setAutoWaitForIdle, '.'(ARG0, []), _).
 
-robot_set_auto_delay(REF, ARG0, OUT) :- 
-	object_call(REF, setAutoDelay, '.'(ARG0, []), OUT).
+robot_mouse_move(REF, ARG0, ARG1) :- 
+	object_call(REF, mouseMove, '.'(ARG0, '.'(ARG1, [])), _).
 
-robot_set_auto_wait_for_idle(REF, ARG0, OUT) :- 
-	object_call(REF, setAutoWaitForIdle, '.'(ARG0, []), OUT).
-
-robot_wait_for_idle(REF, OUT) :- 
-	object_call(REF, waitForIdle, [], OUT).
-
-robot_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-robot_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-robot_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-robot_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-robot_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+robot_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 robot_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-robot_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+robot_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-robot_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+robot_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+robot_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+robot_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+robot_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+robot_mouse_press(REF, ARG0) :- 
+	object_call(REF, mousePress, '.'(ARG0, []), _).
+
+robot_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+robot_is_auto_wait_for_idle(REF, OUT) :- 
+	object_call(REF, isAutoWaitForIdle, [], OUT).
+
+robot_key_release(REF, ARG0) :- 
+	object_call(REF, keyRelease, '.'(ARG0, []), _).
 

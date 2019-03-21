@@ -22,36 +22,36 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-parser_factory_make_parser(REF, OUT) :- 
-	object_call(REF, makeParser, [], OUT).
+parser_factory_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-parser_factory_make_parser(REF, ARG0, OUT) :- 
-	object_call(REF, makeParser, '.'(ARG0, []), OUT).
+parser_factory_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-parser_factory_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-parser_factory_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-parser_factory_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-parser_factory_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-parser_factory_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-parser_factory_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+parser_factory_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 parser_factory_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-parser_factory_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+parser_factory_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-parser_factory_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+parser_factory_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+parser_factory_make_parser(REF, ARG0, OUT) :- 
+	object_call(REF, makeParser, '.'(ARG0, []), OUT).
+
+parser_factory_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+parser_factory_make_parser(REF, OUT) :- 
+	object_call(REF, makeParser, [], OUT).
+
+parser_factory_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+parser_factory_notify(REF) :- 
+	object_call(REF, notify, [], _).
 

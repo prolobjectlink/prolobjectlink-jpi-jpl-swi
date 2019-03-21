@@ -22,57 +22,57 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-tree_model_event(ARG0, ARG1, OUT) :- 
-	object_new('javax.swing.event.TreeModelEvent', '.'(ARG0, '.'(ARG1, [])), OUT).
-
-tree_model_event(ARG0, ARG1, OUT) :- 
-	object_new('javax.swing.event.TreeModelEvent', '.'(ARG0, '.'(ARG1, [])), OUT).
-
 tree_model_event(ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_new('javax.swing.event.TreeModelEvent', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
 tree_model_event(ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_new('javax.swing.event.TreeModelEvent', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
-tree_model_event_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+tree_model_event(ARG0, ARG1, OUT) :- 
+	object_new('javax.swing.event.TreeModelEvent', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-tree_model_event_get_path(REF, OUT) :- 
-	object_call(REF, getPath, [], OUT).
-
-tree_model_event_get_children(REF, OUT) :- 
-	object_call(REF, getChildren, [], OUT).
-
-tree_model_event_get_tree_path(REF, OUT) :- 
-	object_call(REF, getTreePath, [], OUT).
-
-tree_model_event_get_child_indices(REF, OUT) :- 
-	object_call(REF, getChildIndices, [], OUT).
-
-tree_model_event_get_source(REF, OUT) :- 
-	object_call(REF, getSource, [], OUT).
-
-tree_model_event_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-tree_model_event_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-tree_model_event_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+tree_model_event(ARG0, ARG1, OUT) :- 
+	object_new('javax.swing.event.TreeModelEvent', '.'(ARG0, '.'(ARG1, [])), OUT).
 
 tree_model_event_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
+tree_model_event_get_path(REF, OUT) :- 
+	object_call(REF, getPath, [], OUT).
+
+tree_model_event_get_child_indices(REF, OUT) :- 
+	object_call(REF, getChildIndices, [], OUT).
+
+tree_model_event_get_children(REF, OUT) :- 
+	object_call(REF, getChildren, [], OUT).
+
+tree_model_event_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+tree_model_event_get_tree_path(REF, OUT) :- 
+	object_call(REF, getTreePath, [], OUT).
+
 tree_model_event_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+tree_model_event_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+tree_model_event_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+tree_model_event_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+tree_model_event_get_source(REF, OUT) :- 
+	object_call(REF, getSource, [], OUT).
+
+tree_model_event_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+tree_model_event_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
 tree_model_event_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-tree_model_event_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-tree_model_event_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

@@ -22,26 +22,29 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-algorithm_parameters_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-algorithm_parameters_get_instance(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getInstance, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-algorithm_parameters_get_instance(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getInstance, '.'(ARG0, '.'(ARG1, [])), OUT).
+algorithm_parameters_init(REF, ARG0, ARG1) :- 
+	object_call(REF, init, '.'(ARG0, '.'(ARG1, [])), _).
 
 algorithm_parameters_get_instance(REF, ARG0, OUT) :- 
 	object_call(REF, getInstance, '.'(ARG0, []), OUT).
 
-algorithm_parameters_init(REF, ARG0, OUT) :- 
-	object_call(REF, init, '.'(ARG0, []), OUT).
+algorithm_parameters_get_instance(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getInstance, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-algorithm_parameters_init(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, init, '.'(ARG0, '.'(ARG1, [])), OUT).
+algorithm_parameters_get_instance(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getInstance, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-algorithm_parameters_init(REF, ARG0, OUT) :- 
-	object_call(REF, init, '.'(ARG0, []), OUT).
+algorithm_parameters_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+algorithm_parameters_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+algorithm_parameters_init(REF, ARG0) :- 
+	object_call(REF, init, '.'(ARG0, []), _).
+
+algorithm_parameters_init(REF, ARG0) :- 
+	object_call(REF, init, '.'(ARG0, []), _).
 
 algorithm_parameters_get_encoded(REF, OUT) :- 
 	object_call(REF, getEncoded, [], OUT).
@@ -49,36 +52,33 @@ algorithm_parameters_get_encoded(REF, OUT) :-
 algorithm_parameters_get_encoded(REF, ARG0, OUT) :- 
 	object_call(REF, getEncoded, '.'(ARG0, []), OUT).
 
+algorithm_parameters_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+algorithm_parameters_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
+
+algorithm_parameters_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+algorithm_parameters_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+algorithm_parameters_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+algorithm_parameters_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+algorithm_parameters_get_parameter_spec(REF, ARG0, OUT) :- 
+	object_call(REF, getParameterSpec, '.'(ARG0, []), OUT).
+
 algorithm_parameters_get_provider(REF, OUT) :- 
 	object_call(REF, getProvider, [], OUT).
 
 algorithm_parameters_get_algorithm(REF, OUT) :- 
 	object_call(REF, getAlgorithm, [], OUT).
 
-algorithm_parameters_get_parameter_spec(REF, ARG0, OUT) :- 
-	object_call(REF, getParameterSpec, '.'(ARG0, []), OUT).
-
-algorithm_parameters_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-algorithm_parameters_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-algorithm_parameters_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-algorithm_parameters_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
 algorithm_parameters_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
-
-algorithm_parameters_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-algorithm_parameters_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-algorithm_parameters_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

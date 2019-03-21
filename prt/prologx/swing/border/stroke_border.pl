@@ -28,50 +28,38 @@ stroke_border(ARG0, OUT) :-
 stroke_border(ARG0, ARG1, OUT) :- 
 	object_new('javax.swing.border.StrokeBorder', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-stroke_border_get_paint(REF, OUT) :- 
-	object_call(REF, getPaint, [], OUT).
+stroke_border_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-stroke_border_get_stroke(REF, OUT) :- 
-	object_call(REF, getStroke, [], OUT).
+stroke_border_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-stroke_border_get_border_insets(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getBorderInsets, '.'(ARG0, '.'(ARG1, [])), OUT).
+stroke_border_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-stroke_border_paint_border(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, OUT) :- 
-	object_call(REF, paintBorder, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), OUT).
-
-stroke_border_get_baseline(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, getBaseline, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-stroke_border_get_baseline_resize_behavior(REF, ARG0, OUT) :- 
-	object_call(REF, getBaselineResizeBehavior, '.'(ARG0, []), OUT).
+stroke_border_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 stroke_border_get_border_insets(REF, ARG0, OUT) :- 
 	object_call(REF, getBorderInsets, '.'(ARG0, []), OUT).
 
-stroke_border_is_border_opaque(REF, OUT) :- 
-	object_call(REF, isBorderOpaque, [], OUT).
+stroke_border_get_border_insets(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getBorderInsets, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-stroke_border_get_interior_rectangle(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
-	object_call(REF, getInteriorRectangle, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
+stroke_border_paint_border(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5) :- 
+	object_call(REF, paintBorder, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), _).
 
-stroke_border_get_interior_rectangle(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, OUT) :- 
-	object_call(REF, getInteriorRectangle, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), OUT).
-
-stroke_border_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-stroke_border_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-stroke_border_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-stroke_border_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+stroke_border_get_stroke(REF, OUT) :- 
+	object_call(REF, getStroke, [], OUT).
 
 stroke_border_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
+
+stroke_border_is_border_opaque(REF, OUT) :- 
+	object_call(REF, isBorderOpaque, [], OUT).
+
+stroke_border_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 stroke_border_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -79,9 +67,21 @@ stroke_border_hash_code(REF, OUT) :-
 stroke_border_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-stroke_border_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+stroke_border_get_baseline(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, getBaseline, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-stroke_border_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+stroke_border_get_baseline_resize_behavior(REF, ARG0, OUT) :- 
+	object_call(REF, getBaselineResizeBehavior, '.'(ARG0, []), OUT).
+
+stroke_border_get_interior_rectangle(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
+	object_call(REF, getInteriorRectangle, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
+
+stroke_border_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+stroke_border_get_paint(REF, OUT) :- 
+	object_call(REF, getPaint, [], OUT).
+
+stroke_border_get_interior_rectangle(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, OUT) :- 
+	object_call(REF, getInteriorRectangle, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), OUT).
 

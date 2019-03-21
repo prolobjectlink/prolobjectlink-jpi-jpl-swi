@@ -28,63 +28,63 @@ audio_input_stream(ARG0, ARG1, ARG2, OUT) :-
 audio_input_stream(ARG0, OUT) :- 
 	object_new('javax.sound.sampled.AudioInputStream', '.'(ARG0, []), OUT).
 
-audio_input_stream_read(REF, ARG0, OUT) :- 
-	object_call(REF, read, '.'(ARG0, []), OUT).
-
-audio_input_stream_read(REF, OUT) :- 
-	object_call(REF, read, [], OUT).
-
-audio_input_stream_read(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, read, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-audio_input_stream_close(REF, OUT) :- 
-	object_call(REF, close, [], OUT).
-
-audio_input_stream_available(REF, OUT) :- 
-	object_call(REF, available, [], OUT).
-
-audio_input_stream_mark(REF, ARG0, OUT) :- 
-	object_call(REF, mark, '.'(ARG0, []), OUT).
-
 audio_input_stream_mark_supported(REF, OUT) :- 
 	object_call(REF, markSupported, [], OUT).
-
-audio_input_stream_reset(REF, OUT) :- 
-	object_call(REF, reset, [], OUT).
 
 audio_input_stream_skip(REF, ARG0, OUT) :- 
 	object_call(REF, skip, '.'(ARG0, []), OUT).
 
-audio_input_stream_get_frame_length(REF, OUT) :- 
-	object_call(REF, getFrameLength, [], OUT).
+audio_input_stream_close(REF) :- 
+	object_call(REF, close, [], _).
+
+audio_input_stream_mark(REF, ARG0) :- 
+	object_call(REF, mark, '.'(ARG0, []), _).
+
+audio_input_stream_read(REF, OUT) :- 
+	object_call(REF, read, [], OUT).
+
+audio_input_stream_read(REF, ARG0, OUT) :- 
+	object_call(REF, read, '.'(ARG0, []), OUT).
 
 audio_input_stream_get_format(REF, OUT) :- 
 	object_call(REF, getFormat, [], OUT).
 
-audio_input_stream_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-audio_input_stream_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-audio_input_stream_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-audio_input_stream_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-audio_input_stream_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-audio_input_stream_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+audio_input_stream_get_frame_length(REF, OUT) :- 
+	object_call(REF, getFrameLength, [], OUT).
 
 audio_input_stream_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-audio_input_stream_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+audio_input_stream_read(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, read, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-audio_input_stream_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+audio_input_stream_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+audio_input_stream_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+audio_input_stream_available(REF, OUT) :- 
+	object_call(REF, available, [], OUT).
+
+audio_input_stream_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+audio_input_stream_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+audio_input_stream_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+audio_input_stream_reset(REF) :- 
+	object_call(REF, reset, [], _).
+
+audio_input_stream_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+audio_input_stream_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+audio_input_stream_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 

@@ -28,6 +28,27 @@ file_data_source(ARG0, OUT) :-
 file_data_source(ARG0, OUT) :- 
 	object_new('javax.activation.FileDataSource', '.'(ARG0, []), OUT).
 
+file_data_source_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+file_data_source_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+file_data_source_set_file_type_map(REF, ARG0) :- 
+	object_call(REF, setFileTypeMap, '.'(ARG0, []), _).
+
+file_data_source_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+file_data_source_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+file_data_source_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+file_data_source_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
 file_data_source_get_name(REF, OUT) :- 
 	object_call(REF, getName, [], OUT).
 
@@ -37,39 +58,18 @@ file_data_source_get_file(REF, OUT) :-
 file_data_source_get_input_stream(REF, OUT) :- 
 	object_call(REF, getInputStream, [], OUT).
 
-file_data_source_get_content_type(REF, OUT) :- 
-	object_call(REF, getContentType, [], OUT).
-
 file_data_source_get_output_stream(REF, OUT) :- 
 	object_call(REF, getOutputStream, [], OUT).
-
-file_data_source_set_file_type_map(REF, ARG0, OUT) :- 
-	object_call(REF, setFileTypeMap, '.'(ARG0, []), OUT).
-
-file_data_source_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-file_data_source_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-file_data_source_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
 
 file_data_source_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-file_data_source_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-file_data_source_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
 file_data_source_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-file_data_source_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+file_data_source_get_content_type(REF, OUT) :- 
+	object_call(REF, getContentType, [], OUT).
 
-file_data_source_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+file_data_source_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 

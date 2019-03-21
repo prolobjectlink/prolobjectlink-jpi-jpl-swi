@@ -25,29 +25,20 @@
 password_callback(ARG0, ARG1, OUT) :- 
 	object_new('javax.security.auth.callback.PasswordCallback', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-password_callback_get_prompt(REF, OUT) :- 
-	object_call(REF, getPrompt, [], OUT).
-
-password_callback_is_echo_on(REF, OUT) :- 
-	object_call(REF, isEchoOn, [], OUT).
-
-password_callback_set_password(REF, ARG0, OUT) :- 
-	object_call(REF, setPassword, '.'(ARG0, []), OUT).
-
-password_callback_clear_password(REF, OUT) :- 
-	object_call(REF, clearPassword, [], OUT).
-
 password_callback_get_password(REF, OUT) :- 
 	object_call(REF, getPassword, [], OUT).
 
-password_callback_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+password_callback_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-password_callback_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+password_callback_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-password_callback_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+password_callback_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+password_callback_is_echo_on(REF, OUT) :- 
+	object_call(REF, isEchoOn, [], OUT).
 
 password_callback_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
@@ -55,15 +46,24 @@ password_callback_equals(REF, ARG0, OUT) :-
 password_callback_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-password_callback_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+password_callback_set_password(REF, ARG0) :- 
+	object_call(REF, setPassword, '.'(ARG0, []), _).
+
+password_callback_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+password_callback_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+password_callback_clear_password(REF) :- 
+	object_call(REF, clearPassword, [], _).
+
+password_callback_get_prompt(REF, OUT) :- 
+	object_call(REF, getPrompt, [], OUT).
 
 password_callback_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-password_callback_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-password_callback_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+password_callback_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 

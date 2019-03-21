@@ -28,26 +28,11 @@ open_m_bean_info_support(ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, OUT) :-
 open_m_bean_info_support(ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, ARG6, OUT) :- 
 	object_new('javax.management.openmbean.OpenMBeanInfoSupport', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, '.'(ARG6, []))))))), OUT).
 
-open_m_bean_info_support_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+open_m_bean_info_support_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-open_m_bean_info_support_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-open_m_bean_info_support_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-open_m_bean_info_support_clone(REF, OUT) :- 
-	object_call(REF, clone, [], OUT).
-
-open_m_bean_info_support_get_constructors(REF, OUT) :- 
-	object_call(REF, getConstructors, [], OUT).
-
-open_m_bean_info_support_get_descriptor(REF, OUT) :- 
-	object_call(REF, getDescriptor, [], OUT).
-
-open_m_bean_info_support_get_attributes(REF, OUT) :- 
-	object_call(REF, getAttributes, [], OUT).
+open_m_bean_info_support_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 open_m_bean_info_support_get_class_name(REF, OUT) :- 
 	object_call(REF, getClassName, [], OUT).
@@ -55,27 +40,42 @@ open_m_bean_info_support_get_class_name(REF, OUT) :-
 open_m_bean_info_support_get_operations(REF, OUT) :- 
 	object_call(REF, getOperations, [], OUT).
 
-open_m_bean_info_support_get_description(REF, OUT) :- 
-	object_call(REF, getDescription, [], OUT).
-
-open_m_bean_info_support_get_notifications(REF, OUT) :- 
-	object_call(REF, getNotifications, [], OUT).
-
-open_m_bean_info_support_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-open_m_bean_info_support_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-open_m_bean_info_support_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+open_m_bean_info_support_get_descriptor(REF, OUT) :- 
+	object_call(REF, getDescriptor, [], OUT).
 
 open_m_bean_info_support_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-open_m_bean_info_support_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+open_m_bean_info_support_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-open_m_bean_info_support_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+open_m_bean_info_support_get_description(REF, OUT) :- 
+	object_call(REF, getDescription, [], OUT).
+
+open_m_bean_info_support_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+open_m_bean_info_support_get_constructors(REF, OUT) :- 
+	object_call(REF, getConstructors, [], OUT).
+
+open_m_bean_info_support_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+open_m_bean_info_support_get_notifications(REF, OUT) :- 
+	object_call(REF, getNotifications, [], OUT).
+
+open_m_bean_info_support_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+open_m_bean_info_support_clone(REF, OUT) :- 
+	object_call(REF, clone, [], OUT).
+
+open_m_bean_info_support_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+open_m_bean_info_support_get_attributes(REF, OUT) :- 
+	object_call(REF, getAttributes, [], OUT).
+
+open_m_bean_info_support_wait(REF) :- 
+	object_call(REF, wait, [], _).
 

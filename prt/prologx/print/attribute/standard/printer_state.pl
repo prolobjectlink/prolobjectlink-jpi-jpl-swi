@@ -22,54 +22,54 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-printer_state_unknown(OUT) :- 
+printer_state_UNKNOWN(OUT) :- 
 	object_get('javax.print.attribute.standard.PrinterState', unknown, OUT).
 
-printer_state_idle(OUT) :- 
+printer_state_IDLE(OUT) :- 
 	object_get('javax.print.attribute.standard.PrinterState', idle, OUT).
 
-printer_state_processing(OUT) :- 
+printer_state_PROCESSING(OUT) :- 
 	object_get('javax.print.attribute.standard.PrinterState', processing, OUT).
 
-printer_state_stopped(OUT) :- 
+printer_state_STOPPED(OUT) :- 
 	object_get('javax.print.attribute.standard.PrinterState', stopped, OUT).
-
-printer_state_get_name(REF, OUT) :- 
-	object_call(REF, getName, [], OUT).
 
 printer_state_get_category(REF, OUT) :- 
 	object_call(REF, getCategory, [], OUT).
 
+printer_state_get_value(REF, OUT) :- 
+	object_call(REF, getValue, [], OUT).
+
+printer_state_get_name(REF, OUT) :- 
+	object_call(REF, getName, [], OUT).
+
 printer_state_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
-
-printer_state_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
 
 printer_state_clone(REF, OUT) :- 
 	object_call(REF, clone, [], OUT).
 
-printer_state_get_value(REF, OUT) :- 
-	object_call(REF, getValue, [], OUT).
-
-printer_state_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-printer_state_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-printer_state_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-printer_state_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+printer_state_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 printer_state_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-printer_state_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+printer_state_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-printer_state_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+printer_state_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+printer_state_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+printer_state_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+printer_state_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+printer_state_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

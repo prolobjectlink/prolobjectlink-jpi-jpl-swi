@@ -22,20 +22,26 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-web_service_permission(ARG0, OUT) :- 
-	object_new('javax.xml.ws.WebServicePermission', '.'(ARG0, []), OUT).
-
 web_service_permission(ARG0, ARG1, OUT) :- 
 	object_new('javax.xml.ws.WebServicePermission', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-web_service_permission_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+web_service_permission(ARG0, OUT) :- 
+	object_new('javax.xml.ws.WebServicePermission', '.'(ARG0, []), OUT).
 
-web_service_permission_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+web_service_permission_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
+
+web_service_permission_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 web_service_permission_get_actions(REF, OUT) :- 
 	object_call(REF, getActions, [], OUT).
+
+web_service_permission_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+web_service_permission_check_guard(REF, ARG0) :- 
+	object_call(REF, checkGuard, '.'(ARG0, []), _).
 
 web_service_permission_implies(REF, ARG0, OUT) :- 
 	object_call(REF, implies, '.'(ARG0, []), OUT).
@@ -43,30 +49,24 @@ web_service_permission_implies(REF, ARG0, OUT) :-
 web_service_permission_new_permission_collection(REF, OUT) :- 
 	object_call(REF, newPermissionCollection, [], OUT).
 
-web_service_permission_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+web_service_permission_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 web_service_permission_get_name(REF, OUT) :- 
 	object_call(REF, getName, [], OUT).
 
-web_service_permission_check_guard(REF, ARG0, OUT) :- 
-	object_call(REF, checkGuard, '.'(ARG0, []), OUT).
+web_service_permission_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-web_service_permission_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+web_service_permission_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-web_service_permission_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+web_service_permission_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-web_service_permission_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+web_service_permission_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-web_service_permission_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-web_service_permission_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-web_service_permission_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+web_service_permission_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 

@@ -25,75 +25,75 @@
 b_a_d__p_a_r_a_m(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('org.omg.CORBA.BAD_PARAM', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
+b_a_d__p_a_r_a_m(OUT) :- 
+	object_new('org.omg.CORBA.BAD_PARAM', [], OUT).
+
 b_a_d__p_a_r_a_m(ARG0, ARG1, OUT) :- 
 	object_new('org.omg.CORBA.BAD_PARAM', '.'(ARG0, '.'(ARG1, [])), OUT).
 
 b_a_d__p_a_r_a_m(ARG0, OUT) :- 
 	object_new('org.omg.CORBA.BAD_PARAM', '.'(ARG0, []), OUT).
 
-b_a_d__p_a_r_a_m(OUT) :- 
-	object_new('org.omg.CORBA.BAD_PARAM', [], OUT).
-
-b_a_d__p_a_r_a_m_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-b_a_d__p_a_r_a_m_print_stack_trace(REF, OUT) :- 
-	object_call(REF, printStackTrace, [], OUT).
-
-b_a_d__p_a_r_a_m_print_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, printStackTrace, '.'(ARG0, []), OUT).
-
-b_a_d__p_a_r_a_m_print_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, printStackTrace, '.'(ARG0, []), OUT).
-
-b_a_d__p_a_r_a_m_fill_in_stack_trace(REF, OUT) :- 
-	object_call(REF, fillInStackTrace, [], OUT).
-
-b_a_d__p_a_r_a_m_get_cause(REF, OUT) :- 
-	object_call(REF, getCause, [], OUT).
-
-b_a_d__p_a_r_a_m_init_cause(REF, ARG0, OUT) :- 
-	object_call(REF, initCause, '.'(ARG0, []), OUT).
-
-b_a_d__p_a_r_a_m_add_suppressed(REF, ARG0, OUT) :- 
-	object_call(REF, addSuppressed, '.'(ARG0, []), OUT).
-
 b_a_d__p_a_r_a_m_get_localized_message(REF, OUT) :- 
 	object_call(REF, getLocalizedMessage, [], OUT).
-
-b_a_d__p_a_r_a_m_get_message(REF, OUT) :- 
-	object_call(REF, getMessage, [], OUT).
-
-b_a_d__p_a_r_a_m_get_stack_trace(REF, OUT) :- 
-	object_call(REF, getStackTrace, [], OUT).
-
-b_a_d__p_a_r_a_m_get_suppressed(REF, OUT) :- 
-	object_call(REF, getSuppressed, [], OUT).
-
-b_a_d__p_a_r_a_m_set_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, setStackTrace, '.'(ARG0, []), OUT).
-
-b_a_d__p_a_r_a_m_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-b_a_d__p_a_r_a_m_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-b_a_d__p_a_r_a_m_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
 
 b_a_d__p_a_r_a_m_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-b_a_d__p_a_r_a_m_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+b_a_d__p_a_r_a_m_add_suppressed(REF, ARG0) :- 
+	object_call(REF, addSuppressed, '.'(ARG0, []), _).
+
+b_a_d__p_a_r_a_m_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+b_a_d__p_a_r_a_m_print_stack_trace(REF) :- 
+	object_call(REF, printStackTrace, [], _).
+
+b_a_d__p_a_r_a_m_fill_in_stack_trace(REF, OUT) :- 
+	object_call(REF, fillInStackTrace, [], OUT).
+
+b_a_d__p_a_r_a_m_print_stack_trace(REF, ARG0) :- 
+	object_call(REF, printStackTrace, '.'(ARG0, []), _).
+
+b_a_d__p_a_r_a_m_print_stack_trace(REF, ARG0) :- 
+	object_call(REF, printStackTrace, '.'(ARG0, []), _).
+
+b_a_d__p_a_r_a_m_get_cause(REF, OUT) :- 
+	object_call(REF, getCause, [], OUT).
 
 b_a_d__p_a_r_a_m_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-b_a_d__p_a_r_a_m_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+b_a_d__p_a_r_a_m_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-b_a_d__p_a_r_a_m_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+b_a_d__p_a_r_a_m_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+b_a_d__p_a_r_a_m_get_stack_trace(REF, OUT) :- 
+	object_call(REF, getStackTrace, [], OUT).
+
+b_a_d__p_a_r_a_m_get_message(REF, OUT) :- 
+	object_call(REF, getMessage, [], OUT).
+
+b_a_d__p_a_r_a_m_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+b_a_d__p_a_r_a_m_get_suppressed(REF, OUT) :- 
+	object_call(REF, getSuppressed, [], OUT).
+
+b_a_d__p_a_r_a_m_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+b_a_d__p_a_r_a_m_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+b_a_d__p_a_r_a_m_init_cause(REF, ARG0, OUT) :- 
+	object_call(REF, initCause, '.'(ARG0, []), OUT).
+
+b_a_d__p_a_r_a_m_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+b_a_d__p_a_r_a_m_set_stack_trace(REF, ARG0) :- 
+	object_call(REF, setStackTrace, '.'(ARG0, []), _).
 

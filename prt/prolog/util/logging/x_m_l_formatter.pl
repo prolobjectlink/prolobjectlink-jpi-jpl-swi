@@ -25,42 +25,42 @@
 x_m_l_formatter(OUT) :- 
 	object_new('java.util.logging.XMLFormatter', [], OUT).
 
-x_m_l_formatter_format(REF, ARG0, OUT) :- 
-	object_call(REF, format, '.'(ARG0, []), OUT).
-
-x_m_l_formatter_get_head(REF, ARG0, OUT) :- 
-	object_call(REF, getHead, '.'(ARG0, []), OUT).
-
-x_m_l_formatter_get_tail(REF, ARG0, OUT) :- 
-	object_call(REF, getTail, '.'(ARG0, []), OUT).
-
-x_m_l_formatter_format_message(REF, ARG0, OUT) :- 
-	object_call(REF, formatMessage, '.'(ARG0, []), OUT).
-
-x_m_l_formatter_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-x_m_l_formatter_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-x_m_l_formatter_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
 x_m_l_formatter_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 x_m_l_formatter_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-x_m_l_formatter_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
 x_m_l_formatter_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-x_m_l_formatter_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+x_m_l_formatter_format(REF, ARG0, OUT) :- 
+	object_call(REF, format, '.'(ARG0, []), OUT).
 
-x_m_l_formatter_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+x_m_l_formatter_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+x_m_l_formatter_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+x_m_l_formatter_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+x_m_l_formatter_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+x_m_l_formatter_get_head(REF, ARG0, OUT) :- 
+	object_call(REF, getHead, '.'(ARG0, []), OUT).
+
+x_m_l_formatter_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+x_m_l_formatter_get_tail(REF, ARG0, OUT) :- 
+	object_call(REF, getTail, '.'(ARG0, []), OUT).
+
+x_m_l_formatter_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+x_m_l_formatter_format_message(REF, ARG0, OUT) :- 
+	object_call(REF, formatMessage, '.'(ARG0, []), OUT).
 

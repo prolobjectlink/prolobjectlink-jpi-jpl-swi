@@ -22,72 +22,72 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-locator2_impl(OUT) :- 
-	object_new('org.xml.sax.ext.Locator2Impl', [], OUT).
-
 locator2_impl(ARG0, OUT) :- 
 	object_new('org.xml.sax.ext.Locator2Impl', '.'(ARG0, []), OUT).
 
-locator2_impl_get_encoding(REF, OUT) :- 
-	object_call(REF, getEncoding, [], OUT).
+locator2_impl(OUT) :- 
+	object_new('org.xml.sax.ext.Locator2Impl', [], OUT).
 
-locator2_impl_set_encoding(REF, ARG0, OUT) :- 
-	object_call(REF, setEncoding, '.'(ARG0, []), OUT).
-
-locator2_impl_get_x_m_l_version(REF, OUT) :- 
-	object_call(REF, getXMLVersion, [], OUT).
-
-locator2_impl_set_x_m_l_version(REF, ARG0, OUT) :- 
-	object_call(REF, setXMLVersion, '.'(ARG0, []), OUT).
-
-locator2_impl_get_line_number(REF, OUT) :- 
-	object_call(REF, getLineNumber, [], OUT).
-
-locator2_impl_get_column_number(REF, OUT) :- 
-	object_call(REF, getColumnNumber, [], OUT).
-
-locator2_impl_set_column_number(REF, ARG0, OUT) :- 
-	object_call(REF, setColumnNumber, '.'(ARG0, []), OUT).
-
-locator2_impl_get_public_id(REF, OUT) :- 
-	object_call(REF, getPublicId, [], OUT).
-
-locator2_impl_get_system_id(REF, OUT) :- 
-	object_call(REF, getSystemId, [], OUT).
-
-locator2_impl_set_public_id(REF, ARG0, OUT) :- 
-	object_call(REF, setPublicId, '.'(ARG0, []), OUT).
-
-locator2_impl_set_system_id(REF, ARG0, OUT) :- 
-	object_call(REF, setSystemId, '.'(ARG0, []), OUT).
-
-locator2_impl_set_line_number(REF, ARG0, OUT) :- 
-	object_call(REF, setLineNumber, '.'(ARG0, []), OUT).
-
-locator2_impl_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-locator2_impl_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-locator2_impl_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-locator2_impl_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-locator2_impl_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-locator2_impl_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+locator2_impl_set_column_number(REF, ARG0) :- 
+	object_call(REF, setColumnNumber, '.'(ARG0, []), _).
 
 locator2_impl_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-locator2_impl_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+locator2_impl_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-locator2_impl_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+locator2_impl_get_encoding(REF, OUT) :- 
+	object_call(REF, getEncoding, [], OUT).
+
+locator2_impl_set_x_m_l_version(REF, ARG0) :- 
+	object_call(REF, setXMLVersion, '.'(ARG0, []), _).
+
+locator2_impl_get_public_id(REF, OUT) :- 
+	object_call(REF, getPublicId, [], OUT).
+
+locator2_impl_set_system_id(REF, ARG0) :- 
+	object_call(REF, setSystemId, '.'(ARG0, []), _).
+
+locator2_impl_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+locator2_impl_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+locator2_impl_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+locator2_impl_get_line_number(REF, OUT) :- 
+	object_call(REF, getLineNumber, [], OUT).
+
+locator2_impl_set_public_id(REF, ARG0) :- 
+	object_call(REF, setPublicId, '.'(ARG0, []), _).
+
+locator2_impl_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+locator2_impl_set_line_number(REF, ARG0) :- 
+	object_call(REF, setLineNumber, '.'(ARG0, []), _).
+
+locator2_impl_get_system_id(REF, OUT) :- 
+	object_call(REF, getSystemId, [], OUT).
+
+locator2_impl_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+locator2_impl_set_encoding(REF, ARG0) :- 
+	object_call(REF, setEncoding, '.'(ARG0, []), _).
+
+locator2_impl_get_x_m_l_version(REF, OUT) :- 
+	object_call(REF, getXMLVersion, [], OUT).
+
+locator2_impl_get_column_number(REF, OUT) :- 
+	object_call(REF, getColumnNumber, [], OUT).
+
+locator2_impl_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+locator2_impl_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 

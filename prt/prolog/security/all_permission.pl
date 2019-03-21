@@ -22,51 +22,51 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-all_permission(OUT) :- 
-	object_new('java.security.AllPermission', [], OUT).
-
 all_permission(ARG0, ARG1, OUT) :- 
 	object_new('java.security.AllPermission', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-all_permission_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+all_permission(OUT) :- 
+	object_new('java.security.AllPermission', [], OUT).
 
 all_permission_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-all_permission_get_actions(REF, OUT) :- 
-	object_call(REF, getActions, [], OUT).
-
-all_permission_implies(REF, ARG0, OUT) :- 
-	object_call(REF, implies, '.'(ARG0, []), OUT).
-
-all_permission_new_permission_collection(REF, OUT) :- 
-	object_call(REF, newPermissionCollection, [], OUT).
-
-all_permission_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+all_permission_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
 all_permission_get_name(REF, OUT) :- 
 	object_call(REF, getName, [], OUT).
 
-all_permission_check_guard(REF, ARG0, OUT) :- 
-	object_call(REF, checkGuard, '.'(ARG0, []), OUT).
+all_permission_get_actions(REF, OUT) :- 
+	object_call(REF, getActions, [], OUT).
 
-all_permission_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+all_permission_check_guard(REF, ARG0) :- 
+	object_call(REF, checkGuard, '.'(ARG0, []), _).
 
-all_permission_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+all_permission_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-all_permission_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+all_permission_implies(REF, ARG0, OUT) :- 
+	object_call(REF, implies, '.'(ARG0, []), OUT).
 
-all_permission_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
+all_permission_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-all_permission_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+all_permission_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-all_permission_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+all_permission_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+all_permission_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+all_permission_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+all_permission_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+all_permission_new_permission_collection(REF, OUT) :- 
+	object_call(REF, newPermissionCollection, [], OUT).
 

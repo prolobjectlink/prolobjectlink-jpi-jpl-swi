@@ -28,81 +28,81 @@ memory_handler(ARG0, ARG1, ARG2, OUT) :-
 memory_handler(OUT) :- 
 	object_new('java.util.logging.MemoryHandler', [], OUT).
 
-memory_handler_push(REF, OUT) :- 
-	object_call(REF, push, [], OUT).
+memory_handler_set_encoding(REF, ARG0) :- 
+	object_call(REF, setEncoding, '.'(ARG0, []), _).
 
-memory_handler_close(REF, OUT) :- 
-	object_call(REF, close, [], OUT).
+memory_handler_flush(REF) :- 
+	object_call(REF, flush, [], _).
 
-memory_handler_flush(REF, OUT) :- 
-	object_call(REF, flush, [], OUT).
+memory_handler_close(REF) :- 
+	object_call(REF, close, [], _).
 
-memory_handler_is_loggable(REF, ARG0, OUT) :- 
-	object_call(REF, isLoggable, '.'(ARG0, []), OUT).
-
-memory_handler_publish(REF, ARG0, OUT) :- 
-	object_call(REF, publish, '.'(ARG0, []), OUT).
-
-memory_handler_get_push_level(REF, OUT) :- 
-	object_call(REF, getPushLevel, [], OUT).
-
-memory_handler_set_push_level(REF, ARG0, OUT) :- 
-	object_call(REF, setPushLevel, '.'(ARG0, []), OUT).
-
-memory_handler_get_encoding(REF, OUT) :- 
-	object_call(REF, getEncoding, [], OUT).
-
-memory_handler_get_error_manager(REF, OUT) :- 
-	object_call(REF, getErrorManager, [], OUT).
-
-memory_handler_get_filter(REF, OUT) :- 
-	object_call(REF, getFilter, [], OUT).
-
-memory_handler_get_formatter(REF, OUT) :- 
-	object_call(REF, getFormatter, [], OUT).
-
-memory_handler_set_encoding(REF, ARG0, OUT) :- 
-	object_call(REF, setEncoding, '.'(ARG0, []), OUT).
-
-memory_handler_set_error_manager(REF, ARG0, OUT) :- 
-	object_call(REF, setErrorManager, '.'(ARG0, []), OUT).
-
-memory_handler_set_filter(REF, ARG0, OUT) :- 
-	object_call(REF, setFilter, '.'(ARG0, []), OUT).
-
-memory_handler_set_level(REF, ARG0, OUT) :- 
-	object_call(REF, setLevel, '.'(ARG0, []), OUT).
-
-memory_handler_set_formatter(REF, ARG0, OUT) :- 
-	object_call(REF, setFormatter, '.'(ARG0, []), OUT).
-
-memory_handler_get_level(REF, OUT) :- 
-	object_call(REF, getLevel, [], OUT).
-
-memory_handler_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-memory_handler_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-memory_handler_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-memory_handler_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+memory_handler_set_error_manager(REF, ARG0) :- 
+	object_call(REF, setErrorManager, '.'(ARG0, []), _).
 
 memory_handler_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-memory_handler_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+memory_handler_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+memory_handler_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+memory_handler_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+memory_handler_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+memory_handler_publish(REF, ARG0) :- 
+	object_call(REF, publish, '.'(ARG0, []), _).
 
 memory_handler_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-memory_handler_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+memory_handler_set_formatter(REF, ARG0) :- 
+	object_call(REF, setFormatter, '.'(ARG0, []), _).
 
-memory_handler_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+memory_handler_push(REF) :- 
+	object_call(REF, push, [], _).
+
+memory_handler_is_loggable(REF, ARG0, OUT) :- 
+	object_call(REF, isLoggable, '.'(ARG0, []), OUT).
+
+memory_handler_get_level(REF, OUT) :- 
+	object_call(REF, getLevel, [], OUT).
+
+memory_handler_get_error_manager(REF, OUT) :- 
+	object_call(REF, getErrorManager, [], OUT).
+
+memory_handler_set_push_level(REF, ARG0) :- 
+	object_call(REF, setPushLevel, '.'(ARG0, []), _).
+
+memory_handler_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+memory_handler_get_formatter(REF, OUT) :- 
+	object_call(REF, getFormatter, [], OUT).
+
+memory_handler_set_level(REF, ARG0) :- 
+	object_call(REF, setLevel, '.'(ARG0, []), _).
+
+memory_handler_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+memory_handler_set_filter(REF, ARG0) :- 
+	object_call(REF, setFilter, '.'(ARG0, []), _).
+
+memory_handler_get_encoding(REF, OUT) :- 
+	object_call(REF, getEncoding, [], OUT).
+
+memory_handler_get_push_level(REF, OUT) :- 
+	object_call(REF, getPushLevel, [], OUT).
+
+memory_handler_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+memory_handler_get_filter(REF, OUT) :- 
+	object_call(REF, getFilter, [], OUT).
 

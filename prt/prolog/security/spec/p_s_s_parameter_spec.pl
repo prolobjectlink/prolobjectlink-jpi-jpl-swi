@@ -22,7 +22,7 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-p_s_s_parameter_spec_default(OUT) :- 
+p_s_s_parameter_spec_DEFAULT(OUT) :- 
 	object_get('java.security.spec.PSSParameterSpec', default, OUT).
 
 p_s_s_parameter_spec(ARG0, OUT) :- 
@@ -31,45 +31,45 @@ p_s_s_parameter_spec(ARG0, OUT) :-
 p_s_s_parameter_spec(ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
 	object_new('java.security.spec.PSSParameterSpec', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
 
-p_s_s_parameter_spec_get_digest_algorithm(REF, OUT) :- 
-	object_call(REF, getDigestAlgorithm, [], OUT).
-
-p_s_s_parameter_spec_get_m_g_f_algorithm(REF, OUT) :- 
-	object_call(REF, getMGFAlgorithm, [], OUT).
-
 p_s_s_parameter_spec_get_m_g_f_parameters(REF, OUT) :- 
 	object_call(REF, getMGFParameters, [], OUT).
 
-p_s_s_parameter_spec_get_salt_length(REF, OUT) :- 
-	object_call(REF, getSaltLength, [], OUT).
+p_s_s_parameter_spec_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-p_s_s_parameter_spec_get_trailer_field(REF, OUT) :- 
-	object_call(REF, getTrailerField, [], OUT).
+p_s_s_parameter_spec_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-p_s_s_parameter_spec_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+p_s_s_parameter_spec_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-p_s_s_parameter_spec_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-p_s_s_parameter_spec_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+p_s_s_parameter_spec_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 p_s_s_parameter_spec_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
+p_s_s_parameter_spec_get_salt_length(REF, OUT) :- 
+	object_call(REF, getSaltLength, [], OUT).
+
+p_s_s_parameter_spec_get_m_g_f_algorithm(REF, OUT) :- 
+	object_call(REF, getMGFAlgorithm, [], OUT).
+
 p_s_s_parameter_spec_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
+
+p_s_s_parameter_spec_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 p_s_s_parameter_spec_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+p_s_s_parameter_spec_get_trailer_field(REF, OUT) :- 
+	object_call(REF, getTrailerField, [], OUT).
+
 p_s_s_parameter_spec_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-p_s_s_parameter_spec_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-p_s_s_parameter_spec_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+p_s_s_parameter_spec_get_digest_algorithm(REF, OUT) :- 
+	object_call(REF, getDigestAlgorithm, [], OUT).
 

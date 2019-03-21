@@ -25,78 +25,78 @@
 grid_bag_layout(OUT) :- 
 	object_new('java.awt.GridBagLayout', [], OUT).
 
+grid_bag_layout_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+grid_bag_layout_get_constraints(REF, ARG0, OUT) :- 
+	object_call(REF, getConstraints, '.'(ARG0, []), OUT).
+
+grid_bag_layout_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+grid_bag_layout_invalidate_layout(REF, ARG0) :- 
+	object_call(REF, invalidateLayout, '.'(ARG0, []), _).
+
+grid_bag_layout_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+grid_bag_layout_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
 grid_bag_layout_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
 grid_bag_layout_location(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, location, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-grid_bag_layout_get_constraints(REF, ARG0, OUT) :- 
-	object_call(REF, getConstraints, '.'(ARG0, []), OUT).
-
-grid_bag_layout_add_layout_component(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, addLayoutComponent, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-grid_bag_layout_add_layout_component(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, addLayoutComponent, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-grid_bag_layout_get_layout_alignment_x(REF, ARG0, OUT) :- 
-	object_call(REF, getLayoutAlignmentX, '.'(ARG0, []), OUT).
-
-grid_bag_layout_get_layout_alignment_y(REF, ARG0, OUT) :- 
-	object_call(REF, getLayoutAlignmentY, '.'(ARG0, []), OUT).
-
-grid_bag_layout_invalidate_layout(REF, ARG0, OUT) :- 
-	object_call(REF, invalidateLayout, '.'(ARG0, []), OUT).
-
-grid_bag_layout_layout_container(REF, ARG0, OUT) :- 
-	object_call(REF, layoutContainer, '.'(ARG0, []), OUT).
-
-grid_bag_layout_maximum_layout_size(REF, ARG0, OUT) :- 
-	object_call(REF, maximumLayoutSize, '.'(ARG0, []), OUT).
-
-grid_bag_layout_minimum_layout_size(REF, ARG0, OUT) :- 
-	object_call(REF, minimumLayoutSize, '.'(ARG0, []), OUT).
-
-grid_bag_layout_preferred_layout_size(REF, ARG0, OUT) :- 
-	object_call(REF, preferredLayoutSize, '.'(ARG0, []), OUT).
-
-grid_bag_layout_remove_layout_component(REF, ARG0, OUT) :- 
-	object_call(REF, removeLayoutComponent, '.'(ARG0, []), OUT).
-
-grid_bag_layout_get_layout_dimensions(REF, OUT) :- 
-	object_call(REF, getLayoutDimensions, [], OUT).
-
-grid_bag_layout_get_layout_origin(REF, OUT) :- 
-	object_call(REF, getLayoutOrigin, [], OUT).
-
-grid_bag_layout_get_layout_weights(REF, OUT) :- 
-	object_call(REF, getLayoutWeights, [], OUT).
-
-grid_bag_layout_set_constraints(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, setConstraints, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-grid_bag_layout_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-grid_bag_layout_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-grid_bag_layout_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+grid_bag_layout_layout_container(REF, ARG0) :- 
+	object_call(REF, layoutContainer, '.'(ARG0, []), _).
 
 grid_bag_layout_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-grid_bag_layout_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
 grid_bag_layout_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-grid_bag_layout_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+grid_bag_layout_set_constraints(REF, ARG0, ARG1) :- 
+	object_call(REF, setConstraints, '.'(ARG0, '.'(ARG1, [])), _).
 
-grid_bag_layout_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+grid_bag_layout_maximum_layout_size(REF, ARG0, OUT) :- 
+	object_call(REF, maximumLayoutSize, '.'(ARG0, []), OUT).
+
+grid_bag_layout_remove_layout_component(REF, ARG0) :- 
+	object_call(REF, removeLayoutComponent, '.'(ARG0, []), _).
+
+grid_bag_layout_get_layout_origin(REF, OUT) :- 
+	object_call(REF, getLayoutOrigin, [], OUT).
+
+grid_bag_layout_get_layout_alignment_x(REF, ARG0, OUT) :- 
+	object_call(REF, getLayoutAlignmentX, '.'(ARG0, []), OUT).
+
+grid_bag_layout_get_layout_dimensions(REF, OUT) :- 
+	object_call(REF, getLayoutDimensions, [], OUT).
+
+grid_bag_layout_get_layout_weights(REF, OUT) :- 
+	object_call(REF, getLayoutWeights, [], OUT).
+
+grid_bag_layout_add_layout_component(REF, ARG0, ARG1) :- 
+	object_call(REF, addLayoutComponent, '.'(ARG0, '.'(ARG1, [])), _).
+
+grid_bag_layout_add_layout_component(REF, ARG0, ARG1) :- 
+	object_call(REF, addLayoutComponent, '.'(ARG0, '.'(ARG1, [])), _).
+
+grid_bag_layout_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+grid_bag_layout_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+grid_bag_layout_preferred_layout_size(REF, ARG0, OUT) :- 
+	object_call(REF, preferredLayoutSize, '.'(ARG0, []), OUT).
+
+grid_bag_layout_minimum_layout_size(REF, ARG0, OUT) :- 
+	object_call(REF, minimumLayoutSize, '.'(ARG0, []), OUT).
+
+grid_bag_layout_get_layout_alignment_y(REF, ARG0, OUT) :- 
+	object_call(REF, getLayoutAlignmentY, '.'(ARG0, []), OUT).
 

@@ -25,48 +25,48 @@
 monitor_info(ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_new('java.lang.management.MonitorInfo', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
-monitor_info_from(REF, ARG0, OUT) :- 
-	object_call(REF, from, '.'(ARG0, []), OUT).
+monitor_info_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-monitor_info_get_locked_stack_depth(REF, OUT) :- 
-	object_call(REF, getLockedStackDepth, [], OUT).
-
-monitor_info_get_locked_stack_frame(REF, OUT) :- 
-	object_call(REF, getLockedStackFrame, [], OUT).
-
-monitor_info_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-monitor_info_get_class_name(REF, OUT) :- 
-	object_call(REF, getClassName, [], OUT).
-
-monitor_info_from(REF, ARG0, OUT) :- 
-	object_call(REF, from, '.'(ARG0, []), OUT).
-
-monitor_info_get_identity_hash_code(REF, OUT) :- 
-	object_call(REF, getIdentityHashCode, [], OUT).
-
-monitor_info_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-monitor_info_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-monitor_info_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+monitor_info_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 monitor_info_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
+monitor_info_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+monitor_info_get_class_name(REF, OUT) :- 
+	object_call(REF, getClassName, [], OUT).
+
+monitor_info_get_identity_hash_code(REF, OUT) :- 
+	object_call(REF, getIdentityHashCode, [], OUT).
+
+monitor_info_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+monitor_info_get_locked_stack_depth(REF, OUT) :- 
+	object_call(REF, getLockedStackDepth, [], OUT).
+
+monitor_info_from(REF, ARG0, OUT) :- 
+	object_call(REF, from, '.'(ARG0, []), OUT).
+
+monitor_info_from(REF, ARG0, OUT) :- 
+	object_call(REF, from, '.'(ARG0, []), OUT).
+
+monitor_info_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+monitor_info_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
 monitor_info_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+monitor_info_get_locked_stack_frame(REF, OUT) :- 
+	object_call(REF, getLockedStackFrame, [], OUT).
+
 monitor_info_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-monitor_info_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-monitor_info_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

@@ -22,33 +22,33 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-void_type(OUT) :- 
+void_TYPE(OUT) :- 
 	object_get('java.lang.Void', type, OUT).
 
-void_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+void_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-void_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+void_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-void_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+void_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-void_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-void_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+void_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 void_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+void_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
 void_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-void_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+void_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-void_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+void_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 

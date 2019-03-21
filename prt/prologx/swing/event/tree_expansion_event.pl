@@ -25,26 +25,17 @@
 tree_expansion_event(ARG0, ARG1, OUT) :- 
 	object_new('javax.swing.event.TreeExpansionEvent', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-tree_expansion_event_get_path(REF, OUT) :- 
-	object_call(REF, getPath, [], OUT).
-
-tree_expansion_event_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
 tree_expansion_event_get_source(REF, OUT) :- 
 	object_call(REF, getSource, [], OUT).
 
-tree_expansion_event_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+tree_expansion_event_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-tree_expansion_event_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+tree_expansion_event_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-tree_expansion_event_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-tree_expansion_event_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+tree_expansion_event_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 tree_expansion_event_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -52,9 +43,18 @@ tree_expansion_event_hash_code(REF, OUT) :-
 tree_expansion_event_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-tree_expansion_event_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+tree_expansion_event_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-tree_expansion_event_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+tree_expansion_event_get_path(REF, OUT) :- 
+	object_call(REF, getPath, [], OUT).
+
+tree_expansion_event_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+tree_expansion_event_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+tree_expansion_event_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

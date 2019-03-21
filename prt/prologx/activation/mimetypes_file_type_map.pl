@@ -31,35 +31,14 @@ mimetypes_file_type_map(ARG0, OUT) :-
 mimetypes_file_type_map(OUT) :- 
 	object_new('javax.activation.MimetypesFileTypeMap', [], OUT).
 
-mimetypes_file_type_map_get_content_type(REF, ARG0, OUT) :- 
-	object_call(REF, getContentType, '.'(ARG0, []), OUT).
-
-mimetypes_file_type_map_get_content_type(REF, ARG0, OUT) :- 
-	object_call(REF, getContentType, '.'(ARG0, []), OUT).
-
-mimetypes_file_type_map_add_mime_types(REF, ARG0, OUT) :- 
-	object_call(REF, addMimeTypes, '.'(ARG0, []), OUT).
-
 mimetypes_file_type_map_get_default_file_type_map(REF, OUT) :- 
 	object_call(REF, getDefaultFileTypeMap, [], OUT).
 
-mimetypes_file_type_map_set_default_file_type_map(REF, ARG0, OUT) :- 
-	object_call(REF, setDefaultFileTypeMap, '.'(ARG0, []), OUT).
+mimetypes_file_type_map_set_default_file_type_map(REF, ARG0) :- 
+	object_call(REF, setDefaultFileTypeMap, '.'(ARG0, []), _).
 
-mimetypes_file_type_map_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-mimetypes_file_type_map_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-mimetypes_file_type_map_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-mimetypes_file_type_map_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-mimetypes_file_type_map_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+mimetypes_file_type_map_add_mime_types(REF, ARG0) :- 
+	object_call(REF, addMimeTypes, '.'(ARG0, []), _).
 
 mimetypes_file_type_map_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -67,9 +46,30 @@ mimetypes_file_type_map_hash_code(REF, OUT) :-
 mimetypes_file_type_map_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-mimetypes_file_type_map_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+mimetypes_file_type_map_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-mimetypes_file_type_map_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+mimetypes_file_type_map_get_content_type(REF, ARG0, OUT) :- 
+	object_call(REF, getContentType, '.'(ARG0, []), OUT).
+
+mimetypes_file_type_map_get_content_type(REF, ARG0, OUT) :- 
+	object_call(REF, getContentType, '.'(ARG0, []), OUT).
+
+mimetypes_file_type_map_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+mimetypes_file_type_map_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+mimetypes_file_type_map_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+mimetypes_file_type_map_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+mimetypes_file_type_map_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+mimetypes_file_type_map_notify(REF) :- 
+	object_call(REF, notify, [], _).
 

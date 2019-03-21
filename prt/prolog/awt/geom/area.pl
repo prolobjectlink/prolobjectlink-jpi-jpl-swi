@@ -22,23 +22,44 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-area(OUT) :- 
-	object_new('java.awt.geom.Area', [], OUT).
-
 area(ARG0, OUT) :- 
 	object_new('java.awt.geom.Area', '.'(ARG0, []), OUT).
 
-area_add(REF, ARG0, OUT) :- 
-	object_call(REF, add, '.'(ARG0, []), OUT).
+area(OUT) :- 
+	object_new('java.awt.geom.Area', [], OUT).
 
-area_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+area_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+area_transform(REF, ARG0) :- 
+	object_call(REF, transform, '.'(ARG0, []), _).
+
+area_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
+
+area_get_bounds(REF, OUT) :- 
+	object_call(REF, getBounds, [], OUT).
+
+area_intersect(REF, ARG0) :- 
+	object_call(REF, intersect, '.'(ARG0, []), _).
 
 area_clone(REF, OUT) :- 
 	object_call(REF, clone, [], OUT).
 
-area_contains(REF, ARG0, OUT) :- 
-	object_call(REF, contains, '.'(ARG0, []), OUT).
+area_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+area_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+area_get_bounds2_d(REF, OUT) :- 
+	object_call(REF, getBounds2D, [], OUT).
+
+area_add(REF, ARG0) :- 
+	object_call(REF, add, '.'(ARG0, []), _).
+
+area_is_polygonal(REF, OUT) :- 
+	object_call(REF, isPolygonal, [], OUT).
 
 area_contains(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_call(REF, contains, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
@@ -49,78 +70,57 @@ area_contains(REF, ARG0, ARG1, OUT) :-
 area_contains(REF, ARG0, OUT) :- 
 	object_call(REF, contains, '.'(ARG0, []), OUT).
 
-area_is_empty(REF, OUT) :- 
-	object_call(REF, isEmpty, [], OUT).
+area_contains(REF, ARG0, OUT) :- 
+	object_call(REF, contains, '.'(ARG0, []), OUT).
 
-area_reset(REF, OUT) :- 
-	object_call(REF, reset, [], OUT).
-
-area_intersects(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, intersects, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+area_exclusive_or(REF, ARG0) :- 
+	object_call(REF, exclusiveOr, '.'(ARG0, []), _).
 
 area_intersects(REF, ARG0, OUT) :- 
 	object_call(REF, intersects, '.'(ARG0, []), OUT).
 
-area_get_bounds2_d(REF, OUT) :- 
-	object_call(REF, getBounds2D, [], OUT).
+area_is_empty(REF, OUT) :- 
+	object_call(REF, isEmpty, [], OUT).
 
-area_intersect(REF, ARG0, OUT) :- 
-	object_call(REF, intersect, '.'(ARG0, []), OUT).
+area_intersects(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_call(REF, intersects, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
 area_get_path_iterator(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, getPathIterator, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-area_get_path_iterator(REF, ARG0, OUT) :- 
-	object_call(REF, getPathIterator, '.'(ARG0, []), OUT).
-
-area_get_bounds(REF, OUT) :- 
-	object_call(REF, getBounds, [], OUT).
-
-area_transform(REF, ARG0, OUT) :- 
-	object_call(REF, transform, '.'(ARG0, []), OUT).
-
 area_create_transformed_area(REF, ARG0, OUT) :- 
 	object_call(REF, createTransformedArea, '.'(ARG0, []), OUT).
-
-area_exclusive_or(REF, ARG0, OUT) :- 
-	object_call(REF, exclusiveOr, '.'(ARG0, []), OUT).
-
-area_is_polygonal(REF, OUT) :- 
-	object_call(REF, isPolygonal, [], OUT).
-
-area_is_rectangular(REF, OUT) :- 
-	object_call(REF, isRectangular, [], OUT).
-
-area_is_singular(REF, OUT) :- 
-	object_call(REF, isSingular, [], OUT).
-
-area_subtract(REF, ARG0, OUT) :- 
-	object_call(REF, subtract, '.'(ARG0, []), OUT).
-
-area_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-area_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-area_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-area_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 area_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-area_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+area_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-area_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
+area_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-area_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+area_is_singular(REF, OUT) :- 
+	object_call(REF, isSingular, [], OUT).
 
-area_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+area_subtract(REF, ARG0) :- 
+	object_call(REF, subtract, '.'(ARG0, []), _).
+
+area_get_path_iterator(REF, ARG0, OUT) :- 
+	object_call(REF, getPathIterator, '.'(ARG0, []), OUT).
+
+area_reset(REF) :- 
+	object_call(REF, reset, [], _).
+
+area_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+area_is_rectangular(REF, OUT) :- 
+	object_call(REF, isRectangular, [], OUT).
+
+area_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+area_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 

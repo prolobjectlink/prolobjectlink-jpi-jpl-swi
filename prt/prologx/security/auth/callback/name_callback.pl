@@ -22,48 +22,48 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-name_callback(ARG0, OUT) :- 
-	object_new('javax.security.auth.callback.NameCallback', '.'(ARG0, []), OUT).
-
 name_callback(ARG0, ARG1, OUT) :- 
 	object_new('javax.security.auth.callback.NameCallback', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-name_callback_get_name(REF, OUT) :- 
-	object_call(REF, getName, [], OUT).
+name_callback(ARG0, OUT) :- 
+	object_new('javax.security.auth.callback.NameCallback', '.'(ARG0, []), OUT).
 
-name_callback_set_name(REF, ARG0, OUT) :- 
-	object_call(REF, setName, '.'(ARG0, []), OUT).
+name_callback_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-name_callback_get_prompt(REF, OUT) :- 
-	object_call(REF, getPrompt, [], OUT).
+name_callback_set_name(REF, ARG0) :- 
+	object_call(REF, setName, '.'(ARG0, []), _).
 
 name_callback_get_default_name(REF, OUT) :- 
 	object_call(REF, getDefaultName, [], OUT).
 
-name_callback_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+name_callback_get_prompt(REF, OUT) :- 
+	object_call(REF, getPrompt, [], OUT).
 
-name_callback_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-name_callback_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+name_callback_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 name_callback_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
+name_callback_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+name_callback_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
 name_callback_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-name_callback_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+name_callback_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+name_callback_get_name(REF, OUT) :- 
+	object_call(REF, getName, [], OUT).
 
 name_callback_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-name_callback_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-name_callback_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+name_callback_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 

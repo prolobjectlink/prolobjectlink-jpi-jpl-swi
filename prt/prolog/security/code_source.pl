@@ -28,14 +28,11 @@ code_source(ARG0, ARG1, OUT) :-
 code_source(ARG0, ARG1, OUT) :- 
 	object_new('java.security.CodeSource', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-code_source_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+code_source_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
 code_source_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
-
-code_source_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
 
 code_source_get_certificates(REF, OUT) :- 
 	object_call(REF, getCertificates, [], OUT).
@@ -46,24 +43,27 @@ code_source_get_location(REF, OUT) :-
 code_source_implies(REF, ARG0, OUT) :- 
 	object_call(REF, implies, '.'(ARG0, []), OUT).
 
+code_source_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+code_source_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+code_source_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
 code_source_get_code_signers(REF, OUT) :- 
 	object_call(REF, getCodeSigners, [], OUT).
 
-code_source_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+code_source_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-code_source_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+code_source_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-code_source_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+code_source_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 code_source_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-code_source_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-code_source_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

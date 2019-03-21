@@ -25,42 +25,42 @@
 synth_context(ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_new('javax.swing.plaf.synth.SynthContext', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
-synth_context_get_region(REF, OUT) :- 
-	object_call(REF, getRegion, [], OUT).
+synth_context_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 synth_context_get_component_state(REF, OUT) :- 
 	object_call(REF, getComponentState, [], OUT).
 
+synth_context_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
 synth_context_get_component(REF, OUT) :- 
 	object_call(REF, getComponent, [], OUT).
 
-synth_context_get_style(REF, OUT) :- 
-	object_call(REF, getStyle, [], OUT).
-
-synth_context_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-synth_context_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-synth_context_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-synth_context_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+synth_context_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 synth_context_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-synth_context_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+synth_context_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+synth_context_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+synth_context_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 synth_context_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-synth_context_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+synth_context_get_style(REF, OUT) :- 
+	object_call(REF, getStyle, [], OUT).
 
-synth_context_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+synth_context_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+synth_context_get_region(REF, OUT) :- 
+	object_call(REF, getRegion, [], OUT).
 

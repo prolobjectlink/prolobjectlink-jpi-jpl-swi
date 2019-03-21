@@ -25,33 +25,33 @@
 v_m_i_d(OUT) :- 
 	object_new('java.rmi.dgc.VMID', [], OUT).
 
+v_m_i_d_is_unique(REF, OUT) :- 
+	object_call(REF, isUnique, [], OUT).
+
+v_m_i_d_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
 v_m_i_d_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-v_m_i_d_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
 
 v_m_i_d_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-v_m_i_d_is_unique(REF, OUT) :- 
-	object_call(REF, isUnique, [], OUT).
+v_m_i_d_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-v_m_i_d_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+v_m_i_d_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-v_m_i_d_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-v_m_i_d_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+v_m_i_d_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 v_m_i_d_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-v_m_i_d_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+v_m_i_d_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-v_m_i_d_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+v_m_i_d_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 

@@ -22,65 +22,32 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-stream_result_feature(OUT) :- 
+stream_result_FEATURE(OUT) :- 
 	object_get('javax.xml.transform.stream.StreamResult', feature, OUT).
 
-stream_result_pi_disable_output_escaping(OUT) :- 
+stream_result_PI_DISABLE_OUTPUT_ESCAPING(OUT) :- 
 	object_get('javax.xml.transform.stream.StreamResult', pi_disable_output_escaping, OUT).
 
-stream_result_pi_enable_output_escaping(OUT) :- 
+stream_result_PI_ENABLE_OUTPUT_ESCAPING(OUT) :- 
 	object_get('javax.xml.transform.stream.StreamResult', pi_enable_output_escaping, OUT).
-
-stream_result(ARG0, OUT) :- 
-	object_new('javax.xml.transform.stream.StreamResult', '.'(ARG0, []), OUT).
-
-stream_result(ARG0, OUT) :- 
-	object_new('javax.xml.transform.stream.StreamResult', '.'(ARG0, []), OUT).
-
-stream_result(ARG0, OUT) :- 
-	object_new('javax.xml.transform.stream.StreamResult', '.'(ARG0, []), OUT).
-
-stream_result(ARG0, OUT) :- 
-	object_new('javax.xml.transform.stream.StreamResult', '.'(ARG0, []), OUT).
 
 stream_result(OUT) :- 
 	object_new('javax.xml.transform.stream.StreamResult', [], OUT).
 
-stream_result_set_output_stream(REF, ARG0, OUT) :- 
-	object_call(REF, setOutputStream, '.'(ARG0, []), OUT).
+stream_result(ARG0, OUT) :- 
+	object_new('javax.xml.transform.stream.StreamResult', '.'(ARG0, []), OUT).
 
-stream_result_get_output_stream(REF, OUT) :- 
-	object_call(REF, getOutputStream, [], OUT).
+stream_result(ARG0, OUT) :- 
+	object_new('javax.xml.transform.stream.StreamResult', '.'(ARG0, []), OUT).
 
-stream_result_set_writer(REF, ARG0, OUT) :- 
-	object_call(REF, setWriter, '.'(ARG0, []), OUT).
+stream_result(ARG0, OUT) :- 
+	object_new('javax.xml.transform.stream.StreamResult', '.'(ARG0, []), OUT).
 
-stream_result_get_system_id(REF, OUT) :- 
-	object_call(REF, getSystemId, [], OUT).
+stream_result(ARG0, OUT) :- 
+	object_new('javax.xml.transform.stream.StreamResult', '.'(ARG0, []), OUT).
 
-stream_result_set_system_id(REF, ARG0, OUT) :- 
-	object_call(REF, setSystemId, '.'(ARG0, []), OUT).
-
-stream_result_set_system_id(REF, ARG0, OUT) :- 
-	object_call(REF, setSystemId, '.'(ARG0, []), OUT).
-
-stream_result_get_writer(REF, OUT) :- 
-	object_call(REF, getWriter, [], OUT).
-
-stream_result_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-stream_result_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-stream_result_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-stream_result_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-stream_result_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+stream_result_set_output_stream(REF, ARG0) :- 
+	object_call(REF, setOutputStream, '.'(ARG0, []), _).
 
 stream_result_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -88,9 +55,42 @@ stream_result_hash_code(REF, OUT) :-
 stream_result_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-stream_result_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+stream_result_set_system_id(REF, ARG0) :- 
+	object_call(REF, setSystemId, '.'(ARG0, []), _).
 
-stream_result_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+stream_result_set_system_id(REF, ARG0) :- 
+	object_call(REF, setSystemId, '.'(ARG0, []), _).
+
+stream_result_set_writer(REF, ARG0) :- 
+	object_call(REF, setWriter, '.'(ARG0, []), _).
+
+stream_result_get_writer(REF, OUT) :- 
+	object_call(REF, getWriter, [], OUT).
+
+stream_result_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+stream_result_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+stream_result_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+stream_result_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+stream_result_get_output_stream(REF, OUT) :- 
+	object_call(REF, getOutputStream, [], OUT).
+
+stream_result_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+stream_result_get_system_id(REF, OUT) :- 
+	object_call(REF, getSystemId, [], OUT).
+
+stream_result_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+stream_result_notify(REF) :- 
+	object_call(REF, notify, [], _).
 

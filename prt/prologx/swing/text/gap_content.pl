@@ -22,54 +22,54 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-gap_content(OUT) :- 
-	object_new('javax.swing.text.GapContent', [], OUT).
-
 gap_content(ARG0, OUT) :- 
 	object_new('javax.swing.text.GapContent', '.'(ARG0, []), OUT).
+
+gap_content(OUT) :- 
+	object_new('javax.swing.text.GapContent', [], OUT).
 
 gap_content_remove(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, remove, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-gap_content_get_chars(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, getChars, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
 gap_content_length(REF, OUT) :- 
 	object_call(REF, length, [], OUT).
-
-gap_content_get_string(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getString, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 gap_content_create_position(REF, ARG0, OUT) :- 
 	object_call(REF, createPosition, '.'(ARG0, []), OUT).
 
-gap_content_insert_string(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, insertString, '.'(ARG0, '.'(ARG1, [])), OUT).
+gap_content_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-gap_content_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-gap_content_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-gap_content_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-gap_content_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-gap_content_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+gap_content_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 gap_content_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+gap_content_insert_string(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, insertString, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+gap_content_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
 gap_content_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-gap_content_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+gap_content_get_chars(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, getChars, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
 
-gap_content_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+gap_content_get_string(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getString, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+gap_content_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+gap_content_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+gap_content_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+gap_content_notify(REF) :- 
+	object_call(REF, notify, [], _).
 

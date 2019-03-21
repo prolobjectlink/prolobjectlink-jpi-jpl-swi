@@ -25,8 +25,8 @@
 encoder(OUT) :- 
 	object_new('java.beans.Encoder', [], OUT).
 
-encoder_remove(REF, ARG0, OUT) :- 
-	object_call(REF, remove, '.'(ARG0, []), OUT).
+encoder_get_persistence_delegate(REF, ARG0, OUT) :- 
+	object_call(REF, getPersistenceDelegate, '.'(ARG0, []), OUT).
 
 encoder_get(REF, ARG0, OUT) :- 
 	object_call(REF, get, '.'(ARG0, []), OUT).
@@ -34,35 +34,17 @@ encoder_get(REF, ARG0, OUT) :-
 encoder_get_exception_listener(REF, OUT) :- 
 	object_call(REF, getExceptionListener, [], OUT).
 
-encoder_write_expression(REF, ARG0, OUT) :- 
-	object_call(REF, writeExpression, '.'(ARG0, []), OUT).
+encoder_set_exception_listener(REF, ARG0) :- 
+	object_call(REF, setExceptionListener, '.'(ARG0, []), _).
 
-encoder_write_statement(REF, ARG0, OUT) :- 
-	object_call(REF, writeStatement, '.'(ARG0, []), OUT).
-
-encoder_get_persistence_delegate(REF, ARG0, OUT) :- 
-	object_call(REF, getPersistenceDelegate, '.'(ARG0, []), OUT).
-
-encoder_set_exception_listener(REF, ARG0, OUT) :- 
-	object_call(REF, setExceptionListener, '.'(ARG0, []), OUT).
-
-encoder_set_persistence_delegate(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, setPersistenceDelegate, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-encoder_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-encoder_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-encoder_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+encoder_set_persistence_delegate(REF, ARG0, ARG1) :- 
+	object_call(REF, setPersistenceDelegate, '.'(ARG0, '.'(ARG1, [])), _).
 
 encoder_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-encoder_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+encoder_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 encoder_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -70,9 +52,27 @@ encoder_hash_code(REF, OUT) :-
 encoder_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-encoder_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+encoder_write_expression(REF, ARG0) :- 
+	object_call(REF, writeExpression, '.'(ARG0, []), _).
 
-encoder_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+encoder_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+encoder_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+encoder_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+encoder_write_statement(REF, ARG0) :- 
+	object_call(REF, writeStatement, '.'(ARG0, []), _).
+
+encoder_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+encoder_remove(REF, ARG0, OUT) :- 
+	object_call(REF, remove, '.'(ARG0, []), OUT).
+
+encoder_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 

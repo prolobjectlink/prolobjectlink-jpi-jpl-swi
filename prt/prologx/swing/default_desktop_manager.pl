@@ -25,65 +25,20 @@
 default_desktop_manager(OUT) :- 
 	object_new('javax.swing.DefaultDesktopManager', [], OUT).
 
-default_desktop_manager_activate_frame(REF, ARG0, OUT) :- 
-	object_call(REF, activateFrame, '.'(ARG0, []), OUT).
+default_desktop_manager_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-default_desktop_manager_begin_dragging_frame(REF, ARG0, OUT) :- 
-	object_call(REF, beginDraggingFrame, '.'(ARG0, []), OUT).
-
-default_desktop_manager_begin_resizing_frame(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, beginResizingFrame, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-default_desktop_manager_close_frame(REF, ARG0, OUT) :- 
-	object_call(REF, closeFrame, '.'(ARG0, []), OUT).
-
-default_desktop_manager_deactivate_frame(REF, ARG0, OUT) :- 
-	object_call(REF, deactivateFrame, '.'(ARG0, []), OUT).
-
-default_desktop_manager_deiconify_frame(REF, ARG0, OUT) :- 
-	object_call(REF, deiconifyFrame, '.'(ARG0, []), OUT).
-
-default_desktop_manager_drag_frame(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, dragFrame, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-default_desktop_manager_end_dragging_frame(REF, ARG0, OUT) :- 
-	object_call(REF, endDraggingFrame, '.'(ARG0, []), OUT).
-
-default_desktop_manager_end_resizing_frame(REF, ARG0, OUT) :- 
-	object_call(REF, endResizingFrame, '.'(ARG0, []), OUT).
-
-default_desktop_manager_iconify_frame(REF, ARG0, OUT) :- 
-	object_call(REF, iconifyFrame, '.'(ARG0, []), OUT).
-
-default_desktop_manager_maximize_frame(REF, ARG0, OUT) :- 
-	object_call(REF, maximizeFrame, '.'(ARG0, []), OUT).
-
-default_desktop_manager_minimize_frame(REF, ARG0, OUT) :- 
-	object_call(REF, minimizeFrame, '.'(ARG0, []), OUT).
-
-default_desktop_manager_open_frame(REF, ARG0, OUT) :- 
-	object_call(REF, openFrame, '.'(ARG0, []), OUT).
-
-default_desktop_manager_resize_frame(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
-	object_call(REF, resizeFrame, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
-
-default_desktop_manager_set_bounds_for_frame(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
-	object_call(REF, setBoundsForFrame, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
-
-default_desktop_manager_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-default_desktop_manager_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-default_desktop_manager_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-default_desktop_manager_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+default_desktop_manager_resize_frame(REF, ARG0, ARG1, ARG2, ARG3, ARG4) :- 
+	object_call(REF, resizeFrame, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), _).
 
 default_desktop_manager_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
+
+default_desktop_manager_close_frame(REF, ARG0) :- 
+	object_call(REF, closeFrame, '.'(ARG0, []), _).
+
+default_desktop_manager_open_frame(REF, ARG0) :- 
+	object_call(REF, openFrame, '.'(ARG0, []), _).
 
 default_desktop_manager_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -91,9 +46,54 @@ default_desktop_manager_hash_code(REF, OUT) :-
 default_desktop_manager_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-default_desktop_manager_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+default_desktop_manager_begin_resizing_frame(REF, ARG0, ARG1) :- 
+	object_call(REF, beginResizingFrame, '.'(ARG0, '.'(ARG1, [])), _).
 
-default_desktop_manager_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+default_desktop_manager_minimize_frame(REF, ARG0) :- 
+	object_call(REF, minimizeFrame, '.'(ARG0, []), _).
+
+default_desktop_manager_deactivate_frame(REF, ARG0) :- 
+	object_call(REF, deactivateFrame, '.'(ARG0, []), _).
+
+default_desktop_manager_iconify_frame(REF, ARG0) :- 
+	object_call(REF, iconifyFrame, '.'(ARG0, []), _).
+
+default_desktop_manager_deiconify_frame(REF, ARG0) :- 
+	object_call(REF, deiconifyFrame, '.'(ARG0, []), _).
+
+default_desktop_manager_drag_frame(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, dragFrame, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+default_desktop_manager_end_resizing_frame(REF, ARG0) :- 
+	object_call(REF, endResizingFrame, '.'(ARG0, []), _).
+
+default_desktop_manager_activate_frame(REF, ARG0) :- 
+	object_call(REF, activateFrame, '.'(ARG0, []), _).
+
+default_desktop_manager_set_bounds_for_frame(REF, ARG0, ARG1, ARG2, ARG3, ARG4) :- 
+	object_call(REF, setBoundsForFrame, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), _).
+
+default_desktop_manager_maximize_frame(REF, ARG0) :- 
+	object_call(REF, maximizeFrame, '.'(ARG0, []), _).
+
+default_desktop_manager_begin_dragging_frame(REF, ARG0) :- 
+	object_call(REF, beginDraggingFrame, '.'(ARG0, []), _).
+
+default_desktop_manager_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+default_desktop_manager_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+default_desktop_manager_end_dragging_frame(REF, ARG0) :- 
+	object_call(REF, endDraggingFrame, '.'(ARG0, []), _).
+
+default_desktop_manager_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+default_desktop_manager_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+default_desktop_manager_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 

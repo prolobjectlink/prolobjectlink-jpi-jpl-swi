@@ -22,65 +22,53 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-renderable_image_op_hints_observed(OUT) :- 
+renderable_image_op_HINTS_OBSERVED(OUT) :- 
 	object_get('java.awt.image.renderable.RenderableImageOp', hints_observed, OUT).
 
 renderable_image_op(ARG0, ARG1, OUT) :- 
 	object_new('java.awt.image.renderable.RenderableImageOp', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-renderable_image_op_get_property(REF, ARG0, OUT) :- 
-	object_call(REF, getProperty, '.'(ARG0, []), OUT).
+renderable_image_op_get_property_names(REF, OUT) :- 
+	object_call(REF, getPropertyNames, [], OUT).
 
-renderable_image_op_is_dynamic(REF, OUT) :- 
-	object_call(REF, isDynamic, [], OUT).
-
-renderable_image_op_create_default_rendering(REF, OUT) :- 
-	object_call(REF, createDefaultRendering, [], OUT).
-
-renderable_image_op_create_rendering(REF, ARG0, OUT) :- 
-	object_call(REF, createRendering, '.'(ARG0, []), OUT).
-
-renderable_image_op_create_scaled_rendering(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, createScaledRendering, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-renderable_image_op_get_parameter_block(REF, OUT) :- 
-	object_call(REF, getParameterBlock, [], OUT).
+renderable_image_op_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
 renderable_image_op_set_parameter_block(REF, ARG0, OUT) :- 
 	object_call(REF, setParameterBlock, '.'(ARG0, []), OUT).
 
-renderable_image_op_get_min_x(REF, OUT) :- 
-	object_call(REF, getMinX, [], OUT).
+renderable_image_op_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-renderable_image_op_get_min_y(REF, OUT) :- 
-	object_call(REF, getMinY, [], OUT).
-
-renderable_image_op_get_height(REF, OUT) :- 
-	object_call(REF, getHeight, [], OUT).
-
-renderable_image_op_get_width(REF, OUT) :- 
-	object_call(REF, getWidth, [], OUT).
-
-renderable_image_op_get_property_names(REF, OUT) :- 
-	object_call(REF, getPropertyNames, [], OUT).
+renderable_image_op_get_property(REF, ARG0, OUT) :- 
+	object_call(REF, getProperty, '.'(ARG0, []), OUT).
 
 renderable_image_op_get_sources(REF, OUT) :- 
 	object_call(REF, getSources, [], OUT).
 
-renderable_image_op_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+renderable_image_op_is_dynamic(REF, OUT) :- 
+	object_call(REF, isDynamic, [], OUT).
 
-renderable_image_op_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+renderable_image_op_get_parameter_block(REF, OUT) :- 
+	object_call(REF, getParameterBlock, [], OUT).
 
-renderable_image_op_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+renderable_image_op_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 renderable_image_op_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-renderable_image_op_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+renderable_image_op_get_min_y(REF, OUT) :- 
+	object_call(REF, getMinY, [], OUT).
+
+renderable_image_op_get_min_x(REF, OUT) :- 
+	object_call(REF, getMinX, [], OUT).
+
+renderable_image_op_get_width(REF, OUT) :- 
+	object_call(REF, getWidth, [], OUT).
+
+renderable_image_op_get_height(REF, OUT) :- 
+	object_call(REF, getHeight, [], OUT).
 
 renderable_image_op_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -88,9 +76,21 @@ renderable_image_op_hash_code(REF, OUT) :-
 renderable_image_op_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-renderable_image_op_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+renderable_image_op_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-renderable_image_op_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+renderable_image_op_create_default_rendering(REF, OUT) :- 
+	object_call(REF, createDefaultRendering, [], OUT).
+
+renderable_image_op_create_scaled_rendering(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, createScaledRendering, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+renderable_image_op_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+renderable_image_op_create_rendering(REF, ARG0, OUT) :- 
+	object_call(REF, createRendering, '.'(ARG0, []), OUT).
+
+renderable_image_op_wait(REF) :- 
+	object_call(REF, wait, [], _).
 

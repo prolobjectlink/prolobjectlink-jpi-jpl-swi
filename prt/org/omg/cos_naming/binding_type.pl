@@ -22,38 +22,29 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-binding_type__nobject(OUT) :- 
+binding_type__NOBJECT(OUT) :- 
 	object_get('org.omg.CosNaming.BindingType', '_nobject', OUT).
 
-binding_type_nobject(OUT) :- 
+binding_type_NOBJECT(OUT) :- 
 	object_get('org.omg.CosNaming.BindingType', nobject, OUT).
 
-binding_type__ncontext(OUT) :- 
+binding_type__NCONTEXT(OUT) :- 
 	object_get('org.omg.CosNaming.BindingType', '_ncontext', OUT).
 
-binding_type_ncontext(OUT) :- 
+binding_type_NCONTEXT(OUT) :- 
 	object_get('org.omg.CosNaming.BindingType', ncontext, OUT).
 
-binding_type_value(REF, OUT) :- 
-	object_call(REF, value, [], OUT).
+binding_type_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-binding_type_from_int(REF, ARG0, OUT) :- 
-	object_call(REF, from_int, '.'(ARG0, []), OUT).
-
-binding_type_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-binding_type_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-binding_type_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+binding_type_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
 binding_type_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-binding_type_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+binding_type_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 binding_type_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -61,9 +52,18 @@ binding_type_hash_code(REF, OUT) :-
 binding_type_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-binding_type_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+binding_type_value(REF, OUT) :- 
+	object_call(REF, value, [], OUT).
 
-binding_type_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+binding_type_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+binding_type_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+binding_type_from_int(REF, ARG0, OUT) :- 
+	object_call(REF, from_int, '.'(ARG0, []), OUT).
+
+binding_type_wait(REF) :- 
+	object_call(REF, wait, [], _).
 

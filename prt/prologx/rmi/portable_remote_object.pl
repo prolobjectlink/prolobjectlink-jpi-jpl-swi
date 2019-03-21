@@ -22,29 +22,8 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-portable_remote_object_connect(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, connect, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-portable_remote_object_export_object(REF, ARG0, OUT) :- 
-	object_call(REF, exportObject, '.'(ARG0, []), OUT).
-
-portable_remote_object_unexport_object(REF, ARG0, OUT) :- 
-	object_call(REF, unexportObject, '.'(ARG0, []), OUT).
-
-portable_remote_object_to_stub(REF, ARG0, OUT) :- 
-	object_call(REF, toStub, '.'(ARG0, []), OUT).
-
-portable_remote_object_narrow(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, narrow, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-portable_remote_object_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-portable_remote_object_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-portable_remote_object_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+portable_remote_object_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 portable_remote_object_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
@@ -52,15 +31,36 @@ portable_remote_object_equals(REF, ARG0, OUT) :-
 portable_remote_object_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
+portable_remote_object_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+portable_remote_object_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+portable_remote_object_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+portable_remote_object_to_stub(REF, ARG0, OUT) :- 
+	object_call(REF, toStub, '.'(ARG0, []), OUT).
+
+portable_remote_object_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
 portable_remote_object_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
 portable_remote_object_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-portable_remote_object_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+portable_remote_object_export_object(REF, ARG0) :- 
+	object_call(REF, exportObject, '.'(ARG0, []), _).
 
-portable_remote_object_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+portable_remote_object_connect(REF, ARG0, ARG1) :- 
+	object_call(REF, connect, '.'(ARG0, '.'(ARG1, [])), _).
+
+portable_remote_object_narrow(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, narrow, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+portable_remote_object_unexport_object(REF, ARG0) :- 
+	object_call(REF, unexportObject, '.'(ARG0, []), _).
 

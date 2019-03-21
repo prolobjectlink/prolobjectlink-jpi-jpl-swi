@@ -25,39 +25,39 @@
 app_configuration_entry(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('javax.security.auth.login.AppConfigurationEntry', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-app_configuration_entry_get_control_flag(REF, OUT) :- 
-	object_call(REF, getControlFlag, [], OUT).
-
-app_configuration_entry_get_login_module_name(REF, OUT) :- 
-	object_call(REF, getLoginModuleName, [], OUT).
-
-app_configuration_entry_get_options(REF, OUT) :- 
-	object_call(REF, getOptions, [], OUT).
-
-app_configuration_entry_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-app_configuration_entry_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-app_configuration_entry_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
 app_configuration_entry_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 app_configuration_entry_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-app_configuration_entry_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+app_configuration_entry_get_options(REF, OUT) :- 
+	object_call(REF, getOptions, [], OUT).
+
+app_configuration_entry_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 app_configuration_entry_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-app_configuration_entry_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+app_configuration_entry_get_control_flag(REF, OUT) :- 
+	object_call(REF, getControlFlag, [], OUT).
 
-app_configuration_entry_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+app_configuration_entry_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+app_configuration_entry_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+app_configuration_entry_get_login_module_name(REF, OUT) :- 
+	object_call(REF, getLoginModuleName, [], OUT).
+
+app_configuration_entry_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+app_configuration_entry_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+app_configuration_entry_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

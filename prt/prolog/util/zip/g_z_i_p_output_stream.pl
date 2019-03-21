@@ -25,57 +25,57 @@
 g_z_i_p_output_stream(ARG0, ARG1, OUT) :- 
 	object_new('java.util.zip.GZIPOutputStream', '.'(ARG0, '.'(ARG1, [])), OUT).
 
+g_z_i_p_output_stream(ARG0, ARG1, OUT) :- 
+	object_new('java.util.zip.GZIPOutputStream', '.'(ARG0, '.'(ARG1, [])), OUT).
+
 g_z_i_p_output_stream(ARG0, OUT) :- 
 	object_new('java.util.zip.GZIPOutputStream', '.'(ARG0, []), OUT).
 
 g_z_i_p_output_stream(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('java.util.zip.GZIPOutputStream', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-g_z_i_p_output_stream(ARG0, ARG1, OUT) :- 
-	object_new('java.util.zip.GZIPOutputStream', '.'(ARG0, '.'(ARG1, [])), OUT).
+g_z_i_p_output_stream_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-g_z_i_p_output_stream_write(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, write, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+g_z_i_p_output_stream_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-g_z_i_p_output_stream_finish(REF, OUT) :- 
-	object_call(REF, finish, [], OUT).
+g_z_i_p_output_stream_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-g_z_i_p_output_stream_write(REF, ARG0, OUT) :- 
-	object_call(REF, write, '.'(ARG0, []), OUT).
+g_z_i_p_output_stream_close(REF) :- 
+	object_call(REF, close, [], _).
 
-g_z_i_p_output_stream_close(REF, OUT) :- 
-	object_call(REF, close, [], OUT).
+g_z_i_p_output_stream_write(REF, ARG0) :- 
+	object_call(REF, write, '.'(ARG0, []), _).
 
-g_z_i_p_output_stream_flush(REF, OUT) :- 
-	object_call(REF, flush, [], OUT).
-
-g_z_i_p_output_stream_write(REF, ARG0, OUT) :- 
-	object_call(REF, write, '.'(ARG0, []), OUT).
-
-g_z_i_p_output_stream_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-g_z_i_p_output_stream_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-g_z_i_p_output_stream_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-g_z_i_p_output_stream_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-g_z_i_p_output_stream_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-g_z_i_p_output_stream_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+g_z_i_p_output_stream_write(REF, ARG0) :- 
+	object_call(REF, write, '.'(ARG0, []), _).
 
 g_z_i_p_output_stream_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-g_z_i_p_output_stream_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+g_z_i_p_output_stream_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-g_z_i_p_output_stream_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+g_z_i_p_output_stream_write(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, write, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+g_z_i_p_output_stream_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+g_z_i_p_output_stream_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+g_z_i_p_output_stream_flush(REF) :- 
+	object_call(REF, flush, [], _).
+
+g_z_i_p_output_stream_finish(REF) :- 
+	object_call(REF, finish, [], _).
+
+g_z_i_p_output_stream_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+g_z_i_p_output_stream_notify(REF) :- 
+	object_call(REF, notify, [], _).
 

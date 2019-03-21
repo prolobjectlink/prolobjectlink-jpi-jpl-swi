@@ -22,66 +22,66 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-directory_manager_cpe(OUT) :- 
+directory_manager_CPE(OUT) :- 
 	object_get('javax.naming.spi.DirectoryManager', cpe, OUT).
-
-directory_manager_get_object_instance(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
-	object_call(REF, getObjectInstance, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
-
-directory_manager_get_state_to_bind(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
-	object_call(REF, getStateToBind, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
-
-directory_manager_get_continuation_dir_context(REF, ARG0, OUT) :- 
-	object_call(REF, getContinuationDirContext, '.'(ARG0, []), OUT).
-
-directory_manager_get_object_instance(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, getObjectInstance, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
-directory_manager_get_initial_context(REF, ARG0, OUT) :- 
-	object_call(REF, getInitialContext, '.'(ARG0, []), OUT).
-
-directory_manager_get_u_r_l_context(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getURLContext, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-directory_manager_has_initial_context_factory_builder(REF, OUT) :- 
-	object_call(REF, hasInitialContextFactoryBuilder, [], OUT).
-
-directory_manager_get_state_to_bind(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, getStateToBind, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
-directory_manager_get_continuation_context(REF, ARG0, OUT) :- 
-	object_call(REF, getContinuationContext, '.'(ARG0, []), OUT).
-
-directory_manager_set_initial_context_factory_builder(REF, ARG0, OUT) :- 
-	object_call(REF, setInitialContextFactoryBuilder, '.'(ARG0, []), OUT).
-
-directory_manager_set_object_factory_builder(REF, ARG0, OUT) :- 
-	object_call(REF, setObjectFactoryBuilder, '.'(ARG0, []), OUT).
-
-directory_manager_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-directory_manager_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-directory_manager_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-directory_manager_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 directory_manager_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-directory_manager_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+directory_manager_get_initial_context(REF, ARG0, OUT) :- 
+	object_call(REF, getInitialContext, '.'(ARG0, []), OUT).
+
+directory_manager_get_continuation_dir_context(REF, ARG0, OUT) :- 
+	object_call(REF, getContinuationDirContext, '.'(ARG0, []), OUT).
+
+directory_manager_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+directory_manager_get_state_to_bind(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
+	object_call(REF, getStateToBind, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
+
+directory_manager_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 directory_manager_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-directory_manager_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+directory_manager_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
-directory_manager_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+directory_manager_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+directory_manager_get_state_to_bind(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_call(REF, getStateToBind, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+
+directory_manager_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+directory_manager_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+directory_manager_has_initial_context_factory_builder(REF, OUT) :- 
+	object_call(REF, hasInitialContextFactoryBuilder, [], OUT).
+
+directory_manager_set_object_factory_builder(REF, ARG0) :- 
+	object_call(REF, setObjectFactoryBuilder, '.'(ARG0, []), _).
+
+directory_manager_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+directory_manager_set_initial_context_factory_builder(REF, ARG0) :- 
+	object_call(REF, setInitialContextFactoryBuilder, '.'(ARG0, []), _).
+
+directory_manager_get_continuation_context(REF, ARG0, OUT) :- 
+	object_call(REF, getContinuationContext, '.'(ARG0, []), OUT).
+
+directory_manager_get_u_r_l_context(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getURLContext, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+directory_manager_get_object_instance(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
+	object_call(REF, getObjectInstance, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
+
+directory_manager_get_object_instance(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_call(REF, getObjectInstance, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 

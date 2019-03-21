@@ -22,38 +22,44 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-request_processing_policy_value__use_active_object_map_only(OUT) :- 
+request_processing_policy_value__USE_ACTIVE_OBJECT_MAP_ONLY(OUT) :- 
 	object_get('org.omg.PortableServer.RequestProcessingPolicyValue', '_use_active_object_map_only', OUT).
 
-request_processing_policy_value_use_active_object_map_only(OUT) :- 
+request_processing_policy_value_USE_ACTIVE_OBJECT_MAP_ONLY(OUT) :- 
 	object_get('org.omg.PortableServer.RequestProcessingPolicyValue', use_active_object_map_only, OUT).
 
-request_processing_policy_value__use_default_servant(OUT) :- 
+request_processing_policy_value__USE_DEFAULT_SERVANT(OUT) :- 
 	object_get('org.omg.PortableServer.RequestProcessingPolicyValue', '_use_default_servant', OUT).
 
-request_processing_policy_value_use_default_servant(OUT) :- 
+request_processing_policy_value_USE_DEFAULT_SERVANT(OUT) :- 
 	object_get('org.omg.PortableServer.RequestProcessingPolicyValue', use_default_servant, OUT).
 
-request_processing_policy_value__use_servant_manager(OUT) :- 
+request_processing_policy_value__USE_SERVANT_MANAGER(OUT) :- 
 	object_get('org.omg.PortableServer.RequestProcessingPolicyValue', '_use_servant_manager', OUT).
 
-request_processing_policy_value_use_servant_manager(OUT) :- 
+request_processing_policy_value_USE_SERVANT_MANAGER(OUT) :- 
 	object_get('org.omg.PortableServer.RequestProcessingPolicyValue', use_servant_manager, OUT).
-
-request_processing_policy_value_value(REF, OUT) :- 
-	object_call(REF, value, [], OUT).
 
 request_processing_policy_value_from_int(REF, ARG0, OUT) :- 
 	object_call(REF, from_int, '.'(ARG0, []), OUT).
 
-request_processing_policy_value_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+request_processing_policy_value_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-request_processing_policy_value_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+request_processing_policy_value_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-request_processing_policy_value_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+request_processing_policy_value_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+request_processing_policy_value_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+request_processing_policy_value_value(REF, OUT) :- 
+	object_call(REF, value, [], OUT).
+
+request_processing_policy_value_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 request_processing_policy_value_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
@@ -66,10 +72,4 @@ request_processing_policy_value_hash_code(REF, OUT) :-
 
 request_processing_policy_value_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-request_processing_policy_value_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-request_processing_policy_value_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

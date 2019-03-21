@@ -25,11 +25,32 @@
 s_s_l_session_binding_event(ARG0, ARG1, OUT) :- 
 	object_new('javax.net.ssl.SSLSessionBindingEvent', '.'(ARG0, '.'(ARG1, [])), OUT).
 
+s_s_l_session_binding_event_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+s_s_l_session_binding_event_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+s_s_l_session_binding_event_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
 s_s_l_session_binding_event_get_name(REF, OUT) :- 
 	object_call(REF, getName, [], OUT).
 
+s_s_l_session_binding_event_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+s_s_l_session_binding_event_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
 s_s_l_session_binding_event_get_session(REF, OUT) :- 
 	object_call(REF, getSession, [], OUT).
+
+s_s_l_session_binding_event_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+s_s_l_session_binding_event_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
 s_s_l_session_binding_event_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
@@ -37,27 +58,6 @@ s_s_l_session_binding_event_to_string(REF, OUT) :-
 s_s_l_session_binding_event_get_source(REF, OUT) :- 
 	object_call(REF, getSource, [], OUT).
 
-s_s_l_session_binding_event_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-s_s_l_session_binding_event_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-s_s_l_session_binding_event_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-s_s_l_session_binding_event_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-s_s_l_session_binding_event_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
 s_s_l_session_binding_event_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-s_s_l_session_binding_event_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-s_s_l_session_binding_event_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

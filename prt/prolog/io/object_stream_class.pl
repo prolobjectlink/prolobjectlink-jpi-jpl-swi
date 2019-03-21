@@ -22,11 +22,8 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-object_stream_class_no_fields(OUT) :- 
+object_stream_class_NO_FIELDS(OUT) :- 
 	object_get('java.io.ObjectStreamClass', no_fields, OUT).
-
-object_stream_class_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
 
 object_stream_class_get_name(REF, OUT) :- 
 	object_call(REF, getName, [], OUT).
@@ -34,11 +31,17 @@ object_stream_class_get_name(REF, OUT) :-
 object_stream_class_get_field(REF, ARG0, OUT) :- 
 	object_call(REF, getField, '.'(ARG0, []), OUT).
 
-object_stream_class_get_fields(REF, OUT) :- 
-	object_call(REF, getFields, [], OUT).
+object_stream_class_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-object_stream_class_lookup(REF, ARG0, OUT) :- 
-	object_call(REF, lookup, '.'(ARG0, []), OUT).
+object_stream_class_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+object_stream_class_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+object_stream_class_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
 object_stream_class_for_class(REF, OUT) :- 
 	object_call(REF, forClass, [], OUT).
@@ -46,30 +49,27 @@ object_stream_class_for_class(REF, OUT) :-
 object_stream_class_get_serial_version_u_i_d(REF, OUT) :- 
 	object_call(REF, getSerialVersionUID, [], OUT).
 
-object_stream_class_lookup_any(REF, ARG0, OUT) :- 
-	object_call(REF, lookupAny, '.'(ARG0, []), OUT).
-
-object_stream_class_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-object_stream_class_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-object_stream_class_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+object_stream_class_get_fields(REF, OUT) :- 
+	object_call(REF, getFields, [], OUT).
 
 object_stream_class_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
+object_stream_class_lookup_any(REF, ARG0, OUT) :- 
+	object_call(REF, lookupAny, '.'(ARG0, []), OUT).
+
+object_stream_class_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
 object_stream_class_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-object_stream_class_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
+object_stream_class_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-object_stream_class_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+object_stream_class_lookup(REF, ARG0, OUT) :- 
+	object_call(REF, lookup, '.'(ARG0, []), OUT).
 
-object_stream_class_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+object_stream_class_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

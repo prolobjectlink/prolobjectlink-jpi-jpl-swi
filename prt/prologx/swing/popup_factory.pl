@@ -25,39 +25,39 @@
 popup_factory(OUT) :- 
 	object_new('javax.swing.PopupFactory', [], OUT).
 
-popup_factory_set_shared_instance(REF, ARG0, OUT) :- 
-	object_call(REF, setSharedInstance, '.'(ARG0, []), OUT).
+popup_factory_set_shared_instance(REF, ARG0) :- 
+	object_call(REF, setSharedInstance, '.'(ARG0, []), _).
+
+popup_factory_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 popup_factory_get_popup(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_call(REF, getPopup, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
-popup_factory_get_shared_instance(REF, OUT) :- 
-	object_call(REF, getSharedInstance, [], OUT).
-
-popup_factory_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-popup_factory_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-popup_factory_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-popup_factory_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
 popup_factory_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-popup_factory_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+popup_factory_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 popup_factory_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-popup_factory_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+popup_factory_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-popup_factory_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+popup_factory_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+popup_factory_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+popup_factory_get_shared_instance(REF, OUT) :- 
+	object_call(REF, getSharedInstance, [], OUT).
+
+popup_factory_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+popup_factory_wait(REF) :- 
+	object_call(REF, wait, [], _).
 

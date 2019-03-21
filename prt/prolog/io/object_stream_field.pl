@@ -22,29 +22,11 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-object_stream_field(ARG0, ARG1, ARG2, OUT) :- 
-	object_new('java.io.ObjectStreamField', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
 object_stream_field(ARG0, ARG1, OUT) :- 
 	object_new('java.io.ObjectStreamField', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-object_stream_field_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-object_stream_field_is_primitive(REF, OUT) :- 
-	object_call(REF, isPrimitive, [], OUT).
-
-object_stream_field_compare_to(REF, ARG0, OUT) :- 
-	object_call(REF, compareTo, '.'(ARG0, []), OUT).
-
-object_stream_field_get_name(REF, OUT) :- 
-	object_call(REF, getName, [], OUT).
-
-object_stream_field_get_type(REF, OUT) :- 
-	object_call(REF, getType, [], OUT).
-
-object_stream_field_get_offset(REF, OUT) :- 
-	object_call(REF, getOffset, [], OUT).
+object_stream_field(ARG0, ARG1, ARG2, OUT) :- 
+	object_new('java.io.ObjectStreamField', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
 object_stream_field_get_type_code(REF, OUT) :- 
 	object_call(REF, getTypeCode, [], OUT).
@@ -52,30 +34,48 @@ object_stream_field_get_type_code(REF, OUT) :-
 object_stream_field_get_type_string(REF, OUT) :- 
 	object_call(REF, getTypeString, [], OUT).
 
-object_stream_field_is_unshared(REF, OUT) :- 
-	object_call(REF, isUnshared, [], OUT).
+object_stream_field_compare_to(REF, ARG0, OUT) :- 
+	object_call(REF, compareTo, '.'(ARG0, []), OUT).
 
-object_stream_field_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+object_stream_field_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-object_stream_field_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+object_stream_field_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-object_stream_field_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+object_stream_field_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-object_stream_field_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+object_stream_field_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-object_stream_field_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+object_stream_field_get_name(REF, OUT) :- 
+	object_call(REF, getName, [], OUT).
+
+object_stream_field_get_type(REF, OUT) :- 
+	object_call(REF, getType, [], OUT).
+
+object_stream_field_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
 object_stream_field_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-object_stream_field_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+object_stream_field_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-object_stream_field_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+object_stream_field_get_offset(REF, OUT) :- 
+	object_call(REF, getOffset, [], OUT).
+
+object_stream_field_is_primitive(REF, OUT) :- 
+	object_call(REF, isPrimitive, [], OUT).
+
+object_stream_field_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+object_stream_field_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+object_stream_field_is_unshared(REF, OUT) :- 
+	object_call(REF, isUnshared, [], OUT).
 

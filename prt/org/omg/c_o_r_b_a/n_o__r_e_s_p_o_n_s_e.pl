@@ -25,44 +25,59 @@
 n_o__r_e_s_p_o_n_s_e(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('org.omg.CORBA.NO_RESPONSE', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
+n_o__r_e_s_p_o_n_s_e(OUT) :- 
+	object_new('org.omg.CORBA.NO_RESPONSE', [], OUT).
+
 n_o__r_e_s_p_o_n_s_e(ARG0, ARG1, OUT) :- 
 	object_new('org.omg.CORBA.NO_RESPONSE', '.'(ARG0, '.'(ARG1, [])), OUT).
 
 n_o__r_e_s_p_o_n_s_e(ARG0, OUT) :- 
 	object_new('org.omg.CORBA.NO_RESPONSE', '.'(ARG0, []), OUT).
 
-n_o__r_e_s_p_o_n_s_e(OUT) :- 
-	object_new('org.omg.CORBA.NO_RESPONSE', [], OUT).
-
-n_o__r_e_s_p_o_n_s_e_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-n_o__r_e_s_p_o_n_s_e_print_stack_trace(REF, OUT) :- 
-	object_call(REF, printStackTrace, [], OUT).
-
-n_o__r_e_s_p_o_n_s_e_print_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, printStackTrace, '.'(ARG0, []), OUT).
-
-n_o__r_e_s_p_o_n_s_e_print_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, printStackTrace, '.'(ARG0, []), OUT).
-
-n_o__r_e_s_p_o_n_s_e_fill_in_stack_trace(REF, OUT) :- 
-	object_call(REF, fillInStackTrace, [], OUT).
-
 n_o__r_e_s_p_o_n_s_e_get_cause(REF, OUT) :- 
 	object_call(REF, getCause, [], OUT).
 
-n_o__r_e_s_p_o_n_s_e_init_cause(REF, ARG0, OUT) :- 
-	object_call(REF, initCause, '.'(ARG0, []), OUT).
+n_o__r_e_s_p_o_n_s_e_add_suppressed(REF, ARG0) :- 
+	object_call(REF, addSuppressed, '.'(ARG0, []), _).
 
-n_o__r_e_s_p_o_n_s_e_add_suppressed(REF, ARG0, OUT) :- 
-	object_call(REF, addSuppressed, '.'(ARG0, []), OUT).
+n_o__r_e_s_p_o_n_s_e_get_message(REF, OUT) :- 
+	object_call(REF, getMessage, [], OUT).
+
+n_o__r_e_s_p_o_n_s_e_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+n_o__r_e_s_p_o_n_s_e_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+n_o__r_e_s_p_o_n_s_e_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+n_o__r_e_s_p_o_n_s_e_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+n_o__r_e_s_p_o_n_s_e_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
 n_o__r_e_s_p_o_n_s_e_get_localized_message(REF, OUT) :- 
 	object_call(REF, getLocalizedMessage, [], OUT).
 
-n_o__r_e_s_p_o_n_s_e_get_message(REF, OUT) :- 
-	object_call(REF, getMessage, [], OUT).
+n_o__r_e_s_p_o_n_s_e_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
+
+n_o__r_e_s_p_o_n_s_e_init_cause(REF, ARG0, OUT) :- 
+	object_call(REF, initCause, '.'(ARG0, []), OUT).
+
+n_o__r_e_s_p_o_n_s_e_set_stack_trace(REF, ARG0) :- 
+	object_call(REF, setStackTrace, '.'(ARG0, []), _).
+
+n_o__r_e_s_p_o_n_s_e_print_stack_trace(REF, ARG0) :- 
+	object_call(REF, printStackTrace, '.'(ARG0, []), _).
+
+n_o__r_e_s_p_o_n_s_e_print_stack_trace(REF, ARG0) :- 
+	object_call(REF, printStackTrace, '.'(ARG0, []), _).
+
+n_o__r_e_s_p_o_n_s_e_print_stack_trace(REF) :- 
+	object_call(REF, printStackTrace, [], _).
 
 n_o__r_e_s_p_o_n_s_e_get_stack_trace(REF, OUT) :- 
 	object_call(REF, getStackTrace, [], OUT).
@@ -70,30 +85,15 @@ n_o__r_e_s_p_o_n_s_e_get_stack_trace(REF, OUT) :-
 n_o__r_e_s_p_o_n_s_e_get_suppressed(REF, OUT) :- 
 	object_call(REF, getSuppressed, [], OUT).
 
-n_o__r_e_s_p_o_n_s_e_set_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, setStackTrace, '.'(ARG0, []), OUT).
-
-n_o__r_e_s_p_o_n_s_e_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-n_o__r_e_s_p_o_n_s_e_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-n_o__r_e_s_p_o_n_s_e_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
 n_o__r_e_s_p_o_n_s_e_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-n_o__r_e_s_p_o_n_s_e_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+n_o__r_e_s_p_o_n_s_e_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-n_o__r_e_s_p_o_n_s_e_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
+n_o__r_e_s_p_o_n_s_e_fill_in_stack_trace(REF, OUT) :- 
+	object_call(REF, fillInStackTrace, [], OUT).
 
-n_o__r_e_s_p_o_n_s_e_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-n_o__r_e_s_p_o_n_s_e_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+n_o__r_e_s_p_o_n_s_e_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 

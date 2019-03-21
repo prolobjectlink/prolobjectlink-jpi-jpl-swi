@@ -22,54 +22,54 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-file_time_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-file_time_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-file_time_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-file_time_compare_to(REF, ARG0, OUT) :- 
-	object_call(REF, compareTo, '.'(ARG0, []), OUT).
-
-file_time_compare_to(REF, ARG0, OUT) :- 
-	object_call(REF, compareTo, '.'(ARG0, []), OUT).
-
-file_time_from(REF, ARG0, OUT) :- 
-	object_call(REF, from, '.'(ARG0, []), OUT).
+file_time_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
 file_time_from(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, from, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-file_time_to(REF, ARG0, OUT) :- 
-	object_call(REF, to, '.'(ARG0, []), OUT).
+file_time_from(REF, ARG0, OUT) :- 
+	object_call(REF, from, '.'(ARG0, []), OUT).
 
-file_time_to_millis(REF, OUT) :- 
-	object_call(REF, toMillis, [], OUT).
+file_time_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 file_time_to_instant(REF, OUT) :- 
 	object_call(REF, toInstant, [], OUT).
 
+file_time_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+file_time_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+file_time_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+file_time_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+file_time_compare_to(REF, ARG0, OUT) :- 
+	object_call(REF, compareTo, '.'(ARG0, []), OUT).
+
+file_time_compare_to(REF, ARG0, OUT) :- 
+	object_call(REF, compareTo, '.'(ARG0, []), OUT).
+
+file_time_to(REF, ARG0, OUT) :- 
+	object_call(REF, to, '.'(ARG0, []), OUT).
+
 file_time_from_millis(REF, ARG0, OUT) :- 
 	object_call(REF, fromMillis, '.'(ARG0, []), OUT).
 
-file_time_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+file_time_to_millis(REF, OUT) :- 
+	object_call(REF, toMillis, [], OUT).
 
-file_time_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+file_time_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-file_time_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+file_time_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-file_time_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-file_time_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-file_time_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+file_time_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 

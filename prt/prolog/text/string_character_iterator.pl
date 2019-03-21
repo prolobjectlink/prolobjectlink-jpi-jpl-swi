@@ -22,32 +22,17 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-string_character_iterator_done(OUT) :- 
+string_character_iterator_DONE(OUT) :- 
 	object_get('java.text.StringCharacterIterator', done, OUT).
 
 string_character_iterator(ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_new('java.text.StringCharacterIterator', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
-string_character_iterator(ARG0, ARG1, OUT) :- 
-	object_new('java.text.StringCharacterIterator', '.'(ARG0, '.'(ARG1, [])), OUT).
-
 string_character_iterator(ARG0, OUT) :- 
 	object_new('java.text.StringCharacterIterator', '.'(ARG0, []), OUT).
 
-string_character_iterator_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-string_character_iterator_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-string_character_iterator_clone(REF, OUT) :- 
-	object_call(REF, clone, [], OUT).
-
-string_character_iterator_next(REF, OUT) :- 
-	object_call(REF, next, [], OUT).
-
-string_character_iterator_first(REF, OUT) :- 
-	object_call(REF, first, [], OUT).
+string_character_iterator(ARG0, ARG1, OUT) :- 
+	object_new('java.text.StringCharacterIterator', '.'(ARG0, '.'(ARG1, [])), OUT).
 
 string_character_iterator_previous(REF, OUT) :- 
 	object_call(REF, previous, [], OUT).
@@ -55,8 +40,38 @@ string_character_iterator_previous(REF, OUT) :-
 string_character_iterator_current(REF, OUT) :- 
 	object_call(REF, current, [], OUT).
 
-string_character_iterator_get_index(REF, OUT) :- 
-	object_call(REF, getIndex, [], OUT).
+string_character_iterator_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+string_character_iterator_first(REF, OUT) :- 
+	object_call(REF, first, [], OUT).
+
+string_character_iterator_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+string_character_iterator_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+string_character_iterator_last(REF, OUT) :- 
+	object_call(REF, last, [], OUT).
+
+string_character_iterator_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+string_character_iterator_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+string_character_iterator_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+string_character_iterator_set_index(REF, ARG0, OUT) :- 
+	object_call(REF, setIndex, '.'(ARG0, []), OUT).
+
+string_character_iterator_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+string_character_iterator_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
 string_character_iterator_get_begin_index(REF, OUT) :- 
 	object_call(REF, getBeginIndex, [], OUT).
@@ -64,33 +79,18 @@ string_character_iterator_get_begin_index(REF, OUT) :-
 string_character_iterator_get_end_index(REF, OUT) :- 
 	object_call(REF, getEndIndex, [], OUT).
 
-string_character_iterator_last(REF, OUT) :- 
-	object_call(REF, last, [], OUT).
-
-string_character_iterator_set_index(REF, ARG0, OUT) :- 
-	object_call(REF, setIndex, '.'(ARG0, []), OUT).
-
-string_character_iterator_set_text(REF, ARG0, OUT) :- 
-	object_call(REF, setText, '.'(ARG0, []), OUT).
-
-string_character_iterator_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-string_character_iterator_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-string_character_iterator_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-string_character_iterator_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
 string_character_iterator_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-string_character_iterator_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+string_character_iterator_next(REF, OUT) :- 
+	object_call(REF, next, [], OUT).
 
-string_character_iterator_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+string_character_iterator_get_index(REF, OUT) :- 
+	object_call(REF, getIndex, [], OUT).
+
+string_character_iterator_clone(REF, OUT) :- 
+	object_call(REF, clone, [], OUT).
+
+string_character_iterator_set_text(REF, ARG0) :- 
+	object_call(REF, setText, '.'(ARG0, []), _).
 

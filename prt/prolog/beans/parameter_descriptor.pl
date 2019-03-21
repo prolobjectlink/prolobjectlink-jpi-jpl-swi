@@ -25,62 +25,62 @@
 parameter_descriptor(OUT) :- 
 	object_new('java.beans.ParameterDescriptor', [], OUT).
 
-parameter_descriptor_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-parameter_descriptor_get_name(REF, OUT) :- 
-	object_call(REF, getName, [], OUT).
+parameter_descriptor_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 parameter_descriptor_get_value(REF, ARG0, OUT) :- 
 	object_call(REF, getValue, '.'(ARG0, []), OUT).
 
-parameter_descriptor_set_name(REF, ARG0, OUT) :- 
-	object_call(REF, setName, '.'(ARG0, []), OUT).
+parameter_descriptor_get_short_description(REF, OUT) :- 
+	object_call(REF, getShortDescription, [], OUT).
 
-parameter_descriptor_set_value(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, setValue, '.'(ARG0, '.'(ARG1, [])), OUT).
+parameter_descriptor_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+parameter_descriptor_set_preferred(REF, ARG0) :- 
+	object_call(REF, setPreferred, '.'(ARG0, []), _).
 
 parameter_descriptor_is_hidden(REF, OUT) :- 
 	object_call(REF, isHidden, [], OUT).
 
-parameter_descriptor_get_display_name(REF, OUT) :- 
-	object_call(REF, getDisplayName, [], OUT).
+parameter_descriptor_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-parameter_descriptor_attribute_names(REF, OUT) :- 
-	object_call(REF, attributeNames, [], OUT).
+parameter_descriptor_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-parameter_descriptor_get_short_description(REF, OUT) :- 
-	object_call(REF, getShortDescription, [], OUT).
+parameter_descriptor_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+parameter_descriptor_set_display_name(REF, ARG0) :- 
+	object_call(REF, setDisplayName, '.'(ARG0, []), _).
+
+parameter_descriptor_set_name(REF, ARG0) :- 
+	object_call(REF, setName, '.'(ARG0, []), _).
 
 parameter_descriptor_is_expert(REF, OUT) :- 
 	object_call(REF, isExpert, [], OUT).
 
+parameter_descriptor_set_short_description(REF, ARG0) :- 
+	object_call(REF, setShortDescription, '.'(ARG0, []), _).
+
+parameter_descriptor_attribute_names(REF, OUT) :- 
+	object_call(REF, attributeNames, [], OUT).
+
+parameter_descriptor_set_hidden(REF, ARG0) :- 
+	object_call(REF, setHidden, '.'(ARG0, []), _).
+
+parameter_descriptor_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
+
+parameter_descriptor_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+parameter_descriptor_set_value(REF, ARG0, ARG1) :- 
+	object_call(REF, setValue, '.'(ARG0, '.'(ARG1, [])), _).
+
 parameter_descriptor_is_preferred(REF, OUT) :- 
 	object_call(REF, isPreferred, [], OUT).
-
-parameter_descriptor_set_display_name(REF, ARG0, OUT) :- 
-	object_call(REF, setDisplayName, '.'(ARG0, []), OUT).
-
-parameter_descriptor_set_expert(REF, ARG0, OUT) :- 
-	object_call(REF, setExpert, '.'(ARG0, []), OUT).
-
-parameter_descriptor_set_hidden(REF, ARG0, OUT) :- 
-	object_call(REF, setHidden, '.'(ARG0, []), OUT).
-
-parameter_descriptor_set_preferred(REF, ARG0, OUT) :- 
-	object_call(REF, setPreferred, '.'(ARG0, []), OUT).
-
-parameter_descriptor_set_short_description(REF, ARG0, OUT) :- 
-	object_call(REF, setShortDescription, '.'(ARG0, []), OUT).
-
-parameter_descriptor_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-parameter_descriptor_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-parameter_descriptor_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
 
 parameter_descriptor_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
@@ -88,12 +88,12 @@ parameter_descriptor_equals(REF, ARG0, OUT) :-
 parameter_descriptor_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-parameter_descriptor_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
+parameter_descriptor_get_display_name(REF, OUT) :- 
+	object_call(REF, getDisplayName, [], OUT).
 
-parameter_descriptor_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+parameter_descriptor_get_name(REF, OUT) :- 
+	object_call(REF, getName, [], OUT).
 
-parameter_descriptor_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+parameter_descriptor_set_expert(REF, ARG0) :- 
+	object_call(REF, setExpert, '.'(ARG0, []), _).
 

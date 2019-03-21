@@ -22,26 +22,11 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-service_context(OUT) :- 
-	object_new('org.omg.IOP.ServiceContext', [], OUT).
-
 service_context(ARG0, ARG1, OUT) :- 
 	object_new('org.omg.IOP.ServiceContext', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-service_context_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-service_context_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-service_context_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-service_context_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-service_context_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+service_context(OUT) :- 
+	object_new('org.omg.IOP.ServiceContext', [], OUT).
 
 service_context_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -49,9 +34,24 @@ service_context_hash_code(REF, OUT) :-
 service_context_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-service_context_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+service_context_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-service_context_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+service_context_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+service_context_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+service_context_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+service_context_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+service_context_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+service_context_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 

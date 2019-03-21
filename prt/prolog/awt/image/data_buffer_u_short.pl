@@ -22,132 +22,132 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-data_buffer_u_short_type_byte(OUT) :- 
+data_buffer_u_short_TYPE_BYTE(OUT) :- 
 	object_get('java.awt.image.DataBufferUShort', type_byte, OUT).
 
-data_buffer_u_short_type_ushort(OUT) :- 
+data_buffer_u_short_TYPE_USHORT(OUT) :- 
 	object_get('java.awt.image.DataBufferUShort', type_ushort, OUT).
 
-data_buffer_u_short_type_short(OUT) :- 
+data_buffer_u_short_TYPE_SHORT(OUT) :- 
 	object_get('java.awt.image.DataBufferUShort', type_short, OUT).
 
-data_buffer_u_short_type_int(OUT) :- 
+data_buffer_u_short_TYPE_INT(OUT) :- 
 	object_get('java.awt.image.DataBufferUShort', type_int, OUT).
 
-data_buffer_u_short_type_float(OUT) :- 
+data_buffer_u_short_TYPE_FLOAT(OUT) :- 
 	object_get('java.awt.image.DataBufferUShort', type_float, OUT).
 
-data_buffer_u_short_type_double(OUT) :- 
+data_buffer_u_short_TYPE_DOUBLE(OUT) :- 
 	object_get('java.awt.image.DataBufferUShort', type_double, OUT).
 
-data_buffer_u_short_type_undefined(OUT) :- 
+data_buffer_u_short_TYPE_UNDEFINED(OUT) :- 
 	object_get('java.awt.image.DataBufferUShort', type_undefined, OUT).
-
-data_buffer_u_short(ARG0, ARG1, ARG2, OUT) :- 
-	object_new('java.awt.image.DataBufferUShort', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
 data_buffer_u_short(ARG0, ARG1, OUT) :- 
 	object_new('java.awt.image.DataBufferUShort', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-data_buffer_u_short(ARG0, ARG1, ARG2, OUT) :- 
-	object_new('java.awt.image.DataBufferUShort', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+data_buffer_u_short(ARG0, ARG1, OUT) :- 
+	object_new('java.awt.image.DataBufferUShort', '.'(ARG0, '.'(ARG1, [])), OUT).
+
+data_buffer_u_short(ARG0, ARG1, OUT) :- 
+	object_new('java.awt.image.DataBufferUShort', '.'(ARG0, '.'(ARG1, [])), OUT).
 
 data_buffer_u_short(ARG0, OUT) :- 
 	object_new('java.awt.image.DataBufferUShort', '.'(ARG0, []), OUT).
 
-data_buffer_u_short(ARG0, ARG1, OUT) :- 
-	object_new('java.awt.image.DataBufferUShort', '.'(ARG0, '.'(ARG1, [])), OUT).
+data_buffer_u_short(ARG0, ARG1, ARG2, OUT) :- 
+	object_new('java.awt.image.DataBufferUShort', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-data_buffer_u_short(ARG0, ARG1, OUT) :- 
-	object_new('java.awt.image.DataBufferUShort', '.'(ARG0, '.'(ARG1, [])), OUT).
-
-data_buffer_u_short_get_data(REF, ARG0, OUT) :- 
-	object_call(REF, getData, '.'(ARG0, []), OUT).
-
-data_buffer_u_short_get_data(REF, OUT) :- 
-	object_call(REF, getData, [], OUT).
-
-data_buffer_u_short_get_elem(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getElem, '.'(ARG0, '.'(ARG1, [])), OUT).
+data_buffer_u_short(ARG0, ARG1, ARG2, OUT) :- 
+	object_new('java.awt.image.DataBufferUShort', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
 data_buffer_u_short_get_elem(REF, ARG0, OUT) :- 
 	object_call(REF, getElem, '.'(ARG0, []), OUT).
 
-data_buffer_u_short_set_elem(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, setElem, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-data_buffer_u_short_set_elem(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, setElem, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-data_buffer_u_short_get_bank_data(REF, OUT) :- 
-	object_call(REF, getBankData, [], OUT).
-
-data_buffer_u_short_get_size(REF, OUT) :- 
-	object_call(REF, getSize, [], OUT).
-
-data_buffer_u_short_get_offset(REF, OUT) :- 
-	object_call(REF, getOffset, [], OUT).
-
-data_buffer_u_short_get_offsets(REF, OUT) :- 
-	object_call(REF, getOffsets, [], OUT).
-
-data_buffer_u_short_get_elem_double(REF, ARG0, OUT) :- 
-	object_call(REF, getElemDouble, '.'(ARG0, []), OUT).
-
-data_buffer_u_short_get_elem_double(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getElemDouble, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-data_buffer_u_short_get_elem_float(REF, ARG0, OUT) :- 
-	object_call(REF, getElemFloat, '.'(ARG0, []), OUT).
-
-data_buffer_u_short_get_elem_float(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getElemFloat, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-data_buffer_u_short_set_elem_double(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, setElemDouble, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-data_buffer_u_short_set_elem_double(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, setElemDouble, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-data_buffer_u_short_set_elem_float(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, setElemFloat, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-data_buffer_u_short_set_elem_float(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, setElemFloat, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-data_buffer_u_short_get_data_type(REF, OUT) :- 
-	object_call(REF, getDataType, [], OUT).
-
-data_buffer_u_short_get_data_type_size(REF, ARG0, OUT) :- 
-	object_call(REF, getDataTypeSize, '.'(ARG0, []), OUT).
+data_buffer_u_short_get_elem(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getElem, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 data_buffer_u_short_get_num_banks(REF, OUT) :- 
 	object_call(REF, getNumBanks, [], OUT).
 
-data_buffer_u_short_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+data_buffer_u_short_set_elem(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, setElem, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
 
-data_buffer_u_short_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-data_buffer_u_short_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+data_buffer_u_short_set_elem(REF, ARG0, ARG1) :- 
+	object_call(REF, setElem, '.'(ARG0, '.'(ARG1, [])), _).
 
 data_buffer_u_short_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
+data_buffer_u_short_get_elem_double(REF, ARG0, OUT) :- 
+	object_call(REF, getElemDouble, '.'(ARG0, []), OUT).
+
+data_buffer_u_short_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+data_buffer_u_short_get_size(REF, OUT) :- 
+	object_call(REF, getSize, [], OUT).
+
 data_buffer_u_short_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
+
+data_buffer_u_short_get_elem_double(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getElemDouble, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+data_buffer_u_short_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+data_buffer_u_short_set_elem_double(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, setElemDouble, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+data_buffer_u_short_set_elem_double(REF, ARG0, ARG1) :- 
+	object_call(REF, setElemDouble, '.'(ARG0, '.'(ARG1, [])), _).
+
+data_buffer_u_short_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 data_buffer_u_short_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+data_buffer_u_short_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+data_buffer_u_short_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+data_buffer_u_short_get_bank_data(REF, OUT) :- 
+	object_call(REF, getBankData, [], OUT).
+
+data_buffer_u_short_get_offsets(REF, OUT) :- 
+	object_call(REF, getOffsets, [], OUT).
+
+data_buffer_u_short_get_offset(REF, OUT) :- 
+	object_call(REF, getOffset, [], OUT).
+
+data_buffer_u_short_get_elem_float(REF, ARG0, OUT) :- 
+	object_call(REF, getElemFloat, '.'(ARG0, []), OUT).
+
+data_buffer_u_short_get_data(REF, ARG0, OUT) :- 
+	object_call(REF, getData, '.'(ARG0, []), OUT).
+
+data_buffer_u_short_get_elem_float(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getElemFloat, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+data_buffer_u_short_get_data(REF, OUT) :- 
+	object_call(REF, getData, [], OUT).
+
+data_buffer_u_short_set_elem_float(REF, ARG0, ARG1) :- 
+	object_call(REF, setElemFloat, '.'(ARG0, '.'(ARG1, [])), _).
+
+data_buffer_u_short_get_data_type_size(REF, ARG0, OUT) :- 
+	object_call(REF, getDataTypeSize, '.'(ARG0, []), OUT).
+
+data_buffer_u_short_get_data_type(REF, OUT) :- 
+	object_call(REF, getDataType, [], OUT).
+
 data_buffer_u_short_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-data_buffer_u_short_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-data_buffer_u_short_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+data_buffer_u_short_set_elem_float(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, setElemFloat, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
 

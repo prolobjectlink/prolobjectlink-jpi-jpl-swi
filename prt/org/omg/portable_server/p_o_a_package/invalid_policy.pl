@@ -25,72 +25,72 @@
 invalid_policy(OUT) :- 
 	object_new('org.omg.PortableServer.POAPackage.InvalidPolicy', [], OUT).
 
-invalid_policy(ARG0, OUT) :- 
-	object_new('org.omg.PortableServer.POAPackage.InvalidPolicy', '.'(ARG0, []), OUT).
-
 invalid_policy(ARG0, ARG1, OUT) :- 
 	object_new('org.omg.PortableServer.POAPackage.InvalidPolicy', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-invalid_policy_print_stack_trace(REF, OUT) :- 
-	object_call(REF, printStackTrace, [], OUT).
+invalid_policy(ARG0, OUT) :- 
+	object_new('org.omg.PortableServer.POAPackage.InvalidPolicy', '.'(ARG0, []), OUT).
 
-invalid_policy_print_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, printStackTrace, '.'(ARG0, []), OUT).
+invalid_policy_set_stack_trace(REF, ARG0) :- 
+	object_call(REF, setStackTrace, '.'(ARG0, []), _).
 
-invalid_policy_print_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, printStackTrace, '.'(ARG0, []), OUT).
+invalid_policy_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-invalid_policy_fill_in_stack_trace(REF, OUT) :- 
-	object_call(REF, fillInStackTrace, [], OUT).
-
-invalid_policy_get_cause(REF, OUT) :- 
-	object_call(REF, getCause, [], OUT).
-
-invalid_policy_init_cause(REF, ARG0, OUT) :- 
-	object_call(REF, initCause, '.'(ARG0, []), OUT).
-
-invalid_policy_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-invalid_policy_add_suppressed(REF, ARG0, OUT) :- 
-	object_call(REF, addSuppressed, '.'(ARG0, []), OUT).
+invalid_policy_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 invalid_policy_get_localized_message(REF, OUT) :- 
 	object_call(REF, getLocalizedMessage, [], OUT).
 
+invalid_policy_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+invalid_policy_fill_in_stack_trace(REF, OUT) :- 
+	object_call(REF, fillInStackTrace, [], OUT).
+
+invalid_policy_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+invalid_policy_add_suppressed(REF, ARG0) :- 
+	object_call(REF, addSuppressed, '.'(ARG0, []), _).
+
 invalid_policy_get_message(REF, OUT) :- 
 	object_call(REF, getMessage, [], OUT).
 
-invalid_policy_get_stack_trace(REF, OUT) :- 
-	object_call(REF, getStackTrace, [], OUT).
+invalid_policy_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-invalid_policy_get_suppressed(REF, OUT) :- 
-	object_call(REF, getSuppressed, [], OUT).
-
-invalid_policy_set_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, setStackTrace, '.'(ARG0, []), OUT).
-
-invalid_policy_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-invalid_policy_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-invalid_policy_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+invalid_policy_init_cause(REF, ARG0, OUT) :- 
+	object_call(REF, initCause, '.'(ARG0, []), OUT).
 
 invalid_policy_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-invalid_policy_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+invalid_policy_get_suppressed(REF, OUT) :- 
+	object_call(REF, getSuppressed, [], OUT).
 
 invalid_policy_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-invalid_policy_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+invalid_policy_get_stack_trace(REF, OUT) :- 
+	object_call(REF, getStackTrace, [], OUT).
 
-invalid_policy_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+invalid_policy_get_cause(REF, OUT) :- 
+	object_call(REF, getCause, [], OUT).
+
+invalid_policy_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+invalid_policy_print_stack_trace(REF, ARG0) :- 
+	object_call(REF, printStackTrace, '.'(ARG0, []), _).
+
+invalid_policy_print_stack_trace(REF, ARG0) :- 
+	object_call(REF, printStackTrace, '.'(ARG0, []), _).
+
+invalid_policy_print_stack_trace(REF) :- 
+	object_call(REF, printStackTrace, [], _).
+
+invalid_policy_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

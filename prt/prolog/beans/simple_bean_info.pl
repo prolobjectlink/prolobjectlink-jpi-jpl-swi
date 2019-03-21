@@ -22,72 +22,72 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-simple_bean_info_icon_color_16x16(OUT) :- 
+simple_bean_info_ICON_COLOR_16X16(OUT) :- 
 	object_get('java.beans.SimpleBeanInfo', icon_color_16x16, OUT).
 
-simple_bean_info_icon_color_32x32(OUT) :- 
+simple_bean_info_ICON_COLOR_32X32(OUT) :- 
 	object_get('java.beans.SimpleBeanInfo', icon_color_32x32, OUT).
 
-simple_bean_info_icon_mono_16x16(OUT) :- 
+simple_bean_info_ICON_MONO_16X16(OUT) :- 
 	object_get('java.beans.SimpleBeanInfo', icon_mono_16x16, OUT).
 
-simple_bean_info_icon_mono_32x32(OUT) :- 
+simple_bean_info_ICON_MONO_32X32(OUT) :- 
 	object_get('java.beans.SimpleBeanInfo', icon_mono_32x32, OUT).
 
 simple_bean_info(OUT) :- 
 	object_new('java.beans.SimpleBeanInfo', [], OUT).
 
-simple_bean_info_get_additional_bean_info(REF, OUT) :- 
-	object_call(REF, getAdditionalBeanInfo, [], OUT).
-
-simple_bean_info_get_bean_descriptor(REF, OUT) :- 
-	object_call(REF, getBeanDescriptor, [], OUT).
-
-simple_bean_info_get_default_event_index(REF, OUT) :- 
-	object_call(REF, getDefaultEventIndex, [], OUT).
-
-simple_bean_info_get_default_property_index(REF, OUT) :- 
-	object_call(REF, getDefaultPropertyIndex, [], OUT).
-
-simple_bean_info_get_event_set_descriptors(REF, OUT) :- 
-	object_call(REF, getEventSetDescriptors, [], OUT).
-
-simple_bean_info_get_icon(REF, ARG0, OUT) :- 
-	object_call(REF, getIcon, '.'(ARG0, []), OUT).
-
-simple_bean_info_get_method_descriptors(REF, OUT) :- 
-	object_call(REF, getMethodDescriptors, [], OUT).
-
-simple_bean_info_get_property_descriptors(REF, OUT) :- 
-	object_call(REF, getPropertyDescriptors, [], OUT).
-
 simple_bean_info_load_image(REF, ARG0, OUT) :- 
 	object_call(REF, loadImage, '.'(ARG0, []), OUT).
-
-simple_bean_info_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-simple_bean_info_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-simple_bean_info_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-simple_bean_info_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-simple_bean_info_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-simple_bean_info_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
 
 simple_bean_info_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-simple_bean_info_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+simple_bean_info_get_bean_descriptor(REF, OUT) :- 
+	object_call(REF, getBeanDescriptor, [], OUT).
 
-simple_bean_info_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+simple_bean_info_get_event_set_descriptors(REF, OUT) :- 
+	object_call(REF, getEventSetDescriptors, [], OUT).
+
+simple_bean_info_get_default_property_index(REF, OUT) :- 
+	object_call(REF, getDefaultPropertyIndex, [], OUT).
+
+simple_bean_info_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+simple_bean_info_get_method_descriptors(REF, OUT) :- 
+	object_call(REF, getMethodDescriptors, [], OUT).
+
+simple_bean_info_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+simple_bean_info_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+simple_bean_info_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+simple_bean_info_get_additional_bean_info(REF, OUT) :- 
+	object_call(REF, getAdditionalBeanInfo, [], OUT).
+
+simple_bean_info_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+simple_bean_info_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+simple_bean_info_get_property_descriptors(REF, OUT) :- 
+	object_call(REF, getPropertyDescriptors, [], OUT).
+
+simple_bean_info_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+simple_bean_info_get_icon(REF, ARG0, OUT) :- 
+	object_call(REF, getIcon, '.'(ARG0, []), OUT).
+
+simple_bean_info_get_default_event_index(REF, OUT) :- 
+	object_call(REF, getDefaultEventIndex, [], OUT).
+
+simple_bean_info_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 

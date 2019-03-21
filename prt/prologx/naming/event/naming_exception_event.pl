@@ -25,42 +25,42 @@
 naming_exception_event(ARG0, ARG1, OUT) :- 
 	object_new('javax.naming.event.NamingExceptionEvent', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-naming_exception_event_dispatch(REF, ARG0, OUT) :- 
-	object_call(REF, dispatch, '.'(ARG0, []), OUT).
-
-naming_exception_event_get_exception(REF, OUT) :- 
-	object_call(REF, getException, [], OUT).
-
-naming_exception_event_get_event_context(REF, OUT) :- 
-	object_call(REF, getEventContext, [], OUT).
-
 naming_exception_event_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-naming_exception_event_get_source(REF, OUT) :- 
-	object_call(REF, getSource, [], OUT).
+naming_exception_event_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-naming_exception_event_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-naming_exception_event_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-naming_exception_event_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+naming_exception_event_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 naming_exception_event_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-naming_exception_event_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+naming_exception_event_get_event_context(REF, OUT) :- 
+	object_call(REF, getEventContext, [], OUT).
+
+naming_exception_event_dispatch(REF, ARG0) :- 
+	object_call(REF, dispatch, '.'(ARG0, []), _).
+
+naming_exception_event_get_exception(REF, OUT) :- 
+	object_call(REF, getException, [], OUT).
+
+naming_exception_event_get_source(REF, OUT) :- 
+	object_call(REF, getSource, [], OUT).
+
+naming_exception_event_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 naming_exception_event_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-naming_exception_event_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+naming_exception_event_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-naming_exception_event_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+naming_exception_event_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+naming_exception_event_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 

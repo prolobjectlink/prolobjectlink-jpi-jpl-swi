@@ -22,45 +22,45 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-u_short_seq_holder(OUT) :- 
-	object_new('org.omg.CORBA.UShortSeqHolder', [], OUT).
-
 u_short_seq_holder(ARG0, OUT) :- 
 	object_new('org.omg.CORBA.UShortSeqHolder', '.'(ARG0, []), OUT).
 
-u_short_seq_holder__read(REF, ARG0, OUT) :- 
-	object_call(REF, '_read', '.'(ARG0, []), OUT).
+u_short_seq_holder(OUT) :- 
+	object_new('org.omg.CORBA.UShortSeqHolder', [], OUT).
 
-u_short_seq_holder__type(REF, OUT) :- 
-	object_call(REF, '_type', [], OUT).
-
-u_short_seq_holder__write(REF, ARG0, OUT) :- 
-	object_call(REF, '_write', '.'(ARG0, []), OUT).
-
-u_short_seq_holder_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-u_short_seq_holder_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-u_short_seq_holder_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-u_short_seq_holder_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+u_short_seq_holder_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 u_short_seq_holder_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
+u_short_seq_holder_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+u_short_seq_holder_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+u_short_seq_holder_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+u_short_seq_holder__type(REF, OUT) :- 
+	object_call(REF, '_type', [], OUT).
+
+u_short_seq_holder__read(REF, ARG0) :- 
+	object_call(REF, '_read', '.'(ARG0, []), _).
+
+u_short_seq_holder__write(REF, ARG0) :- 
+	object_call(REF, '_write', '.'(ARG0, []), _).
+
+u_short_seq_holder_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
 u_short_seq_holder_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+u_short_seq_holder_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
 u_short_seq_holder_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-u_short_seq_holder_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-u_short_seq_holder_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

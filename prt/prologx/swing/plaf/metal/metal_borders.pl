@@ -25,35 +25,23 @@
 metal_borders(OUT) :- 
 	object_new('javax.swing.plaf.metal.MetalBorders', [], OUT).
 
-metal_borders_get_desktop_icon_border(REF, OUT) :- 
-	object_call(REF, getDesktopIconBorder, [], OUT).
-
 metal_borders_get_text_border(REF, OUT) :- 
 	object_call(REF, getTextBorder, [], OUT).
-
-metal_borders_get_button_border(REF, OUT) :- 
-	object_call(REF, getButtonBorder, [], OUT).
-
-metal_borders_get_text_field_border(REF, OUT) :- 
-	object_call(REF, getTextFieldBorder, [], OUT).
 
 metal_borders_get_toggle_button_border(REF, OUT) :- 
 	object_call(REF, getToggleButtonBorder, [], OUT).
 
-metal_borders_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+metal_borders_get_button_border(REF, OUT) :- 
+	object_call(REF, getButtonBorder, [], OUT).
 
-metal_borders_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+metal_borders_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-metal_borders_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+metal_borders_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-metal_borders_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-metal_borders_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+metal_borders_get_desktop_icon_border(REF, OUT) :- 
+	object_call(REF, getDesktopIconBorder, [], OUT).
 
 metal_borders_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -61,9 +49,21 @@ metal_borders_hash_code(REF, OUT) :-
 metal_borders_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-metal_borders_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+metal_borders_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-metal_borders_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+metal_borders_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+metal_borders_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+metal_borders_get_text_field_border(REF, OUT) :- 
+	object_call(REF, getTextFieldBorder, [], OUT).
+
+metal_borders_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+metal_borders_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 

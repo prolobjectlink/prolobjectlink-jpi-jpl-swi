@@ -25,57 +25,57 @@
 input_map(OUT) :- 
 	object_new('javax.swing.InputMap', [], OUT).
 
-input_map_remove(REF, ARG0, OUT) :- 
-	object_call(REF, remove, '.'(ARG0, []), OUT).
-
-input_map_get(REF, ARG0, OUT) :- 
-	object_call(REF, get, '.'(ARG0, []), OUT).
-
-input_map_put(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, put, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-input_map_clear(REF, OUT) :- 
-	object_call(REF, clear, [], OUT).
-
-input_map_size(REF, OUT) :- 
-	object_call(REF, size, [], OUT).
-
-input_map_get_parent(REF, OUT) :- 
-	object_call(REF, getParent, [], OUT).
-
 input_map_keys(REF, OUT) :- 
 	object_call(REF, keys, [], OUT).
-
-input_map_set_parent(REF, ARG0, OUT) :- 
-	object_call(REF, setParent, '.'(ARG0, []), OUT).
-
-input_map_all_keys(REF, OUT) :- 
-	object_call(REF, allKeys, [], OUT).
-
-input_map_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-input_map_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-input_map_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-input_map_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-input_map_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-input_map_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
 
 input_map_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-input_map_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+input_map_put(REF, ARG0, ARG1) :- 
+	object_call(REF, put, '.'(ARG0, '.'(ARG1, [])), _).
 
-input_map_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+input_map_set_parent(REF, ARG0) :- 
+	object_call(REF, setParent, '.'(ARG0, []), _).
+
+input_map_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+input_map_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+input_map_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+input_map_clear(REF) :- 
+	object_call(REF, clear, [], _).
+
+input_map_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+input_map_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+input_map_remove(REF, ARG0) :- 
+	object_call(REF, remove, '.'(ARG0, []), _).
+
+input_map_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+input_map_get(REF, ARG0, OUT) :- 
+	object_call(REF, get, '.'(ARG0, []), OUT).
+
+input_map_all_keys(REF, OUT) :- 
+	object_call(REF, allKeys, [], OUT).
+
+input_map_get_parent(REF, OUT) :- 
+	object_call(REF, getParent, [], OUT).
+
+input_map_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+input_map_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+input_map_size(REF, OUT) :- 
+	object_call(REF, size, [], OUT).
 

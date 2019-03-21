@@ -22,50 +22,26 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-channels_new_input_stream(REF, ARG0, OUT) :- 
-	object_call(REF, newInputStream, '.'(ARG0, []), OUT).
+channels_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
 channels_new_input_stream(REF, ARG0, OUT) :- 
 	object_call(REF, newInputStream, '.'(ARG0, []), OUT).
 
-channels_new_output_stream(REF, ARG0, OUT) :- 
-	object_call(REF, newOutputStream, '.'(ARG0, []), OUT).
-
-channels_new_output_stream(REF, ARG0, OUT) :- 
-	object_call(REF, newOutputStream, '.'(ARG0, []), OUT).
+channels_new_input_stream(REF, ARG0, OUT) :- 
+	object_call(REF, newInputStream, '.'(ARG0, []), OUT).
 
 channels_new_channel(REF, ARG0, OUT) :- 
 	object_call(REF, newChannel, '.'(ARG0, []), OUT).
 
 channels_new_channel(REF, ARG0, OUT) :- 
 	object_call(REF, newChannel, '.'(ARG0, []), OUT).
-
-channels_new_reader(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, newReader, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-channels_new_reader(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, newReader, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-channels_new_writer(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, newWriter, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 channels_new_writer(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, newWriter, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-channels_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-channels_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-channels_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-channels_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-channels_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+channels_new_writer(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, newWriter, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 channels_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -73,9 +49,33 @@ channels_hash_code(REF, OUT) :-
 channels_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-channels_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+channels_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-channels_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+channels_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+channels_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+channels_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+channels_new_output_stream(REF, ARG0, OUT) :- 
+	object_call(REF, newOutputStream, '.'(ARG0, []), OUT).
+
+channels_new_output_stream(REF, ARG0, OUT) :- 
+	object_call(REF, newOutputStream, '.'(ARG0, []), OUT).
+
+channels_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+channels_new_reader(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, newReader, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+channels_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+channels_new_reader(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, newReader, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 

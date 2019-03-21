@@ -22,65 +22,38 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-default_menu_layout_x_axis(OUT) :- 
+default_menu_layout_X_AXIS(OUT) :- 
 	object_get('javax.swing.plaf.basic.DefaultMenuLayout', x_axis, OUT).
 
-default_menu_layout_y_axis(OUT) :- 
+default_menu_layout_Y_AXIS(OUT) :- 
 	object_get('javax.swing.plaf.basic.DefaultMenuLayout', y_axis, OUT).
 
-default_menu_layout_line_axis(OUT) :- 
+default_menu_layout_LINE_AXIS(OUT) :- 
 	object_get('javax.swing.plaf.basic.DefaultMenuLayout', line_axis, OUT).
 
-default_menu_layout_page_axis(OUT) :- 
+default_menu_layout_PAGE_AXIS(OUT) :- 
 	object_get('javax.swing.plaf.basic.DefaultMenuLayout', page_axis, OUT).
 
 default_menu_layout(ARG0, ARG1, OUT) :- 
 	object_new('javax.swing.plaf.basic.DefaultMenuLayout', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-default_menu_layout_preferred_layout_size(REF, ARG0, OUT) :- 
-	object_call(REF, preferredLayoutSize, '.'(ARG0, []), OUT).
+default_menu_layout_minimum_layout_size(REF, ARG0, OUT) :- 
+	object_call(REF, minimumLayoutSize, '.'(ARG0, []), OUT).
 
 default_menu_layout_get_target(REF, OUT) :- 
 	object_call(REF, getTarget, [], OUT).
 
-default_menu_layout_add_layout_component(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, addLayoutComponent, '.'(ARG0, '.'(ARG1, [])), OUT).
+default_menu_layout_remove_layout_component(REF, ARG0) :- 
+	object_call(REF, removeLayoutComponent, '.'(ARG0, []), _).
 
-default_menu_layout_add_layout_component(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, addLayoutComponent, '.'(ARG0, '.'(ARG1, [])), OUT).
+default_menu_layout_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-default_menu_layout_get_layout_alignment_x(REF, ARG0, OUT) :- 
-	object_call(REF, getLayoutAlignmentX, '.'(ARG0, []), OUT).
-
-default_menu_layout_get_layout_alignment_y(REF, ARG0, OUT) :- 
-	object_call(REF, getLayoutAlignmentY, '.'(ARG0, []), OUT).
-
-default_menu_layout_invalidate_layout(REF, ARG0, OUT) :- 
-	object_call(REF, invalidateLayout, '.'(ARG0, []), OUT).
-
-default_menu_layout_layout_container(REF, ARG0, OUT) :- 
-	object_call(REF, layoutContainer, '.'(ARG0, []), OUT).
+default_menu_layout_layout_container(REF, ARG0) :- 
+	object_call(REF, layoutContainer, '.'(ARG0, []), _).
 
 default_menu_layout_maximum_layout_size(REF, ARG0, OUT) :- 
 	object_call(REF, maximumLayoutSize, '.'(ARG0, []), OUT).
-
-default_menu_layout_minimum_layout_size(REF, ARG0, OUT) :- 
-	object_call(REF, minimumLayoutSize, '.'(ARG0, []), OUT).
-
-default_menu_layout_remove_layout_component(REF, ARG0, OUT) :- 
-	object_call(REF, removeLayoutComponent, '.'(ARG0, []), OUT).
-
-default_menu_layout_get_axis(REF, OUT) :- 
-	object_call(REF, getAxis, [], OUT).
-
-default_menu_layout_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-default_menu_layout_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-default_menu_layout_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
 
 default_menu_layout_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
@@ -88,15 +61,42 @@ default_menu_layout_equals(REF, ARG0, OUT) :-
 default_menu_layout_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
+default_menu_layout_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
 default_menu_layout_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
 default_menu_layout_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-default_menu_layout_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+default_menu_layout_preferred_layout_size(REF, ARG0, OUT) :- 
+	object_call(REF, preferredLayoutSize, '.'(ARG0, []), OUT).
 
-default_menu_layout_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+default_menu_layout_get_layout_alignment_y(REF, ARG0, OUT) :- 
+	object_call(REF, getLayoutAlignmentY, '.'(ARG0, []), OUT).
+
+default_menu_layout_get_layout_alignment_x(REF, ARG0, OUT) :- 
+	object_call(REF, getLayoutAlignmentX, '.'(ARG0, []), OUT).
+
+default_menu_layout_invalidate_layout(REF, ARG0) :- 
+	object_call(REF, invalidateLayout, '.'(ARG0, []), _).
+
+default_menu_layout_get_axis(REF, OUT) :- 
+	object_call(REF, getAxis, [], OUT).
+
+default_menu_layout_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+default_menu_layout_add_layout_component(REF, ARG0, ARG1) :- 
+	object_call(REF, addLayoutComponent, '.'(ARG0, '.'(ARG1, [])), _).
+
+default_menu_layout_add_layout_component(REF, ARG0, ARG1) :- 
+	object_call(REF, addLayoutComponent, '.'(ARG0, '.'(ARG1, [])), _).
+
+default_menu_layout_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+default_menu_layout_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 

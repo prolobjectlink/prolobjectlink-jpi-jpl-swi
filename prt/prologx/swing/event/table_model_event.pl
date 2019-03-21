@@ -22,75 +22,75 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-table_model_event_insert(OUT) :- 
+table_model_event_INSERT(OUT) :- 
 	object_get('javax.swing.event.TableModelEvent', insert, OUT).
 
-table_model_event_update(OUT) :- 
+table_model_event_UPDATE(OUT) :- 
 	object_get('javax.swing.event.TableModelEvent', update, OUT).
 
-table_model_event_delete(OUT) :- 
+table_model_event_DELETE(OUT) :- 
 	object_get('javax.swing.event.TableModelEvent', delete, OUT).
 
-table_model_event_header_row(OUT) :- 
+table_model_event_HEADER_ROW(OUT) :- 
 	object_get('javax.swing.event.TableModelEvent', header_row, OUT).
 
-table_model_event_all_columns(OUT) :- 
+table_model_event_ALL_COLUMNS(OUT) :- 
 	object_get('javax.swing.event.TableModelEvent', all_columns, OUT).
-
-table_model_event(ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
-	object_new('javax.swing.event.TableModelEvent', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
 
 table_model_event(ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_new('javax.swing.event.TableModelEvent', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
-table_model_event(ARG0, ARG1, ARG2, OUT) :- 
-	object_new('javax.swing.event.TableModelEvent', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-table_model_event(ARG0, ARG1, OUT) :- 
-	object_new('javax.swing.event.TableModelEvent', '.'(ARG0, '.'(ARG1, [])), OUT).
+table_model_event(ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
+	object_new('javax.swing.event.TableModelEvent', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
 
 table_model_event(ARG0, OUT) :- 
 	object_new('javax.swing.event.TableModelEvent', '.'(ARG0, []), OUT).
 
-table_model_event_get_type(REF, OUT) :- 
-	object_call(REF, getType, [], OUT).
+table_model_event(ARG0, ARG1, OUT) :- 
+	object_new('javax.swing.event.TableModelEvent', '.'(ARG0, '.'(ARG1, [])), OUT).
+
+table_model_event(ARG0, ARG1, ARG2, OUT) :- 
+	object_new('javax.swing.event.TableModelEvent', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
 table_model_event_get_column(REF, OUT) :- 
 	object_call(REF, getColumn, [], OUT).
 
-table_model_event_get_first_row(REF, OUT) :- 
-	object_call(REF, getFirstRow, [], OUT).
+table_model_event_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-table_model_event_get_last_row(REF, OUT) :- 
-	object_call(REF, getLastRow, [], OUT).
+table_model_event_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-table_model_event_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+table_model_event_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-table_model_event_get_source(REF, OUT) :- 
-	object_call(REF, getSource, [], OUT).
-
-table_model_event_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-table_model_event_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-table_model_event_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+table_model_event_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 table_model_event_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
+table_model_event_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+table_model_event_get_type(REF, OUT) :- 
+	object_call(REF, getType, [], OUT).
+
 table_model_event_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
+
+table_model_event_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
 table_model_event_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-table_model_event_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+table_model_event_get_first_row(REF, OUT) :- 
+	object_call(REF, getFirstRow, [], OUT).
 
-table_model_event_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+table_model_event_get_source(REF, OUT) :- 
+	object_call(REF, getSource, [], OUT).
+
+table_model_event_get_last_row(REF, OUT) :- 
+	object_call(REF, getLastRow, [], OUT).
 

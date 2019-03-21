@@ -22,7 +22,7 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-r_m_i_connector_credentials(OUT) :- 
+r_m_i_connector_CREDENTIALS(OUT) :- 
 	object_get('javax.management.remote.rmi.RMIConnector', credentials, OUT).
 
 r_m_i_connector(ARG0, ARG1, OUT) :- 
@@ -31,32 +31,32 @@ r_m_i_connector(ARG0, ARG1, OUT) :-
 r_m_i_connector(ARG0, ARG1, OUT) :- 
 	object_new('javax.management.remote.rmi.RMIConnector', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-r_m_i_connector_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+r_m_i_connector_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+r_m_i_connector_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
+
+r_m_i_connector_close(REF) :- 
+	object_call(REF, close, [], _).
+
+r_m_i_connector_remove_connection_notification_listener(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, removeConnectionNotificationListener, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
 
 r_m_i_connector_get_address(REF, OUT) :- 
 	object_call(REF, getAddress, [], OUT).
 
-r_m_i_connector_connect(REF, OUT) :- 
-	object_call(REF, connect, [], OUT).
+r_m_i_connector_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-r_m_i_connector_connect(REF, ARG0, OUT) :- 
-	object_call(REF, connect, '.'(ARG0, []), OUT).
+r_m_i_connector_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-r_m_i_connector_close(REF, OUT) :- 
-	object_call(REF, close, [], OUT).
+r_m_i_connector_remove_connection_notification_listener(REF, ARG0) :- 
+	object_call(REF, removeConnectionNotificationListener, '.'(ARG0, []), _).
 
-r_m_i_connector_get_connection_id(REF, OUT) :- 
-	object_call(REF, getConnectionId, [], OUT).
-
-r_m_i_connector_add_connection_notification_listener(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, addConnectionNotificationListener, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-r_m_i_connector_remove_connection_notification_listener(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, removeConnectionNotificationListener, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-r_m_i_connector_remove_connection_notification_listener(REF, ARG0, OUT) :- 
-	object_call(REF, removeConnectionNotificationListener, '.'(ARG0, []), OUT).
+r_m_i_connector_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 r_m_i_connector_get_m_bean_server_connection(REF, ARG0, OUT) :- 
 	object_call(REF, getMBeanServerConnection, '.'(ARG0, []), OUT).
@@ -64,27 +64,27 @@ r_m_i_connector_get_m_bean_server_connection(REF, ARG0, OUT) :-
 r_m_i_connector_get_m_bean_server_connection(REF, OUT) :- 
 	object_call(REF, getMBeanServerConnection, [], OUT).
 
-r_m_i_connector_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+r_m_i_connector_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-r_m_i_connector_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+r_m_i_connector_connect(REF, ARG0) :- 
+	object_call(REF, connect, '.'(ARG0, []), _).
 
-r_m_i_connector_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+r_m_i_connector_connect(REF) :- 
+	object_call(REF, connect, [], _).
 
-r_m_i_connector_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+r_m_i_connector_get_connection_id(REF, OUT) :- 
+	object_call(REF, getConnectionId, [], OUT).
 
-r_m_i_connector_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+r_m_i_connector_add_connection_notification_listener(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, addConnectionNotificationListener, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
 
-r_m_i_connector_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
+r_m_i_connector_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-r_m_i_connector_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+r_m_i_connector_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-r_m_i_connector_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+r_m_i_connector_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 

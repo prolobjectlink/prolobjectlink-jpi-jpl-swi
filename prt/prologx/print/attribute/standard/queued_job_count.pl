@@ -25,39 +25,39 @@
 queued_job_count(ARG0, OUT) :- 
 	object_new('javax.print.attribute.standard.QueuedJobCount', '.'(ARG0, []), OUT).
 
-queued_job_count_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+queued_job_count_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-queued_job_count_get_name(REF, OUT) :- 
-	object_call(REF, getName, [], OUT).
+queued_job_count_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 queued_job_count_get_category(REF, OUT) :- 
 	object_call(REF, getCategory, [], OUT).
 
-queued_job_count_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+queued_job_count_get_value(REF, OUT) :- 
+	object_call(REF, getValue, [], OUT).
+
+queued_job_count_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+queued_job_count_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+queued_job_count_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+queued_job_count_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+queued_job_count_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 queued_job_count_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-queued_job_count_get_value(REF, OUT) :- 
-	object_call(REF, getValue, [], OUT).
-
-queued_job_count_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-queued_job_count_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-queued_job_count_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+queued_job_count_get_name(REF, OUT) :- 
+	object_call(REF, getName, [], OUT).
 
 queued_job_count_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-queued_job_count_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-queued_job_count_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

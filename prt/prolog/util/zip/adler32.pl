@@ -25,32 +25,8 @@
 adler32(OUT) :- 
 	object_new('java.util.zip.Adler32', [], OUT).
 
-adler32_update(REF, ARG0, OUT) :- 
-	object_call(REF, update, '.'(ARG0, []), OUT).
-
-adler32_update(REF, ARG0, OUT) :- 
-	object_call(REF, update, '.'(ARG0, []), OUT).
-
-adler32_update(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, update, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-adler32_update(REF, ARG0, OUT) :- 
-	object_call(REF, update, '.'(ARG0, []), OUT).
-
-adler32_get_value(REF, OUT) :- 
-	object_call(REF, getValue, [], OUT).
-
-adler32_reset(REF, OUT) :- 
-	object_call(REF, reset, [], OUT).
-
-adler32_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-adler32_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-adler32_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+adler32_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 adler32_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
@@ -58,15 +34,39 @@ adler32_equals(REF, ARG0, OUT) :-
 adler32_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
+adler32_reset(REF) :- 
+	object_call(REF, reset, [], _).
+
+adler32_update(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, update, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+adler32_update(REF, ARG0) :- 
+	object_call(REF, update, '.'(ARG0, []), _).
+
+adler32_update(REF, ARG0) :- 
+	object_call(REF, update, '.'(ARG0, []), _).
+
+adler32_update(REF, ARG0) :- 
+	object_call(REF, update, '.'(ARG0, []), _).
+
+adler32_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+adler32_get_value(REF, OUT) :- 
+	object_call(REF, getValue, [], OUT).
+
+adler32_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
 adler32_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
 adler32_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-adler32_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+adler32_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-adler32_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+adler32_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 

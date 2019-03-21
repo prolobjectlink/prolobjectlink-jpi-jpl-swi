@@ -25,39 +25,39 @@
 navigation_filter(OUT) :- 
 	object_new('javax.swing.text.NavigationFilter', [], OUT).
 
-navigation_filter_move_dot(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, moveDot, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+navigation_filter_move_dot(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, moveDot, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
 
-navigation_filter_set_dot(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, setDot, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+navigation_filter_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-navigation_filter_get_next_visual_position_from(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
-	object_call(REF, getNextVisualPositionFrom, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
-
-navigation_filter_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-navigation_filter_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-navigation_filter_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+navigation_filter_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 navigation_filter_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-navigation_filter_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+navigation_filter_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-navigation_filter_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+navigation_filter_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 navigation_filter_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-navigation_filter_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+navigation_filter_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-navigation_filter_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+navigation_filter_set_dot(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, setDot, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+navigation_filter_get_next_visual_position_from(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
+	object_call(REF, getNextVisualPositionFrom, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
+
+navigation_filter_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+navigation_filter_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

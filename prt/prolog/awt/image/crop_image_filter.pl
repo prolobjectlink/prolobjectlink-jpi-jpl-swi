@@ -22,90 +22,90 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-crop_image_filter_randompixelorder(OUT) :- 
+crop_image_filter_RANDOMPIXELORDER(OUT) :- 
 	object_get('java.awt.image.CropImageFilter', randompixelorder, OUT).
 
-crop_image_filter_topdownleftright(OUT) :- 
+crop_image_filter_TOPDOWNLEFTRIGHT(OUT) :- 
 	object_get('java.awt.image.CropImageFilter', topdownleftright, OUT).
 
-crop_image_filter_completescanlines(OUT) :- 
+crop_image_filter_COMPLETESCANLINES(OUT) :- 
 	object_get('java.awt.image.CropImageFilter', completescanlines, OUT).
 
-crop_image_filter_singlepass(OUT) :- 
+crop_image_filter_SINGLEPASS(OUT) :- 
 	object_get('java.awt.image.CropImageFilter', singlepass, OUT).
 
-crop_image_filter_singleframe(OUT) :- 
+crop_image_filter_SINGLEFRAME(OUT) :- 
 	object_get('java.awt.image.CropImageFilter', singleframe, OUT).
 
-crop_image_filter_imageerror(OUT) :- 
+crop_image_filter_IMAGEERROR(OUT) :- 
 	object_get('java.awt.image.CropImageFilter', imageerror, OUT).
 
-crop_image_filter_singleframedone(OUT) :- 
+crop_image_filter_SINGLEFRAMEDONE(OUT) :- 
 	object_get('java.awt.image.CropImageFilter', singleframedone, OUT).
 
-crop_image_filter_staticimagedone(OUT) :- 
+crop_image_filter_STATICIMAGEDONE(OUT) :- 
 	object_get('java.awt.image.CropImageFilter', staticimagedone, OUT).
 
-crop_image_filter_imageaborted(OUT) :- 
+crop_image_filter_IMAGEABORTED(OUT) :- 
 	object_get('java.awt.image.CropImageFilter', imageaborted, OUT).
 
 crop_image_filter(ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_new('java.awt.image.CropImageFilter', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
-crop_image_filter_set_properties(REF, ARG0, OUT) :- 
-	object_call(REF, setProperties, '.'(ARG0, []), OUT).
+crop_image_filter_resend_top_down_left_right(REF, ARG0) :- 
+	object_call(REF, resendTopDownLeftRight, '.'(ARG0, []), _).
 
-crop_image_filter_set_dimensions(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, setDimensions, '.'(ARG0, '.'(ARG1, [])), OUT).
+crop_image_filter_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-crop_image_filter_set_pixels(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, ARG6, ARG7, OUT) :- 
-	object_call(REF, setPixels, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, '.'(ARG6, '.'(ARG7, [])))))))), OUT).
+crop_image_filter_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-crop_image_filter_set_pixels(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, ARG6, ARG7, OUT) :- 
-	object_call(REF, setPixels, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, '.'(ARG6, '.'(ARG7, [])))))))), OUT).
+crop_image_filter_set_hints(REF, ARG0) :- 
+	object_call(REF, setHints, '.'(ARG0, []), _).
 
-crop_image_filter_clone(REF, OUT) :- 
-	object_call(REF, clone, [], OUT).
-
-crop_image_filter_set_hints(REF, ARG0, OUT) :- 
-	object_call(REF, setHints, '.'(ARG0, []), OUT).
+crop_image_filter_set_dimensions(REF, ARG0, ARG1) :- 
+	object_call(REF, setDimensions, '.'(ARG0, '.'(ARG1, [])), _).
 
 crop_image_filter_get_filter_instance(REF, ARG0, OUT) :- 
 	object_call(REF, getFilterInstance, '.'(ARG0, []), OUT).
 
-crop_image_filter_image_complete(REF, ARG0, OUT) :- 
-	object_call(REF, imageComplete, '.'(ARG0, []), OUT).
-
-crop_image_filter_resend_top_down_left_right(REF, ARG0, OUT) :- 
-	object_call(REF, resendTopDownLeftRight, '.'(ARG0, []), OUT).
-
-crop_image_filter_set_color_model(REF, ARG0, OUT) :- 
-	object_call(REF, setColorModel, '.'(ARG0, []), OUT).
-
-crop_image_filter_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-crop_image_filter_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-crop_image_filter_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
 crop_image_filter_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+crop_image_filter_set_properties(REF, ARG0) :- 
+	object_call(REF, setProperties, '.'(ARG0, []), _).
 
 crop_image_filter_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-crop_image_filter_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+crop_image_filter_clone(REF, OUT) :- 
+	object_call(REF, clone, [], OUT).
+
+crop_image_filter_image_complete(REF, ARG0) :- 
+	object_call(REF, imageComplete, '.'(ARG0, []), _).
+
+crop_image_filter_set_pixels(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, ARG6, ARG7) :- 
+	object_call(REF, setPixels, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, '.'(ARG6, '.'(ARG7, [])))))))), _).
+
+crop_image_filter_set_pixels(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, ARG6, ARG7) :- 
+	object_call(REF, setPixels, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, '.'(ARG6, '.'(ARG7, [])))))))), _).
+
+crop_image_filter_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 crop_image_filter_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-crop_image_filter_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+crop_image_filter_set_color_model(REF, ARG0) :- 
+	object_call(REF, setColorModel, '.'(ARG0, []), _).
 
-crop_image_filter_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+crop_image_filter_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+crop_image_filter_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+crop_image_filter_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 

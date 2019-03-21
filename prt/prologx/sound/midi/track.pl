@@ -22,45 +22,45 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-track_add(REF, ARG0, OUT) :- 
-	object_call(REF, add, '.'(ARG0, []), OUT).
+track_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-track_remove(REF, ARG0, OUT) :- 
-	object_call(REF, remove, '.'(ARG0, []), OUT).
-
-track_get(REF, ARG0, OUT) :- 
-	object_call(REF, get, '.'(ARG0, []), OUT).
-
-track_size(REF, OUT) :- 
-	object_call(REF, size, [], OUT).
-
-track_ticks(REF, OUT) :- 
-	object_call(REF, ticks, [], OUT).
-
-track_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-track_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-track_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-track_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+track_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 track_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-track_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+track_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+track_remove(REF, ARG0, OUT) :- 
+	object_call(REF, remove, '.'(ARG0, []), OUT).
 
 track_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-track_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+track_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-track_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+track_get(REF, ARG0, OUT) :- 
+	object_call(REF, get, '.'(ARG0, []), OUT).
+
+track_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+track_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+track_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+track_size(REF, OUT) :- 
+	object_call(REF, size, [], OUT).
+
+track_add(REF, ARG0, OUT) :- 
+	object_call(REF, add, '.'(ARG0, []), OUT).
+
+track_ticks(REF, OUT) :- 
+	object_call(REF, ticks, [], OUT).
 

@@ -25,45 +25,45 @@
 socket_permission(ARG0, ARG1, OUT) :- 
 	object_new('java.net.SocketPermission', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-socket_permission_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-socket_permission_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-socket_permission_get_actions(REF, OUT) :- 
-	object_call(REF, getActions, [], OUT).
+socket_permission_check_guard(REF, ARG0) :- 
+	object_call(REF, checkGuard, '.'(ARG0, []), _).
 
 socket_permission_implies(REF, ARG0, OUT) :- 
 	object_call(REF, implies, '.'(ARG0, []), OUT).
 
-socket_permission_new_permission_collection(REF, OUT) :- 
-	object_call(REF, newPermissionCollection, [], OUT).
+socket_permission_get_actions(REF, OUT) :- 
+	object_call(REF, getActions, [], OUT).
+
+socket_permission_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+socket_permission_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+socket_permission_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 socket_permission_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-socket_permission_get_name(REF, OUT) :- 
-	object_call(REF, getName, [], OUT).
-
-socket_permission_check_guard(REF, ARG0, OUT) :- 
-	object_call(REF, checkGuard, '.'(ARG0, []), OUT).
-
-socket_permission_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-socket_permission_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-socket_permission_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+socket_permission_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 socket_permission_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-socket_permission_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+socket_permission_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-socket_permission_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+socket_permission_get_name(REF, OUT) :- 
+	object_call(REF, getName, [], OUT).
+
+socket_permission_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+socket_permission_new_permission_collection(REF, OUT) :- 
+	object_call(REF, newPermissionCollection, [], OUT).
+
+socket_permission_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 

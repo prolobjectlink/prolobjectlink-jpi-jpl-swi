@@ -25,32 +25,17 @@
 p_k_i_x_cert_path_validator_result(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('java.security.cert.PKIXCertPathValidatorResult', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-p_k_i_x_cert_path_validator_result_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
 p_k_i_x_cert_path_validator_result_clone(REF, OUT) :- 
 	object_call(REF, clone, [], OUT).
-
-p_k_i_x_cert_path_validator_result_get_public_key(REF, OUT) :- 
-	object_call(REF, getPublicKey, [], OUT).
 
 p_k_i_x_cert_path_validator_result_get_policy_tree(REF, OUT) :- 
 	object_call(REF, getPolicyTree, [], OUT).
 
-p_k_i_x_cert_path_validator_result_get_trust_anchor(REF, OUT) :- 
-	object_call(REF, getTrustAnchor, [], OUT).
-
-p_k_i_x_cert_path_validator_result_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-p_k_i_x_cert_path_validator_result_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-p_k_i_x_cert_path_validator_result_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
 p_k_i_x_cert_path_validator_result_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+p_k_i_x_cert_path_validator_result_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 p_k_i_x_cert_path_validator_result_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -58,9 +43,24 @@ p_k_i_x_cert_path_validator_result_hash_code(REF, OUT) :-
 p_k_i_x_cert_path_validator_result_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-p_k_i_x_cert_path_validator_result_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+p_k_i_x_cert_path_validator_result_get_public_key(REF, OUT) :- 
+	object_call(REF, getPublicKey, [], OUT).
 
-p_k_i_x_cert_path_validator_result_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+p_k_i_x_cert_path_validator_result_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+p_k_i_x_cert_path_validator_result_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+p_k_i_x_cert_path_validator_result_get_trust_anchor(REF, OUT) :- 
+	object_call(REF, getTrustAnchor, [], OUT).
+
+p_k_i_x_cert_path_validator_result_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+p_k_i_x_cert_path_validator_result_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+p_k_i_x_cert_path_validator_result_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 

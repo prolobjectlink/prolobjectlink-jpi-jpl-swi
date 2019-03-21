@@ -34,45 +34,45 @@ activation_desc(ARG0, ARG1, ARG2, ARG3, OUT) :-
 activation_desc(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('java.rmi.activation.ActivationDesc', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-activation_desc_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+activation_desc_get_location(REF, OUT) :- 
+	object_call(REF, getLocation, [], OUT).
 
 activation_desc_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-activation_desc_get_location(REF, OUT) :- 
-	object_call(REF, getLocation, [], OUT).
-
-activation_desc_get_class_name(REF, OUT) :- 
-	object_call(REF, getClassName, [], OUT).
-
 activation_desc_get_data(REF, OUT) :- 
 	object_call(REF, getData, [], OUT).
 
-activation_desc_get_group_i_d(REF, OUT) :- 
-	object_call(REF, getGroupID, [], OUT).
+activation_desc_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+activation_desc_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 activation_desc_get_restart_mode(REF, OUT) :- 
 	object_call(REF, getRestartMode, [], OUT).
 
-activation_desc_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-activation_desc_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-activation_desc_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
 activation_desc_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
+activation_desc_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+activation_desc_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+activation_desc_get_class_name(REF, OUT) :- 
+	object_call(REF, getClassName, [], OUT).
+
+activation_desc_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+activation_desc_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+activation_desc_get_group_i_d(REF, OUT) :- 
+	object_call(REF, getGroupID, [], OUT).
+
 activation_desc_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-activation_desc_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-activation_desc_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

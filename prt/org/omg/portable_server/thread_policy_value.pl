@@ -22,38 +22,17 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-thread_policy_value__orb_ctrl_model(OUT) :- 
+thread_policy_value__ORB_CTRL_MODEL(OUT) :- 
 	object_get('org.omg.PortableServer.ThreadPolicyValue', '_orb_ctrl_model', OUT).
 
-thread_policy_value_orb_ctrl_model(OUT) :- 
+thread_policy_value_ORB_CTRL_MODEL(OUT) :- 
 	object_get('org.omg.PortableServer.ThreadPolicyValue', orb_ctrl_model, OUT).
 
-thread_policy_value__single_thread_model(OUT) :- 
+thread_policy_value__SINGLE_THREAD_MODEL(OUT) :- 
 	object_get('org.omg.PortableServer.ThreadPolicyValue', '_single_thread_model', OUT).
 
-thread_policy_value_single_thread_model(OUT) :- 
+thread_policy_value_SINGLE_THREAD_MODEL(OUT) :- 
 	object_get('org.omg.PortableServer.ThreadPolicyValue', single_thread_model, OUT).
-
-thread_policy_value_value(REF, OUT) :- 
-	object_call(REF, value, [], OUT).
-
-thread_policy_value_from_int(REF, ARG0, OUT) :- 
-	object_call(REF, from_int, '.'(ARG0, []), OUT).
-
-thread_policy_value_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-thread_policy_value_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-thread_policy_value_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-thread_policy_value_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-thread_policy_value_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
 
 thread_policy_value_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -61,9 +40,30 @@ thread_policy_value_hash_code(REF, OUT) :-
 thread_policy_value_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-thread_policy_value_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+thread_policy_value_value(REF, OUT) :- 
+	object_call(REF, value, [], OUT).
 
-thread_policy_value_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+thread_policy_value_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+thread_policy_value_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+thread_policy_value_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+thread_policy_value_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+thread_policy_value_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+thread_policy_value_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+thread_policy_value_from_int(REF, ARG0, OUT) :- 
+	object_call(REF, from_int, '.'(ARG0, []), OUT).
+
+thread_policy_value_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 

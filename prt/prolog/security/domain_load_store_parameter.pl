@@ -25,23 +25,8 @@
 domain_load_store_parameter(ARG0, ARG1, OUT) :- 
 	object_new('java.security.DomainLoadStoreParameter', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-domain_load_store_parameter_get_configuration(REF, OUT) :- 
-	object_call(REF, getConfiguration, [], OUT).
-
-domain_load_store_parameter_get_protection_parameter(REF, OUT) :- 
-	object_call(REF, getProtectionParameter, [], OUT).
-
 domain_load_store_parameter_get_protection_params(REF, OUT) :- 
 	object_call(REF, getProtectionParams, [], OUT).
-
-domain_load_store_parameter_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-domain_load_store_parameter_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-domain_load_store_parameter_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
 
 domain_load_store_parameter_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
@@ -49,15 +34,30 @@ domain_load_store_parameter_equals(REF, ARG0, OUT) :-
 domain_load_store_parameter_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-domain_load_store_parameter_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+domain_load_store_parameter_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+domain_load_store_parameter_get_configuration(REF, OUT) :- 
+	object_call(REF, getConfiguration, [], OUT).
+
+domain_load_store_parameter_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+domain_load_store_parameter_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+domain_load_store_parameter_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+domain_load_store_parameter_get_protection_parameter(REF, OUT) :- 
+	object_call(REF, getProtectionParameter, [], OUT).
+
+domain_load_store_parameter_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 domain_load_store_parameter_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-domain_load_store_parameter_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-domain_load_store_parameter_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+domain_load_store_parameter_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 

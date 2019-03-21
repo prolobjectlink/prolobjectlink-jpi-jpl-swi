@@ -25,30 +25,30 @@
 servant_object(OUT) :- 
 	object_new('org.omg.CORBA.portable.ServantObject', [], OUT).
 
-servant_object_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-servant_object_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-servant_object_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-servant_object_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+servant_object_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 servant_object_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
+servant_object_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+servant_object_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+servant_object_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
 servant_object_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+servant_object_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+servant_object_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
 servant_object_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-servant_object_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-servant_object_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

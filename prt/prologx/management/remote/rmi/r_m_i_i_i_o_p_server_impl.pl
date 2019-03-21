@@ -25,54 +25,54 @@
 r_m_i_i_i_o_p_server_impl(ARG0, OUT) :- 
 	object_new('javax.management.remote.rmi.RMIIIOPServerImpl', '.'(ARG0, []), OUT).
 
-r_m_i_i_i_o_p_server_impl_to_stub(REF, OUT) :- 
-	object_call(REF, toStub, [], OUT).
-
-r_m_i_i_i_o_p_server_impl_close(REF, OUT) :- 
-	object_call(REF, close, [], OUT).
-
 r_m_i_i_i_o_p_server_impl_get_version(REF, OUT) :- 
 	object_call(REF, getVersion, [], OUT).
-
-r_m_i_i_i_o_p_server_impl_set_m_bean_server(REF, ARG0, OUT) :- 
-	object_call(REF, setMBeanServer, '.'(ARG0, []), OUT).
 
 r_m_i_i_i_o_p_server_impl_get_m_bean_server(REF, OUT) :- 
 	object_call(REF, getMBeanServer, [], OUT).
 
-r_m_i_i_i_o_p_server_impl_get_default_class_loader(REF, OUT) :- 
-	object_call(REF, getDefaultClassLoader, [], OUT).
+r_m_i_i_i_o_p_server_impl_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+r_m_i_i_i_o_p_server_impl_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+r_m_i_i_i_o_p_server_impl_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+r_m_i_i_i_o_p_server_impl_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+r_m_i_i_i_o_p_server_impl_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 r_m_i_i_i_o_p_server_impl_new_client(REF, ARG0, OUT) :- 
 	object_call(REF, newClient, '.'(ARG0, []), OUT).
 
-r_m_i_i_i_o_p_server_impl_set_default_class_loader(REF, ARG0, OUT) :- 
-	object_call(REF, setDefaultClassLoader, '.'(ARG0, []), OUT).
-
-r_m_i_i_i_o_p_server_impl_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-r_m_i_i_i_o_p_server_impl_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-r_m_i_i_i_o_p_server_impl_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
 r_m_i_i_i_o_p_server_impl_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+r_m_i_i_i_o_p_server_impl_close(REF) :- 
+	object_call(REF, close, [], _).
 
 r_m_i_i_i_o_p_server_impl_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-r_m_i_i_i_o_p_server_impl_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+r_m_i_i_i_o_p_server_impl_set_default_class_loader(REF, ARG0) :- 
+	object_call(REF, setDefaultClassLoader, '.'(ARG0, []), _).
+
+r_m_i_i_i_o_p_server_impl_set_m_bean_server(REF, ARG0) :- 
+	object_call(REF, setMBeanServer, '.'(ARG0, []), _).
+
+r_m_i_i_i_o_p_server_impl_to_stub(REF, OUT) :- 
+	object_call(REF, toStub, [], OUT).
 
 r_m_i_i_i_o_p_server_impl_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-r_m_i_i_i_o_p_server_impl_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+r_m_i_i_i_o_p_server_impl_get_default_class_loader(REF, OUT) :- 
+	object_call(REF, getDefaultClassLoader, [], OUT).
 
-r_m_i_i_i_o_p_server_impl_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+r_m_i_i_i_o_p_server_impl_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 

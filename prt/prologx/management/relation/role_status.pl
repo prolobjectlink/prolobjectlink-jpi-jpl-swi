@@ -22,41 +22,35 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-role_status_no_role_with_name(OUT) :- 
+role_status_NO_ROLE_WITH_NAME(OUT) :- 
 	object_get('javax.management.relation.RoleStatus', no_role_with_name, OUT).
 
-role_status_role_not_readable(OUT) :- 
+role_status_ROLE_NOT_READABLE(OUT) :- 
 	object_get('javax.management.relation.RoleStatus', role_not_readable, OUT).
 
-role_status_role_not_writable(OUT) :- 
+role_status_ROLE_NOT_WRITABLE(OUT) :- 
 	object_get('javax.management.relation.RoleStatus', role_not_writable, OUT).
 
-role_status_less_than_min_role_degree(OUT) :- 
+role_status_LESS_THAN_MIN_ROLE_DEGREE(OUT) :- 
 	object_get('javax.management.relation.RoleStatus', less_than_min_role_degree, OUT).
 
-role_status_more_than_max_role_degree(OUT) :- 
+role_status_MORE_THAN_MAX_ROLE_DEGREE(OUT) :- 
 	object_get('javax.management.relation.RoleStatus', more_than_max_role_degree, OUT).
 
-role_status_ref_mbean_of_incorrect_class(OUT) :- 
+role_status_REF_MBEAN_OF_INCORRECT_CLASS(OUT) :- 
 	object_get('javax.management.relation.RoleStatus', ref_mbean_of_incorrect_class, OUT).
 
-role_status_ref_mbean_not_registered(OUT) :- 
+role_status_REF_MBEAN_NOT_REGISTERED(OUT) :- 
 	object_get('javax.management.relation.RoleStatus', ref_mbean_not_registered, OUT).
 
 role_status(OUT) :- 
 	object_new('javax.management.relation.RoleStatus', [], OUT).
 
+role_status_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
 role_status_is_role_status(REF, ARG0, OUT) :- 
 	object_call(REF, isRoleStatus, '.'(ARG0, []), OUT).
-
-role_status_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-role_status_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-role_status_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
 
 role_status_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
@@ -64,15 +58,21 @@ role_status_equals(REF, ARG0, OUT) :-
 role_status_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-role_status_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
 role_status_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-role_status_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+role_status_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-role_status_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+role_status_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+role_status_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+role_status_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+role_status_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

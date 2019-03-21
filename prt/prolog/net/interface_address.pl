@@ -22,17 +22,11 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-interface_address_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-interface_address_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
 interface_address_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-interface_address_get_address(REF, OUT) :- 
-	object_call(REF, getAddress, [], OUT).
+interface_address_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 interface_address_get_broadcast(REF, OUT) :- 
 	object_call(REF, getBroadcast, [], OUT).
@@ -40,21 +34,27 @@ interface_address_get_broadcast(REF, OUT) :-
 interface_address_get_network_prefix_length(REF, OUT) :- 
 	object_call(REF, getNetworkPrefixLength, [], OUT).
 
-interface_address_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+interface_address_get_address(REF, OUT) :- 
+	object_call(REF, getAddress, [], OUT).
 
-interface_address_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+interface_address_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-interface_address_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+interface_address_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+interface_address_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+interface_address_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+interface_address_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+interface_address_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
 interface_address_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-interface_address_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-interface_address_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

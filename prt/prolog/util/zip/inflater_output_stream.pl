@@ -25,44 +25,17 @@
 inflater_output_stream(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('java.util.zip.InflaterOutputStream', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-inflater_output_stream(ARG0, OUT) :- 
-	object_new('java.util.zip.InflaterOutputStream', '.'(ARG0, []), OUT).
-
 inflater_output_stream(ARG0, ARG1, OUT) :- 
 	object_new('java.util.zip.InflaterOutputStream', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-inflater_output_stream_write(REF, ARG0, OUT) :- 
-	object_call(REF, write, '.'(ARG0, []), OUT).
+inflater_output_stream(ARG0, OUT) :- 
+	object_new('java.util.zip.InflaterOutputStream', '.'(ARG0, []), OUT).
 
-inflater_output_stream_write(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, write, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+inflater_output_stream_flush(REF) :- 
+	object_call(REF, flush, [], _).
 
-inflater_output_stream_close(REF, OUT) :- 
-	object_call(REF, close, [], OUT).
-
-inflater_output_stream_flush(REF, OUT) :- 
-	object_call(REF, flush, [], OUT).
-
-inflater_output_stream_finish(REF, OUT) :- 
-	object_call(REF, finish, [], OUT).
-
-inflater_output_stream_write(REF, ARG0, OUT) :- 
-	object_call(REF, write, '.'(ARG0, []), OUT).
-
-inflater_output_stream_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-inflater_output_stream_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-inflater_output_stream_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-inflater_output_stream_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-inflater_output_stream_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+inflater_output_stream_close(REF) :- 
+	object_call(REF, close, [], _).
 
 inflater_output_stream_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -70,9 +43,36 @@ inflater_output_stream_hash_code(REF, OUT) :-
 inflater_output_stream_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-inflater_output_stream_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+inflater_output_stream_finish(REF) :- 
+	object_call(REF, finish, [], _).
 
-inflater_output_stream_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+inflater_output_stream_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+inflater_output_stream_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+inflater_output_stream_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+inflater_output_stream_write(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, write, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+inflater_output_stream_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+inflater_output_stream_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+inflater_output_stream_write(REF, ARG0) :- 
+	object_call(REF, write, '.'(ARG0, []), _).
+
+inflater_output_stream_write(REF, ARG0) :- 
+	object_call(REF, write, '.'(ARG0, []), _).
+
+inflater_output_stream_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+inflater_output_stream_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

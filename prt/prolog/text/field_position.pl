@@ -22,57 +22,57 @@
 
 :-consult('../../../obj/prolobject.pl').
 
+field_position(ARG0, OUT) :- 
+	object_new('java.text.FieldPosition', '.'(ARG0, []), OUT).
+
+field_position(ARG0, OUT) :- 
+	object_new('java.text.FieldPosition', '.'(ARG0, []), OUT).
+
 field_position(ARG0, ARG1, OUT) :- 
 	object_new('java.text.FieldPosition', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-field_position(ARG0, OUT) :- 
-	object_new('java.text.FieldPosition', '.'(ARG0, []), OUT).
-
-field_position(ARG0, OUT) :- 
-	object_new('java.text.FieldPosition', '.'(ARG0, []), OUT).
-
-field_position_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-field_position_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-field_position_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-field_position_get_field(REF, OUT) :- 
-	object_call(REF, getField, [], OUT).
-
-field_position_get_begin_index(REF, OUT) :- 
-	object_call(REF, getBeginIndex, [], OUT).
-
-field_position_get_end_index(REF, OUT) :- 
-	object_call(REF, getEndIndex, [], OUT).
-
-field_position_get_field_attribute(REF, OUT) :- 
-	object_call(REF, getFieldAttribute, [], OUT).
-
-field_position_set_begin_index(REF, ARG0, OUT) :- 
-	object_call(REF, setBeginIndex, '.'(ARG0, []), OUT).
-
-field_position_set_end_index(REF, ARG0, OUT) :- 
-	object_call(REF, setEndIndex, '.'(ARG0, []), OUT).
-
-field_position_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-field_position_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-field_position_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+field_position_set_begin_index(REF, ARG0) :- 
+	object_call(REF, setBeginIndex, '.'(ARG0, []), _).
 
 field_position_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-field_position_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+field_position_get_field_attribute(REF, OUT) :- 
+	object_call(REF, getFieldAttribute, [], OUT).
 
-field_position_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+field_position_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+field_position_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+field_position_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+field_position_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+field_position_get_field(REF, OUT) :- 
+	object_call(REF, getField, [], OUT).
+
+field_position_get_end_index(REF, OUT) :- 
+	object_call(REF, getEndIndex, [], OUT).
+
+field_position_set_end_index(REF, ARG0) :- 
+	object_call(REF, setEndIndex, '.'(ARG0, []), _).
+
+field_position_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+field_position_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+field_position_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+field_position_get_begin_index(REF, OUT) :- 
+	object_call(REF, getBeginIndex, [], OUT).
+
+field_position_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

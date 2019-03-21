@@ -22,19 +22,19 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-short_min_value(OUT) :- 
+short_MIN_VALUE(OUT) :- 
 	object_get('java.lang.Short', min_value, OUT).
 
-short_max_value(OUT) :- 
+short_MAX_VALUE(OUT) :- 
 	object_get('java.lang.Short', max_value, OUT).
 
-short_type(OUT) :- 
+short_TYPE(OUT) :- 
 	object_get('java.lang.Short', type, OUT).
 
-short_size(OUT) :- 
+short_SIZE(OUT) :- 
 	object_get('java.lang.Short', size, OUT).
 
-short_bytes(OUT) :- 
+short_BYTES(OUT) :- 
 	object_get('java.lang.Short', bytes, OUT).
 
 short(ARG0, OUT) :- 
@@ -43,41 +43,29 @@ short(ARG0, OUT) :-
 short(ARG0, OUT) :- 
 	object_new('java.lang.Short', '.'(ARG0, []), OUT).
 
-short_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+short_int_value(REF, OUT) :- 
+	object_call(REF, intValue, [], OUT).
 
-short_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-short_to_string(REF, ARG0, OUT) :- 
-	object_call(REF, toString, '.'(ARG0, []), OUT).
-
-short_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-short_hash_code(REF, ARG0, OUT) :- 
-	object_call(REF, hashCode, '.'(ARG0, []), OUT).
+short_to_unsigned_long(REF, ARG0, OUT) :- 
+	object_call(REF, toUnsignedLong, '.'(ARG0, []), OUT).
 
 short_reverse_bytes(REF, ARG0, OUT) :- 
 	object_call(REF, reverseBytes, '.'(ARG0, []), OUT).
 
-short_compare_to(REF, ARG0, OUT) :- 
-	object_call(REF, compareTo, '.'(ARG0, []), OUT).
+short_compare(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, compare, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 short_compare_to(REF, ARG0, OUT) :- 
 	object_call(REF, compareTo, '.'(ARG0, []), OUT).
 
-short_byte_value(REF, OUT) :- 
-	object_call(REF, byteValue, [], OUT).
+short_compare_to(REF, ARG0, OUT) :- 
+	object_call(REF, compareTo, '.'(ARG0, []), OUT).
 
-short_short_value(REF, OUT) :- 
-	object_call(REF, shortValue, [], OUT).
+short_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-short_int_value(REF, OUT) :- 
-	object_call(REF, intValue, [], OUT).
-
-short_long_value(REF, OUT) :- 
-	object_call(REF, longValue, [], OUT).
+short_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 short_float_value(REF, OUT) :- 
 	object_call(REF, floatValue, [], OUT).
@@ -85,26 +73,41 @@ short_float_value(REF, OUT) :-
 short_double_value(REF, OUT) :- 
 	object_call(REF, doubleValue, [], OUT).
 
-short_value_of(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, valueOf, '.'(ARG0, '.'(ARG1, [])), OUT).
+short_to_unsigned_int(REF, ARG0, OUT) :- 
+	object_call(REF, toUnsignedInt, '.'(ARG0, []), OUT).
 
-short_value_of(REF, ARG0, OUT) :- 
-	object_call(REF, valueOf, '.'(ARG0, []), OUT).
+short_long_value(REF, OUT) :- 
+	object_call(REF, longValue, [], OUT).
 
-short_value_of(REF, ARG0, OUT) :- 
-	object_call(REF, valueOf, '.'(ARG0, []), OUT).
-
-short_compare(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, compare, '.'(ARG0, '.'(ARG1, [])), OUT).
+short_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
 short_decode(REF, ARG0, OUT) :- 
 	object_call(REF, decode, '.'(ARG0, []), OUT).
 
-short_to_unsigned_int(REF, ARG0, OUT) :- 
-	object_call(REF, toUnsignedInt, '.'(ARG0, []), OUT).
+short_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-short_to_unsigned_long(REF, ARG0, OUT) :- 
-	object_call(REF, toUnsignedLong, '.'(ARG0, []), OUT).
+short_byte_value(REF, OUT) :- 
+	object_call(REF, byteValue, [], OUT).
+
+short_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+short_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+short_short_value(REF, OUT) :- 
+	object_call(REF, shortValue, [], OUT).
+
+short_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+short_to_string(REF, ARG0, OUT) :- 
+	object_call(REF, toString, '.'(ARG0, []), OUT).
+
+short_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
 short_parse_short(REF, ARG0, OUT) :- 
 	object_call(REF, parseShort, '.'(ARG0, []), OUT).
@@ -112,21 +115,18 @@ short_parse_short(REF, ARG0, OUT) :-
 short_parse_short(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, parseShort, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-short_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+short_value_of(REF, ARG0, OUT) :- 
+	object_call(REF, valueOf, '.'(ARG0, []), OUT).
 
-short_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+short_value_of(REF, ARG0, OUT) :- 
+	object_call(REF, valueOf, '.'(ARG0, []), OUT).
 
-short_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+short_value_of(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, valueOf, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-short_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
+short_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
-short_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-short_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+short_hash_code(REF, ARG0, OUT) :- 
+	object_call(REF, hashCode, '.'(ARG0, []), OUT).
 

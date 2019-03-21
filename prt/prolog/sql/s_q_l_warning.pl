@@ -22,23 +22,11 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-s_q_l_warning(ARG0, OUT) :- 
-	object_new('java.sql.SQLWarning', '.'(ARG0, []), OUT).
-
-s_q_l_warning(ARG0, ARG1, OUT) :- 
-	object_new('java.sql.SQLWarning', '.'(ARG0, '.'(ARG1, [])), OUT).
-
-s_q_l_warning(ARG0, ARG1, ARG2, OUT) :- 
-	object_new('java.sql.SQLWarning', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
 s_q_l_warning(ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_new('java.sql.SQLWarning', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
-s_q_l_warning(ARG0, ARG1, ARG2, OUT) :- 
-	object_new('java.sql.SQLWarning', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-s_q_l_warning(ARG0, ARG1, OUT) :- 
-	object_new('java.sql.SQLWarning', '.'(ARG0, '.'(ARG1, [])), OUT).
+s_q_l_warning(ARG0, OUT) :- 
+	object_new('java.sql.SQLWarning', '.'(ARG0, []), OUT).
 
 s_q_l_warning(ARG0, OUT) :- 
 	object_new('java.sql.SQLWarning', '.'(ARG0, []), OUT).
@@ -46,93 +34,105 @@ s_q_l_warning(ARG0, OUT) :-
 s_q_l_warning(OUT) :- 
 	object_new('java.sql.SQLWarning', [], OUT).
 
-s_q_l_warning_get_next_warning(REF, OUT) :- 
-	object_call(REF, getNextWarning, [], OUT).
+s_q_l_warning(ARG0, ARG1, ARG2, OUT) :- 
+	object_new('java.sql.SQLWarning', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-s_q_l_warning_set_next_warning(REF, ARG0, OUT) :- 
-	object_call(REF, setNextWarning, '.'(ARG0, []), OUT).
+s_q_l_warning(ARG0, ARG1, ARG2, OUT) :- 
+	object_new('java.sql.SQLWarning', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-s_q_l_warning_iterator(REF, OUT) :- 
-	object_call(REF, iterator, [], OUT).
+s_q_l_warning(ARG0, ARG1, OUT) :- 
+	object_new('java.sql.SQLWarning', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-s_q_l_warning_get_error_code(REF, OUT) :- 
-	object_call(REF, getErrorCode, [], OUT).
+s_q_l_warning(ARG0, ARG1, OUT) :- 
+	object_new('java.sql.SQLWarning', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-s_q_l_warning_get_next_exception(REF, OUT) :- 
-	object_call(REF, getNextException, [], OUT).
-
-s_q_l_warning_get_s_q_l_state(REF, OUT) :- 
-	object_call(REF, getSQLState, [], OUT).
-
-s_q_l_warning_set_next_exception(REF, ARG0, OUT) :- 
-	object_call(REF, setNextException, '.'(ARG0, []), OUT).
-
-s_q_l_warning_print_stack_trace(REF, OUT) :- 
-	object_call(REF, printStackTrace, [], OUT).
-
-s_q_l_warning_print_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, printStackTrace, '.'(ARG0, []), OUT).
-
-s_q_l_warning_print_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, printStackTrace, '.'(ARG0, []), OUT).
-
-s_q_l_warning_fill_in_stack_trace(REF, OUT) :- 
-	object_call(REF, fillInStackTrace, [], OUT).
-
-s_q_l_warning_get_cause(REF, OUT) :- 
-	object_call(REF, getCause, [], OUT).
-
-s_q_l_warning_init_cause(REF, ARG0, OUT) :- 
-	object_call(REF, initCause, '.'(ARG0, []), OUT).
-
-s_q_l_warning_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-s_q_l_warning_add_suppressed(REF, ARG0, OUT) :- 
-	object_call(REF, addSuppressed, '.'(ARG0, []), OUT).
-
-s_q_l_warning_get_localized_message(REF, OUT) :- 
-	object_call(REF, getLocalizedMessage, [], OUT).
-
-s_q_l_warning_get_message(REF, OUT) :- 
-	object_call(REF, getMessage, [], OUT).
+s_q_l_warning_set_next_warning(REF, ARG0) :- 
+	object_call(REF, setNextWarning, '.'(ARG0, []), _).
 
 s_q_l_warning_get_stack_trace(REF, OUT) :- 
 	object_call(REF, getStackTrace, [], OUT).
 
-s_q_l_warning_get_suppressed(REF, OUT) :- 
-	object_call(REF, getSuppressed, [], OUT).
+s_q_l_warning_get_localized_message(REF, OUT) :- 
+	object_call(REF, getLocalizedMessage, [], OUT).
 
-s_q_l_warning_set_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, setStackTrace, '.'(ARG0, []), OUT).
+s_q_l_warning_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-s_q_l_warning_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+s_q_l_warning_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-s_q_l_warning_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+s_q_l_warning_get_error_code(REF, OUT) :- 
+	object_call(REF, getErrorCode, [], OUT).
 
-s_q_l_warning_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+s_q_l_warning_iterator(REF, OUT) :- 
+	object_call(REF, iterator, [], OUT).
+
+s_q_l_warning_for_each(REF, ARG0) :- 
+	object_call(REF, forEach, '.'(ARG0, []), _).
+
+s_q_l_warning_get_s_q_l_state(REF, OUT) :- 
+	object_call(REF, getSQLState, [], OUT).
+
+s_q_l_warning_fill_in_stack_trace(REF, OUT) :- 
+	object_call(REF, fillInStackTrace, [], OUT).
+
+s_q_l_warning_print_stack_trace(REF) :- 
+	object_call(REF, printStackTrace, [], _).
+
+s_q_l_warning_print_stack_trace(REF, ARG0) :- 
+	object_call(REF, printStackTrace, '.'(ARG0, []), _).
+
+s_q_l_warning_print_stack_trace(REF, ARG0) :- 
+	object_call(REF, printStackTrace, '.'(ARG0, []), _).
+
+s_q_l_warning_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
 s_q_l_warning_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-s_q_l_warning_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+s_q_l_warning_get_next_warning(REF, OUT) :- 
+	object_call(REF, getNextWarning, [], OUT).
+
+s_q_l_warning_add_suppressed(REF, ARG0) :- 
+	object_call(REF, addSuppressed, '.'(ARG0, []), _).
+
+s_q_l_warning_get_suppressed(REF, OUT) :- 
+	object_call(REF, getSuppressed, [], OUT).
+
+s_q_l_warning_get_message(REF, OUT) :- 
+	object_call(REF, getMessage, [], OUT).
+
+s_q_l_warning_set_stack_trace(REF, ARG0) :- 
+	object_call(REF, setStackTrace, '.'(ARG0, []), _).
+
+s_q_l_warning_set_next_exception(REF, ARG0) :- 
+	object_call(REF, setNextException, '.'(ARG0, []), _).
 
 s_q_l_warning_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-s_q_l_warning_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+s_q_l_warning_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-s_q_l_warning_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+s_q_l_warning_get_cause(REF, OUT) :- 
+	object_call(REF, getCause, [], OUT).
+
+s_q_l_warning_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
 s_q_l_warning_spliterator(REF, OUT) :- 
 	object_call(REF, spliterator, [], OUT).
 
-s_q_l_warning_for_each(REF, ARG0, OUT) :- 
-	object_call(REF, forEach, '.'(ARG0, []), OUT).
+s_q_l_warning_get_next_exception(REF, OUT) :- 
+	object_call(REF, getNextException, [], OUT).
+
+s_q_l_warning_init_cause(REF, ARG0, OUT) :- 
+	object_call(REF, initCause, '.'(ARG0, []), OUT).
+
+s_q_l_warning_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+s_q_l_warning_wait(REF) :- 
+	object_call(REF, wait, [], _).
 

@@ -25,39 +25,39 @@
 activation_group__stub(ARG0, OUT) :- 
 	object_new('java.rmi.activation.ActivationGroup_Stub', '.'(ARG0, []), OUT).
 
-activation_group__stub_new_instance(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, newInstance, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-activation_group__stub_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-activation_group__stub_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-activation_group__stub_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+activation_group__stub_to_stub(REF, ARG0, OUT) :- 
+	object_call(REF, toStub, '.'(ARG0, []), OUT).
 
 activation_group__stub_get_ref(REF, OUT) :- 
 	object_call(REF, getRef, [], OUT).
 
-activation_group__stub_to_stub(REF, ARG0, OUT) :- 
-	object_call(REF, toStub, '.'(ARG0, []), OUT).
+activation_group__stub_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-activation_group__stub_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+activation_group__stub_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-activation_group__stub_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+activation_group__stub_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-activation_group__stub_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+activation_group__stub_new_instance(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, newInstance, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+activation_group__stub_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+activation_group__stub_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+activation_group__stub_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+activation_group__stub_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
 activation_group__stub_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-activation_group__stub_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-activation_group__stub_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+activation_group__stub_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 

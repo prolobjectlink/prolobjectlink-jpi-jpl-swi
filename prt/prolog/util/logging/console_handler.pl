@@ -25,72 +25,72 @@
 console_handler(OUT) :- 
 	object_new('java.util.logging.ConsoleHandler', [], OUT).
 
-console_handler_close(REF, OUT) :- 
-	object_call(REF, close, [], OUT).
+console_handler_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-console_handler_publish(REF, ARG0, OUT) :- 
-	object_call(REF, publish, '.'(ARG0, []), OUT).
-
-console_handler_flush(REF, OUT) :- 
-	object_call(REF, flush, [], OUT).
+console_handler_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 console_handler_is_loggable(REF, ARG0, OUT) :- 
 	object_call(REF, isLoggable, '.'(ARG0, []), OUT).
 
-console_handler_set_encoding(REF, ARG0, OUT) :- 
-	object_call(REF, setEncoding, '.'(ARG0, []), OUT).
-
-console_handler_get_encoding(REF, OUT) :- 
-	object_call(REF, getEncoding, [], OUT).
-
-console_handler_get_error_manager(REF, OUT) :- 
-	object_call(REF, getErrorManager, [], OUT).
-
-console_handler_get_filter(REF, OUT) :- 
-	object_call(REF, getFilter, [], OUT).
-
-console_handler_get_formatter(REF, OUT) :- 
-	object_call(REF, getFormatter, [], OUT).
-
-console_handler_set_error_manager(REF, ARG0, OUT) :- 
-	object_call(REF, setErrorManager, '.'(ARG0, []), OUT).
-
-console_handler_set_filter(REF, ARG0, OUT) :- 
-	object_call(REF, setFilter, '.'(ARG0, []), OUT).
-
-console_handler_set_level(REF, ARG0, OUT) :- 
-	object_call(REF, setLevel, '.'(ARG0, []), OUT).
-
-console_handler_set_formatter(REF, ARG0, OUT) :- 
-	object_call(REF, setFormatter, '.'(ARG0, []), OUT).
-
-console_handler_get_level(REF, OUT) :- 
-	object_call(REF, getLevel, [], OUT).
-
-console_handler_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-console_handler_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-console_handler_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
 console_handler_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-console_handler_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+console_handler_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-console_handler_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+console_handler_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+console_handler_set_error_manager(REF, ARG0) :- 
+	object_call(REF, setErrorManager, '.'(ARG0, []), _).
+
+console_handler_set_filter(REF, ARG0) :- 
+	object_call(REF, setFilter, '.'(ARG0, []), _).
 
 console_handler_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-console_handler_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+console_handler_publish(REF, ARG0) :- 
+	object_call(REF, publish, '.'(ARG0, []), _).
 
-console_handler_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+console_handler_get_error_manager(REF, OUT) :- 
+	object_call(REF, getErrorManager, [], OUT).
+
+console_handler_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+console_handler_set_formatter(REF, ARG0) :- 
+	object_call(REF, setFormatter, '.'(ARG0, []), _).
+
+console_handler_get_formatter(REF, OUT) :- 
+	object_call(REF, getFormatter, [], OUT).
+
+console_handler_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+console_handler_get_filter(REF, OUT) :- 
+	object_call(REF, getFilter, [], OUT).
+
+console_handler_set_level(REF, ARG0) :- 
+	object_call(REF, setLevel, '.'(ARG0, []), _).
+
+console_handler_close(REF) :- 
+	object_call(REF, close, [], _).
+
+console_handler_get_encoding(REF, OUT) :- 
+	object_call(REF, getEncoding, [], OUT).
+
+console_handler_flush(REF) :- 
+	object_call(REF, flush, [], _).
+
+console_handler_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+console_handler_set_encoding(REF, ARG0) :- 
+	object_call(REF, setEncoding, '.'(ARG0, []), _).
+
+console_handler_get_level(REF, OUT) :- 
+	object_call(REF, getLevel, [], OUT).
 

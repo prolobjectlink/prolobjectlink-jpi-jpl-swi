@@ -22,56 +22,41 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-reference(ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_new('javax.naming.Reference', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
-reference(ARG0, ARG1, ARG2, OUT) :- 
-	object_new('javax.naming.Reference', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+reference(ARG0, OUT) :- 
+	object_new('javax.naming.Reference', '.'(ARG0, []), OUT).
 
 reference(ARG0, ARG1, OUT) :- 
 	object_new('javax.naming.Reference', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-reference(ARG0, OUT) :- 
-	object_new('javax.naming.Reference', '.'(ARG0, []), OUT).
+reference(ARG0, ARG1, ARG2, OUT) :- 
+	object_new('javax.naming.Reference', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-reference_add(REF, ARG0, OUT) :- 
-	object_call(REF, add, '.'(ARG0, []), OUT).
+reference(ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_new('javax.naming.Reference', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
-reference_add(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, add, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-reference_remove(REF, ARG0, OUT) :- 
-	object_call(REF, remove, '.'(ARG0, []), OUT).
-
-reference_get(REF, ARG0, OUT) :- 
-	object_call(REF, get, '.'(ARG0, []), OUT).
-
-reference_get(REF, ARG0, OUT) :- 
-	object_call(REF, get, '.'(ARG0, []), OUT).
-
-reference_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-reference_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-reference_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-reference_clone(REF, OUT) :- 
-	object_call(REF, clone, [], OUT).
-
-reference_clear(REF, OUT) :- 
-	object_call(REF, clear, [], OUT).
+reference_clear(REF) :- 
+	object_call(REF, clear, [], _).
 
 reference_size(REF, OUT) :- 
 	object_call(REF, size, [], OUT).
 
-reference_get_class_name(REF, OUT) :- 
-	object_call(REF, getClassName, [], OUT).
+reference_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-reference_get_all(REF, OUT) :- 
-	object_call(REF, getAll, [], OUT).
+reference_clone(REF, OUT) :- 
+	object_call(REF, clone, [], OUT).
+
+reference_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+reference_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
+
+reference_remove(REF, ARG0, OUT) :- 
+	object_call(REF, remove, '.'(ARG0, []), OUT).
+
+reference_add(REF, ARG0) :- 
+	object_call(REF, add, '.'(ARG0, []), _).
 
 reference_get_factory_class_location(REF, OUT) :- 
 	object_call(REF, getFactoryClassLocation, [], OUT).
@@ -79,21 +64,36 @@ reference_get_factory_class_location(REF, OUT) :-
 reference_get_factory_class_name(REF, OUT) :- 
 	object_call(REF, getFactoryClassName, [], OUT).
 
-reference_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+reference_add(REF, ARG0, ARG1) :- 
+	object_call(REF, add, '.'(ARG0, '.'(ARG1, [])), _).
 
-reference_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+reference_get_class_name(REF, OUT) :- 
+	object_call(REF, getClassName, [], OUT).
 
-reference_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+reference_get_all(REF, OUT) :- 
+	object_call(REF, getAll, [], OUT).
 
-reference_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
+reference_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-reference_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+reference_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-reference_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+reference_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+reference_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+reference_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+reference_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+reference_get(REF, ARG0, OUT) :- 
+	object_call(REF, get, '.'(ARG0, []), OUT).
+
+reference_get(REF, ARG0, OUT) :- 
+	object_call(REF, get, '.'(ARG0, []), OUT).
 

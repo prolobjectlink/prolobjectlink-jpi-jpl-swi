@@ -25,8 +25,14 @@
 r_s_a_other_prime_info(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('java.security.spec.RSAOtherPrimeInfo', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-r_s_a_other_prime_info_get_exponent(REF, OUT) :- 
-	object_call(REF, getExponent, [], OUT).
+r_s_a_other_prime_info_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+r_s_a_other_prime_info_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+r_s_a_other_prime_info_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 r_s_a_other_prime_info_get_crt_coefficient(REF, OUT) :- 
 	object_call(REF, getCrtCoefficient, [], OUT).
@@ -34,30 +40,24 @@ r_s_a_other_prime_info_get_crt_coefficient(REF, OUT) :-
 r_s_a_other_prime_info_get_prime(REF, OUT) :- 
 	object_call(REF, getPrime, [], OUT).
 
-r_s_a_other_prime_info_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-r_s_a_other_prime_info_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-r_s_a_other_prime_info_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-r_s_a_other_prime_info_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-r_s_a_other_prime_info_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
 r_s_a_other_prime_info_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
 r_s_a_other_prime_info_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-r_s_a_other_prime_info_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+r_s_a_other_prime_info_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-r_s_a_other_prime_info_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+r_s_a_other_prime_info_get_exponent(REF, OUT) :- 
+	object_call(REF, getExponent, [], OUT).
+
+r_s_a_other_prime_info_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+r_s_a_other_prime_info_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+r_s_a_other_prime_info_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 

@@ -22,39 +22,39 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-julian_fields_julian_day(OUT) :- 
+julian_fields_JULIAN_DAY(OUT) :- 
 	object_get('java.time.temporal.JulianFields', julian_day, OUT).
 
-julian_fields_modified_julian_day(OUT) :- 
+julian_fields_MODIFIED_JULIAN_DAY(OUT) :- 
 	object_get('java.time.temporal.JulianFields', modified_julian_day, OUT).
 
-julian_fields_rata_die(OUT) :- 
+julian_fields_RATA_DIE(OUT) :- 
 	object_get('java.time.temporal.JulianFields', rata_die, OUT).
-
-julian_fields_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-julian_fields_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-julian_fields_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
 
 julian_fields_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-julian_fields_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+julian_fields_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+julian_fields_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+julian_fields_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+julian_fields_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+julian_fields_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 julian_fields_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+julian_fields_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
 julian_fields_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-julian_fields_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-julian_fields_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

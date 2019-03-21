@@ -22,63 +22,63 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-coder_result_underflow(OUT) :- 
+coder_result_UNDERFLOW(OUT) :- 
 	object_get('java.nio.charset.CoderResult', underflow, OUT).
 
-coder_result_overflow(OUT) :- 
+coder_result_OVERFLOW(OUT) :- 
 	object_get('java.nio.charset.CoderResult', overflow, OUT).
-
-coder_result_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-coder_result_length(REF, OUT) :- 
-	object_call(REF, length, [], OUT).
-
-coder_result_throw_exception(REF, OUT) :- 
-	object_call(REF, throwException, [], OUT).
 
 coder_result_is_overflow(REF, OUT) :- 
 	object_call(REF, isOverflow, [], OUT).
 
-coder_result_is_underflow(REF, OUT) :- 
-	object_call(REF, isUnderflow, [], OUT).
+coder_result_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-coder_result_is_error(REF, OUT) :- 
-	object_call(REF, isError, [], OUT).
+coder_result_length(REF, OUT) :- 
+	object_call(REF, length, [], OUT).
 
-coder_result_is_malformed(REF, OUT) :- 
-	object_call(REF, isMalformed, [], OUT).
+coder_result_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-coder_result_is_unmappable(REF, OUT) :- 
-	object_call(REF, isUnmappable, [], OUT).
+coder_result_throw_exception(REF) :- 
+	object_call(REF, throwException, [], _).
 
 coder_result_malformed_for_length(REF, ARG0, OUT) :- 
 	object_call(REF, malformedForLength, '.'(ARG0, []), OUT).
 
-coder_result_unmappable_for_length(REF, ARG0, OUT) :- 
-	object_call(REF, unmappableForLength, '.'(ARG0, []), OUT).
-
-coder_result_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-coder_result_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-coder_result_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+coder_result_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 coder_result_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
+coder_result_unmappable_for_length(REF, ARG0, OUT) :- 
+	object_call(REF, unmappableForLength, '.'(ARG0, []), OUT).
+
+coder_result_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+coder_result_is_error(REF, OUT) :- 
+	object_call(REF, isError, [], OUT).
+
+coder_result_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
 coder_result_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
+
+coder_result_is_malformed(REF, OUT) :- 
+	object_call(REF, isMalformed, [], OUT).
+
+coder_result_is_underflow(REF, OUT) :- 
+	object_call(REF, isUnderflow, [], OUT).
+
+coder_result_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 coder_result_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-coder_result_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-coder_result_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+coder_result_is_unmappable(REF, OUT) :- 
+	object_call(REF, isUnmappable, [], OUT).
 

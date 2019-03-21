@@ -22,47 +22,20 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-size_requirements(OUT) :- 
-	object_new('javax.swing.SizeRequirements', [], OUT).
-
 size_requirements(ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_new('javax.swing.SizeRequirements', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
-size_requirements_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-size_requirements_calculate_aligned_positions(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
-	object_call(REF, calculateAlignedPositions, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
-
-size_requirements_calculate_aligned_positions(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, OUT) :- 
-	object_call(REF, calculateAlignedPositions, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), OUT).
-
-size_requirements_get_aligned_size_requirements(REF, ARG0, OUT) :- 
-	object_call(REF, getAlignedSizeRequirements, '.'(ARG0, []), OUT).
-
-size_requirements_calculate_tiled_positions(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, OUT) :- 
-	object_call(REF, calculateTiledPositions, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), OUT).
-
-size_requirements_calculate_tiled_positions(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
-	object_call(REF, calculateTiledPositions, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
-
-size_requirements_get_tiled_size_requirements(REF, ARG0, OUT) :- 
-	object_call(REF, getTiledSizeRequirements, '.'(ARG0, []), OUT).
+size_requirements(OUT) :- 
+	object_new('javax.swing.SizeRequirements', [], OUT).
 
 size_requirements_adjust_sizes(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, adjustSizes, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-size_requirements_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+size_requirements_calculate_aligned_positions(REF, ARG0, ARG1, ARG2, ARG3, ARG4) :- 
+	object_call(REF, calculateAlignedPositions, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), _).
 
-size_requirements_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-size_requirements_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-size_requirements_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+size_requirements_get_tiled_size_requirements(REF, ARG0, OUT) :- 
+	object_call(REF, getTiledSizeRequirements, '.'(ARG0, []), OUT).
 
 size_requirements_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -70,9 +43,36 @@ size_requirements_hash_code(REF, OUT) :-
 size_requirements_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-size_requirements_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+size_requirements_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-size_requirements_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+size_requirements_calculate_aligned_positions(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5) :- 
+	object_call(REF, calculateAlignedPositions, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), _).
+
+size_requirements_calculate_tiled_positions(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5) :- 
+	object_call(REF, calculateTiledPositions, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), _).
+
+size_requirements_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+size_requirements_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+size_requirements_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+size_requirements_calculate_tiled_positions(REF, ARG0, ARG1, ARG2, ARG3, ARG4) :- 
+	object_call(REF, calculateTiledPositions, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), _).
+
+size_requirements_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+size_requirements_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+size_requirements_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+size_requirements_get_aligned_size_requirements(REF, ARG0, OUT) :- 
+	object_call(REF, getAlignedSizeRequirements, '.'(ARG0, []), OUT).
 

@@ -22,47 +22,20 @@
 
 :-consult('../../../obj/prolobject.pl').
 
+string_tokenizer(ARG0, OUT) :- 
+	object_new('java.util.StringTokenizer', '.'(ARG0, []), OUT).
+
 string_tokenizer(ARG0, ARG1, OUT) :- 
 	object_new('java.util.StringTokenizer', '.'(ARG0, '.'(ARG1, [])), OUT).
 
 string_tokenizer(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('java.util.StringTokenizer', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-string_tokenizer(ARG0, OUT) :- 
-	object_new('java.util.StringTokenizer', '.'(ARG0, []), OUT).
+string_tokenizer_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 string_tokenizer_count_tokens(REF, OUT) :- 
 	object_call(REF, countTokens, [], OUT).
-
-string_tokenizer_has_more_elements(REF, OUT) :- 
-	object_call(REF, hasMoreElements, [], OUT).
-
-string_tokenizer_next_token(REF, ARG0, OUT) :- 
-	object_call(REF, nextToken, '.'(ARG0, []), OUT).
-
-string_tokenizer_next_token(REF, OUT) :- 
-	object_call(REF, nextToken, [], OUT).
-
-string_tokenizer_next_element(REF, OUT) :- 
-	object_call(REF, nextElement, [], OUT).
-
-string_tokenizer_has_more_tokens(REF, OUT) :- 
-	object_call(REF, hasMoreTokens, [], OUT).
-
-string_tokenizer_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-string_tokenizer_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-string_tokenizer_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-string_tokenizer_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-string_tokenizer_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
 
 string_tokenizer_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -70,9 +43,36 @@ string_tokenizer_hash_code(REF, OUT) :-
 string_tokenizer_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-string_tokenizer_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+string_tokenizer_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-string_tokenizer_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+string_tokenizer_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+string_tokenizer_has_more_elements(REF, OUT) :- 
+	object_call(REF, hasMoreElements, [], OUT).
+
+string_tokenizer_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+string_tokenizer_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+string_tokenizer_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+string_tokenizer_has_more_tokens(REF, OUT) :- 
+	object_call(REF, hasMoreTokens, [], OUT).
+
+string_tokenizer_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+string_tokenizer_next_element(REF, OUT) :- 
+	object_call(REF, nextElement, [], OUT).
+
+string_tokenizer_next_token(REF, OUT) :- 
+	object_call(REF, nextToken, [], OUT).
+
+string_tokenizer_next_token(REF, ARG0, OUT) :- 
+	object_call(REF, nextToken, '.'(ARG0, []), OUT).
 

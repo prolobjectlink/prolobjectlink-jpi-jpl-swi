@@ -22,7 +22,7 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-m_t_o_m_feature_id(OUT) :- 
+m_t_o_m_feature_ID(OUT) :- 
 	object_get('javax.xml.ws.soap.MTOMFeature', id, OUT).
 
 m_t_o_m_feature(ARG0, ARG1, OUT) :- 
@@ -37,8 +37,32 @@ m_t_o_m_feature(ARG0, OUT) :-
 m_t_o_m_feature(OUT) :- 
 	object_new('javax.xml.ws.soap.MTOMFeature', [], OUT).
 
+m_t_o_m_feature_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+m_t_o_m_feature_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+m_t_o_m_feature_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+m_t_o_m_feature_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+m_t_o_m_feature_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
 m_t_o_m_feature_get_i_d(REF, OUT) :- 
 	object_call(REF, getID, [], OUT).
+
+m_t_o_m_feature_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+m_t_o_m_feature_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
+
+m_t_o_m_feature_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 m_t_o_m_feature_get_threshold(REF, OUT) :- 
 	object_call(REF, getThreshold, [], OUT).
@@ -46,30 +70,6 @@ m_t_o_m_feature_get_threshold(REF, OUT) :-
 m_t_o_m_feature_is_enabled(REF, OUT) :- 
 	object_call(REF, isEnabled, [], OUT).
 
-m_t_o_m_feature_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-m_t_o_m_feature_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-m_t_o_m_feature_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-m_t_o_m_feature_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-m_t_o_m_feature_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-m_t_o_m_feature_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-m_t_o_m_feature_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-m_t_o_m_feature_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-m_t_o_m_feature_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+m_t_o_m_feature_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 

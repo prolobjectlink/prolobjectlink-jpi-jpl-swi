@@ -25,48 +25,48 @@
 i_i_o_byte_buffer(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('javax.imageio.stream.IIOByteBuffer', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-i_i_o_byte_buffer_get_length(REF, OUT) :- 
-	object_call(REF, getLength, [], OUT).
+i_i_o_byte_buffer_set_length(REF, ARG0) :- 
+	object_call(REF, setLength, '.'(ARG0, []), _).
 
-i_i_o_byte_buffer_set_length(REF, ARG0, OUT) :- 
-	object_call(REF, setLength, '.'(ARG0, []), OUT).
+i_i_o_byte_buffer_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-i_i_o_byte_buffer_get_offset(REF, OUT) :- 
-	object_call(REF, getOffset, [], OUT).
-
-i_i_o_byte_buffer_set_offset(REF, ARG0, OUT) :- 
-	object_call(REF, setOffset, '.'(ARG0, []), OUT).
-
-i_i_o_byte_buffer_get_data(REF, OUT) :- 
-	object_call(REF, getData, [], OUT).
-
-i_i_o_byte_buffer_set_data(REF, ARG0, OUT) :- 
-	object_call(REF, setData, '.'(ARG0, []), OUT).
-
-i_i_o_byte_buffer_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-i_i_o_byte_buffer_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-i_i_o_byte_buffer_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-i_i_o_byte_buffer_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+i_i_o_byte_buffer_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 i_i_o_byte_buffer_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
+i_i_o_byte_buffer_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+i_i_o_byte_buffer_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+i_i_o_byte_buffer_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+i_i_o_byte_buffer_set_offset(REF, ARG0) :- 
+	object_call(REF, setOffset, '.'(ARG0, []), _).
+
+i_i_o_byte_buffer_get_offset(REF, OUT) :- 
+	object_call(REF, getOffset, [], OUT).
+
+i_i_o_byte_buffer_get_length(REF, OUT) :- 
+	object_call(REF, getLength, [], OUT).
+
+i_i_o_byte_buffer_get_data(REF, OUT) :- 
+	object_call(REF, getData, [], OUT).
+
+i_i_o_byte_buffer_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
 i_i_o_byte_buffer_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+i_i_o_byte_buffer_set_data(REF, ARG0) :- 
+	object_call(REF, setData, '.'(ARG0, []), _).
+
 i_i_o_byte_buffer_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-i_i_o_byte_buffer_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-i_i_o_byte_buffer_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

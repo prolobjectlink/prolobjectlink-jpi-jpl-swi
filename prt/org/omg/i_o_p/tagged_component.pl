@@ -22,36 +22,36 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-tagged_component(OUT) :- 
-	object_new('org.omg.IOP.TaggedComponent', [], OUT).
-
 tagged_component(ARG0, ARG1, OUT) :- 
 	object_new('org.omg.IOP.TaggedComponent', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-tagged_component_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-tagged_component_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-tagged_component_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-tagged_component_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-tagged_component_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-tagged_component_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+tagged_component(OUT) :- 
+	object_new('org.omg.IOP.TaggedComponent', [], OUT).
 
 tagged_component_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-tagged_component_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+tagged_component_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
-tagged_component_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+tagged_component_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+tagged_component_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+tagged_component_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+tagged_component_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+tagged_component_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+tagged_component_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+tagged_component_notify(REF) :- 
+	object_call(REF, notify, [], _).
 

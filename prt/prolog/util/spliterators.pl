@@ -22,105 +22,105 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-spliterators_iterator(REF, ARG0, OUT) :- 
-	object_call(REF, iterator, '.'(ARG0, []), OUT).
-
-spliterators_iterator(REF, ARG0, OUT) :- 
-	object_call(REF, iterator, '.'(ARG0, []), OUT).
-
-spliterators_iterator(REF, ARG0, OUT) :- 
-	object_call(REF, iterator, '.'(ARG0, []), OUT).
-
-spliterators_iterator(REF, ARG0, OUT) :- 
-	object_call(REF, iterator, '.'(ARG0, []), OUT).
-
-spliterators_spliterator(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, spliterator, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
-spliterators_spliterator(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, spliterator, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-spliterators_spliterator(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, spliterator, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-spliterators_spliterator(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, spliterator, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-spliterators_spliterator(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, spliterator, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-spliterators_spliterator(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, spliterator, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-spliterators_spliterator(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, spliterator, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-spliterators_spliterator(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, spliterator, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-spliterators_spliterator(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, spliterator, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
-spliterators_spliterator(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, spliterator, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
-spliterators_spliterator(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, spliterator, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
-spliterators_spliterator(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, spliterator, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-spliterators_spliterator(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, spliterator, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-spliterators_spliterator_unknown_size(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, spliteratorUnknownSize, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-spliterators_spliterator_unknown_size(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, spliteratorUnknownSize, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-spliterators_spliterator_unknown_size(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, spliteratorUnknownSize, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-spliterators_spliterator_unknown_size(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, spliteratorUnknownSize, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-spliterators_empty_spliterator(REF, OUT) :- 
-	object_call(REF, emptySpliterator, [], OUT).
-
-spliterators_empty_double_spliterator(REF, OUT) :- 
-	object_call(REF, emptyDoubleSpliterator, [], OUT).
-
-spliterators_empty_int_spliterator(REF, OUT) :- 
-	object_call(REF, emptyIntSpliterator, [], OUT).
-
-spliterators_empty_long_spliterator(REF, OUT) :- 
-	object_call(REF, emptyLongSpliterator, [], OUT).
-
-spliterators_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-spliterators_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-spliterators_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-spliterators_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-spliterators_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
 spliterators_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
 spliterators_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-spliterators_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+spliterators_empty_int_spliterator(REF, OUT) :- 
+	object_call(REF, emptyIntSpliterator, [], OUT).
 
-spliterators_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+spliterators_spliterator(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, spliterator, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+spliterators_spliterator(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, spliterator, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+spliterators_spliterator(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, spliterator, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+spliterators_spliterator(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, spliterator, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+spliterators_spliterator(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, spliterator, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+spliterators_spliterator_unknown_size(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, spliteratorUnknownSize, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+spliterators_spliterator_unknown_size(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, spliteratorUnknownSize, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+spliterators_spliterator_unknown_size(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, spliteratorUnknownSize, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+spliterators_spliterator_unknown_size(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, spliteratorUnknownSize, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+spliterators_iterator(REF, ARG0, OUT) :- 
+	object_call(REF, iterator, '.'(ARG0, []), OUT).
+
+spliterators_iterator(REF, ARG0, OUT) :- 
+	object_call(REF, iterator, '.'(ARG0, []), OUT).
+
+spliterators_iterator(REF, ARG0, OUT) :- 
+	object_call(REF, iterator, '.'(ARG0, []), OUT).
+
+spliterators_iterator(REF, ARG0, OUT) :- 
+	object_call(REF, iterator, '.'(ARG0, []), OUT).
+
+spliterators_spliterator(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, spliterator, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+spliterators_spliterator(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, spliterator, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+spliterators_spliterator(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, spliterator, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+spliterators_spliterator(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, spliterator, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+spliterators_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+spliterators_spliterator(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_call(REF, spliterator, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+
+spliterators_spliterator(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_call(REF, spliterator, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+
+spliterators_spliterator(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_call(REF, spliterator, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+
+spliterators_spliterator(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_call(REF, spliterator, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+
+spliterators_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+spliterators_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+spliterators_empty_long_spliterator(REF, OUT) :- 
+	object_call(REF, emptyLongSpliterator, [], OUT).
+
+spliterators_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+spliterators_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+spliterators_empty_double_spliterator(REF, OUT) :- 
+	object_call(REF, emptyDoubleSpliterator, [], OUT).
+
+spliterators_empty_spliterator(REF, OUT) :- 
+	object_call(REF, emptySpliterator, [], OUT).
+
+spliterators_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+spliterators_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 

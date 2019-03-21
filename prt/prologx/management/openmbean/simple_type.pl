@@ -22,62 +22,53 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-simple_type_void(OUT) :- 
+simple_type_VOID(OUT) :- 
 	object_get('javax.management.openmbean.SimpleType', void, OUT).
 
-simple_type_boolean(OUT) :- 
+simple_type_BOOLEAN(OUT) :- 
 	object_get('javax.management.openmbean.SimpleType', boolean, OUT).
 
-simple_type_character(OUT) :- 
+simple_type_CHARACTER(OUT) :- 
 	object_get('javax.management.openmbean.SimpleType', character, OUT).
 
-simple_type_byte(OUT) :- 
+simple_type_BYTE(OUT) :- 
 	object_get('javax.management.openmbean.SimpleType', byte, OUT).
 
-simple_type_short(OUT) :- 
+simple_type_SHORT(OUT) :- 
 	object_get('javax.management.openmbean.SimpleType', short, OUT).
 
-simple_type_integer(OUT) :- 
+simple_type_INTEGER(OUT) :- 
 	object_get('javax.management.openmbean.SimpleType', integer, OUT).
 
-simple_type_long(OUT) :- 
+simple_type_LONG(OUT) :- 
 	object_get('javax.management.openmbean.SimpleType', long, OUT).
 
-simple_type_float(OUT) :- 
+simple_type_FLOAT(OUT) :- 
 	object_get('javax.management.openmbean.SimpleType', float, OUT).
 
-simple_type_double(OUT) :- 
+simple_type_DOUBLE(OUT) :- 
 	object_get('javax.management.openmbean.SimpleType', double, OUT).
 
-simple_type_string(OUT) :- 
+simple_type_STRING(OUT) :- 
 	object_get('javax.management.openmbean.SimpleType', string, OUT).
 
-simple_type_bigdecimal(OUT) :- 
+simple_type_BIGDECIMAL(OUT) :- 
 	object_get('javax.management.openmbean.SimpleType', bigdecimal, OUT).
 
-simple_type_biginteger(OUT) :- 
+simple_type_BIGINTEGER(OUT) :- 
 	object_get('javax.management.openmbean.SimpleType', biginteger, OUT).
 
-simple_type_date(OUT) :- 
+simple_type_DATE(OUT) :- 
 	object_get('javax.management.openmbean.SimpleType', date, OUT).
 
-simple_type_objectname(OUT) :- 
+simple_type_OBJECTNAME(OUT) :- 
 	object_get('javax.management.openmbean.SimpleType', objectname, OUT).
 
-simple_type_allowed_classnames_list(OUT) :- 
+simple_type_ALLOWED_CLASSNAMES_LIST(OUT) :- 
 	object_get('javax.management.openmbean.SimpleType', allowed_classnames_list, OUT).
 
-simple_type_allowed_classnames(OUT) :- 
+simple_type_ALLOWED_CLASSNAMES(OUT) :- 
 	object_get('javax.management.openmbean.SimpleType', allowed_classnames, OUT).
-
-simple_type_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-simple_type_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-simple_type_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
 
 simple_type_read_resolve(REF, OUT) :- 
 	object_call(REF, readResolve, [], OUT).
@@ -85,33 +76,42 @@ simple_type_read_resolve(REF, OUT) :-
 simple_type_is_value(REF, ARG0, OUT) :- 
 	object_call(REF, isValue, '.'(ARG0, []), OUT).
 
-simple_type_is_array(REF, OUT) :- 
-	object_call(REF, isArray, [], OUT).
+simple_type_get_class_name(REF, OUT) :- 
+	object_call(REF, getClassName, [], OUT).
+
+simple_type_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
 simple_type_get_type_name(REF, OUT) :- 
 	object_call(REF, getTypeName, [], OUT).
 
-simple_type_get_class_name(REF, OUT) :- 
-	object_call(REF, getClassName, [], OUT).
+simple_type_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+simple_type_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+simple_type_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+simple_type_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 simple_type_get_description(REF, OUT) :- 
 	object_call(REF, getDescription, [], OUT).
 
-simple_type_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-simple_type_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-simple_type_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+simple_type_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 simple_type_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-simple_type_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+simple_type_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
-simple_type_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+simple_type_is_array(REF, OUT) :- 
+	object_call(REF, isArray, [], OUT).
+
+simple_type_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

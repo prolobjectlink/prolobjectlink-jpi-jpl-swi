@@ -25,29 +25,14 @@
 document_filter(OUT) :- 
 	object_new('javax.swing.text.DocumentFilter', [], OUT).
 
-document_filter_remove(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, remove, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-document_filter_replace(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
-	object_call(REF, replace, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
-
-document_filter_insert_string(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, insertString, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
-document_filter_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-document_filter_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-document_filter_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-document_filter_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+document_filter_insert_string(REF, ARG0, ARG1, ARG2, ARG3) :- 
+	object_call(REF, insertString, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).
 
 document_filter_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
+
+document_filter_replace(REF, ARG0, ARG1, ARG2, ARG3, ARG4) :- 
+	object_call(REF, replace, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), _).
 
 document_filter_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -55,9 +40,24 @@ document_filter_hash_code(REF, OUT) :-
 document_filter_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-document_filter_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+document_filter_remove(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, remove, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
 
-document_filter_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+document_filter_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+document_filter_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+document_filter_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+document_filter_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+document_filter_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+document_filter_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

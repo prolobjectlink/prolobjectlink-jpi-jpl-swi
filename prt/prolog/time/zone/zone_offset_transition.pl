@@ -22,35 +22,41 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-zone_offset_transition_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+zone_offset_transition_get_instant(REF, OUT) :- 
+	object_call(REF, getInstant, [], OUT).
 
 zone_offset_transition_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
+zone_offset_transition_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
 zone_offset_transition_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-zone_offset_transition_compare_to(REF, ARG0, OUT) :- 
-	object_call(REF, compareTo, '.'(ARG0, []), OUT).
+zone_offset_transition_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+zone_offset_transition_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
 zone_offset_transition_compare_to(REF, ARG0, OUT) :- 
 	object_call(REF, compareTo, '.'(ARG0, []), OUT).
 
-zone_offset_transition_of(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, of, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+zone_offset_transition_compare_to(REF, ARG0, OUT) :- 
+	object_call(REF, compareTo, '.'(ARG0, []), OUT).
+
+zone_offset_transition_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+zone_offset_transition_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 zone_offset_transition_to_epoch_second(REF, OUT) :- 
 	object_call(REF, toEpochSecond, [], OUT).
 
-zone_offset_transition_get_offset_after(REF, OUT) :- 
-	object_call(REF, getOffsetAfter, [], OUT).
-
-zone_offset_transition_get_offset_before(REF, OUT) :- 
-	object_call(REF, getOffsetBefore, [], OUT).
-
-zone_offset_transition_is_overlap(REF, OUT) :- 
-	object_call(REF, isOverlap, [], OUT).
+zone_offset_transition_get_duration(REF, OUT) :- 
+	object_call(REF, getDuration, [], OUT).
 
 zone_offset_transition_is_valid_offset(REF, ARG0, OUT) :- 
 	object_call(REF, isValidOffset, '.'(ARG0, []), OUT).
@@ -58,33 +64,27 @@ zone_offset_transition_is_valid_offset(REF, ARG0, OUT) :-
 zone_offset_transition_get_date_time_before(REF, OUT) :- 
 	object_call(REF, getDateTimeBefore, [], OUT).
 
-zone_offset_transition_get_date_time_after(REF, OUT) :- 
-	object_call(REF, getDateTimeAfter, [], OUT).
+zone_offset_transition_of(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, of, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
 zone_offset_transition_is_gap(REF, OUT) :- 
 	object_call(REF, isGap, [], OUT).
 
-zone_offset_transition_get_duration(REF, OUT) :- 
-	object_call(REF, getDuration, [], OUT).
+zone_offset_transition_get_offset_before(REF, OUT) :- 
+	object_call(REF, getOffsetBefore, [], OUT).
 
-zone_offset_transition_get_instant(REF, OUT) :- 
-	object_call(REF, getInstant, [], OUT).
+zone_offset_transition_get_offset_after(REF, OUT) :- 
+	object_call(REF, getOffsetAfter, [], OUT).
 
-zone_offset_transition_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+zone_offset_transition_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-zone_offset_transition_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+zone_offset_transition_get_date_time_after(REF, OUT) :- 
+	object_call(REF, getDateTimeAfter, [], OUT).
 
-zone_offset_transition_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+zone_offset_transition_is_overlap(REF, OUT) :- 
+	object_call(REF, isOverlap, [], OUT).
 
-zone_offset_transition_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-zone_offset_transition_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-zone_offset_transition_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+zone_offset_transition_notify(REF) :- 
+	object_call(REF, notify, [], _).
 

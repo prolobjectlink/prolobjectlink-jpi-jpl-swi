@@ -22,102 +22,102 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-parser_adapter(OUT) :- 
-	object_new('org.xml.sax.helpers.ParserAdapter', [], OUT).
-
 parser_adapter(ARG0, OUT) :- 
 	object_new('org.xml.sax.helpers.ParserAdapter', '.'(ARG0, []), OUT).
 
-parser_adapter_set_property(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, setProperty, '.'(ARG0, '.'(ARG1, [])), OUT).
+parser_adapter(OUT) :- 
+	object_new('org.xml.sax.helpers.ParserAdapter', [], OUT).
 
-parser_adapter_get_property(REF, ARG0, OUT) :- 
-	object_call(REF, getProperty, '.'(ARG0, []), OUT).
+parser_adapter_set_error_handler(REF, ARG0) :- 
+	object_call(REF, setErrorHandler, '.'(ARG0, []), _).
 
-parser_adapter_parse(REF, ARG0, OUT) :- 
-	object_call(REF, parse, '.'(ARG0, []), OUT).
-
-parser_adapter_parse(REF, ARG0, OUT) :- 
-	object_call(REF, parse, '.'(ARG0, []), OUT).
-
-parser_adapter_get_content_handler(REF, OUT) :- 
-	object_call(REF, getContentHandler, [], OUT).
-
-parser_adapter_get_d_t_d_handler(REF, OUT) :- 
-	object_call(REF, getDTDHandler, [], OUT).
-
-parser_adapter_get_entity_resolver(REF, OUT) :- 
-	object_call(REF, getEntityResolver, [], OUT).
-
-parser_adapter_get_error_handler(REF, OUT) :- 
-	object_call(REF, getErrorHandler, [], OUT).
-
-parser_adapter_set_content_handler(REF, ARG0, OUT) :- 
-	object_call(REF, setContentHandler, '.'(ARG0, []), OUT).
-
-parser_adapter_set_d_t_d_handler(REF, ARG0, OUT) :- 
-	object_call(REF, setDTDHandler, '.'(ARG0, []), OUT).
-
-parser_adapter_set_feature(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, setFeature, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-parser_adapter_characters(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, characters, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-parser_adapter_end_document(REF, OUT) :- 
-	object_call(REF, endDocument, [], OUT).
-
-parser_adapter_end_element(REF, ARG0, OUT) :- 
-	object_call(REF, endElement, '.'(ARG0, []), OUT).
-
-parser_adapter_ignorable_whitespace(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, ignorableWhitespace, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-parser_adapter_processing_instruction(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, processingInstruction, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-parser_adapter_set_document_locator(REF, ARG0, OUT) :- 
-	object_call(REF, setDocumentLocator, '.'(ARG0, []), OUT).
-
-parser_adapter_start_document(REF, OUT) :- 
-	object_call(REF, startDocument, [], OUT).
-
-parser_adapter_start_element(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, startElement, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-parser_adapter_set_entity_resolver(REF, ARG0, OUT) :- 
-	object_call(REF, setEntityResolver, '.'(ARG0, []), OUT).
-
-parser_adapter_set_error_handler(REF, ARG0, OUT) :- 
-	object_call(REF, setErrorHandler, '.'(ARG0, []), OUT).
-
-parser_adapter_get_feature(REF, ARG0, OUT) :- 
-	object_call(REF, getFeature, '.'(ARG0, []), OUT).
-
-parser_adapter_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-parser_adapter_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-parser_adapter_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-parser_adapter_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-parser_adapter_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-parser_adapter_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+parser_adapter_set_document_locator(REF, ARG0) :- 
+	object_call(REF, setDocumentLocator, '.'(ARG0, []), _).
 
 parser_adapter_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-parser_adapter_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+parser_adapter_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-parser_adapter_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+parser_adapter_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+parser_adapter_processing_instruction(REF, ARG0, ARG1) :- 
+	object_call(REF, processingInstruction, '.'(ARG0, '.'(ARG1, [])), _).
+
+parser_adapter_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+parser_adapter_set_property(REF, ARG0, ARG1) :- 
+	object_call(REF, setProperty, '.'(ARG0, '.'(ARG1, [])), _).
+
+parser_adapter_get_d_t_d_handler(REF, OUT) :- 
+	object_call(REF, getDTDHandler, [], OUT).
+
+parser_adapter_get_content_handler(REF, OUT) :- 
+	object_call(REF, getContentHandler, [], OUT).
+
+parser_adapter_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+parser_adapter_set_content_handler(REF, ARG0) :- 
+	object_call(REF, setContentHandler, '.'(ARG0, []), _).
+
+parser_adapter_set_d_t_d_handler(REF, ARG0) :- 
+	object_call(REF, setDTDHandler, '.'(ARG0, []), _).
+
+parser_adapter_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+parser_adapter_start_document(REF) :- 
+	object_call(REF, startDocument, [], _).
+
+parser_adapter_ignorable_whitespace(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, ignorableWhitespace, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+parser_adapter_end_element(REF, ARG0) :- 
+	object_call(REF, endElement, '.'(ARG0, []), _).
+
+parser_adapter_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+parser_adapter_parse(REF, ARG0) :- 
+	object_call(REF, parse, '.'(ARG0, []), _).
+
+parser_adapter_parse(REF, ARG0) :- 
+	object_call(REF, parse, '.'(ARG0, []), _).
+
+parser_adapter_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+parser_adapter_start_element(REF, ARG0, ARG1) :- 
+	object_call(REF, startElement, '.'(ARG0, '.'(ARG1, [])), _).
+
+parser_adapter_set_entity_resolver(REF, ARG0) :- 
+	object_call(REF, setEntityResolver, '.'(ARG0, []), _).
+
+parser_adapter_get_feature(REF, ARG0, OUT) :- 
+	object_call(REF, getFeature, '.'(ARG0, []), OUT).
+
+parser_adapter_get_entity_resolver(REF, OUT) :- 
+	object_call(REF, getEntityResolver, [], OUT).
+
+parser_adapter_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+parser_adapter_get_error_handler(REF, OUT) :- 
+	object_call(REF, getErrorHandler, [], OUT).
+
+parser_adapter_characters(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, characters, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+parser_adapter_get_property(REF, ARG0, OUT) :- 
+	object_call(REF, getProperty, '.'(ARG0, []), OUT).
+
+parser_adapter_set_feature(REF, ARG0, ARG1) :- 
+	object_call(REF, setFeature, '.'(ARG0, '.'(ARG1, [])), _).
+
+parser_adapter_end_document(REF) :- 
+	object_call(REF, endDocument, [], _).
 

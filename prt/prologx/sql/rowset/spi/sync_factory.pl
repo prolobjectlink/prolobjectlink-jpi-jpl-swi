@@ -22,56 +22,20 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-sync_factory_rowset_sync_provider(OUT) :- 
+sync_factory_ROWSET_SYNC_PROVIDER(OUT) :- 
 	object_get('javax.sql.rowset.spi.SyncFactory', rowset_sync_provider, OUT).
 
-sync_factory_rowset_sync_vendor(OUT) :- 
+sync_factory_ROWSET_SYNC_VENDOR(OUT) :- 
 	object_get('javax.sql.rowset.spi.SyncFactory', rowset_sync_vendor, OUT).
 
-sync_factory_rowset_sync_provider_version(OUT) :- 
+sync_factory_ROWSET_SYNC_PROVIDER_VERSION(OUT) :- 
 	object_get('javax.sql.rowset.spi.SyncFactory', rowset_sync_provider_version, OUT).
 
-sync_factory_get_instance(REF, ARG0, OUT) :- 
-	object_call(REF, getInstance, '.'(ARG0, []), OUT).
+sync_factory_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-sync_factory_get_logger(REF, OUT) :- 
-	object_call(REF, getLogger, [], OUT).
-
-sync_factory_get_registered_providers(REF, OUT) :- 
-	object_call(REF, getRegisteredProviders, [], OUT).
-
-sync_factory_get_sync_factory(REF, OUT) :- 
-	object_call(REF, getSyncFactory, [], OUT).
-
-sync_factory_set_j_n_d_i_context(REF, ARG0, OUT) :- 
-	object_call(REF, setJNDIContext, '.'(ARG0, []), OUT).
-
-sync_factory_set_logger(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, setLogger, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-sync_factory_set_logger(REF, ARG0, OUT) :- 
-	object_call(REF, setLogger, '.'(ARG0, []), OUT).
-
-sync_factory_unregister_provider(REF, ARG0, OUT) :- 
-	object_call(REF, unregisterProvider, '.'(ARG0, []), OUT).
-
-sync_factory_register_provider(REF, ARG0, OUT) :- 
-	object_call(REF, registerProvider, '.'(ARG0, []), OUT).
-
-sync_factory_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-sync_factory_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-sync_factory_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-sync_factory_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-sync_factory_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+sync_factory_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 sync_factory_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -79,9 +43,45 @@ sync_factory_hash_code(REF, OUT) :-
 sync_factory_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-sync_factory_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+sync_factory_get_sync_factory(REF, OUT) :- 
+	object_call(REF, getSyncFactory, [], OUT).
 
-sync_factory_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+sync_factory_register_provider(REF, ARG0) :- 
+	object_call(REF, registerProvider, '.'(ARG0, []), _).
+
+sync_factory_get_registered_providers(REF, OUT) :- 
+	object_call(REF, getRegisteredProviders, [], OUT).
+
+sync_factory_get_logger(REF, OUT) :- 
+	object_call(REF, getLogger, [], OUT).
+
+sync_factory_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+sync_factory_get_instance(REF, ARG0, OUT) :- 
+	object_call(REF, getInstance, '.'(ARG0, []), OUT).
+
+sync_factory_unregister_provider(REF, ARG0) :- 
+	object_call(REF, unregisterProvider, '.'(ARG0, []), _).
+
+sync_factory_set_j_n_d_i_context(REF, ARG0) :- 
+	object_call(REF, setJNDIContext, '.'(ARG0, []), _).
+
+sync_factory_set_logger(REF, ARG0) :- 
+	object_call(REF, setLogger, '.'(ARG0, []), _).
+
+sync_factory_set_logger(REF, ARG0, ARG1) :- 
+	object_call(REF, setLogger, '.'(ARG0, '.'(ARG1, [])), _).
+
+sync_factory_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+sync_factory_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+sync_factory_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+sync_factory_notify(REF) :- 
+	object_call(REF, notify, [], _).
 

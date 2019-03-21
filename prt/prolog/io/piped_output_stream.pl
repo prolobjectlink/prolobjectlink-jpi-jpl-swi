@@ -22,54 +22,54 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-piped_output_stream(ARG0, OUT) :- 
-	object_new('java.io.PipedOutputStream', '.'(ARG0, []), OUT).
-
 piped_output_stream(OUT) :- 
 	object_new('java.io.PipedOutputStream', [], OUT).
 
-piped_output_stream_write(REF, ARG0, OUT) :- 
-	object_call(REF, write, '.'(ARG0, []), OUT).
+piped_output_stream(ARG0, OUT) :- 
+	object_new('java.io.PipedOutputStream', '.'(ARG0, []), OUT).
 
-piped_output_stream_write(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, write, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+piped_output_stream_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-piped_output_stream_connect(REF, ARG0, OUT) :- 
-	object_call(REF, connect, '.'(ARG0, []), OUT).
+piped_output_stream_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-piped_output_stream_close(REF, OUT) :- 
-	object_call(REF, close, [], OUT).
+piped_output_stream_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-piped_output_stream_flush(REF, OUT) :- 
-	object_call(REF, flush, [], OUT).
+piped_output_stream_write(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, write, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
 
-piped_output_stream_write(REF, ARG0, OUT) :- 
-	object_call(REF, write, '.'(ARG0, []), OUT).
+piped_output_stream_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-piped_output_stream_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+piped_output_stream_flush(REF) :- 
+	object_call(REF, flush, [], _).
 
-piped_output_stream_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+piped_output_stream_connect(REF, ARG0) :- 
+	object_call(REF, connect, '.'(ARG0, []), _).
 
-piped_output_stream_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+piped_output_stream_write(REF, ARG0) :- 
+	object_call(REF, write, '.'(ARG0, []), _).
 
-piped_output_stream_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+piped_output_stream_write(REF, ARG0) :- 
+	object_call(REF, write, '.'(ARG0, []), _).
 
 piped_output_stream_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-piped_output_stream_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
 piped_output_stream_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-piped_output_stream_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+piped_output_stream_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
-piped_output_stream_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+piped_output_stream_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+piped_output_stream_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+piped_output_stream_close(REF) :- 
+	object_call(REF, close, [], _).
 

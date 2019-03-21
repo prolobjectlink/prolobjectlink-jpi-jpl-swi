@@ -28,45 +28,45 @@ short_lookup_table(ARG0, ARG1, OUT) :-
 short_lookup_table(ARG0, ARG1, OUT) :- 
 	object_new('java.awt.image.ShortLookupTable', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-short_lookup_table_get_table(REF, OUT) :- 
-	object_call(REF, getTable, [], OUT).
-
-short_lookup_table_lookup_pixel(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, lookupPixel, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-short_lookup_table_lookup_pixel(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, lookupPixel, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-short_lookup_table_get_offset(REF, OUT) :- 
-	object_call(REF, getOffset, [], OUT).
-
-short_lookup_table_get_num_components(REF, OUT) :- 
-	object_call(REF, getNumComponents, [], OUT).
-
-short_lookup_table_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-short_lookup_table_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-short_lookup_table_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-short_lookup_table_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-short_lookup_table_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-short_lookup_table_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+short_lookup_table_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 short_lookup_table_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-short_lookup_table_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+short_lookup_table_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-short_lookup_table_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+short_lookup_table_get_num_components(REF, OUT) :- 
+	object_call(REF, getNumComponents, [], OUT).
+
+short_lookup_table_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+short_lookup_table_lookup_pixel(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, lookupPixel, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+short_lookup_table_lookup_pixel(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, lookupPixel, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+short_lookup_table_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+short_lookup_table_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+short_lookup_table_get_offset(REF, OUT) :- 
+	object_call(REF, getOffset, [], OUT).
+
+short_lookup_table_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+short_lookup_table_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+short_lookup_table_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+short_lookup_table_get_table(REF, OUT) :- 
+	object_call(REF, getTable, [], OUT).
 

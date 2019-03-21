@@ -22,19 +22,19 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-glyph_metrics_standard(OUT) :- 
+glyph_metrics_STANDARD(OUT) :- 
 	object_get('java.awt.font.GlyphMetrics', standard, OUT).
 
-glyph_metrics_ligature(OUT) :- 
+glyph_metrics_LIGATURE(OUT) :- 
 	object_get('java.awt.font.GlyphMetrics', ligature, OUT).
 
-glyph_metrics_combining(OUT) :- 
+glyph_metrics_COMBINING(OUT) :- 
 	object_get('java.awt.font.GlyphMetrics', combining, OUT).
 
-glyph_metrics_component(OUT) :- 
+glyph_metrics_COMPONENT(OUT) :- 
 	object_get('java.awt.font.GlyphMetrics', component, OUT).
 
-glyph_metrics_whitespace(OUT) :- 
+glyph_metrics_WHITESPACE(OUT) :- 
 	object_get('java.awt.font.GlyphMetrics', whitespace, OUT).
 
 glyph_metrics(ARG0, ARG1, ARG2, OUT) :- 
@@ -43,23 +43,41 @@ glyph_metrics(ARG0, ARG1, ARG2, OUT) :-
 glyph_metrics(ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
 	object_new('java.awt.font.GlyphMetrics', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
 
-glyph_metrics_get_type(REF, OUT) :- 
-	object_call(REF, getType, [], OUT).
+glyph_metrics_is_ligature(REF, OUT) :- 
+	object_call(REF, isLigature, [], OUT).
 
-glyph_metrics_is_whitespace(REF, OUT) :- 
-	object_call(REF, isWhitespace, [], OUT).
-
-glyph_metrics_get_bounds2_d(REF, OUT) :- 
-	object_call(REF, getBounds2D, [], OUT).
-
-glyph_metrics_get_advance(REF, OUT) :- 
-	object_call(REF, getAdvance, [], OUT).
+glyph_metrics_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
 glyph_metrics_get_advance_x(REF, OUT) :- 
 	object_call(REF, getAdvanceX, [], OUT).
 
 glyph_metrics_get_advance_y(REF, OUT) :- 
 	object_call(REF, getAdvanceY, [], OUT).
+
+glyph_metrics_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+glyph_metrics_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+glyph_metrics_get_type(REF, OUT) :- 
+	object_call(REF, getType, [], OUT).
+
+glyph_metrics_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+glyph_metrics_is_standard(REF, OUT) :- 
+	object_call(REF, isStandard, [], OUT).
+
+glyph_metrics_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+glyph_metrics_get_advance(REF, OUT) :- 
+	object_call(REF, getAdvance, [], OUT).
+
+glyph_metrics_get_bounds2_d(REF, OUT) :- 
+	object_call(REF, getBounds2D, [], OUT).
 
 glyph_metrics_get_l_s_b(REF, OUT) :- 
 	object_call(REF, getLSB, [], OUT).
@@ -70,39 +88,21 @@ glyph_metrics_get_r_s_b(REF, OUT) :-
 glyph_metrics_is_combining(REF, OUT) :- 
 	object_call(REF, isCombining, [], OUT).
 
-glyph_metrics_is_component(REF, OUT) :- 
-	object_call(REF, isComponent, [], OUT).
+glyph_metrics_is_whitespace(REF, OUT) :- 
+	object_call(REF, isWhitespace, [], OUT).
 
-glyph_metrics_is_ligature(REF, OUT) :- 
-	object_call(REF, isLigature, [], OUT).
-
-glyph_metrics_is_standard(REF, OUT) :- 
-	object_call(REF, isStandard, [], OUT).
-
-glyph_metrics_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-glyph_metrics_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-glyph_metrics_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+glyph_metrics_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 glyph_metrics_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-glyph_metrics_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+glyph_metrics_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+glyph_metrics_is_component(REF, OUT) :- 
+	object_call(REF, isComponent, [], OUT).
 
 glyph_metrics_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
-
-glyph_metrics_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-glyph_metrics_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-glyph_metrics_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

@@ -25,26 +25,20 @@
 lease(ARG0, ARG1, OUT) :- 
 	object_new('java.rmi.dgc.Lease', '.'(ARG0, '.'(ARG1, [])), OUT).
 
+lease_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+lease_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
 lease_get_value(REF, OUT) :- 
 	object_call(REF, getValue, [], OUT).
 
 lease_get_v_m_i_d(REF, OUT) :- 
 	object_call(REF, getVMID, [], OUT).
 
-lease_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-lease_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-lease_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
 lease_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-lease_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
 
 lease_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -52,9 +46,15 @@ lease_hash_code(REF, OUT) :-
 lease_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-lease_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+lease_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-lease_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+lease_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+lease_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+lease_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

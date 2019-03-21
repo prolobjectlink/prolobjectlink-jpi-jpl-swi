@@ -28,42 +28,42 @@ soft_reference(ARG0, OUT) :-
 soft_reference(ARG0, ARG1, OUT) :- 
 	object_new('java.lang.ref.SoftReference', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-soft_reference_get(REF, OUT) :- 
-	object_call(REF, get, [], OUT).
-
-soft_reference_clear(REF, OUT) :- 
-	object_call(REF, clear, [], OUT).
-
 soft_reference_enqueue(REF, OUT) :- 
 	object_call(REF, enqueue, [], OUT).
 
-soft_reference_is_enqueued(REF, OUT) :- 
-	object_call(REF, isEnqueued, [], OUT).
+soft_reference_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-soft_reference_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-soft_reference_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-soft_reference_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-soft_reference_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+soft_reference_get(REF, OUT) :- 
+	object_call(REF, get, [], OUT).
 
 soft_reference_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-soft_reference_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+soft_reference_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+soft_reference_clear(REF) :- 
+	object_call(REF, clear, [], _).
 
 soft_reference_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-soft_reference_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+soft_reference_is_enqueued(REF, OUT) :- 
+	object_call(REF, isEnqueued, [], OUT).
 
-soft_reference_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+soft_reference_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+soft_reference_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+soft_reference_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+soft_reference_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+soft_reference_notify(REF) :- 
+	object_call(REF, notify, [], _).
 

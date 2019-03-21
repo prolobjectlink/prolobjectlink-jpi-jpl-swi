@@ -28,66 +28,66 @@ stack_overflow_error(OUT) :-
 stack_overflow_error(ARG0, OUT) :- 
 	object_new('java.lang.StackOverflowError', '.'(ARG0, []), OUT).
 
-stack_overflow_error_print_stack_trace(REF, OUT) :- 
-	object_call(REF, printStackTrace, [], OUT).
-
-stack_overflow_error_print_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, printStackTrace, '.'(ARG0, []), OUT).
-
-stack_overflow_error_print_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, printStackTrace, '.'(ARG0, []), OUT).
-
-stack_overflow_error_fill_in_stack_trace(REF, OUT) :- 
-	object_call(REF, fillInStackTrace, [], OUT).
-
-stack_overflow_error_get_cause(REF, OUT) :- 
-	object_call(REF, getCause, [], OUT).
-
-stack_overflow_error_init_cause(REF, ARG0, OUT) :- 
-	object_call(REF, initCause, '.'(ARG0, []), OUT).
-
-stack_overflow_error_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-stack_overflow_error_add_suppressed(REF, ARG0, OUT) :- 
-	object_call(REF, addSuppressed, '.'(ARG0, []), OUT).
-
-stack_overflow_error_get_localized_message(REF, OUT) :- 
-	object_call(REF, getLocalizedMessage, [], OUT).
-
-stack_overflow_error_get_message(REF, OUT) :- 
-	object_call(REF, getMessage, [], OUT).
+stack_overflow_error_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 stack_overflow_error_get_stack_trace(REF, OUT) :- 
 	object_call(REF, getStackTrace, [], OUT).
 
-stack_overflow_error_get_suppressed(REF, OUT) :- 
-	object_call(REF, getSuppressed, [], OUT).
+stack_overflow_error_get_message(REF, OUT) :- 
+	object_call(REF, getMessage, [], OUT).
 
-stack_overflow_error_set_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, setStackTrace, '.'(ARG0, []), OUT).
+stack_overflow_error_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-stack_overflow_error_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+stack_overflow_error_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-stack_overflow_error_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-stack_overflow_error_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-stack_overflow_error_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+stack_overflow_error_init_cause(REF, ARG0, OUT) :- 
+	object_call(REF, initCause, '.'(ARG0, []), OUT).
 
 stack_overflow_error_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+stack_overflow_error_get_cause(REF, OUT) :- 
+	object_call(REF, getCause, [], OUT).
+
+stack_overflow_error_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+stack_overflow_error_get_suppressed(REF, OUT) :- 
+	object_call(REF, getSuppressed, [], OUT).
+
 stack_overflow_error_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-stack_overflow_error_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+stack_overflow_error_add_suppressed(REF, ARG0) :- 
+	object_call(REF, addSuppressed, '.'(ARG0, []), _).
 
-stack_overflow_error_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+stack_overflow_error_get_localized_message(REF, OUT) :- 
+	object_call(REF, getLocalizedMessage, [], OUT).
+
+stack_overflow_error_set_stack_trace(REF, ARG0) :- 
+	object_call(REF, setStackTrace, '.'(ARG0, []), _).
+
+stack_overflow_error_fill_in_stack_trace(REF, OUT) :- 
+	object_call(REF, fillInStackTrace, [], OUT).
+
+stack_overflow_error_print_stack_trace(REF) :- 
+	object_call(REF, printStackTrace, [], _).
+
+stack_overflow_error_print_stack_trace(REF, ARG0) :- 
+	object_call(REF, printStackTrace, '.'(ARG0, []), _).
+
+stack_overflow_error_print_stack_trace(REF, ARG0) :- 
+	object_call(REF, printStackTrace, '.'(ARG0, []), _).
+
+stack_overflow_error_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+stack_overflow_error_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+stack_overflow_error_notify(REF) :- 
+	object_call(REF, notify, [], _).
 

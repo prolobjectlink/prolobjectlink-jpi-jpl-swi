@@ -22,26 +22,23 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-copy_on_write_array_set(OUT) :- 
-	object_new('java.util.concurrent.CopyOnWriteArraySet', [], OUT).
-
 copy_on_write_array_set(ARG0, OUT) :- 
 	object_new('java.util.concurrent.CopyOnWriteArraySet', '.'(ARG0, []), OUT).
 
-copy_on_write_array_set_add(REF, ARG0, OUT) :- 
-	object_call(REF, add, '.'(ARG0, []), OUT).
+copy_on_write_array_set(OUT) :- 
+	object_new('java.util.concurrent.CopyOnWriteArraySet', [], OUT).
 
-copy_on_write_array_set_remove(REF, ARG0, OUT) :- 
-	object_call(REF, remove, '.'(ARG0, []), OUT).
+copy_on_write_array_set_to_array(REF, OUT) :- 
+	object_call(REF, toArray, [], OUT).
 
-copy_on_write_array_set_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+copy_on_write_array_set_contains_all(REF, ARG0, OUT) :- 
+	object_call(REF, containsAll, '.'(ARG0, []), OUT).
 
-copy_on_write_array_set_clear(REF, OUT) :- 
-	object_call(REF, clear, [], OUT).
+copy_on_write_array_set_size(REF, OUT) :- 
+	object_call(REF, size, [], OUT).
 
-copy_on_write_array_set_contains(REF, ARG0, OUT) :- 
-	object_call(REF, contains, '.'(ARG0, []), OUT).
+copy_on_write_array_set_retain_all(REF, ARG0, OUT) :- 
+	object_call(REF, retainAll, '.'(ARG0, []), OUT).
 
 copy_on_write_array_set_is_empty(REF, OUT) :- 
 	object_call(REF, isEmpty, [], OUT).
@@ -49,63 +46,66 @@ copy_on_write_array_set_is_empty(REF, OUT) :-
 copy_on_write_array_set_iterator(REF, OUT) :- 
 	object_call(REF, iterator, [], OUT).
 
-copy_on_write_array_set_size(REF, OUT) :- 
-	object_call(REF, size, [], OUT).
-
-copy_on_write_array_set_to_array(REF, ARG0, OUT) :- 
-	object_call(REF, toArray, '.'(ARG0, []), OUT).
-
-copy_on_write_array_set_to_array(REF, OUT) :- 
-	object_call(REF, toArray, [], OUT).
-
 copy_on_write_array_set_spliterator(REF, OUT) :- 
 	object_call(REF, spliterator, [], OUT).
 
-copy_on_write_array_set_add_all(REF, ARG0, OUT) :- 
-	object_call(REF, addAll, '.'(ARG0, []), OUT).
-
-copy_on_write_array_set_for_each(REF, ARG0, OUT) :- 
-	object_call(REF, forEach, '.'(ARG0, []), OUT).
-
-copy_on_write_array_set_contains_all(REF, ARG0, OUT) :- 
-	object_call(REF, containsAll, '.'(ARG0, []), OUT).
-
-copy_on_write_array_set_remove_all(REF, ARG0, OUT) :- 
-	object_call(REF, removeAll, '.'(ARG0, []), OUT).
-
-copy_on_write_array_set_remove_if(REF, ARG0, OUT) :- 
-	object_call(REF, removeIf, '.'(ARG0, []), OUT).
-
-copy_on_write_array_set_retain_all(REF, ARG0, OUT) :- 
-	object_call(REF, retainAll, '.'(ARG0, []), OUT).
+copy_on_write_array_set_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 copy_on_write_array_set_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+copy_on_write_array_set_add(REF, ARG0, OUT) :- 
+	object_call(REF, add, '.'(ARG0, []), OUT).
+
+copy_on_write_array_set_remove_all(REF, ARG0, OUT) :- 
+	object_call(REF, removeAll, '.'(ARG0, []), OUT).
+
 copy_on_write_array_set_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
-
-copy_on_write_array_set_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-copy_on_write_array_set_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-copy_on_write_array_set_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-copy_on_write_array_set_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-copy_on_write_array_set_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-copy_on_write_array_set_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 
 copy_on_write_array_set_stream(REF, OUT) :- 
 	object_call(REF, stream, [], OUT).
 
+copy_on_write_array_set_to_array(REF, ARG0, OUT) :- 
+	object_call(REF, toArray, '.'(ARG0, []), OUT).
+
+copy_on_write_array_set_contains(REF, ARG0, OUT) :- 
+	object_call(REF, contains, '.'(ARG0, []), OUT).
+
+copy_on_write_array_set_add_all(REF, ARG0, OUT) :- 
+	object_call(REF, addAll, '.'(ARG0, []), OUT).
+
+copy_on_write_array_set_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+copy_on_write_array_set_clear(REF) :- 
+	object_call(REF, clear, [], _).
+
+copy_on_write_array_set_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+copy_on_write_array_set_for_each(REF, ARG0) :- 
+	object_call(REF, forEach, '.'(ARG0, []), _).
+
+copy_on_write_array_set_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+copy_on_write_array_set_remove_if(REF, ARG0, OUT) :- 
+	object_call(REF, removeIf, '.'(ARG0, []), OUT).
+
+copy_on_write_array_set_remove(REF, ARG0, OUT) :- 
+	object_call(REF, remove, '.'(ARG0, []), OUT).
+
 copy_on_write_array_set_parallel_stream(REF, OUT) :- 
 	object_call(REF, parallelStream, [], OUT).
+
+copy_on_write_array_set_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+copy_on_write_array_set_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
+
+copy_on_write_array_set_wait(REF) :- 
+	object_call(REF, wait, [], _).
 

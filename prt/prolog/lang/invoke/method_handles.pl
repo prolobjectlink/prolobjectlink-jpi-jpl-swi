@@ -22,8 +22,65 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
+method_handles_reflect_as(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, reflectAs, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+method_handles_guard_with_test(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, guardWithTest, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+method_handles_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+method_handles_filter_return_value(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, filterReturnValue, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+method_handles_array_element_getter(REF, ARG0, OUT) :- 
+	object_call(REF, arrayElementGetter, '.'(ARG0, []), OUT).
+
+method_handles_invoker(REF, ARG0, OUT) :- 
+	object_call(REF, invoker, '.'(ARG0, []), OUT).
+
+method_handles_array_element_setter(REF, ARG0, OUT) :- 
+	object_call(REF, arrayElementSetter, '.'(ARG0, []), OUT).
+
+method_handles_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+method_handles_permute_arguments(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, permuteArguments, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+method_handles_catch_exception(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, catchException, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+method_handles_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+method_handles_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
+
 method_handles_throw_exception(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, throwException, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+method_handles_insert_arguments(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, insertArguments, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+method_handles_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+method_handles_drop_arguments(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, dropArguments, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+method_handles_drop_arguments(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, dropArguments, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+method_handles_fold_arguments(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, foldArguments, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+method_handles_collect_arguments(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, collectArguments, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+method_handles_lookup(REF, OUT) :- 
+	object_call(REF, lookup, [], OUT).
 
 method_handles_identity(REF, ARG0, OUT) :- 
 	object_call(REF, identity, '.'(ARG0, []), OUT).
@@ -31,87 +88,30 @@ method_handles_identity(REF, ARG0, OUT) :-
 method_handles_spread_invoker(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, spreadInvoker, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-method_handles_permute_arguments(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, permuteArguments, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-method_handles_exact_invoker(REF, ARG0, OUT) :- 
-	object_call(REF, exactInvoker, '.'(ARG0, []), OUT).
-
-method_handles_fold_arguments(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, foldArguments, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-method_handles_lookup(REF, OUT) :- 
-	object_call(REF, lookup, [], OUT).
-
-method_handles_array_element_getter(REF, ARG0, OUT) :- 
-	object_call(REF, arrayElementGetter, '.'(ARG0, []), OUT).
-
-method_handles_collect_arguments(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, collectArguments, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
 method_handles_constant(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, constant, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-method_handles_drop_arguments(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, dropArguments, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-method_handles_drop_arguments(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, dropArguments, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-method_handles_guard_with_test(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, guardWithTest, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-method_handles_invoker(REF, ARG0, OUT) :- 
-	object_call(REF, invoker, '.'(ARG0, []), OUT).
-
-method_handles_reflect_as(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, reflectAs, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-method_handles_array_element_setter(REF, ARG0, OUT) :- 
-	object_call(REF, arrayElementSetter, '.'(ARG0, []), OUT).
-
-method_handles_catch_exception(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, catchException, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-method_handles_explicit_cast_arguments(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, explicitCastArguments, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 method_handles_filter_arguments(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, filterArguments, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-method_handles_filter_return_value(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, filterReturnValue, '.'(ARG0, '.'(ARG1, [])), OUT).
+method_handles_explicit_cast_arguments(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, explicitCastArguments, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-method_handles_insert_arguments(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, insertArguments, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+method_handles_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 method_handles_public_lookup(REF, OUT) :- 
 	object_call(REF, publicLookup, [], OUT).
 
-method_handles_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+method_handles_exact_invoker(REF, ARG0, OUT) :- 
+	object_call(REF, exactInvoker, '.'(ARG0, []), OUT).
 
-method_handles_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+method_handles_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-method_handles_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+method_handles_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-method_handles_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-method_handles_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-method_handles_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-method_handles_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-method_handles_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-method_handles_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+method_handles_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 

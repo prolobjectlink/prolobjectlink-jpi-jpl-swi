@@ -22,7 +22,7 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-meta_message_meta(OUT) :- 
+meta_message_META(OUT) :- 
 	object_get('javax.sound.midi.MetaMessage', meta, OUT).
 
 meta_message(ARG0, ARG1, ARG2, OUT) :- 
@@ -31,51 +31,51 @@ meta_message(ARG0, ARG1, ARG2, OUT) :-
 meta_message(OUT) :- 
 	object_new('javax.sound.midi.MetaMessage', [], OUT).
 
-meta_message_clone(REF, OUT) :- 
-	object_call(REF, clone, [], OUT).
+meta_message_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-meta_message_get_type(REF, OUT) :- 
-	object_call(REF, getType, [], OUT).
+meta_message_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-meta_message_get_data(REF, OUT) :- 
-	object_call(REF, getData, [], OUT).
-
-meta_message_set_message(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, setMessage, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+meta_message_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 meta_message_get_length(REF, OUT) :- 
 	object_call(REF, getLength, [], OUT).
 
+meta_message_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+meta_message_get_data(REF, OUT) :- 
+	object_call(REF, getData, [], OUT).
+
 meta_message_get_message(REF, OUT) :- 
 	object_call(REF, getMessage, [], OUT).
 
-meta_message_get_status(REF, OUT) :- 
-	object_call(REF, getStatus, [], OUT).
-
-meta_message_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-meta_message_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-meta_message_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-meta_message_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-meta_message_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-meta_message_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+meta_message_get_type(REF, OUT) :- 
+	object_call(REF, getType, [], OUT).
 
 meta_message_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-meta_message_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+meta_message_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
-meta_message_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+meta_message_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+meta_message_set_message(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, setMessage, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+meta_message_clone(REF, OUT) :- 
+	object_call(REF, clone, [], OUT).
+
+meta_message_get_status(REF, OUT) :- 
+	object_call(REF, getStatus, [], OUT).
+
+meta_message_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+meta_message_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

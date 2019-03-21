@@ -22,196 +22,196 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-event_shift_mask(OUT) :- 
+event_SHIFT_MASK(OUT) :- 
 	object_get('java.awt.Event', shift_mask, OUT).
 
-event_ctrl_mask(OUT) :- 
+event_CTRL_MASK(OUT) :- 
 	object_get('java.awt.Event', ctrl_mask, OUT).
 
-event_meta_mask(OUT) :- 
+event_META_MASK(OUT) :- 
 	object_get('java.awt.Event', meta_mask, OUT).
 
-event_alt_mask(OUT) :- 
+event_ALT_MASK(OUT) :- 
 	object_get('java.awt.Event', alt_mask, OUT).
 
-event_home(OUT) :- 
+event_HOME(OUT) :- 
 	object_get('java.awt.Event', home, OUT).
 
-event_end(OUT) :- 
+event_END(OUT) :- 
 	object_get('java.awt.Event', end, OUT).
 
-event_pgup(OUT) :- 
+event_PGUP(OUT) :- 
 	object_get('java.awt.Event', pgup, OUT).
 
-event_pgdn(OUT) :- 
+event_PGDN(OUT) :- 
 	object_get('java.awt.Event', pgdn, OUT).
 
-event_up(OUT) :- 
+event_UP(OUT) :- 
 	object_get('java.awt.Event', up, OUT).
 
-event_down(OUT) :- 
+event_DOWN(OUT) :- 
 	object_get('java.awt.Event', down, OUT).
 
-event_left(OUT) :- 
+event_LEFT(OUT) :- 
 	object_get('java.awt.Event', left, OUT).
 
-event_right(OUT) :- 
+event_RIGHT(OUT) :- 
 	object_get('java.awt.Event', right, OUT).
 
-event_f1(OUT) :- 
+event_F1(OUT) :- 
 	object_get('java.awt.Event', f1, OUT).
 
-event_f2(OUT) :- 
+event_F2(OUT) :- 
 	object_get('java.awt.Event', f2, OUT).
 
-event_f3(OUT) :- 
+event_F3(OUT) :- 
 	object_get('java.awt.Event', f3, OUT).
 
-event_f4(OUT) :- 
+event_F4(OUT) :- 
 	object_get('java.awt.Event', f4, OUT).
 
-event_f5(OUT) :- 
+event_F5(OUT) :- 
 	object_get('java.awt.Event', f5, OUT).
 
-event_f6(OUT) :- 
+event_F6(OUT) :- 
 	object_get('java.awt.Event', f6, OUT).
 
-event_f7(OUT) :- 
+event_F7(OUT) :- 
 	object_get('java.awt.Event', f7, OUT).
 
-event_f8(OUT) :- 
+event_F8(OUT) :- 
 	object_get('java.awt.Event', f8, OUT).
 
-event_f9(OUT) :- 
+event_F9(OUT) :- 
 	object_get('java.awt.Event', f9, OUT).
 
-event_f10(OUT) :- 
+event_F10(OUT) :- 
 	object_get('java.awt.Event', f10, OUT).
 
-event_f11(OUT) :- 
+event_F11(OUT) :- 
 	object_get('java.awt.Event', f11, OUT).
 
-event_f12(OUT) :- 
+event_F12(OUT) :- 
 	object_get('java.awt.Event', f12, OUT).
 
-event_print_screen(OUT) :- 
+event_PRINT_SCREEN(OUT) :- 
 	object_get('java.awt.Event', print_screen, OUT).
 
-event_scroll_lock(OUT) :- 
+event_SCROLL_LOCK(OUT) :- 
 	object_get('java.awt.Event', scroll_lock, OUT).
 
-event_caps_lock(OUT) :- 
+event_CAPS_LOCK(OUT) :- 
 	object_get('java.awt.Event', caps_lock, OUT).
 
-event_num_lock(OUT) :- 
+event_NUM_LOCK(OUT) :- 
 	object_get('java.awt.Event', num_lock, OUT).
 
-event_pause(OUT) :- 
+event_PAUSE(OUT) :- 
 	object_get('java.awt.Event', pause, OUT).
 
-event_insert(OUT) :- 
+event_INSERT(OUT) :- 
 	object_get('java.awt.Event', insert, OUT).
 
-event_enter(OUT) :- 
+event_ENTER(OUT) :- 
 	object_get('java.awt.Event', enter, OUT).
 
-event_back_space(OUT) :- 
+event_BACK_SPACE(OUT) :- 
 	object_get('java.awt.Event', back_space, OUT).
 
-event_tab(OUT) :- 
+event_TAB(OUT) :- 
 	object_get('java.awt.Event', tab, OUT).
 
-event_escape(OUT) :- 
+event_ESCAPE(OUT) :- 
 	object_get('java.awt.Event', escape, OUT).
 
-event_delete(OUT) :- 
+event_DELETE(OUT) :- 
 	object_get('java.awt.Event', delete, OUT).
 
-event_window_destroy(OUT) :- 
+event_WINDOW_DESTROY(OUT) :- 
 	object_get('java.awt.Event', window_destroy, OUT).
 
-event_window_expose(OUT) :- 
+event_WINDOW_EXPOSE(OUT) :- 
 	object_get('java.awt.Event', window_expose, OUT).
 
-event_window_iconify(OUT) :- 
+event_WINDOW_ICONIFY(OUT) :- 
 	object_get('java.awt.Event', window_iconify, OUT).
 
-event_window_deiconify(OUT) :- 
+event_WINDOW_DEICONIFY(OUT) :- 
 	object_get('java.awt.Event', window_deiconify, OUT).
 
-event_window_moved(OUT) :- 
+event_WINDOW_MOVED(OUT) :- 
 	object_get('java.awt.Event', window_moved, OUT).
 
-event_key_press(OUT) :- 
+event_KEY_PRESS(OUT) :- 
 	object_get('java.awt.Event', key_press, OUT).
 
-event_key_release(OUT) :- 
+event_KEY_RELEASE(OUT) :- 
 	object_get('java.awt.Event', key_release, OUT).
 
-event_key_action(OUT) :- 
+event_KEY_ACTION(OUT) :- 
 	object_get('java.awt.Event', key_action, OUT).
 
-event_key_action_release(OUT) :- 
+event_KEY_ACTION_RELEASE(OUT) :- 
 	object_get('java.awt.Event', key_action_release, OUT).
 
-event_mouse_down(OUT) :- 
+event_MOUSE_DOWN(OUT) :- 
 	object_get('java.awt.Event', mouse_down, OUT).
 
-event_mouse_up(OUT) :- 
+event_MOUSE_UP(OUT) :- 
 	object_get('java.awt.Event', mouse_up, OUT).
 
-event_mouse_move(OUT) :- 
+event_MOUSE_MOVE(OUT) :- 
 	object_get('java.awt.Event', mouse_move, OUT).
 
-event_mouse_enter(OUT) :- 
+event_MOUSE_ENTER(OUT) :- 
 	object_get('java.awt.Event', mouse_enter, OUT).
 
-event_mouse_exit(OUT) :- 
+event_MOUSE_EXIT(OUT) :- 
 	object_get('java.awt.Event', mouse_exit, OUT).
 
-event_mouse_drag(OUT) :- 
+event_MOUSE_DRAG(OUT) :- 
 	object_get('java.awt.Event', mouse_drag, OUT).
 
-event_scroll_line_up(OUT) :- 
+event_SCROLL_LINE_UP(OUT) :- 
 	object_get('java.awt.Event', scroll_line_up, OUT).
 
-event_scroll_line_down(OUT) :- 
+event_SCROLL_LINE_DOWN(OUT) :- 
 	object_get('java.awt.Event', scroll_line_down, OUT).
 
-event_scroll_page_up(OUT) :- 
+event_SCROLL_PAGE_UP(OUT) :- 
 	object_get('java.awt.Event', scroll_page_up, OUT).
 
-event_scroll_page_down(OUT) :- 
+event_SCROLL_PAGE_DOWN(OUT) :- 
 	object_get('java.awt.Event', scroll_page_down, OUT).
 
-event_scroll_absolute(OUT) :- 
+event_SCROLL_ABSOLUTE(OUT) :- 
 	object_get('java.awt.Event', scroll_absolute, OUT).
 
-event_scroll_begin(OUT) :- 
+event_SCROLL_BEGIN(OUT) :- 
 	object_get('java.awt.Event', scroll_begin, OUT).
 
-event_scroll_end(OUT) :- 
+event_SCROLL_END(OUT) :- 
 	object_get('java.awt.Event', scroll_end, OUT).
 
-event_list_select(OUT) :- 
+event_LIST_SELECT(OUT) :- 
 	object_get('java.awt.Event', list_select, OUT).
 
-event_list_deselect(OUT) :- 
+event_LIST_DESELECT(OUT) :- 
 	object_get('java.awt.Event', list_deselect, OUT).
 
-event_action_event(OUT) :- 
+event_ACTION_EVENT(OUT) :- 
 	object_get('java.awt.Event', action_event, OUT).
 
-event_load_file(OUT) :- 
+event_LOAD_FILE(OUT) :- 
 	object_get('java.awt.Event', load_file, OUT).
 
-event_save_file(OUT) :- 
+event_SAVE_FILE(OUT) :- 
 	object_get('java.awt.Event', save_file, OUT).
 
-event_got_focus(OUT) :- 
+event_GOT_FOCUS(OUT) :- 
 	object_get('java.awt.Event', got_focus, OUT).
 
-event_lost_focus(OUT) :- 
+event_LOST_FOCUS(OUT) :- 
 	object_get('java.awt.Event', lost_focus, OUT).
 
 event(ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, ARG6, OUT) :- 
@@ -223,29 +223,29 @@ event(ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, ARG6, ARG7, OUT) :-
 event(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('java.awt.Event', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-event_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+event_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+event_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+event_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 event_control_down(REF, OUT) :- 
 	object_call(REF, controlDown, [], OUT).
 
-event_meta_down(REF, OUT) :- 
-	object_call(REF, metaDown, [], OUT).
+event_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+event_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+event_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
 event_shift_down(REF, OUT) :- 
 	object_call(REF, shiftDown, [], OUT).
-
-event_translate(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, translate, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-event_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-event_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-event_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
 
 event_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
@@ -253,12 +253,12 @@ event_equals(REF, ARG0, OUT) :-
 event_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-event_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
+event_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-event_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+event_meta_down(REF, OUT) :- 
+	object_call(REF, metaDown, [], OUT).
 
-event_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+event_translate(REF, ARG0, ARG1) :- 
+	object_call(REF, translate, '.'(ARG0, '.'(ARG1, [])), _).
 

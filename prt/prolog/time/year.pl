@@ -22,44 +22,68 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-year_min_value(OUT) :- 
+year_MIN_VALUE(OUT) :- 
 	object_get('java.time.Year', min_value, OUT).
 
-year_max_value(OUT) :- 
+year_MAX_VALUE(OUT) :- 
 	object_get('java.time.Year', max_value, OUT).
 
-year_get(REF, ARG0, OUT) :- 
-	object_call(REF, get, '.'(ARG0, []), OUT).
+year_at_day(REF, ARG0, OUT) :- 
+	object_call(REF, atDay, '.'(ARG0, []), OUT).
 
-year_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+year_plus(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, plus, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-year_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+year_plus(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, plus, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-year_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+year_plus(REF, ARG0, OUT) :- 
+	object_call(REF, plus, '.'(ARG0, []), OUT).
 
-year_compare_to(REF, ARG0, OUT) :- 
-	object_call(REF, compareTo, '.'(ARG0, []), OUT).
+year_plus(REF, ARG0, OUT) :- 
+	object_call(REF, plus, '.'(ARG0, []), OUT).
 
-year_compare_to(REF, ARG0, OUT) :- 
-	object_call(REF, compareTo, '.'(ARG0, []), OUT).
+year_range(REF, ARG0, OUT) :- 
+	object_call(REF, range, '.'(ARG0, []), OUT).
 
-year_get_long(REF, ARG0, OUT) :- 
-	object_call(REF, getLong, '.'(ARG0, []), OUT).
-
-year_format(REF, ARG0, OUT) :- 
-	object_call(REF, format, '.'(ARG0, []), OUT).
+year_adjust_into(REF, ARG0, OUT) :- 
+	object_call(REF, adjustInto, '.'(ARG0, []), OUT).
 
 year_get_value(REF, OUT) :- 
 	object_call(REF, getValue, [], OUT).
 
-year_length(REF, OUT) :- 
-	object_call(REF, length, [], OUT).
+year_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-year_query(REF, ARG0, OUT) :- 
-	object_call(REF, query, '.'(ARG0, []), OUT).
+year_at_month_day(REF, ARG0, OUT) :- 
+	object_call(REF, atMonthDay, '.'(ARG0, []), OUT).
+
+year_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+year_minus(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, minus, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+year_minus(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, minus, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+year_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+year_minus(REF, ARG0, OUT) :- 
+	object_call(REF, minus, '.'(ARG0, []), OUT).
+
+year_minus(REF, ARG0, OUT) :- 
+	object_call(REF, minus, '.'(ARG0, []), OUT).
+
+year_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+year_now(REF, OUT) :- 
+	object_call(REF, now, [], OUT).
+
+year_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
 year_of(REF, ARG0, OUT) :- 
 	object_call(REF, of, '.'(ARG0, []), OUT).
@@ -67,89 +91,62 @@ year_of(REF, ARG0, OUT) :-
 year_parse(REF, ARG0, OUT) :- 
 	object_call(REF, parse, '.'(ARG0, []), OUT).
 
+year_now(REF, ARG0, OUT) :- 
+	object_call(REF, now, '.'(ARG0, []), OUT).
+
+year_now(REF, ARG0, OUT) :- 
+	object_call(REF, now, '.'(ARG0, []), OUT).
+
+year_format(REF, ARG0, OUT) :- 
+	object_call(REF, format, '.'(ARG0, []), OUT).
+
+year_get_long(REF, ARG0, OUT) :- 
+	object_call(REF, getLong, '.'(ARG0, []), OUT).
+
 year_parse(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, parse, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-year_range(REF, ARG0, OUT) :- 
-	object_call(REF, range, '.'(ARG0, []), OUT).
-
-year_is_supported(REF, ARG0, OUT) :- 
-	object_call(REF, isSupported, '.'(ARG0, []), OUT).
-
-year_is_supported(REF, ARG0, OUT) :- 
-	object_call(REF, isSupported, '.'(ARG0, []), OUT).
-
-year_from(REF, ARG0, OUT) :- 
-	object_call(REF, from, '.'(ARG0, []), OUT).
 
 year_is_leap(REF, ARG0, OUT) :- 
 	object_call(REF, isLeap, '.'(ARG0, []), OUT).
 
-year_is_leap(REF, OUT) :- 
-	object_call(REF, isLeap, [], OUT).
-
-year_at_day(REF, ARG0, OUT) :- 
-	object_call(REF, atDay, '.'(ARG0, []), OUT).
-
-year_at_month(REF, ARG0, OUT) :- 
-	object_call(REF, atMonth, '.'(ARG0, []), OUT).
-
-year_at_month(REF, ARG0, OUT) :- 
-	object_call(REF, atMonth, '.'(ARG0, []), OUT).
-
-year_at_month_day(REF, ARG0, OUT) :- 
-	object_call(REF, atMonthDay, '.'(ARG0, []), OUT).
-
 year_is_valid_month_day(REF, ARG0, OUT) :- 
 	object_call(REF, isValidMonthDay, '.'(ARG0, []), OUT).
+
+year_is_leap(REF, OUT) :- 
+	object_call(REF, isLeap, [], OUT).
 
 year_minus_years(REF, ARG0, OUT) :- 
 	object_call(REF, minusYears, '.'(ARG0, []), OUT).
 
-year_plus_years(REF, ARG0, OUT) :- 
-	object_call(REF, plusYears, '.'(ARG0, []), OUT).
+year_at_month(REF, ARG0, OUT) :- 
+	object_call(REF, atMonth, '.'(ARG0, []), OUT).
 
-year_plus(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, plus, '.'(ARG0, '.'(ARG1, [])), OUT).
+year_at_month(REF, ARG0, OUT) :- 
+	object_call(REF, atMonth, '.'(ARG0, []), OUT).
 
-year_plus(REF, ARG0, OUT) :- 
-	object_call(REF, plus, '.'(ARG0, []), OUT).
+year_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-year_plus(REF, ARG0, OUT) :- 
-	object_call(REF, plus, '.'(ARG0, []), OUT).
+year_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-year_plus(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, plus, '.'(ARG0, '.'(ARG1, [])), OUT).
+year_compare_to(REF, ARG0, OUT) :- 
+	object_call(REF, compareTo, '.'(ARG0, []), OUT).
 
-year_adjust_into(REF, ARG0, OUT) :- 
-	object_call(REF, adjustInto, '.'(ARG0, []), OUT).
+year_compare_to(REF, ARG0, OUT) :- 
+	object_call(REF, compareTo, '.'(ARG0, []), OUT).
 
-year_is_after(REF, ARG0, OUT) :- 
-	object_call(REF, isAfter, '.'(ARG0, []), OUT).
+year_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
-year_is_before(REF, ARG0, OUT) :- 
-	object_call(REF, isBefore, '.'(ARG0, []), OUT).
+year_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
-year_minus(REF, ARG0, OUT) :- 
-	object_call(REF, minus, '.'(ARG0, []), OUT).
+year_with(REF, ARG0, OUT) :- 
+	object_call(REF, with, '.'(ARG0, []), OUT).
 
-year_minus(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, minus, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-year_minus(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, minus, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-year_minus(REF, ARG0, OUT) :- 
-	object_call(REF, minus, '.'(ARG0, []), OUT).
-
-year_now(REF, ARG0, OUT) :- 
-	object_call(REF, now, '.'(ARG0, []), OUT).
-
-year_now(REF, OUT) :- 
-	object_call(REF, now, [], OUT).
-
-year_now(REF, ARG0, OUT) :- 
-	object_call(REF, now, '.'(ARG0, []), OUT).
+year_with(REF, ARG0, OUT) :- 
+	object_call(REF, with, '.'(ARG0, []), OUT).
 
 year_until(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, until, '.'(ARG0, '.'(ARG1, [])), OUT).
@@ -157,30 +154,33 @@ year_until(REF, ARG0, ARG1, OUT) :-
 year_with(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, with, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-year_with(REF, ARG0, OUT) :- 
-	object_call(REF, with, '.'(ARG0, []), OUT).
-
 year_with(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, with, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-year_with(REF, ARG0, OUT) :- 
-	object_call(REF, with, '.'(ARG0, []), OUT).
+year_get(REF, ARG0, OUT) :- 
+	object_call(REF, get, '.'(ARG0, []), OUT).
 
-year_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+year_from(REF, ARG0, OUT) :- 
+	object_call(REF, from, '.'(ARG0, []), OUT).
 
-year_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+year_query(REF, ARG0, OUT) :- 
+	object_call(REF, query, '.'(ARG0, []), OUT).
 
-year_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+year_plus_years(REF, ARG0, OUT) :- 
+	object_call(REF, plusYears, '.'(ARG0, []), OUT).
 
-year_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
+year_is_after(REF, ARG0, OUT) :- 
+	object_call(REF, isAfter, '.'(ARG0, []), OUT).
 
-year_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+year_length(REF, OUT) :- 
+	object_call(REF, length, [], OUT).
 
-year_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+year_is_supported(REF, ARG0, OUT) :- 
+	object_call(REF, isSupported, '.'(ARG0, []), OUT).
+
+year_is_supported(REF, ARG0, OUT) :- 
+	object_call(REF, isSupported, '.'(ARG0, []), OUT).
+
+year_is_before(REF, ARG0, OUT) :- 
+	object_call(REF, isBefore, '.'(ARG0, []), OUT).
 

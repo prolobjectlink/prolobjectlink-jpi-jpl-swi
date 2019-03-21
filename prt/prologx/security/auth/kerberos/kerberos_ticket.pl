@@ -25,96 +25,96 @@
 kerberos_ticket(ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, ARG6, ARG7, ARG8, ARG9, ARG10, OUT) :- 
 	object_new('javax.security.auth.kerberos.KerberosTicket', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, '.'(ARG6, '.'(ARG7, '.'(ARG8, '.'(ARG9, '.'(ARG10, []))))))))))), OUT).
 
-kerberos_ticket_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
 kerberos_ticket_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-kerberos_ticket_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-kerberos_ticket_destroy(REF, OUT) :- 
-	object_call(REF, destroy, [], OUT).
-
-kerberos_ticket_is_destroyed(REF, OUT) :- 
-	object_call(REF, isDestroyed, [], OUT).
-
-kerberos_ticket_get_encoded(REF, OUT) :- 
-	object_call(REF, getEncoded, [], OUT).
-
-kerberos_ticket_is_current(REF, OUT) :- 
-	object_call(REF, isCurrent, [], OUT).
-
-kerberos_ticket_get_auth_time(REF, OUT) :- 
-	object_call(REF, getAuthTime, [], OUT).
-
-kerberos_ticket_get_client(REF, OUT) :- 
-	object_call(REF, getClient, [], OUT).
-
-kerberos_ticket_get_client_addresses(REF, OUT) :- 
-	object_call(REF, getClientAddresses, [], OUT).
-
-kerberos_ticket_get_end_time(REF, OUT) :- 
-	object_call(REF, getEndTime, [], OUT).
-
-kerberos_ticket_get_renew_till(REF, OUT) :- 
-	object_call(REF, getRenewTill, [], OUT).
-
-kerberos_ticket_get_server(REF, OUT) :- 
-	object_call(REF, getServer, [], OUT).
-
-kerberos_ticket_get_session_key(REF, OUT) :- 
-	object_call(REF, getSessionKey, [], OUT).
-
-kerberos_ticket_get_session_key_type(REF, OUT) :- 
-	object_call(REF, getSessionKeyType, [], OUT).
-
-kerberos_ticket_is_forwardable(REF, OUT) :- 
-	object_call(REF, isForwardable, [], OUT).
-
-kerberos_ticket_is_forwarded(REF, OUT) :- 
-	object_call(REF, isForwarded, [], OUT).
+kerberos_ticket_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 kerberos_ticket_is_initial(REF, OUT) :- 
 	object_call(REF, isInitial, [], OUT).
 
-kerberos_ticket_is_postdated(REF, OUT) :- 
-	object_call(REF, isPostdated, [], OUT).
+kerberos_ticket_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-kerberos_ticket_is_proxiable(REF, OUT) :- 
-	object_call(REF, isProxiable, [], OUT).
+kerberos_ticket_get_encoded(REF, OUT) :- 
+	object_call(REF, getEncoded, [], OUT).
+
+kerberos_ticket_get_client_addresses(REF, OUT) :- 
+	object_call(REF, getClientAddresses, [], OUT).
+
+kerberos_ticket_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+kerberos_ticket_is_destroyed(REF, OUT) :- 
+	object_call(REF, isDestroyed, [], OUT).
+
+kerberos_ticket_refresh(REF) :- 
+	object_call(REF, refresh, [], _).
+
+kerberos_ticket_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 kerberos_ticket_is_renewable(REF, OUT) :- 
 	object_call(REF, isRenewable, [], OUT).
 
-kerberos_ticket_get_start_time(REF, OUT) :- 
-	object_call(REF, getStartTime, [], OUT).
+kerberos_ticket_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-kerberos_ticket_refresh(REF, OUT) :- 
-	object_call(REF, refresh, [], OUT).
+kerberos_ticket_is_forwarded(REF, OUT) :- 
+	object_call(REF, isForwarded, [], OUT).
 
-kerberos_ticket_is_proxy(REF, OUT) :- 
-	object_call(REF, isProxy, [], OUT).
+kerberos_ticket_get_server(REF, OUT) :- 
+	object_call(REF, getServer, [], OUT).
+
+kerberos_ticket_get_renew_till(REF, OUT) :- 
+	object_call(REF, getRenewTill, [], OUT).
 
 kerberos_ticket_get_flags(REF, OUT) :- 
 	object_call(REF, getFlags, [], OUT).
 
-kerberos_ticket_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-kerberos_ticket_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-kerberos_ticket_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+kerberos_ticket_get_session_key(REF, OUT) :- 
+	object_call(REF, getSessionKey, [], OUT).
 
 kerberos_ticket_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-kerberos_ticket_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+kerberos_ticket_is_proxy(REF, OUT) :- 
+	object_call(REF, isProxy, [], OUT).
 
-kerberos_ticket_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+kerberos_ticket_get_client(REF, OUT) :- 
+	object_call(REF, getClient, [], OUT).
+
+kerberos_ticket_get_start_time(REF, OUT) :- 
+	object_call(REF, getStartTime, [], OUT).
+
+kerberos_ticket_is_forwardable(REF, OUT) :- 
+	object_call(REF, isForwardable, [], OUT).
+
+kerberos_ticket_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+kerberos_ticket_get_auth_time(REF, OUT) :- 
+	object_call(REF, getAuthTime, [], OUT).
+
+kerberos_ticket_is_proxiable(REF, OUT) :- 
+	object_call(REF, isProxiable, [], OUT).
+
+kerberos_ticket_get_end_time(REF, OUT) :- 
+	object_call(REF, getEndTime, [], OUT).
+
+kerberos_ticket_is_current(REF, OUT) :- 
+	object_call(REF, isCurrent, [], OUT).
+
+kerberos_ticket_get_session_key_type(REF, OUT) :- 
+	object_call(REF, getSessionKeyType, [], OUT).
+
+kerberos_ticket_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+kerberos_ticket_destroy(REF) :- 
+	object_call(REF, destroy, [], _).
+
+kerberos_ticket_is_postdated(REF, OUT) :- 
+	object_call(REF, isPostdated, [], OUT).
 

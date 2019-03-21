@@ -25,59 +25,23 @@
 type_not_present_exception(ARG0, ARG1, OUT) :- 
 	object_new('java.lang.TypeNotPresentException', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-type_not_present_exception_type_name(REF, OUT) :- 
-	object_call(REF, typeName, [], OUT).
-
-type_not_present_exception_print_stack_trace(REF, OUT) :- 
-	object_call(REF, printStackTrace, [], OUT).
-
-type_not_present_exception_print_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, printStackTrace, '.'(ARG0, []), OUT).
-
-type_not_present_exception_print_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, printStackTrace, '.'(ARG0, []), OUT).
-
-type_not_present_exception_fill_in_stack_trace(REF, OUT) :- 
-	object_call(REF, fillInStackTrace, [], OUT).
-
-type_not_present_exception_get_cause(REF, OUT) :- 
-	object_call(REF, getCause, [], OUT).
-
-type_not_present_exception_init_cause(REF, ARG0, OUT) :- 
-	object_call(REF, initCause, '.'(ARG0, []), OUT).
-
-type_not_present_exception_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-type_not_present_exception_add_suppressed(REF, ARG0, OUT) :- 
-	object_call(REF, addSuppressed, '.'(ARG0, []), OUT).
-
-type_not_present_exception_get_localized_message(REF, OUT) :- 
-	object_call(REF, getLocalizedMessage, [], OUT).
-
-type_not_present_exception_get_message(REF, OUT) :- 
-	object_call(REF, getMessage, [], OUT).
-
-type_not_present_exception_get_stack_trace(REF, OUT) :- 
-	object_call(REF, getStackTrace, [], OUT).
+type_not_present_exception_set_stack_trace(REF, ARG0) :- 
+	object_call(REF, setStackTrace, '.'(ARG0, []), _).
 
 type_not_present_exception_get_suppressed(REF, OUT) :- 
 	object_call(REF, getSuppressed, [], OUT).
 
-type_not_present_exception_set_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, setStackTrace, '.'(ARG0, []), OUT).
-
-type_not_present_exception_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-type_not_present_exception_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-type_not_present_exception_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+type_not_present_exception_add_suppressed(REF, ARG0) :- 
+	object_call(REF, addSuppressed, '.'(ARG0, []), _).
 
 type_not_present_exception_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+type_not_present_exception_get_cause(REF, OUT) :- 
+	object_call(REF, getCause, [], OUT).
+
+type_not_present_exception_print_stack_trace(REF) :- 
+	object_call(REF, printStackTrace, [], _).
 
 type_not_present_exception_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -85,9 +49,45 @@ type_not_present_exception_hash_code(REF, OUT) :-
 type_not_present_exception_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-type_not_present_exception_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+type_not_present_exception_print_stack_trace(REF, ARG0) :- 
+	object_call(REF, printStackTrace, '.'(ARG0, []), _).
 
-type_not_present_exception_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+type_not_present_exception_print_stack_trace(REF, ARG0) :- 
+	object_call(REF, printStackTrace, '.'(ARG0, []), _).
+
+type_not_present_exception_fill_in_stack_trace(REF, OUT) :- 
+	object_call(REF, fillInStackTrace, [], OUT).
+
+type_not_present_exception_init_cause(REF, ARG0, OUT) :- 
+	object_call(REF, initCause, '.'(ARG0, []), OUT).
+
+type_not_present_exception_type_name(REF, OUT) :- 
+	object_call(REF, typeName, [], OUT).
+
+type_not_present_exception_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+type_not_present_exception_get_stack_trace(REF, OUT) :- 
+	object_call(REF, getStackTrace, [], OUT).
+
+type_not_present_exception_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+type_not_present_exception_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+type_not_present_exception_get_localized_message(REF, OUT) :- 
+	object_call(REF, getLocalizedMessage, [], OUT).
+
+type_not_present_exception_get_message(REF, OUT) :- 
+	object_call(REF, getMessage, [], OUT).
+
+type_not_present_exception_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+type_not_present_exception_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+type_not_present_exception_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

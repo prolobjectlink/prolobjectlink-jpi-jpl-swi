@@ -28,26 +28,23 @@ char_array_writer(OUT) :-
 char_array_writer(ARG0, OUT) :- 
 	object_new('java.io.CharArrayWriter', '.'(ARG0, []), OUT).
 
+char_array_writer_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
 char_array_writer_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-char_array_writer_append(REF, ARG0, OUT) :- 
-	object_call(REF, append, '.'(ARG0, []), OUT).
+char_array_writer_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-char_array_writer_append(REF, ARG0, OUT) :- 
-	object_call(REF, append, '.'(ARG0, []), OUT).
+char_array_writer_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-char_array_writer_append(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, append, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+char_array_writer_flush(REF) :- 
+	object_call(REF, flush, [], _).
 
-char_array_writer_append(REF, ARG0, OUT) :- 
-	object_call(REF, append, '.'(ARG0, []), OUT).
-
-char_array_writer_append(REF, ARG0, OUT) :- 
-	object_call(REF, append, '.'(ARG0, []), OUT).
-
-char_array_writer_append(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, append, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+char_array_writer_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 char_array_writer_append(REF, ARG0, OUT) :- 
 	object_call(REF, append, '.'(ARG0, []), OUT).
@@ -55,63 +52,66 @@ char_array_writer_append(REF, ARG0, OUT) :-
 char_array_writer_append(REF, ARG0, OUT) :- 
 	object_call(REF, append, '.'(ARG0, []), OUT).
 
-char_array_writer_append(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, append, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+char_array_writer_append(REF, ARG0, OUT) :- 
+	object_call(REF, append, '.'(ARG0, []), OUT).
+
+char_array_writer_append(REF, ARG0, OUT) :- 
+	object_call(REF, append, '.'(ARG0, []), OUT).
+
+char_array_writer_append(REF, ARG0, OUT) :- 
+	object_call(REF, append, '.'(ARG0, []), OUT).
+
+char_array_writer_append(REF, ARG0, OUT) :- 
+	object_call(REF, append, '.'(ARG0, []), OUT).
 
 char_array_writer_size(REF, OUT) :- 
 	object_call(REF, size, [], OUT).
 
-char_array_writer_to_char_array(REF, OUT) :- 
-	object_call(REF, toCharArray, [], OUT).
+char_array_writer_write(REF, ARG0) :- 
+	object_call(REF, write, '.'(ARG0, []), _).
 
-char_array_writer_write(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, write, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+char_array_writer_write(REF, ARG0) :- 
+	object_call(REF, write, '.'(ARG0, []), _).
 
-char_array_writer_write(REF, ARG0, OUT) :- 
-	object_call(REF, write, '.'(ARG0, []), OUT).
+char_array_writer_write(REF, ARG0) :- 
+	object_call(REF, write, '.'(ARG0, []), _).
 
-char_array_writer_write(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, write, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+char_array_writer_write_to(REF, ARG0) :- 
+	object_call(REF, writeTo, '.'(ARG0, []), _).
 
-char_array_writer_close(REF, OUT) :- 
-	object_call(REF, close, [], OUT).
+char_array_writer_append(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, append, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-char_array_writer_flush(REF, OUT) :- 
-	object_call(REF, flush, [], OUT).
+char_array_writer_append(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, append, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-char_array_writer_reset(REF, OUT) :- 
-	object_call(REF, reset, [], OUT).
+char_array_writer_append(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, append, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-char_array_writer_write_to(REF, ARG0, OUT) :- 
-	object_call(REF, writeTo, '.'(ARG0, []), OUT).
+char_array_writer_write(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, write, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
 
-char_array_writer_write(REF, ARG0, OUT) :- 
-	object_call(REF, write, '.'(ARG0, []), OUT).
-
-char_array_writer_write(REF, ARG0, OUT) :- 
-	object_call(REF, write, '.'(ARG0, []), OUT).
-
-char_array_writer_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-char_array_writer_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-char_array_writer_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+char_array_writer_write(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, write, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
 
 char_array_writer_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-char_array_writer_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+char_array_writer_reset(REF) :- 
+	object_call(REF, reset, [], _).
+
+char_array_writer_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+char_array_writer_close(REF) :- 
+	object_call(REF, close, [], _).
+
+char_array_writer_to_char_array(REF, OUT) :- 
+	object_call(REF, toCharArray, [], OUT).
 
 char_array_writer_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-char_array_writer_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-char_array_writer_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+char_array_writer_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 

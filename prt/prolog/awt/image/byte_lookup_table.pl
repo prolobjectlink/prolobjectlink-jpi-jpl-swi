@@ -28,45 +28,45 @@ byte_lookup_table(ARG0, ARG1, OUT) :-
 byte_lookup_table(ARG0, ARG1, OUT) :- 
 	object_new('java.awt.image.ByteLookupTable', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-byte_lookup_table_get_table(REF, OUT) :- 
-	object_call(REF, getTable, [], OUT).
-
-byte_lookup_table_lookup_pixel(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, lookupPixel, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-byte_lookup_table_lookup_pixel(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, lookupPixel, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-byte_lookup_table_get_offset(REF, OUT) :- 
-	object_call(REF, getOffset, [], OUT).
-
-byte_lookup_table_get_num_components(REF, OUT) :- 
-	object_call(REF, getNumComponents, [], OUT).
-
-byte_lookup_table_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-byte_lookup_table_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-byte_lookup_table_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
 byte_lookup_table_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-byte_lookup_table_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+byte_lookup_table_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+byte_lookup_table_lookup_pixel(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, lookupPixel, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+byte_lookup_table_lookup_pixel(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, lookupPixel, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+byte_lookup_table_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+byte_lookup_table_get_table(REF, OUT) :- 
+	object_call(REF, getTable, [], OUT).
+
+byte_lookup_table_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 byte_lookup_table_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+byte_lookup_table_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
 byte_lookup_table_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-byte_lookup_table_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+byte_lookup_table_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-byte_lookup_table_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+byte_lookup_table_get_num_components(REF, OUT) :- 
+	object_call(REF, getNumComponents, [], OUT).
+
+byte_lookup_table_get_offset(REF, OUT) :- 
+	object_call(REF, getOffset, [], OUT).
+
+byte_lookup_table_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 

@@ -31,72 +31,72 @@ default_combo_box_model(ARG0, OUT) :-
 default_combo_box_model(OUT) :- 
 	object_new('javax.swing.DefaultComboBoxModel', [], OUT).
 
-default_combo_box_model_add_element(REF, ARG0, OUT) :- 
-	object_call(REF, addElement, '.'(ARG0, []), OUT).
-
 default_combo_box_model_get_size(REF, OUT) :- 
 	object_call(REF, getSize, [], OUT).
-
-default_combo_box_model_insert_element_at(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, insertElementAt, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-default_combo_box_model_remove_all_elements(REF, OUT) :- 
-	object_call(REF, removeAllElements, [], OUT).
-
-default_combo_box_model_remove_element(REF, ARG0, OUT) :- 
-	object_call(REF, removeElement, '.'(ARG0, []), OUT).
-
-default_combo_box_model_remove_element_at(REF, ARG0, OUT) :- 
-	object_call(REF, removeElementAt, '.'(ARG0, []), OUT).
-
-default_combo_box_model_get_element_at(REF, ARG0, OUT) :- 
-	object_call(REF, getElementAt, '.'(ARG0, []), OUT).
-
-default_combo_box_model_get_selected_item(REF, OUT) :- 
-	object_call(REF, getSelectedItem, [], OUT).
-
-default_combo_box_model_set_selected_item(REF, ARG0, OUT) :- 
-	object_call(REF, setSelectedItem, '.'(ARG0, []), OUT).
-
-default_combo_box_model_get_index_of(REF, ARG0, OUT) :- 
-	object_call(REF, getIndexOf, '.'(ARG0, []), OUT).
-
-default_combo_box_model_add_list_data_listener(REF, ARG0, OUT) :- 
-	object_call(REF, addListDataListener, '.'(ARG0, []), OUT).
-
-default_combo_box_model_get_list_data_listeners(REF, OUT) :- 
-	object_call(REF, getListDataListeners, [], OUT).
-
-default_combo_box_model_remove_list_data_listener(REF, ARG0, OUT) :- 
-	object_call(REF, removeListDataListener, '.'(ARG0, []), OUT).
-
-default_combo_box_model_get_listeners(REF, ARG0, OUT) :- 
-	object_call(REF, getListeners, '.'(ARG0, []), OUT).
-
-default_combo_box_model_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-default_combo_box_model_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-default_combo_box_model_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-default_combo_box_model_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-default_combo_box_model_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
 
 default_combo_box_model_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+default_combo_box_model_get_list_data_listeners(REF, OUT) :- 
+	object_call(REF, getListDataListeners, [], OUT).
+
+default_combo_box_model_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+default_combo_box_model_get_selected_item(REF, OUT) :- 
+	object_call(REF, getSelectedItem, [], OUT).
+
+default_combo_box_model_add_list_data_listener(REF, ARG0) :- 
+	object_call(REF, addListDataListener, '.'(ARG0, []), _).
+
+default_combo_box_model_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+default_combo_box_model_get_index_of(REF, ARG0, OUT) :- 
+	object_call(REF, getIndexOf, '.'(ARG0, []), OUT).
+
+default_combo_box_model_insert_element_at(REF, ARG0, ARG1) :- 
+	object_call(REF, insertElementAt, '.'(ARG0, '.'(ARG1, [])), _).
+
+default_combo_box_model_add_element(REF, ARG0) :- 
+	object_call(REF, addElement, '.'(ARG0, []), _).
+
+default_combo_box_model_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+default_combo_box_model_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
 default_combo_box_model_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-default_combo_box_model_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+default_combo_box_model_set_selected_item(REF, ARG0) :- 
+	object_call(REF, setSelectedItem, '.'(ARG0, []), _).
 
-default_combo_box_model_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+default_combo_box_model_remove_element(REF, ARG0) :- 
+	object_call(REF, removeElement, '.'(ARG0, []), _).
+
+default_combo_box_model_get_element_at(REF, ARG0, OUT) :- 
+	object_call(REF, getElementAt, '.'(ARG0, []), OUT).
+
+default_combo_box_model_get_listeners(REF, ARG0, OUT) :- 
+	object_call(REF, getListeners, '.'(ARG0, []), OUT).
+
+default_combo_box_model_remove_list_data_listener(REF, ARG0) :- 
+	object_call(REF, removeListDataListener, '.'(ARG0, []), _).
+
+default_combo_box_model_remove_all_elements(REF) :- 
+	object_call(REF, removeAllElements, [], _).
+
+default_combo_box_model_remove_element_at(REF, ARG0) :- 
+	object_call(REF, removeElementAt, '.'(ARG0, []), _).
+
+default_combo_box_model_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+default_combo_box_model_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+default_combo_box_model_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

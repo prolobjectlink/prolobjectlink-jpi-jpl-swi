@@ -25,45 +25,45 @@
 tab_set(ARG0, OUT) :- 
 	object_new('javax.swing.text.TabSet', '.'(ARG0, []), OUT).
 
-tab_set_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+tab_set_get_tab_count(REF, OUT) :- 
+	object_call(REF, getTabCount, [], OUT).
 
-tab_set_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+tab_set_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 tab_set_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-tab_set_get_tab_count(REF, OUT) :- 
-	object_call(REF, getTabCount, [], OUT).
+tab_set_get_tab_index(REF, ARG0, OUT) :- 
+	object_call(REF, getTabIndex, '.'(ARG0, []), OUT).
 
-tab_set_get_tab(REF, ARG0, OUT) :- 
-	object_call(REF, getTab, '.'(ARG0, []), OUT).
+tab_set_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+tab_set_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+tab_set_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 tab_set_get_tab_index_after(REF, ARG0, OUT) :- 
 	object_call(REF, getTabIndexAfter, '.'(ARG0, []), OUT).
 
-tab_set_get_tab_index(REF, ARG0, OUT) :- 
-	object_call(REF, getTabIndex, '.'(ARG0, []), OUT).
+tab_set_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-tab_set_get_tab_after(REF, ARG0, OUT) :- 
-	object_call(REF, getTabAfter, '.'(ARG0, []), OUT).
+tab_set_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-tab_set_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-tab_set_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-tab_set_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+tab_set_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 tab_set_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-tab_set_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+tab_set_get_tab(REF, ARG0, OUT) :- 
+	object_call(REF, getTab, '.'(ARG0, []), OUT).
 
-tab_set_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+tab_set_get_tab_after(REF, ARG0, OUT) :- 
+	object_call(REF, getTabAfter, '.'(ARG0, []), OUT).
 

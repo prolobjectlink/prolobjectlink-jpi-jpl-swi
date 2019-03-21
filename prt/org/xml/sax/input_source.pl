@@ -22,62 +22,29 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-input_source(ARG0, OUT) :- 
-	object_new('org.xml.sax.InputSource', '.'(ARG0, []), OUT).
-
-input_source(ARG0, OUT) :- 
-	object_new('org.xml.sax.InputSource', '.'(ARG0, []), OUT).
-
-input_source(ARG0, OUT) :- 
-	object_new('org.xml.sax.InputSource', '.'(ARG0, []), OUT).
-
 input_source(OUT) :- 
 	object_new('org.xml.sax.InputSource', [], OUT).
+
+input_source(ARG0, OUT) :- 
+	object_new('org.xml.sax.InputSource', '.'(ARG0, []), OUT).
+
+input_source(ARG0, OUT) :- 
+	object_new('org.xml.sax.InputSource', '.'(ARG0, []), OUT).
+
+input_source(ARG0, OUT) :- 
+	object_new('org.xml.sax.InputSource', '.'(ARG0, []), OUT).
 
 input_source_get_encoding(REF, OUT) :- 
 	object_call(REF, getEncoding, [], OUT).
 
-input_source_set_encoding(REF, ARG0, OUT) :- 
-	object_call(REF, setEncoding, '.'(ARG0, []), OUT).
+input_source_set_character_stream(REF, ARG0) :- 
+	object_call(REF, setCharacterStream, '.'(ARG0, []), _).
+
+input_source_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 input_source_get_byte_stream(REF, OUT) :- 
 	object_call(REF, getByteStream, [], OUT).
-
-input_source_get_character_stream(REF, OUT) :- 
-	object_call(REF, getCharacterStream, [], OUT).
-
-input_source_get_public_id(REF, OUT) :- 
-	object_call(REF, getPublicId, [], OUT).
-
-input_source_get_system_id(REF, OUT) :- 
-	object_call(REF, getSystemId, [], OUT).
-
-input_source_set_byte_stream(REF, ARG0, OUT) :- 
-	object_call(REF, setByteStream, '.'(ARG0, []), OUT).
-
-input_source_set_character_stream(REF, ARG0, OUT) :- 
-	object_call(REF, setCharacterStream, '.'(ARG0, []), OUT).
-
-input_source_set_public_id(REF, ARG0, OUT) :- 
-	object_call(REF, setPublicId, '.'(ARG0, []), OUT).
-
-input_source_set_system_id(REF, ARG0, OUT) :- 
-	object_call(REF, setSystemId, '.'(ARG0, []), OUT).
-
-input_source_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-input_source_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-input_source_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-input_source_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-input_source_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
 
 input_source_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -85,9 +52,42 @@ input_source_hash_code(REF, OUT) :-
 input_source_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-input_source_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+input_source_set_encoding(REF, ARG0) :- 
+	object_call(REF, setEncoding, '.'(ARG0, []), _).
 
-input_source_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+input_source_set_byte_stream(REF, ARG0) :- 
+	object_call(REF, setByteStream, '.'(ARG0, []), _).
+
+input_source_get_character_stream(REF, OUT) :- 
+	object_call(REF, getCharacterStream, [], OUT).
+
+input_source_get_public_id(REF, OUT) :- 
+	object_call(REF, getPublicId, [], OUT).
+
+input_source_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+input_source_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+input_source_set_system_id(REF, ARG0) :- 
+	object_call(REF, setSystemId, '.'(ARG0, []), _).
+
+input_source_get_system_id(REF, OUT) :- 
+	object_call(REF, getSystemId, [], OUT).
+
+input_source_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+input_source_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+input_source_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+input_source_set_public_id(REF, ARG0) :- 
+	object_call(REF, setPublicId, '.'(ARG0, []), _).
+
+input_source_wait(REF) :- 
+	object_call(REF, wait, [], _).
 

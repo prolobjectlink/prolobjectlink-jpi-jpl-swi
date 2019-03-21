@@ -22,48 +22,48 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-file_descriptor_in(OUT) :- 
+file_descriptor_IN(OUT) :- 
 	object_get('java.io.FileDescriptor', in, OUT).
 
-file_descriptor_out(OUT) :- 
+file_descriptor_OUT(OUT) :- 
 	object_get('java.io.FileDescriptor', out, OUT).
 
-file_descriptor_err(OUT) :- 
+file_descriptor_ERR(OUT) :- 
 	object_get('java.io.FileDescriptor', err, OUT).
 
 file_descriptor(OUT) :- 
 	object_new('java.io.FileDescriptor', [], OUT).
 
-file_descriptor_sync(REF, OUT) :- 
-	object_call(REF, sync, [], OUT).
+file_descriptor_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
-file_descriptor_valid(REF, OUT) :- 
-	object_call(REF, valid, [], OUT).
-
-file_descriptor_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-file_descriptor_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-file_descriptor_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-file_descriptor_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-file_descriptor_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+file_descriptor_sync(REF) :- 
+	object_call(REF, sync, [], _).
 
 file_descriptor_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-file_descriptor_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
+file_descriptor_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-file_descriptor_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+file_descriptor_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-file_descriptor_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+file_descriptor_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+file_descriptor_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+file_descriptor_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+file_descriptor_valid(REF, OUT) :- 
+	object_call(REF, valid, [], OUT).
+
+file_descriptor_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+file_descriptor_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 

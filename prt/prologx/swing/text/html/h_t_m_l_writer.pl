@@ -28,45 +28,45 @@ h_t_m_l_writer(ARG0, ARG1, OUT) :-
 h_t_m_l_writer(ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_new('javax.swing.text.html.HTMLWriter', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
-h_t_m_l_writer_write(REF, OUT) :- 
-	object_call(REF, write, [], OUT).
-
-h_t_m_l_writer_get_start_offset(REF, OUT) :- 
-	object_call(REF, getStartOffset, [], OUT).
+h_t_m_l_writer_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 h_t_m_l_writer_get_end_offset(REF, OUT) :- 
 	object_call(REF, getEndOffset, [], OUT).
 
-h_t_m_l_writer_get_line_separator(REF, OUT) :- 
-	object_call(REF, getLineSeparator, [], OUT).
-
-h_t_m_l_writer_set_line_separator(REF, ARG0, OUT) :- 
-	object_call(REF, setLineSeparator, '.'(ARG0, []), OUT).
-
-h_t_m_l_writer_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-h_t_m_l_writer_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-h_t_m_l_writer_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-h_t_m_l_writer_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+h_t_m_l_writer_set_line_separator(REF, ARG0) :- 
+	object_call(REF, setLineSeparator, '.'(ARG0, []), _).
 
 h_t_m_l_writer_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-h_t_m_l_writer_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+h_t_m_l_writer_get_line_separator(REF, OUT) :- 
+	object_call(REF, getLineSeparator, [], OUT).
+
+h_t_m_l_writer_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+h_t_m_l_writer_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 h_t_m_l_writer_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-h_t_m_l_writer_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+h_t_m_l_writer_write(REF) :- 
+	object_call(REF, write, [], _).
 
-h_t_m_l_writer_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+h_t_m_l_writer_get_start_offset(REF, OUT) :- 
+	object_call(REF, getStartOffset, [], OUT).
+
+h_t_m_l_writer_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+h_t_m_l_writer_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+h_t_m_l_writer_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+h_t_m_l_writer_wait(REF) :- 
+	object_call(REF, wait, [], _).
 

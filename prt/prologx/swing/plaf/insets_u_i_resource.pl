@@ -25,36 +25,36 @@
 insets_u_i_resource(ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_new('javax.swing.plaf.InsetsUIResource', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
-insets_u_i_resource_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-insets_u_i_resource_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+insets_u_i_resource_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 insets_u_i_resource_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+insets_u_i_resource_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+insets_u_i_resource_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+insets_u_i_resource_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+insets_u_i_resource_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+insets_u_i_resource_set(REF, ARG0, ARG1, ARG2, ARG3) :- 
+	object_call(REF, set, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).
+
 insets_u_i_resource_clone(REF, OUT) :- 
 	object_call(REF, clone, [], OUT).
 
-insets_u_i_resource_set(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, set, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+insets_u_i_resource_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-insets_u_i_resource_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-insets_u_i_resource_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-insets_u_i_resource_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+insets_u_i_resource_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 insets_u_i_resource_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-insets_u_i_resource_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-insets_u_i_resource_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

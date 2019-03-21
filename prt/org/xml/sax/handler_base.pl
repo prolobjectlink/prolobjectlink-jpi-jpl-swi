@@ -25,72 +25,72 @@
 handler_base(OUT) :- 
 	object_new('org.xml.sax.HandlerBase', [], OUT).
 
-handler_base_error(REF, ARG0, OUT) :- 
-	object_call(REF, error, '.'(ARG0, []), OUT).
+handler_base_end_element(REF, ARG0) :- 
+	object_call(REF, endElement, '.'(ARG0, []), _).
 
-handler_base_warning(REF, ARG0, OUT) :- 
-	object_call(REF, warning, '.'(ARG0, []), OUT).
+handler_base_start_element(REF, ARG0, ARG1) :- 
+	object_call(REF, startElement, '.'(ARG0, '.'(ARG1, [])), _).
 
-handler_base_characters(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, characters, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+handler_base_warning(REF, ARG0) :- 
+	object_call(REF, warning, '.'(ARG0, []), _).
 
-handler_base_end_document(REF, OUT) :- 
-	object_call(REF, endDocument, [], OUT).
+handler_base_start_document(REF) :- 
+	object_call(REF, startDocument, [], _).
 
-handler_base_end_element(REF, ARG0, OUT) :- 
-	object_call(REF, endElement, '.'(ARG0, []), OUT).
+handler_base_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-handler_base_fatal_error(REF, ARG0, OUT) :- 
-	object_call(REF, fatalError, '.'(ARG0, []), OUT).
-
-handler_base_ignorable_whitespace(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, ignorableWhitespace, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-handler_base_notation_decl(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, notationDecl, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-handler_base_processing_instruction(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, processingInstruction, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-handler_base_resolve_entity(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, resolveEntity, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-handler_base_set_document_locator(REF, ARG0, OUT) :- 
-	object_call(REF, setDocumentLocator, '.'(ARG0, []), OUT).
-
-handler_base_start_document(REF, OUT) :- 
-	object_call(REF, startDocument, [], OUT).
-
-handler_base_start_element(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, startElement, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-handler_base_unparsed_entity_decl(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, unparsedEntityDecl, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
-handler_base_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-handler_base_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-handler_base_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+handler_base_unparsed_entity_decl(REF, ARG0, ARG1, ARG2, ARG3) :- 
+	object_call(REF, unparsedEntityDecl, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).
 
 handler_base_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
+handler_base_set_document_locator(REF, ARG0) :- 
+	object_call(REF, setDocumentLocator, '.'(ARG0, []), _).
+
+handler_base_ignorable_whitespace(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, ignorableWhitespace, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
 handler_base_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-handler_base_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+handler_base_notation_decl(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, notationDecl, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+handler_base_resolve_entity(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, resolveEntity, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+handler_base_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+handler_base_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+handler_base_error(REF, ARG0) :- 
+	object_call(REF, error, '.'(ARG0, []), _).
+
+handler_base_characters(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, characters, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+handler_base_processing_instruction(REF, ARG0, ARG1) :- 
+	object_call(REF, processingInstruction, '.'(ARG0, '.'(ARG1, [])), _).
+
+handler_base_fatal_error(REF, ARG0) :- 
+	object_call(REF, fatalError, '.'(ARG0, []), _).
+
+handler_base_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+handler_base_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 handler_base_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-handler_base_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+handler_base_end_document(REF) :- 
+	object_call(REF, endDocument, [], _).
 
-handler_base_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+handler_base_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 

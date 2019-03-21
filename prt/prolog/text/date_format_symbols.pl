@@ -28,14 +28,8 @@ date_format_symbols(ARG0, OUT) :-
 date_format_symbols(OUT) :- 
 	object_new('java.text.DateFormatSymbols', [], OUT).
 
-date_format_symbols_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-date_format_symbols_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-date_format_symbols_clone(REF, OUT) :- 
-	object_call(REF, clone, [], OUT).
+date_format_symbols_get_short_months(REF, OUT) :- 
+	object_call(REF, getShortMonths, [], OUT).
 
 date_format_symbols_get_instance(REF, OUT) :- 
 	object_call(REF, getInstance, [], OUT).
@@ -43,75 +37,81 @@ date_format_symbols_get_instance(REF, OUT) :-
 date_format_symbols_get_instance(REF, ARG0, OUT) :- 
 	object_call(REF, getInstance, '.'(ARG0, []), OUT).
 
-date_format_symbols_get_available_locales(REF, OUT) :- 
-	object_call(REF, getAvailableLocales, [], OUT).
-
-date_format_symbols_set_am_pm_strings(REF, ARG0, OUT) :- 
-	object_call(REF, setAmPmStrings, '.'(ARG0, []), OUT).
-
-date_format_symbols_set_local_pattern_chars(REF, ARG0, OUT) :- 
-	object_call(REF, setLocalPatternChars, '.'(ARG0, []), OUT).
-
-date_format_symbols_set_months(REF, ARG0, OUT) :- 
-	object_call(REF, setMonths, '.'(ARG0, []), OUT).
-
-date_format_symbols_set_short_months(REF, ARG0, OUT) :- 
-	object_call(REF, setShortMonths, '.'(ARG0, []), OUT).
-
-date_format_symbols_set_short_weekdays(REF, ARG0, OUT) :- 
-	object_call(REF, setShortWeekdays, '.'(ARG0, []), OUT).
-
-date_format_symbols_set_weekdays(REF, ARG0, OUT) :- 
-	object_call(REF, setWeekdays, '.'(ARG0, []), OUT).
-
-date_format_symbols_set_zone_strings(REF, ARG0, OUT) :- 
-	object_call(REF, setZoneStrings, '.'(ARG0, []), OUT).
-
-date_format_symbols_get_am_pm_strings(REF, OUT) :- 
-	object_call(REF, getAmPmStrings, [], OUT).
+date_format_symbols_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
 date_format_symbols_get_eras(REF, OUT) :- 
 	object_call(REF, getEras, [], OUT).
 
-date_format_symbols_get_local_pattern_chars(REF, OUT) :- 
-	object_call(REF, getLocalPatternChars, [], OUT).
+date_format_symbols_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-date_format_symbols_get_months(REF, OUT) :- 
-	object_call(REF, getMonths, [], OUT).
+date_format_symbols_clone(REF, OUT) :- 
+	object_call(REF, clone, [], OUT).
 
-date_format_symbols_get_short_months(REF, OUT) :- 
-	object_call(REF, getShortMonths, [], OUT).
+date_format_symbols_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-date_format_symbols_get_short_weekdays(REF, OUT) :- 
-	object_call(REF, getShortWeekdays, [], OUT).
+date_format_symbols_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+date_format_symbols_set_local_pattern_chars(REF, ARG0) :- 
+	object_call(REF, setLocalPatternChars, '.'(ARG0, []), _).
+
+date_format_symbols_set_eras(REF, ARG0) :- 
+	object_call(REF, setEras, '.'(ARG0, []), _).
 
 date_format_symbols_get_weekdays(REF, OUT) :- 
 	object_call(REF, getWeekdays, [], OUT).
 
-date_format_symbols_set_eras(REF, ARG0, OUT) :- 
-	object_call(REF, setEras, '.'(ARG0, []), OUT).
+date_format_symbols_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-date_format_symbols_get_zone_strings(REF, OUT) :- 
-	object_call(REF, getZoneStrings, [], OUT).
+date_format_symbols_set_short_weekdays(REF, ARG0) :- 
+	object_call(REF, setShortWeekdays, '.'(ARG0, []), _).
 
-date_format_symbols_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+date_format_symbols_set_short_months(REF, ARG0) :- 
+	object_call(REF, setShortMonths, '.'(ARG0, []), _).
 
-date_format_symbols_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+date_format_symbols_get_available_locales(REF, OUT) :- 
+	object_call(REF, getAvailableLocales, [], OUT).
 
-date_format_symbols_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-date_format_symbols_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+date_format_symbols_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
 date_format_symbols_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-date_format_symbols_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+date_format_symbols_get_short_weekdays(REF, OUT) :- 
+	object_call(REF, getShortWeekdays, [], OUT).
 
-date_format_symbols_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+date_format_symbols_set_weekdays(REF, ARG0) :- 
+	object_call(REF, setWeekdays, '.'(ARG0, []), _).
+
+date_format_symbols_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+date_format_symbols_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+date_format_symbols_set_months(REF, ARG0) :- 
+	object_call(REF, setMonths, '.'(ARG0, []), _).
+
+date_format_symbols_set_zone_strings(REF, ARG0) :- 
+	object_call(REF, setZoneStrings, '.'(ARG0, []), _).
+
+date_format_symbols_get_months(REF, OUT) :- 
+	object_call(REF, getMonths, [], OUT).
+
+date_format_symbols_get_zone_strings(REF, OUT) :- 
+	object_call(REF, getZoneStrings, [], OUT).
+
+date_format_symbols_set_am_pm_strings(REF, ARG0) :- 
+	object_call(REF, setAmPmStrings, '.'(ARG0, []), _).
+
+date_format_symbols_get_local_pattern_chars(REF, OUT) :- 
+	object_call(REF, getLocalPatternChars, [], OUT).
+
+date_format_symbols_get_am_pm_strings(REF, OUT) :- 
+	object_call(REF, getAmPmStrings, [], OUT).
 

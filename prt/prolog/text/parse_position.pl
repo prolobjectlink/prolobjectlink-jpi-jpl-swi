@@ -25,42 +25,42 @@
 parse_position(ARG0, OUT) :- 
 	object_new('java.text.ParsePosition', '.'(ARG0, []), OUT).
 
-parse_position_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-parse_position_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-parse_position_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+parse_position_get_error_index(REF, OUT) :- 
+	object_call(REF, getErrorIndex, [], OUT).
 
 parse_position_get_index(REF, OUT) :- 
 	object_call(REF, getIndex, [], OUT).
 
-parse_position_get_error_index(REF, OUT) :- 
-	object_call(REF, getErrorIndex, [], OUT).
+parse_position_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-parse_position_set_error_index(REF, ARG0, OUT) :- 
-	object_call(REF, setErrorIndex, '.'(ARG0, []), OUT).
+parse_position_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-parse_position_set_index(REF, ARG0, OUT) :- 
-	object_call(REF, setIndex, '.'(ARG0, []), OUT).
+parse_position_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-parse_position_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+parse_position_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-parse_position_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-parse_position_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+parse_position_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
 parse_position_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-parse_position_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+parse_position_set_error_index(REF, ARG0) :- 
+	object_call(REF, setErrorIndex, '.'(ARG0, []), _).
 
-parse_position_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+parse_position_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+parse_position_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+parse_position_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+parse_position_set_index(REF, ARG0) :- 
+	object_call(REF, setIndex, '.'(ARG0, []), _).
 

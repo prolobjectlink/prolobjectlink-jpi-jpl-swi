@@ -31,33 +31,33 @@ object_instance(ARG0, ARG1, OUT) :-
 object_instance_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-object_instance_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-object_instance_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-object_instance_get_class_name(REF, OUT) :- 
-	object_call(REF, getClassName, [], OUT).
-
 object_instance_get_object_name(REF, OUT) :- 
 	object_call(REF, getObjectName, [], OUT).
-
-object_instance_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-object_instance_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-object_instance_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
 
 object_instance_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-object_instance_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+object_instance_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
-object_instance_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+object_instance_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+object_instance_get_class_name(REF, OUT) :- 
+	object_call(REF, getClassName, [], OUT).
+
+object_instance_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+object_instance_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+object_instance_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+object_instance_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+object_instance_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 

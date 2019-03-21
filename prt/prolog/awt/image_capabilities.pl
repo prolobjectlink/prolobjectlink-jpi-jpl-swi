@@ -25,39 +25,39 @@
 image_capabilities(ARG0, OUT) :- 
 	object_new('java.awt.ImageCapabilities', '.'(ARG0, []), OUT).
 
-image_capabilities_clone(REF, OUT) :- 
-	object_call(REF, clone, [], OUT).
-
-image_capabilities_is_accelerated(REF, OUT) :- 
-	object_call(REF, isAccelerated, [], OUT).
-
-image_capabilities_is_true_volatile(REF, OUT) :- 
-	object_call(REF, isTrueVolatile, [], OUT).
-
-image_capabilities_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-image_capabilities_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-image_capabilities_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
 image_capabilities_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-image_capabilities_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
 
 image_capabilities_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+image_capabilities_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+image_capabilities_is_true_volatile(REF, OUT) :- 
+	object_call(REF, isTrueVolatile, [], OUT).
+
 image_capabilities_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-image_capabilities_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+image_capabilities_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-image_capabilities_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+image_capabilities_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+image_capabilities_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+image_capabilities_is_accelerated(REF, OUT) :- 
+	object_call(REF, isAccelerated, [], OUT).
+
+image_capabilities_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+image_capabilities_clone(REF, OUT) :- 
+	object_call(REF, clone, [], OUT).
+
+image_capabilities_wait(REF) :- 
+	object_call(REF, wait, [], _).
 

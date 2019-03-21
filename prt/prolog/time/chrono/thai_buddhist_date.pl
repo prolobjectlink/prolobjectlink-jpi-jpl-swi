@@ -22,23 +22,8 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-thai_buddhist_date_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-thai_buddhist_date_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-thai_buddhist_date_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-thai_buddhist_date_get_long(REF, ARG0, OUT) :- 
-	object_call(REF, getLong, '.'(ARG0, []), OUT).
-
-thai_buddhist_date_of(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, of, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-thai_buddhist_date_range(REF, ARG0, OUT) :- 
-	object_call(REF, range, '.'(ARG0, []), OUT).
+thai_buddhist_date_length_of_month(REF, OUT) :- 
+	object_call(REF, lengthOfMonth, [], OUT).
 
 thai_buddhist_date_from(REF, ARG0, OUT) :- 
 	object_call(REF, from, '.'(ARG0, []), OUT).
@@ -49,144 +34,159 @@ thai_buddhist_date_get_era(REF, OUT) :-
 thai_buddhist_date_get_era(REF, OUT) :- 
 	object_call(REF, getEra, [], OUT).
 
-thai_buddhist_date_length_of_month(REF, OUT) :- 
-	object_call(REF, lengthOfMonth, [], OUT).
+thai_buddhist_date_get_long(REF, ARG0, OUT) :- 
+	object_call(REF, getLong, '.'(ARG0, []), OUT).
 
-thai_buddhist_date_to_epoch_day(REF, OUT) :- 
-	object_call(REF, toEpochDay, [], OUT).
+thai_buddhist_date_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-thai_buddhist_date_at_time(REF, ARG0, OUT) :- 
-	object_call(REF, atTime, '.'(ARG0, []), OUT).
-
-thai_buddhist_date_get_chronology(REF, OUT) :- 
-	object_call(REF, getChronology, [], OUT).
-
-thai_buddhist_date_get_chronology(REF, OUT) :- 
-	object_call(REF, getChronology, [], OUT).
-
-thai_buddhist_date_plus(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, plus, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-thai_buddhist_date_plus(REF, ARG0, OUT) :- 
-	object_call(REF, plus, '.'(ARG0, []), OUT).
-
-thai_buddhist_date_plus(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, plus, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-thai_buddhist_date_plus(REF, ARG0, OUT) :- 
-	object_call(REF, plus, '.'(ARG0, []), OUT).
-
-thai_buddhist_date_plus(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, plus, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-thai_buddhist_date_plus(REF, ARG0, OUT) :- 
-	object_call(REF, plus, '.'(ARG0, []), OUT).
-
-thai_buddhist_date_minus(REF, ARG0, OUT) :- 
-	object_call(REF, minus, '.'(ARG0, []), OUT).
-
-thai_buddhist_date_minus(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, minus, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-thai_buddhist_date_minus(REF, ARG0, OUT) :- 
-	object_call(REF, minus, '.'(ARG0, []), OUT).
-
-thai_buddhist_date_minus(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, minus, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-thai_buddhist_date_minus(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, minus, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-thai_buddhist_date_minus(REF, ARG0, OUT) :- 
-	object_call(REF, minus, '.'(ARG0, []), OUT).
-
-thai_buddhist_date_now(REF, OUT) :- 
-	object_call(REF, now, [], OUT).
-
-thai_buddhist_date_now(REF, ARG0, OUT) :- 
-	object_call(REF, now, '.'(ARG0, []), OUT).
-
-thai_buddhist_date_now(REF, ARG0, OUT) :- 
-	object_call(REF, now, '.'(ARG0, []), OUT).
-
-thai_buddhist_date_until(REF, ARG0, OUT) :- 
-	object_call(REF, until, '.'(ARG0, []), OUT).
-
-thai_buddhist_date_until(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, until, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-thai_buddhist_date_with(REF, ARG0, OUT) :- 
-	object_call(REF, with, '.'(ARG0, []), OUT).
-
-thai_buddhist_date_with(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, with, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-thai_buddhist_date_with(REF, ARG0, OUT) :- 
-	object_call(REF, with, '.'(ARG0, []), OUT).
-
-thai_buddhist_date_with(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, with, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-thai_buddhist_date_with(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, with, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-thai_buddhist_date_with(REF, ARG0, OUT) :- 
-	object_call(REF, with, '.'(ARG0, []), OUT).
-
-thai_buddhist_date_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-thai_buddhist_date_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-thai_buddhist_date_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-thai_buddhist_date_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-thai_buddhist_date_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-thai_buddhist_date_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
-
-thai_buddhist_date_compare_to(REF, ARG0, OUT) :- 
-	object_call(REF, compareTo, '.'(ARG0, []), OUT).
-
-thai_buddhist_date_compare_to(REF, ARG0, OUT) :- 
-	object_call(REF, compareTo, '.'(ARG0, []), OUT).
-
-thai_buddhist_date_format(REF, ARG0, OUT) :- 
-	object_call(REF, format, '.'(ARG0, []), OUT).
-
-thai_buddhist_date_query(REF, ARG0, OUT) :- 
-	object_call(REF, query, '.'(ARG0, []), OUT).
-
-thai_buddhist_date_is_supported(REF, ARG0, OUT) :- 
-	object_call(REF, isSupported, '.'(ARG0, []), OUT).
-
-thai_buddhist_date_is_supported(REF, ARG0, OUT) :- 
-	object_call(REF, isSupported, '.'(ARG0, []), OUT).
-
-thai_buddhist_date_is_leap_year(REF, OUT) :- 
-	object_call(REF, isLeapYear, [], OUT).
-
-thai_buddhist_date_is_equal(REF, ARG0, OUT) :- 
-	object_call(REF, isEqual, '.'(ARG0, []), OUT).
-
-thai_buddhist_date_length_of_year(REF, OUT) :- 
-	object_call(REF, lengthOfYear, [], OUT).
-
-thai_buddhist_date_adjust_into(REF, ARG0, OUT) :- 
-	object_call(REF, adjustInto, '.'(ARG0, []), OUT).
-
-thai_buddhist_date_is_after(REF, ARG0, OUT) :- 
-	object_call(REF, isAfter, '.'(ARG0, []), OUT).
+thai_buddhist_date_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 thai_buddhist_date_is_before(REF, ARG0, OUT) :- 
 	object_call(REF, isBefore, '.'(ARG0, []), OUT).
 
+thai_buddhist_date_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+thai_buddhist_date_of(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, of, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+thai_buddhist_date_compare_to(REF, ARG0, OUT) :- 
+	object_call(REF, compareTo, '.'(ARG0, []), OUT).
+
+thai_buddhist_date_compare_to(REF, ARG0, OUT) :- 
+	object_call(REF, compareTo, '.'(ARG0, []), OUT).
+
+thai_buddhist_date_is_after(REF, ARG0, OUT) :- 
+	object_call(REF, isAfter, '.'(ARG0, []), OUT).
+
+thai_buddhist_date_with(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, with, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+thai_buddhist_date_with(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, with, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+thai_buddhist_date_with(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, with, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+thai_buddhist_date_with(REF, ARG0, OUT) :- 
+	object_call(REF, with, '.'(ARG0, []), OUT).
+
+thai_buddhist_date_with(REF, ARG0, OUT) :- 
+	object_call(REF, with, '.'(ARG0, []), OUT).
+
+thai_buddhist_date_with(REF, ARG0, OUT) :- 
+	object_call(REF, with, '.'(ARG0, []), OUT).
+
+thai_buddhist_date_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+thai_buddhist_date_plus(REF, ARG0, OUT) :- 
+	object_call(REF, plus, '.'(ARG0, []), OUT).
+
+thai_buddhist_date_plus(REF, ARG0, OUT) :- 
+	object_call(REF, plus, '.'(ARG0, []), OUT).
+
+thai_buddhist_date_plus(REF, ARG0, OUT) :- 
+	object_call(REF, plus, '.'(ARG0, []), OUT).
+
+thai_buddhist_date_plus(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, plus, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+thai_buddhist_date_plus(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, plus, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+thai_buddhist_date_plus(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, plus, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+thai_buddhist_date_adjust_into(REF, ARG0, OUT) :- 
+	object_call(REF, adjustInto, '.'(ARG0, []), OUT).
+
+thai_buddhist_date_length_of_year(REF, OUT) :- 
+	object_call(REF, lengthOfYear, [], OUT).
+
+thai_buddhist_date_to_epoch_day(REF, OUT) :- 
+	object_call(REF, toEpochDay, [], OUT).
+
 thai_buddhist_date_get(REF, ARG0, OUT) :- 
 	object_call(REF, get, '.'(ARG0, []), OUT).
+
+thai_buddhist_date_is_equal(REF, ARG0, OUT) :- 
+	object_call(REF, isEqual, '.'(ARG0, []), OUT).
+
+thai_buddhist_date_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+thai_buddhist_date_range(REF, ARG0, OUT) :- 
+	object_call(REF, range, '.'(ARG0, []), OUT).
+
+thai_buddhist_date_is_supported(REF, ARG0, OUT) :- 
+	object_call(REF, isSupported, '.'(ARG0, []), OUT).
+
+thai_buddhist_date_is_supported(REF, ARG0, OUT) :- 
+	object_call(REF, isSupported, '.'(ARG0, []), OUT).
+
+thai_buddhist_date_get_chronology(REF, OUT) :- 
+	object_call(REF, getChronology, [], OUT).
+
+thai_buddhist_date_get_chronology(REF, OUT) :- 
+	object_call(REF, getChronology, [], OUT).
+
+thai_buddhist_date_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+thai_buddhist_date_query(REF, ARG0, OUT) :- 
+	object_call(REF, query, '.'(ARG0, []), OUT).
+
+thai_buddhist_date_format(REF, ARG0, OUT) :- 
+	object_call(REF, format, '.'(ARG0, []), OUT).
+
+thai_buddhist_date_minus(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, minus, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+thai_buddhist_date_minus(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, minus, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+thai_buddhist_date_minus(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, minus, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+thai_buddhist_date_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+thai_buddhist_date_is_leap_year(REF, OUT) :- 
+	object_call(REF, isLeapYear, [], OUT).
+
+thai_buddhist_date_minus(REF, ARG0, OUT) :- 
+	object_call(REF, minus, '.'(ARG0, []), OUT).
+
+thai_buddhist_date_minus(REF, ARG0, OUT) :- 
+	object_call(REF, minus, '.'(ARG0, []), OUT).
+
+thai_buddhist_date_minus(REF, ARG0, OUT) :- 
+	object_call(REF, minus, '.'(ARG0, []), OUT).
+
+thai_buddhist_date_until(REF, ARG0, OUT) :- 
+	object_call(REF, until, '.'(ARG0, []), OUT).
+
+thai_buddhist_date_now(REF, ARG0, OUT) :- 
+	object_call(REF, now, '.'(ARG0, []), OUT).
+
+thai_buddhist_date_now(REF, ARG0, OUT) :- 
+	object_call(REF, now, '.'(ARG0, []), OUT).
+
+thai_buddhist_date_until(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, until, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+thai_buddhist_date_now(REF, OUT) :- 
+	object_call(REF, now, [], OUT).
+
+thai_buddhist_date_at_time(REF, ARG0, OUT) :- 
+	object_call(REF, atTime, '.'(ARG0, []), OUT).
+
+thai_buddhist_date_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
+
+thai_buddhist_date_notify(REF) :- 
+	object_call(REF, notify, [], _).
 

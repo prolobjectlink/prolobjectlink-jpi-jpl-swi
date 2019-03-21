@@ -25,54 +25,54 @@
 basic_combo_box_editor(OUT) :- 
 	object_new('javax.swing.plaf.basic.BasicComboBoxEditor', [], OUT).
 
-basic_combo_box_editor_get_editor_component(REF, OUT) :- 
-	object_call(REF, getEditorComponent, [], OUT).
-
-basic_combo_box_editor_set_item(REF, ARG0, OUT) :- 
-	object_call(REF, setItem, '.'(ARG0, []), OUT).
-
-basic_combo_box_editor_add_action_listener(REF, ARG0, OUT) :- 
-	object_call(REF, addActionListener, '.'(ARG0, []), OUT).
-
-basic_combo_box_editor_remove_action_listener(REF, ARG0, OUT) :- 
-	object_call(REF, removeActionListener, '.'(ARG0, []), OUT).
-
-basic_combo_box_editor_focus_gained(REF, ARG0, OUT) :- 
-	object_call(REF, focusGained, '.'(ARG0, []), OUT).
-
-basic_combo_box_editor_focus_lost(REF, ARG0, OUT) :- 
-	object_call(REF, focusLost, '.'(ARG0, []), OUT).
-
-basic_combo_box_editor_get_item(REF, OUT) :- 
-	object_call(REF, getItem, [], OUT).
-
-basic_combo_box_editor_select_all(REF, OUT) :- 
-	object_call(REF, selectAll, [], OUT).
-
-basic_combo_box_editor_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-basic_combo_box_editor_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-basic_combo_box_editor_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-basic_combo_box_editor_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-basic_combo_box_editor_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-basic_combo_box_editor_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+basic_combo_box_editor_set_item(REF, ARG0) :- 
+	object_call(REF, setItem, '.'(ARG0, []), _).
 
 basic_combo_box_editor_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-basic_combo_box_editor_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+basic_combo_box_editor_add_action_listener(REF, ARG0) :- 
+	object_call(REF, addActionListener, '.'(ARG0, []), _).
 
-basic_combo_box_editor_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+basic_combo_box_editor_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+basic_combo_box_editor_get_item(REF, OUT) :- 
+	object_call(REF, getItem, [], OUT).
+
+basic_combo_box_editor_select_all(REF) :- 
+	object_call(REF, selectAll, [], _).
+
+basic_combo_box_editor_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+basic_combo_box_editor_get_editor_component(REF, OUT) :- 
+	object_call(REF, getEditorComponent, [], OUT).
+
+basic_combo_box_editor_focus_gained(REF, ARG0) :- 
+	object_call(REF, focusGained, '.'(ARG0, []), _).
+
+basic_combo_box_editor_focus_lost(REF, ARG0) :- 
+	object_call(REF, focusLost, '.'(ARG0, []), _).
+
+basic_combo_box_editor_remove_action_listener(REF, ARG0) :- 
+	object_call(REF, removeActionListener, '.'(ARG0, []), _).
+
+basic_combo_box_editor_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+basic_combo_box_editor_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+basic_combo_box_editor_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+basic_combo_box_editor_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+basic_combo_box_editor_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+basic_combo_box_editor_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 

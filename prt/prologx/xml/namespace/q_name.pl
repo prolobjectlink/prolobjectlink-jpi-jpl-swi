@@ -31,42 +31,42 @@ q_name(ARG0, ARG1, ARG2, OUT) :-
 q_name(ARG0, ARG1, OUT) :- 
 	object_new('javax.xml.namespace.QName', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-q_name_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+q_name_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-q_name_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+q_name_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-q_name_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-q_name_value_of(REF, ARG0, OUT) :- 
-	object_call(REF, valueOf, '.'(ARG0, []), OUT).
+q_name_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 q_name_get_namespace_u_r_i(REF, OUT) :- 
 	object_call(REF, getNamespaceURI, [], OUT).
 
-q_name_get_prefix(REF, OUT) :- 
-	object_call(REF, getPrefix, [], OUT).
-
 q_name_get_local_part(REF, OUT) :- 
 	object_call(REF, getLocalPart, [], OUT).
 
-q_name_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+q_name_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-q_name_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+q_name_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
-q_name_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+q_name_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 q_name_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-q_name_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+q_name_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-q_name_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+q_name_value_of(REF, ARG0, OUT) :- 
+	object_call(REF, valueOf, '.'(ARG0, []), OUT).
+
+q_name_get_prefix(REF, OUT) :- 
+	object_call(REF, getPrefix, [], OUT).
+
+q_name_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

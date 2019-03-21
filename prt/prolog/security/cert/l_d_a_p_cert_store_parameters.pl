@@ -31,26 +31,8 @@ l_d_a_p_cert_store_parameters(ARG0, OUT) :-
 l_d_a_p_cert_store_parameters(ARG0, ARG1, OUT) :- 
 	object_new('java.security.cert.LDAPCertStoreParameters', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-l_d_a_p_cert_store_parameters_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
 l_d_a_p_cert_store_parameters_clone(REF, OUT) :- 
 	object_call(REF, clone, [], OUT).
-
-l_d_a_p_cert_store_parameters_get_port(REF, OUT) :- 
-	object_call(REF, getPort, [], OUT).
-
-l_d_a_p_cert_store_parameters_get_server_name(REF, OUT) :- 
-	object_call(REF, getServerName, [], OUT).
-
-l_d_a_p_cert_store_parameters_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-l_d_a_p_cert_store_parameters_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-l_d_a_p_cert_store_parameters_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
 
 l_d_a_p_cert_store_parameters_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
@@ -61,9 +43,27 @@ l_d_a_p_cert_store_parameters_hash_code(REF, OUT) :-
 l_d_a_p_cert_store_parameters_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-l_d_a_p_cert_store_parameters_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+l_d_a_p_cert_store_parameters_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-l_d_a_p_cert_store_parameters_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+l_d_a_p_cert_store_parameters_get_server_name(REF, OUT) :- 
+	object_call(REF, getServerName, [], OUT).
+
+l_d_a_p_cert_store_parameters_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+l_d_a_p_cert_store_parameters_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+l_d_a_p_cert_store_parameters_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+l_d_a_p_cert_store_parameters_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+l_d_a_p_cert_store_parameters_get_port(REF, OUT) :- 
+	object_call(REF, getPort, [], OUT).
+
+l_d_a_p_cert_store_parameters_notify(REF) :- 
+	object_call(REF, notify, [], _).
 

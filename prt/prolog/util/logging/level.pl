@@ -22,72 +22,72 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-level_off(OUT) :- 
+level_OFF(OUT) :- 
 	object_get('java.util.logging.Level', off, OUT).
 
-level_severe(OUT) :- 
+level_SEVERE(OUT) :- 
 	object_get('java.util.logging.Level', severe, OUT).
 
-level_warning(OUT) :- 
+level_WARNING(OUT) :- 
 	object_get('java.util.logging.Level', warning, OUT).
 
-level_info(OUT) :- 
+level_INFO(OUT) :- 
 	object_get('java.util.logging.Level', info, OUT).
 
-level_config(OUT) :- 
+level_CONFIG(OUT) :- 
 	object_get('java.util.logging.Level', config, OUT).
 
-level_fine(OUT) :- 
+level_FINE(OUT) :- 
 	object_get('java.util.logging.Level', fine, OUT).
 
-level_finer(OUT) :- 
+level_FINER(OUT) :- 
 	object_get('java.util.logging.Level', finer, OUT).
 
-level_finest(OUT) :- 
+level_FINEST(OUT) :- 
 	object_get('java.util.logging.Level', finest, OUT).
 
-level_all(OUT) :- 
+level_ALL(OUT) :- 
 	object_get('java.util.logging.Level', all, OUT).
-
-level_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-level_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
 
 level_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-level_int_value(REF, OUT) :- 
-	object_call(REF, intValue, [], OUT).
+level_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
 level_get_name(REF, OUT) :- 
 	object_call(REF, getName, [], OUT).
 
+level_get_resource_bundle_name(REF, OUT) :- 
+	object_call(REF, getResourceBundleName, [], OUT).
+
+level_int_value(REF, OUT) :- 
+	object_call(REF, intValue, [], OUT).
+
 level_parse(REF, ARG0, OUT) :- 
 	object_call(REF, parse, '.'(ARG0, []), OUT).
 
-level_get_resource_bundle_name(REF, OUT) :- 
-	object_call(REF, getResourceBundleName, [], OUT).
+level_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+level_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+level_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+level_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 level_get_localized_name(REF, OUT) :- 
 	object_call(REF, getLocalizedName, [], OUT).
 
-level_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+level_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-level_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+level_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-level_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-level_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-level_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-level_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+level_wait(REF) :- 
+	object_call(REF, wait, [], _).
 

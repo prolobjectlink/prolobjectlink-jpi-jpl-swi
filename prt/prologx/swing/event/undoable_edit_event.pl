@@ -28,20 +28,23 @@ undoable_edit_event(ARG0, ARG1, OUT) :-
 undoable_edit_event_get_edit(REF, OUT) :- 
 	object_call(REF, getEdit, [], OUT).
 
+undoable_edit_event_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+undoable_edit_event_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
 undoable_edit_event_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
+undoable_edit_event_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
+
+undoable_edit_event_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
 undoable_edit_event_get_source(REF, OUT) :- 
 	object_call(REF, getSource, [], OUT).
-
-undoable_edit_event_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-undoable_edit_event_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-undoable_edit_event_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
 
 undoable_edit_event_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
@@ -49,12 +52,9 @@ undoable_edit_event_equals(REF, ARG0, OUT) :-
 undoable_edit_event_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-undoable_edit_event_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
+undoable_edit_event_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-undoable_edit_event_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-undoable_edit_event_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+undoable_edit_event_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 

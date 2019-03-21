@@ -28,66 +28,66 @@ inconsistent_type_code(OUT) :-
 inconsistent_type_code(ARG0, OUT) :- 
 	object_new('org.omg.DynamicAny.DynAnyFactoryPackage.InconsistentTypeCode', '.'(ARG0, []), OUT).
 
-inconsistent_type_code_print_stack_trace(REF, OUT) :- 
-	object_call(REF, printStackTrace, [], OUT).
-
-inconsistent_type_code_print_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, printStackTrace, '.'(ARG0, []), OUT).
-
-inconsistent_type_code_print_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, printStackTrace, '.'(ARG0, []), OUT).
-
 inconsistent_type_code_fill_in_stack_trace(REF, OUT) :- 
 	object_call(REF, fillInStackTrace, [], OUT).
-
-inconsistent_type_code_get_cause(REF, OUT) :- 
-	object_call(REF, getCause, [], OUT).
-
-inconsistent_type_code_init_cause(REF, ARG0, OUT) :- 
-	object_call(REF, initCause, '.'(ARG0, []), OUT).
-
-inconsistent_type_code_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-inconsistent_type_code_add_suppressed(REF, ARG0, OUT) :- 
-	object_call(REF, addSuppressed, '.'(ARG0, []), OUT).
-
-inconsistent_type_code_get_localized_message(REF, OUT) :- 
-	object_call(REF, getLocalizedMessage, [], OUT).
-
-inconsistent_type_code_get_message(REF, OUT) :- 
-	object_call(REF, getMessage, [], OUT).
-
-inconsistent_type_code_get_stack_trace(REF, OUT) :- 
-	object_call(REF, getStackTrace, [], OUT).
-
-inconsistent_type_code_get_suppressed(REF, OUT) :- 
-	object_call(REF, getSuppressed, [], OUT).
-
-inconsistent_type_code_set_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, setStackTrace, '.'(ARG0, []), OUT).
-
-inconsistent_type_code_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-inconsistent_type_code_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-inconsistent_type_code_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
 
 inconsistent_type_code_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-inconsistent_type_code_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+inconsistent_type_code_get_localized_message(REF, OUT) :- 
+	object_call(REF, getLocalizedMessage, [], OUT).
+
+inconsistent_type_code_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+inconsistent_type_code_get_stack_trace(REF, OUT) :- 
+	object_call(REF, getStackTrace, [], OUT).
+
+inconsistent_type_code_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+inconsistent_type_code_init_cause(REF, ARG0, OUT) :- 
+	object_call(REF, initCause, '.'(ARG0, []), OUT).
+
+inconsistent_type_code_add_suppressed(REF, ARG0) :- 
+	object_call(REF, addSuppressed, '.'(ARG0, []), _).
+
+inconsistent_type_code_get_message(REF, OUT) :- 
+	object_call(REF, getMessage, [], OUT).
+
+inconsistent_type_code_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+inconsistent_type_code_get_cause(REF, OUT) :- 
+	object_call(REF, getCause, [], OUT).
+
+inconsistent_type_code_set_stack_trace(REF, ARG0) :- 
+	object_call(REF, setStackTrace, '.'(ARG0, []), _).
+
+inconsistent_type_code_print_stack_trace(REF) :- 
+	object_call(REF, printStackTrace, [], _).
+
+inconsistent_type_code_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+inconsistent_type_code_print_stack_trace(REF, ARG0) :- 
+	object_call(REF, printStackTrace, '.'(ARG0, []), _).
+
+inconsistent_type_code_print_stack_trace(REF, ARG0) :- 
+	object_call(REF, printStackTrace, '.'(ARG0, []), _).
 
 inconsistent_type_code_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-inconsistent_type_code_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+inconsistent_type_code_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-inconsistent_type_code_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+inconsistent_type_code_get_suppressed(REF, OUT) :- 
+	object_call(REF, getSuppressed, [], OUT).
+
+inconsistent_type_code_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+inconsistent_type_code_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 

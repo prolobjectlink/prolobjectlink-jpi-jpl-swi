@@ -25,8 +25,8 @@
 timestamp(ARG0, ARG1, OUT) :- 
 	object_new('java.security.Timestamp', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-timestamp_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+timestamp_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 timestamp_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
@@ -34,27 +34,27 @@ timestamp_to_string(REF, OUT) :-
 timestamp_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-timestamp_get_signer_cert_path(REF, OUT) :- 
-	object_call(REF, getSignerCertPath, [], OUT).
-
-timestamp_get_timestamp(REF, OUT) :- 
-	object_call(REF, getTimestamp, [], OUT).
-
-timestamp_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-timestamp_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-timestamp_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
 timestamp_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-timestamp_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+timestamp_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-timestamp_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+timestamp_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+timestamp_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+timestamp_get_signer_cert_path(REF, OUT) :- 
+	object_call(REF, getSignerCertPath, [], OUT).
+
+timestamp_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+timestamp_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+timestamp_get_timestamp(REF, OUT) :- 
+	object_call(REF, getTimestamp, [], OUT).
 

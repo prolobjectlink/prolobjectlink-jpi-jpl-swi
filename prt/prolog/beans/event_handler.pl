@@ -25,20 +25,26 @@
 event_handler(ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_new('java.beans.EventHandler', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
-event_handler_invoke(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, invoke, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-event_handler_create(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, create, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
-event_handler_create(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, create, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+event_handler_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 event_handler_create(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
 	object_call(REF, create, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
 
-event_handler_get_target(REF, OUT) :- 
-	object_call(REF, getTarget, [], OUT).
+event_handler_create(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, create, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+event_handler_create(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_call(REF, create, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+
+event_handler_invoke(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, invoke, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+event_handler_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+event_handler_get_listener_method_name(REF, OUT) :- 
+	object_call(REF, getListenerMethodName, [], OUT).
 
 event_handler_get_action(REF, OUT) :- 
 	object_call(REF, getAction, [], OUT).
@@ -46,33 +52,27 @@ event_handler_get_action(REF, OUT) :-
 event_handler_get_event_property_name(REF, OUT) :- 
 	object_call(REF, getEventPropertyName, [], OUT).
 
-event_handler_get_listener_method_name(REF, OUT) :- 
-	object_call(REF, getListenerMethodName, [], OUT).
+event_handler_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-event_handler_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+event_handler_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-event_handler_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+event_handler_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-event_handler_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+event_handler_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-event_handler_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-event_handler_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+event_handler_get_target(REF, OUT) :- 
+	object_call(REF, getTarget, [], OUT).
 
 event_handler_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+event_handler_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
 event_handler_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-event_handler_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-event_handler_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

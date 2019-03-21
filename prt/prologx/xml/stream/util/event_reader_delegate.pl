@@ -22,56 +22,38 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-event_reader_delegate(OUT) :- 
-	object_new('javax.xml.stream.util.EventReaderDelegate', [], OUT).
-
 event_reader_delegate(ARG0, OUT) :- 
 	object_new('javax.xml.stream.util.EventReaderDelegate', '.'(ARG0, []), OUT).
 
-event_reader_delegate_remove(REF, OUT) :- 
-	object_call(REF, remove, [], OUT).
+event_reader_delegate(OUT) :- 
+	object_new('javax.xml.stream.util.EventReaderDelegate', [], OUT).
 
-event_reader_delegate_get_property(REF, ARG0, OUT) :- 
-	object_call(REF, getProperty, '.'(ARG0, []), OUT).
+event_reader_delegate_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-event_reader_delegate_has_next(REF, OUT) :- 
-	object_call(REF, hasNext, [], OUT).
+event_reader_delegate_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
-event_reader_delegate_next(REF, OUT) :- 
-	object_call(REF, next, [], OUT).
-
-event_reader_delegate_get_parent(REF, OUT) :- 
-	object_call(REF, getParent, [], OUT).
-
-event_reader_delegate_close(REF, OUT) :- 
-	object_call(REF, close, [], OUT).
+event_reader_delegate_for_each_remaining(REF, ARG0) :- 
+	object_call(REF, forEachRemaining, '.'(ARG0, []), _).
 
 event_reader_delegate_peek(REF, OUT) :- 
 	object_call(REF, peek, [], OUT).
 
-event_reader_delegate_set_parent(REF, ARG0, OUT) :- 
-	object_call(REF, setParent, '.'(ARG0, []), OUT).
-
 event_reader_delegate_get_element_text(REF, OUT) :- 
 	object_call(REF, getElementText, [], OUT).
 
-event_reader_delegate_next_event(REF, OUT) :- 
-	object_call(REF, nextEvent, [], OUT).
+event_reader_delegate_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-event_reader_delegate_next_tag(REF, OUT) :- 
-	object_call(REF, nextTag, [], OUT).
+event_reader_delegate_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-event_reader_delegate_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+event_reader_delegate_has_next(REF, OUT) :- 
+	object_call(REF, hasNext, [], OUT).
 
-event_reader_delegate_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-event_reader_delegate_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-event_reader_delegate_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+event_reader_delegate_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 event_reader_delegate_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
@@ -79,15 +61,33 @@ event_reader_delegate_to_string(REF, OUT) :-
 event_reader_delegate_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-event_reader_delegate_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
+event_reader_delegate_next(REF, OUT) :- 
+	object_call(REF, next, [], OUT).
 
-event_reader_delegate_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+event_reader_delegate_close(REF) :- 
+	object_call(REF, close, [], _).
 
-event_reader_delegate_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+event_reader_delegate_next_event(REF, OUT) :- 
+	object_call(REF, nextEvent, [], OUT).
 
-event_reader_delegate_for_each_remaining(REF, ARG0, OUT) :- 
-	object_call(REF, forEachRemaining, '.'(ARG0, []), OUT).
+event_reader_delegate_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+event_reader_delegate_next_tag(REF, OUT) :- 
+	object_call(REF, nextTag, [], OUT).
+
+event_reader_delegate_get_property(REF, ARG0, OUT) :- 
+	object_call(REF, getProperty, '.'(ARG0, []), OUT).
+
+event_reader_delegate_get_parent(REF, OUT) :- 
+	object_call(REF, getParent, [], OUT).
+
+event_reader_delegate_set_parent(REF, ARG0) :- 
+	object_call(REF, setParent, '.'(ARG0, []), _).
+
+event_reader_delegate_remove(REF) :- 
+	object_call(REF, remove, [], _).
+
+event_reader_delegate_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 

@@ -22,36 +22,36 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-normalizer_normalize(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, normalize, '.'(ARG0, '.'(ARG1, [])), OUT).
+normalizer_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-normalizer_is_normalized(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, isNormalized, '.'(ARG0, '.'(ARG1, [])), OUT).
+normalizer_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-normalizer_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+normalizer_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-normalizer_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+normalizer_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-normalizer_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+normalizer_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+normalizer_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 normalizer_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-normalizer_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+normalizer_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
+
+normalizer_normalize(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, normalize, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 normalizer_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-normalizer_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-normalizer_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-normalizer_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+normalizer_is_normalized(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, isNormalized, '.'(ARG0, '.'(ARG1, [])), OUT).
 

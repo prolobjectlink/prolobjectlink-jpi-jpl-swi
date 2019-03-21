@@ -25,29 +25,11 @@
 a_w_t_event_listener_proxy(ARG0, ARG1, OUT) :- 
 	object_new('java.awt.event.AWTEventListenerProxy', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-a_w_t_event_listener_proxy_event_dispatched(REF, ARG0, OUT) :- 
-	object_call(REF, eventDispatched, '.'(ARG0, []), OUT).
+a_w_t_event_listener_proxy_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 a_w_t_event_listener_proxy_get_event_mask(REF, OUT) :- 
 	object_call(REF, getEventMask, [], OUT).
-
-a_w_t_event_listener_proxy_get_listener(REF, OUT) :- 
-	object_call(REF, getListener, [], OUT).
-
-a_w_t_event_listener_proxy_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-a_w_t_event_listener_proxy_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-a_w_t_event_listener_proxy_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-a_w_t_event_listener_proxy_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-a_w_t_event_listener_proxy_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
 
 a_w_t_event_listener_proxy_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -55,9 +37,27 @@ a_w_t_event_listener_proxy_hash_code(REF, OUT) :-
 a_w_t_event_listener_proxy_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-a_w_t_event_listener_proxy_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+a_w_t_event_listener_proxy_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-a_w_t_event_listener_proxy_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+a_w_t_event_listener_proxy_event_dispatched(REF, ARG0) :- 
+	object_call(REF, eventDispatched, '.'(ARG0, []), _).
+
+a_w_t_event_listener_proxy_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+a_w_t_event_listener_proxy_get_listener(REF, OUT) :- 
+	object_call(REF, getListener, [], OUT).
+
+a_w_t_event_listener_proxy_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+a_w_t_event_listener_proxy_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+a_w_t_event_listener_proxy_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+a_w_t_event_listener_proxy_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

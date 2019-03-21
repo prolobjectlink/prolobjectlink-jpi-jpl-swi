@@ -22,120 +22,120 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-system_in(OUT) :- 
+system_IN(OUT) :- 
 	object_get('java.lang.System', in, OUT).
 
-system_out(OUT) :- 
+system_OUT(OUT) :- 
 	object_get('java.lang.System', out, OUT).
 
-system_err(OUT) :- 
+system_ERR(OUT) :- 
 	object_get('java.lang.System', err, OUT).
-
-system_exit(REF, ARG0, OUT) :- 
-	object_call(REF, exit, '.'(ARG0, []), OUT).
-
-system_run_finalization(REF, OUT) :- 
-	object_call(REF, runFinalization, [], OUT).
-
-system_run_finalizers_on_exit(REF, ARG0, OUT) :- 
-	object_call(REF, runFinalizersOnExit, '.'(ARG0, []), OUT).
-
-system_set_property(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, setProperty, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-system_get_property(REF, ARG0, OUT) :- 
-	object_call(REF, getProperty, '.'(ARG0, []), OUT).
-
-system_get_property(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getProperty, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-system_identity_hash_code(REF, ARG0, OUT) :- 
-	object_call(REF, identityHashCode, '.'(ARG0, []), OUT).
-
-system_current_time_millis(REF, OUT) :- 
-	object_call(REF, currentTimeMillis, [], OUT).
-
-system_nano_time(REF, OUT) :- 
-	object_call(REF, nanoTime, [], OUT).
-
-system_arraycopy(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
-	object_call(REF, arraycopy, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
-
-system_get_security_manager(REF, OUT) :- 
-	object_call(REF, getSecurityManager, [], OUT).
-
-system_load(REF, ARG0, OUT) :- 
-	object_call(REF, load, '.'(ARG0, []), OUT).
-
-system_load_library(REF, ARG0, OUT) :- 
-	object_call(REF, loadLibrary, '.'(ARG0, []), OUT).
-
-system_map_library_name(REF, ARG0, OUT) :- 
-	object_call(REF, mapLibraryName, '.'(ARG0, []), OUT).
-
-system_clear_property(REF, ARG0, OUT) :- 
-	object_call(REF, clearProperty, '.'(ARG0, []), OUT).
-
-system_console(REF, OUT) :- 
-	object_call(REF, console, [], OUT).
-
-system_gc(REF, OUT) :- 
-	object_call(REF, gc, [], OUT).
-
-system_get_properties(REF, OUT) :- 
-	object_call(REF, getProperties, [], OUT).
-
-system_getenv(REF, ARG0, OUT) :- 
-	object_call(REF, getenv, '.'(ARG0, []), OUT).
 
 system_getenv(REF, OUT) :- 
 	object_call(REF, getenv, [], OUT).
 
-system_inherited_channel(REF, OUT) :- 
-	object_call(REF, inheritedChannel, [], OUT).
+system_getenv(REF, ARG0, OUT) :- 
+	object_call(REF, getenv, '.'(ARG0, []), OUT).
 
-system_line_separator(REF, OUT) :- 
-	object_call(REF, lineSeparator, [], OUT).
+system_run_finalizers_on_exit(REF, ARG0) :- 
+	object_call(REF, runFinalizersOnExit, '.'(ARG0, []), _).
 
-system_set_err(REF, ARG0, OUT) :- 
-	object_call(REF, setErr, '.'(ARG0, []), OUT).
+system_set_out(REF, ARG0) :- 
+	object_call(REF, setOut, '.'(ARG0, []), _).
 
-system_set_in(REF, ARG0, OUT) :- 
-	object_call(REF, setIn, '.'(ARG0, []), OUT).
+system_load_library(REF, ARG0) :- 
+	object_call(REF, loadLibrary, '.'(ARG0, []), _).
 
-system_set_out(REF, ARG0, OUT) :- 
-	object_call(REF, setOut, '.'(ARG0, []), OUT).
-
-system_set_properties(REF, ARG0, OUT) :- 
-	object_call(REF, setProperties, '.'(ARG0, []), OUT).
-
-system_set_security_manager(REF, ARG0, OUT) :- 
-	object_call(REF, setSecurityManager, '.'(ARG0, []), OUT).
-
-system_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-system_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-system_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-system_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-system_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-system_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+system_get_properties(REF, OUT) :- 
+	object_call(REF, getProperties, [], OUT).
 
 system_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-system_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+system_run_finalization(REF) :- 
+	object_call(REF, runFinalization, [], _).
 
-system_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+system_map_library_name(REF, ARG0, OUT) :- 
+	object_call(REF, mapLibraryName, '.'(ARG0, []), OUT).
+
+system_arraycopy(REF, ARG0, ARG1, ARG2, ARG3, ARG4) :- 
+	object_call(REF, arraycopy, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), _).
+
+system_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+system_set_security_manager(REF, ARG0) :- 
+	object_call(REF, setSecurityManager, '.'(ARG0, []), _).
+
+system_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+system_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+system_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+system_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+system_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+system_exit(REF, ARG0) :- 
+	object_call(REF, exit, '.'(ARG0, []), _).
+
+system_set_properties(REF, ARG0) :- 
+	object_call(REF, setProperties, '.'(ARG0, []), _).
+
+system_load(REF, ARG0) :- 
+	object_call(REF, load, '.'(ARG0, []), _).
+
+system_inherited_channel(REF, OUT) :- 
+	object_call(REF, inheritedChannel, [], OUT).
+
+system_set_property(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, setProperty, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+system_set_err(REF, ARG0) :- 
+	object_call(REF, setErr, '.'(ARG0, []), _).
+
+system_set_in(REF, ARG0) :- 
+	object_call(REF, setIn, '.'(ARG0, []), _).
+
+system_current_time_millis(REF, OUT) :- 
+	object_call(REF, currentTimeMillis, [], OUT).
+
+system_get_property(REF, ARG0, OUT) :- 
+	object_call(REF, getProperty, '.'(ARG0, []), OUT).
+
+system_get_security_manager(REF, OUT) :- 
+	object_call(REF, getSecurityManager, [], OUT).
+
+system_console(REF, OUT) :- 
+	object_call(REF, console, [], OUT).
+
+system_get_property(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getProperty, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+system_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+system_nano_time(REF, OUT) :- 
+	object_call(REF, nanoTime, [], OUT).
+
+system_gc(REF) :- 
+	object_call(REF, gc, [], _).
+
+system_identity_hash_code(REF, ARG0, OUT) :- 
+	object_call(REF, identityHashCode, '.'(ARG0, []), OUT).
+
+system_clear_property(REF, ARG0, OUT) :- 
+	object_call(REF, clearProperty, '.'(ARG0, []), OUT).
+
+system_line_separator(REF, OUT) :- 
+	object_call(REF, lineSeparator, [], OUT).
+
+system_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 

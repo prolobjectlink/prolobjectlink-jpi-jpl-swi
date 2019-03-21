@@ -22,87 +22,87 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-method_descriptor(ARG0, OUT) :- 
-	object_new('java.beans.MethodDescriptor', '.'(ARG0, []), OUT).
-
 method_descriptor(ARG0, ARG1, OUT) :- 
 	object_new('java.beans.MethodDescriptor', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-method_descriptor_get_method(REF, OUT) :- 
-	object_call(REF, getMethod, [], OUT).
-
-method_descriptor_get_parameter_descriptors(REF, OUT) :- 
-	object_call(REF, getParameterDescriptors, [], OUT).
-
-method_descriptor_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-method_descriptor_get_name(REF, OUT) :- 
-	object_call(REF, getName, [], OUT).
-
-method_descriptor_get_value(REF, ARG0, OUT) :- 
-	object_call(REF, getValue, '.'(ARG0, []), OUT).
-
-method_descriptor_set_name(REF, ARG0, OUT) :- 
-	object_call(REF, setName, '.'(ARG0, []), OUT).
-
-method_descriptor_set_value(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, setValue, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-method_descriptor_is_hidden(REF, OUT) :- 
-	object_call(REF, isHidden, [], OUT).
-
-method_descriptor_get_display_name(REF, OUT) :- 
-	object_call(REF, getDisplayName, [], OUT).
-
-method_descriptor_attribute_names(REF, OUT) :- 
-	object_call(REF, attributeNames, [], OUT).
-
-method_descriptor_get_short_description(REF, OUT) :- 
-	object_call(REF, getShortDescription, [], OUT).
-
-method_descriptor_is_expert(REF, OUT) :- 
-	object_call(REF, isExpert, [], OUT).
+method_descriptor(ARG0, OUT) :- 
+	object_new('java.beans.MethodDescriptor', '.'(ARG0, []), OUT).
 
 method_descriptor_is_preferred(REF, OUT) :- 
 	object_call(REF, isPreferred, [], OUT).
 
-method_descriptor_set_display_name(REF, ARG0, OUT) :- 
-	object_call(REF, setDisplayName, '.'(ARG0, []), OUT).
+method_descriptor_attribute_names(REF, OUT) :- 
+	object_call(REF, attributeNames, [], OUT).
 
-method_descriptor_set_expert(REF, ARG0, OUT) :- 
-	object_call(REF, setExpert, '.'(ARG0, []), OUT).
+method_descriptor_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-method_descriptor_set_hidden(REF, ARG0, OUT) :- 
-	object_call(REF, setHidden, '.'(ARG0, []), OUT).
+method_descriptor_is_expert(REF, OUT) :- 
+	object_call(REF, isExpert, [], OUT).
 
-method_descriptor_set_preferred(REF, ARG0, OUT) :- 
-	object_call(REF, setPreferred, '.'(ARG0, []), OUT).
+method_descriptor_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-method_descriptor_set_short_description(REF, ARG0, OUT) :- 
-	object_call(REF, setShortDescription, '.'(ARG0, []), OUT).
+method_descriptor_set_value(REF, ARG0, ARG1) :- 
+	object_call(REF, setValue, '.'(ARG0, '.'(ARG1, [])), _).
 
-method_descriptor_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+method_descriptor_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-method_descriptor_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+method_descriptor_get_display_name(REF, OUT) :- 
+	object_call(REF, getDisplayName, [], OUT).
 
-method_descriptor_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+method_descriptor_set_display_name(REF, ARG0) :- 
+	object_call(REF, setDisplayName, '.'(ARG0, []), _).
 
-method_descriptor_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+method_descriptor_set_hidden(REF, ARG0) :- 
+	object_call(REF, setHidden, '.'(ARG0, []), _).
 
-method_descriptor_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+method_descriptor_set_name(REF, ARG0) :- 
+	object_call(REF, setName, '.'(ARG0, []), _).
+
+method_descriptor_get_short_description(REF, OUT) :- 
+	object_call(REF, getShortDescription, [], OUT).
+
+method_descriptor_get_method(REF, OUT) :- 
+	object_call(REF, getMethod, [], OUT).
+
+method_descriptor_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 method_descriptor_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-method_descriptor_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+method_descriptor_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-method_descriptor_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+method_descriptor_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+method_descriptor_set_preferred(REF, ARG0) :- 
+	object_call(REF, setPreferred, '.'(ARG0, []), _).
+
+method_descriptor_get_value(REF, ARG0, OUT) :- 
+	object_call(REF, getValue, '.'(ARG0, []), OUT).
+
+method_descriptor_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+method_descriptor_is_hidden(REF, OUT) :- 
+	object_call(REF, isHidden, [], OUT).
+
+method_descriptor_set_expert(REF, ARG0) :- 
+	object_call(REF, setExpert, '.'(ARG0, []), _).
+
+method_descriptor_get_name(REF, OUT) :- 
+	object_call(REF, getName, [], OUT).
+
+method_descriptor_set_short_description(REF, ARG0) :- 
+	object_call(REF, setShortDescription, '.'(ARG0, []), _).
+
+method_descriptor_get_parameter_descriptors(REF, OUT) :- 
+	object_call(REF, getParameterDescriptors, [], OUT).
+
+method_descriptor_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 

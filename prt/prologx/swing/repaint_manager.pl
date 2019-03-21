@@ -25,80 +25,65 @@
 repaint_manager(OUT) :- 
 	object_new('javax.swing.RepaintManager', [], OUT).
 
+repaint_manager_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+repaint_manager_set_current_manager(REF, ARG0) :- 
+	object_call(REF, setCurrentManager, '.'(ARG0, []), _).
+
 repaint_manager_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
-
-repaint_manager_set_current_manager(REF, ARG0, OUT) :- 
-	object_call(REF, setCurrentManager, '.'(ARG0, []), OUT).
-
-repaint_manager_add_dirty_region(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
-	object_call(REF, addDirtyRegion, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
-
-repaint_manager_add_dirty_region(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
-	object_call(REF, addDirtyRegion, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
-
-repaint_manager_add_dirty_region(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
-	object_call(REF, addDirtyRegion, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
-
-repaint_manager_current_manager(REF, ARG0, OUT) :- 
-	object_call(REF, currentManager, '.'(ARG0, []), OUT).
-
-repaint_manager_current_manager(REF, ARG0, OUT) :- 
-	object_call(REF, currentManager, '.'(ARG0, []), OUT).
-
-repaint_manager_add_invalid_component(REF, ARG0, OUT) :- 
-	object_call(REF, addInvalidComponent, '.'(ARG0, []), OUT).
-
-repaint_manager_is_double_buffering_enabled(REF, OUT) :- 
-	object_call(REF, isDoubleBufferingEnabled, [], OUT).
-
-repaint_manager_mark_completely_clean(REF, ARG0, OUT) :- 
-	object_call(REF, markCompletelyClean, '.'(ARG0, []), OUT).
-
-repaint_manager_get_offscreen_buffer(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, getOffscreenBuffer, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-repaint_manager_get_volatile_offscreen_buffer(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, getVolatileOffscreenBuffer, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
 repaint_manager_get_double_buffer_maximum_size(REF, OUT) :- 
 	object_call(REF, getDoubleBufferMaximumSize, [], OUT).
 
-repaint_manager_is_completely_dirty(REF, ARG0, OUT) :- 
-	object_call(REF, isCompletelyDirty, '.'(ARG0, []), OUT).
+repaint_manager_add_invalid_component(REF, ARG0) :- 
+	object_call(REF, addInvalidComponent, '.'(ARG0, []), _).
 
-repaint_manager_mark_completely_dirty(REF, ARG0, OUT) :- 
-	object_call(REF, markCompletelyDirty, '.'(ARG0, []), OUT).
+repaint_manager_get_volatile_offscreen_buffer(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, getVolatileOffscreenBuffer, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-repaint_manager_paint_dirty_regions(REF, OUT) :- 
-	object_call(REF, paintDirtyRegions, [], OUT).
+repaint_manager_add_dirty_region(REF, ARG0, ARG1, ARG2, ARG3, ARG4) :- 
+	object_call(REF, addDirtyRegion, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), _).
 
-repaint_manager_set_double_buffer_maximum_size(REF, ARG0, OUT) :- 
-	object_call(REF, setDoubleBufferMaximumSize, '.'(ARG0, []), OUT).
+repaint_manager_add_dirty_region(REF, ARG0, ARG1, ARG2, ARG3, ARG4) :- 
+	object_call(REF, addDirtyRegion, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), _).
 
-repaint_manager_set_double_buffering_enabled(REF, ARG0, OUT) :- 
-	object_call(REF, setDoubleBufferingEnabled, '.'(ARG0, []), OUT).
+repaint_manager_add_dirty_region(REF, ARG0, ARG1, ARG2, ARG3, ARG4) :- 
+	object_call(REF, addDirtyRegion, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), _).
 
-repaint_manager_validate_invalid_components(REF, OUT) :- 
-	object_call(REF, validateInvalidComponents, [], OUT).
+repaint_manager_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+repaint_manager_remove_invalid_component(REF, ARG0) :- 
+	object_call(REF, removeInvalidComponent, '.'(ARG0, []), _).
+
+repaint_manager_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+repaint_manager_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+repaint_manager_mark_completely_clean(REF, ARG0) :- 
+	object_call(REF, markCompletelyClean, '.'(ARG0, []), _).
 
 repaint_manager_get_dirty_region(REF, ARG0, OUT) :- 
 	object_call(REF, getDirtyRegion, '.'(ARG0, []), OUT).
 
-repaint_manager_remove_invalid_component(REF, ARG0, OUT) :- 
-	object_call(REF, removeInvalidComponent, '.'(ARG0, []), OUT).
+repaint_manager_is_completely_dirty(REF, ARG0, OUT) :- 
+	object_call(REF, isCompletelyDirty, '.'(ARG0, []), OUT).
 
-repaint_manager_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+repaint_manager_current_manager(REF, ARG0, OUT) :- 
+	object_call(REF, currentManager, '.'(ARG0, []), OUT).
 
-repaint_manager_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+repaint_manager_current_manager(REF, ARG0, OUT) :- 
+	object_call(REF, currentManager, '.'(ARG0, []), OUT).
 
-repaint_manager_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+repaint_manager_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-repaint_manager_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+repaint_manager_paint_dirty_regions(REF) :- 
+	object_call(REF, paintDirtyRegions, [], _).
 
 repaint_manager_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -106,9 +91,24 @@ repaint_manager_hash_code(REF, OUT) :-
 repaint_manager_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-repaint_manager_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+repaint_manager_mark_completely_dirty(REF, ARG0) :- 
+	object_call(REF, markCompletelyDirty, '.'(ARG0, []), _).
 
-repaint_manager_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+repaint_manager_validate_invalid_components(REF) :- 
+	object_call(REF, validateInvalidComponents, [], _).
+
+repaint_manager_set_double_buffering_enabled(REF, ARG0) :- 
+	object_call(REF, setDoubleBufferingEnabled, '.'(ARG0, []), _).
+
+repaint_manager_set_double_buffer_maximum_size(REF, ARG0) :- 
+	object_call(REF, setDoubleBufferMaximumSize, '.'(ARG0, []), _).
+
+repaint_manager_get_offscreen_buffer(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, getOffscreenBuffer, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+repaint_manager_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+repaint_manager_is_double_buffering_enabled(REF, OUT) :- 
+	object_call(REF, isDoubleBufferingEnabled, [], OUT).
 

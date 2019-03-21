@@ -25,26 +25,23 @@
 default_loader_repository(OUT) :- 
 	object_new('javax.management.DefaultLoaderRepository', [], OUT).
 
+default_loader_repository_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+default_loader_repository_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
 default_loader_repository_load_class(REF, ARG0, OUT) :- 
 	object_call(REF, loadClass, '.'(ARG0, []), OUT).
 
 default_loader_repository_load_class_without(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, loadClassWithout, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-default_loader_repository_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+default_loader_repository_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-default_loader_repository_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-default_loader_repository_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-default_loader_repository_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-default_loader_repository_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+default_loader_repository_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 default_loader_repository_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -52,9 +49,12 @@ default_loader_repository_hash_code(REF, OUT) :-
 default_loader_repository_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-default_loader_repository_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+default_loader_repository_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-default_loader_repository_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+default_loader_repository_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+default_loader_repository_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 

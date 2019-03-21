@@ -22,81 +22,81 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-compound_name_serialversionuid(OUT) :- 
+compound_name_SERIALVERSIONUID(OUT) :- 
 	object_get('javax.naming.CompoundName', serialversionuid, OUT).
 
 compound_name(ARG0, ARG1, OUT) :- 
 	object_new('javax.naming.CompoundName', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-compound_name_add(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, add, '.'(ARG0, '.'(ARG1, [])), OUT).
+compound_name_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-compound_name_add(REF, ARG0, OUT) :- 
-	object_call(REF, add, '.'(ARG0, []), OUT).
-
-compound_name_remove(REF, ARG0, OUT) :- 
-	object_call(REF, remove, '.'(ARG0, []), OUT).
-
-compound_name_get(REF, ARG0, OUT) :- 
-	object_call(REF, get, '.'(ARG0, []), OUT).
-
-compound_name_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-compound_name_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+compound_name_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 compound_name_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-compound_name_clone(REF, OUT) :- 
-	object_call(REF, clone, [], OUT).
-
-compound_name_compare_to(REF, ARG0, OUT) :- 
-	object_call(REF, compareTo, '.'(ARG0, []), OUT).
+compound_name_get_prefix(REF, ARG0, OUT) :- 
+	object_call(REF, getPrefix, '.'(ARG0, []), OUT).
 
 compound_name_ends_with(REF, ARG0, OUT) :- 
 	object_call(REF, endsWith, '.'(ARG0, []), OUT).
 
-compound_name_is_empty(REF, OUT) :- 
-	object_call(REF, isEmpty, [], OUT).
+compound_name_add(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, add, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-compound_name_size(REF, OUT) :- 
-	object_call(REF, size, [], OUT).
-
-compound_name_starts_with(REF, ARG0, OUT) :- 
-	object_call(REF, startsWith, '.'(ARG0, []), OUT).
-
-compound_name_add_all(REF, ARG0, OUT) :- 
-	object_call(REF, addAll, '.'(ARG0, []), OUT).
-
-compound_name_add_all(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, addAll, '.'(ARG0, '.'(ARG1, [])), OUT).
+compound_name_compare_to(REF, ARG0, OUT) :- 
+	object_call(REF, compareTo, '.'(ARG0, []), OUT).
 
 compound_name_get_all(REF, OUT) :- 
 	object_call(REF, getAll, [], OUT).
 
-compound_name_get_prefix(REF, ARG0, OUT) :- 
-	object_call(REF, getPrefix, '.'(ARG0, []), OUT).
+compound_name_add(REF, ARG0, OUT) :- 
+	object_call(REF, add, '.'(ARG0, []), OUT).
+
+compound_name_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+compound_name_size(REF, OUT) :- 
+	object_call(REF, size, [], OUT).
+
+compound_name_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+compound_name_starts_with(REF, ARG0, OUT) :- 
+	object_call(REF, startsWith, '.'(ARG0, []), OUT).
+
+compound_name_add_all(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, addAll, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+compound_name_add_all(REF, ARG0, OUT) :- 
+	object_call(REF, addAll, '.'(ARG0, []), OUT).
+
+compound_name_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+compound_name_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+compound_name_is_empty(REF, OUT) :- 
+	object_call(REF, isEmpty, [], OUT).
 
 compound_name_get_suffix(REF, ARG0, OUT) :- 
 	object_call(REF, getSuffix, '.'(ARG0, []), OUT).
 
-compound_name_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+compound_name_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-compound_name_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+compound_name_get(REF, ARG0, OUT) :- 
+	object_call(REF, get, '.'(ARG0, []), OUT).
 
-compound_name_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+compound_name_clone(REF, OUT) :- 
+	object_call(REF, clone, [], OUT).
+
+compound_name_remove(REF, ARG0, OUT) :- 
+	object_call(REF, remove, '.'(ARG0, []), OUT).
 
 compound_name_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-compound_name_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-compound_name_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

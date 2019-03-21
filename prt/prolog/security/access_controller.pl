@@ -22,66 +22,66 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-access_controller_check_permission(REF, ARG0, OUT) :- 
-	object_call(REF, checkPermission, '.'(ARG0, []), OUT).
+access_controller_check_permission(REF, ARG0) :- 
+	object_call(REF, checkPermission, '.'(ARG0, []), _).
 
-access_controller_do_privileged(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, doPrivileged, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+access_controller_do_privileged_with_combiner(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, doPrivilegedWithCombiner, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-access_controller_do_privileged(REF, ARG0, OUT) :- 
-	object_call(REF, doPrivileged, '.'(ARG0, []), OUT).
+access_controller_do_privileged_with_combiner(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, doPrivilegedWithCombiner, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-access_controller_do_privileged(REF, ARG0, OUT) :- 
-	object_call(REF, doPrivileged, '.'(ARG0, []), OUT).
-
-access_controller_do_privileged(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, doPrivileged, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-access_controller_do_privileged(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, doPrivileged, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-access_controller_do_privileged(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, doPrivileged, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+access_controller_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 access_controller_get_context(REF, OUT) :- 
 	object_call(REF, getContext, [], OUT).
 
-access_controller_do_privileged_with_combiner(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, doPrivilegedWithCombiner, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-access_controller_do_privileged_with_combiner(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, doPrivilegedWithCombiner, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-access_controller_do_privileged_with_combiner(REF, ARG0, OUT) :- 
-	object_call(REF, doPrivilegedWithCombiner, '.'(ARG0, []), OUT).
-
-access_controller_do_privileged_with_combiner(REF, ARG0, OUT) :- 
-	object_call(REF, doPrivilegedWithCombiner, '.'(ARG0, []), OUT).
-
-access_controller_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-access_controller_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-access_controller_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-access_controller_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+access_controller_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 access_controller_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
+access_controller_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+access_controller_do_privileged(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, doPrivileged, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+access_controller_do_privileged(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, doPrivileged, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+access_controller_do_privileged(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, doPrivileged, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+access_controller_do_privileged(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, doPrivileged, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+access_controller_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
 access_controller_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+access_controller_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+access_controller_do_privileged(REF, ARG0, OUT) :- 
+	object_call(REF, doPrivileged, '.'(ARG0, []), OUT).
+
+access_controller_do_privileged(REF, ARG0, OUT) :- 
+	object_call(REF, doPrivileged, '.'(ARG0, []), OUT).
+
+access_controller_do_privileged_with_combiner(REF, ARG0, OUT) :- 
+	object_call(REF, doPrivilegedWithCombiner, '.'(ARG0, []), OUT).
+
+access_controller_do_privileged_with_combiner(REF, ARG0, OUT) :- 
+	object_call(REF, doPrivilegedWithCombiner, '.'(ARG0, []), OUT).
+
+access_controller_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
 access_controller_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-access_controller_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-access_controller_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

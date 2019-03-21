@@ -22,47 +22,20 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-desktop_print(REF, ARG0, OUT) :- 
-	object_call(REF, print, '.'(ARG0, []), OUT).
+desktop_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-desktop_open(REF, ARG0, OUT) :- 
-	object_call(REF, open, '.'(ARG0, []), OUT).
+desktop_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-desktop_is_supported(REF, ARG0, OUT) :- 
-	object_call(REF, isSupported, '.'(ARG0, []), OUT).
-
-desktop_browse(REF, ARG0, OUT) :- 
-	object_call(REF, browse, '.'(ARG0, []), OUT).
-
-desktop_edit(REF, ARG0, OUT) :- 
-	object_call(REF, edit, '.'(ARG0, []), OUT).
-
-desktop_get_desktop(REF, OUT) :- 
-	object_call(REF, getDesktop, [], OUT).
-
-desktop_is_desktop_supported(REF, OUT) :- 
-	object_call(REF, isDesktopSupported, [], OUT).
-
-desktop_mail(REF, ARG0, OUT) :- 
-	object_call(REF, mail, '.'(ARG0, []), OUT).
-
-desktop_mail(REF, OUT) :- 
-	object_call(REF, mail, [], OUT).
-
-desktop_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-desktop_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-desktop_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+desktop_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 desktop_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-desktop_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+desktop_edit(REF, ARG0) :- 
+	object_call(REF, edit, '.'(ARG0, []), _).
 
 desktop_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -70,9 +43,36 @@ desktop_hash_code(REF, OUT) :-
 desktop_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-desktop_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+desktop_print(REF, ARG0) :- 
+	object_call(REF, print, '.'(ARG0, []), _).
 
-desktop_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+desktop_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+desktop_browse(REF, ARG0) :- 
+	object_call(REF, browse, '.'(ARG0, []), _).
+
+desktop_open(REF, ARG0) :- 
+	object_call(REF, open, '.'(ARG0, []), _).
+
+desktop_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+desktop_get_desktop(REF, OUT) :- 
+	object_call(REF, getDesktop, [], OUT).
+
+desktop_is_supported(REF, ARG0, OUT) :- 
+	object_call(REF, isSupported, '.'(ARG0, []), OUT).
+
+desktop_is_desktop_supported(REF, OUT) :- 
+	object_call(REF, isDesktopSupported, [], OUT).
+
+desktop_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+desktop_mail(REF, ARG0) :- 
+	object_call(REF, mail, '.'(ARG0, []), _).
+
+desktop_mail(REF) :- 
+	object_call(REF, mail, [], _).
 

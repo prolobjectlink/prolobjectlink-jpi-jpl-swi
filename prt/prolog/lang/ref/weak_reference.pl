@@ -22,48 +22,48 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
+weak_reference(ARG0, ARG1, OUT) :- 
+	object_new('java.lang.ref.WeakReference', '.'(ARG0, '.'(ARG1, [])), OUT).
+
 weak_reference(ARG0, OUT) :- 
 	object_new('java.lang.ref.WeakReference', '.'(ARG0, []), OUT).
 
-weak_reference(ARG0, ARG1, OUT) :- 
-	object_new('java.lang.ref.WeakReference', '.'(ARG0, '.'(ARG1, [])), OUT).
+weak_reference_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+weak_reference_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+weak_reference_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 weak_reference_get(REF, OUT) :- 
 	object_call(REF, get, [], OUT).
 
-weak_reference_clear(REF, OUT) :- 
-	object_call(REF, clear, [], OUT).
-
-weak_reference_enqueue(REF, OUT) :- 
-	object_call(REF, enqueue, [], OUT).
+weak_reference_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 weak_reference_is_enqueued(REF, OUT) :- 
 	object_call(REF, isEnqueued, [], OUT).
 
-weak_reference_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-weak_reference_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-weak_reference_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
 weak_reference_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-weak_reference_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
 
 weak_reference_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+weak_reference_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
 weak_reference_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-weak_reference_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+weak_reference_enqueue(REF, OUT) :- 
+	object_call(REF, enqueue, [], OUT).
 
-weak_reference_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+weak_reference_clear(REF) :- 
+	object_call(REF, clear, [], _).
+
+weak_reference_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 

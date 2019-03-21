@@ -25,20 +25,23 @@
 e_c_public_key_spec(ARG0, ARG1, OUT) :- 
 	object_new('java.security.spec.ECPublicKeySpec', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-e_c_public_key_spec_get_w(REF, OUT) :- 
-	object_call(REF, getW, [], OUT).
+e_c_public_key_spec_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+e_c_public_key_spec_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
+
+e_c_public_key_spec_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 e_c_public_key_spec_get_params(REF, OUT) :- 
 	object_call(REF, getParams, [], OUT).
 
-e_c_public_key_spec_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+e_c_public_key_spec_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-e_c_public_key_spec_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-e_c_public_key_spec_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+e_c_public_key_spec_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 e_c_public_key_spec_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
@@ -46,15 +49,12 @@ e_c_public_key_spec_equals(REF, ARG0, OUT) :-
 e_c_public_key_spec_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-e_c_public_key_spec_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+e_c_public_key_spec_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-e_c_public_key_spec_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
+e_c_public_key_spec_get_w(REF, OUT) :- 
+	object_call(REF, getW, [], OUT).
 
-e_c_public_key_spec_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-e_c_public_key_spec_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+e_c_public_key_spec_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

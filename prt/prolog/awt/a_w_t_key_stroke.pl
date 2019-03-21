@@ -22,17 +22,53 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-a_w_t_key_stroke_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+a_w_t_key_stroke_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-a_w_t_key_stroke_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+a_w_t_key_stroke_get_key_char(REF, OUT) :- 
+	object_call(REF, getKeyChar, [], OUT).
+
+a_w_t_key_stroke_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+a_w_t_key_stroke_get_a_w_t_key_stroke_for_event(REF, ARG0, OUT) :- 
+	object_call(REF, getAWTKeyStrokeForEvent, '.'(ARG0, []), OUT).
+
+a_w_t_key_stroke_get_key_event_type(REF, OUT) :- 
+	object_call(REF, getKeyEventType, [], OUT).
+
+a_w_t_key_stroke_get_a_w_t_key_stroke(REF, ARG0, OUT) :- 
+	object_call(REF, getAWTKeyStroke, '.'(ARG0, []), OUT).
+
+a_w_t_key_stroke_get_a_w_t_key_stroke(REF, ARG0, OUT) :- 
+	object_call(REF, getAWTKeyStroke, '.'(ARG0, []), OUT).
 
 a_w_t_key_stroke_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+a_w_t_key_stroke_get_a_w_t_key_stroke(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getAWTKeyStroke, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+a_w_t_key_stroke_get_a_w_t_key_stroke(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getAWTKeyStroke, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+a_w_t_key_stroke_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
 a_w_t_key_stroke_get_modifiers(REF, OUT) :- 
 	object_call(REF, getModifiers, [], OUT).
+
+a_w_t_key_stroke_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+a_w_t_key_stroke_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+a_w_t_key_stroke_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
+
+a_w_t_key_stroke_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
 a_w_t_key_stroke_get_key_code(REF, OUT) :- 
 	object_call(REF, getKeyCode, [], OUT).
@@ -40,45 +76,9 @@ a_w_t_key_stroke_get_key_code(REF, OUT) :-
 a_w_t_key_stroke_get_a_w_t_key_stroke(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, getAWTKeyStroke, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-a_w_t_key_stroke_get_a_w_t_key_stroke(REF, ARG0, OUT) :- 
-	object_call(REF, getAWTKeyStroke, '.'(ARG0, []), OUT).
-
-a_w_t_key_stroke_get_a_w_t_key_stroke(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getAWTKeyStroke, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-a_w_t_key_stroke_get_a_w_t_key_stroke(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getAWTKeyStroke, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-a_w_t_key_stroke_get_a_w_t_key_stroke(REF, ARG0, OUT) :- 
-	object_call(REF, getAWTKeyStroke, '.'(ARG0, []), OUT).
-
-a_w_t_key_stroke_get_a_w_t_key_stroke_for_event(REF, ARG0, OUT) :- 
-	object_call(REF, getAWTKeyStrokeForEvent, '.'(ARG0, []), OUT).
-
 a_w_t_key_stroke_is_on_key_release(REF, OUT) :- 
 	object_call(REF, isOnKeyRelease, [], OUT).
 
-a_w_t_key_stroke_get_key_char(REF, OUT) :- 
-	object_call(REF, getKeyChar, [], OUT).
-
-a_w_t_key_stroke_get_key_event_type(REF, OUT) :- 
-	object_call(REF, getKeyEventType, [], OUT).
-
-a_w_t_key_stroke_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-a_w_t_key_stroke_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-a_w_t_key_stroke_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-a_w_t_key_stroke_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-a_w_t_key_stroke_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-a_w_t_key_stroke_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+a_w_t_key_stroke_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 

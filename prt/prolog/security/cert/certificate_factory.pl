@@ -22,26 +22,35 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-certificate_factory_get_instance(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getInstance, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-certificate_factory_get_instance(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getInstance, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 certificate_factory_get_instance(REF, ARG0, OUT) :- 
 	object_call(REF, getInstance, '.'(ARG0, []), OUT).
 
-certificate_factory_get_type(REF, OUT) :- 
-	object_call(REF, getType, [], OUT).
+certificate_factory_get_instance(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getInstance, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+certificate_factory_get_instance(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getInstance, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+certificate_factory_generate_c_r_ls(REF, ARG0, OUT) :- 
+	object_call(REF, generateCRLs, '.'(ARG0, []), OUT).
+
+certificate_factory_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+certificate_factory_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+certificate_factory_generate_cert_path(REF, ARG0, OUT) :- 
+	object_call(REF, generateCertPath, '.'(ARG0, []), OUT).
+
+certificate_factory_generate_cert_path(REF, ARG0, OUT) :- 
+	object_call(REF, generateCertPath, '.'(ARG0, []), OUT).
 
 certificate_factory_generate_cert_path(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, generateCertPath, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-certificate_factory_generate_cert_path(REF, ARG0, OUT) :- 
-	object_call(REF, generateCertPath, '.'(ARG0, []), OUT).
-
-certificate_factory_generate_cert_path(REF, ARG0, OUT) :- 
-	object_call(REF, generateCertPath, '.'(ARG0, []), OUT).
+certificate_factory_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
 certificate_factory_generate_certificate(REF, ARG0, OUT) :- 
 	object_call(REF, generateCertificate, '.'(ARG0, []), OUT).
@@ -49,42 +58,33 @@ certificate_factory_generate_certificate(REF, ARG0, OUT) :-
 certificate_factory_get_provider(REF, OUT) :- 
 	object_call(REF, getProvider, [], OUT).
 
-certificate_factory_generate_c_r_l(REF, ARG0, OUT) :- 
-	object_call(REF, generateCRL, '.'(ARG0, []), OUT).
-
-certificate_factory_generate_c_r_ls(REF, ARG0, OUT) :- 
-	object_call(REF, generateCRLs, '.'(ARG0, []), OUT).
-
-certificate_factory_generate_certificates(REF, ARG0, OUT) :- 
-	object_call(REF, generateCertificates, '.'(ARG0, []), OUT).
+certificate_factory_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
 certificate_factory_get_cert_path_encodings(REF, OUT) :- 
 	object_call(REF, getCertPathEncodings, [], OUT).
 
-certificate_factory_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+certificate_factory_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-certificate_factory_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+certificate_factory_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-certificate_factory_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+certificate_factory_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 certificate_factory_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-certificate_factory_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+certificate_factory_generate_c_r_l(REF, ARG0, OUT) :- 
+	object_call(REF, generateCRL, '.'(ARG0, []), OUT).
 
-certificate_factory_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+certificate_factory_generate_certificates(REF, ARG0, OUT) :- 
+	object_call(REF, generateCertificates, '.'(ARG0, []), OUT).
 
-certificate_factory_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
+certificate_factory_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-certificate_factory_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-certificate_factory_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+certificate_factory_get_type(REF, OUT) :- 
+	object_call(REF, getType, [], OUT).
 

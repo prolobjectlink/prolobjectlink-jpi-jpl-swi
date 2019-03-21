@@ -25,39 +25,39 @@
 number_up(ARG0, OUT) :- 
 	object_new('javax.print.attribute.standard.NumberUp', '.'(ARG0, []), OUT).
 
+number_up_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+number_up_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+number_up_get_category(REF, OUT) :- 
+	object_call(REF, getCategory, [], OUT).
+
+number_up_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
+
+number_up_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+number_up_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
 number_up_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 number_up_get_name(REF, OUT) :- 
 	object_call(REF, getName, [], OUT).
 
-number_up_get_category(REF, OUT) :- 
-	object_call(REF, getCategory, [], OUT).
-
 number_up_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-number_up_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+number_up_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+number_up_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 number_up_get_value(REF, OUT) :- 
 	object_call(REF, getValue, [], OUT).
-
-number_up_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-number_up_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-number_up_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-number_up_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-number_up_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-number_up_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

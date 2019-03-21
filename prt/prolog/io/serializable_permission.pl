@@ -22,17 +22,38 @@
 
 :-consult('../../../obj/prolobject.pl').
 
+serializable_permission(ARG0, ARG1, OUT) :- 
+	object_new('java.io.SerializablePermission', '.'(ARG0, '.'(ARG1, [])), OUT).
+
 serializable_permission(ARG0, OUT) :- 
 	object_new('java.io.SerializablePermission', '.'(ARG0, []), OUT).
 
-serializable_permission(ARG0, ARG1, OUT) :- 
-	object_new('java.io.SerializablePermission', '.'(ARG0, '.'(ARG1, [])), OUT).
+serializable_permission_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+serializable_permission_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+serializable_permission_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+serializable_permission_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+serializable_permission_new_permission_collection(REF, OUT) :- 
+	object_call(REF, newPermissionCollection, [], OUT).
 
 serializable_permission_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
+serializable_permission_get_name(REF, OUT) :- 
+	object_call(REF, getName, [], OUT).
+
 serializable_permission_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
+
+serializable_permission_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 serializable_permission_get_actions(REF, OUT) :- 
 	object_call(REF, getActions, [], OUT).
@@ -40,33 +61,12 @@ serializable_permission_get_actions(REF, OUT) :-
 serializable_permission_implies(REF, ARG0, OUT) :- 
 	object_call(REF, implies, '.'(ARG0, []), OUT).
 
-serializable_permission_new_permission_collection(REF, OUT) :- 
-	object_call(REF, newPermissionCollection, [], OUT).
-
-serializable_permission_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-serializable_permission_get_name(REF, OUT) :- 
-	object_call(REF, getName, [], OUT).
-
-serializable_permission_check_guard(REF, ARG0, OUT) :- 
-	object_call(REF, checkGuard, '.'(ARG0, []), OUT).
-
-serializable_permission_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-serializable_permission_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-serializable_permission_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
 serializable_permission_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-serializable_permission_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+serializable_permission_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-serializable_permission_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+serializable_permission_check_guard(REF, ARG0) :- 
+	object_call(REF, checkGuard, '.'(ARG0, []), _).
 

@@ -25,23 +25,17 @@
 row_set_event(ARG0, OUT) :- 
 	object_new('javax.sql.RowSetEvent', '.'(ARG0, []), OUT).
 
+row_set_event_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+row_set_event_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
 row_set_event_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
 row_set_event_get_source(REF, OUT) :- 
 	object_call(REF, getSource, [], OUT).
-
-row_set_event_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-row_set_event_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-row_set_event_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-row_set_event_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 row_set_event_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -49,9 +43,15 @@ row_set_event_hash_code(REF, OUT) :-
 row_set_event_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-row_set_event_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+row_set_event_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-row_set_event_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+row_set_event_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+row_set_event_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+row_set_event_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 

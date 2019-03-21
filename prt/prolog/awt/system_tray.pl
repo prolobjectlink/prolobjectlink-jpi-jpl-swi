@@ -22,57 +22,57 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-system_tray_add(REF, ARG0, OUT) :- 
-	object_call(REF, add, '.'(ARG0, []), OUT).
+system_tray_add(REF, ARG0) :- 
+	object_call(REF, add, '.'(ARG0, []), _).
 
-system_tray_remove(REF, ARG0, OUT) :- 
-	object_call(REF, remove, '.'(ARG0, []), OUT).
-
-system_tray_is_supported(REF, OUT) :- 
-	object_call(REF, isSupported, [], OUT).
-
-system_tray_add_property_change_listener(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, addPropertyChangeListener, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-system_tray_remove_property_change_listener(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, removePropertyChangeListener, '.'(ARG0, '.'(ARG1, [])), OUT).
+system_tray_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 system_tray_get_property_change_listeners(REF, ARG0, OUT) :- 
 	object_call(REF, getPropertyChangeListeners, '.'(ARG0, []), OUT).
 
-system_tray_get_system_tray(REF, OUT) :- 
-	object_call(REF, getSystemTray, [], OUT).
+system_tray_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-system_tray_get_tray_icon_size(REF, OUT) :- 
-	object_call(REF, getTrayIconSize, [], OUT).
+system_tray_remove_property_change_listener(REF, ARG0, ARG1) :- 
+	object_call(REF, removePropertyChangeListener, '.'(ARG0, '.'(ARG1, [])), _).
 
-system_tray_get_tray_icons(REF, OUT) :- 
-	object_call(REF, getTrayIcons, [], OUT).
-
-system_tray_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-system_tray_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-system_tray_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-system_tray_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+system_tray_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 system_tray_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-system_tray_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+system_tray_add_property_change_listener(REF, ARG0, ARG1) :- 
+	object_call(REF, addPropertyChangeListener, '.'(ARG0, '.'(ARG1, [])), _).
+
+system_tray_get_tray_icon_size(REF, OUT) :- 
+	object_call(REF, getTrayIconSize, [], OUT).
+
+system_tray_remove(REF, ARG0) :- 
+	object_call(REF, remove, '.'(ARG0, []), _).
+
+system_tray_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+system_tray_get_system_tray(REF, OUT) :- 
+	object_call(REF, getSystemTray, [], OUT).
+
+system_tray_get_tray_icons(REF, OUT) :- 
+	object_call(REF, getTrayIcons, [], OUT).
+
+system_tray_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+system_tray_is_supported(REF, OUT) :- 
+	object_call(REF, isSupported, [], OUT).
 
 system_tray_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-system_tray_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+system_tray_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
-system_tray_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+system_tray_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

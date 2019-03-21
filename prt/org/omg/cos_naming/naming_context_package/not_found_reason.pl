@@ -22,54 +22,54 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-not_found_reason__missing_node(OUT) :- 
+not_found_reason__MISSING_NODE(OUT) :- 
 	object_get('org.omg.CosNaming.NamingContextPackage.NotFoundReason', '_missing_node', OUT).
 
-not_found_reason_missing_node(OUT) :- 
+not_found_reason_MISSING_NODE(OUT) :- 
 	object_get('org.omg.CosNaming.NamingContextPackage.NotFoundReason', missing_node, OUT).
 
-not_found_reason__not_context(OUT) :- 
+not_found_reason__NOT_CONTEXT(OUT) :- 
 	object_get('org.omg.CosNaming.NamingContextPackage.NotFoundReason', '_not_context', OUT).
 
-not_found_reason_not_context(OUT) :- 
+not_found_reason_NOT_CONTEXT(OUT) :- 
 	object_get('org.omg.CosNaming.NamingContextPackage.NotFoundReason', not_context, OUT).
 
-not_found_reason__not_object(OUT) :- 
+not_found_reason__NOT_OBJECT(OUT) :- 
 	object_get('org.omg.CosNaming.NamingContextPackage.NotFoundReason', '_not_object', OUT).
 
-not_found_reason_not_object(OUT) :- 
+not_found_reason_NOT_OBJECT(OUT) :- 
 	object_get('org.omg.CosNaming.NamingContextPackage.NotFoundReason', not_object, OUT).
+
+not_found_reason_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+not_found_reason_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 not_found_reason_value(REF, OUT) :- 
 	object_call(REF, value, [], OUT).
 
-not_found_reason_from_int(REF, ARG0, OUT) :- 
-	object_call(REF, from_int, '.'(ARG0, []), OUT).
-
-not_found_reason_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-not_found_reason_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-not_found_reason_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-not_found_reason_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-not_found_reason_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-not_found_reason_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+not_found_reason_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 not_found_reason_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-not_found_reason_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+not_found_reason_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-not_found_reason_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+not_found_reason_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+not_found_reason_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+not_found_reason_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+not_found_reason_from_int(REF, ARG0, OUT) :- 
+	object_call(REF, from_int, '.'(ARG0, []), OUT).
+
+not_found_reason_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 

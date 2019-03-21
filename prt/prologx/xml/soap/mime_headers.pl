@@ -25,44 +25,17 @@
 mime_headers(OUT) :- 
 	object_new('javax.xml.soap.MimeHeaders', [], OUT).
 
-mime_headers_set_header(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, setHeader, '.'(ARG0, '.'(ARG1, [])), OUT).
+mime_headers_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-mime_headers_add_header(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, addHeader, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-mime_headers_get_all_headers(REF, OUT) :- 
-	object_call(REF, getAllHeaders, [], OUT).
+mime_headers_add_header(REF, ARG0, ARG1) :- 
+	object_call(REF, addHeader, '.'(ARG0, '.'(ARG1, [])), _).
 
 mime_headers_get_header(REF, ARG0, OUT) :- 
 	object_call(REF, getHeader, '.'(ARG0, []), OUT).
 
-mime_headers_get_matching_headers(REF, ARG0, OUT) :- 
-	object_call(REF, getMatchingHeaders, '.'(ARG0, []), OUT).
-
-mime_headers_get_non_matching_headers(REF, ARG0, OUT) :- 
-	object_call(REF, getNonMatchingHeaders, '.'(ARG0, []), OUT).
-
-mime_headers_remove_all_headers(REF, OUT) :- 
-	object_call(REF, removeAllHeaders, [], OUT).
-
-mime_headers_remove_header(REF, ARG0, OUT) :- 
-	object_call(REF, removeHeader, '.'(ARG0, []), OUT).
-
-mime_headers_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-mime_headers_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-mime_headers_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-mime_headers_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-mime_headers_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+mime_headers_remove_all_headers(REF) :- 
+	object_call(REF, removeAllHeaders, [], _).
 
 mime_headers_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -70,9 +43,36 @@ mime_headers_hash_code(REF, OUT) :-
 mime_headers_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-mime_headers_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+mime_headers_get_matching_headers(REF, ARG0, OUT) :- 
+	object_call(REF, getMatchingHeaders, '.'(ARG0, []), OUT).
 
-mime_headers_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+mime_headers_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+mime_headers_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+mime_headers_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+mime_headers_remove_header(REF, ARG0) :- 
+	object_call(REF, removeHeader, '.'(ARG0, []), _).
+
+mime_headers_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+mime_headers_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+mime_headers_get_non_matching_headers(REF, ARG0, OUT) :- 
+	object_call(REF, getNonMatchingHeaders, '.'(ARG0, []), OUT).
+
+mime_headers_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+mime_headers_set_header(REF, ARG0, ARG1) :- 
+	object_call(REF, setHeader, '.'(ARG0, '.'(ARG1, [])), _).
+
+mime_headers_get_all_headers(REF, OUT) :- 
+	object_call(REF, getAllHeaders, [], OUT).
 

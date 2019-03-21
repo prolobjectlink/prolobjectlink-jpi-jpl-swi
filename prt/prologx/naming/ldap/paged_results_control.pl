@@ -22,13 +22,13 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-paged_results_control_oid(OUT) :- 
+paged_results_control_OID(OUT) :- 
 	object_get('javax.naming.ldap.PagedResultsControl', oid, OUT).
 
-paged_results_control_critical(OUT) :- 
+paged_results_control_CRITICAL(OUT) :- 
 	object_get('javax.naming.ldap.PagedResultsControl', critical, OUT).
 
-paged_results_control_noncritical(OUT) :- 
+paged_results_control_NONCRITICAL(OUT) :- 
 	object_get('javax.naming.ldap.PagedResultsControl', noncritical, OUT).
 
 paged_results_control(ARG0, ARG1, OUT) :- 
@@ -37,39 +37,39 @@ paged_results_control(ARG0, ARG1, OUT) :-
 paged_results_control(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('javax.naming.ldap.PagedResultsControl', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
+paged_results_control_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+paged_results_control_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+paged_results_control_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+paged_results_control_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+paged_results_control_get_encoded_value(REF, OUT) :- 
+	object_call(REF, getEncodedValue, [], OUT).
+
+paged_results_control_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
 paged_results_control_get_i_d(REF, OUT) :- 
 	object_call(REF, getID, [], OUT).
 
 paged_results_control_is_critical(REF, OUT) :- 
 	object_call(REF, isCritical, [], OUT).
 
-paged_results_control_get_encoded_value(REF, OUT) :- 
-	object_call(REF, getEncodedValue, [], OUT).
-
-paged_results_control_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-paged_results_control_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-paged_results_control_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-paged_results_control_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-paged_results_control_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-paged_results_control_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+paged_results_control_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 paged_results_control_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-paged_results_control_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+paged_results_control_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
-paged_results_control_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+paged_results_control_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 

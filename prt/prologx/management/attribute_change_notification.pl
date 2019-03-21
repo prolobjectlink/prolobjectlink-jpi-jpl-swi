@@ -22,29 +22,17 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-attribute_change_notification_attribute_change(OUT) :- 
+attribute_change_notification_ATTRIBUTE_CHANGE(OUT) :- 
 	object_get('javax.management.AttributeChangeNotification', attribute_change, OUT).
 
 attribute_change_notification(ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, ARG6, ARG7, OUT) :- 
 	object_new('javax.management.AttributeChangeNotification', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, '.'(ARG6, '.'(ARG7, [])))))))), OUT).
 
-attribute_change_notification_get_new_value(REF, OUT) :- 
-	object_call(REF, getNewValue, [], OUT).
+attribute_change_notification_set_user_data(REF, ARG0) :- 
+	object_call(REF, setUserData, '.'(ARG0, []), _).
 
-attribute_change_notification_get_old_value(REF, OUT) :- 
-	object_call(REF, getOldValue, [], OUT).
-
-attribute_change_notification_get_attribute_name(REF, OUT) :- 
-	object_call(REF, getAttributeName, [], OUT).
-
-attribute_change_notification_get_attribute_type(REF, OUT) :- 
-	object_call(REF, getAttributeType, [], OUT).
-
-attribute_change_notification_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-attribute_change_notification_get_message(REF, OUT) :- 
-	object_call(REF, getMessage, [], OUT).
+attribute_change_notification_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 attribute_change_notification_get_type(REF, OUT) :- 
 	object_call(REF, getType, [], OUT).
@@ -52,48 +40,60 @@ attribute_change_notification_get_type(REF, OUT) :-
 attribute_change_notification_get_sequence_number(REF, OUT) :- 
 	object_call(REF, getSequenceNumber, [], OUT).
 
-attribute_change_notification_set_source(REF, ARG0, OUT) :- 
-	object_call(REF, setSource, '.'(ARG0, []), OUT).
-
-attribute_change_notification_set_sequence_number(REF, ARG0, OUT) :- 
-	object_call(REF, setSequenceNumber, '.'(ARG0, []), OUT).
-
-attribute_change_notification_get_time_stamp(REF, OUT) :- 
-	object_call(REF, getTimeStamp, [], OUT).
-
-attribute_change_notification_set_time_stamp(REF, ARG0, OUT) :- 
-	object_call(REF, setTimeStamp, '.'(ARG0, []), OUT).
-
-attribute_change_notification_get_user_data(REF, OUT) :- 
-	object_call(REF, getUserData, [], OUT).
-
-attribute_change_notification_set_user_data(REF, ARG0, OUT) :- 
-	object_call(REF, setUserData, '.'(ARG0, []), OUT).
+attribute_change_notification_get_old_value(REF, OUT) :- 
+	object_call(REF, getOldValue, [], OUT).
 
 attribute_change_notification_get_source(REF, OUT) :- 
 	object_call(REF, getSource, [], OUT).
 
-attribute_change_notification_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+attribute_change_notification_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-attribute_change_notification_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+attribute_change_notification_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-attribute_change_notification_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+attribute_change_notification_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-attribute_change_notification_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+attribute_change_notification_get_message(REF, OUT) :- 
+	object_call(REF, getMessage, [], OUT).
 
-attribute_change_notification_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+attribute_change_notification_get_time_stamp(REF, OUT) :- 
+	object_call(REF, getTimeStamp, [], OUT).
+
+attribute_change_notification_get_attribute_type(REF, OUT) :- 
+	object_call(REF, getAttributeType, [], OUT).
+
+attribute_change_notification_set_sequence_number(REF, ARG0) :- 
+	object_call(REF, setSequenceNumber, '.'(ARG0, []), _).
+
+attribute_change_notification_get_attribute_name(REF, OUT) :- 
+	object_call(REF, getAttributeName, [], OUT).
 
 attribute_change_notification_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-attribute_change_notification_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+attribute_change_notification_get_new_value(REF, OUT) :- 
+	object_call(REF, getNewValue, [], OUT).
 
-attribute_change_notification_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+attribute_change_notification_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+attribute_change_notification_set_source(REF, ARG0) :- 
+	object_call(REF, setSource, '.'(ARG0, []), _).
+
+attribute_change_notification_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+attribute_change_notification_set_time_stamp(REF, ARG0) :- 
+	object_call(REF, setTimeStamp, '.'(ARG0, []), _).
+
+attribute_change_notification_get_user_data(REF, OUT) :- 
+	object_call(REF, getUserData, [], OUT).
+
+attribute_change_notification_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+attribute_change_notification_notify(REF) :- 
+	object_call(REF, notify, [], _).
 

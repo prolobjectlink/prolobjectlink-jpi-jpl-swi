@@ -22,111 +22,111 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-synth_list_u_i_enabled(OUT) :- 
+synth_list_u_i_ENABLED(OUT) :- 
 	object_get('javax.swing.plaf.synth.SynthListUI', enabled, OUT).
 
-synth_list_u_i_mouse_over(OUT) :- 
+synth_list_u_i_MOUSE_OVER(OUT) :- 
 	object_get('javax.swing.plaf.synth.SynthListUI', mouse_over, OUT).
 
-synth_list_u_i_pressed(OUT) :- 
+synth_list_u_i_PRESSED(OUT) :- 
 	object_get('javax.swing.plaf.synth.SynthListUI', pressed, OUT).
 
-synth_list_u_i_disabled(OUT) :- 
+synth_list_u_i_DISABLED(OUT) :- 
 	object_get('javax.swing.plaf.synth.SynthListUI', disabled, OUT).
 
-synth_list_u_i_focused(OUT) :- 
+synth_list_u_i_FOCUSED(OUT) :- 
 	object_get('javax.swing.plaf.synth.SynthListUI', focused, OUT).
 
-synth_list_u_i_selected(OUT) :- 
+synth_list_u_i_SELECTED(OUT) :- 
 	object_get('javax.swing.plaf.synth.SynthListUI', selected, OUT).
 
-synth_list_u_i_default(OUT) :- 
+synth_list_u_i_DEFAULT(OUT) :- 
 	object_get('javax.swing.plaf.synth.SynthListUI', default, OUT).
 
 synth_list_u_i(OUT) :- 
 	object_new('javax.swing.plaf.synth.SynthListUI', [], OUT).
 
-synth_list_u_i_update(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, update, '.'(ARG0, '.'(ARG1, [])), OUT).
+synth_list_u_i_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-synth_list_u_i_get_context(REF, ARG0, OUT) :- 
-	object_call(REF, getContext, '.'(ARG0, []), OUT).
-
-synth_list_u_i_property_change(REF, ARG0, OUT) :- 
-	object_call(REF, propertyChange, '.'(ARG0, []), OUT).
-
-synth_list_u_i_paint_border(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, OUT) :- 
-	object_call(REF, paintBorder, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), OUT).
-
-synth_list_u_i_create_u_i(REF, ARG0, OUT) :- 
-	object_call(REF, createUI, '.'(ARG0, []), OUT).
-
-synth_list_u_i_get_cell_bounds(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, getCellBounds, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-synth_list_u_i_index_to_location(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, indexToLocation, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-synth_list_u_i_location_to_index(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, locationToIndex, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-synth_list_u_i_get_baseline(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, getBaseline, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-synth_list_u_i_get_baseline_resize_behavior(REF, ARG0, OUT) :- 
-	object_call(REF, getBaselineResizeBehavior, '.'(ARG0, []), OUT).
-
-synth_list_u_i_install_u_i(REF, ARG0, OUT) :- 
-	object_call(REF, installUI, '.'(ARG0, []), OUT).
-
-synth_list_u_i_uninstall_u_i(REF, ARG0, OUT) :- 
-	object_call(REF, uninstallUI, '.'(ARG0, []), OUT).
+synth_list_u_i_paint_border(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5) :- 
+	object_call(REF, paintBorder, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), _).
 
 synth_list_u_i_get_preferred_size(REF, ARG0, OUT) :- 
 	object_call(REF, getPreferredSize, '.'(ARG0, []), OUT).
 
-synth_list_u_i_paint(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, paint, '.'(ARG0, '.'(ARG1, [])), OUT).
+synth_list_u_i_get_cell_bounds(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, getCellBounds, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-synth_list_u_i_contains(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, contains, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-synth_list_u_i_get_maximum_size(REF, ARG0, OUT) :- 
-	object_call(REF, getMaximumSize, '.'(ARG0, []), OUT).
-
-synth_list_u_i_get_minimum_size(REF, ARG0, OUT) :- 
-	object_call(REF, getMinimumSize, '.'(ARG0, []), OUT).
-
-synth_list_u_i_get_accessible_child(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getAccessibleChild, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-synth_list_u_i_get_accessible_children_count(REF, ARG0, OUT) :- 
-	object_call(REF, getAccessibleChildrenCount, '.'(ARG0, []), OUT).
-
-synth_list_u_i_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-synth_list_u_i_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-synth_list_u_i_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-synth_list_u_i_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+synth_list_u_i_get_baseline_resize_behavior(REF, ARG0, OUT) :- 
+	object_call(REF, getBaselineResizeBehavior, '.'(ARG0, []), OUT).
 
 synth_list_u_i_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
+synth_list_u_i_uninstall_u_i(REF, ARG0) :- 
+	object_call(REF, uninstallUI, '.'(ARG0, []), _).
+
+synth_list_u_i_get_minimum_size(REF, ARG0, OUT) :- 
+	object_call(REF, getMinimumSize, '.'(ARG0, []), OUT).
+
+synth_list_u_i_contains(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, contains, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+synth_list_u_i_install_u_i(REF, ARG0) :- 
+	object_call(REF, installUI, '.'(ARG0, []), _).
+
+synth_list_u_i_get_accessible_children_count(REF, ARG0, OUT) :- 
+	object_call(REF, getAccessibleChildrenCount, '.'(ARG0, []), OUT).
+
 synth_list_u_i_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+synth_list_u_i_get_baseline(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, getBaseline, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+synth_list_u_i_paint(REF, ARG0, ARG1) :- 
+	object_call(REF, paint, '.'(ARG0, '.'(ARG1, [])), _).
+
+synth_list_u_i_property_change(REF, ARG0) :- 
+	object_call(REF, propertyChange, '.'(ARG0, []), _).
+
+synth_list_u_i_get_maximum_size(REF, ARG0, OUT) :- 
+	object_call(REF, getMaximumSize, '.'(ARG0, []), OUT).
+
+synth_list_u_i_location_to_index(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, locationToIndex, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+synth_list_u_i_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+synth_list_u_i_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+synth_list_u_i_create_u_i(REF, ARG0, OUT) :- 
+	object_call(REF, createUI, '.'(ARG0, []), OUT).
+
+synth_list_u_i_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+synth_list_u_i_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+synth_list_u_i_get_context(REF, ARG0, OUT) :- 
+	object_call(REF, getContext, '.'(ARG0, []), OUT).
+
+synth_list_u_i_get_accessible_child(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getAccessibleChild, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+synth_list_u_i_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+synth_list_u_i_update(REF, ARG0, ARG1) :- 
+	object_call(REF, update, '.'(ARG0, '.'(ARG1, [])), _).
+
+synth_list_u_i_index_to_location(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, indexToLocation, '.'(ARG0, '.'(ARG1, [])), OUT).
+
 synth_list_u_i_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-synth_list_u_i_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-synth_list_u_i_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

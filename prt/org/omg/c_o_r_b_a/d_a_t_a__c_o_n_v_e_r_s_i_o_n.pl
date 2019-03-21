@@ -34,56 +34,20 @@ d_a_t_a__c_o_n_v_e_r_s_i_o_n(ARG0, OUT) :-
 d_a_t_a__c_o_n_v_e_r_s_i_o_n(OUT) :- 
 	object_new('org.omg.CORBA.DATA_CONVERSION', [], OUT).
 
-d_a_t_a__c_o_n_v_e_r_s_i_o_n_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-d_a_t_a__c_o_n_v_e_r_s_i_o_n_print_stack_trace(REF, OUT) :- 
-	object_call(REF, printStackTrace, [], OUT).
-
-d_a_t_a__c_o_n_v_e_r_s_i_o_n_print_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, printStackTrace, '.'(ARG0, []), OUT).
-
-d_a_t_a__c_o_n_v_e_r_s_i_o_n_print_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, printStackTrace, '.'(ARG0, []), OUT).
-
-d_a_t_a__c_o_n_v_e_r_s_i_o_n_fill_in_stack_trace(REF, OUT) :- 
-	object_call(REF, fillInStackTrace, [], OUT).
-
-d_a_t_a__c_o_n_v_e_r_s_i_o_n_get_cause(REF, OUT) :- 
-	object_call(REF, getCause, [], OUT).
-
-d_a_t_a__c_o_n_v_e_r_s_i_o_n_init_cause(REF, ARG0, OUT) :- 
-	object_call(REF, initCause, '.'(ARG0, []), OUT).
-
-d_a_t_a__c_o_n_v_e_r_s_i_o_n_add_suppressed(REF, ARG0, OUT) :- 
-	object_call(REF, addSuppressed, '.'(ARG0, []), OUT).
-
-d_a_t_a__c_o_n_v_e_r_s_i_o_n_get_localized_message(REF, OUT) :- 
-	object_call(REF, getLocalizedMessage, [], OUT).
-
-d_a_t_a__c_o_n_v_e_r_s_i_o_n_get_message(REF, OUT) :- 
-	object_call(REF, getMessage, [], OUT).
+d_a_t_a__c_o_n_v_e_r_s_i_o_n_get_suppressed(REF, OUT) :- 
+	object_call(REF, getSuppressed, [], OUT).
 
 d_a_t_a__c_o_n_v_e_r_s_i_o_n_get_stack_trace(REF, OUT) :- 
 	object_call(REF, getStackTrace, [], OUT).
 
-d_a_t_a__c_o_n_v_e_r_s_i_o_n_get_suppressed(REF, OUT) :- 
-	object_call(REF, getSuppressed, [], OUT).
+d_a_t_a__c_o_n_v_e_r_s_i_o_n_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-d_a_t_a__c_o_n_v_e_r_s_i_o_n_set_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, setStackTrace, '.'(ARG0, []), OUT).
+d_a_t_a__c_o_n_v_e_r_s_i_o_n_add_suppressed(REF, ARG0) :- 
+	object_call(REF, addSuppressed, '.'(ARG0, []), _).
 
-d_a_t_a__c_o_n_v_e_r_s_i_o_n_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-d_a_t_a__c_o_n_v_e_r_s_i_o_n_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-d_a_t_a__c_o_n_v_e_r_s_i_o_n_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-d_a_t_a__c_o_n_v_e_r_s_i_o_n_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+d_a_t_a__c_o_n_v_e_r_s_i_o_n_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 d_a_t_a__c_o_n_v_e_r_s_i_o_n_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -91,9 +55,45 @@ d_a_t_a__c_o_n_v_e_r_s_i_o_n_hash_code(REF, OUT) :-
 d_a_t_a__c_o_n_v_e_r_s_i_o_n_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-d_a_t_a__c_o_n_v_e_r_s_i_o_n_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+d_a_t_a__c_o_n_v_e_r_s_i_o_n_fill_in_stack_trace(REF, OUT) :- 
+	object_call(REF, fillInStackTrace, [], OUT).
 
-d_a_t_a__c_o_n_v_e_r_s_i_o_n_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+d_a_t_a__c_o_n_v_e_r_s_i_o_n_print_stack_trace(REF, ARG0) :- 
+	object_call(REF, printStackTrace, '.'(ARG0, []), _).
+
+d_a_t_a__c_o_n_v_e_r_s_i_o_n_print_stack_trace(REF, ARG0) :- 
+	object_call(REF, printStackTrace, '.'(ARG0, []), _).
+
+d_a_t_a__c_o_n_v_e_r_s_i_o_n_print_stack_trace(REF) :- 
+	object_call(REF, printStackTrace, [], _).
+
+d_a_t_a__c_o_n_v_e_r_s_i_o_n_get_cause(REF, OUT) :- 
+	object_call(REF, getCause, [], OUT).
+
+d_a_t_a__c_o_n_v_e_r_s_i_o_n_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+d_a_t_a__c_o_n_v_e_r_s_i_o_n_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+d_a_t_a__c_o_n_v_e_r_s_i_o_n_get_localized_message(REF, OUT) :- 
+	object_call(REF, getLocalizedMessage, [], OUT).
+
+d_a_t_a__c_o_n_v_e_r_s_i_o_n_set_stack_trace(REF, ARG0) :- 
+	object_call(REF, setStackTrace, '.'(ARG0, []), _).
+
+d_a_t_a__c_o_n_v_e_r_s_i_o_n_init_cause(REF, ARG0, OUT) :- 
+	object_call(REF, initCause, '.'(ARG0, []), OUT).
+
+d_a_t_a__c_o_n_v_e_r_s_i_o_n_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+d_a_t_a__c_o_n_v_e_r_s_i_o_n_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+d_a_t_a__c_o_n_v_e_r_s_i_o_n_get_message(REF, OUT) :- 
+	object_call(REF, getMessage, [], OUT).
+
+d_a_t_a__c_o_n_v_e_r_s_i_o_n_notify(REF) :- 
+	object_call(REF, notify, [], _).
 

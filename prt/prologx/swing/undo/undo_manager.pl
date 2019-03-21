@@ -25,90 +25,90 @@
 undo_manager(OUT) :- 
 	object_new('javax.swing.undo.UndoManager', [], OUT).
 
-undo_manager_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+undo_manager_is_significant(REF, OUT) :- 
+	object_call(REF, isSignificant, [], OUT).
 
-undo_manager_end(REF, OUT) :- 
-	object_call(REF, end, [], OUT).
+undo_manager_redo(REF) :- 
+	object_call(REF, redo, [], _).
 
-undo_manager_can_redo(REF, OUT) :- 
-	object_call(REF, canRedo, [], OUT).
+undo_manager_end(REF) :- 
+	object_call(REF, end, [], _).
 
 undo_manager_can_undo(REF, OUT) :- 
 	object_call(REF, canUndo, [], OUT).
 
-undo_manager_get_redo_presentation_name(REF, OUT) :- 
-	object_call(REF, getRedoPresentationName, [], OUT).
+undo_manager_is_in_progress(REF, OUT) :- 
+	object_call(REF, isInProgress, [], OUT).
 
-undo_manager_get_undo_presentation_name(REF, OUT) :- 
-	object_call(REF, getUndoPresentationName, [], OUT).
+undo_manager_die(REF) :- 
+	object_call(REF, die, [], _).
 
-undo_manager_redo(REF, OUT) :- 
-	object_call(REF, redo, [], OUT).
-
-undo_manager_undo(REF, OUT) :- 
-	object_call(REF, undo, [], OUT).
-
-undo_manager_add_edit(REF, ARG0, OUT) :- 
-	object_call(REF, addEdit, '.'(ARG0, []), OUT).
-
-undo_manager_undoable_edit_happened(REF, ARG0, OUT) :- 
-	object_call(REF, undoableEditHappened, '.'(ARG0, []), OUT).
-
-undo_manager_can_undo_or_redo(REF, OUT) :- 
-	object_call(REF, canUndoOrRedo, [], OUT).
-
-undo_manager_discard_all_edits(REF, OUT) :- 
-	object_call(REF, discardAllEdits, [], OUT).
+undo_manager_undoable_edit_happened(REF, ARG0) :- 
+	object_call(REF, undoableEditHappened, '.'(ARG0, []), _).
 
 undo_manager_get_limit(REF, OUT) :- 
 	object_call(REF, getLimit, [], OUT).
 
-undo_manager_get_undo_or_redo_presentation_name(REF, OUT) :- 
-	object_call(REF, getUndoOrRedoPresentationName, [], OUT).
-
-undo_manager_set_limit(REF, ARG0, OUT) :- 
-	object_call(REF, setLimit, '.'(ARG0, []), OUT).
-
-undo_manager_undo_or_redo(REF, OUT) :- 
-	object_call(REF, undoOrRedo, [], OUT).
-
-undo_manager_die(REF, OUT) :- 
-	object_call(REF, die, [], OUT).
-
-undo_manager_get_presentation_name(REF, OUT) :- 
-	object_call(REF, getPresentationName, [], OUT).
-
-undo_manager_is_significant(REF, OUT) :- 
-	object_call(REF, isSignificant, [], OUT).
-
-undo_manager_is_in_progress(REF, OUT) :- 
-	object_call(REF, isInProgress, [], OUT).
-
-undo_manager_replace_edit(REF, ARG0, OUT) :- 
-	object_call(REF, replaceEdit, '.'(ARG0, []), OUT).
-
-undo_manager_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-undo_manager_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-undo_manager_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-undo_manager_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+undo_manager_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 undo_manager_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+undo_manager_undo(REF) :- 
+	object_call(REF, undo, [], _).
+
+undo_manager_get_undo_or_redo_presentation_name(REF, OUT) :- 
+	object_call(REF, getUndoOrRedoPresentationName, [], OUT).
+
+undo_manager_replace_edit(REF, ARG0, OUT) :- 
+	object_call(REF, replaceEdit, '.'(ARG0, []), OUT).
+
+undo_manager_set_limit(REF, ARG0) :- 
+	object_call(REF, setLimit, '.'(ARG0, []), _).
+
+undo_manager_get_redo_presentation_name(REF, OUT) :- 
+	object_call(REF, getRedoPresentationName, [], OUT).
+
+undo_manager_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+undo_manager_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+undo_manager_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+undo_manager_discard_all_edits(REF) :- 
+	object_call(REF, discardAllEdits, [], _).
+
+undo_manager_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+undo_manager_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+undo_manager_get_presentation_name(REF, OUT) :- 
+	object_call(REF, getPresentationName, [], OUT).
+
+undo_manager_add_edit(REF, ARG0, OUT) :- 
+	object_call(REF, addEdit, '.'(ARG0, []), OUT).
+
+undo_manager_undo_or_redo(REF) :- 
+	object_call(REF, undoOrRedo, [], _).
+
 undo_manager_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-undo_manager_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+undo_manager_get_undo_presentation_name(REF, OUT) :- 
+	object_call(REF, getUndoPresentationName, [], OUT).
 
-undo_manager_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+undo_manager_can_redo(REF, OUT) :- 
+	object_call(REF, canRedo, [], OUT).
+
+undo_manager_can_undo_or_redo(REF, OUT) :- 
+	object_call(REF, canUndoOrRedo, [], OUT).
+
+undo_manager_notify(REF) :- 
+	object_call(REF, notify, [], _).
 

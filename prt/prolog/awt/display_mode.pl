@@ -22,54 +22,54 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-display_mode_bit_depth_multi(OUT) :- 
+display_mode_BIT_DEPTH_MULTI(OUT) :- 
 	object_get('java.awt.DisplayMode', bit_depth_multi, OUT).
 
-display_mode_refresh_rate_unknown(OUT) :- 
+display_mode_REFRESH_RATE_UNKNOWN(OUT) :- 
 	object_get('java.awt.DisplayMode', refresh_rate_unknown, OUT).
 
 display_mode(ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_new('java.awt.DisplayMode', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
-display_mode_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-display_mode_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-display_mode_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
 display_mode_get_height(REF, OUT) :- 
 	object_call(REF, getHeight, [], OUT).
-
-display_mode_get_bit_depth(REF, OUT) :- 
-	object_call(REF, getBitDepth, [], OUT).
-
-display_mode_get_refresh_rate(REF, OUT) :- 
-	object_call(REF, getRefreshRate, [], OUT).
 
 display_mode_get_width(REF, OUT) :- 
 	object_call(REF, getWidth, [], OUT).
 
-display_mode_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-display_mode_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-display_mode_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-display_mode_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+display_mode_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
 display_mode_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-display_mode_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+display_mode_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-display_mode_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+display_mode_get_refresh_rate(REF, OUT) :- 
+	object_call(REF, getRefreshRate, [], OUT).
+
+display_mode_get_bit_depth(REF, OUT) :- 
+	object_call(REF, getBitDepth, [], OUT).
+
+display_mode_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+display_mode_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+display_mode_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+display_mode_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+display_mode_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+display_mode_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+display_mode_wait(REF) :- 
+	object_call(REF, wait, [], _).
 

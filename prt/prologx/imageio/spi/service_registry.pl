@@ -25,81 +25,81 @@
 service_registry(ARG0, OUT) :- 
 	object_new('javax.imageio.spi.ServiceRegistry', '.'(ARG0, []), OUT).
 
-service_registry_finalize(REF, OUT) :- 
-	object_call(REF, finalize, [], OUT).
-
-service_registry_contains(REF, ARG0, OUT) :- 
-	object_call(REF, contains, '.'(ARG0, []), OUT).
-
-service_registry_deregister_service_provider(REF, ARG0, OUT) :- 
-	object_call(REF, deregisterServiceProvider, '.'(ARG0, []), OUT).
-
-service_registry_deregister_service_provider(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, deregisterServiceProvider, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-service_registry_get_service_provider_by_class(REF, ARG0, OUT) :- 
-	object_call(REF, getServiceProviderByClass, '.'(ARG0, []), OUT).
-
-service_registry_get_service_providers(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, getServiceProviders, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-service_registry_get_service_providers(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getServiceProviders, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-service_registry_get_categories(REF, OUT) :- 
-	object_call(REF, getCategories, [], OUT).
-
-service_registry_register_service_provider(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, registerServiceProvider, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-service_registry_register_service_provider(REF, ARG0, OUT) :- 
-	object_call(REF, registerServiceProvider, '.'(ARG0, []), OUT).
-
-service_registry_deregister_all(REF, ARG0, OUT) :- 
-	object_call(REF, deregisterAll, '.'(ARG0, []), OUT).
-
-service_registry_deregister_all(REF, OUT) :- 
-	object_call(REF, deregisterAll, [], OUT).
-
-service_registry_lookup_providers(REF, ARG0, OUT) :- 
-	object_call(REF, lookupProviders, '.'(ARG0, []), OUT).
-
-service_registry_lookup_providers(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, lookupProviders, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-service_registry_register_service_providers(REF, ARG0, OUT) :- 
-	object_call(REF, registerServiceProviders, '.'(ARG0, []), OUT).
-
-service_registry_set_ordering(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, setOrdering, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
 service_registry_unset_ordering(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, unsetOrdering, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-service_registry_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-service_registry_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-service_registry_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
 
 service_registry_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-service_registry_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+service_registry_get_service_provider_by_class(REF, ARG0, OUT) :- 
+	object_call(REF, getServiceProviderByClass, '.'(ARG0, []), OUT).
 
-service_registry_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+service_registry_get_categories(REF, OUT) :- 
+	object_call(REF, getCategories, [], OUT).
+
+service_registry_deregister_all(REF) :- 
+	object_call(REF, deregisterAll, [], _).
+
+service_registry_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 service_registry_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-service_registry_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+service_registry_deregister_service_provider(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, deregisterServiceProvider, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-service_registry_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+service_registry_deregister_service_provider(REF, ARG0) :- 
+	object_call(REF, deregisterServiceProvider, '.'(ARG0, []), _).
+
+service_registry_register_service_providers(REF, ARG0) :- 
+	object_call(REF, registerServiceProviders, '.'(ARG0, []), _).
+
+service_registry_contains(REF, ARG0, OUT) :- 
+	object_call(REF, contains, '.'(ARG0, []), OUT).
+
+service_registry_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+service_registry_register_service_provider(REF, ARG0) :- 
+	object_call(REF, registerServiceProvider, '.'(ARG0, []), _).
+
+service_registry_set_ordering(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, setOrdering, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+service_registry_register_service_provider(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, registerServiceProvider, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+service_registry_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+service_registry_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+service_registry_get_service_providers(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getServiceProviders, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+service_registry_get_service_providers(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, getServiceProviders, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+service_registry_deregister_all(REF, ARG0) :- 
+	object_call(REF, deregisterAll, '.'(ARG0, []), _).
+
+service_registry_lookup_providers(REF, ARG0, OUT) :- 
+	object_call(REF, lookupProviders, '.'(ARG0, []), OUT).
+
+service_registry_finalize(REF) :- 
+	object_call(REF, finalize, [], _).
+
+service_registry_lookup_providers(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, lookupProviders, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+service_registry_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+service_registry_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+service_registry_wait(REF) :- 
+	object_call(REF, wait, [], _).
 

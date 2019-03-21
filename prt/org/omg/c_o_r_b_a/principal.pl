@@ -25,20 +25,29 @@
 principal(OUT) :- 
 	object_new('org.omg.CORBA.Principal', [], OUT).
 
-principal_name(REF, ARG0, OUT) :- 
-	object_call(REF, name, '.'(ARG0, []), OUT).
+principal_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
+
+principal_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
 principal_name(REF, OUT) :- 
 	object_call(REF, name, [], OUT).
 
-principal_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+principal_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-principal_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+principal_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-principal_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+principal_name(REF, ARG0) :- 
+	object_call(REF, name, '.'(ARG0, []), _).
+
+principal_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+principal_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 principal_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
@@ -46,15 +55,6 @@ principal_equals(REF, ARG0, OUT) :-
 principal_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-principal_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-principal_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-principal_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-principal_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+principal_notify(REF) :- 
+	object_call(REF, notify, [], _).
 

@@ -25,65 +25,17 @@
 '__binding_iterator_stub'(OUT) :- 
 	object_new('org.omg.CosNaming._BindingIteratorStub', [], OUT).
 
-'__binding_iterator_stub_destroy'(REF, OUT) :- 
-	object_call(REF, destroy, [], OUT).
-
-'__binding_iterator_stub_next_n'(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, next_n, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-'__binding_iterator_stub_next_one'(REF, ARG0, OUT) :- 
-	object_call(REF, next_one, '.'(ARG0, []), OUT).
-
-'__binding_iterator_stub__ids'(REF, OUT) :- 
-	object_call(REF, '_ids', [], OUT).
-
-'__binding_iterator_stub_equals'(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+'__binding_iterator_stub__servant_preinvoke'(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, '_servant_preinvoke', '.'(ARG0, '.'(ARG1, [])), OUT).
 
 '__binding_iterator_stub_to_string'(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-'__binding_iterator_stub_hash_code'(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-'__binding_iterator_stub__invoke'(REF, ARG0, OUT) :- 
-	object_call(REF, '_invoke', '.'(ARG0, []), OUT).
-
-'__binding_iterator_stub__orb'(REF, OUT) :- 
-	object_call(REF, '_orb', [], OUT).
-
-'__binding_iterator_stub__set_delegate'(REF, ARG0, OUT) :- 
-	object_call(REF, '_set_delegate', '.'(ARG0, []), OUT).
-
-'__binding_iterator_stub__get_delegate'(REF, OUT) :- 
-	object_call(REF, '_get_delegate', [], OUT).
-
-'__binding_iterator_stub__create_request'(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, OUT) :- 
-	object_call(REF, '_create_request', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), OUT).
-
-'__binding_iterator_stub__create_request'(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, '_create_request', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
-'__binding_iterator_stub__duplicate'(REF, OUT) :- 
-	object_call(REF, '_duplicate', [], OUT).
+'__binding_iterator_stub__set_policy_override'(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, '_set_policy_override', '.'(ARG0, '.'(ARG1, [])), OUT).
 
 '__binding_iterator_stub__get_domain_managers'(REF, OUT) :- 
 	object_call(REF, '_get_domain_managers', [], OUT).
-
-'__binding_iterator_stub__get_interface_def'(REF, OUT) :- 
-	object_call(REF, '_get_interface_def', [], OUT).
-
-'__binding_iterator_stub__get_policy'(REF, ARG0, OUT) :- 
-	object_call(REF, '_get_policy', '.'(ARG0, []), OUT).
-
-'__binding_iterator_stub__hash'(REF, ARG0, OUT) :- 
-	object_call(REF, '_hash', '.'(ARG0, []), OUT).
-
-'__binding_iterator_stub__is_a'(REF, ARG0, OUT) :- 
-	object_call(REF, '_is_a', '.'(ARG0, []), OUT).
-
-'__binding_iterator_stub__is_equivalent'(REF, ARG0, OUT) :- 
-	object_call(REF, '_is_equivalent', '.'(ARG0, []), OUT).
 
 '__binding_iterator_stub__is_local'(REF, OUT) :- 
 	object_call(REF, '_is_local', [], OUT).
@@ -91,42 +43,90 @@
 '__binding_iterator_stub__non_existent'(REF, OUT) :- 
 	object_call(REF, '_non_existent', [], OUT).
 
-'__binding_iterator_stub__release'(REF, OUT) :- 
-	object_call(REF, '_release', [], OUT).
+'__binding_iterator_stub__servant_postinvoke'(REF, ARG0) :- 
+	object_call(REF, '_servant_postinvoke', '.'(ARG0, []), _).
 
-'__binding_iterator_stub__release_reply'(REF, ARG0, OUT) :- 
-	object_call(REF, '_releaseReply', '.'(ARG0, []), OUT).
+'__binding_iterator_stub__is_equivalent'(REF, ARG0, OUT) :- 
+	object_call(REF, '_is_equivalent', '.'(ARG0, []), OUT).
 
-'__binding_iterator_stub__request'(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, '_request', '.'(ARG0, '.'(ARG1, [])), OUT).
+'__binding_iterator_stub__create_request'(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_call(REF, '_create_request', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+
+'__binding_iterator_stub__hash'(REF, ARG0, OUT) :- 
+	object_call(REF, '_hash', '.'(ARG0, []), OUT).
+
+'__binding_iterator_stub__invoke'(REF, ARG0, OUT) :- 
+	object_call(REF, '_invoke', '.'(ARG0, []), OUT).
+
+'__binding_iterator_stub_hash_code'(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+'__binding_iterator_stub_destroy'(REF) :- 
+	object_call(REF, destroy, [], _).
+
+'__binding_iterator_stub__create_request'(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, OUT) :- 
+	object_call(REF, '_create_request', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), OUT).
+
+'__binding_iterator_stub__get_delegate'(REF, OUT) :- 
+	object_call(REF, '_get_delegate', [], OUT).
+
+'__binding_iterator_stub_wait'(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+'__binding_iterator_stub_next_one'(REF, ARG0, OUT) :- 
+	object_call(REF, next_one, '.'(ARG0, []), OUT).
+
+'__binding_iterator_stub_wait'(REF) :- 
+	object_call(REF, wait, [], _).
+
+'__binding_iterator_stub_wait'(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+'__binding_iterator_stub_equals'(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+'__binding_iterator_stub__get_interface_def'(REF, OUT) :- 
+	object_call(REF, '_get_interface_def', [], OUT).
+
+'__binding_iterator_stub__set_delegate'(REF, ARG0) :- 
+	object_call(REF, '_set_delegate', '.'(ARG0, []), _).
+
+'__binding_iterator_stub__duplicate'(REF, OUT) :- 
+	object_call(REF, '_duplicate', [], OUT).
+
+'__binding_iterator_stub_notify_all'(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+'__binding_iterator_stub_notify'(REF) :- 
+	object_call(REF, notify, [], _).
+
+'__binding_iterator_stub__release'(REF) :- 
+	object_call(REF, '_release', [], _).
 
 '__binding_iterator_stub__request'(REF, ARG0, OUT) :- 
 	object_call(REF, '_request', '.'(ARG0, []), OUT).
 
-'__binding_iterator_stub__servant_postinvoke'(REF, ARG0, OUT) :- 
-	object_call(REF, '_servant_postinvoke', '.'(ARG0, []), OUT).
+'__binding_iterator_stub__request'(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, '_request', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-'__binding_iterator_stub__servant_preinvoke'(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, '_servant_preinvoke', '.'(ARG0, '.'(ARG1, [])), OUT).
-
-'__binding_iterator_stub__set_policy_override'(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, '_set_policy_override', '.'(ARG0, '.'(ARG1, [])), OUT).
-
-'__binding_iterator_stub_wait'(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-'__binding_iterator_stub_wait'(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-'__binding_iterator_stub_wait'(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+'__binding_iterator_stub__ids'(REF, OUT) :- 
+	object_call(REF, '_ids', [], OUT).
 
 '__binding_iterator_stub_get_class'(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-'__binding_iterator_stub_notify'(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+'__binding_iterator_stub__get_policy'(REF, ARG0, OUT) :- 
+	object_call(REF, '_get_policy', '.'(ARG0, []), OUT).
 
-'__binding_iterator_stub_notify_all'(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+'__binding_iterator_stub__orb'(REF, OUT) :- 
+	object_call(REF, '_orb', [], OUT).
+
+'__binding_iterator_stub_next_n'(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, next_n, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+'__binding_iterator_stub__is_a'(REF, ARG0, OUT) :- 
+	object_call(REF, '_is_a', '.'(ARG0, []), OUT).
+
+'__binding_iterator_stub__release_reply'(REF, ARG0) :- 
+	object_call(REF, '_releaseReply', '.'(ARG0, []), _).
 

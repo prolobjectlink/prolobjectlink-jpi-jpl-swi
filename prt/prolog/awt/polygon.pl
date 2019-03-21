@@ -22,80 +22,35 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-polygon(OUT) :- 
-	object_new('java.awt.Polygon', [], OUT).
-
 polygon(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('java.awt.Polygon', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-polygon_contains(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, contains, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-polygon_contains(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, contains, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-polygon_contains(REF, ARG0, OUT) :- 
-	object_call(REF, contains, '.'(ARG0, []), OUT).
-
-polygon_contains(REF, ARG0, OUT) :- 
-	object_call(REF, contains, '.'(ARG0, []), OUT).
-
-polygon_contains(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, contains, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
-polygon_contains(REF, ARG0, OUT) :- 
-	object_call(REF, contains, '.'(ARG0, []), OUT).
-
-polygon_reset(REF, OUT) :- 
-	object_call(REF, reset, [], OUT).
-
-polygon_intersects(REF, ARG0, OUT) :- 
-	object_call(REF, intersects, '.'(ARG0, []), OUT).
-
-polygon_intersects(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, intersects, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
-polygon_invalidate(REF, OUT) :- 
-	object_call(REF, invalidate, [], OUT).
-
-polygon_get_bounds2_d(REF, OUT) :- 
-	object_call(REF, getBounds2D, [], OUT).
-
-polygon_get_path_iterator(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getPathIterator, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-polygon_get_path_iterator(REF, ARG0, OUT) :- 
-	object_call(REF, getPathIterator, '.'(ARG0, []), OUT).
-
-polygon_get_bounds(REF, OUT) :- 
-	object_call(REF, getBounds, [], OUT).
+polygon(OUT) :- 
+	object_new('java.awt.Polygon', [], OUT).
 
 polygon_inside(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, inside, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-polygon_translate(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, translate, '.'(ARG0, '.'(ARG1, [])), OUT).
+polygon_add_point(REF, ARG0, ARG1) :- 
+	object_call(REF, addPoint, '.'(ARG0, '.'(ARG1, [])), _).
 
-polygon_add_point(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, addPoint, '.'(ARG0, '.'(ARG1, [])), OUT).
+polygon_contains(REF, ARG0, OUT) :- 
+	object_call(REF, contains, '.'(ARG0, []), OUT).
 
-polygon_get_bounding_box(REF, OUT) :- 
-	object_call(REF, getBoundingBox, [], OUT).
+polygon_contains(REF, ARG0, OUT) :- 
+	object_call(REF, contains, '.'(ARG0, []), OUT).
 
-polygon_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+polygon_contains(REF, ARG0, OUT) :- 
+	object_call(REF, contains, '.'(ARG0, []), OUT).
 
-polygon_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+polygon_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-polygon_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+polygon_contains(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, contains, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-polygon_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-polygon_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+polygon_contains(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, contains, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 polygon_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -103,9 +58,54 @@ polygon_hash_code(REF, OUT) :-
 polygon_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-polygon_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+polygon_contains(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_call(REF, contains, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
-polygon_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+polygon_invalidate(REF) :- 
+	object_call(REF, invalidate, [], _).
+
+polygon_get_bounds(REF, OUT) :- 
+	object_call(REF, getBounds, [], OUT).
+
+polygon_get_bounds2_d(REF, OUT) :- 
+	object_call(REF, getBounds2D, [], OUT).
+
+polygon_translate(REF, ARG0, ARG1) :- 
+	object_call(REF, translate, '.'(ARG0, '.'(ARG1, [])), _).
+
+polygon_get_path_iterator(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getPathIterator, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+polygon_reset(REF) :- 
+	object_call(REF, reset, [], _).
+
+polygon_get_path_iterator(REF, ARG0, OUT) :- 
+	object_call(REF, getPathIterator, '.'(ARG0, []), OUT).
+
+polygon_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+polygon_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+polygon_get_bounding_box(REF, OUT) :- 
+	object_call(REF, getBoundingBox, [], OUT).
+
+polygon_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+polygon_intersects(REF, ARG0, OUT) :- 
+	object_call(REF, intersects, '.'(ARG0, []), OUT).
+
+polygon_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+polygon_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+polygon_intersects(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_call(REF, intersects, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+
+polygon_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 

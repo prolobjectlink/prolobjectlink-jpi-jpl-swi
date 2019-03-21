@@ -22,35 +22,32 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-sort_key(ARG0, OUT) :- 
-	object_new('javax.naming.ldap.SortKey', '.'(ARG0, []), OUT).
-
 sort_key(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('javax.naming.ldap.SortKey', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-sort_key_get_attribute_i_d(REF, OUT) :- 
-	object_call(REF, getAttributeID, [], OUT).
+sort_key(ARG0, OUT) :- 
+	object_new('javax.naming.ldap.SortKey', '.'(ARG0, []), OUT).
 
 sort_key_get_matching_rule_i_d(REF, OUT) :- 
 	object_call(REF, getMatchingRuleID, [], OUT).
 
-sort_key_is_ascending(REF, OUT) :- 
-	object_call(REF, isAscending, [], OUT).
+sort_key_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-sort_key_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+sort_key_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-sort_key_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-sort_key_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-sort_key_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+sort_key_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 sort_key_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
+
+sort_key_get_attribute_i_d(REF, OUT) :- 
+	object_call(REF, getAttributeID, [], OUT).
+
+sort_key_is_ascending(REF, OUT) :- 
+	object_call(REF, isAscending, [], OUT).
 
 sort_key_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -58,9 +55,12 @@ sort_key_hash_code(REF, OUT) :-
 sort_key_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-sort_key_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+sort_key_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-sort_key_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+sort_key_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+sort_key_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 

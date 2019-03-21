@@ -22,26 +22,17 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-pointer_info_get_location(REF, OUT) :- 
-	object_call(REF, getLocation, [], OUT).
+pointer_info_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-pointer_info_get_device(REF, OUT) :- 
-	object_call(REF, getDevice, [], OUT).
-
-pointer_info_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-pointer_info_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-pointer_info_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-pointer_info_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+pointer_info_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 pointer_info_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
+
+pointer_info_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 pointer_info_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -49,9 +40,18 @@ pointer_info_hash_code(REF, OUT) :-
 pointer_info_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-pointer_info_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+pointer_info_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-pointer_info_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+pointer_info_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+pointer_info_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+pointer_info_get_device(REF, OUT) :- 
+	object_call(REF, getDevice, [], OUT).
+
+pointer_info_get_location(REF, OUT) :- 
+	object_call(REF, getLocation, [], OUT).
 

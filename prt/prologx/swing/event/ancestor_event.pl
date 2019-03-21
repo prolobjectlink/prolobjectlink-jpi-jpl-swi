@@ -22,89 +22,80 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-ancestor_event_ancestor_added(OUT) :- 
+ancestor_event_ANCESTOR_ADDED(OUT) :- 
 	object_get('javax.swing.event.AncestorEvent', ancestor_added, OUT).
 
-ancestor_event_ancestor_removed(OUT) :- 
+ancestor_event_ANCESTOR_REMOVED(OUT) :- 
 	object_get('javax.swing.event.AncestorEvent', ancestor_removed, OUT).
 
-ancestor_event_ancestor_moved(OUT) :- 
+ancestor_event_ANCESTOR_MOVED(OUT) :- 
 	object_get('javax.swing.event.AncestorEvent', ancestor_moved, OUT).
 
-ancestor_event_component_event_mask(OUT) :- 
+ancestor_event_COMPONENT_EVENT_MASK(OUT) :- 
 	object_get('javax.swing.event.AncestorEvent', component_event_mask, OUT).
 
-ancestor_event_container_event_mask(OUT) :- 
+ancestor_event_CONTAINER_EVENT_MASK(OUT) :- 
 	object_get('javax.swing.event.AncestorEvent', container_event_mask, OUT).
 
-ancestor_event_focus_event_mask(OUT) :- 
+ancestor_event_FOCUS_EVENT_MASK(OUT) :- 
 	object_get('javax.swing.event.AncestorEvent', focus_event_mask, OUT).
 
-ancestor_event_key_event_mask(OUT) :- 
+ancestor_event_KEY_EVENT_MASK(OUT) :- 
 	object_get('javax.swing.event.AncestorEvent', key_event_mask, OUT).
 
-ancestor_event_mouse_event_mask(OUT) :- 
+ancestor_event_MOUSE_EVENT_MASK(OUT) :- 
 	object_get('javax.swing.event.AncestorEvent', mouse_event_mask, OUT).
 
-ancestor_event_mouse_motion_event_mask(OUT) :- 
+ancestor_event_MOUSE_MOTION_EVENT_MASK(OUT) :- 
 	object_get('javax.swing.event.AncestorEvent', mouse_motion_event_mask, OUT).
 
-ancestor_event_window_event_mask(OUT) :- 
+ancestor_event_WINDOW_EVENT_MASK(OUT) :- 
 	object_get('javax.swing.event.AncestorEvent', window_event_mask, OUT).
 
-ancestor_event_action_event_mask(OUT) :- 
+ancestor_event_ACTION_EVENT_MASK(OUT) :- 
 	object_get('javax.swing.event.AncestorEvent', action_event_mask, OUT).
 
-ancestor_event_adjustment_event_mask(OUT) :- 
+ancestor_event_ADJUSTMENT_EVENT_MASK(OUT) :- 
 	object_get('javax.swing.event.AncestorEvent', adjustment_event_mask, OUT).
 
-ancestor_event_item_event_mask(OUT) :- 
+ancestor_event_ITEM_EVENT_MASK(OUT) :- 
 	object_get('javax.swing.event.AncestorEvent', item_event_mask, OUT).
 
-ancestor_event_text_event_mask(OUT) :- 
+ancestor_event_TEXT_EVENT_MASK(OUT) :- 
 	object_get('javax.swing.event.AncestorEvent', text_event_mask, OUT).
 
-ancestor_event_input_method_event_mask(OUT) :- 
+ancestor_event_INPUT_METHOD_EVENT_MASK(OUT) :- 
 	object_get('javax.swing.event.AncestorEvent', input_method_event_mask, OUT).
 
-ancestor_event_paint_event_mask(OUT) :- 
+ancestor_event_PAINT_EVENT_MASK(OUT) :- 
 	object_get('javax.swing.event.AncestorEvent', paint_event_mask, OUT).
 
-ancestor_event_invocation_event_mask(OUT) :- 
+ancestor_event_INVOCATION_EVENT_MASK(OUT) :- 
 	object_get('javax.swing.event.AncestorEvent', invocation_event_mask, OUT).
 
-ancestor_event_hierarchy_event_mask(OUT) :- 
+ancestor_event_HIERARCHY_EVENT_MASK(OUT) :- 
 	object_get('javax.swing.event.AncestorEvent', hierarchy_event_mask, OUT).
 
-ancestor_event_hierarchy_bounds_event_mask(OUT) :- 
+ancestor_event_HIERARCHY_BOUNDS_EVENT_MASK(OUT) :- 
 	object_get('javax.swing.event.AncestorEvent', hierarchy_bounds_event_mask, OUT).
 
-ancestor_event_mouse_wheel_event_mask(OUT) :- 
+ancestor_event_MOUSE_WHEEL_EVENT_MASK(OUT) :- 
 	object_get('javax.swing.event.AncestorEvent', mouse_wheel_event_mask, OUT).
 
-ancestor_event_window_state_event_mask(OUT) :- 
+ancestor_event_WINDOW_STATE_EVENT_MASK(OUT) :- 
 	object_get('javax.swing.event.AncestorEvent', window_state_event_mask, OUT).
 
-ancestor_event_window_focus_event_mask(OUT) :- 
+ancestor_event_WINDOW_FOCUS_EVENT_MASK(OUT) :- 
 	object_get('javax.swing.event.AncestorEvent', window_focus_event_mask, OUT).
 
-ancestor_event_reserved_id_max(OUT) :- 
+ancestor_event_RESERVED_ID_MAX(OUT) :- 
 	object_get('javax.swing.event.AncestorEvent', reserved_id_max, OUT).
 
 ancestor_event(ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_new('javax.swing.event.AncestorEvent', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
-ancestor_event_get_component(REF, OUT) :- 
-	object_call(REF, getComponent, [], OUT).
-
-ancestor_event_get_ancestor(REF, OUT) :- 
-	object_call(REF, getAncestor, [], OUT).
-
-ancestor_event_get_ancestor_parent(REF, OUT) :- 
-	object_call(REF, getAncestorParent, [], OUT).
-
-ancestor_event_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+ancestor_event_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 ancestor_event_param_string(REF, OUT) :- 
 	object_call(REF, paramString, [], OUT).
@@ -112,33 +103,42 @@ ancestor_event_param_string(REF, OUT) :-
 ancestor_event_get_i_d(REF, OUT) :- 
 	object_call(REF, getID, [], OUT).
 
-ancestor_event_set_source(REF, ARG0, OUT) :- 
-	object_call(REF, setSource, '.'(ARG0, []), OUT).
-
-ancestor_event_get_source(REF, OUT) :- 
-	object_call(REF, getSource, [], OUT).
-
-ancestor_event_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-ancestor_event_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-ancestor_event_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-ancestor_event_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-ancestor_event_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+ancestor_event_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 ancestor_event_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-ancestor_event_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+ancestor_event_get_ancestor(REF, OUT) :- 
+	object_call(REF, getAncestor, [], OUT).
 
-ancestor_event_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+ancestor_event_get_ancestor_parent(REF, OUT) :- 
+	object_call(REF, getAncestorParent, [], OUT).
+
+ancestor_event_set_source(REF, ARG0) :- 
+	object_call(REF, setSource, '.'(ARG0, []), _).
+
+ancestor_event_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+ancestor_event_get_source(REF, OUT) :- 
+	object_call(REF, getSource, [], OUT).
+
+ancestor_event_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+ancestor_event_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+ancestor_event_get_component(REF, OUT) :- 
+	object_call(REF, getComponent, [], OUT).
+
+ancestor_event_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+ancestor_event_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+ancestor_event_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 

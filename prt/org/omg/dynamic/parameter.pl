@@ -28,20 +28,17 @@ parameter(OUT) :-
 parameter(ARG0, ARG1, OUT) :- 
 	object_new('org.omg.Dynamic.Parameter', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-parameter_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-parameter_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-parameter_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+parameter_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
 parameter_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-parameter_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+parameter_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+parameter_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 parameter_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -49,9 +46,12 @@ parameter_hash_code(REF, OUT) :-
 parameter_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-parameter_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+parameter_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-parameter_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+parameter_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+parameter_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 

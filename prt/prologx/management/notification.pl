@@ -22,72 +22,72 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-notification(ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
-	object_new('javax.management.Notification', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
-
-notification(ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_new('javax.management.Notification', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
-notification(ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_new('javax.management.Notification', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
 notification(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('javax.management.Notification', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-notification_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+notification(ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_new('javax.management.Notification', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
-notification_get_message(REF, OUT) :- 
-	object_call(REF, getMessage, [], OUT).
+notification(ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_new('javax.management.Notification', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
-notification_get_type(REF, OUT) :- 
-	object_call(REF, getType, [], OUT).
+notification(ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
+	object_new('javax.management.Notification', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
 
-notification_get_sequence_number(REF, OUT) :- 
-	object_call(REF, getSequenceNumber, [], OUT).
-
-notification_set_source(REF, ARG0, OUT) :- 
-	object_call(REF, setSource, '.'(ARG0, []), OUT).
-
-notification_set_sequence_number(REF, ARG0, OUT) :- 
-	object_call(REF, setSequenceNumber, '.'(ARG0, []), OUT).
-
-notification_get_time_stamp(REF, OUT) :- 
-	object_call(REF, getTimeStamp, [], OUT).
-
-notification_set_time_stamp(REF, ARG0, OUT) :- 
-	object_call(REF, setTimeStamp, '.'(ARG0, []), OUT).
-
-notification_get_user_data(REF, OUT) :- 
-	object_call(REF, getUserData, [], OUT).
-
-notification_set_user_data(REF, ARG0, OUT) :- 
-	object_call(REF, setUserData, '.'(ARG0, []), OUT).
-
-notification_get_source(REF, OUT) :- 
-	object_call(REF, getSource, [], OUT).
-
-notification_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-notification_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-notification_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+notification_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 notification_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
+notification_get_source(REF, OUT) :- 
+	object_call(REF, getSource, [], OUT).
+
 notification_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
+
+notification_get_sequence_number(REF, OUT) :- 
+	object_call(REF, getSequenceNumber, [], OUT).
+
+notification_set_source(REF, ARG0) :- 
+	object_call(REF, setSource, '.'(ARG0, []), _).
+
+notification_get_time_stamp(REF, OUT) :- 
+	object_call(REF, getTimeStamp, [], OUT).
+
+notification_set_user_data(REF, ARG0) :- 
+	object_call(REF, setUserData, '.'(ARG0, []), _).
 
 notification_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-notification_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+notification_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-notification_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+notification_set_sequence_number(REF, ARG0) :- 
+	object_call(REF, setSequenceNumber, '.'(ARG0, []), _).
+
+notification_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+notification_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+notification_get_message(REF, OUT) :- 
+	object_call(REF, getMessage, [], OUT).
+
+notification_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+notification_get_user_data(REF, OUT) :- 
+	object_call(REF, getUserData, [], OUT).
+
+notification_get_type(REF, OUT) :- 
+	object_call(REF, getType, [], OUT).
+
+notification_set_time_stamp(REF, ARG0) :- 
+	object_call(REF, setTimeStamp, '.'(ARG0, []), _).
+
+notification_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 

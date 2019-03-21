@@ -28,39 +28,39 @@ multiple_component_profile_holder(OUT) :-
 multiple_component_profile_holder(ARG0, OUT) :- 
 	object_new('org.omg.IOP.MultipleComponentProfileHolder', '.'(ARG0, []), OUT).
 
-multiple_component_profile_holder__read(REF, ARG0, OUT) :- 
-	object_call(REF, '_read', '.'(ARG0, []), OUT).
+multiple_component_profile_holder_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 multiple_component_profile_holder__type(REF, OUT) :- 
 	object_call(REF, '_type', [], OUT).
 
-multiple_component_profile_holder__write(REF, ARG0, OUT) :- 
-	object_call(REF, '_write', '.'(ARG0, []), OUT).
-
-multiple_component_profile_holder_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-multiple_component_profile_holder_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-multiple_component_profile_holder_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-multiple_component_profile_holder_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
 multiple_component_profile_holder_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-multiple_component_profile_holder_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+multiple_component_profile_holder__write(REF, ARG0) :- 
+	object_call(REF, '_write', '.'(ARG0, []), _).
+
+multiple_component_profile_holder__read(REF, ARG0) :- 
+	object_call(REF, '_read', '.'(ARG0, []), _).
 
 multiple_component_profile_holder_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-multiple_component_profile_holder_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+multiple_component_profile_holder_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-multiple_component_profile_holder_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+multiple_component_profile_holder_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+multiple_component_profile_holder_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+multiple_component_profile_holder_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+multiple_component_profile_holder_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+multiple_component_profile_holder_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 

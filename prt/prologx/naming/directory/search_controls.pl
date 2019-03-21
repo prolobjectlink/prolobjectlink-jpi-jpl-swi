@@ -22,81 +22,81 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-search_controls_object_scope(OUT) :- 
+search_controls_OBJECT_SCOPE(OUT) :- 
 	object_get('javax.naming.directory.SearchControls', object_scope, OUT).
 
-search_controls_onelevel_scope(OUT) :- 
+search_controls_ONELEVEL_SCOPE(OUT) :- 
 	object_get('javax.naming.directory.SearchControls', onelevel_scope, OUT).
 
-search_controls_subtree_scope(OUT) :- 
+search_controls_SUBTREE_SCOPE(OUT) :- 
 	object_get('javax.naming.directory.SearchControls', subtree_scope, OUT).
-
-search_controls(OUT) :- 
-	object_new('javax.naming.directory.SearchControls', [], OUT).
 
 search_controls(ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, OUT) :- 
 	object_new('javax.naming.directory.SearchControls', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), OUT).
 
-search_controls_get_count_limit(REF, OUT) :- 
-	object_call(REF, getCountLimit, [], OUT).
-
-search_controls_get_deref_link_flag(REF, OUT) :- 
-	object_call(REF, getDerefLinkFlag, [], OUT).
-
-search_controls_get_returning_attributes(REF, OUT) :- 
-	object_call(REF, getReturningAttributes, [], OUT).
-
-search_controls_get_returning_obj_flag(REF, OUT) :- 
-	object_call(REF, getReturningObjFlag, [], OUT).
+search_controls(OUT) :- 
+	object_new('javax.naming.directory.SearchControls', [], OUT).
 
 search_controls_get_search_scope(REF, OUT) :- 
 	object_call(REF, getSearchScope, [], OUT).
 
-search_controls_get_time_limit(REF, OUT) :- 
-	object_call(REF, getTimeLimit, [], OUT).
+search_controls_set_search_scope(REF, ARG0) :- 
+	object_call(REF, setSearchScope, '.'(ARG0, []), _).
 
-search_controls_set_count_limit(REF, ARG0, OUT) :- 
-	object_call(REF, setCountLimit, '.'(ARG0, []), OUT).
+search_controls_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-search_controls_set_deref_link_flag(REF, ARG0, OUT) :- 
-	object_call(REF, setDerefLinkFlag, '.'(ARG0, []), OUT).
-
-search_controls_set_returning_attributes(REF, ARG0, OUT) :- 
-	object_call(REF, setReturningAttributes, '.'(ARG0, []), OUT).
-
-search_controls_set_returning_obj_flag(REF, ARG0, OUT) :- 
-	object_call(REF, setReturningObjFlag, '.'(ARG0, []), OUT).
-
-search_controls_set_search_scope(REF, ARG0, OUT) :- 
-	object_call(REF, setSearchScope, '.'(ARG0, []), OUT).
-
-search_controls_set_time_limit(REF, ARG0, OUT) :- 
-	object_call(REF, setTimeLimit, '.'(ARG0, []), OUT).
-
-search_controls_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-search_controls_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-search_controls_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+search_controls_set_returning_attributes(REF, ARG0) :- 
+	object_call(REF, setReturningAttributes, '.'(ARG0, []), _).
 
 search_controls_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-search_controls_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+search_controls_get_count_limit(REF, OUT) :- 
+	object_call(REF, getCountLimit, [], OUT).
 
-search_controls_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+search_controls_get_time_limit(REF, OUT) :- 
+	object_call(REF, getTimeLimit, [], OUT).
+
+search_controls_get_returning_attributes(REF, OUT) :- 
+	object_call(REF, getReturningAttributes, [], OUT).
+
+search_controls_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+search_controls_set_count_limit(REF, ARG0) :- 
+	object_call(REF, setCountLimit, '.'(ARG0, []), _).
+
+search_controls_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+search_controls_set_returning_obj_flag(REF, ARG0) :- 
+	object_call(REF, setReturningObjFlag, '.'(ARG0, []), _).
+
+search_controls_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 search_controls_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-search_controls_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+search_controls_get_returning_obj_flag(REF, OUT) :- 
+	object_call(REF, getReturningObjFlag, [], OUT).
 
-search_controls_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+search_controls_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+search_controls_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+search_controls_get_deref_link_flag(REF, OUT) :- 
+	object_call(REF, getDerefLinkFlag, [], OUT).
+
+search_controls_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+search_controls_set_deref_link_flag(REF, ARG0) :- 
+	object_call(REF, setDerefLinkFlag, '.'(ARG0, []), _).
+
+search_controls_set_time_limit(REF, ARG0) :- 
+	object_call(REF, setTimeLimit, '.'(ARG0, []), _).
 

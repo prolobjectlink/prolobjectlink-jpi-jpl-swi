@@ -22,35 +22,20 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-drop_target_context_add_notify(REF, ARG0, OUT) :- 
-	object_call(REF, addNotify, '.'(ARG0, []), OUT).
+drop_target_context_get_drop_target(REF, OUT) :- 
+	object_call(REF, getDropTarget, [], OUT).
+
+drop_target_context_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 drop_target_context_get_component(REF, OUT) :- 
 	object_call(REF, getComponent, [], OUT).
 
-drop_target_context_get_drop_target(REF, OUT) :- 
-	object_call(REF, getDropTarget, [], OUT).
+drop_target_context_remove_notify(REF) :- 
+	object_call(REF, removeNotify, [], _).
 
-drop_target_context_drop_complete(REF, ARG0, OUT) :- 
-	object_call(REF, dropComplete, '.'(ARG0, []), OUT).
-
-drop_target_context_remove_notify(REF, OUT) :- 
-	object_call(REF, removeNotify, [], OUT).
-
-drop_target_context_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-drop_target_context_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-drop_target_context_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-drop_target_context_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-drop_target_context_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+drop_target_context_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 drop_target_context_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -58,9 +43,24 @@ drop_target_context_hash_code(REF, OUT) :-
 drop_target_context_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-drop_target_context_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+drop_target_context_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-drop_target_context_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+drop_target_context_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+drop_target_context_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+drop_target_context_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+drop_target_context_add_notify(REF, ARG0) :- 
+	object_call(REF, addNotify, '.'(ARG0, []), _).
+
+drop_target_context_drop_complete(REF, ARG0) :- 
+	object_call(REF, dropComplete, '.'(ARG0, []), _).
+
+drop_target_context_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 

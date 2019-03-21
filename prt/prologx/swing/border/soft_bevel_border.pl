@@ -22,29 +22,86 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-soft_bevel_border_raised(OUT) :- 
+soft_bevel_border_RAISED(OUT) :- 
 	object_get('javax.swing.border.SoftBevelBorder', raised, OUT).
 
-soft_bevel_border_lowered(OUT) :- 
+soft_bevel_border_LOWERED(OUT) :- 
 	object_get('javax.swing.border.SoftBevelBorder', lowered, OUT).
 
 soft_bevel_border(ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
 	object_new('javax.swing.border.SoftBevelBorder', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
 
+soft_bevel_border(ARG0, OUT) :- 
+	object_new('javax.swing.border.SoftBevelBorder', '.'(ARG0, []), OUT).
+
 soft_bevel_border(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('javax.swing.border.SoftBevelBorder', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-soft_bevel_border(ARG0, OUT) :- 
-	object_new('javax.swing.border.SoftBevelBorder', '.'(ARG0, []), OUT).
+soft_bevel_border_get_shadow_outer_color(REF, OUT) :- 
+	object_call(REF, getShadowOuterColor, [], OUT).
+
+soft_bevel_border_get_border_insets(REF, ARG0, OUT) :- 
+	object_call(REF, getBorderInsets, '.'(ARG0, []), OUT).
 
 soft_bevel_border_get_border_insets(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, getBorderInsets, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-soft_bevel_border_paint_border(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, OUT) :- 
-	object_call(REF, paintBorder, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), OUT).
+soft_bevel_border_get_shadow_outer_color(REF, ARG0, OUT) :- 
+	object_call(REF, getShadowOuterColor, '.'(ARG0, []), OUT).
 
-soft_bevel_border_is_border_opaque(REF, OUT) :- 
-	object_call(REF, isBorderOpaque, [], OUT).
+soft_bevel_border_get_highlight_outer_color(REF, ARG0, OUT) :- 
+	object_call(REF, getHighlightOuterColor, '.'(ARG0, []), OUT).
+
+soft_bevel_border_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+soft_bevel_border_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+soft_bevel_border_get_bevel_type(REF, OUT) :- 
+	object_call(REF, getBevelType, [], OUT).
+
+soft_bevel_border_get_interior_rectangle(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, OUT) :- 
+	object_call(REF, getInteriorRectangle, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), OUT).
+
+soft_bevel_border_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+soft_bevel_border_get_highlight_outer_color(REF, OUT) :- 
+	object_call(REF, getHighlightOuterColor, [], OUT).
+
+soft_bevel_border_get_interior_rectangle(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
+	object_call(REF, getInteriorRectangle, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
+
+soft_bevel_border_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+soft_bevel_border_get_baseline_resize_behavior(REF, ARG0, OUT) :- 
+	object_call(REF, getBaselineResizeBehavior, '.'(ARG0, []), OUT).
+
+soft_bevel_border_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+soft_bevel_border_get_shadow_inner_color(REF, ARG0, OUT) :- 
+	object_call(REF, getShadowInnerColor, '.'(ARG0, []), OUT).
+
+soft_bevel_border_get_shadow_inner_color(REF, OUT) :- 
+	object_call(REF, getShadowInnerColor, [], OUT).
+
+soft_bevel_border_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+soft_bevel_border_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+soft_bevel_border_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+soft_bevel_border_paint_border(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5) :- 
+	object_call(REF, paintBorder, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), _).
+
+soft_bevel_border_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
 soft_bevel_border_get_highlight_inner_color(REF, OUT) :- 
 	object_call(REF, getHighlightInnerColor, [], OUT).
@@ -52,66 +109,9 @@ soft_bevel_border_get_highlight_inner_color(REF, OUT) :-
 soft_bevel_border_get_highlight_inner_color(REF, ARG0, OUT) :- 
 	object_call(REF, getHighlightInnerColor, '.'(ARG0, []), OUT).
 
-soft_bevel_border_get_highlight_outer_color(REF, OUT) :- 
-	object_call(REF, getHighlightOuterColor, [], OUT).
-
-soft_bevel_border_get_highlight_outer_color(REF, ARG0, OUT) :- 
-	object_call(REF, getHighlightOuterColor, '.'(ARG0, []), OUT).
-
-soft_bevel_border_get_shadow_inner_color(REF, OUT) :- 
-	object_call(REF, getShadowInnerColor, [], OUT).
-
-soft_bevel_border_get_shadow_inner_color(REF, ARG0, OUT) :- 
-	object_call(REF, getShadowInnerColor, '.'(ARG0, []), OUT).
-
-soft_bevel_border_get_shadow_outer_color(REF, OUT) :- 
-	object_call(REF, getShadowOuterColor, [], OUT).
-
-soft_bevel_border_get_shadow_outer_color(REF, ARG0, OUT) :- 
-	object_call(REF, getShadowOuterColor, '.'(ARG0, []), OUT).
-
-soft_bevel_border_get_bevel_type(REF, OUT) :- 
-	object_call(REF, getBevelType, [], OUT).
-
 soft_bevel_border_get_baseline(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, getBaseline, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-soft_bevel_border_get_baseline_resize_behavior(REF, ARG0, OUT) :- 
-	object_call(REF, getBaselineResizeBehavior, '.'(ARG0, []), OUT).
-
-soft_bevel_border_get_border_insets(REF, ARG0, OUT) :- 
-	object_call(REF, getBorderInsets, '.'(ARG0, []), OUT).
-
-soft_bevel_border_get_interior_rectangle(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
-	object_call(REF, getInteriorRectangle, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
-
-soft_bevel_border_get_interior_rectangle(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, OUT) :- 
-	object_call(REF, getInteriorRectangle, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), OUT).
-
-soft_bevel_border_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-soft_bevel_border_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-soft_bevel_border_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-soft_bevel_border_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-soft_bevel_border_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-soft_bevel_border_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-soft_bevel_border_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-soft_bevel_border_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-soft_bevel_border_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+soft_bevel_border_is_border_opaque(REF, OUT) :- 
+	object_call(REF, isBorderOpaque, [], OUT).
 

@@ -25,33 +25,33 @@
 parser_delegator(OUT) :- 
 	object_new('javax.swing.text.html.parser.ParserDelegator', [], OUT).
 
-parser_delegator_parse(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, parse, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-parser_delegator_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-parser_delegator_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-parser_delegator_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
 parser_delegator_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-parser_delegator_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+parser_delegator_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+parser_delegator_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 parser_delegator_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+parser_delegator_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+parser_delegator_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+parser_delegator_parse(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, parse, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+parser_delegator_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+parser_delegator_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
 parser_delegator_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-parser_delegator_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-parser_delegator_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

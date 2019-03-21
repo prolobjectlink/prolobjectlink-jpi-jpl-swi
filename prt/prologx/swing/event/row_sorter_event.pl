@@ -28,35 +28,26 @@ row_sorter_event(ARG0, OUT) :-
 row_sorter_event(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('javax.swing.event.RowSorterEvent', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
+row_sorter_event_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
 row_sorter_event_get_type(REF, OUT) :- 
 	object_call(REF, getType, [], OUT).
 
-row_sorter_event_get_source(REF, OUT) :- 
-	object_call(REF, getSource, [], OUT).
+row_sorter_event_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-row_sorter_event_get_source(REF, OUT) :- 
-	object_call(REF, getSource, [], OUT).
-
-row_sorter_event_convert_previous_row_index_to_model(REF, ARG0, OUT) :- 
-	object_call(REF, convertPreviousRowIndexToModel, '.'(ARG0, []), OUT).
-
-row_sorter_event_get_previous_row_count(REF, OUT) :- 
-	object_call(REF, getPreviousRowCount, [], OUT).
+row_sorter_event_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 row_sorter_event_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-row_sorter_event_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+row_sorter_event_convert_previous_row_index_to_model(REF, ARG0, OUT) :- 
+	object_call(REF, convertPreviousRowIndexToModel, '.'(ARG0, []), OUT).
 
-row_sorter_event_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-row_sorter_event_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-row_sorter_event_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+row_sorter_event_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 row_sorter_event_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -64,9 +55,18 @@ row_sorter_event_hash_code(REF, OUT) :-
 row_sorter_event_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-row_sorter_event_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+row_sorter_event_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-row_sorter_event_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+row_sorter_event_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+row_sorter_event_get_source(REF, OUT) :- 
+	object_call(REF, getSource, [], OUT).
+
+row_sorter_event_get_source(REF, OUT) :- 
+	object_call(REF, getSource, [], OUT).
+
+row_sorter_event_get_previous_row_count(REF, OUT) :- 
+	object_call(REF, getPreviousRowCount, [], OUT).
 

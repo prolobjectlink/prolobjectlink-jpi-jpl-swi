@@ -22,54 +22,54 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-multiple_document_handling_single_document(OUT) :- 
+multiple_document_handling_SINGLE_DOCUMENT(OUT) :- 
 	object_get('javax.print.attribute.standard.MultipleDocumentHandling', single_document, OUT).
 
-multiple_document_handling_separate_documents_uncollated_copies(OUT) :- 
+multiple_document_handling_SEPARATE_DOCUMENTS_UNCOLLATED_COPIES(OUT) :- 
 	object_get('javax.print.attribute.standard.MultipleDocumentHandling', separate_documents_uncollated_copies, OUT).
 
-multiple_document_handling_separate_documents_collated_copies(OUT) :- 
+multiple_document_handling_SEPARATE_DOCUMENTS_COLLATED_COPIES(OUT) :- 
 	object_get('javax.print.attribute.standard.MultipleDocumentHandling', separate_documents_collated_copies, OUT).
 
-multiple_document_handling_single_document_new_sheet(OUT) :- 
+multiple_document_handling_SINGLE_DOCUMENT_NEW_SHEET(OUT) :- 
 	object_get('javax.print.attribute.standard.MultipleDocumentHandling', single_document_new_sheet, OUT).
 
-multiple_document_handling_get_name(REF, OUT) :- 
-	object_call(REF, getName, [], OUT).
+multiple_document_handling_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+multiple_document_handling_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+multiple_document_handling_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 multiple_document_handling_get_category(REF, OUT) :- 
 	object_call(REF, getCategory, [], OUT).
 
+multiple_document_handling_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+multiple_document_handling_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
 multiple_document_handling_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
+
+multiple_document_handling_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+multiple_document_handling_get_name(REF, OUT) :- 
+	object_call(REF, getName, [], OUT).
 
 multiple_document_handling_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-multiple_document_handling_clone(REF, OUT) :- 
-	object_call(REF, clone, [], OUT).
-
 multiple_document_handling_get_value(REF, OUT) :- 
 	object_call(REF, getValue, [], OUT).
-
-multiple_document_handling_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-multiple_document_handling_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-multiple_document_handling_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-multiple_document_handling_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 multiple_document_handling_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-multiple_document_handling_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-multiple_document_handling_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+multiple_document_handling_clone(REF, OUT) :- 
+	object_call(REF, clone, [], OUT).
 

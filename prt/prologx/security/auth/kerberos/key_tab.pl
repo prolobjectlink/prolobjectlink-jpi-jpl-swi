@@ -22,60 +22,60 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-key_tab_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-key_tab_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-key_tab_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-key_tab_get_instance(REF, ARG0, OUT) :- 
-	object_call(REF, getInstance, '.'(ARG0, []), OUT).
-
-key_tab_get_instance(REF, ARG0, OUT) :- 
-	object_call(REF, getInstance, '.'(ARG0, []), OUT).
-
-key_tab_get_instance(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getInstance, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-key_tab_get_instance(REF, OUT) :- 
-	object_call(REF, getInstance, [], OUT).
-
-key_tab_exists(REF, OUT) :- 
-	object_call(REF, exists, [], OUT).
-
-key_tab_get_keys(REF, ARG0, OUT) :- 
-	object_call(REF, getKeys, '.'(ARG0, []), OUT).
-
 key_tab_get_unbound_instance(REF, ARG0, OUT) :- 
 	object_call(REF, getUnboundInstance, '.'(ARG0, []), OUT).
+
+key_tab_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 key_tab_get_unbound_instance(REF, OUT) :- 
 	object_call(REF, getUnboundInstance, [], OUT).
 
+key_tab_get_instance(REF, OUT) :- 
+	object_call(REF, getInstance, [], OUT).
+
+key_tab_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+key_tab_get_instance(REF, ARG0, OUT) :- 
+	object_call(REF, getInstance, '.'(ARG0, []), OUT).
+
+key_tab_get_instance(REF, ARG0, OUT) :- 
+	object_call(REF, getInstance, '.'(ARG0, []), OUT).
+
 key_tab_is_bound(REF, OUT) :- 
 	object_call(REF, isBound, [], OUT).
 
-key_tab_get_principal(REF, OUT) :- 
-	object_call(REF, getPrincipal, [], OUT).
+key_tab_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-key_tab_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+key_tab_get_instance(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getInstance, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-key_tab_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+key_tab_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-key_tab_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+key_tab_get_keys(REF, ARG0, OUT) :- 
+	object_call(REF, getKeys, '.'(ARG0, []), OUT).
 
 key_tab_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-key_tab_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+key_tab_get_principal(REF, OUT) :- 
+	object_call(REF, getPrincipal, [], OUT).
 
-key_tab_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+key_tab_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+key_tab_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+key_tab_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+key_tab_exists(REF, OUT) :- 
+	object_call(REF, exists, [], OUT).
+
+key_tab_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 

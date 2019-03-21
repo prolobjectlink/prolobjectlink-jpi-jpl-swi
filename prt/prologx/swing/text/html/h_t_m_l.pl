@@ -22,51 +22,51 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-h_t_m_l_null_attribute_value(OUT) :- 
+h_t_m_l_NULL_ATTRIBUTE_VALUE(OUT) :- 
 	object_get('javax.swing.text.html.HTML', null_attribute_value, OUT).
 
 h_t_m_l(OUT) :- 
 	object_new('javax.swing.text.html.HTML', [], OUT).
 
-h_t_m_l_get_all_attribute_keys(REF, OUT) :- 
-	object_call(REF, getAllAttributeKeys, [], OUT).
-
-h_t_m_l_get_integer_attribute_value(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, getIntegerAttributeValue, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
 h_t_m_l_get_all_tags(REF, OUT) :- 
 	object_call(REF, getAllTags, [], OUT).
-
-h_t_m_l_get_attribute_key(REF, ARG0, OUT) :- 
-	object_call(REF, getAttributeKey, '.'(ARG0, []), OUT).
 
 h_t_m_l_get_tag(REF, ARG0, OUT) :- 
 	object_call(REF, getTag, '.'(ARG0, []), OUT).
 
-h_t_m_l_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-h_t_m_l_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-h_t_m_l_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-h_t_m_l_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+h_t_m_l_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 h_t_m_l_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
+h_t_m_l_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+h_t_m_l_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+h_t_m_l_get_all_attribute_keys(REF, OUT) :- 
+	object_call(REF, getAllAttributeKeys, [], OUT).
+
+h_t_m_l_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
 h_t_m_l_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
+
+h_t_m_l_get_integer_attribute_value(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, getIntegerAttributeValue, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
 h_t_m_l_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-h_t_m_l_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+h_t_m_l_get_attribute_key(REF, ARG0, OUT) :- 
+	object_call(REF, getAttributeKey, '.'(ARG0, []), OUT).
 
-h_t_m_l_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+h_t_m_l_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+h_t_m_l_notify(REF) :- 
+	object_call(REF, notify, [], _).
 

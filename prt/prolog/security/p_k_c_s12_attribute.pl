@@ -28,39 +28,39 @@ p_k_c_s12_attribute(ARG0, ARG1, OUT) :-
 p_k_c_s12_attribute(ARG0, OUT) :- 
 	object_new('java.security.PKCS12Attribute', '.'(ARG0, []), OUT).
 
-p_k_c_s12_attribute_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+p_k_c_s12_attribute_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 p_k_c_s12_attribute_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-p_k_c_s12_attribute_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+p_k_c_s12_attribute_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-p_k_c_s12_attribute_get_name(REF, OUT) :- 
-	object_call(REF, getName, [], OUT).
+p_k_c_s12_attribute_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+p_k_c_s12_attribute_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 p_k_c_s12_attribute_get_value(REF, OUT) :- 
 	object_call(REF, getValue, [], OUT).
 
+p_k_c_s12_attribute_get_name(REF, OUT) :- 
+	object_call(REF, getName, [], OUT).
+
+p_k_c_s12_attribute_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
 p_k_c_s12_attribute_get_encoded(REF, OUT) :- 
 	object_call(REF, getEncoded, [], OUT).
 
-p_k_c_s12_attribute_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-p_k_c_s12_attribute_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-p_k_c_s12_attribute_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+p_k_c_s12_attribute_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
 p_k_c_s12_attribute_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-p_k_c_s12_attribute_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-p_k_c_s12_attribute_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+p_k_c_s12_attribute_notify(REF) :- 
+	object_call(REF, notify, [], _).
 

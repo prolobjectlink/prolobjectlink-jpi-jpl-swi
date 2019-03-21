@@ -25,45 +25,45 @@
 logging_permission(ARG0, ARG1, OUT) :- 
 	object_new('java.util.logging.LoggingPermission', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-logging_permission_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-logging_permission_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-logging_permission_get_actions(REF, OUT) :- 
-	object_call(REF, getActions, [], OUT).
+logging_permission_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 logging_permission_implies(REF, ARG0, OUT) :- 
 	object_call(REF, implies, '.'(ARG0, []), OUT).
 
-logging_permission_new_permission_collection(REF, OUT) :- 
-	object_call(REF, newPermissionCollection, [], OUT).
+logging_permission_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 logging_permission_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-logging_permission_get_name(REF, OUT) :- 
-	object_call(REF, getName, [], OUT).
+logging_permission_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-logging_permission_check_guard(REF, ARG0, OUT) :- 
-	object_call(REF, checkGuard, '.'(ARG0, []), OUT).
+logging_permission_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-logging_permission_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+logging_permission_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
-logging_permission_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+logging_permission_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-logging_permission_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+logging_permission_check_guard(REF, ARG0) :- 
+	object_call(REF, checkGuard, '.'(ARG0, []), _).
+
+logging_permission_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+logging_permission_new_permission_collection(REF, OUT) :- 
+	object_call(REF, newPermissionCollection, [], OUT).
 
 logging_permission_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-logging_permission_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+logging_permission_get_actions(REF, OUT) :- 
+	object_call(REF, getActions, [], OUT).
 
-logging_permission_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+logging_permission_get_name(REF, OUT) :- 
+	object_call(REF, getName, [], OUT).
 

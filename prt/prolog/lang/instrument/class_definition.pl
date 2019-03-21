@@ -25,36 +25,36 @@
 class_definition(ARG0, ARG1, OUT) :- 
 	object_new('java.lang.instrument.ClassDefinition', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-class_definition_get_definition_class(REF, OUT) :- 
-	object_call(REF, getDefinitionClass, [], OUT).
-
 class_definition_get_definition_class_file(REF, OUT) :- 
 	object_call(REF, getDefinitionClassFile, [], OUT).
 
-class_definition_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-class_definition_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-class_definition_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+class_definition_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 class_definition_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-class_definition_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-class_definition_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+class_definition_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 class_definition_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-class_definition_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+class_definition_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-class_definition_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+class_definition_get_definition_class(REF, OUT) :- 
+	object_call(REF, getDefinitionClass, [], OUT).
+
+class_definition_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+class_definition_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+class_definition_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+class_definition_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 

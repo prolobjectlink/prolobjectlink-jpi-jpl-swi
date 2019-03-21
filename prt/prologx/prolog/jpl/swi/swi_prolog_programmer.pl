@@ -25,32 +25,11 @@
 swi_prolog_programmer(ARG0, OUT) :- 
 	object_new('org.prolobjectlink.prolog.jpl.swi.SwiPrologProgrammer', '.'(ARG0, []), OUT).
 
-swi_prolog_programmer_coding_runtime(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, codingRuntime, '.'(ARG0, '.'(ARG1, [])), OUT).
+swi_prolog_programmer_coding_runtime(REF, ARG0) :- 
+	object_call(REF, codingRuntime, '.'(ARG0, []), _).
 
-swi_prolog_programmer_coding_runtime(REF, ARG0, OUT) :- 
-	object_call(REF, codingRuntime, '.'(ARG0, []), OUT).
-
-swi_prolog_programmer_to_term(REF, ARG0, OUT) :- 
-	object_call(REF, toTerm, '.'(ARG0, []), OUT).
-
-swi_prolog_programmer_to_terms_array(REF, ARG0, OUT) :- 
-	object_call(REF, toTermsArray, '.'(ARG0, []), OUT).
-
-swi_prolog_programmer_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-swi_prolog_programmer_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-swi_prolog_programmer_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-swi_prolog_programmer_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-swi_prolog_programmer_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+swi_prolog_programmer_coding_runtime(REF, ARG0, ARG1) :- 
+	object_call(REF, codingRuntime, '.'(ARG0, '.'(ARG1, [])), _).
 
 swi_prolog_programmer_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -58,9 +37,27 @@ swi_prolog_programmer_hash_code(REF, OUT) :-
 swi_prolog_programmer_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-swi_prolog_programmer_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+swi_prolog_programmer_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-swi_prolog_programmer_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+swi_prolog_programmer_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+swi_prolog_programmer_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+swi_prolog_programmer_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+swi_prolog_programmer_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+swi_prolog_programmer_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+swi_prolog_programmer_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+swi_prolog_programmer_coding_inclusion(REF, ARG0, ARG1) :- 
+	object_call(REF, codingInclusion, '.'(ARG0, '.'(ARG1, [])), _).
 

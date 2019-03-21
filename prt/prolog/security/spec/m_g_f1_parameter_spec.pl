@@ -22,51 +22,51 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-m_g_f1_parameter_spec_sha1(OUT) :- 
+m_g_f1_parameter_spec_SHA1(OUT) :- 
 	object_get('java.security.spec.MGF1ParameterSpec', sha1, OUT).
 
-m_g_f1_parameter_spec_sha224(OUT) :- 
+m_g_f1_parameter_spec_SHA224(OUT) :- 
 	object_get('java.security.spec.MGF1ParameterSpec', sha224, OUT).
 
-m_g_f1_parameter_spec_sha256(OUT) :- 
+m_g_f1_parameter_spec_SHA256(OUT) :- 
 	object_get('java.security.spec.MGF1ParameterSpec', sha256, OUT).
 
-m_g_f1_parameter_spec_sha384(OUT) :- 
+m_g_f1_parameter_spec_SHA384(OUT) :- 
 	object_get('java.security.spec.MGF1ParameterSpec', sha384, OUT).
 
-m_g_f1_parameter_spec_sha512(OUT) :- 
+m_g_f1_parameter_spec_SHA512(OUT) :- 
 	object_get('java.security.spec.MGF1ParameterSpec', sha512, OUT).
 
 m_g_f1_parameter_spec(ARG0, OUT) :- 
 	object_new('java.security.spec.MGF1ParameterSpec', '.'(ARG0, []), OUT).
 
-m_g_f1_parameter_spec_get_digest_algorithm(REF, OUT) :- 
-	object_call(REF, getDigestAlgorithm, [], OUT).
-
-m_g_f1_parameter_spec_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-m_g_f1_parameter_spec_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-m_g_f1_parameter_spec_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+m_g_f1_parameter_spec_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 m_g_f1_parameter_spec_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-m_g_f1_parameter_spec_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+m_g_f1_parameter_spec_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
 m_g_f1_parameter_spec_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-m_g_f1_parameter_spec_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
+m_g_f1_parameter_spec_get_digest_algorithm(REF, OUT) :- 
+	object_call(REF, getDigestAlgorithm, [], OUT).
 
-m_g_f1_parameter_spec_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+m_g_f1_parameter_spec_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-m_g_f1_parameter_spec_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+m_g_f1_parameter_spec_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+m_g_f1_parameter_spec_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+m_g_f1_parameter_spec_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+m_g_f1_parameter_spec_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 

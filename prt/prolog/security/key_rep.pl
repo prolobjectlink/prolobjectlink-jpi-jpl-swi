@@ -25,30 +25,30 @@
 key_rep(ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_new('java.security.KeyRep', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
-key_rep_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+key_rep_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-key_rep_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+key_rep_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-key_rep_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+key_rep_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+key_rep_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 key_rep_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
+key_rep_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
 key_rep_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
-
-key_rep_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
 
 key_rep_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-key_rep_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-key_rep_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+key_rep_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 

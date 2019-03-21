@@ -31,6 +31,18 @@ list_selection_event_to_string(REF, OUT) :-
 list_selection_event_get_value_is_adjusting(REF, OUT) :- 
 	object_call(REF, getValueIsAdjusting, [], OUT).
 
+list_selection_event_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
+
+list_selection_event_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+list_selection_event_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+list_selection_event_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
 list_selection_event_get_first_index(REF, OUT) :- 
 	object_call(REF, getFirstIndex, [], OUT).
 
@@ -40,27 +52,15 @@ list_selection_event_get_last_index(REF, OUT) :-
 list_selection_event_get_source(REF, OUT) :- 
 	object_call(REF, getSource, [], OUT).
 
-list_selection_event_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+list_selection_event_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-list_selection_event_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+list_selection_event_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-list_selection_event_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+list_selection_event_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-list_selection_event_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-list_selection_event_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-list_selection_event_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-list_selection_event_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-list_selection_event_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+list_selection_event_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

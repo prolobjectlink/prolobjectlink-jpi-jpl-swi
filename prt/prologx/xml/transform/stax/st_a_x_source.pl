@@ -22,7 +22,7 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-st_a_x_source_feature(OUT) :- 
+st_a_x_source_FEATURE(OUT) :- 
 	object_get('javax.xml.transform.stax.StAXSource', feature, OUT).
 
 st_a_x_source(ARG0, OUT) :- 
@@ -31,26 +31,23 @@ st_a_x_source(ARG0, OUT) :-
 st_a_x_source(ARG0, OUT) :- 
 	object_new('javax.xml.transform.stax.StAXSource', '.'(ARG0, []), OUT).
 
-st_a_x_source_get_system_id(REF, OUT) :- 
-	object_call(REF, getSystemId, [], OUT).
-
-st_a_x_source_set_system_id(REF, ARG0, OUT) :- 
-	object_call(REF, setSystemId, '.'(ARG0, []), OUT).
+st_a_x_source_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 st_a_x_source_get_x_m_l_event_reader(REF, OUT) :- 
 	object_call(REF, getXMLEventReader, [], OUT).
 
-st_a_x_source_get_x_m_l_stream_reader(REF, OUT) :- 
-	object_call(REF, getXMLStreamReader, [], OUT).
+st_a_x_source_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-st_a_x_source_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+st_a_x_source_get_system_id(REF, OUT) :- 
+	object_call(REF, getSystemId, [], OUT).
 
-st_a_x_source_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+st_a_x_source_set_system_id(REF, ARG0) :- 
+	object_call(REF, setSystemId, '.'(ARG0, []), _).
 
-st_a_x_source_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+st_a_x_source_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 st_a_x_source_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
@@ -64,9 +61,12 @@ st_a_x_source_hash_code(REF, OUT) :-
 st_a_x_source_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-st_a_x_source_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+st_a_x_source_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-st_a_x_source_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+st_a_x_source_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+st_a_x_source_get_x_m_l_stream_reader(REF, OUT) :- 
+	object_call(REF, getXMLStreamReader, [], OUT).
 

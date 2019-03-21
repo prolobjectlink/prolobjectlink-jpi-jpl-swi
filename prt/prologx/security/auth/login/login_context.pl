@@ -22,11 +22,14 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
+login_context(ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_new('javax.security.auth.login.LoginContext', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+
 login_context(ARG0, ARG1, OUT) :- 
 	object_new('javax.security.auth.login.LoginContext', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-login_context(ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_new('javax.security.auth.login.LoginContext', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+login_context(ARG0, ARG1, OUT) :- 
+	object_new('javax.security.auth.login.LoginContext', '.'(ARG0, '.'(ARG1, [])), OUT).
 
 login_context(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('javax.security.auth.login.LoginContext', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
@@ -34,26 +37,32 @@ login_context(ARG0, ARG1, ARG2, OUT) :-
 login_context(ARG0, OUT) :- 
 	object_new('javax.security.auth.login.LoginContext', '.'(ARG0, []), OUT).
 
-login_context(ARG0, ARG1, OUT) :- 
-	object_new('javax.security.auth.login.LoginContext', '.'(ARG0, '.'(ARG1, [])), OUT).
+login_context_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+login_context_login(REF) :- 
+	object_call(REF, login, [], _).
 
 login_context_get_subject(REF, OUT) :- 
 	object_call(REF, getSubject, [], OUT).
 
-login_context_login(REF, OUT) :- 
-	object_call(REF, login, [], OUT).
+login_context_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-login_context_logout(REF, OUT) :- 
-	object_call(REF, logout, [], OUT).
+login_context_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-login_context_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+login_context_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-login_context_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+login_context_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
-login_context_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+login_context_logout(REF) :- 
+	object_call(REF, logout, [], _).
+
+login_context_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
 login_context_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
@@ -61,15 +70,6 @@ login_context_equals(REF, ARG0, OUT) :-
 login_context_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-login_context_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-login_context_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-login_context_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-login_context_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+login_context_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

@@ -22,41 +22,20 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-j_p_e_g_q_table_k1luminance(OUT) :- 
+j_p_e_g_q_table_K1LUMINANCE(OUT) :- 
 	object_get('javax.imageio.plugins.jpeg.JPEGQTable', k1luminance, OUT).
 
-j_p_e_g_q_table_k1div2luminance(OUT) :- 
+j_p_e_g_q_table_K1DIV2LUMINANCE(OUT) :- 
 	object_get('javax.imageio.plugins.jpeg.JPEGQTable', k1div2luminance, OUT).
 
-j_p_e_g_q_table_k2chrominance(OUT) :- 
+j_p_e_g_q_table_K2CHROMINANCE(OUT) :- 
 	object_get('javax.imageio.plugins.jpeg.JPEGQTable', k2chrominance, OUT).
 
-j_p_e_g_q_table_k2div2chrominance(OUT) :- 
+j_p_e_g_q_table_K2DIV2CHROMINANCE(OUT) :- 
 	object_get('javax.imageio.plugins.jpeg.JPEGQTable', k2div2chrominance, OUT).
 
 j_p_e_g_q_table(ARG0, OUT) :- 
 	object_new('javax.imageio.plugins.jpeg.JPEGQTable', '.'(ARG0, []), OUT).
-
-j_p_e_g_q_table_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-j_p_e_g_q_table_get_table(REF, OUT) :- 
-	object_call(REF, getTable, [], OUT).
-
-j_p_e_g_q_table_get_scaled_instance(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getScaledInstance, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-j_p_e_g_q_table_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-j_p_e_g_q_table_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-j_p_e_g_q_table_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-j_p_e_g_q_table_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 j_p_e_g_q_table_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -64,9 +43,30 @@ j_p_e_g_q_table_hash_code(REF, OUT) :-
 j_p_e_g_q_table_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-j_p_e_g_q_table_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+j_p_e_g_q_table_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-j_p_e_g_q_table_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+j_p_e_g_q_table_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+j_p_e_g_q_table_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+j_p_e_g_q_table_get_table(REF, OUT) :- 
+	object_call(REF, getTable, [], OUT).
+
+j_p_e_g_q_table_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+j_p_e_g_q_table_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+j_p_e_g_q_table_get_scaled_instance(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getScaledInstance, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+j_p_e_g_q_table_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+j_p_e_g_q_table_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 

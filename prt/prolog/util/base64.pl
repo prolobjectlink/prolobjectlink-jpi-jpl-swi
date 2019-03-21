@@ -22,51 +22,51 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-base64_get_mime_decoder(REF, OUT) :- 
-	object_call(REF, getMimeDecoder, [], OUT).
-
-base64_get_decoder(REF, OUT) :- 
-	object_call(REF, getDecoder, [], OUT).
-
-base64_get_encoder(REF, OUT) :- 
-	object_call(REF, getEncoder, [], OUT).
-
-base64_get_mime_encoder(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getMimeEncoder, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 base64_get_mime_encoder(REF, OUT) :- 
 	object_call(REF, getMimeEncoder, [], OUT).
 
 base64_get_url_decoder(REF, OUT) :- 
 	object_call(REF, getUrlDecoder, [], OUT).
 
-base64_get_url_encoder(REF, OUT) :- 
-	object_call(REF, getUrlEncoder, [], OUT).
+base64_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-base64_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+base64_get_mime_encoder(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getMimeEncoder, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-base64_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+base64_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-base64_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+base64_get_mime_decoder(REF, OUT) :- 
+	object_call(REF, getMimeDecoder, [], OUT).
 
-base64_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+base64_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-base64_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+base64_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-base64_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+base64_get_encoder(REF, OUT) :- 
+	object_call(REF, getEncoder, [], OUT).
 
 base64_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-base64_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+base64_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
-base64_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+base64_get_decoder(REF, OUT) :- 
+	object_call(REF, getDecoder, [], OUT).
+
+base64_get_url_encoder(REF, OUT) :- 
+	object_call(REF, getUrlEncoder, [], OUT).
+
+base64_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+base64_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+base64_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 

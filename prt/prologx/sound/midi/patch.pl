@@ -25,23 +25,11 @@
 patch(ARG0, ARG1, OUT) :- 
 	object_new('javax.sound.midi.Patch', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-patch_get_bank(REF, OUT) :- 
-	object_call(REF, getBank, [], OUT).
-
 patch_get_program(REF, OUT) :- 
 	object_call(REF, getProgram, [], OUT).
 
-patch_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-patch_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-patch_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-patch_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+patch_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 patch_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
@@ -52,9 +40,21 @@ patch_hash_code(REF, OUT) :-
 patch_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-patch_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+patch_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-patch_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+patch_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+patch_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+patch_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+patch_get_bank(REF, OUT) :- 
+	object_call(REF, getBank, [], OUT).
+
+patch_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 

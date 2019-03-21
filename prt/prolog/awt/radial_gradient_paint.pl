@@ -22,32 +22,17 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-radial_gradient_paint_opaque(OUT) :- 
+radial_gradient_paint_OPAQUE(OUT) :- 
 	object_get('java.awt.RadialGradientPaint', opaque, OUT).
 
-radial_gradient_paint_bitmask(OUT) :- 
+radial_gradient_paint_BITMASK(OUT) :- 
 	object_get('java.awt.RadialGradientPaint', bitmask, OUT).
 
-radial_gradient_paint_translucent(OUT) :- 
+radial_gradient_paint_TRANSLUCENT(OUT) :- 
 	object_get('java.awt.RadialGradientPaint', translucent, OUT).
 
-radial_gradient_paint(ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, ARG6, ARG7, OUT) :- 
-	object_new('java.awt.RadialGradientPaint', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, '.'(ARG6, '.'(ARG7, [])))))))), OUT).
-
 radial_gradient_paint(ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, OUT) :- 
 	object_new('java.awt.RadialGradientPaint', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), OUT).
-
-radial_gradient_paint(ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, ARG6, ARG7, OUT) :- 
-	object_new('java.awt.RadialGradientPaint', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, '.'(ARG6, '.'(ARG7, [])))))))), OUT).
-
-radial_gradient_paint(ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_new('java.awt.RadialGradientPaint', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
-radial_gradient_paint(ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
-	object_new('java.awt.RadialGradientPaint', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
-
-radial_gradient_paint(ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_new('java.awt.RadialGradientPaint', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
 radial_gradient_paint(ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, OUT) :- 
 	object_new('java.awt.RadialGradientPaint', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), OUT).
@@ -55,60 +40,75 @@ radial_gradient_paint(ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, OUT) :-
 radial_gradient_paint(ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
 	object_new('java.awt.RadialGradientPaint', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
 
-radial_gradient_paint_create_context(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
-	object_call(REF, createContext, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
+radial_gradient_paint(ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
+	object_new('java.awt.RadialGradientPaint', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
 
-radial_gradient_paint_get_center_point(REF, OUT) :- 
-	object_call(REF, getCenterPoint, [], OUT).
+radial_gradient_paint(ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_new('java.awt.RadialGradientPaint', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
-radial_gradient_paint_get_focus_point(REF, OUT) :- 
-	object_call(REF, getFocusPoint, [], OUT).
+radial_gradient_paint(ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_new('java.awt.RadialGradientPaint', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
-radial_gradient_paint_get_radius(REF, OUT) :- 
-	object_call(REF, getRadius, [], OUT).
+radial_gradient_paint(ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, ARG6, ARG7, OUT) :- 
+	object_new('java.awt.RadialGradientPaint', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, '.'(ARG6, '.'(ARG7, [])))))))), OUT).
 
-radial_gradient_paint_get_transparency(REF, OUT) :- 
-	object_call(REF, getTransparency, [], OUT).
-
-radial_gradient_paint_get_color_space(REF, OUT) :- 
-	object_call(REF, getColorSpace, [], OUT).
-
-radial_gradient_paint_get_transform(REF, OUT) :- 
-	object_call(REF, getTransform, [], OUT).
+radial_gradient_paint(ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, ARG6, ARG7, OUT) :- 
+	object_new('java.awt.RadialGradientPaint', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, '.'(ARG6, '.'(ARG7, [])))))))), OUT).
 
 radial_gradient_paint_get_colors(REF, OUT) :- 
 	object_call(REF, getColors, [], OUT).
 
+radial_gradient_paint_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+radial_gradient_paint_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+radial_gradient_paint_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
 radial_gradient_paint_get_cycle_method(REF, OUT) :- 
 	object_call(REF, getCycleMethod, [], OUT).
 
-radial_gradient_paint_get_fractions(REF, OUT) :- 
-	object_call(REF, getFractions, [], OUT).
+radial_gradient_paint_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-radial_gradient_paint_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+radial_gradient_paint_get_radius(REF, OUT) :- 
+	object_call(REF, getRadius, [], OUT).
 
-radial_gradient_paint_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+radial_gradient_paint_get_focus_point(REF, OUT) :- 
+	object_call(REF, getFocusPoint, [], OUT).
 
-radial_gradient_paint_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+radial_gradient_paint_get_center_point(REF, OUT) :- 
+	object_call(REF, getCenterPoint, [], OUT).
 
-radial_gradient_paint_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+radial_gradient_paint_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 radial_gradient_paint_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-radial_gradient_paint_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+radial_gradient_paint_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+radial_gradient_paint_create_context(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
+	object_call(REF, createContext, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
+
+radial_gradient_paint_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+radial_gradient_paint_get_transparency(REF, OUT) :- 
+	object_call(REF, getTransparency, [], OUT).
+
+radial_gradient_paint_get_transform(REF, OUT) :- 
+	object_call(REF, getTransform, [], OUT).
+
+radial_gradient_paint_get_fractions(REF, OUT) :- 
+	object_call(REF, getFractions, [], OUT).
+
+radial_gradient_paint_get_color_space(REF, OUT) :- 
+	object_call(REF, getColorSpace, [], OUT).
 
 radial_gradient_paint_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-radial_gradient_paint_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-radial_gradient_paint_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

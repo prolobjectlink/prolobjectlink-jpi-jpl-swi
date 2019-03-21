@@ -25,39 +25,39 @@
 proxy_is_proxy_class(REF, ARG0, OUT) :- 
 	object_call(REF, isProxyClass, '.'(ARG0, []), OUT).
 
-proxy_get_proxy_class(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getProxyClass, '.'(ARG0, '.'(ARG1, [])), OUT).
+proxy_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-proxy_new_proxy_instance(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, newProxyInstance, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+proxy_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 proxy_get_invocation_handler(REF, ARG0, OUT) :- 
 	object_call(REF, getInvocationHandler, '.'(ARG0, []), OUT).
 
-proxy_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-proxy_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-proxy_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-proxy_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
 proxy_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-proxy_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+proxy_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 proxy_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-proxy_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+proxy_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-proxy_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+proxy_new_proxy_instance(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, newProxyInstance, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+proxy_get_proxy_class(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getProxyClass, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+proxy_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+proxy_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+proxy_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 

@@ -22,80 +22,101 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-alpha_composite_clear(OUT) :- 
+alpha_composite_CLEAR(OUT) :- 
 	object_get('java.awt.AlphaComposite', clear, OUT).
 
-alpha_composite_src(OUT) :- 
+alpha_composite_SRC(OUT) :- 
 	object_get('java.awt.AlphaComposite', src, OUT).
 
-alpha_composite_dst(OUT) :- 
+alpha_composite_DST(OUT) :- 
 	object_get('java.awt.AlphaComposite', dst, OUT).
 
-alpha_composite_src_over(OUT) :- 
+alpha_composite_SRC_OVER(OUT) :- 
 	object_get('java.awt.AlphaComposite', src_over, OUT).
 
-alpha_composite_dst_over(OUT) :- 
+alpha_composite_DST_OVER(OUT) :- 
 	object_get('java.awt.AlphaComposite', dst_over, OUT).
 
-alpha_composite_src_in(OUT) :- 
+alpha_composite_SRC_IN(OUT) :- 
 	object_get('java.awt.AlphaComposite', src_in, OUT).
 
-alpha_composite_dst_in(OUT) :- 
+alpha_composite_DST_IN(OUT) :- 
 	object_get('java.awt.AlphaComposite', dst_in, OUT).
 
-alpha_composite_src_out(OUT) :- 
+alpha_composite_SRC_OUT(OUT) :- 
 	object_get('java.awt.AlphaComposite', src_out, OUT).
 
-alpha_composite_dst_out(OUT) :- 
+alpha_composite_DST_OUT(OUT) :- 
 	object_get('java.awt.AlphaComposite', dst_out, OUT).
 
-alpha_composite_src_atop(OUT) :- 
+alpha_composite_SRC_ATOP(OUT) :- 
 	object_get('java.awt.AlphaComposite', src_atop, OUT).
 
-alpha_composite_dst_atop(OUT) :- 
+alpha_composite_DST_ATOP(OUT) :- 
 	object_get('java.awt.AlphaComposite', dst_atop, OUT).
 
-alpha_composite_xor(OUT) :- 
+alpha_composite_XOR(OUT) :- 
 	object_get('java.awt.AlphaComposite', xor, OUT).
 
-alpha_composite_clear(OUT) :- 
-	object_get('java.awt.AlphaComposite', clear, OUT).
-
-alpha_composite_src(OUT) :- 
-	object_get('java.awt.AlphaComposite', src, OUT).
-
-alpha_composite_dst(OUT) :- 
-	object_get('java.awt.AlphaComposite', dst, OUT).
-
-alpha_composite_srcover(OUT) :- 
+alpha_composite_SRCOVER(OUT) :- 
 	object_get('java.awt.AlphaComposite', srcover, OUT).
 
-alpha_composite_dstover(OUT) :- 
+alpha_composite_DSTOVER(OUT) :- 
 	object_get('java.awt.AlphaComposite', dstover, OUT).
 
-alpha_composite_srcin(OUT) :- 
+alpha_composite_SRCIN(OUT) :- 
 	object_get('java.awt.AlphaComposite', srcin, OUT).
 
-alpha_composite_dstin(OUT) :- 
+alpha_composite_DSTIN(OUT) :- 
 	object_get('java.awt.AlphaComposite', dstin, OUT).
 
-alpha_composite_srcout(OUT) :- 
+alpha_composite_SRCOUT(OUT) :- 
 	object_get('java.awt.AlphaComposite', srcout, OUT).
 
-alpha_composite_dstout(OUT) :- 
+alpha_composite_DSTOUT(OUT) :- 
 	object_get('java.awt.AlphaComposite', dstout, OUT).
 
-alpha_composite_srcatop(OUT) :- 
+alpha_composite_SRCATOP(OUT) :- 
 	object_get('java.awt.AlphaComposite', srcatop, OUT).
 
-alpha_composite_dstatop(OUT) :- 
+alpha_composite_DSTATOP(OUT) :- 
 	object_get('java.awt.AlphaComposite', dstatop, OUT).
 
-alpha_composite_xor(OUT) :- 
-	object_get('java.awt.AlphaComposite', xor, OUT).
+alpha_composite_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+alpha_composite_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+alpha_composite_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+alpha_composite_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 alpha_composite_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+alpha_composite_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+alpha_composite_get_rule(REF, OUT) :- 
+	object_call(REF, getRule, [], OUT).
+
+alpha_composite_create_context(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, createContext, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+alpha_composite_derive(REF, ARG0, OUT) :- 
+	object_call(REF, derive, '.'(ARG0, []), OUT).
+
+alpha_composite_derive(REF, ARG0, OUT) :- 
+	object_call(REF, derive, '.'(ARG0, []), OUT).
+
+alpha_composite_get_instance(REF, ARG0, OUT) :- 
+	object_call(REF, getInstance, '.'(ARG0, []), OUT).
+
+alpha_composite_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 alpha_composite_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -103,42 +124,9 @@ alpha_composite_hash_code(REF, OUT) :-
 alpha_composite_get_instance(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, getInstance, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-alpha_composite_get_instance(REF, ARG0, OUT) :- 
-	object_call(REF, getInstance, '.'(ARG0, []), OUT).
-
-alpha_composite_create_context(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, createContext, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-alpha_composite_get_alpha(REF, OUT) :- 
-	object_call(REF, getAlpha, [], OUT).
-
-alpha_composite_get_rule(REF, OUT) :- 
-	object_call(REF, getRule, [], OUT).
-
-alpha_composite_derive(REF, ARG0, OUT) :- 
-	object_call(REF, derive, '.'(ARG0, []), OUT).
-
-alpha_composite_derive(REF, ARG0, OUT) :- 
-	object_call(REF, derive, '.'(ARG0, []), OUT).
-
-alpha_composite_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-alpha_composite_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-alpha_composite_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-alpha_composite_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
 alpha_composite_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-alpha_composite_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-alpha_composite_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+alpha_composite_get_alpha(REF, OUT) :- 
+	object_call(REF, getAlpha, [], OUT).
 

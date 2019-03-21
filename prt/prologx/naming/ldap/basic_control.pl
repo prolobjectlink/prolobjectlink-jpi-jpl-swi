@@ -22,41 +22,26 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-basic_control_critical(OUT) :- 
+basic_control_CRITICAL(OUT) :- 
 	object_get('javax.naming.ldap.BasicControl', critical, OUT).
 
-basic_control_noncritical(OUT) :- 
+basic_control_NONCRITICAL(OUT) :- 
 	object_get('javax.naming.ldap.BasicControl', noncritical, OUT).
-
-basic_control(ARG0, OUT) :- 
-	object_new('javax.naming.ldap.BasicControl', '.'(ARG0, []), OUT).
 
 basic_control(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('javax.naming.ldap.BasicControl', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-basic_control_get_i_d(REF, OUT) :- 
-	object_call(REF, getID, [], OUT).
-
-basic_control_is_critical(REF, OUT) :- 
-	object_call(REF, isCritical, [], OUT).
-
-basic_control_get_encoded_value(REF, OUT) :- 
-	object_call(REF, getEncodedValue, [], OUT).
-
-basic_control_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-basic_control_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-basic_control_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+basic_control(ARG0, OUT) :- 
+	object_new('javax.naming.ldap.BasicControl', '.'(ARG0, []), OUT).
 
 basic_control_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-basic_control_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+basic_control_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+basic_control_is_critical(REF, OUT) :- 
+	object_call(REF, isCritical, [], OUT).
 
 basic_control_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -64,9 +49,24 @@ basic_control_hash_code(REF, OUT) :-
 basic_control_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-basic_control_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+basic_control_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-basic_control_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+basic_control_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+basic_control_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+basic_control_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+basic_control_get_encoded_value(REF, OUT) :- 
+	object_call(REF, getEncodedValue, [], OUT).
+
+basic_control_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+basic_control_get_i_d(REF, OUT) :- 
+	object_call(REF, getID, [], OUT).
 

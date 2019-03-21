@@ -28,26 +28,29 @@ policy_qualifier_info(ARG0, OUT) :-
 policy_qualifier_info_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
+policy_qualifier_info_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
 policy_qualifier_info_get_encoded(REF, OUT) :- 
 	object_call(REF, getEncoded, [], OUT).
 
-policy_qualifier_info_get_policy_qualifier(REF, OUT) :- 
-	object_call(REF, getPolicyQualifier, [], OUT).
+policy_qualifier_info_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+policy_qualifier_info_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+policy_qualifier_info_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+policy_qualifier_info_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 policy_qualifier_info_get_policy_qualifier_id(REF, OUT) :- 
 	object_call(REF, getPolicyQualifierId, [], OUT).
 
-policy_qualifier_info_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-policy_qualifier_info_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-policy_qualifier_info_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-policy_qualifier_info_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+policy_qualifier_info_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 policy_qualifier_info_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -55,9 +58,6 @@ policy_qualifier_info_hash_code(REF, OUT) :-
 policy_qualifier_info_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-policy_qualifier_info_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-policy_qualifier_info_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+policy_qualifier_info_get_policy_qualifier(REF, OUT) :- 
+	object_call(REF, getPolicyQualifier, [], OUT).
 

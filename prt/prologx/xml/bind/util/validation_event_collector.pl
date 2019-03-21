@@ -25,8 +25,26 @@
 validation_event_collector(OUT) :- 
 	object_new('javax.xml.bind.util.ValidationEventCollector', [], OUT).
 
-validation_event_collector_reset(REF, OUT) :- 
-	object_call(REF, reset, [], OUT).
+validation_event_collector_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+validation_event_collector_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+validation_event_collector_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+validation_event_collector_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+validation_event_collector_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+validation_event_collector_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
+
+validation_event_collector_reset(REF) :- 
+	object_call(REF, reset, [], _).
 
 validation_event_collector_get_events(REF, OUT) :- 
 	object_call(REF, getEvents, [], OUT).
@@ -34,33 +52,15 @@ validation_event_collector_get_events(REF, OUT) :-
 validation_event_collector_has_events(REF, OUT) :- 
 	object_call(REF, hasEvents, [], OUT).
 
-validation_event_collector_handle_event(REF, ARG0, OUT) :- 
-	object_call(REF, handleEvent, '.'(ARG0, []), OUT).
+validation_event_collector_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-validation_event_collector_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-validation_event_collector_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-validation_event_collector_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+validation_event_collector_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 validation_event_collector_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-validation_event_collector_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-validation_event_collector_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-validation_event_collector_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-validation_event_collector_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-validation_event_collector_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+validation_event_collector_handle_event(REF, ARG0, OUT) :- 
+	object_call(REF, handleEvent, '.'(ARG0, []), OUT).
 

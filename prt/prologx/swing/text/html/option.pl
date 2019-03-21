@@ -25,35 +25,26 @@
 option(ARG0, OUT) :- 
 	object_new('javax.swing.text.html.Option', '.'(ARG0, []), OUT).
 
+option_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+option_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
 option_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
-
-option_get_value(REF, OUT) :- 
-	object_call(REF, getValue, [], OUT).
-
-option_get_attributes(REF, OUT) :- 
-	object_call(REF, getAttributes, [], OUT).
-
-option_get_label(REF, OUT) :- 
-	object_call(REF, getLabel, [], OUT).
-
-option_set_label(REF, ARG0, OUT) :- 
-	object_call(REF, setLabel, '.'(ARG0, []), OUT).
 
 option_is_selected(REF, OUT) :- 
 	object_call(REF, isSelected, [], OUT).
 
-option_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+option_get_value(REF, OUT) :- 
+	object_call(REF, getValue, [], OUT).
 
-option_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+option_get_label(REF, OUT) :- 
+	object_call(REF, getLabel, [], OUT).
 
-option_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-option_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+option_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 option_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -61,9 +52,18 @@ option_hash_code(REF, OUT) :-
 option_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-option_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+option_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-option_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+option_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+option_get_attributes(REF, OUT) :- 
+	object_call(REF, getAttributes, [], OUT).
+
+option_set_label(REF, ARG0) :- 
+	object_call(REF, setLabel, '.'(ARG0, []), _).
+
+option_wait(REF) :- 
+	object_call(REF, wait, [], _).
 

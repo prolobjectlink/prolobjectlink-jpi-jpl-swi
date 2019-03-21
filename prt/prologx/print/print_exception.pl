@@ -22,9 +22,6 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-print_exception(ARG0, ARG1, OUT) :- 
-	object_new('javax.print.PrintException', '.'(ARG0, '.'(ARG1, [])), OUT).
-
 print_exception(ARG0, OUT) :- 
 	object_new('javax.print.PrintException', '.'(ARG0, []), OUT).
 
@@ -34,17 +31,32 @@ print_exception(ARG0, OUT) :-
 print_exception(OUT) :- 
 	object_new('javax.print.PrintException', [], OUT).
 
-print_exception_print_stack_trace(REF, OUT) :- 
-	object_call(REF, printStackTrace, [], OUT).
+print_exception(ARG0, ARG1, OUT) :- 
+	object_new('javax.print.PrintException', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-print_exception_print_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, printStackTrace, '.'(ARG0, []), OUT).
+print_exception_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-print_exception_print_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, printStackTrace, '.'(ARG0, []), OUT).
+print_exception_get_localized_message(REF, OUT) :- 
+	object_call(REF, getLocalizedMessage, [], OUT).
 
-print_exception_fill_in_stack_trace(REF, OUT) :- 
-	object_call(REF, fillInStackTrace, [], OUT).
+print_exception_print_stack_trace(REF) :- 
+	object_call(REF, printStackTrace, [], _).
+
+print_exception_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+print_exception_print_stack_trace(REF, ARG0) :- 
+	object_call(REF, printStackTrace, '.'(ARG0, []), _).
+
+print_exception_print_stack_trace(REF, ARG0) :- 
+	object_call(REF, printStackTrace, '.'(ARG0, []), _).
+
+print_exception_get_stack_trace(REF, OUT) :- 
+	object_call(REF, getStackTrace, [], OUT).
+
+print_exception_get_suppressed(REF, OUT) :- 
+	object_call(REF, getSuppressed, [], OUT).
 
 print_exception_get_cause(REF, OUT) :- 
 	object_call(REF, getCause, [], OUT).
@@ -55,45 +67,33 @@ print_exception_init_cause(REF, ARG0, OUT) :-
 print_exception_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-print_exception_add_suppressed(REF, ARG0, OUT) :- 
-	object_call(REF, addSuppressed, '.'(ARG0, []), OUT).
-
-print_exception_get_localized_message(REF, OUT) :- 
-	object_call(REF, getLocalizedMessage, [], OUT).
-
-print_exception_get_message(REF, OUT) :- 
-	object_call(REF, getMessage, [], OUT).
-
-print_exception_get_stack_trace(REF, OUT) :- 
-	object_call(REF, getStackTrace, [], OUT).
-
-print_exception_get_suppressed(REF, OUT) :- 
-	object_call(REF, getSuppressed, [], OUT).
-
-print_exception_set_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, setStackTrace, '.'(ARG0, []), OUT).
-
-print_exception_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-print_exception_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-print_exception_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-print_exception_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
 print_exception_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
 print_exception_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-print_exception_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+print_exception_add_suppressed(REF, ARG0) :- 
+	object_call(REF, addSuppressed, '.'(ARG0, []), _).
 
-print_exception_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+print_exception_get_message(REF, OUT) :- 
+	object_call(REF, getMessage, [], OUT).
+
+print_exception_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+print_exception_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+print_exception_fill_in_stack_trace(REF, OUT) :- 
+	object_call(REF, fillInStackTrace, [], OUT).
+
+print_exception_set_stack_trace(REF, ARG0) :- 
+	object_call(REF, setStackTrace, '.'(ARG0, []), _).
+
+print_exception_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+print_exception_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 

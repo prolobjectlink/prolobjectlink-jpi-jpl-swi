@@ -31,17 +31,17 @@ targeted_notification_to_string(REF, OUT) :-
 targeted_notification_get_listener_i_d(REF, OUT) :- 
 	object_call(REF, getListenerID, [], OUT).
 
+targeted_notification_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+targeted_notification_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+targeted_notification_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
 targeted_notification_get_notification(REF, OUT) :- 
 	object_call(REF, getNotification, [], OUT).
-
-targeted_notification_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-targeted_notification_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-targeted_notification_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
 
 targeted_notification_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
@@ -52,9 +52,9 @@ targeted_notification_hash_code(REF, OUT) :-
 targeted_notification_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-targeted_notification_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+targeted_notification_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-targeted_notification_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+targeted_notification_notify(REF) :- 
+	object_call(REF, notify, [], _).
 

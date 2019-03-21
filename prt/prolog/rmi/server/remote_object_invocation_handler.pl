@@ -25,17 +25,8 @@
 remote_object_invocation_handler(ARG0, OUT) :- 
 	object_new('java.rmi.server.RemoteObjectInvocationHandler', '.'(ARG0, []), OUT).
 
-remote_object_invocation_handler_invoke(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, invoke, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-remote_object_invocation_handler_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-remote_object_invocation_handler_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-remote_object_invocation_handler_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+remote_object_invocation_handler_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 remote_object_invocation_handler_get_ref(REF, OUT) :- 
 	object_call(REF, getRef, [], OUT).
@@ -43,21 +34,30 @@ remote_object_invocation_handler_get_ref(REF, OUT) :-
 remote_object_invocation_handler_to_stub(REF, ARG0, OUT) :- 
 	object_call(REF, toStub, '.'(ARG0, []), OUT).
 
-remote_object_invocation_handler_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-remote_object_invocation_handler_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-remote_object_invocation_handler_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
 remote_object_invocation_handler_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-remote_object_invocation_handler_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+remote_object_invocation_handler_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-remote_object_invocation_handler_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+remote_object_invocation_handler_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+remote_object_invocation_handler_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+remote_object_invocation_handler_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+remote_object_invocation_handler_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+remote_object_invocation_handler_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+remote_object_invocation_handler_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+remote_object_invocation_handler_invoke(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, invoke, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 

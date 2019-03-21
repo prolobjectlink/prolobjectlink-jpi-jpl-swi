@@ -25,36 +25,36 @@
 attribute(ARG0, ARG1, OUT) :- 
 	object_new('javax.management.Attribute', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-attribute_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-attribute_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
 attribute_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
-
-attribute_get_name(REF, OUT) :- 
-	object_call(REF, getName, [], OUT).
-
-attribute_get_value(REF, OUT) :- 
-	object_call(REF, getValue, [], OUT).
-
-attribute_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-attribute_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-attribute_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
 
 attribute_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-attribute_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+attribute_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-attribute_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+attribute_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+attribute_get_name(REF, OUT) :- 
+	object_call(REF, getName, [], OUT).
+
+attribute_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+attribute_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+attribute_get_value(REF, OUT) :- 
+	object_call(REF, getValue, [], OUT).
+
+attribute_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+attribute_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+attribute_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 

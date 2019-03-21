@@ -22,10 +22,10 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-media_size_inch(OUT) :- 
+media_size_INCH(OUT) :- 
 	object_get('javax.print.attribute.standard.MediaSize', inch, OUT).
 
-media_size_mm(OUT) :- 
+media_size_MM(OUT) :- 
 	object_get('javax.print.attribute.standard.MediaSize', mm, OUT).
 
 media_size(ARG0, ARG1, ARG2, ARG3, OUT) :- 
@@ -40,57 +40,57 @@ media_size(ARG0, ARG1, ARG2, OUT) :-
 media_size(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('javax.print.attribute.standard.MediaSize', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-media_size_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+media_size_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-media_size_get_name(REF, OUT) :- 
-	object_call(REF, getName, [], OUT).
-
-media_size_get_media_size_for_name(REF, ARG0, OUT) :- 
-	object_call(REF, getMediaSizeForName, '.'(ARG0, []), OUT).
+media_size_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 media_size_get_category(REF, OUT) :- 
 	object_call(REF, getCategory, [], OUT).
 
+media_size_get_size(REF, ARG0, OUT) :- 
+	object_call(REF, getSize, '.'(ARG0, []), OUT).
+
+media_size_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
 media_size_find_media(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, findMedia, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-media_size_get_media_size_name(REF, OUT) :- 
-	object_call(REF, getMediaSizeName, [], OUT).
+media_size_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+media_size_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+media_size_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 media_size_to_string(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, toString, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-media_size_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+media_size_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
-media_size_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-media_size_get_size(REF, ARG0, OUT) :- 
-	object_call(REF, getSize, '.'(ARG0, []), OUT).
+media_size_get_name(REF, OUT) :- 
+	object_call(REF, getName, [], OUT).
 
 media_size_get_x(REF, ARG0, OUT) :- 
 	object_call(REF, getX, '.'(ARG0, []), OUT).
 
+media_size_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
 media_size_get_y(REF, ARG0, OUT) :- 
 	object_call(REF, getY, '.'(ARG0, []), OUT).
 
-media_size_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+media_size_get_media_size_name(REF, OUT) :- 
+	object_call(REF, getMediaSizeName, [], OUT).
 
-media_size_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+media_size_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
-media_size_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-media_size_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-media_size_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-media_size_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+media_size_get_media_size_for_name(REF, ARG0, OUT) :- 
+	object_call(REF, getMediaSizeForName, '.'(ARG0, []), OUT).
 

@@ -22,51 +22,51 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
+temporal_queries_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+temporal_queries_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+temporal_queries_local_time(REF, OUT) :- 
+	object_call(REF, localTime, [], OUT).
+
+temporal_queries_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+temporal_queries_zone_id(REF, OUT) :- 
+	object_call(REF, zoneId, [], OUT).
+
+temporal_queries_precision(REF, OUT) :- 
+	object_call(REF, precision, [], OUT).
+
+temporal_queries_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+temporal_queries_local_date(REF, OUT) :- 
+	object_call(REF, localDate, [], OUT).
+
+temporal_queries_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
+
+temporal_queries_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+temporal_queries_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+temporal_queries_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+temporal_queries_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
 temporal_queries_offset(REF, OUT) :- 
 	object_call(REF, offset, [], OUT).
 
 temporal_queries_zone(REF, OUT) :- 
 	object_call(REF, zone, [], OUT).
 
-temporal_queries_precision(REF, OUT) :- 
-	object_call(REF, precision, [], OUT).
-
 temporal_queries_chronology(REF, OUT) :- 
 	object_call(REF, chronology, [], OUT).
-
-temporal_queries_local_date(REF, OUT) :- 
-	object_call(REF, localDate, [], OUT).
-
-temporal_queries_local_time(REF, OUT) :- 
-	object_call(REF, localTime, [], OUT).
-
-temporal_queries_zone_id(REF, OUT) :- 
-	object_call(REF, zoneId, [], OUT).
-
-temporal_queries_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-temporal_queries_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-temporal_queries_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-temporal_queries_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-temporal_queries_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-temporal_queries_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-temporal_queries_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-temporal_queries_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-temporal_queries_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

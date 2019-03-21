@@ -28,93 +28,93 @@ random(OUT) :-
 random(ARG0, OUT) :- 
 	object_new('java.util.Random', '.'(ARG0, []), OUT).
 
-random_next_int(REF, OUT) :- 
-	object_call(REF, nextInt, [], OUT).
-
-random_next_int(REF, ARG0, OUT) :- 
-	object_call(REF, nextInt, '.'(ARG0, []), OUT).
-
-random_next_double(REF, OUT) :- 
-	object_call(REF, nextDouble, [], OUT).
-
-random_next_long(REF, OUT) :- 
-	object_call(REF, nextLong, [], OUT).
-
-random_next_bytes(REF, ARG0, OUT) :- 
-	object_call(REF, nextBytes, '.'(ARG0, []), OUT).
-
-random_set_seed(REF, ARG0, OUT) :- 
-	object_call(REF, setSeed, '.'(ARG0, []), OUT).
+random_next_float(REF, OUT) :- 
+	object_call(REF, nextFloat, [], OUT).
 
 random_doubles(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, doubles, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-random_doubles(REF, OUT) :- 
-	object_call(REF, doubles, [], OUT).
+random_doubles(REF, ARG0, OUT) :- 
+	object_call(REF, doubles, '.'(ARG0, []), OUT).
 
 random_doubles(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, doubles, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-random_doubles(REF, ARG0, OUT) :- 
-	object_call(REF, doubles, '.'(ARG0, []), OUT).
-
 random_ints(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, ints, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-random_ints(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, ints, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-random_ints(REF, OUT) :- 
-	object_call(REF, ints, [], OUT).
-
-random_ints(REF, ARG0, OUT) :- 
-	object_call(REF, ints, '.'(ARG0, []), OUT).
-
-random_longs(REF, ARG0, OUT) :- 
-	object_call(REF, longs, '.'(ARG0, []), OUT).
-
-random_longs(REF, OUT) :- 
-	object_call(REF, longs, [], OUT).
-
-random_longs(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, longs, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-random_longs(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, longs, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-random_next_boolean(REF, OUT) :- 
-	object_call(REF, nextBoolean, [], OUT).
-
-random_next_float(REF, OUT) :- 
-	object_call(REF, nextFloat, [], OUT).
 
 random_next_gaussian(REF, OUT) :- 
 	object_call(REF, nextGaussian, [], OUT).
 
-random_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+random_doubles(REF, OUT) :- 
+	object_call(REF, doubles, [], OUT).
 
-random_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-random_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-random_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+random_ints(REF, ARG0, OUT) :- 
+	object_call(REF, ints, '.'(ARG0, []), OUT).
 
 random_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
+random_ints(REF, OUT) :- 
+	object_call(REF, ints, [], OUT).
+
+random_ints(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, ints, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+random_next_long(REF, OUT) :- 
+	object_call(REF, nextLong, [], OUT).
+
 random_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
+
+random_set_seed(REF, ARG0) :- 
+	object_call(REF, setSeed, '.'(ARG0, []), _).
+
+random_next_boolean(REF, OUT) :- 
+	object_call(REF, nextBoolean, [], OUT).
+
+random_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+random_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+random_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+random_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+random_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+random_next_int(REF, ARG0, OUT) :- 
+	object_call(REF, nextInt, '.'(ARG0, []), OUT).
+
+random_next_int(REF, OUT) :- 
+	object_call(REF, nextInt, [], OUT).
+
+random_next_double(REF, OUT) :- 
+	object_call(REF, nextDouble, [], OUT).
+
+random_next_bytes(REF, ARG0) :- 
+	object_call(REF, nextBytes, '.'(ARG0, []), _).
 
 random_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-random_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+random_longs(REF, OUT) :- 
+	object_call(REF, longs, [], OUT).
 
-random_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+random_longs(REF, ARG0, OUT) :- 
+	object_call(REF, longs, '.'(ARG0, []), OUT).
+
+random_longs(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, longs, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+random_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+random_longs(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, longs, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 

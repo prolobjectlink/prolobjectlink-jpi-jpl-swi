@@ -28,75 +28,75 @@ property_editor_support(OUT) :-
 property_editor_support(ARG0, OUT) :- 
 	object_new('java.beans.PropertyEditorSupport', '.'(ARG0, []), OUT).
 
-property_editor_support_get_value(REF, OUT) :- 
-	object_call(REF, getValue, [], OUT).
-
-property_editor_support_set_value(REF, ARG0, OUT) :- 
-	object_call(REF, setValue, '.'(ARG0, []), OUT).
-
-property_editor_support_add_property_change_listener(REF, ARG0, OUT) :- 
-	object_call(REF, addPropertyChangeListener, '.'(ARG0, []), OUT).
-
-property_editor_support_remove_property_change_listener(REF, ARG0, OUT) :- 
-	object_call(REF, removePropertyChangeListener, '.'(ARG0, []), OUT).
-
-property_editor_support_set_source(REF, ARG0, OUT) :- 
-	object_call(REF, setSource, '.'(ARG0, []), OUT).
-
-property_editor_support_fire_property_change(REF, OUT) :- 
-	object_call(REF, firePropertyChange, [], OUT).
-
-property_editor_support_get_source(REF, OUT) :- 
-	object_call(REF, getSource, [], OUT).
-
-property_editor_support_get_as_text(REF, OUT) :- 
-	object_call(REF, getAsText, [], OUT).
-
 property_editor_support_get_custom_editor(REF, OUT) :- 
 	object_call(REF, getCustomEditor, [], OUT).
 
-property_editor_support_get_java_initialization_string(REF, OUT) :- 
-	object_call(REF, getJavaInitializationString, [], OUT).
+property_editor_support_add_property_change_listener(REF, ARG0) :- 
+	object_call(REF, addPropertyChangeListener, '.'(ARG0, []), _).
 
-property_editor_support_get_tags(REF, OUT) :- 
-	object_call(REF, getTags, [], OUT).
+property_editor_support_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-property_editor_support_is_paintable(REF, OUT) :- 
-	object_call(REF, isPaintable, [], OUT).
-
-property_editor_support_paint_value(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, paintValue, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-property_editor_support_set_as_text(REF, ARG0, OUT) :- 
-	object_call(REF, setAsText, '.'(ARG0, []), OUT).
-
-property_editor_support_supports_custom_editor(REF, OUT) :- 
-	object_call(REF, supportsCustomEditor, [], OUT).
-
-property_editor_support_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-property_editor_support_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-property_editor_support_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-property_editor_support_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+property_editor_support_get_value(REF, OUT) :- 
+	object_call(REF, getValue, [], OUT).
 
 property_editor_support_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-property_editor_support_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+property_editor_support_get_source(REF, OUT) :- 
+	object_call(REF, getSource, [], OUT).
+
+property_editor_support_paint_value(REF, ARG0, ARG1) :- 
+	object_call(REF, paintValue, '.'(ARG0, '.'(ARG1, [])), _).
+
+property_editor_support_set_as_text(REF, ARG0) :- 
+	object_call(REF, setAsText, '.'(ARG0, []), _).
+
+property_editor_support_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+property_editor_support_set_value(REF, ARG0) :- 
+	object_call(REF, setValue, '.'(ARG0, []), _).
+
+property_editor_support_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+property_editor_support_fire_property_change(REF) :- 
+	object_call(REF, firePropertyChange, [], _).
+
+property_editor_support_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 property_editor_support_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-property_editor_support_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+property_editor_support_remove_property_change_listener(REF, ARG0) :- 
+	object_call(REF, removePropertyChangeListener, '.'(ARG0, []), _).
 
-property_editor_support_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+property_editor_support_get_tags(REF, OUT) :- 
+	object_call(REF, getTags, [], OUT).
+
+property_editor_support_set_source(REF, ARG0) :- 
+	object_call(REF, setSource, '.'(ARG0, []), _).
+
+property_editor_support_supports_custom_editor(REF, OUT) :- 
+	object_call(REF, supportsCustomEditor, [], OUT).
+
+property_editor_support_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+property_editor_support_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+property_editor_support_get_as_text(REF, OUT) :- 
+	object_call(REF, getAsText, [], OUT).
+
+property_editor_support_get_java_initialization_string(REF, OUT) :- 
+	object_call(REF, getJavaInitializationString, [], OUT).
+
+property_editor_support_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+property_editor_support_is_paintable(REF, OUT) :- 
+	object_call(REF, isPaintable, [], OUT).
 

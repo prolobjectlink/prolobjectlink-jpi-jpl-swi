@@ -22,20 +22,38 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-s_s_l_permission(ARG0, OUT) :- 
-	object_new('javax.net.ssl.SSLPermission', '.'(ARG0, []), OUT).
-
 s_s_l_permission(ARG0, ARG1, OUT) :- 
 	object_new('javax.net.ssl.SSLPermission', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-s_s_l_permission_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+s_s_l_permission(ARG0, OUT) :- 
+	object_new('javax.net.ssl.SSLPermission', '.'(ARG0, []), OUT).
+
+s_s_l_permission_get_actions(REF, OUT) :- 
+	object_call(REF, getActions, [], OUT).
+
+s_s_l_permission_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
 s_s_l_permission_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-s_s_l_permission_get_actions(REF, OUT) :- 
-	object_call(REF, getActions, [], OUT).
+s_s_l_permission_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+s_s_l_permission_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+s_s_l_permission_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+s_s_l_permission_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+s_s_l_permission_check_guard(REF, ARG0) :- 
+	object_call(REF, checkGuard, '.'(ARG0, []), _).
+
+s_s_l_permission_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 s_s_l_permission_implies(REF, ARG0, OUT) :- 
 	object_call(REF, implies, '.'(ARG0, []), OUT).
@@ -43,30 +61,12 @@ s_s_l_permission_implies(REF, ARG0, OUT) :-
 s_s_l_permission_new_permission_collection(REF, OUT) :- 
 	object_call(REF, newPermissionCollection, [], OUT).
 
-s_s_l_permission_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+s_s_l_permission_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+s_s_l_permission_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 s_s_l_permission_get_name(REF, OUT) :- 
 	object_call(REF, getName, [], OUT).
-
-s_s_l_permission_check_guard(REF, ARG0, OUT) :- 
-	object_call(REF, checkGuard, '.'(ARG0, []), OUT).
-
-s_s_l_permission_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-s_s_l_permission_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-s_s_l_permission_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-s_s_l_permission_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-s_s_l_permission_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-s_s_l_permission_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

@@ -22,20 +22,14 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-x500_principal_rfc1779(OUT) :- 
+x500_principal_RFC1779(OUT) :- 
 	object_get('javax.security.auth.x500.X500Principal', rfc1779, OUT).
 
-x500_principal_rfc2253(OUT) :- 
+x500_principal_RFC2253(OUT) :- 
 	object_get('javax.security.auth.x500.X500Principal', rfc2253, OUT).
 
-x500_principal_canonical(OUT) :- 
+x500_principal_CANONICAL(OUT) :- 
 	object_get('javax.security.auth.x500.X500Principal', canonical, OUT).
-
-x500_principal(ARG0, OUT) :- 
-	object_new('javax.security.auth.x500.X500Principal', '.'(ARG0, []), OUT).
-
-x500_principal(ARG0, OUT) :- 
-	object_new('javax.security.auth.x500.X500Principal', '.'(ARG0, []), OUT).
 
 x500_principal(ARG0, ARG1, OUT) :- 
 	object_new('javax.security.auth.x500.X500Principal', '.'(ARG0, '.'(ARG1, [])), OUT).
@@ -43,45 +37,51 @@ x500_principal(ARG0, ARG1, OUT) :-
 x500_principal(ARG0, OUT) :- 
 	object_new('javax.security.auth.x500.X500Principal', '.'(ARG0, []), OUT).
 
-x500_principal_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+x500_principal(ARG0, OUT) :- 
+	object_new('javax.security.auth.x500.X500Principal', '.'(ARG0, []), OUT).
+
+x500_principal(ARG0, OUT) :- 
+	object_new('javax.security.auth.x500.X500Principal', '.'(ARG0, []), OUT).
 
 x500_principal_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
+x500_principal_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+x500_principal_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+x500_principal_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
 x500_principal_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
-
-x500_principal_get_name(REF, ARG0, OUT) :- 
-	object_call(REF, getName, '.'(ARG0, []), OUT).
 
 x500_principal_get_name(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, getName, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-x500_principal_get_name(REF, OUT) :- 
-	object_call(REF, getName, [], OUT).
-
-x500_principal_get_encoded(REF, OUT) :- 
-	object_call(REF, getEncoded, [], OUT).
-
-x500_principal_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-x500_principal_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-x500_principal_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
 x500_principal_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-x500_principal_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+x500_principal_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-x500_principal_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+x500_principal_get_name(REF, OUT) :- 
+	object_call(REF, getName, [], OUT).
+
+x500_principal_get_name(REF, ARG0, OUT) :- 
+	object_call(REF, getName, '.'(ARG0, []), OUT).
 
 x500_principal_implies(REF, ARG0, OUT) :- 
 	object_call(REF, implies, '.'(ARG0, []), OUT).
+
+x500_principal_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+x500_principal_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+x500_principal_get_encoded(REF, OUT) :- 
+	object_call(REF, getEncoded, [], OUT).
 

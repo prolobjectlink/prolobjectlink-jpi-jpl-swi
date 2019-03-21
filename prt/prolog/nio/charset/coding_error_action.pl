@@ -22,26 +22,20 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-coding_error_action_ignore(OUT) :- 
+coding_error_action_IGNORE(OUT) :- 
 	object_get('java.nio.charset.CodingErrorAction', ignore, OUT).
 
-coding_error_action_replace(OUT) :- 
+coding_error_action_REPLACE(OUT) :- 
 	object_get('java.nio.charset.CodingErrorAction', replace, OUT).
 
-coding_error_action_report(OUT) :- 
+coding_error_action_REPORT(OUT) :- 
 	object_get('java.nio.charset.CodingErrorAction', report, OUT).
 
-coding_error_action_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+coding_error_action_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-coding_error_action_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-coding_error_action_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-coding_error_action_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+coding_error_action_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 coding_error_action_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
@@ -49,12 +43,18 @@ coding_error_action_equals(REF, ARG0, OUT) :-
 coding_error_action_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+coding_error_action_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+coding_error_action_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+coding_error_action_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
 coding_error_action_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-coding_error_action_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-coding_error_action_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+coding_error_action_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 

@@ -22,60 +22,60 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-element_filter_constructors_in(REF, ARG0, OUT) :- 
-	object_call(REF, constructorsIn, '.'(ARG0, []), OUT).
-
-element_filter_constructors_in(REF, ARG0, OUT) :- 
-	object_call(REF, constructorsIn, '.'(ARG0, []), OUT).
-
-element_filter_fields_in(REF, ARG0, OUT) :- 
-	object_call(REF, fieldsIn, '.'(ARG0, []), OUT).
-
-element_filter_fields_in(REF, ARG0, OUT) :- 
-	object_call(REF, fieldsIn, '.'(ARG0, []), OUT).
-
-element_filter_methods_in(REF, ARG0, OUT) :- 
-	object_call(REF, methodsIn, '.'(ARG0, []), OUT).
-
-element_filter_methods_in(REF, ARG0, OUT) :- 
-	object_call(REF, methodsIn, '.'(ARG0, []), OUT).
-
-element_filter_packages_in(REF, ARG0, OUT) :- 
-	object_call(REF, packagesIn, '.'(ARG0, []), OUT).
-
-element_filter_packages_in(REF, ARG0, OUT) :- 
-	object_call(REF, packagesIn, '.'(ARG0, []), OUT).
-
-element_filter_types_in(REF, ARG0, OUT) :- 
-	object_call(REF, typesIn, '.'(ARG0, []), OUT).
-
-element_filter_types_in(REF, ARG0, OUT) :- 
-	object_call(REF, typesIn, '.'(ARG0, []), OUT).
-
-element_filter_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-element_filter_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-element_filter_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
 element_filter_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-element_filter_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+element_filter_types_in(REF, ARG0, OUT) :- 
+	object_call(REF, typesIn, '.'(ARG0, []), OUT).
 
-element_filter_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+element_filter_types_in(REF, ARG0, OUT) :- 
+	object_call(REF, typesIn, '.'(ARG0, []), OUT).
+
+element_filter_fields_in(REF, ARG0, OUT) :- 
+	object_call(REF, fieldsIn, '.'(ARG0, []), OUT).
+
+element_filter_fields_in(REF, ARG0, OUT) :- 
+	object_call(REF, fieldsIn, '.'(ARG0, []), OUT).
+
+element_filter_packages_in(REF, ARG0, OUT) :- 
+	object_call(REF, packagesIn, '.'(ARG0, []), OUT).
+
+element_filter_packages_in(REF, ARG0, OUT) :- 
+	object_call(REF, packagesIn, '.'(ARG0, []), OUT).
+
+element_filter_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 element_filter_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-element_filter_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+element_filter_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-element_filter_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+element_filter_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+element_filter_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+element_filter_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+element_filter_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+element_filter_methods_in(REF, ARG0, OUT) :- 
+	object_call(REF, methodsIn, '.'(ARG0, []), OUT).
+
+element_filter_methods_in(REF, ARG0, OUT) :- 
+	object_call(REF, methodsIn, '.'(ARG0, []), OUT).
+
+element_filter_constructors_in(REF, ARG0, OUT) :- 
+	object_call(REF, constructorsIn, '.'(ARG0, []), OUT).
+
+element_filter_constructors_in(REF, ARG0, OUT) :- 
+	object_call(REF, constructorsIn, '.'(ARG0, []), OUT).
+
+element_filter_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 

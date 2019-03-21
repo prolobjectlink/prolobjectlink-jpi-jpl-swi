@@ -28,8 +28,8 @@ future_task(ARG0, ARG1, OUT) :-
 future_task(ARG0, OUT) :- 
 	object_new('java.util.concurrent.FutureTask', '.'(ARG0, []), OUT).
 
-future_task_run(REF, OUT) :- 
-	object_call(REF, run, [], OUT).
+future_task_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 future_task_get(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, get, '.'(ARG0, '.'(ARG1, [])), OUT).
@@ -37,39 +37,39 @@ future_task_get(REF, ARG0, ARG1, OUT) :-
 future_task_get(REF, OUT) :- 
 	object_call(REF, get, [], OUT).
 
-future_task_is_done(REF, OUT) :- 
-	object_call(REF, isDone, [], OUT).
+future_task_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-future_task_cancel(REF, ARG0, OUT) :- 
-	object_call(REF, cancel, '.'(ARG0, []), OUT).
-
-future_task_is_cancelled(REF, OUT) :- 
-	object_call(REF, isCancelled, [], OUT).
-
-future_task_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-future_task_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-future_task_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-future_task_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-future_task_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+future_task_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 future_task_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+future_task_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+future_task_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+future_task_run(REF) :- 
+	object_call(REF, run, [], _).
+
 future_task_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-future_task_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+future_task_cancel(REF, ARG0, OUT) :- 
+	object_call(REF, cancel, '.'(ARG0, []), OUT).
 
-future_task_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+future_task_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+future_task_is_done(REF, OUT) :- 
+	object_call(REF, isDone, [], OUT).
+
+future_task_is_cancelled(REF, OUT) :- 
+	object_call(REF, isCancelled, [], OUT).
+
+future_task_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

@@ -25,30 +25,30 @@
 driver_property_info(ARG0, ARG1, OUT) :- 
 	object_new('java.sql.DriverPropertyInfo', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-driver_property_info_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+driver_property_info_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-driver_property_info_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-driver_property_info_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+driver_property_info_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 driver_property_info_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-driver_property_info_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
 driver_property_info_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
+
+driver_property_info_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+driver_property_info_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 driver_property_info_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-driver_property_info_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+driver_property_info_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-driver_property_info_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+driver_property_info_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 

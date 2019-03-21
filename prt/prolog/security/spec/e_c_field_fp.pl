@@ -28,33 +28,33 @@ e_c_field_fp(ARG0, OUT) :-
 e_c_field_fp_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-e_c_field_fp_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
 e_c_field_fp_get_p(REF, OUT) :- 
 	object_call(REF, getP, [], OUT).
+
+e_c_field_fp_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+e_c_field_fp_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 e_c_field_fp_get_field_size(REF, OUT) :- 
 	object_call(REF, getFieldSize, [], OUT).
 
-e_c_field_fp_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-e_c_field_fp_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-e_c_field_fp_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
 e_c_field_fp_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
+
+e_c_field_fp_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+e_c_field_fp_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 e_c_field_fp_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-e_c_field_fp_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+e_c_field_fp_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-e_c_field_fp_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+e_c_field_fp_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 

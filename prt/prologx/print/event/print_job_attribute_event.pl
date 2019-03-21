@@ -25,39 +25,39 @@
 print_job_attribute_event(ARG0, ARG1, OUT) :- 
 	object_new('javax.print.event.PrintJobAttributeEvent', '.'(ARG0, '.'(ARG1, [])), OUT).
 
+print_job_attribute_event_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
+
+print_job_attribute_event_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+print_job_attribute_event_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+print_job_attribute_event_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+print_job_attribute_event_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+print_job_attribute_event_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
 print_job_attribute_event_get_attributes(REF, OUT) :- 
 	object_call(REF, getAttributes, [], OUT).
 
 print_job_attribute_event_get_print_job(REF, OUT) :- 
 	object_call(REF, getPrintJob, [], OUT).
 
-print_job_attribute_event_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+print_job_attribute_event_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 print_job_attribute_event_get_source(REF, OUT) :- 
 	object_call(REF, getSource, [], OUT).
 
-print_job_attribute_event_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+print_job_attribute_event_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-print_job_attribute_event_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-print_job_attribute_event_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-print_job_attribute_event_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-print_job_attribute_event_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-print_job_attribute_event_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-print_job_attribute_event_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-print_job_attribute_event_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+print_job_attribute_event_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 

@@ -28,32 +28,20 @@ text_input_callback(ARG0, OUT) :-
 text_input_callback(ARG0, ARG1, OUT) :- 
 	object_new('javax.security.auth.callback.TextInputCallback', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-text_input_callback_get_prompt(REF, OUT) :- 
-	object_call(REF, getPrompt, [], OUT).
-
-text_input_callback_get_default_text(REF, OUT) :- 
-	object_call(REF, getDefaultText, [], OUT).
-
-text_input_callback_get_text(REF, OUT) :- 
-	object_call(REF, getText, [], OUT).
-
-text_input_callback_set_text(REF, ARG0, OUT) :- 
-	object_call(REF, setText, '.'(ARG0, []), OUT).
-
-text_input_callback_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-text_input_callback_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-text_input_callback_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+text_input_callback_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 text_input_callback_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-text_input_callback_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+text_input_callback_get_prompt(REF, OUT) :- 
+	object_call(REF, getPrompt, [], OUT).
+
+text_input_callback_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+text_input_callback_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 text_input_callback_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -61,9 +49,21 @@ text_input_callback_hash_code(REF, OUT) :-
 text_input_callback_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-text_input_callback_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+text_input_callback_get_text(REF, OUT) :- 
+	object_call(REF, getText, [], OUT).
 
-text_input_callback_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+text_input_callback_set_text(REF, ARG0) :- 
+	object_call(REF, setText, '.'(ARG0, []), _).
+
+text_input_callback_get_default_text(REF, OUT) :- 
+	object_call(REF, getDefaultText, [], OUT).
+
+text_input_callback_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+text_input_callback_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+text_input_callback_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

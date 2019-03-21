@@ -28,45 +28,45 @@ mutable_call_site(ARG0, OUT) :-
 mutable_call_site(ARG0, OUT) :- 
 	object_new('java.lang.invoke.MutableCallSite', '.'(ARG0, []), OUT).
 
-mutable_call_site_dynamic_invoker(REF, OUT) :- 
-	object_call(REF, dynamicInvoker, [], OUT).
-
-mutable_call_site_get_target(REF, OUT) :- 
-	object_call(REF, getTarget, [], OUT).
-
-mutable_call_site_set_target(REF, ARG0, OUT) :- 
-	object_call(REF, setTarget, '.'(ARG0, []), OUT).
-
-mutable_call_site_sync_all(REF, ARG0, OUT) :- 
-	object_call(REF, syncAll, '.'(ARG0, []), OUT).
-
-mutable_call_site_type(REF, OUT) :- 
-	object_call(REF, type, [], OUT).
-
-mutable_call_site_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-mutable_call_site_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-mutable_call_site_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-mutable_call_site_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
 mutable_call_site_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
 mutable_call_site_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+mutable_call_site_dynamic_invoker(REF, OUT) :- 
+	object_call(REF, dynamicInvoker, [], OUT).
+
+mutable_call_site_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+mutable_call_site_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+mutable_call_site_set_target(REF, ARG0) :- 
+	object_call(REF, setTarget, '.'(ARG0, []), _).
+
+mutable_call_site_sync_all(REF, ARG0) :- 
+	object_call(REF, syncAll, '.'(ARG0, []), _).
+
+mutable_call_site_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+mutable_call_site_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+mutable_call_site_get_target(REF, OUT) :- 
+	object_call(REF, getTarget, [], OUT).
+
+mutable_call_site_type(REF, OUT) :- 
+	object_call(REF, type, [], OUT).
+
+mutable_call_site_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
 mutable_call_site_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-mutable_call_site_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-mutable_call_site_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+mutable_call_site_wait(REF) :- 
+	object_call(REF, wait, [], _).
 

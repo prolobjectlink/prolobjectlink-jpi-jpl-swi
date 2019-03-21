@@ -22,56 +22,71 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-server_socket(ARG0, ARG1, ARG2, OUT) :- 
-	object_new('java.net.ServerSocket', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
 server_socket(ARG0, ARG1, OUT) :- 
 	object_new('java.net.ServerSocket', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-server_socket(ARG0, OUT) :- 
-	object_new('java.net.ServerSocket', '.'(ARG0, []), OUT).
+server_socket(ARG0, ARG1, ARG2, OUT) :- 
+	object_new('java.net.ServerSocket', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
 server_socket(OUT) :- 
 	object_new('java.net.ServerSocket', [], OUT).
 
+server_socket(ARG0, OUT) :- 
+	object_new('java.net.ServerSocket', '.'(ARG0, []), OUT).
+
 server_socket_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
+
+server_socket_bind(REF, ARG0, ARG1) :- 
+	object_call(REF, bind, '.'(ARG0, '.'(ARG1, [])), _).
+
+server_socket_set_reuse_address(REF, ARG0) :- 
+	object_call(REF, setReuseAddress, '.'(ARG0, []), _).
+
+server_socket_close(REF) :- 
+	object_call(REF, close, [], _).
+
+server_socket_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+server_socket_get_so_timeout(REF, OUT) :- 
+	object_call(REF, getSoTimeout, [], OUT).
 
 server_socket_accept(REF, OUT) :- 
 	object_call(REF, accept, [], OUT).
 
-server_socket_close(REF, OUT) :- 
-	object_call(REF, close, [], OUT).
+server_socket_set_socket_factory(REF, ARG0) :- 
+	object_call(REF, setSocketFactory, '.'(ARG0, []), _).
 
-server_socket_get_channel(REF, OUT) :- 
-	object_call(REF, getChannel, [], OUT).
+server_socket_get_local_socket_address(REF, OUT) :- 
+	object_call(REF, getLocalSocketAddress, [], OUT).
 
-server_socket_is_bound(REF, OUT) :- 
-	object_call(REF, isBound, [], OUT).
+server_socket_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
-server_socket_set_socket_factory(REF, ARG0, OUT) :- 
-	object_call(REF, setSocketFactory, '.'(ARG0, []), OUT).
+server_socket_bind(REF, ARG0) :- 
+	object_call(REF, bind, '.'(ARG0, []), _).
+
+server_socket_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 server_socket_get_inet_address(REF, OUT) :- 
 	object_call(REF, getInetAddress, [], OUT).
 
-server_socket_get_local_port(REF, OUT) :- 
-	object_call(REF, getLocalPort, [], OUT).
+server_socket_set_so_timeout(REF, ARG0) :- 
+	object_call(REF, setSoTimeout, '.'(ARG0, []), _).
 
-server_socket_bind(REF, ARG0, OUT) :- 
-	object_call(REF, bind, '.'(ARG0, []), OUT).
+server_socket_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
-server_socket_bind(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, bind, '.'(ARG0, '.'(ARG1, [])), OUT).
+server_socket_set_performance_preferences(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, setPerformancePreferences, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
 
-server_socket_set_performance_preferences(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, setPerformancePreferences, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+server_socket_is_bound(REF, OUT) :- 
+	object_call(REF, isBound, [], OUT).
 
 server_socket_is_closed(REF, OUT) :- 
 	object_call(REF, isClosed, [], OUT).
-
-server_socket_get_local_socket_address(REF, OUT) :- 
-	object_call(REF, getLocalSocketAddress, [], OUT).
 
 server_socket_get_receive_buffer_size(REF, OUT) :- 
 	object_call(REF, getReceiveBufferSize, [], OUT).
@@ -79,39 +94,24 @@ server_socket_get_receive_buffer_size(REF, OUT) :-
 server_socket_get_reuse_address(REF, OUT) :- 
 	object_call(REF, getReuseAddress, [], OUT).
 
-server_socket_get_so_timeout(REF, OUT) :- 
-	object_call(REF, getSoTimeout, [], OUT).
+server_socket_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-server_socket_set_receive_buffer_size(REF, ARG0, OUT) :- 
-	object_call(REF, setReceiveBufferSize, '.'(ARG0, []), OUT).
+server_socket_get_channel(REF, OUT) :- 
+	object_call(REF, getChannel, [], OUT).
 
-server_socket_set_reuse_address(REF, ARG0, OUT) :- 
-	object_call(REF, setReuseAddress, '.'(ARG0, []), OUT).
+server_socket_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-server_socket_set_so_timeout(REF, ARG0, OUT) :- 
-	object_call(REF, setSoTimeout, '.'(ARG0, []), OUT).
+server_socket_get_local_port(REF, OUT) :- 
+	object_call(REF, getLocalPort, [], OUT).
 
-server_socket_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+server_socket_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-server_socket_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-server_socket_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+server_socket_set_receive_buffer_size(REF, ARG0) :- 
+	object_call(REF, setReceiveBufferSize, '.'(ARG0, []), _).
 
 server_socket_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-server_socket_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-server_socket_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-server_socket_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-server_socket_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

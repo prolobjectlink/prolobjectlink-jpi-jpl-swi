@@ -25,35 +25,8 @@
 simple_doc(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('javax.print.SimpleDoc', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-simple_doc_get_attributes(REF, OUT) :- 
-	object_call(REF, getAttributes, [], OUT).
-
-simple_doc_get_reader_for_text(REF, OUT) :- 
-	object_call(REF, getReaderForText, [], OUT).
-
-simple_doc_get_doc_flavor(REF, OUT) :- 
-	object_call(REF, getDocFlavor, [], OUT).
-
-simple_doc_get_print_data(REF, OUT) :- 
-	object_call(REF, getPrintData, [], OUT).
-
-simple_doc_get_stream_for_bytes(REF, OUT) :- 
-	object_call(REF, getStreamForBytes, [], OUT).
-
-simple_doc_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-simple_doc_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-simple_doc_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-simple_doc_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-simple_doc_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+simple_doc_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 simple_doc_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -61,9 +34,36 @@ simple_doc_hash_code(REF, OUT) :-
 simple_doc_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-simple_doc_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+simple_doc_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-simple_doc_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+simple_doc_get_reader_for_text(REF, OUT) :- 
+	object_call(REF, getReaderForText, [], OUT).
+
+simple_doc_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+simple_doc_get_attributes(REF, OUT) :- 
+	object_call(REF, getAttributes, [], OUT).
+
+simple_doc_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+simple_doc_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+simple_doc_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+simple_doc_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+simple_doc_get_doc_flavor(REF, OUT) :- 
+	object_call(REF, getDocFlavor, [], OUT).
+
+simple_doc_get_stream_for_bytes(REF, OUT) :- 
+	object_call(REF, getStreamForBytes, [], OUT).
+
+simple_doc_get_print_data(REF, OUT) :- 
+	object_call(REF, getPrintData, [], OUT).
 

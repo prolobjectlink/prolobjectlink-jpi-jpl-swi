@@ -25,63 +25,63 @@
 m_bean_server_notification_filter(OUT) :- 
 	object_new('javax.management.relation.MBeanServerNotificationFilter', [], OUT).
 
-m_bean_server_notification_filter_disable_all_object_names(REF, OUT) :- 
-	object_call(REF, disableAllObjectNames, [], OUT).
-
-m_bean_server_notification_filter_disable_object_name(REF, ARG0, OUT) :- 
-	object_call(REF, disableObjectName, '.'(ARG0, []), OUT).
-
-m_bean_server_notification_filter_enable_all_object_names(REF, OUT) :- 
-	object_call(REF, enableAllObjectNames, [], OUT).
-
-m_bean_server_notification_filter_enable_object_name(REF, ARG0, OUT) :- 
-	object_call(REF, enableObjectName, '.'(ARG0, []), OUT).
-
-m_bean_server_notification_filter_get_disabled_object_names(REF, OUT) :- 
-	object_call(REF, getDisabledObjectNames, [], OUT).
-
-m_bean_server_notification_filter_get_enabled_object_names(REF, OUT) :- 
-	object_call(REF, getEnabledObjectNames, [], OUT).
-
 m_bean_server_notification_filter_is_notification_enabled(REF, ARG0, OUT) :- 
 	object_call(REF, isNotificationEnabled, '.'(ARG0, []), OUT).
 
-m_bean_server_notification_filter_disable_all_types(REF, OUT) :- 
-	object_call(REF, disableAllTypes, [], OUT).
+m_bean_server_notification_filter_disable_all_object_names(REF) :- 
+	object_call(REF, disableAllObjectNames, [], _).
 
-m_bean_server_notification_filter_disable_type(REF, ARG0, OUT) :- 
-	object_call(REF, disableType, '.'(ARG0, []), OUT).
-
-m_bean_server_notification_filter_enable_type(REF, ARG0, OUT) :- 
-	object_call(REF, enableType, '.'(ARG0, []), OUT).
-
-m_bean_server_notification_filter_get_enabled_types(REF, OUT) :- 
-	object_call(REF, getEnabledTypes, [], OUT).
-
-m_bean_server_notification_filter_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-m_bean_server_notification_filter_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-m_bean_server_notification_filter_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-m_bean_server_notification_filter_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-m_bean_server_notification_filter_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+m_bean_server_notification_filter_disable_type(REF, ARG0) :- 
+	object_call(REF, disableType, '.'(ARG0, []), _).
 
 m_bean_server_notification_filter_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+m_bean_server_notification_filter_enable_type(REF, ARG0) :- 
+	object_call(REF, enableType, '.'(ARG0, []), _).
+
+m_bean_server_notification_filter_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+m_bean_server_notification_filter_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+m_bean_server_notification_filter_get_enabled_object_names(REF, OUT) :- 
+	object_call(REF, getEnabledObjectNames, [], OUT).
+
+m_bean_server_notification_filter_get_enabled_types(REF, OUT) :- 
+	object_call(REF, getEnabledTypes, [], OUT).
+
+m_bean_server_notification_filter_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+m_bean_server_notification_filter_disable_object_name(REF, ARG0) :- 
+	object_call(REF, disableObjectName, '.'(ARG0, []), _).
+
+m_bean_server_notification_filter_enable_all_object_names(REF) :- 
+	object_call(REF, enableAllObjectNames, [], _).
+
+m_bean_server_notification_filter_enable_object_name(REF, ARG0) :- 
+	object_call(REF, enableObjectName, '.'(ARG0, []), _).
+
+m_bean_server_notification_filter_disable_all_types(REF) :- 
+	object_call(REF, disableAllTypes, [], _).
+
+m_bean_server_notification_filter_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+m_bean_server_notification_filter_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+m_bean_server_notification_filter_get_disabled_object_names(REF, OUT) :- 
+	object_call(REF, getDisabledObjectNames, [], OUT).
+
+m_bean_server_notification_filter_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+m_bean_server_notification_filter_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
 m_bean_server_notification_filter_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-m_bean_server_notification_filter_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-m_bean_server_notification_filter_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

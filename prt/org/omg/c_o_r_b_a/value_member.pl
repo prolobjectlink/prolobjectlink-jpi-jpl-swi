@@ -22,26 +22,26 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-value_member(OUT) :- 
-	object_new('org.omg.CORBA.ValueMember', [], OUT).
-
 value_member(ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, ARG6, OUT) :- 
 	object_new('org.omg.CORBA.ValueMember', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, '.'(ARG6, []))))))), OUT).
 
-value_member_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+value_member(OUT) :- 
+	object_new('org.omg.CORBA.ValueMember', [], OUT).
 
-value_member_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+value_member_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-value_member_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+value_member_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+value_member_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 value_member_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-value_member_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+value_member_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 value_member_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -49,9 +49,9 @@ value_member_hash_code(REF, OUT) :-
 value_member_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-value_member_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+value_member_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-value_member_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+value_member_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

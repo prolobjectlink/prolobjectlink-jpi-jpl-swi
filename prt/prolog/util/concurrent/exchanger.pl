@@ -31,30 +31,30 @@ exchanger_exchange(REF, ARG0, ARG1, ARG2, OUT) :-
 exchanger_exchange(REF, ARG0, OUT) :- 
 	object_call(REF, exchange, '.'(ARG0, []), OUT).
 
-exchanger_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+exchanger_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-exchanger_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-exchanger_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+exchanger_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 exchanger_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
+exchanger_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
+
 exchanger_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
+
+exchanger_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 exchanger_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-exchanger_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
+exchanger_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-exchanger_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-exchanger_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+exchanger_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

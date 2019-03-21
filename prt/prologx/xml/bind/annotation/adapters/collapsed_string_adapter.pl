@@ -31,26 +31,26 @@ collapsed_string_adapter_marshal(REF, ARG0, OUT) :-
 collapsed_string_adapter_marshal(REF, ARG0, OUT) :- 
 	object_call(REF, marshal, '.'(ARG0, []), OUT).
 
-collapsed_string_adapter_unmarshal(REF, ARG0, OUT) :- 
-	object_call(REF, unmarshal, '.'(ARG0, []), OUT).
+collapsed_string_adapter_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+collapsed_string_adapter_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+collapsed_string_adapter_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+collapsed_string_adapter_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 collapsed_string_adapter_unmarshal(REF, ARG0, OUT) :- 
 	object_call(REF, unmarshal, '.'(ARG0, []), OUT).
 
-collapsed_string_adapter_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+collapsed_string_adapter_unmarshal(REF, ARG0, OUT) :- 
+	object_call(REF, unmarshal, '.'(ARG0, []), OUT).
 
-collapsed_string_adapter_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-collapsed_string_adapter_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-collapsed_string_adapter_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-collapsed_string_adapter_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+collapsed_string_adapter_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 collapsed_string_adapter_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -58,9 +58,9 @@ collapsed_string_adapter_hash_code(REF, OUT) :-
 collapsed_string_adapter_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-collapsed_string_adapter_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+collapsed_string_adapter_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-collapsed_string_adapter_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+collapsed_string_adapter_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 

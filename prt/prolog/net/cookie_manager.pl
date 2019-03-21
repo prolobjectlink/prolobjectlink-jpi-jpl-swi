@@ -22,54 +22,54 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-cookie_manager(OUT) :- 
-	object_new('java.net.CookieManager', [], OUT).
-
 cookie_manager(ARG0, ARG1, OUT) :- 
 	object_new('java.net.CookieManager', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-cookie_manager_get(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, get, '.'(ARG0, '.'(ARG1, [])), OUT).
+cookie_manager(OUT) :- 
+	object_new('java.net.CookieManager', [], OUT).
 
-cookie_manager_put(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, put, '.'(ARG0, '.'(ARG1, [])), OUT).
+cookie_manager_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-cookie_manager_get_cookie_store(REF, OUT) :- 
-	object_call(REF, getCookieStore, [], OUT).
-
-cookie_manager_set_cookie_policy(REF, ARG0, OUT) :- 
-	object_call(REF, setCookiePolicy, '.'(ARG0, []), OUT).
-
-cookie_manager_get_default(REF, OUT) :- 
-	object_call(REF, getDefault, [], OUT).
-
-cookie_manager_set_default(REF, ARG0, OUT) :- 
-	object_call(REF, setDefault, '.'(ARG0, []), OUT).
-
-cookie_manager_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-cookie_manager_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-cookie_manager_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-cookie_manager_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+cookie_manager_set_default(REF, ARG0) :- 
+	object_call(REF, setDefault, '.'(ARG0, []), _).
 
 cookie_manager_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
+cookie_manager_get_cookie_store(REF, OUT) :- 
+	object_call(REF, getCookieStore, [], OUT).
+
+cookie_manager_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+cookie_manager_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+cookie_manager_set_cookie_policy(REF, ARG0) :- 
+	object_call(REF, setCookiePolicy, '.'(ARG0, []), _).
+
+cookie_manager_get(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, get, '.'(ARG0, '.'(ARG1, [])), OUT).
+
 cookie_manager_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
+
+cookie_manager_get_default(REF, OUT) :- 
+	object_call(REF, getDefault, [], OUT).
+
+cookie_manager_put(REF, ARG0, ARG1) :- 
+	object_call(REF, put, '.'(ARG0, '.'(ARG1, [])), _).
+
+cookie_manager_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+cookie_manager_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 cookie_manager_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-cookie_manager_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-cookie_manager_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+cookie_manager_wait(REF) :- 
+	object_call(REF, wait, [], _).
 

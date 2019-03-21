@@ -22,36 +22,36 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
+completions_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+completions_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+completions_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
+
+completions_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+completions_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+completions_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+completions_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+completions_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+completions_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
 completions_of(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, of, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 completions_of(REF, ARG0, OUT) :- 
 	object_call(REF, of, '.'(ARG0, []), OUT).
-
-completions_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-completions_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-completions_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-completions_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-completions_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-completions_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-completions_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-completions_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-completions_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

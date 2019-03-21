@@ -25,42 +25,42 @@
 statement(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('java.beans.Statement', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-statement_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+statement_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-statement_execute(REF, OUT) :- 
-	object_call(REF, execute, [], OUT).
-
-statement_get_target(REF, OUT) :- 
-	object_call(REF, getTarget, [], OUT).
-
-statement_get_method_name(REF, OUT) :- 
-	object_call(REF, getMethodName, [], OUT).
+statement_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 statement_get_arguments(REF, OUT) :- 
 	object_call(REF, getArguments, [], OUT).
 
-statement_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+statement_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-statement_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-statement_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-statement_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-statement_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+statement_get_target(REF, OUT) :- 
+	object_call(REF, getTarget, [], OUT).
 
 statement_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-statement_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+statement_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
-statement_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+statement_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+statement_get_method_name(REF, OUT) :- 
+	object_call(REF, getMethodName, [], OUT).
+
+statement_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+statement_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+statement_execute(REF) :- 
+	object_call(REF, execute, [], _).
+
+statement_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 

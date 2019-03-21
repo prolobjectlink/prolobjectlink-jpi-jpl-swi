@@ -28,30 +28,30 @@ struct_member(OUT) :-
 struct_member(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('org.omg.CORBA.StructMember', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-struct_member_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+struct_member_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
-struct_member_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-struct_member_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-struct_member_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+struct_member_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 struct_member_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
+struct_member_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+struct_member_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
 struct_member_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-struct_member_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
+struct_member_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-struct_member_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+struct_member_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-struct_member_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+struct_member_wait(REF) :- 
+	object_call(REF, wait, [], _).
 

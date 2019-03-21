@@ -22,96 +22,96 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-international_formatter(OUT) :- 
-	object_new('javax.swing.text.InternationalFormatter', [], OUT).
-
 international_formatter(ARG0, OUT) :- 
 	object_new('javax.swing.text.InternationalFormatter', '.'(ARG0, []), OUT).
 
-international_formatter_clone(REF, OUT) :- 
-	object_call(REF, clone, [], OUT).
-
-international_formatter_get_fields(REF, ARG0, OUT) :- 
-	object_call(REF, getFields, '.'(ARG0, []), OUT).
-
-international_formatter_get_minimum(REF, OUT) :- 
-	object_call(REF, getMinimum, [], OUT).
+international_formatter(OUT) :- 
+	object_new('javax.swing.text.InternationalFormatter', [], OUT).
 
 international_formatter_get_maximum(REF, OUT) :- 
 	object_call(REF, getMaximum, [], OUT).
 
-international_formatter_get_format(REF, OUT) :- 
-	object_call(REF, getFormat, [], OUT).
-
-international_formatter_set_format(REF, ARG0, OUT) :- 
-	object_call(REF, setFormat, '.'(ARG0, []), OUT).
-
-international_formatter_install(REF, ARG0, OUT) :- 
-	object_call(REF, install, '.'(ARG0, []), OUT).
-
-international_formatter_string_to_value(REF, ARG0, OUT) :- 
-	object_call(REF, stringToValue, '.'(ARG0, []), OUT).
-
-international_formatter_value_to_string(REF, ARG0, OUT) :- 
-	object_call(REF, valueToString, '.'(ARG0, []), OUT).
-
-international_formatter_set_maximum(REF, ARG0, OUT) :- 
-	object_call(REF, setMaximum, '.'(ARG0, []), OUT).
-
-international_formatter_set_minimum(REF, ARG0, OUT) :- 
-	object_call(REF, setMinimum, '.'(ARG0, []), OUT).
-
-international_formatter_set_value_class(REF, ARG0, OUT) :- 
-	object_call(REF, setValueClass, '.'(ARG0, []), OUT).
-
-international_formatter_get_allows_invalid(REF, OUT) :- 
-	object_call(REF, getAllowsInvalid, [], OUT).
-
-international_formatter_get_overwrite_mode(REF, OUT) :- 
-	object_call(REF, getOverwriteMode, [], OUT).
-
-international_formatter_get_value_class(REF, OUT) :- 
-	object_call(REF, getValueClass, [], OUT).
-
-international_formatter_set_overwrite_mode(REF, ARG0, OUT) :- 
-	object_call(REF, setOverwriteMode, '.'(ARG0, []), OUT).
-
 international_formatter_get_commits_on_valid_edit(REF, OUT) :- 
 	object_call(REF, getCommitsOnValidEdit, [], OUT).
-
-international_formatter_set_allows_invalid(REF, ARG0, OUT) :- 
-	object_call(REF, setAllowsInvalid, '.'(ARG0, []), OUT).
-
-international_formatter_set_commits_on_valid_edit(REF, ARG0, OUT) :- 
-	object_call(REF, setCommitsOnValidEdit, '.'(ARG0, []), OUT).
-
-international_formatter_uninstall(REF, OUT) :- 
-	object_call(REF, uninstall, [], OUT).
-
-international_formatter_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-international_formatter_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-international_formatter_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-international_formatter_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-international_formatter_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-international_formatter_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
 
 international_formatter_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-international_formatter_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+international_formatter_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
-international_formatter_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+international_formatter_get_value_class(REF, OUT) :- 
+	object_call(REF, getValueClass, [], OUT).
+
+international_formatter_set_minimum(REF, ARG0) :- 
+	object_call(REF, setMinimum, '.'(ARG0, []), _).
+
+international_formatter_set_commits_on_valid_edit(REF, ARG0) :- 
+	object_call(REF, setCommitsOnValidEdit, '.'(ARG0, []), _).
+
+international_formatter_get_fields(REF, ARG0, OUT) :- 
+	object_call(REF, getFields, '.'(ARG0, []), OUT).
+
+international_formatter_install(REF, ARG0) :- 
+	object_call(REF, install, '.'(ARG0, []), _).
+
+international_formatter_get_overwrite_mode(REF, OUT) :- 
+	object_call(REF, getOverwriteMode, [], OUT).
+
+international_formatter_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+international_formatter_set_allows_invalid(REF, ARG0) :- 
+	object_call(REF, setAllowsInvalid, '.'(ARG0, []), _).
+
+international_formatter_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+international_formatter_set_overwrite_mode(REF, ARG0) :- 
+	object_call(REF, setOverwriteMode, '.'(ARG0, []), _).
+
+international_formatter_value_to_string(REF, ARG0, OUT) :- 
+	object_call(REF, valueToString, '.'(ARG0, []), OUT).
+
+international_formatter_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+international_formatter_get_minimum(REF, OUT) :- 
+	object_call(REF, getMinimum, [], OUT).
+
+international_formatter_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+international_formatter_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+international_formatter_set_value_class(REF, ARG0) :- 
+	object_call(REF, setValueClass, '.'(ARG0, []), _).
+
+international_formatter_string_to_value(REF, ARG0, OUT) :- 
+	object_call(REF, stringToValue, '.'(ARG0, []), OUT).
+
+international_formatter_set_maximum(REF, ARG0) :- 
+	object_call(REF, setMaximum, '.'(ARG0, []), _).
+
+international_formatter_set_format(REF, ARG0) :- 
+	object_call(REF, setFormat, '.'(ARG0, []), _).
+
+international_formatter_get_allows_invalid(REF, OUT) :- 
+	object_call(REF, getAllowsInvalid, [], OUT).
+
+international_formatter_clone(REF, OUT) :- 
+	object_call(REF, clone, [], OUT).
+
+international_formatter_get_format(REF, OUT) :- 
+	object_call(REF, getFormat, [], OUT).
+
+international_formatter_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+international_formatter_uninstall(REF) :- 
+	object_call(REF, uninstall, [], _).
+
+international_formatter_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 

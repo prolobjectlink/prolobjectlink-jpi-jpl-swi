@@ -25,39 +25,39 @@
 notification_result(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('javax.management.remote.NotificationResult', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-notification_result_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-notification_result_get_earliest_sequence_number(REF, OUT) :- 
-	object_call(REF, getEarliestSequenceNumber, [], OUT).
-
-notification_result_get_next_sequence_number(REF, OUT) :- 
-	object_call(REF, getNextSequenceNumber, [], OUT).
-
-notification_result_get_targeted_notifications(REF, OUT) :- 
-	object_call(REF, getTargetedNotifications, [], OUT).
-
-notification_result_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-notification_result_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-notification_result_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
 notification_result_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+notification_result_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+notification_result_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 notification_result_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+notification_result_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+notification_result_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+notification_result_get_earliest_sequence_number(REF, OUT) :- 
+	object_call(REF, getEarliestSequenceNumber, [], OUT).
+
+notification_result_get_targeted_notifications(REF, OUT) :- 
+	object_call(REF, getTargetedNotifications, [], OUT).
+
+notification_result_get_next_sequence_number(REF, OUT) :- 
+	object_call(REF, getNextSequenceNumber, [], OUT).
+
 notification_result_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-notification_result_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+notification_result_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-notification_result_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+notification_result_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 

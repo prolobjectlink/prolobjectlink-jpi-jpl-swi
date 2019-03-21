@@ -22,32 +22,29 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-dn_d_constants_action_none(OUT) :- 
+dn_d_constants_ACTION_NONE(OUT) :- 
 	object_get('java.awt.dnd.DnDConstants', action_none, OUT).
 
-dn_d_constants_action_copy(OUT) :- 
+dn_d_constants_ACTION_COPY(OUT) :- 
 	object_get('java.awt.dnd.DnDConstants', action_copy, OUT).
 
-dn_d_constants_action_move(OUT) :- 
+dn_d_constants_ACTION_MOVE(OUT) :- 
 	object_get('java.awt.dnd.DnDConstants', action_move, OUT).
 
-dn_d_constants_action_copy_or_move(OUT) :- 
+dn_d_constants_ACTION_COPY_OR_MOVE(OUT) :- 
 	object_get('java.awt.dnd.DnDConstants', action_copy_or_move, OUT).
 
-dn_d_constants_action_link(OUT) :- 
+dn_d_constants_ACTION_LINK(OUT) :- 
 	object_get('java.awt.dnd.DnDConstants', action_link, OUT).
 
-dn_d_constants_action_reference(OUT) :- 
+dn_d_constants_ACTION_REFERENCE(OUT) :- 
 	object_get('java.awt.dnd.DnDConstants', action_reference, OUT).
 
-dn_d_constants_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+dn_d_constants_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-dn_d_constants_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-dn_d_constants_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+dn_d_constants_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 dn_d_constants_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
@@ -61,9 +58,12 @@ dn_d_constants_hash_code(REF, OUT) :-
 dn_d_constants_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-dn_d_constants_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+dn_d_constants_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-dn_d_constants_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+dn_d_constants_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+dn_d_constants_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

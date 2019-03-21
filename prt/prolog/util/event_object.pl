@@ -25,33 +25,33 @@
 event_object(ARG0, OUT) :- 
 	object_new('java.util.EventObject', '.'(ARG0, []), OUT).
 
-event_object_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-event_object_get_source(REF, OUT) :- 
-	object_call(REF, getSource, [], OUT).
-
-event_object_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-event_object_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-event_object_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-event_object_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
 event_object_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
 event_object_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-event_object_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+event_object_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-event_object_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+event_object_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+event_object_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+event_object_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+event_object_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+event_object_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+event_object_get_source(REF, OUT) :- 
+	object_call(REF, getSource, [], OUT).
+
+event_object_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 

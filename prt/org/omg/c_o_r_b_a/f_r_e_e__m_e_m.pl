@@ -25,75 +25,75 @@
 f_r_e_e__m_e_m(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('org.omg.CORBA.FREE_MEM', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-f_r_e_e__m_e_m(ARG0, ARG1, OUT) :- 
-	object_new('org.omg.CORBA.FREE_MEM', '.'(ARG0, '.'(ARG1, [])), OUT).
+f_r_e_e__m_e_m(OUT) :- 
+	object_new('org.omg.CORBA.FREE_MEM', [], OUT).
 
 f_r_e_e__m_e_m(ARG0, OUT) :- 
 	object_new('org.omg.CORBA.FREE_MEM', '.'(ARG0, []), OUT).
 
-f_r_e_e__m_e_m(OUT) :- 
-	object_new('org.omg.CORBA.FREE_MEM', [], OUT).
-
-f_r_e_e__m_e_m_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-f_r_e_e__m_e_m_print_stack_trace(REF, OUT) :- 
-	object_call(REF, printStackTrace, [], OUT).
-
-f_r_e_e__m_e_m_print_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, printStackTrace, '.'(ARG0, []), OUT).
-
-f_r_e_e__m_e_m_print_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, printStackTrace, '.'(ARG0, []), OUT).
-
-f_r_e_e__m_e_m_fill_in_stack_trace(REF, OUT) :- 
-	object_call(REF, fillInStackTrace, [], OUT).
-
-f_r_e_e__m_e_m_get_cause(REF, OUT) :- 
-	object_call(REF, getCause, [], OUT).
-
-f_r_e_e__m_e_m_init_cause(REF, ARG0, OUT) :- 
-	object_call(REF, initCause, '.'(ARG0, []), OUT).
-
-f_r_e_e__m_e_m_add_suppressed(REF, ARG0, OUT) :- 
-	object_call(REF, addSuppressed, '.'(ARG0, []), OUT).
+f_r_e_e__m_e_m(ARG0, ARG1, OUT) :- 
+	object_new('org.omg.CORBA.FREE_MEM', '.'(ARG0, '.'(ARG1, [])), OUT).
 
 f_r_e_e__m_e_m_get_localized_message(REF, OUT) :- 
 	object_call(REF, getLocalizedMessage, [], OUT).
 
+f_r_e_e__m_e_m_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+f_r_e_e__m_e_m_print_stack_trace(REF) :- 
+	object_call(REF, printStackTrace, [], _).
+
+f_r_e_e__m_e_m_add_suppressed(REF, ARG0) :- 
+	object_call(REF, addSuppressed, '.'(ARG0, []), _).
+
+f_r_e_e__m_e_m_print_stack_trace(REF, ARG0) :- 
+	object_call(REF, printStackTrace, '.'(ARG0, []), _).
+
+f_r_e_e__m_e_m_print_stack_trace(REF, ARG0) :- 
+	object_call(REF, printStackTrace, '.'(ARG0, []), _).
+
 f_r_e_e__m_e_m_get_message(REF, OUT) :- 
 	object_call(REF, getMessage, [], OUT).
 
-f_r_e_e__m_e_m_get_stack_trace(REF, OUT) :- 
-	object_call(REF, getStackTrace, [], OUT).
+f_r_e_e__m_e_m_fill_in_stack_trace(REF, OUT) :- 
+	object_call(REF, fillInStackTrace, [], OUT).
+
+f_r_e_e__m_e_m_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+f_r_e_e__m_e_m_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+f_r_e_e__m_e_m_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+f_r_e_e__m_e_m_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+f_r_e_e__m_e_m_init_cause(REF, ARG0, OUT) :- 
+	object_call(REF, initCause, '.'(ARG0, []), OUT).
 
 f_r_e_e__m_e_m_get_suppressed(REF, OUT) :- 
 	object_call(REF, getSuppressed, [], OUT).
 
-f_r_e_e__m_e_m_set_stack_trace(REF, ARG0, OUT) :- 
-	object_call(REF, setStackTrace, '.'(ARG0, []), OUT).
-
-f_r_e_e__m_e_m_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-f_r_e_e__m_e_m_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-f_r_e_e__m_e_m_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
 f_r_e_e__m_e_m_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-f_r_e_e__m_e_m_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+f_r_e_e__m_e_m_get_cause(REF, OUT) :- 
+	object_call(REF, getCause, [], OUT).
 
 f_r_e_e__m_e_m_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-f_r_e_e__m_e_m_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+f_r_e_e__m_e_m_get_stack_trace(REF, OUT) :- 
+	object_call(REF, getStackTrace, [], OUT).
 
-f_r_e_e__m_e_m_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+f_r_e_e__m_e_m_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+f_r_e_e__m_e_m_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+f_r_e_e__m_e_m_set_stack_trace(REF, ARG0) :- 
+	object_call(REF, setStackTrace, '.'(ARG0, []), _).
 

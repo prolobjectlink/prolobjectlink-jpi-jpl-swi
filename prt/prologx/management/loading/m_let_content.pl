@@ -25,26 +25,23 @@
 m_let_content(ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_new('javax.management.loading.MLetContent', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
-m_let_content_get_name(REF, OUT) :- 
-	object_call(REF, getName, [], OUT).
+m_let_content_get_code_base(REF, OUT) :- 
+	object_call(REF, getCodeBase, [], OUT).
 
-m_let_content_get_parameter_types(REF, OUT) :- 
-	object_call(REF, getParameterTypes, [], OUT).
+m_let_content_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+m_let_content_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 m_let_content_get_attributes(REF, OUT) :- 
 	object_call(REF, getAttributes, [], OUT).
 
-m_let_content_get_code_base(REF, OUT) :- 
-	object_call(REF, getCodeBase, [], OUT).
+m_let_content_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-m_let_content_get_jar_files(REF, OUT) :- 
-	object_call(REF, getJarFiles, [], OUT).
-
-m_let_content_get_version(REF, OUT) :- 
-	object_call(REF, getVersion, [], OUT).
-
-m_let_content_get_document_base(REF, OUT) :- 
-	object_call(REF, getDocumentBase, [], OUT).
+m_let_content_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 m_let_content_get_code(REF, OUT) :- 
 	object_call(REF, getCode, [], OUT).
@@ -52,33 +49,36 @@ m_let_content_get_code(REF, OUT) :-
 m_let_content_get_parameter_values(REF, OUT) :- 
 	object_call(REF, getParameterValues, [], OUT).
 
-m_let_content_get_serialized_object(REF, OUT) :- 
-	object_call(REF, getSerializedObject, [], OUT).
+m_let_content_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-m_let_content_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-m_let_content_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-m_let_content_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-m_let_content_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+m_let_content_get_jar_files(REF, OUT) :- 
+	object_call(REF, getJarFiles, [], OUT).
 
 m_let_content_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-m_let_content_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+m_let_content_get_parameter_types(REF, OUT) :- 
+	object_call(REF, getParameterTypes, [], OUT).
+
+m_let_content_get_name(REF, OUT) :- 
+	object_call(REF, getName, [], OUT).
+
+m_let_content_get_document_base(REF, OUT) :- 
+	object_call(REF, getDocumentBase, [], OUT).
+
+m_let_content_get_serialized_object(REF, OUT) :- 
+	object_call(REF, getSerializedObject, [], OUT).
 
 m_let_content_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-m_let_content_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+m_let_content_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-m_let_content_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+m_let_content_get_version(REF, OUT) :- 
+	object_call(REF, getVersion, [], OUT).
+
+m_let_content_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 

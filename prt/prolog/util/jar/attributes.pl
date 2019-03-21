@@ -22,38 +22,20 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-attributes(ARG0, OUT) :- 
-	object_new('java.util.jar.Attributes', '.'(ARG0, []), OUT).
-
-attributes(ARG0, OUT) :- 
-	object_new('java.util.jar.Attributes', '.'(ARG0, []), OUT).
-
 attributes(OUT) :- 
 	object_new('java.util.jar.Attributes', [], OUT).
 
-attributes_remove(REF, ARG0, OUT) :- 
-	object_call(REF, remove, '.'(ARG0, []), OUT).
+attributes(ARG0, OUT) :- 
+	object_new('java.util.jar.Attributes', '.'(ARG0, []), OUT).
 
-attributes_get(REF, ARG0, OUT) :- 
-	object_call(REF, get, '.'(ARG0, []), OUT).
-
-attributes_put(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, put, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-attributes_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+attributes(ARG0, OUT) :- 
+	object_new('java.util.jar.Attributes', '.'(ARG0, []), OUT).
 
 attributes_values(REF, OUT) :- 
 	object_call(REF, values, [], OUT).
 
-attributes_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-attributes_clone(REF, OUT) :- 
-	object_call(REF, clone, [], OUT).
-
-attributes_clear(REF, OUT) :- 
-	object_call(REF, clear, [], OUT).
+attributes_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
 attributes_get_value(REF, ARG0, OUT) :- 
 	object_call(REF, getValue, '.'(ARG0, []), OUT).
@@ -61,17 +43,74 @@ attributes_get_value(REF, ARG0, OUT) :-
 attributes_get_value(REF, ARG0, OUT) :- 
 	object_call(REF, getValue, '.'(ARG0, []), OUT).
 
-attributes_is_empty(REF, OUT) :- 
-	object_call(REF, isEmpty, [], OUT).
+attributes_put(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, put, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 attributes_size(REF, OUT) :- 
 	object_call(REF, size, [], OUT).
 
+attributes_contains_value(REF, ARG0, OUT) :- 
+	object_call(REF, containsValue, '.'(ARG0, []), OUT).
+
+attributes_put_if_absent(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, putIfAbsent, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+attributes_get(REF, ARG0, OUT) :- 
+	object_call(REF, get, '.'(ARG0, []), OUT).
+
+attributes_put_all(REF, ARG0) :- 
+	object_call(REF, putAll, '.'(ARG0, []), _).
+
+attributes_clear(REF) :- 
+	object_call(REF, clear, [], _).
+
+attributes_compute_if_present(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, computeIfPresent, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+attributes_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
+
+attributes_put_value(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, putValue, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+attributes_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+attributes_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
 attributes_entry_set(REF, OUT) :- 
 	object_call(REF, entrySet, [], OUT).
 
-attributes_put_all(REF, ARG0, OUT) :- 
-	object_call(REF, putAll, '.'(ARG0, []), OUT).
+attributes_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+attributes_for_each(REF, ARG0) :- 
+	object_call(REF, forEach, '.'(ARG0, []), _).
+
+attributes_remove(REF, ARG0, OUT) :- 
+	object_call(REF, remove, '.'(ARG0, []), OUT).
+
+attributes_remove(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, remove, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+attributes_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+attributes_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+attributes_merge(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, merge, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+attributes_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+attributes_compute_if_absent(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, computeIfAbsent, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+attributes_replace(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, replace, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 attributes_key_set(REF, OUT) :- 
 	object_call(REF, keySet, [], OUT).
@@ -79,63 +118,24 @@ attributes_key_set(REF, OUT) :-
 attributes_contains_key(REF, ARG0, OUT) :- 
 	object_call(REF, containsKey, '.'(ARG0, []), OUT).
 
-attributes_contains_value(REF, ARG0, OUT) :- 
-	object_call(REF, containsValue, '.'(ARG0, []), OUT).
-
-attributes_put_value(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, putValue, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-attributes_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-attributes_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-attributes_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-attributes_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-attributes_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-attributes_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-attributes_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
-
-attributes_remove(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, remove, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-attributes_replace(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, replace, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 attributes_replace(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, replace, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-attributes_replace_all(REF, ARG0, OUT) :- 
-	object_call(REF, replaceAll, '.'(ARG0, []), OUT).
-
-attributes_put_if_absent(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, putIfAbsent, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-attributes_compute(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, compute, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-attributes_compute_if_absent(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, computeIfAbsent, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-attributes_compute_if_present(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, computeIfPresent, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-attributes_for_each(REF, ARG0, OUT) :- 
-	object_call(REF, forEach, '.'(ARG0, []), OUT).
 
 attributes_get_or_default(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, getOrDefault, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-attributes_merge(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, merge, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+attributes_replace_all(REF, ARG0) :- 
+	object_call(REF, replaceAll, '.'(ARG0, []), _).
+
+attributes_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+attributes_clone(REF, OUT) :- 
+	object_call(REF, clone, [], OUT).
+
+attributes_compute(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, compute, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+attributes_is_empty(REF, OUT) :- 
+	object_call(REF, isEmpty, [], OUT).
 

@@ -22,26 +22,23 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-color_chooser_component_factory_get_preview_panel(REF, OUT) :- 
-	object_call(REF, getPreviewPanel, [], OUT).
+color_chooser_component_factory_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+color_chooser_component_factory_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+color_chooser_component_factory_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+color_chooser_component_factory_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
 color_chooser_component_factory_get_default_chooser_panels(REF, OUT) :- 
 	object_call(REF, getDefaultChooserPanels, [], OUT).
 
-color_chooser_component_factory_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-color_chooser_component_factory_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-color_chooser_component_factory_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-color_chooser_component_factory_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-color_chooser_component_factory_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+color_chooser_component_factory_get_preview_panel(REF, OUT) :- 
+	object_call(REF, getPreviewPanel, [], OUT).
 
 color_chooser_component_factory_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -49,9 +46,12 @@ color_chooser_component_factory_hash_code(REF, OUT) :-
 color_chooser_component_factory_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-color_chooser_component_factory_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+color_chooser_component_factory_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-color_chooser_component_factory_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+color_chooser_component_factory_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+color_chooser_component_factory_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 

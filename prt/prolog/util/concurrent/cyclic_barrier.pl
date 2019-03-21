@@ -22,54 +22,54 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-cyclic_barrier(ARG0, ARG1, OUT) :- 
-	object_new('java.util.concurrent.CyclicBarrier', '.'(ARG0, '.'(ARG1, [])), OUT).
-
 cyclic_barrier(ARG0, OUT) :- 
 	object_new('java.util.concurrent.CyclicBarrier', '.'(ARG0, []), OUT).
 
-cyclic_barrier_reset(REF, OUT) :- 
-	object_call(REF, reset, [], OUT).
-
-cyclic_barrier_get_number_waiting(REF, OUT) :- 
-	object_call(REF, getNumberWaiting, [], OUT).
-
-cyclic_barrier_get_parties(REF, OUT) :- 
-	object_call(REF, getParties, [], OUT).
-
-cyclic_barrier_is_broken(REF, OUT) :- 
-	object_call(REF, isBroken, [], OUT).
-
-cyclic_barrier_await(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, await, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-cyclic_barrier_await(REF, OUT) :- 
-	object_call(REF, await, [], OUT).
-
-cyclic_barrier_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-cyclic_barrier_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-cyclic_barrier_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-cyclic_barrier_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-cyclic_barrier_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+cyclic_barrier(ARG0, ARG1, OUT) :- 
+	object_new('java.util.concurrent.CyclicBarrier', '.'(ARG0, '.'(ARG1, [])), OUT).
 
 cyclic_barrier_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+cyclic_barrier_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+cyclic_barrier_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
 cyclic_barrier_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-cyclic_barrier_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+cyclic_barrier_is_broken(REF, OUT) :- 
+	object_call(REF, isBroken, [], OUT).
 
-cyclic_barrier_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+cyclic_barrier_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+cyclic_barrier_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+cyclic_barrier_await(REF, OUT) :- 
+	object_call(REF, await, [], OUT).
+
+cyclic_barrier_get_number_waiting(REF, OUT) :- 
+	object_call(REF, getNumberWaiting, [], OUT).
+
+cyclic_barrier_await(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, await, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+cyclic_barrier_reset(REF) :- 
+	object_call(REF, reset, [], _).
+
+cyclic_barrier_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+cyclic_barrier_get_parties(REF, OUT) :- 
+	object_call(REF, getParties, [], OUT).
+
+cyclic_barrier_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+cyclic_barrier_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

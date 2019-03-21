@@ -25,39 +25,39 @@
 number_of_documents(ARG0, OUT) :- 
 	object_new('javax.print.attribute.standard.NumberOfDocuments', '.'(ARG0, []), OUT).
 
-number_of_documents_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-number_of_documents_get_name(REF, OUT) :- 
-	object_call(REF, getName, [], OUT).
-
 number_of_documents_get_category(REF, OUT) :- 
 	object_call(REF, getCategory, [], OUT).
-
-number_of_documents_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-number_of_documents_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
 
 number_of_documents_get_value(REF, OUT) :- 
 	object_call(REF, getValue, [], OUT).
 
-number_of_documents_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-number_of_documents_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-number_of_documents_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
 number_of_documents_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-number_of_documents_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+number_of_documents_get_name(REF, OUT) :- 
+	object_call(REF, getName, [], OUT).
 
-number_of_documents_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+number_of_documents_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+number_of_documents_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+number_of_documents_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+number_of_documents_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+number_of_documents_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+number_of_documents_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+number_of_documents_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+number_of_documents_notify(REF) :- 
+	object_call(REF, notify, [], _).
 

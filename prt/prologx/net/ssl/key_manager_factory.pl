@@ -22,47 +22,41 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
+key_manager_factory_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+key_manager_factory_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+key_manager_factory_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+key_manager_factory_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+key_manager_factory_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+key_manager_factory_init(REF, ARG0, ARG1) :- 
+	object_call(REF, init, '.'(ARG0, '.'(ARG1, [])), _).
+
+key_manager_factory_init(REF, ARG0) :- 
+	object_call(REF, init, '.'(ARG0, []), _).
+
 key_manager_factory_get_instance(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, getInstance, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-key_manager_factory_get_instance(REF, ARG0, OUT) :- 
-	object_call(REF, getInstance, '.'(ARG0, []), OUT).
-
 key_manager_factory_get_instance(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, getInstance, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-key_manager_factory_init(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, init, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-key_manager_factory_init(REF, ARG0, OUT) :- 
-	object_call(REF, init, '.'(ARG0, []), OUT).
 
 key_manager_factory_get_provider(REF, OUT) :- 
 	object_call(REF, getProvider, [], OUT).
 
-key_manager_factory_get_algorithm(REF, OUT) :- 
-	object_call(REF, getAlgorithm, [], OUT).
-
-key_manager_factory_get_default_algorithm(REF, OUT) :- 
-	object_call(REF, getDefaultAlgorithm, [], OUT).
-
 key_manager_factory_get_key_managers(REF, OUT) :- 
 	object_call(REF, getKeyManagers, [], OUT).
 
-key_manager_factory_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-key_manager_factory_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-key_manager_factory_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
 key_manager_factory_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-key_manager_factory_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
 
 key_manager_factory_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -70,9 +64,15 @@ key_manager_factory_hash_code(REF, OUT) :-
 key_manager_factory_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-key_manager_factory_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+key_manager_factory_get_default_algorithm(REF, OUT) :- 
+	object_call(REF, getDefaultAlgorithm, [], OUT).
 
-key_manager_factory_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+key_manager_factory_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+key_manager_factory_get_algorithm(REF, OUT) :- 
+	object_call(REF, getAlgorithm, [], OUT).
+
+key_manager_factory_get_instance(REF, ARG0, OUT) :- 
+	object_call(REF, getInstance, '.'(ARG0, []), OUT).
 

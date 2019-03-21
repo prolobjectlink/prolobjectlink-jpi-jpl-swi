@@ -22,48 +22,48 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-text_output_callback_information(OUT) :- 
+text_output_callback_INFORMATION(OUT) :- 
 	object_get('javax.security.auth.callback.TextOutputCallback', information, OUT).
 
-text_output_callback_warning(OUT) :- 
+text_output_callback_WARNING(OUT) :- 
 	object_get('javax.security.auth.callback.TextOutputCallback', warning, OUT).
 
-text_output_callback_error(OUT) :- 
+text_output_callback_ERROR(OUT) :- 
 	object_get('javax.security.auth.callback.TextOutputCallback', error, OUT).
 
 text_output_callback(ARG0, ARG1, OUT) :- 
 	object_new('javax.security.auth.callback.TextOutputCallback', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-text_output_callback_get_message(REF, OUT) :- 
-	object_call(REF, getMessage, [], OUT).
-
-text_output_callback_get_message_type(REF, OUT) :- 
-	object_call(REF, getMessageType, [], OUT).
-
-text_output_callback_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-text_output_callback_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-text_output_callback_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-text_output_callback_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-text_output_callback_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+text_output_callback_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 text_output_callback_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+text_output_callback_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+text_output_callback_get_message_type(REF, OUT) :- 
+	object_call(REF, getMessageType, [], OUT).
+
 text_output_callback_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-text_output_callback_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+text_output_callback_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-text_output_callback_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+text_output_callback_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+text_output_callback_get_message(REF, OUT) :- 
+	object_call(REF, getMessage, [], OUT).
+
+text_output_callback_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+text_output_callback_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+text_output_callback_notify(REF) :- 
+	object_call(REF, notify, [], _).
 

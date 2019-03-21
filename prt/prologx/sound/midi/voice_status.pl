@@ -25,30 +25,30 @@
 voice_status(OUT) :- 
 	object_new('javax.sound.midi.VoiceStatus', [], OUT).
 
-voice_status_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-voice_status_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-voice_status_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+voice_status_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 voice_status_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-voice_status_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-voice_status_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+voice_status_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 voice_status_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-voice_status_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+voice_status_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-voice_status_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+voice_status_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+voice_status_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+voice_status_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+voice_status_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

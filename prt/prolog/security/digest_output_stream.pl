@@ -25,54 +25,54 @@
 digest_output_stream(ARG0, ARG1, OUT) :- 
 	object_new('java.security.DigestOutputStream', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-digest_output_stream_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-digest_output_stream_write(REF, ARG0, OUT) :- 
-	object_call(REF, write, '.'(ARG0, []), OUT).
-
-digest_output_stream_write(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, write, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-digest_output_stream_get_message_digest(REF, OUT) :- 
-	object_call(REF, getMessageDigest, [], OUT).
-
-digest_output_stream_on(REF, ARG0, OUT) :- 
-	object_call(REF, on, '.'(ARG0, []), OUT).
-
-digest_output_stream_set_message_digest(REF, ARG0, OUT) :- 
-	object_call(REF, setMessageDigest, '.'(ARG0, []), OUT).
-
-digest_output_stream_write(REF, ARG0, OUT) :- 
-	object_call(REF, write, '.'(ARG0, []), OUT).
-
-digest_output_stream_close(REF, OUT) :- 
-	object_call(REF, close, [], OUT).
-
-digest_output_stream_flush(REF, OUT) :- 
-	object_call(REF, flush, [], OUT).
-
-digest_output_stream_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-digest_output_stream_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-digest_output_stream_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+digest_output_stream_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 digest_output_stream_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
+digest_output_stream_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+digest_output_stream_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+digest_output_stream_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+digest_output_stream_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+digest_output_stream_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+digest_output_stream_close(REF) :- 
+	object_call(REF, close, [], _).
+
+digest_output_stream_write(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, write, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+digest_output_stream_write(REF, ARG0) :- 
+	object_call(REF, write, '.'(ARG0, []), _).
+
+digest_output_stream_write(REF, ARG0) :- 
+	object_call(REF, write, '.'(ARG0, []), _).
+
+digest_output_stream_get_message_digest(REF, OUT) :- 
+	object_call(REF, getMessageDigest, [], OUT).
+
 digest_output_stream_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+digest_output_stream_flush(REF) :- 
+	object_call(REF, flush, [], _).
+
+digest_output_stream_on(REF, ARG0) :- 
+	object_call(REF, on, '.'(ARG0, []), _).
+
+digest_output_stream_set_message_digest(REF, ARG0) :- 
+	object_call(REF, setMessageDigest, '.'(ARG0, []), _).
+
 digest_output_stream_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-digest_output_stream_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-digest_output_stream_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

@@ -25,48 +25,48 @@
 authorize_callback(ARG0, ARG1, OUT) :- 
 	object_new('javax.security.sasl.AuthorizeCallback', '.'(ARG0, '.'(ARG1, [])), OUT).
 
+authorize_callback_set_authorized_i_d(REF, ARG0) :- 
+	object_call(REF, setAuthorizedID, '.'(ARG0, []), _).
+
+authorize_callback_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+authorize_callback_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+authorize_callback_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+authorize_callback_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+authorize_callback_set_authorized(REF, ARG0) :- 
+	object_call(REF, setAuthorized, '.'(ARG0, []), _).
+
+authorize_callback_get_authorized_i_d(REF, OUT) :- 
+	object_call(REF, getAuthorizedID, [], OUT).
+
+authorize_callback_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+authorize_callback_get_authorization_i_d(REF, OUT) :- 
+	object_call(REF, getAuthorizationID, [], OUT).
+
+authorize_callback_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+authorize_callback_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
+
+authorize_callback_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
 authorize_callback_is_authorized(REF, OUT) :- 
 	object_call(REF, isAuthorized, [], OUT).
 
 authorize_callback_get_authentication_i_d(REF, OUT) :- 
 	object_call(REF, getAuthenticationID, [], OUT).
 
-authorize_callback_get_authorization_i_d(REF, OUT) :- 
-	object_call(REF, getAuthorizationID, [], OUT).
-
-authorize_callback_get_authorized_i_d(REF, OUT) :- 
-	object_call(REF, getAuthorizedID, [], OUT).
-
-authorize_callback_set_authorized(REF, ARG0, OUT) :- 
-	object_call(REF, setAuthorized, '.'(ARG0, []), OUT).
-
-authorize_callback_set_authorized_i_d(REF, ARG0, OUT) :- 
-	object_call(REF, setAuthorizedID, '.'(ARG0, []), OUT).
-
-authorize_callback_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-authorize_callback_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-authorize_callback_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-authorize_callback_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-authorize_callback_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-authorize_callback_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-authorize_callback_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-authorize_callback_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-authorize_callback_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+authorize_callback_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

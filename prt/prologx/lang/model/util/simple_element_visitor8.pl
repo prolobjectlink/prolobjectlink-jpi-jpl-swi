@@ -22,17 +22,8 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-simple_element_visitor8_visit_variable(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, visitVariable, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-simple_element_visitor8_visit_type(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, visitType, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-simple_element_visitor8_visit_executable(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, visitExecutable, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-simple_element_visitor8_visit_package(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, visitPackage, '.'(ARG0, '.'(ARG1, [])), OUT).
+simple_element_visitor8_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 simple_element_visitor8_visit_type_parameter(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, visitTypeParameter, '.'(ARG0, '.'(ARG1, [])), OUT).
@@ -43,33 +34,42 @@ simple_element_visitor8_visit(REF, ARG0, OUT) :-
 simple_element_visitor8_visit(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, visit, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-simple_element_visitor8_visit_unknown(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, visitUnknown, '.'(ARG0, '.'(ARG1, [])), OUT).
+simple_element_visitor8_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
-simple_element_visitor8_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-simple_element_visitor8_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-simple_element_visitor8_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-simple_element_visitor8_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-simple_element_visitor8_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+simple_element_visitor8_visit_variable(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, visitVariable, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 simple_element_visitor8_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-simple_element_visitor8_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
+simple_element_visitor8_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-simple_element_visitor8_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+simple_element_visitor8_visit_executable(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, visitExecutable, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-simple_element_visitor8_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+simple_element_visitor8_visit_package(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, visitPackage, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+simple_element_visitor8_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+simple_element_visitor8_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+simple_element_visitor8_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+simple_element_visitor8_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+simple_element_visitor8_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+simple_element_visitor8_visit_type(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, visitType, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+simple_element_visitor8_visit_unknown(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, visitUnknown, '.'(ARG0, '.'(ARG1, [])), OUT).
 

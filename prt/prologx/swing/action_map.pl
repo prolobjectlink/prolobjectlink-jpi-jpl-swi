@@ -25,57 +25,57 @@
 action_map(OUT) :- 
 	object_new('javax.swing.ActionMap', [], OUT).
 
-action_map_remove(REF, ARG0, OUT) :- 
-	object_call(REF, remove, '.'(ARG0, []), OUT).
+action_map_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 action_map_get(REF, ARG0, OUT) :- 
 	object_call(REF, get, '.'(ARG0, []), OUT).
 
-action_map_put(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, put, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-action_map_clear(REF, OUT) :- 
-	object_call(REF, clear, [], OUT).
-
-action_map_size(REF, OUT) :- 
-	object_call(REF, size, [], OUT).
-
-action_map_get_parent(REF, OUT) :- 
-	object_call(REF, getParent, [], OUT).
-
-action_map_keys(REF, OUT) :- 
-	object_call(REF, keys, [], OUT).
-
-action_map_set_parent(REF, ARG0, OUT) :- 
-	object_call(REF, setParent, '.'(ARG0, []), OUT).
-
-action_map_all_keys(REF, OUT) :- 
-	object_call(REF, allKeys, [], OUT).
-
-action_map_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-action_map_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-action_map_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
 action_map_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-action_map_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+action_map_set_parent(REF, ARG0) :- 
+	object_call(REF, setParent, '.'(ARG0, []), _).
 
-action_map_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+action_map_remove(REF, ARG0) :- 
+	object_call(REF, remove, '.'(ARG0, []), _).
+
+action_map_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 action_map_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-action_map_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+action_map_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-action_map_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+action_map_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+action_map_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+action_map_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+action_map_put(REF, ARG0, ARG1) :- 
+	object_call(REF, put, '.'(ARG0, '.'(ARG1, [])), _).
+
+action_map_keys(REF, OUT) :- 
+	object_call(REF, keys, [], OUT).
+
+action_map_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+action_map_clear(REF) :- 
+	object_call(REF, clear, [], _).
+
+action_map_get_parent(REF, OUT) :- 
+	object_call(REF, getParent, [], OUT).
+
+action_map_all_keys(REF, OUT) :- 
+	object_call(REF, allKeys, [], OUT).
+
+action_map_size(REF, OUT) :- 
+	object_call(REF, size, [], OUT).
 

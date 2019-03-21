@@ -22,54 +22,54 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-mime_type_parameter_list(OUT) :- 
-	object_new('javax.activation.MimeTypeParameterList', [], OUT).
-
 mime_type_parameter_list(ARG0, OUT) :- 
 	object_new('javax.activation.MimeTypeParameterList', '.'(ARG0, []), OUT).
 
-mime_type_parameter_list_remove(REF, ARG0, OUT) :- 
-	object_call(REF, remove, '.'(ARG0, []), OUT).
+mime_type_parameter_list(OUT) :- 
+	object_new('javax.activation.MimeTypeParameterList', [], OUT).
 
-mime_type_parameter_list_get(REF, ARG0, OUT) :- 
-	object_call(REF, get, '.'(ARG0, []), OUT).
-
-mime_type_parameter_list_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+mime_type_parameter_list_remove(REF, ARG0) :- 
+	object_call(REF, remove, '.'(ARG0, []), _).
 
 mime_type_parameter_list_is_empty(REF, OUT) :- 
 	object_call(REF, isEmpty, [], OUT).
 
+mime_type_parameter_list_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
 mime_type_parameter_list_size(REF, OUT) :- 
 	object_call(REF, size, [], OUT).
 
-mime_type_parameter_list_set(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, set, '.'(ARG0, '.'(ARG1, [])), OUT).
+mime_type_parameter_list_set(REF, ARG0, ARG1) :- 
+	object_call(REF, set, '.'(ARG0, '.'(ARG1, [])), _).
 
-mime_type_parameter_list_get_names(REF, OUT) :- 
-	object_call(REF, getNames, [], OUT).
+mime_type_parameter_list_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-mime_type_parameter_list_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+mime_type_parameter_list_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-mime_type_parameter_list_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-mime_type_parameter_list_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-mime_type_parameter_list_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-mime_type_parameter_list_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+mime_type_parameter_list_get(REF, ARG0, OUT) :- 
+	object_call(REF, get, '.'(ARG0, []), OUT).
 
 mime_type_parameter_list_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-mime_type_parameter_list_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+mime_type_parameter_list_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-mime_type_parameter_list_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+mime_type_parameter_list_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+mime_type_parameter_list_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+mime_type_parameter_list_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+mime_type_parameter_list_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+mime_type_parameter_list_get_names(REF, OUT) :- 
+	object_call(REF, getNames, [], OUT).
 

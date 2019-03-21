@@ -22,14 +22,8 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-basic_attribute_serialversionuid(OUT) :- 
+basic_attribute_SERIALVERSIONUID(OUT) :- 
 	object_get('javax.naming.directory.BasicAttribute', serialversionuid, OUT).
-
-basic_attribute(ARG0, ARG1, OUT) :- 
-	object_new('javax.naming.directory.BasicAttribute', '.'(ARG0, '.'(ARG1, [])), OUT).
-
-basic_attribute(ARG0, OUT) :- 
-	object_new('javax.naming.directory.BasicAttribute', '.'(ARG0, []), OUT).
 
 basic_attribute(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('javax.naming.directory.BasicAttribute', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
@@ -37,78 +31,84 @@ basic_attribute(ARG0, ARG1, ARG2, OUT) :-
 basic_attribute(ARG0, ARG1, OUT) :- 
 	object_new('javax.naming.directory.BasicAttribute', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-basic_attribute_add(REF, ARG0, OUT) :- 
-	object_call(REF, add, '.'(ARG0, []), OUT).
+basic_attribute(ARG0, ARG1, OUT) :- 
+	object_new('javax.naming.directory.BasicAttribute', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-basic_attribute_add(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, add, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-basic_attribute_remove(REF, ARG0, OUT) :- 
-	object_call(REF, remove, '.'(ARG0, []), OUT).
-
-basic_attribute_remove(REF, ARG0, OUT) :- 
-	object_call(REF, remove, '.'(ARG0, []), OUT).
-
-basic_attribute_get(REF, OUT) :- 
-	object_call(REF, get, [], OUT).
-
-basic_attribute_get(REF, ARG0, OUT) :- 
-	object_call(REF, get, '.'(ARG0, []), OUT).
-
-basic_attribute_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-basic_attribute_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-basic_attribute_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-basic_attribute_clone(REF, OUT) :- 
-	object_call(REF, clone, [], OUT).
-
-basic_attribute_clear(REF, OUT) :- 
-	object_call(REF, clear, [], OUT).
+basic_attribute(ARG0, OUT) :- 
+	object_new('javax.naming.directory.BasicAttribute', '.'(ARG0, []), OUT).
 
 basic_attribute_contains(REF, ARG0, OUT) :- 
 	object_call(REF, contains, '.'(ARG0, []), OUT).
 
-basic_attribute_size(REF, OUT) :- 
-	object_call(REF, size, [], OUT).
+basic_attribute_clone(REF, OUT) :- 
+	object_call(REF, clone, [], OUT).
 
-basic_attribute_set(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, set, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-basic_attribute_get_i_d(REF, OUT) :- 
-	object_call(REF, getID, [], OUT).
-
-basic_attribute_get_all(REF, OUT) :- 
-	object_call(REF, getAll, [], OUT).
-
-basic_attribute_is_ordered(REF, OUT) :- 
-	object_call(REF, isOrdered, [], OUT).
-
-basic_attribute_get_attribute_definition(REF, OUT) :- 
-	object_call(REF, getAttributeDefinition, [], OUT).
+basic_attribute_clear(REF) :- 
+	object_call(REF, clear, [], _).
 
 basic_attribute_get_attribute_syntax_definition(REF, OUT) :- 
 	object_call(REF, getAttributeSyntaxDefinition, [], OUT).
 
-basic_attribute_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+basic_attribute_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
-basic_attribute_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+basic_attribute_remove(REF, ARG0, OUT) :- 
+	object_call(REF, remove, '.'(ARG0, []), OUT).
 
-basic_attribute_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+basic_attribute_remove(REF, ARG0, OUT) :- 
+	object_call(REF, remove, '.'(ARG0, []), OUT).
+
+basic_attribute_size(REF, OUT) :- 
+	object_call(REF, size, [], OUT).
+
+basic_attribute_add(REF, ARG0, OUT) :- 
+	object_call(REF, add, '.'(ARG0, []), OUT).
+
+basic_attribute_set(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, set, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 basic_attribute_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-basic_attribute_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+basic_attribute_add(REF, ARG0, ARG1) :- 
+	object_call(REF, add, '.'(ARG0, '.'(ARG1, [])), _).
 
-basic_attribute_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+basic_attribute_get_attribute_definition(REF, OUT) :- 
+	object_call(REF, getAttributeDefinition, [], OUT).
+
+basic_attribute_get(REF, ARG0, OUT) :- 
+	object_call(REF, get, '.'(ARG0, []), OUT).
+
+basic_attribute_get_i_d(REF, OUT) :- 
+	object_call(REF, getID, [], OUT).
+
+basic_attribute_get(REF, OUT) :- 
+	object_call(REF, get, [], OUT).
+
+basic_attribute_is_ordered(REF, OUT) :- 
+	object_call(REF, isOrdered, [], OUT).
+
+basic_attribute_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+basic_attribute_get_all(REF, OUT) :- 
+	object_call(REF, getAll, [], OUT).
+
+basic_attribute_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+basic_attribute_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+basic_attribute_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+basic_attribute_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+basic_attribute_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+basic_attribute_wait(REF) :- 
+	object_call(REF, wait, [], _).
 

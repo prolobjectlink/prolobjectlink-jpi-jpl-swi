@@ -22,39 +22,39 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-byte_order_big_endian(OUT) :- 
+byte_order_BIG_ENDIAN(OUT) :- 
 	object_get('java.nio.ByteOrder', big_endian, OUT).
 
-byte_order_little_endian(OUT) :- 
+byte_order_LITTLE_ENDIAN(OUT) :- 
 	object_get('java.nio.ByteOrder', little_endian, OUT).
 
-byte_order_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-byte_order_native_order(REF, OUT) :- 
-	object_call(REF, nativeOrder, [], OUT).
-
-byte_order_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-byte_order_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-byte_order_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-byte_order_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+byte_order_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 byte_order_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+byte_order_native_order(REF, OUT) :- 
+	object_call(REF, nativeOrder, [], OUT).
+
+byte_order_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+byte_order_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+byte_order_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+byte_order_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+byte_order_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
 byte_order_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-byte_order_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-byte_order_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+byte_order_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 

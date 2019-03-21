@@ -22,44 +22,32 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-trust_anchor(ARG0, ARG1, ARG2, OUT) :- 
-	object_new('java.security.cert.TrustAnchor', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-trust_anchor(ARG0, ARG1, ARG2, OUT) :- 
-	object_new('java.security.cert.TrustAnchor', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
 trust_anchor(ARG0, ARG1, OUT) :- 
 	object_new('java.security.cert.TrustAnchor', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-trust_anchor_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+trust_anchor(ARG0, ARG1, ARG2, OUT) :- 
+	object_new('java.security.cert.TrustAnchor', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-trust_anchor_get_c_a(REF, OUT) :- 
-	object_call(REF, getCA, [], OUT).
+trust_anchor(ARG0, ARG1, ARG2, OUT) :- 
+	object_new('java.security.cert.TrustAnchor', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-trust_anchor_get_c_a_name(REF, OUT) :- 
-	object_call(REF, getCAName, [], OUT).
+trust_anchor_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+trust_anchor_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 trust_anchor_get_c_a_public_key(REF, OUT) :- 
 	object_call(REF, getCAPublicKey, [], OUT).
 
-trust_anchor_get_name_constraints(REF, OUT) :- 
-	object_call(REF, getNameConstraints, [], OUT).
+trust_anchor_get_c_a(REF, OUT) :- 
+	object_call(REF, getCA, [], OUT).
 
-trust_anchor_get_trusted_cert(REF, OUT) :- 
-	object_call(REF, getTrustedCert, [], OUT).
+trust_anchor_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-trust_anchor_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-trust_anchor_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-trust_anchor_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-trust_anchor_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+trust_anchor_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 trust_anchor_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -67,9 +55,21 @@ trust_anchor_hash_code(REF, OUT) :-
 trust_anchor_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-trust_anchor_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+trust_anchor_get_name_constraints(REF, OUT) :- 
+	object_call(REF, getNameConstraints, [], OUT).
 
-trust_anchor_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+trust_anchor_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+trust_anchor_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+trust_anchor_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+trust_anchor_get_c_a_name(REF, OUT) :- 
+	object_call(REF, getCAName, [], OUT).
+
+trust_anchor_get_trusted_cert(REF, OUT) :- 
+	object_call(REF, getTrustedCert, [], OUT).
 

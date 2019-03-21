@@ -28,42 +28,42 @@ stack_trace_element(ARG0, ARG1, ARG2, ARG3, OUT) :-
 stack_trace_element_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-stack_trace_element_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+stack_trace_element_is_native_method(REF, OUT) :- 
+	object_call(REF, isNativeMethod, [], OUT).
 
-stack_trace_element_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+stack_trace_element_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+stack_trace_element_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+stack_trace_element_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+stack_trace_element_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 stack_trace_element_get_class_name(REF, OUT) :- 
 	object_call(REF, getClassName, [], OUT).
 
-stack_trace_element_get_file_name(REF, OUT) :- 
-	object_call(REF, getFileName, [], OUT).
-
 stack_trace_element_get_line_number(REF, OUT) :- 
 	object_call(REF, getLineNumber, [], OUT).
-
-stack_trace_element_get_method_name(REF, OUT) :- 
-	object_call(REF, getMethodName, [], OUT).
-
-stack_trace_element_is_native_method(REF, OUT) :- 
-	object_call(REF, isNativeMethod, [], OUT).
-
-stack_trace_element_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-stack_trace_element_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-stack_trace_element_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
 
 stack_trace_element_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-stack_trace_element_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+stack_trace_element_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
-stack_trace_element_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+stack_trace_element_get_method_name(REF, OUT) :- 
+	object_call(REF, getMethodName, [], OUT).
+
+stack_trace_element_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+stack_trace_element_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+stack_trace_element_get_file_name(REF, OUT) :- 
+	object_call(REF, getFileName, [], OUT).
 

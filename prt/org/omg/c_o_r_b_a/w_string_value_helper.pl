@@ -25,57 +25,57 @@
 w_string_value_helper(OUT) :- 
 	object_new('org.omg.CORBA.WStringValueHelper', [], OUT).
 
-w_string_value_helper_type(REF, OUT) :- 
-	object_call(REF, type, [], OUT).
-
-w_string_value_helper_write(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, write, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-w_string_value_helper_read(REF, ARG0, OUT) :- 
-	object_call(REF, read, '.'(ARG0, []), OUT).
-
-w_string_value_helper_insert(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, insert, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-w_string_value_helper_id(REF, OUT) :- 
-	object_call(REF, id, [], OUT).
-
-w_string_value_helper_extract(REF, ARG0, OUT) :- 
-	object_call(REF, extract, '.'(ARG0, []), OUT).
-
-w_string_value_helper_get_id(REF, OUT) :- 
-	object_call(REF, get_id, [], OUT).
-
-w_string_value_helper_read_value(REF, ARG0, OUT) :- 
-	object_call(REF, read_value, '.'(ARG0, []), OUT).
-
-w_string_value_helper_write_value(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, write_value, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-w_string_value_helper_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-w_string_value_helper_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-w_string_value_helper_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-w_string_value_helper_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-w_string_value_helper_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+w_string_value_helper_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
 w_string_value_helper_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-w_string_value_helper_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
+w_string_value_helper_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-w_string_value_helper_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+w_string_value_helper_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-w_string_value_helper_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+w_string_value_helper_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+w_string_value_helper_type(REF, OUT) :- 
+	object_call(REF, type, [], OUT).
+
+w_string_value_helper_write_value(REF, ARG0, ARG1) :- 
+	object_call(REF, write_value, '.'(ARG0, '.'(ARG1, [])), _).
+
+w_string_value_helper_write(REF, ARG0, ARG1) :- 
+	object_call(REF, write, '.'(ARG0, '.'(ARG1, [])), _).
+
+w_string_value_helper_get_id(REF, OUT) :- 
+	object_call(REF, get_id, [], OUT).
+
+w_string_value_helper_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+w_string_value_helper_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+w_string_value_helper_read(REF, ARG0, OUT) :- 
+	object_call(REF, read, '.'(ARG0, []), OUT).
+
+w_string_value_helper_insert(REF, ARG0, ARG1) :- 
+	object_call(REF, insert, '.'(ARG0, '.'(ARG1, [])), _).
+
+w_string_value_helper_extract(REF, ARG0, OUT) :- 
+	object_call(REF, extract, '.'(ARG0, []), OUT).
+
+w_string_value_helper_id(REF, OUT) :- 
+	object_call(REF, id, [], OUT).
+
+w_string_value_helper_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+w_string_value_helper_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+w_string_value_helper_read_value(REF, ARG0, OUT) :- 
+	object_call(REF, read_value, '.'(ARG0, []), OUT).
 

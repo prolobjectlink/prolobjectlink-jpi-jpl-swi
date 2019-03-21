@@ -28,45 +28,45 @@ a_w_t_permission(ARG0, OUT) :-
 a_w_t_permission(ARG0, ARG1, OUT) :- 
 	object_new('java.awt.AWTPermission', '.'(ARG0, '.'(ARG1, [])), OUT).
 
+a_w_t_permission_check_guard(REF, ARG0) :- 
+	object_call(REF, checkGuard, '.'(ARG0, []), _).
+
 a_w_t_permission_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-a_w_t_permission_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
 
 a_w_t_permission_get_actions(REF, OUT) :- 
 	object_call(REF, getActions, [], OUT).
 
+a_w_t_permission_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
 a_w_t_permission_implies(REF, ARG0, OUT) :- 
 	object_call(REF, implies, '.'(ARG0, []), OUT).
-
-a_w_t_permission_new_permission_collection(REF, OUT) :- 
-	object_call(REF, newPermissionCollection, [], OUT).
 
 a_w_t_permission_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
+a_w_t_permission_new_permission_collection(REF, OUT) :- 
+	object_call(REF, newPermissionCollection, [], OUT).
+
+a_w_t_permission_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
 a_w_t_permission_get_name(REF, OUT) :- 
 	object_call(REF, getName, [], OUT).
 
-a_w_t_permission_check_guard(REF, ARG0, OUT) :- 
-	object_call(REF, checkGuard, '.'(ARG0, []), OUT).
+a_w_t_permission_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
-a_w_t_permission_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-a_w_t_permission_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-a_w_t_permission_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+a_w_t_permission_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 a_w_t_permission_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-a_w_t_permission_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+a_w_t_permission_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-a_w_t_permission_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+a_w_t_permission_wait(REF) :- 
+	object_call(REF, wait, [], _).
 

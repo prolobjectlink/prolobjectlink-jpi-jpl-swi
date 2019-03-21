@@ -22,60 +22,60 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-manifest(ARG0, OUT) :- 
-	object_new('java.util.jar.Manifest', '.'(ARG0, []), OUT).
-
-manifest(ARG0, OUT) :- 
-	object_new('java.util.jar.Manifest', '.'(ARG0, []), OUT).
-
 manifest(OUT) :- 
 	object_new('java.util.jar.Manifest', [], OUT).
 
-manifest_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+manifest(ARG0, OUT) :- 
+	object_new('java.util.jar.Manifest', '.'(ARG0, []), OUT).
+
+manifest(ARG0, OUT) :- 
+	object_new('java.util.jar.Manifest', '.'(ARG0, []), OUT).
+
+manifest_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 manifest_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-manifest_clone(REF, OUT) :- 
-	object_call(REF, clone, [], OUT).
-
-manifest_clear(REF, OUT) :- 
-	object_call(REF, clear, [], OUT).
-
-manifest_write(REF, ARG0, OUT) :- 
-	object_call(REF, write, '.'(ARG0, []), OUT).
-
-manifest_read(REF, ARG0, OUT) :- 
-	object_call(REF, read, '.'(ARG0, []), OUT).
-
 manifest_get_attributes(REF, ARG0, OUT) :- 
 	object_call(REF, getAttributes, '.'(ARG0, []), OUT).
 
-manifest_get_main_attributes(REF, OUT) :- 
-	object_call(REF, getMainAttributes, [], OUT).
+manifest_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+manifest_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 manifest_get_entries(REF, OUT) :- 
 	object_call(REF, getEntries, [], OUT).
 
-manifest_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-manifest_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-manifest_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
 manifest_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
+manifest_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+manifest_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+manifest_get_main_attributes(REF, OUT) :- 
+	object_call(REF, getMainAttributes, [], OUT).
+
+manifest_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+manifest_clone(REF, OUT) :- 
+	object_call(REF, clone, [], OUT).
+
+manifest_clear(REF) :- 
+	object_call(REF, clear, [], _).
+
+manifest_write(REF, ARG0) :- 
+	object_call(REF, write, '.'(ARG0, []), _).
+
+manifest_read(REF, ARG0) :- 
+	object_call(REF, read, '.'(ARG0, []), _).
+
 manifest_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-manifest_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-manifest_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

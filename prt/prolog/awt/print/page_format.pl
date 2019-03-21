@@ -22,17 +22,38 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-page_format_landscape(OUT) :- 
+page_format_LANDSCAPE(OUT) :- 
 	object_get('java.awt.print.PageFormat', landscape, OUT).
 
-page_format_portrait(OUT) :- 
+page_format_PORTRAIT(OUT) :- 
 	object_get('java.awt.print.PageFormat', portrait, OUT).
 
-page_format_reverse_landscape(OUT) :- 
+page_format_REVERSE_LANDSCAPE(OUT) :- 
 	object_get('java.awt.print.PageFormat', reverse_landscape, OUT).
 
 page_format(OUT) :- 
 	object_new('java.awt.print.PageFormat', [], OUT).
+
+page_format_get_orientation(REF, OUT) :- 
+	object_call(REF, getOrientation, [], OUT).
+
+page_format_set_paper(REF, ARG0) :- 
+	object_call(REF, setPaper, '.'(ARG0, []), _).
+
+page_format_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+page_format_get_height(REF, OUT) :- 
+	object_call(REF, getHeight, [], OUT).
+
+page_format_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+page_format_get_imageable_width(REF, OUT) :- 
+	object_call(REF, getImageableWidth, [], OUT).
+
+page_format_get_paper(REF, OUT) :- 
+	object_call(REF, getPaper, [], OUT).
 
 page_format_clone(REF, OUT) :- 
 	object_call(REF, clone, [], OUT).
@@ -40,60 +61,39 @@ page_format_clone(REF, OUT) :-
 page_format_get_imageable_height(REF, OUT) :- 
 	object_call(REF, getImageableHeight, [], OUT).
 
-page_format_get_imageable_width(REF, OUT) :- 
-	object_call(REF, getImageableWidth, [], OUT).
+page_format_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
-page_format_get_imageable_x(REF, OUT) :- 
-	object_call(REF, getImageableX, [], OUT).
-
-page_format_get_imageable_y(REF, OUT) :- 
-	object_call(REF, getImageableY, [], OUT).
-
-page_format_get_paper(REF, OUT) :- 
-	object_call(REF, getPaper, [], OUT).
-
-page_format_set_paper(REF, ARG0, OUT) :- 
-	object_call(REF, setPaper, '.'(ARG0, []), OUT).
-
-page_format_get_orientation(REF, OUT) :- 
-	object_call(REF, getOrientation, [], OUT).
-
-page_format_get_height(REF, OUT) :- 
-	object_call(REF, getHeight, [], OUT).
-
-page_format_get_matrix(REF, OUT) :- 
-	object_call(REF, getMatrix, [], OUT).
+page_format_set_orientation(REF, ARG0) :- 
+	object_call(REF, setOrientation, '.'(ARG0, []), _).
 
 page_format_get_width(REF, OUT) :- 
 	object_call(REF, getWidth, [], OUT).
 
-page_format_set_orientation(REF, ARG0, OUT) :- 
-	object_call(REF, setOrientation, '.'(ARG0, []), OUT).
+page_format_get_imageable_y(REF, OUT) :- 
+	object_call(REF, getImageableY, [], OUT).
 
-page_format_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+page_format_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-page_format_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+page_format_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-page_format_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+page_format_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+page_format_get_imageable_x(REF, OUT) :- 
+	object_call(REF, getImageableX, [], OUT).
+
+page_format_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 page_format_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-page_format_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
 page_format_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-page_format_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-page_format_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-page_format_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+page_format_get_matrix(REF, OUT) :- 
+	object_call(REF, getMatrix, [], OUT).
 

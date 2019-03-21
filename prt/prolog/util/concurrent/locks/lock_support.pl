@@ -22,44 +22,29 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-lock_support_park(REF, OUT) :- 
-	object_call(REF, park, [], OUT).
-
-lock_support_park(REF, ARG0, OUT) :- 
-	object_call(REF, park, '.'(ARG0, []), OUT).
-
-lock_support_unpark(REF, ARG0, OUT) :- 
-	object_call(REF, unpark, '.'(ARG0, []), OUT).
-
-lock_support_park_nanos(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, parkNanos, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-lock_support_park_nanos(REF, ARG0, OUT) :- 
-	object_call(REF, parkNanos, '.'(ARG0, []), OUT).
-
 lock_support_get_blocker(REF, ARG0, OUT) :- 
 	object_call(REF, getBlocker, '.'(ARG0, []), OUT).
 
-lock_support_park_until(REF, ARG0, OUT) :- 
-	object_call(REF, parkUntil, '.'(ARG0, []), OUT).
+lock_support_park_until(REF, ARG0) :- 
+	object_call(REF, parkUntil, '.'(ARG0, []), _).
 
-lock_support_park_until(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, parkUntil, '.'(ARG0, '.'(ARG1, [])), OUT).
+lock_support_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-lock_support_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+lock_support_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-lock_support_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+lock_support_park(REF, ARG0) :- 
+	object_call(REF, park, '.'(ARG0, []), _).
 
-lock_support_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+lock_support_park_nanos(REF, ARG0, ARG1) :- 
+	object_call(REF, parkNanos, '.'(ARG0, '.'(ARG1, [])), _).
 
 lock_support_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-lock_support_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+lock_support_park_nanos(REF, ARG0) :- 
+	object_call(REF, parkNanos, '.'(ARG0, []), _).
 
 lock_support_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -67,9 +52,24 @@ lock_support_hash_code(REF, OUT) :-
 lock_support_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-lock_support_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+lock_support_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-lock_support_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+lock_support_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+lock_support_park(REF) :- 
+	object_call(REF, park, [], _).
+
+lock_support_unpark(REF, ARG0) :- 
+	object_call(REF, unpark, '.'(ARG0, []), _).
+
+lock_support_park_until(REF, ARG0, ARG1) :- 
+	object_call(REF, parkUntil, '.'(ARG0, '.'(ARG1, [])), _).
+
+lock_support_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+lock_support_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 

@@ -22,35 +22,41 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-x_path_constants_number(OUT) :- 
+x_path_constants_NUMBER(OUT) :- 
 	object_get('javax.xml.xpath.XPathConstants', number, OUT).
 
-x_path_constants_string(OUT) :- 
+x_path_constants_STRING(OUT) :- 
 	object_get('javax.xml.xpath.XPathConstants', string, OUT).
 
-x_path_constants_boolean(OUT) :- 
+x_path_constants_BOOLEAN(OUT) :- 
 	object_get('javax.xml.xpath.XPathConstants', boolean, OUT).
 
-x_path_constants_nodeset(OUT) :- 
+x_path_constants_NODESET(OUT) :- 
 	object_get('javax.xml.xpath.XPathConstants', nodeset, OUT).
 
-x_path_constants_node(OUT) :- 
+x_path_constants_NODE(OUT) :- 
 	object_get('javax.xml.xpath.XPathConstants', node, OUT).
 
-x_path_constants_dom_object_model(OUT) :- 
+x_path_constants_DOM_OBJECT_MODEL(OUT) :- 
 	object_get('javax.xml.xpath.XPathConstants', dom_object_model, OUT).
 
-x_path_constants_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-x_path_constants_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-x_path_constants_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+x_path_constants_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 x_path_constants_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+x_path_constants_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+x_path_constants_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
+
+x_path_constants_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+x_path_constants_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 x_path_constants_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
@@ -58,12 +64,6 @@ x_path_constants_to_string(REF, OUT) :-
 x_path_constants_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-x_path_constants_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-x_path_constants_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-x_path_constants_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+x_path_constants_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

@@ -25,51 +25,51 @@
 atomic_stamped_reference(ARG0, ARG1, OUT) :- 
 	object_new('java.util.concurrent.atomic.AtomicStampedReference', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-atomic_stamped_reference_get(REF, ARG0, OUT) :- 
-	object_call(REF, get, '.'(ARG0, []), OUT).
-
-atomic_stamped_reference_set(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, set, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-atomic_stamped_reference_compare_and_set(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, compareAndSet, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
-atomic_stamped_reference_weak_compare_and_set(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, weakCompareAndSet, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
-atomic_stamped_reference_get_reference(REF, OUT) :- 
-	object_call(REF, getReference, [], OUT).
+atomic_stamped_reference_set(REF, ARG0, ARG1) :- 
+	object_call(REF, set, '.'(ARG0, '.'(ARG1, [])), _).
 
 atomic_stamped_reference_attempt_stamp(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, attemptStamp, '.'(ARG0, '.'(ARG1, [])), OUT).
 
+atomic_stamped_reference_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+atomic_stamped_reference_get(REF, ARG0, OUT) :- 
+	object_call(REF, get, '.'(ARG0, []), OUT).
+
+atomic_stamped_reference_get_reference(REF, OUT) :- 
+	object_call(REF, getReference, [], OUT).
+
+atomic_stamped_reference_compare_and_set(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_call(REF, compareAndSet, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+
 atomic_stamped_reference_get_stamp(REF, OUT) :- 
 	object_call(REF, getStamp, [], OUT).
-
-atomic_stamped_reference_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-atomic_stamped_reference_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-atomic_stamped_reference_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-atomic_stamped_reference_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-atomic_stamped_reference_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-atomic_stamped_reference_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
 
 atomic_stamped_reference_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-atomic_stamped_reference_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+atomic_stamped_reference_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-atomic_stamped_reference_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+atomic_stamped_reference_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+atomic_stamped_reference_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+atomic_stamped_reference_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+atomic_stamped_reference_weak_compare_and_set(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_call(REF, weakCompareAndSet, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+
+atomic_stamped_reference_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+atomic_stamped_reference_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+atomic_stamped_reference_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 

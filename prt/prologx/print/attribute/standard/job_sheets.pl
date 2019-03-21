@@ -22,23 +22,20 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-job_sheets_none(OUT) :- 
+job_sheets_NONE(OUT) :- 
 	object_get('javax.print.attribute.standard.JobSheets', none, OUT).
 
-job_sheets_standard(OUT) :- 
+job_sheets_STANDARD(OUT) :- 
 	object_get('javax.print.attribute.standard.JobSheets', standard, OUT).
 
-job_sheets_get_name(REF, OUT) :- 
-	object_call(REF, getName, [], OUT).
-
-job_sheets_get_category(REF, OUT) :- 
-	object_call(REF, getCategory, [], OUT).
+job_sheets_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 job_sheets_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-job_sheets_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+job_sheets_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
 job_sheets_clone(REF, OUT) :- 
 	object_call(REF, clone, [], OUT).
@@ -46,24 +43,27 @@ job_sheets_clone(REF, OUT) :-
 job_sheets_get_value(REF, OUT) :- 
 	object_call(REF, getValue, [], OUT).
 
-job_sheets_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+job_sheets_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-job_sheets_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+job_sheets_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-job_sheets_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+job_sheets_get_name(REF, OUT) :- 
+	object_call(REF, getName, [], OUT).
+
+job_sheets_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+job_sheets_get_category(REF, OUT) :- 
+	object_call(REF, getCategory, [], OUT).
+
+job_sheets_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+job_sheets_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
 job_sheets_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-job_sheets_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-job_sheets_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-job_sheets_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

@@ -28,17 +28,8 @@ delegation_permission(ARG0, OUT) :-
 delegation_permission(ARG0, ARG1, OUT) :- 
 	object_new('javax.security.auth.kerberos.DelegationPermission', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-delegation_permission_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-delegation_permission_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
 delegation_permission_implies(REF, ARG0, OUT) :- 
 	object_call(REF, implies, '.'(ARG0, []), OUT).
-
-delegation_permission_new_permission_collection(REF, OUT) :- 
-	object_call(REF, newPermissionCollection, [], OUT).
 
 delegation_permission_get_actions(REF, OUT) :- 
 	object_call(REF, getActions, [], OUT).
@@ -46,27 +37,36 @@ delegation_permission_get_actions(REF, OUT) :-
 delegation_permission_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-delegation_permission_get_name(REF, OUT) :- 
-	object_call(REF, getName, [], OUT).
-
-delegation_permission_check_guard(REF, ARG0, OUT) :- 
-	object_call(REF, checkGuard, '.'(ARG0, []), OUT).
-
-delegation_permission_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-delegation_permission_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-delegation_permission_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
 delegation_permission_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-delegation_permission_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+delegation_permission_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
-delegation_permission_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+delegation_permission_check_guard(REF, ARG0) :- 
+	object_call(REF, checkGuard, '.'(ARG0, []), _).
+
+delegation_permission_get_name(REF, OUT) :- 
+	object_call(REF, getName, [], OUT).
+
+delegation_permission_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+delegation_permission_new_permission_collection(REF, OUT) :- 
+	object_call(REF, newPermissionCollection, [], OUT).
+
+delegation_permission_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+delegation_permission_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+delegation_permission_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+delegation_permission_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+delegation_permission_notify(REF) :- 
+	object_call(REF, notify, [], _).
 

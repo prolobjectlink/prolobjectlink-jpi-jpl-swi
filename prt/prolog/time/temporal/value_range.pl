@@ -22,69 +22,69 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-value_range_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+value_range_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-value_range_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+value_range_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 value_range_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-value_range_of(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, of, '.'(ARG0, '.'(ARG1, [])), OUT).
+value_range_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-value_range_of(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, of, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
-value_range_of(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, of, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+value_range_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 value_range_get_minimum(REF, OUT) :- 
 	object_call(REF, getMinimum, [], OUT).
 
-value_range_get_largest_minimum(REF, OUT) :- 
-	object_call(REF, getLargestMinimum, [], OUT).
-
-value_range_get_smallest_maximum(REF, OUT) :- 
-	object_call(REF, getSmallestMaximum, [], OUT).
-
-value_range_is_fixed(REF, OUT) :- 
-	object_call(REF, isFixed, [], OUT).
-
 value_range_is_valid_int_value(REF, ARG0, OUT) :- 
 	object_call(REF, isValidIntValue, '.'(ARG0, []), OUT).
-
-value_range_get_maximum(REF, OUT) :- 
-	object_call(REF, getMaximum, [], OUT).
 
 value_range_check_valid_int_value(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, checkValidIntValue, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-value_range_check_valid_value(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, checkValidValue, '.'(ARG0, '.'(ARG1, [])), OUT).
+value_range_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-value_range_is_int_value(REF, OUT) :- 
-	object_call(REF, isIntValue, [], OUT).
+value_range_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
 value_range_is_valid_value(REF, ARG0, OUT) :- 
 	object_call(REF, isValidValue, '.'(ARG0, []), OUT).
 
-value_range_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+value_range_is_int_value(REF, OUT) :- 
+	object_call(REF, isIntValue, [], OUT).
 
-value_range_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+value_range_get_smallest_maximum(REF, OUT) :- 
+	object_call(REF, getSmallestMaximum, [], OUT).
 
-value_range_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+value_range_get_largest_minimum(REF, OUT) :- 
+	object_call(REF, getLargestMinimum, [], OUT).
+
+value_range_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+value_range_is_fixed(REF, OUT) :- 
+	object_call(REF, isFixed, [], OUT).
+
+value_range_of(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_call(REF, of, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+
+value_range_get_maximum(REF, OUT) :- 
+	object_call(REF, getMaximum, [], OUT).
+
+value_range_check_valid_value(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, checkValidValue, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+value_range_of(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, of, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 value_range_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-value_range_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-value_range_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+value_range_of(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, of, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 

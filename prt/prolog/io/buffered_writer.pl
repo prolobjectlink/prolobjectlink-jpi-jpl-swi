@@ -22,32 +22,23 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-buffered_writer(ARG0, OUT) :- 
-	object_new('java.io.BufferedWriter', '.'(ARG0, []), OUT).
-
 buffered_writer(ARG0, ARG1, OUT) :- 
 	object_new('java.io.BufferedWriter', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-buffered_writer_write(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, write, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+buffered_writer(ARG0, OUT) :- 
+	object_new('java.io.BufferedWriter', '.'(ARG0, []), OUT).
 
-buffered_writer_write(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, write, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+buffered_writer_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-buffered_writer_write(REF, ARG0, OUT) :- 
-	object_call(REF, write, '.'(ARG0, []), OUT).
+buffered_writer_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-buffered_writer_close(REF, OUT) :- 
-	object_call(REF, close, [], OUT).
+buffered_writer_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-buffered_writer_flush(REF, OUT) :- 
-	object_call(REF, flush, [], OUT).
-
-buffered_writer_new_line(REF, OUT) :- 
-	object_call(REF, newLine, [], OUT).
-
-buffered_writer_append(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, append, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+buffered_writer_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 buffered_writer_append(REF, ARG0, OUT) :- 
 	object_call(REF, append, '.'(ARG0, []), OUT).
@@ -58,42 +49,51 @@ buffered_writer_append(REF, ARG0, OUT) :-
 buffered_writer_append(REF, ARG0, OUT) :- 
 	object_call(REF, append, '.'(ARG0, []), OUT).
 
-buffered_writer_append(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, append, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
 buffered_writer_append(REF, ARG0, OUT) :- 
 	object_call(REF, append, '.'(ARG0, []), OUT).
-
-buffered_writer_write(REF, ARG0, OUT) :- 
-	object_call(REF, write, '.'(ARG0, []), OUT).
-
-buffered_writer_write(REF, ARG0, OUT) :- 
-	object_call(REF, write, '.'(ARG0, []), OUT).
-
-buffered_writer_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-buffered_writer_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-buffered_writer_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-buffered_writer_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-buffered_writer_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-buffered_writer_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
 
 buffered_writer_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-buffered_writer_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+buffered_writer_append(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, append, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-buffered_writer_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+buffered_writer_append(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, append, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+buffered_writer_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+buffered_writer_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+buffered_writer_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+buffered_writer_write(REF, ARG0) :- 
+	object_call(REF, write, '.'(ARG0, []), _).
+
+buffered_writer_write(REF, ARG0) :- 
+	object_call(REF, write, '.'(ARG0, []), _).
+
+buffered_writer_write(REF, ARG0) :- 
+	object_call(REF, write, '.'(ARG0, []), _).
+
+buffered_writer_write(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, write, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+buffered_writer_write(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, write, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+buffered_writer_close(REF) :- 
+	object_call(REF, close, [], _).
+
+buffered_writer_new_line(REF) :- 
+	object_call(REF, newLine, [], _).
+
+buffered_writer_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+buffered_writer_flush(REF) :- 
+	object_call(REF, flush, [], _).
 

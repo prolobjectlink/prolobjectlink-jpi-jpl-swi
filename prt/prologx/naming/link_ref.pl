@@ -28,23 +28,29 @@ link_ref(ARG0, OUT) :-
 link_ref(ARG0, OUT) :- 
 	object_new('javax.naming.LinkRef', '.'(ARG0, []), OUT).
 
+link_ref_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+link_ref_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+link_ref_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+link_ref_clone(REF, OUT) :- 
+	object_call(REF, clone, [], OUT).
+
 link_ref_get_link_name(REF, OUT) :- 
 	object_call(REF, getLinkName, [], OUT).
 
-link_ref_add(REF, ARG0, OUT) :- 
-	object_call(REF, add, '.'(ARG0, []), OUT).
+link_ref_clear(REF) :- 
+	object_call(REF, clear, [], _).
 
-link_ref_add(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, add, '.'(ARG0, '.'(ARG1, [])), OUT).
+link_ref_get_all(REF, OUT) :- 
+	object_call(REF, getAll, [], OUT).
 
-link_ref_remove(REF, ARG0, OUT) :- 
-	object_call(REF, remove, '.'(ARG0, []), OUT).
-
-link_ref_get(REF, ARG0, OUT) :- 
-	object_call(REF, get, '.'(ARG0, []), OUT).
-
-link_ref_get(REF, ARG0, OUT) :- 
-	object_call(REF, get, '.'(ARG0, []), OUT).
+link_ref_get_class_name(REF, OUT) :- 
+	object_call(REF, getClassName, [], OUT).
 
 link_ref_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
@@ -52,45 +58,39 @@ link_ref_equals(REF, ARG0, OUT) :-
 link_ref_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-link_ref_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+link_ref_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-link_ref_clone(REF, OUT) :- 
-	object_call(REF, clone, [], OUT).
-
-link_ref_clear(REF, OUT) :- 
-	object_call(REF, clear, [], OUT).
-
-link_ref_size(REF, OUT) :- 
-	object_call(REF, size, [], OUT).
-
-link_ref_get_class_name(REF, OUT) :- 
-	object_call(REF, getClassName, [], OUT).
-
-link_ref_get_all(REF, OUT) :- 
-	object_call(REF, getAll, [], OUT).
-
-link_ref_get_factory_class_location(REF, OUT) :- 
-	object_call(REF, getFactoryClassLocation, [], OUT).
+link_ref_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 link_ref_get_factory_class_name(REF, OUT) :- 
 	object_call(REF, getFactoryClassName, [], OUT).
 
-link_ref_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+link_ref_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-link_ref_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
+link_ref_remove(REF, ARG0, OUT) :- 
+	object_call(REF, remove, '.'(ARG0, []), OUT).
 
-link_ref_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+link_ref_get_factory_class_location(REF, OUT) :- 
+	object_call(REF, getFactoryClassLocation, [], OUT).
+
+link_ref_get(REF, ARG0, OUT) :- 
+	object_call(REF, get, '.'(ARG0, []), OUT).
+
+link_ref_get(REF, ARG0, OUT) :- 
+	object_call(REF, get, '.'(ARG0, []), OUT).
+
+link_ref_add(REF, ARG0, ARG1) :- 
+	object_call(REF, add, '.'(ARG0, '.'(ARG1, [])), _).
+
+link_ref_add(REF, ARG0) :- 
+	object_call(REF, add, '.'(ARG0, []), _).
+
+link_ref_size(REF, OUT) :- 
+	object_call(REF, size, [], OUT).
 
 link_ref_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-link_ref_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-link_ref_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

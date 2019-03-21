@@ -28,36 +28,36 @@ reference_queue(OUT) :-
 reference_queue_remove(REF, ARG0, OUT) :- 
 	object_call(REF, remove, '.'(ARG0, []), OUT).
 
-reference_queue_remove(REF, OUT) :- 
-	object_call(REF, remove, [], OUT).
-
-reference_queue_poll(REF, OUT) :- 
-	object_call(REF, poll, [], OUT).
-
-reference_queue_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-reference_queue_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-reference_queue_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+reference_queue_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
 reference_queue_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-reference_queue_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+reference_queue_poll(REF, OUT) :- 
+	object_call(REF, poll, [], OUT).
 
-reference_queue_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+reference_queue_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+reference_queue_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+reference_queue_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+reference_queue_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+reference_queue_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 reference_queue_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-reference_queue_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+reference_queue_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
-reference_queue_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+reference_queue_remove(REF, OUT) :- 
+	object_call(REF, remove, [], OUT).
 

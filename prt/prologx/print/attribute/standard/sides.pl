@@ -22,20 +22,44 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-sides_one_sided(OUT) :- 
+sides_ONE_SIDED(OUT) :- 
 	object_get('javax.print.attribute.standard.Sides', one_sided, OUT).
 
-sides_two_sided_long_edge(OUT) :- 
+sides_TWO_SIDED_LONG_EDGE(OUT) :- 
 	object_get('javax.print.attribute.standard.Sides', two_sided_long_edge, OUT).
 
-sides_two_sided_short_edge(OUT) :- 
+sides_TWO_SIDED_SHORT_EDGE(OUT) :- 
 	object_get('javax.print.attribute.standard.Sides', two_sided_short_edge, OUT).
 
-sides_duplex(OUT) :- 
+sides_DUPLEX(OUT) :- 
 	object_get('javax.print.attribute.standard.Sides', duplex, OUT).
 
-sides_tumble(OUT) :- 
+sides_TUMBLE(OUT) :- 
 	object_get('javax.print.attribute.standard.Sides', tumble, OUT).
+
+sides_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+sides_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+sides_clone(REF, OUT) :- 
+	object_call(REF, clone, [], OUT).
+
+sides_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+sides_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+sides_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+sides_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+sides_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
 sides_get_name(REF, OUT) :- 
 	object_call(REF, getName, [], OUT).
@@ -43,36 +67,12 @@ sides_get_name(REF, OUT) :-
 sides_get_category(REF, OUT) :- 
 	object_call(REF, getCategory, [], OUT).
 
-sides_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+sides_get_value(REF, OUT) :- 
+	object_call(REF, getValue, [], OUT).
 
 sides_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-sides_clone(REF, OUT) :- 
-	object_call(REF, clone, [], OUT).
-
-sides_get_value(REF, OUT) :- 
-	object_call(REF, getValue, [], OUT).
-
-sides_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-sides_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-sides_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-sides_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
 sides_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-sides_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-sides_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

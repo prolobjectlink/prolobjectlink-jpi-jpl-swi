@@ -22,32 +22,14 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-collection_cert_store_parameters(ARG0, OUT) :- 
-	object_new('java.security.cert.CollectionCertStoreParameters', '.'(ARG0, []), OUT).
-
 collection_cert_store_parameters(OUT) :- 
 	object_new('java.security.cert.CollectionCertStoreParameters', [], OUT).
 
-collection_cert_store_parameters_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+collection_cert_store_parameters(ARG0, OUT) :- 
+	object_new('java.security.cert.CollectionCertStoreParameters', '.'(ARG0, []), OUT).
 
-collection_cert_store_parameters_clone(REF, OUT) :- 
-	object_call(REF, clone, [], OUT).
-
-collection_cert_store_parameters_get_collection(REF, OUT) :- 
-	object_call(REF, getCollection, [], OUT).
-
-collection_cert_store_parameters_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-collection_cert_store_parameters_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-collection_cert_store_parameters_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-collection_cert_store_parameters_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+collection_cert_store_parameters_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 collection_cert_store_parameters_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -55,9 +37,27 @@ collection_cert_store_parameters_hash_code(REF, OUT) :-
 collection_cert_store_parameters_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-collection_cert_store_parameters_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+collection_cert_store_parameters_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-collection_cert_store_parameters_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+collection_cert_store_parameters_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+collection_cert_store_parameters_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+collection_cert_store_parameters_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+collection_cert_store_parameters_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+collection_cert_store_parameters_get_collection(REF, OUT) :- 
+	object_call(REF, getCollection, [], OUT).
+
+collection_cert_store_parameters_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+collection_cert_store_parameters_clone(REF, OUT) :- 
+	object_call(REF, clone, [], OUT).
 

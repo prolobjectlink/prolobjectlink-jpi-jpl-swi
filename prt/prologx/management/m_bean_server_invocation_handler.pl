@@ -28,45 +28,45 @@ m_bean_server_invocation_handler(ARG0, ARG1, OUT) :-
 m_bean_server_invocation_handler(ARG0, ARG1, ARG2, OUT) :- 
 	object_new('javax.management.MBeanServerInvocationHandler', '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
+m_bean_server_invocation_handler_get_object_name(REF, OUT) :- 
+	object_call(REF, getObjectName, [], OUT).
+
+m_bean_server_invocation_handler_is_m_x_bean(REF, OUT) :- 
+	object_call(REF, isMXBean, [], OUT).
+
+m_bean_server_invocation_handler_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+m_bean_server_invocation_handler_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+m_bean_server_invocation_handler_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+m_bean_server_invocation_handler_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+m_bean_server_invocation_handler_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+m_bean_server_invocation_handler_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+m_bean_server_invocation_handler_get_m_bean_server_connection(REF, OUT) :- 
+	object_call(REF, getMBeanServerConnection, [], OUT).
+
 m_bean_server_invocation_handler_invoke(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, invoke, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
 m_bean_server_invocation_handler_new_proxy_instance(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_call(REF, newProxyInstance, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
-m_bean_server_invocation_handler_get_object_name(REF, OUT) :- 
-	object_call(REF, getObjectName, [], OUT).
-
-m_bean_server_invocation_handler_get_m_bean_server_connection(REF, OUT) :- 
-	object_call(REF, getMBeanServerConnection, [], OUT).
-
-m_bean_server_invocation_handler_is_m_x_bean(REF, OUT) :- 
-	object_call(REF, isMXBean, [], OUT).
-
-m_bean_server_invocation_handler_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-m_bean_server_invocation_handler_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-m_bean_server_invocation_handler_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-m_bean_server_invocation_handler_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-m_bean_server_invocation_handler_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-m_bean_server_invocation_handler_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+m_bean_server_invocation_handler_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 m_bean_server_invocation_handler_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-m_bean_server_invocation_handler_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-m_bean_server_invocation_handler_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+m_bean_server_invocation_handler_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 

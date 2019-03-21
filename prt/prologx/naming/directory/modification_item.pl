@@ -25,36 +25,36 @@
 modification_item(ARG0, ARG1, OUT) :- 
 	object_new('javax.naming.directory.ModificationItem', '.'(ARG0, '.'(ARG1, [])), OUT).
 
+modification_item_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
 modification_item_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
-
-modification_item_get_attribute(REF, OUT) :- 
-	object_call(REF, getAttribute, [], OUT).
 
 modification_item_get_modification_op(REF, OUT) :- 
 	object_call(REF, getModificationOp, [], OUT).
 
-modification_item_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-modification_item_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-modification_item_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
 modification_item_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-modification_item_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+modification_item_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+modification_item_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+modification_item_get_attribute(REF, OUT) :- 
+	object_call(REF, getAttribute, [], OUT).
+
+modification_item_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 modification_item_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-modification_item_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+modification_item_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
-modification_item_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+modification_item_wait(REF) :- 
+	object_call(REF, wait, [], _).
 

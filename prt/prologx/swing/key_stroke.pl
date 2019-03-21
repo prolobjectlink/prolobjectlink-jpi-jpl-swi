@@ -22,17 +22,47 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-key_stroke_get_key_stroke(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getKeyStroke, '.'(ARG0, '.'(ARG1, [])), OUT).
+key_stroke_get_a_w_t_key_stroke(REF, ARG0, OUT) :- 
+	object_call(REF, getAWTKeyStroke, '.'(ARG0, []), OUT).
+
+key_stroke_get_a_w_t_key_stroke(REF, ARG0, OUT) :- 
+	object_call(REF, getAWTKeyStroke, '.'(ARG0, []), OUT).
+
+key_stroke_get_key_code(REF, OUT) :- 
+	object_call(REF, getKeyCode, [], OUT).
+
+key_stroke_get_key_event_type(REF, OUT) :- 
+	object_call(REF, getKeyEventType, [], OUT).
+
+key_stroke_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+key_stroke_get_modifiers(REF, OUT) :- 
+	object_call(REF, getModifiers, [], OUT).
+
+key_stroke_get_a_w_t_key_stroke(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getAWTKeyStroke, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+key_stroke_get_a_w_t_key_stroke(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getAWTKeyStroke, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+key_stroke_get_a_w_t_key_stroke(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, getAWTKeyStroke, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+key_stroke_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+key_stroke_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
 key_stroke_get_key_stroke(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, getKeyStroke, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-key_stroke_get_key_stroke(REF, ARG0, OUT) :- 
-	object_call(REF, getKeyStroke, '.'(ARG0, []), OUT).
+key_stroke_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-key_stroke_get_key_stroke(REF, ARG0, OUT) :- 
-	object_call(REF, getKeyStroke, '.'(ARG0, []), OUT).
+key_stroke_get_key_stroke(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getKeyStroke, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 key_stroke_get_key_stroke(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, getKeyStroke, '.'(ARG0, '.'(ARG1, [])), OUT).
@@ -43,63 +73,33 @@ key_stroke_get_key_stroke(REF, ARG0, ARG1, OUT) :-
 key_stroke_get_key_stroke_for_event(REF, ARG0, OUT) :- 
 	object_call(REF, getKeyStrokeForEvent, '.'(ARG0, []), OUT).
 
-key_stroke_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+key_stroke_get_key_stroke(REF, ARG0, OUT) :- 
+	object_call(REF, getKeyStroke, '.'(ARG0, []), OUT).
+
+key_stroke_get_key_stroke(REF, ARG0, OUT) :- 
+	object_call(REF, getKeyStroke, '.'(ARG0, []), OUT).
+
+key_stroke_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+key_stroke_get_key_char(REF, OUT) :- 
+	object_call(REF, getKeyChar, [], OUT).
 
 key_stroke_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
+key_stroke_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
 key_stroke_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-key_stroke_get_modifiers(REF, OUT) :- 
-	object_call(REF, getModifiers, [], OUT).
-
-key_stroke_get_key_code(REF, OUT) :- 
-	object_call(REF, getKeyCode, [], OUT).
-
-key_stroke_get_a_w_t_key_stroke(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, getAWTKeyStroke, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-key_stroke_get_a_w_t_key_stroke(REF, ARG0, OUT) :- 
-	object_call(REF, getAWTKeyStroke, '.'(ARG0, []), OUT).
-
-key_stroke_get_a_w_t_key_stroke(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getAWTKeyStroke, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-key_stroke_get_a_w_t_key_stroke(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getAWTKeyStroke, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-key_stroke_get_a_w_t_key_stroke(REF, ARG0, OUT) :- 
-	object_call(REF, getAWTKeyStroke, '.'(ARG0, []), OUT).
+key_stroke_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
 key_stroke_get_a_w_t_key_stroke_for_event(REF, ARG0, OUT) :- 
 	object_call(REF, getAWTKeyStrokeForEvent, '.'(ARG0, []), OUT).
 
 key_stroke_is_on_key_release(REF, OUT) :- 
 	object_call(REF, isOnKeyRelease, [], OUT).
-
-key_stroke_get_key_char(REF, OUT) :- 
-	object_call(REF, getKeyChar, [], OUT).
-
-key_stroke_get_key_event_type(REF, OUT) :- 
-	object_call(REF, getKeyEventType, [], OUT).
-
-key_stroke_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-key_stroke_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-key_stroke_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-key_stroke_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-key_stroke_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-key_stroke_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

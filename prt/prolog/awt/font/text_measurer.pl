@@ -25,32 +25,23 @@
 text_measurer(ARG0, ARG1, OUT) :- 
 	object_new('java.awt.font.TextMeasurer', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-text_measurer_delete_char(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, deleteChar, '.'(ARG0, '.'(ARG1, [])), OUT).
+text_measurer_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+text_measurer_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+text_measurer_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 text_measurer_get_line_break_index(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, getLineBreakIndex, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-text_measurer_insert_char(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, insertChar, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 text_measurer_get_layout(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, getLayout, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-text_measurer_get_advance_between(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getAdvanceBetween, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-text_measurer_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-text_measurer_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-text_measurer_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-text_measurer_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+text_measurer_delete_char(REF, ARG0, ARG1) :- 
+	object_call(REF, deleteChar, '.'(ARG0, '.'(ARG1, [])), _).
 
 text_measurer_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
@@ -58,12 +49,21 @@ text_measurer_to_string(REF, OUT) :-
 text_measurer_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
+text_measurer_insert_char(REF, ARG0, ARG1) :- 
+	object_call(REF, insertChar, '.'(ARG0, '.'(ARG1, [])), _).
+
+text_measurer_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+text_measurer_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+text_measurer_get_advance_between(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getAdvanceBetween, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+text_measurer_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
 text_measurer_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
-
-text_measurer_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-text_measurer_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

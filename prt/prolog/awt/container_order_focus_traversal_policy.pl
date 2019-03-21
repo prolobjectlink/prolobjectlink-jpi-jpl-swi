@@ -25,14 +25,35 @@
 container_order_focus_traversal_policy(OUT) :- 
 	object_new('java.awt.ContainerOrderFocusTraversalPolicy', [], OUT).
 
-container_order_focus_traversal_policy_get_component_after(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getComponentAfter, '.'(ARG0, '.'(ARG1, [])), OUT).
+container_order_focus_traversal_policy_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 container_order_focus_traversal_policy_get_component_before(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, getComponentBefore, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-container_order_focus_traversal_policy_get_default_component(REF, ARG0, OUT) :- 
-	object_call(REF, getDefaultComponent, '.'(ARG0, []), OUT).
+container_order_focus_traversal_policy_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+container_order_focus_traversal_policy_set_implicit_down_cycle_traversal(REF, ARG0) :- 
+	object_call(REF, setImplicitDownCycleTraversal, '.'(ARG0, []), _).
+
+container_order_focus_traversal_policy_get_implicit_down_cycle_traversal(REF, OUT) :- 
+	object_call(REF, getImplicitDownCycleTraversal, [], OUT).
+
+container_order_focus_traversal_policy_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+container_order_focus_traversal_policy_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+container_order_focus_traversal_policy_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+container_order_focus_traversal_policy_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+container_order_focus_traversal_policy_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 container_order_focus_traversal_policy_get_first_component(REF, ARG0, OUT) :- 
 	object_call(REF, getFirstComponent, '.'(ARG0, []), OUT).
@@ -40,39 +61,18 @@ container_order_focus_traversal_policy_get_first_component(REF, ARG0, OUT) :-
 container_order_focus_traversal_policy_get_last_component(REF, ARG0, OUT) :- 
 	object_call(REF, getLastComponent, '.'(ARG0, []), OUT).
 
-container_order_focus_traversal_policy_get_implicit_down_cycle_traversal(REF, OUT) :- 
-	object_call(REF, getImplicitDownCycleTraversal, [], OUT).
+container_order_focus_traversal_policy_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
-container_order_focus_traversal_policy_set_implicit_down_cycle_traversal(REF, ARG0, OUT) :- 
-	object_call(REF, setImplicitDownCycleTraversal, '.'(ARG0, []), OUT).
-
-container_order_focus_traversal_policy_get_initial_component(REF, ARG0, OUT) :- 
-	object_call(REF, getInitialComponent, '.'(ARG0, []), OUT).
-
-container_order_focus_traversal_policy_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-container_order_focus_traversal_policy_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-container_order_focus_traversal_policy_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+container_order_focus_traversal_policy_get_component_after(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getComponentAfter, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 container_order_focus_traversal_policy_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-container_order_focus_traversal_policy_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+container_order_focus_traversal_policy_get_default_component(REF, ARG0, OUT) :- 
+	object_call(REF, getDefaultComponent, '.'(ARG0, []), OUT).
 
-container_order_focus_traversal_policy_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
-container_order_focus_traversal_policy_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-container_order_focus_traversal_policy_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-container_order_focus_traversal_policy_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+container_order_focus_traversal_policy_get_initial_component(REF, ARG0, OUT) :- 
+	object_call(REF, getInitialComponent, '.'(ARG0, []), OUT).
 

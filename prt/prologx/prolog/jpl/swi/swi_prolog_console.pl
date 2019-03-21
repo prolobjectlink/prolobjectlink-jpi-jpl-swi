@@ -25,32 +25,26 @@
 swi_prolog_console(OUT) :- 
 	object_new('org.prolobjectlink.prolog.jpl.swi.SwiPrologConsole', [], OUT).
 
-swi_prolog_console_main(REF, ARG0, OUT) :- 
-	object_call(REF, main, '.'(ARG0, []), OUT).
+swi_prolog_console_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-swi_prolog_console_run(REF, ARG0, OUT) :- 
-	object_call(REF, run, '.'(ARG0, []), OUT).
+swi_prolog_console_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-swi_prolog_console_print_usage(REF, OUT) :- 
-	object_call(REF, printUsage, [], OUT).
+swi_prolog_console_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+swi_prolog_console_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
 swi_prolog_console_get_arguments(REF, ARG0, OUT) :- 
 	object_call(REF, getArguments, '.'(ARG0, []), OUT).
 
-swi_prolog_console_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+swi_prolog_console_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-swi_prolog_console_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-swi_prolog_console_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-swi_prolog_console_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-swi_prolog_console_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+swi_prolog_console_print_usage(REF) :- 
+	object_call(REF, printUsage, [], _).
 
 swi_prolog_console_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -58,9 +52,15 @@ swi_prolog_console_hash_code(REF, OUT) :-
 swi_prolog_console_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-swi_prolog_console_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+swi_prolog_console_main(REF, ARG0) :- 
+	object_call(REF, main, '.'(ARG0, []), _).
 
-swi_prolog_console_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+swi_prolog_console_run(REF, ARG0) :- 
+	object_call(REF, run, '.'(ARG0, []), _).
+
+swi_prolog_console_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+swi_prolog_console_notify(REF) :- 
+	object_call(REF, notify, [], _).
 

@@ -22,50 +22,23 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-accessible_relation_set(OUT) :- 
-	object_new('javax.accessibility.AccessibleRelationSet', [], OUT).
-
 accessible_relation_set(ARG0, OUT) :- 
 	object_new('javax.accessibility.AccessibleRelationSet', '.'(ARG0, []), OUT).
 
-accessible_relation_set_add(REF, ARG0, OUT) :- 
-	object_call(REF, add, '.'(ARG0, []), OUT).
+accessible_relation_set(OUT) :- 
+	object_new('javax.accessibility.AccessibleRelationSet', [], OUT).
 
-accessible_relation_set_remove(REF, ARG0, OUT) :- 
-	object_call(REF, remove, '.'(ARG0, []), OUT).
+accessible_relation_set_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-accessible_relation_set_get(REF, ARG0, OUT) :- 
-	object_call(REF, get, '.'(ARG0, []), OUT).
+accessible_relation_set_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 accessible_relation_set_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-accessible_relation_set_clear(REF, OUT) :- 
-	object_call(REF, clear, [], OUT).
-
-accessible_relation_set_contains(REF, ARG0, OUT) :- 
-	object_call(REF, contains, '.'(ARG0, []), OUT).
-
-accessible_relation_set_size(REF, OUT) :- 
-	object_call(REF, size, [], OUT).
-
 accessible_relation_set_to_array(REF, OUT) :- 
 	object_call(REF, toArray, [], OUT).
-
-accessible_relation_set_add_all(REF, ARG0, OUT) :- 
-	object_call(REF, addAll, '.'(ARG0, []), OUT).
-
-accessible_relation_set_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-accessible_relation_set_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-accessible_relation_set_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-accessible_relation_set_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 accessible_relation_set_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -73,9 +46,36 @@ accessible_relation_set_hash_code(REF, OUT) :-
 accessible_relation_set_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-accessible_relation_set_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+accessible_relation_set_get(REF, ARG0, OUT) :- 
+	object_call(REF, get, '.'(ARG0, []), OUT).
 
-accessible_relation_set_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+accessible_relation_set_contains(REF, ARG0, OUT) :- 
+	object_call(REF, contains, '.'(ARG0, []), OUT).
+
+accessible_relation_set_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+accessible_relation_set_add(REF, ARG0, OUT) :- 
+	object_call(REF, add, '.'(ARG0, []), OUT).
+
+accessible_relation_set_clear(REF) :- 
+	object_call(REF, clear, [], _).
+
+accessible_relation_set_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+accessible_relation_set_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+accessible_relation_set_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+accessible_relation_set_size(REF, OUT) :- 
+	object_call(REF, size, [], OUT).
+
+accessible_relation_set_add_all(REF, ARG0) :- 
+	object_call(REF, addAll, '.'(ARG0, []), _).
+
+accessible_relation_set_remove(REF, ARG0, OUT) :- 
+	object_call(REF, remove, '.'(ARG0, []), OUT).
 

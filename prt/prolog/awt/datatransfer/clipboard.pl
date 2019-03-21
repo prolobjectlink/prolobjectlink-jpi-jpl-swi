@@ -25,41 +25,23 @@
 clipboard(ARG0, OUT) :- 
 	object_new('java.awt.datatransfer.Clipboard', '.'(ARG0, []), OUT).
 
-clipboard_get_name(REF, OUT) :- 
-	object_call(REF, getName, [], OUT).
-
-clipboard_get_contents(REF, ARG0, OUT) :- 
-	object_call(REF, getContents, '.'(ARG0, []), OUT).
-
-clipboard_get_data(REF, ARG0, OUT) :- 
-	object_call(REF, getData, '.'(ARG0, []), OUT).
-
-clipboard_add_flavor_listener(REF, ARG0, OUT) :- 
-	object_call(REF, addFlavorListener, '.'(ARG0, []), OUT).
-
-clipboard_get_available_data_flavors(REF, OUT) :- 
-	object_call(REF, getAvailableDataFlavors, [], OUT).
+clipboard_add_flavor_listener(REF, ARG0) :- 
+	object_call(REF, addFlavorListener, '.'(ARG0, []), _).
 
 clipboard_get_flavor_listeners(REF, OUT) :- 
 	object_call(REF, getFlavorListeners, [], OUT).
 
-clipboard_is_data_flavor_available(REF, ARG0, OUT) :- 
-	object_call(REF, isDataFlavorAvailable, '.'(ARG0, []), OUT).
+clipboard_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
-clipboard_remove_flavor_listener(REF, ARG0, OUT) :- 
-	object_call(REF, removeFlavorListener, '.'(ARG0, []), OUT).
+clipboard_remove_flavor_listener(REF, ARG0) :- 
+	object_call(REF, removeFlavorListener, '.'(ARG0, []), _).
 
-clipboard_set_contents(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, setContents, '.'(ARG0, '.'(ARG1, [])), OUT).
+clipboard_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-clipboard_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-clipboard_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-clipboard_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+clipboard_set_contents(REF, ARG0, ARG1) :- 
+	object_call(REF, setContents, '.'(ARG0, '.'(ARG1, [])), _).
 
 clipboard_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
@@ -67,15 +49,33 @@ clipboard_equals(REF, ARG0, OUT) :-
 clipboard_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
+clipboard_get_contents(REF, ARG0, OUT) :- 
+	object_call(REF, getContents, '.'(ARG0, []), OUT).
+
+clipboard_get_available_data_flavors(REF, OUT) :- 
+	object_call(REF, getAvailableDataFlavors, [], OUT).
+
+clipboard_get_data(REF, ARG0, OUT) :- 
+	object_call(REF, getData, '.'(ARG0, []), OUT).
+
+clipboard_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+clipboard_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+clipboard_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
 clipboard_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
 clipboard_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-clipboard_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+clipboard_is_data_flavor_available(REF, ARG0, OUT) :- 
+	object_call(REF, isDataFlavorAvailable, '.'(ARG0, []), OUT).
 
-clipboard_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+clipboard_get_name(REF, OUT) :- 
+	object_call(REF, getName, [], OUT).
 

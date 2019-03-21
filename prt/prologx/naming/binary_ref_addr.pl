@@ -31,33 +31,33 @@ binary_ref_addr(ARG0, ARG1, ARG2, ARG3, OUT) :-
 binary_ref_addr_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-binary_ref_addr_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-binary_ref_addr_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
 binary_ref_addr_get_content(REF, OUT) :- 
 	object_call(REF, getContent, [], OUT).
 
-binary_ref_addr_get_type(REF, OUT) :- 
-	object_call(REF, getType, [], OUT).
-
-binary_ref_addr_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-binary_ref_addr_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-binary_ref_addr_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+binary_ref_addr_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 binary_ref_addr_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-binary_ref_addr_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+binary_ref_addr_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-binary_ref_addr_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+binary_ref_addr_get_type(REF, OUT) :- 
+	object_call(REF, getType, [], OUT).
+
+binary_ref_addr_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+binary_ref_addr_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+binary_ref_addr_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+binary_ref_addr_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+binary_ref_addr_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 

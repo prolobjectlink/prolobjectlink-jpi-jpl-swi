@@ -25,42 +25,42 @@
 output_device_assigned(ARG0, ARG1, OUT) :- 
 	object_new('javax.print.attribute.standard.OutputDeviceAssigned', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-output_device_assigned_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-output_device_assigned_get_name(REF, OUT) :- 
-	object_call(REF, getName, [], OUT).
-
 output_device_assigned_get_category(REF, OUT) :- 
 	object_call(REF, getCategory, [], OUT).
 
-output_device_assigned_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+output_device_assigned_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
-output_device_assigned_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+output_device_assigned_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+output_device_assigned_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+output_device_assigned_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+output_device_assigned_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+output_device_assigned_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 output_device_assigned_get_value(REF, OUT) :- 
 	object_call(REF, getValue, [], OUT).
 
+output_device_assigned_get_name(REF, OUT) :- 
+	object_call(REF, getName, [], OUT).
+
 output_device_assigned_get_locale(REF, OUT) :- 
 	object_call(REF, getLocale, [], OUT).
-
-output_device_assigned_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-output_device_assigned_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-output_device_assigned_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
 
 output_device_assigned_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-output_device_assigned_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+output_device_assigned_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
 
-output_device_assigned_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+output_device_assigned_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 

@@ -22,21 +22,6 @@
 
 :-consult('../../../obj/prolobject.pl').
 
-popup_hide(REF, OUT) :- 
-	object_call(REF, hide, [], OUT).
-
-popup_show(REF, OUT) :- 
-	object_call(REF, show, [], OUT).
-
-popup_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-popup_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-popup_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
 popup_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
@@ -49,9 +34,24 @@ popup_hash_code(REF, OUT) :-
 popup_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-popup_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+popup_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-popup_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+popup_show(REF) :- 
+	object_call(REF, show, [], _).
+
+popup_hide(REF) :- 
+	object_call(REF, hide, [], _).
+
+popup_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+popup_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+popup_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+popup_wait(REF) :- 
+	object_call(REF, wait, [], _).
 

@@ -22,54 +22,54 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-media_name_na_letter_white(OUT) :- 
+media_name_NA_LETTER_WHITE(OUT) :- 
 	object_get('javax.print.attribute.standard.MediaName', na_letter_white, OUT).
 
-media_name_na_letter_transparent(OUT) :- 
+media_name_NA_LETTER_TRANSPARENT(OUT) :- 
 	object_get('javax.print.attribute.standard.MediaName', na_letter_transparent, OUT).
 
-media_name_iso_a4_white(OUT) :- 
+media_name_ISO_A4_WHITE(OUT) :- 
 	object_get('javax.print.attribute.standard.MediaName', iso_a4_white, OUT).
 
-media_name_iso_a4_transparent(OUT) :- 
+media_name_ISO_A4_TRANSPARENT(OUT) :- 
 	object_get('javax.print.attribute.standard.MediaName', iso_a4_transparent, OUT).
-
-media_name_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 media_name_get_name(REF, OUT) :- 
 	object_call(REF, getName, [], OUT).
 
+media_name_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
 media_name_get_category(REF, OUT) :- 
 	object_call(REF, getCategory, [], OUT).
+
+media_name_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+media_name_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+media_name_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+media_name_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 media_name_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
+media_name_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
 media_name_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
+
+media_name_get_class(REF, OUT) :- 
+	object_call(REF, getClass, [], OUT).
 
 media_name_clone(REF, OUT) :- 
 	object_call(REF, clone, [], OUT).
 
 media_name_get_value(REF, OUT) :- 
 	object_call(REF, getValue, [], OUT).
-
-media_name_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-media_name_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-media_name_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-media_name_get_class(REF, OUT) :- 
-	object_call(REF, getClass, [], OUT).
-
-media_name_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
-
-media_name_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
 

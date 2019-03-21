@@ -22,36 +22,36 @@
 
 :-consult('../../../../obj/prolobject.pl').
 
-tagged_profile(OUT) :- 
-	object_new('org.omg.IOP.TaggedProfile', [], OUT).
-
 tagged_profile(ARG0, ARG1, OUT) :- 
 	object_new('org.omg.IOP.TaggedProfile', '.'(ARG0, '.'(ARG1, [])), OUT).
 
-tagged_profile_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
+tagged_profile(OUT) :- 
+	object_new('org.omg.IOP.TaggedProfile', [], OUT).
 
-tagged_profile_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-tagged_profile_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-tagged_profile_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
+tagged_profile_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
 tagged_profile_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-tagged_profile_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+tagged_profile_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+tagged_profile_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
 
 tagged_profile_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-tagged_profile_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+tagged_profile_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
-tagged_profile_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+tagged_profile_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+tagged_profile_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+tagged_profile_wait(REF) :- 
+	object_call(REF, wait, [], _).
 

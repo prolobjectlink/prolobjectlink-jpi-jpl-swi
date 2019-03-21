@@ -22,26 +22,14 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-x_m_l_reader_factory_create_x_m_l_reader(REF, OUT) :- 
-	object_call(REF, createXMLReader, [], OUT).
+x_m_l_reader_factory_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-x_m_l_reader_factory_create_x_m_l_reader(REF, ARG0, OUT) :- 
-	object_call(REF, createXMLReader, '.'(ARG0, []), OUT).
+x_m_l_reader_factory_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
 
-x_m_l_reader_factory_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-x_m_l_reader_factory_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-x_m_l_reader_factory_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-x_m_l_reader_factory_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
-x_m_l_reader_factory_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
+x_m_l_reader_factory_wait(REF) :- 
+	object_call(REF, wait, [], _).
 
 x_m_l_reader_factory_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -49,9 +37,21 @@ x_m_l_reader_factory_hash_code(REF, OUT) :-
 x_m_l_reader_factory_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-x_m_l_reader_factory_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+x_m_l_reader_factory_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
-x_m_l_reader_factory_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+x_m_l_reader_factory_create_x_m_l_reader(REF, OUT) :- 
+	object_call(REF, createXMLReader, [], OUT).
+
+x_m_l_reader_factory_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
+
+x_m_l_reader_factory_create_x_m_l_reader(REF, ARG0, OUT) :- 
+	object_call(REF, createXMLReader, '.'(ARG0, []), OUT).
+
+x_m_l_reader_factory_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+x_m_l_reader_factory_notify(REF) :- 
+	object_call(REF, notify, [], _).
 

@@ -25,63 +25,63 @@
 vetoable_change_support(ARG0, OUT) :- 
 	object_new('java.beans.VetoableChangeSupport', '.'(ARG0, []), OUT).
 
-vetoable_change_support_fire_vetoable_change(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, fireVetoableChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-vetoable_change_support_fire_vetoable_change(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, fireVetoableChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-vetoable_change_support_fire_vetoable_change(REF, ARG0, OUT) :- 
-	object_call(REF, fireVetoableChange, '.'(ARG0, []), OUT).
-
-vetoable_change_support_fire_vetoable_change(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, fireVetoableChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-vetoable_change_support_get_vetoable_change_listeners(REF, ARG0, OUT) :- 
-	object_call(REF, getVetoableChangeListeners, '.'(ARG0, []), OUT).
-
-vetoable_change_support_get_vetoable_change_listeners(REF, OUT) :- 
-	object_call(REF, getVetoableChangeListeners, [], OUT).
-
-vetoable_change_support_has_listeners(REF, ARG0, OUT) :- 
-	object_call(REF, hasListeners, '.'(ARG0, []), OUT).
-
-vetoable_change_support_add_vetoable_change_listener(REF, ARG0, OUT) :- 
-	object_call(REF, addVetoableChangeListener, '.'(ARG0, []), OUT).
-
-vetoable_change_support_add_vetoable_change_listener(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, addVetoableChangeListener, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-vetoable_change_support_remove_vetoable_change_listener(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, removeVetoableChangeListener, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-vetoable_change_support_remove_vetoable_change_listener(REF, ARG0, OUT) :- 
-	object_call(REF, removeVetoableChangeListener, '.'(ARG0, []), OUT).
-
-vetoable_change_support_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-vetoable_change_support_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-vetoable_change_support_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
 vetoable_change_support_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-vetoable_change_support_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-vetoable_change_support_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
+vetoable_change_support_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
 vetoable_change_support_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-vetoable_change_support_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+vetoable_change_support_get_vetoable_change_listeners(REF, OUT) :- 
+	object_call(REF, getVetoableChangeListeners, [], OUT).
 
-vetoable_change_support_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+vetoable_change_support_fire_vetoable_change(REF, ARG0) :- 
+	object_call(REF, fireVetoableChange, '.'(ARG0, []), _).
+
+vetoable_change_support_fire_vetoable_change(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, fireVetoableChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+vetoable_change_support_fire_vetoable_change(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, fireVetoableChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+vetoable_change_support_fire_vetoable_change(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, fireVetoableChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+vetoable_change_support_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+vetoable_change_support_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
+
+vetoable_change_support_remove_vetoable_change_listener(REF, ARG0, ARG1) :- 
+	object_call(REF, removeVetoableChangeListener, '.'(ARG0, '.'(ARG1, [])), _).
+
+vetoable_change_support_add_vetoable_change_listener(REF, ARG0) :- 
+	object_call(REF, addVetoableChangeListener, '.'(ARG0, []), _).
+
+vetoable_change_support_remove_vetoable_change_listener(REF, ARG0) :- 
+	object_call(REF, removeVetoableChangeListener, '.'(ARG0, []), _).
+
+vetoable_change_support_add_vetoable_change_listener(REF, ARG0, ARG1) :- 
+	object_call(REF, addVetoableChangeListener, '.'(ARG0, '.'(ARG1, [])), _).
+
+vetoable_change_support_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+vetoable_change_support_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+vetoable_change_support_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+vetoable_change_support_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+vetoable_change_support_get_vetoable_change_listeners(REF, ARG0, OUT) :- 
+	object_call(REF, getVetoableChangeListeners, '.'(ARG0, []), OUT).
+
+vetoable_change_support_has_listeners(REF, ARG0, OUT) :- 
+	object_call(REF, hasListeners, '.'(ARG0, []), OUT).
 

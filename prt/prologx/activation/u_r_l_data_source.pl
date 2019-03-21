@@ -25,33 +25,6 @@
 u_r_l_data_source(ARG0, OUT) :- 
 	object_new('javax.activation.URLDataSource', '.'(ARG0, []), OUT).
 
-u_r_l_data_source_get_name(REF, OUT) :- 
-	object_call(REF, getName, [], OUT).
-
-u_r_l_data_source_get_u_r_l(REF, OUT) :- 
-	object_call(REF, getURL, [], OUT).
-
-u_r_l_data_source_get_input_stream(REF, OUT) :- 
-	object_call(REF, getInputStream, [], OUT).
-
-u_r_l_data_source_get_content_type(REF, OUT) :- 
-	object_call(REF, getContentType, [], OUT).
-
-u_r_l_data_source_get_output_stream(REF, OUT) :- 
-	object_call(REF, getOutputStream, [], OUT).
-
-u_r_l_data_source_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-u_r_l_data_source_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-u_r_l_data_source_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
-
-u_r_l_data_source_equals(REF, ARG0, OUT) :- 
-	object_call(REF, equals, '.'(ARG0, []), OUT).
-
 u_r_l_data_source_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
@@ -61,9 +34,36 @@ u_r_l_data_source_hash_code(REF, OUT) :-
 u_r_l_data_source_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-u_r_l_data_source_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+u_r_l_data_source_get_output_stream(REF, OUT) :- 
+	object_call(REF, getOutputStream, [], OUT).
 
-u_r_l_data_source_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+u_r_l_data_source_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+u_r_l_data_source_equals(REF, ARG0, OUT) :- 
+	object_call(REF, equals, '.'(ARG0, []), OUT).
+
+u_r_l_data_source_notify(REF) :- 
+	object_call(REF, notify, [], _).
+
+u_r_l_data_source_get_u_r_l(REF, OUT) :- 
+	object_call(REF, getURL, [], OUT).
+
+u_r_l_data_source_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
+
+u_r_l_data_source_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
+u_r_l_data_source_get_input_stream(REF, OUT) :- 
+	object_call(REF, getInputStream, [], OUT).
+
+u_r_l_data_source_get_content_type(REF, OUT) :- 
+	object_call(REF, getContentType, [], OUT).
+
+u_r_l_data_source_get_name(REF, OUT) :- 
+	object_call(REF, getName, [], OUT).
+
+u_r_l_data_source_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 

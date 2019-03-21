@@ -22,48 +22,48 @@
 
 :-consult('../../../../../obj/prolobject.pl').
 
-p_d_l_override_supported_not_attempted(OUT) :- 
+p_d_l_override_supported_NOT_ATTEMPTED(OUT) :- 
 	object_get('javax.print.attribute.standard.PDLOverrideSupported', not_attempted, OUT).
 
-p_d_l_override_supported_attempted(OUT) :- 
+p_d_l_override_supported_ATTEMPTED(OUT) :- 
 	object_get('javax.print.attribute.standard.PDLOverrideSupported', attempted, OUT).
 
-p_d_l_override_supported_get_name(REF, OUT) :- 
-	object_call(REF, getName, [], OUT).
+p_d_l_override_supported_notify(REF) :- 
+	object_call(REF, notify, [], _).
 
 p_d_l_override_supported_get_category(REF, OUT) :- 
 	object_call(REF, getCategory, [], OUT).
 
-p_d_l_override_supported_to_string(REF, OUT) :- 
-	object_call(REF, toString, [], OUT).
-
-p_d_l_override_supported_hash_code(REF, OUT) :- 
-	object_call(REF, hashCode, [], OUT).
-
 p_d_l_override_supported_clone(REF, OUT) :- 
 	object_call(REF, clone, [], OUT).
 
-p_d_l_override_supported_get_value(REF, OUT) :- 
-	object_call(REF, getValue, [], OUT).
-
-p_d_l_override_supported_wait(REF, OUT) :- 
-	object_call(REF, wait, [], OUT).
-
-p_d_l_override_supported_wait(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-p_d_l_override_supported_wait(REF, ARG0, OUT) :- 
-	object_call(REF, wait, '.'(ARG0, []), OUT).
+p_d_l_override_supported_to_string(REF, OUT) :- 
+	object_call(REF, toString, [], OUT).
 
 p_d_l_override_supported_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
+p_d_l_override_supported_hash_code(REF, OUT) :- 
+	object_call(REF, hashCode, [], OUT).
+
+p_d_l_override_supported_wait(REF) :- 
+	object_call(REF, wait, [], _).
+
+p_d_l_override_supported_wait(REF, ARG0) :- 
+	object_call(REF, wait, '.'(ARG0, []), _).
+
 p_d_l_override_supported_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-p_d_l_override_supported_notify(REF, OUT) :- 
-	object_call(REF, notify, [], OUT).
+p_d_l_override_supported_wait(REF, ARG0, ARG1) :- 
+	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-p_d_l_override_supported_notify_all(REF, OUT) :- 
-	object_call(REF, notifyAll, [], OUT).
+p_d_l_override_supported_get_name(REF, OUT) :- 
+	object_call(REF, getName, [], OUT).
+
+p_d_l_override_supported_get_value(REF, OUT) :- 
+	object_call(REF, getValue, [], OUT).
+
+p_d_l_override_supported_notify_all(REF) :- 
+	object_call(REF, notifyAll, [], _).
 
