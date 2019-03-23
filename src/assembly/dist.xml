@@ -80,7 +80,17 @@
 			</includes>
 		</fileSet>
 
+		<!-- install scripts -->
+		<fileSet>
+			<directory>${project.basedir}</directory>
+			<outputDirectory>/</outputDirectory>
+			<includes>
+				<include>install.*</include>
+			</includes>
+		</fileSet>
+		
 	</fileSets>
+
 	<dependencySets>
 		<dependencySet>
 			<outputDirectory>lib</outputDirectory>
