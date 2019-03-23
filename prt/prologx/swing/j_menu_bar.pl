@@ -178,11 +178,11 @@ j_menu_bar_get_bounds(REF, ARG0, OUT) :-
 j_menu_bar_is_focus_traversal_policy_set(REF, OUT) :- 
 	object_call(REF, isFocusTraversalPolicySet, [], OUT).
 
-j_menu_bar_get_graphics_configuration(REF, OUT) :- 
-	object_call(REF, getGraphicsConfiguration, [], OUT).
-
 j_menu_bar_is_cursor_set(REF, OUT) :- 
 	object_call(REF, isCursorSet, [], OUT).
+
+j_menu_bar_get_graphics_configuration(REF, OUT) :- 
+	object_call(REF, getGraphicsConfiguration, [], OUT).
 
 j_menu_bar_paint(REF, ARG0) :- 
 	object_call(REF, paint, '.'(ARG0, []), _).
@@ -280,11 +280,11 @@ j_menu_bar_get_inherits_popup_menu(REF, OUT) :-
 j_menu_bar_menu_selection_changed(REF, ARG0) :- 
 	object_call(REF, menuSelectionChanged, '.'(ARG0, []), _).
 
-j_menu_bar_get_focus_cycle_root_ancestor(REF, OUT) :- 
-	object_call(REF, getFocusCycleRootAncestor, [], OUT).
-
 j_menu_bar_remove_component_listener(REF, ARG0) :- 
 	object_call(REF, removeComponentListener, '.'(ARG0, []), _).
+
+j_menu_bar_get_focus_cycle_root_ancestor(REF, OUT) :- 
+	object_call(REF, getFocusCycleRootAncestor, [], OUT).
 
 j_menu_bar_list(REF, ARG0, ARG1) :- 
 	object_call(REF, list, '.'(ARG0, '.'(ARG1, [])), _).
@@ -331,11 +331,11 @@ j_menu_bar_list(REF, ARG0) :-
 j_menu_bar_list(REF, ARG0) :- 
 	object_call(REF, list, '.'(ARG0, []), _).
 
-j_menu_bar_dispatch_event(REF, ARG0) :- 
-	object_call(REF, dispatchEvent, '.'(ARG0, []), _).
-
 j_menu_bar_set_location(REF, ARG0, ARG1) :- 
 	object_call(REF, setLocation, '.'(ARG0, '.'(ARG1, [])), _).
+
+j_menu_bar_dispatch_event(REF, ARG0) :- 
+	object_call(REF, dispatchEvent, '.'(ARG0, []), _).
 
 j_menu_bar_set_location(REF, ARG0) :- 
 	object_call(REF, setLocation, '.'(ARG0, []), _).
@@ -403,11 +403,11 @@ j_menu_bar_is_preferred_size_set(REF, OUT) :-
 j_menu_bar_get_u_i(REF, OUT) :- 
 	object_call(REF, getUI, [], OUT).
 
-j_menu_bar_get_background(REF, OUT) :- 
-	object_call(REF, getBackground, [], OUT).
-
 j_menu_bar_remove_hierarchy_listener(REF, ARG0) :- 
 	object_call(REF, removeHierarchyListener, '.'(ARG0, []), _).
+
+j_menu_bar_get_background(REF, OUT) :- 
+	object_call(REF, getBackground, [], OUT).
 
 j_menu_bar_transfer_focus(REF) :- 
 	object_call(REF, transferFocus, [], _).
@@ -421,11 +421,11 @@ j_menu_bar_repaint(REF, ARG0, ARG1, ARG2, ARG3) :-
 j_menu_bar_print(REF, ARG0) :- 
 	object_call(REF, print, '.'(ARG0, []), _).
 
-j_menu_bar_get_baseline(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getBaseline, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 j_menu_bar_repaint(REF, ARG0, ARG1, ARG2, ARG3, ARG4) :- 
 	object_call(REF, repaint, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), _).
+
+j_menu_bar_get_baseline(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getBaseline, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 j_menu_bar_repaint(REF) :- 
 	object_call(REF, repaint, [], _).
@@ -451,11 +451,11 @@ j_menu_bar_get_component_z_order(REF, ARG0, OUT) :-
 j_menu_bar_get_focus_traversal_keys(REF, ARG0, OUT) :- 
 	object_call(REF, getFocusTraversalKeys, '.'(ARG0, []), OUT).
 
-j_menu_bar_get_ignore_repaint(REF, OUT) :- 
-	object_call(REF, getIgnoreRepaint, [], OUT).
-
 j_menu_bar_remove_focus_listener(REF, ARG0) :- 
 	object_call(REF, removeFocusListener, '.'(ARG0, []), _).
+
+j_menu_bar_get_ignore_repaint(REF, OUT) :- 
+	object_call(REF, getIgnoreRepaint, [], OUT).
 
 j_menu_bar_get_location(REF, ARG0, OUT) :- 
 	object_call(REF, getLocation, '.'(ARG0, []), OUT).
@@ -634,11 +634,11 @@ j_menu_bar_is_minimum_size_set(REF, OUT) :-
 j_menu_bar_update(REF, ARG0) :- 
 	object_call(REF, update, '.'(ARG0, []), _).
 
-j_menu_bar_create_volatile_image(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, createVolatileImage, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 j_menu_bar_is_foreground_set(REF, OUT) :- 
 	object_call(REF, isForegroundSet, [], OUT).
+
+j_menu_bar_create_volatile_image(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, createVolatileImage, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 j_menu_bar_get_verify_input_when_focus_target(REF, OUT) :- 
 	object_call(REF, getVerifyInputWhenFocusTarget, [], OUT).
@@ -898,11 +898,11 @@ j_menu_bar_remove_ancestor_listener(REF, ARG0) :-
 j_menu_bar_get_property_change_listeners(REF, ARG0, OUT) :- 
 	object_call(REF, getPropertyChangeListeners, '.'(ARG0, []), OUT).
 
-j_menu_bar_add_key_listener(REF, ARG0) :- 
-	object_call(REF, addKeyListener, '.'(ARG0, []), _).
-
 j_menu_bar_get_mouse_motion_listeners(REF, OUT) :- 
 	object_call(REF, getMouseMotionListeners, [], OUT).
+
+j_menu_bar_add_key_listener(REF, ARG0) :- 
+	object_call(REF, addKeyListener, '.'(ARG0, []), _).
 
 j_menu_bar_get_parent(REF, OUT) :- 
 	object_call(REF, getParent, [], OUT).

@@ -265,20 +265,20 @@ scroll_pane_post_event(REF, ARG0, OUT) :-
 scroll_pane_notify(REF) :- 
 	object_call(REF, notify, [], _).
 
-scroll_pane_deliver_event(REF, ARG0) :- 
-	object_call(REF, deliverEvent, '.'(ARG0, []), _).
-
 scroll_pane_get_maximum_size(REF, OUT) :- 
 	object_call(REF, getMaximumSize, [], OUT).
+
+scroll_pane_deliver_event(REF, ARG0) :- 
+	object_call(REF, deliverEvent, '.'(ARG0, []), _).
 
 scroll_pane_add_mouse_listener(REF, ARG0) :- 
 	object_call(REF, addMouseListener, '.'(ARG0, []), _).
 
-scroll_pane_bounds(REF, OUT) :- 
-	object_call(REF, bounds, [], OUT).
-
 scroll_pane_next_focus(REF) :- 
 	object_call(REF, nextFocus, [], _).
+
+scroll_pane_bounds(REF, OUT) :- 
+	object_call(REF, bounds, [], OUT).
 
 scroll_pane_apply_component_orientation(REF, ARG0) :- 
 	object_call(REF, applyComponentOrientation, '.'(ARG0, []), _).
@@ -337,11 +337,11 @@ scroll_pane_resize(REF, ARG0) :-
 scroll_pane_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-scroll_pane_add_focus_listener(REF, ARG0) :- 
-	object_call(REF, addFocusListener, '.'(ARG0, []), _).
-
 scroll_pane_revalidate(REF) :- 
 	object_call(REF, revalidate, [], _).
+
+scroll_pane_add_focus_listener(REF, ARG0) :- 
+	object_call(REF, addFocusListener, '.'(ARG0, []), _).
 
 scroll_pane_set_focus_traversal_keys(REF, ARG0, ARG1) :- 
 	object_call(REF, setFocusTraversalKeys, '.'(ARG0, '.'(ARG1, [])), _).
@@ -364,11 +364,11 @@ scroll_pane_set_bounds(REF, ARG0, ARG1, ARG2, ARG3) :-
 scroll_pane_paint_all(REF, ARG0) :- 
 	object_call(REF, paintAll, '.'(ARG0, []), _).
 
-scroll_pane_get_toolkit(REF, OUT) :- 
-	object_call(REF, getToolkit, [], OUT).
-
 scroll_pane_set_focusable(REF, ARG0) :- 
 	object_call(REF, setFocusable, '.'(ARG0, []), _).
+
+scroll_pane_get_toolkit(REF, OUT) :- 
+	object_call(REF, getToolkit, [], OUT).
 
 scroll_pane_update(REF, ARG0) :- 
 	object_call(REF, update, '.'(ARG0, []), _).
@@ -379,11 +379,11 @@ scroll_pane_get_tree_lock(REF, OUT) :-
 scroll_pane_get_container_listeners(REF, OUT) :- 
 	object_call(REF, getContainerListeners, [], OUT).
 
-scroll_pane_get_color_model(REF, OUT) :- 
-	object_call(REF, getColorModel, [], OUT).
-
 scroll_pane_set_minimum_size(REF, ARG0) :- 
 	object_call(REF, setMinimumSize, '.'(ARG0, []), _).
+
+scroll_pane_get_color_model(REF, OUT) :- 
+	object_call(REF, getColorModel, [], OUT).
 
 scroll_pane_transfer_focus_backward(REF) :- 
 	object_call(REF, transferFocusBackward, [], _).
@@ -424,11 +424,11 @@ scroll_pane_get_minimum_size(REF, OUT) :-
 scroll_pane_remove_mouse_motion_listener(REF, ARG0) :- 
 	object_call(REF, removeMouseMotionListener, '.'(ARG0, []), _).
 
-scroll_pane_get_drop_target(REF, OUT) :- 
-	object_call(REF, getDropTarget, [], OUT).
-
 scroll_pane_set_component_orientation(REF, ARG0) :- 
 	object_call(REF, setComponentOrientation, '.'(ARG0, []), _).
+
+scroll_pane_get_drop_target(REF, OUT) :- 
+	object_call(REF, getDropTarget, [], OUT).
 
 scroll_pane_is_showing(REF, OUT) :- 
 	object_call(REF, isShowing, [], OUT).
@@ -799,11 +799,11 @@ scroll_pane_set_wheel_scrolling_enabled(REF, ARG0) :-
 scroll_pane_get_input_context(REF, OUT) :- 
 	object_call(REF, getInputContext, [], OUT).
 
-scroll_pane_get_component_orientation(REF, OUT) :- 
-	object_call(REF, getComponentOrientation, [], OUT).
-
 scroll_pane_get_key_listeners(REF, OUT) :- 
 	object_call(REF, getKeyListeners, [], OUT).
+
+scroll_pane_get_component_orientation(REF, OUT) :- 
+	object_call(REF, getComponentOrientation, [], OUT).
 
 scroll_pane_check_image(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, checkImage, '.'(ARG0, '.'(ARG1, [])), OUT).

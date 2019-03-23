@@ -61,11 +61,11 @@ d_o_m_crypto_context_wait(REF, ARG0, ARG1) :-
 d_o_m_crypto_context_wait(REF, ARG0) :- 
 	object_call(REF, wait, '.'(ARG0, []), _).
 
-d_o_m_crypto_context_get_element_by_id(REF, ARG0, OUT) :- 
-	object_call(REF, getElementById, '.'(ARG0, []), OUT).
-
 d_o_m_crypto_context_set_key_selector(REF, ARG0) :- 
 	object_call(REF, setKeySelector, '.'(ARG0, []), _).
+
+d_o_m_crypto_context_get_element_by_id(REF, ARG0, OUT) :- 
+	object_call(REF, getElementById, '.'(ARG0, []), OUT).
 
 d_o_m_crypto_context_set_default_namespace_prefix(REF, ARG0) :- 
 	object_call(REF, setDefaultNamespacePrefix, '.'(ARG0, []), _).

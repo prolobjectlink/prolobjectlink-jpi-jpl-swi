@@ -25,11 +25,11 @@
 border_u_i_resource(ARG0, OUT) :- 
 	object_new('javax.swing.plaf.BorderUIResource', '.'(ARG0, []), OUT).
 
-border_u_i_resource_get_raised_bevel_border_u_i_resource(REF, OUT) :- 
-	object_call(REF, getRaisedBevelBorderUIResource, [], OUT).
-
 border_u_i_resource_get_lowered_bevel_border_u_i_resource(REF, OUT) :- 
 	object_call(REF, getLoweredBevelBorderUIResource, [], OUT).
+
+border_u_i_resource_get_raised_bevel_border_u_i_resource(REF, OUT) :- 
+	object_call(REF, getRaisedBevelBorderUIResource, [], OUT).
 
 border_u_i_resource_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).

@@ -28,11 +28,11 @@ timestamp(ARG0, OUT) :-
 timestamp(ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, ARG6, OUT) :- 
 	object_new('java.sql.Timestamp', '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, '.'(ARG6, []))))))), OUT).
 
-timestamp_get_year(REF, OUT) :- 
-	object_call(REF, getYear, [], OUT).
-
 timestamp_to_g_m_t_string(REF, OUT) :- 
 	object_call(REF, toGMTString, [], OUT).
+
+timestamp_get_year(REF, OUT) :- 
+	object_call(REF, getYear, [], OUT).
 
 timestamp_notify_all(REF) :- 
 	object_call(REF, notifyAll, [], _).
@@ -112,11 +112,11 @@ timestamp_to_local_date_time(REF, OUT) :-
 timestamp_set_month(REF, ARG0) :- 
 	object_call(REF, setMonth, '.'(ARG0, []), _).
 
-timestamp_get_seconds(REF, OUT) :- 
-	object_call(REF, getSeconds, [], OUT).
-
 timestamp_get_day(REF, OUT) :- 
 	object_call(REF, getDay, [], OUT).
+
+timestamp_get_seconds(REF, OUT) :- 
+	object_call(REF, getSeconds, [], OUT).
 
 timestamp_get_minutes(REF, OUT) :- 
 	object_call(REF, getMinutes, [], OUT).

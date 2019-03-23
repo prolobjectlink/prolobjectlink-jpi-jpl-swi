@@ -61,17 +61,17 @@ key_stroke_get_key_stroke(REF, ARG0, ARG1, ARG2, OUT) :-
 key_stroke_wait(REF, ARG0, ARG1) :- 
 	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-key_stroke_get_key_stroke(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getKeyStroke, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-key_stroke_get_key_stroke(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getKeyStroke, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-key_stroke_get_key_stroke(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getKeyStroke, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 key_stroke_get_key_stroke_for_event(REF, ARG0, OUT) :- 
 	object_call(REF, getKeyStrokeForEvent, '.'(ARG0, []), OUT).
+
+key_stroke_get_key_stroke(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getKeyStroke, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+key_stroke_get_key_stroke(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getKeyStroke, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+key_stroke_get_key_stroke(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getKeyStroke, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 key_stroke_get_key_stroke(REF, ARG0, OUT) :- 
 	object_call(REF, getKeyStroke, '.'(ARG0, []), OUT).

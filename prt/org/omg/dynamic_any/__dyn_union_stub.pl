@@ -124,11 +124,11 @@
 '__dyn_union_stub_insert_longlong'(REF, ARG0) :- 
 	object_call(REF, insert_longlong, '.'(ARG0, []), _).
 
-'__dyn_union_stub_component_count'(REF, OUT) :- 
-	object_call(REF, component_count, [], OUT).
-
 '__dyn_union_stub_get_longlong'(REF, OUT) :- 
 	object_call(REF, get_longlong, [], OUT).
+
+'__dyn_union_stub_component_count'(REF, OUT) :- 
+	object_call(REF, component_count, [], OUT).
 
 '__dyn_union_stub_member_name'(REF, OUT) :- 
 	object_call(REF, member_name, [], OUT).
@@ -220,14 +220,14 @@
 '__dyn_union_stub_get_ulong'(REF, OUT) :- 
 	object_call(REF, get_ulong, [], OUT).
 
+'__dyn_union_stub_get_ushort'(REF, OUT) :- 
+	object_call(REF, get_ushort, [], OUT).
+
 '__dyn_union_stub__ids'(REF, OUT) :- 
 	object_call(REF, '_ids', [], OUT).
 
 '__dyn_union_stub_insert_dyn_any'(REF, ARG0) :- 
 	object_call(REF, insert_dyn_any, '.'(ARG0, []), _).
-
-'__dyn_union_stub_get_ushort'(REF, OUT) :- 
-	object_call(REF, get_ushort, [], OUT).
 
 '__dyn_union_stub_wait'(REF, ARG0, ARG1) :- 
 	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).

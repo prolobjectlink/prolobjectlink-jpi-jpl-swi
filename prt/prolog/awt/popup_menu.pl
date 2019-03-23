@@ -31,11 +31,11 @@ popup_menu(ARG0, OUT) :-
 popup_menu_get_accessible_context(REF, OUT) :- 
 	object_call(REF, getAccessibleContext, [], OUT).
 
-popup_menu_add(REF, ARG0) :- 
-	object_call(REF, add, '.'(ARG0, []), _).
-
 popup_menu_add(REF, ARG0, OUT) :- 
 	object_call(REF, add, '.'(ARG0, []), OUT).
+
+popup_menu_add(REF, ARG0) :- 
+	object_call(REF, add, '.'(ARG0, []), _).
 
 popup_menu_count_items(REF, OUT) :- 
 	object_call(REF, countItems, [], OUT).

@@ -70,11 +70,11 @@ j_a_x_b_source_wait(REF) :-
 j_a_x_b_source_set_input_source(REF, ARG0) :- 
 	object_call(REF, setInputSource, '.'(ARG0, []), _).
 
-j_a_x_b_source_set_system_id(REF, ARG0) :- 
-	object_call(REF, setSystemId, '.'(ARG0, []), _).
-
 j_a_x_b_source_set_x_m_l_reader(REF, ARG0) :- 
 	object_call(REF, setXMLReader, '.'(ARG0, []), _).
+
+j_a_x_b_source_set_system_id(REF, ARG0) :- 
+	object_call(REF, setSystemId, '.'(ARG0, []), _).
 
 j_a_x_b_source_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).

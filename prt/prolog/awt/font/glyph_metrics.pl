@@ -73,11 +73,11 @@ glyph_metrics_is_standard(REF, OUT) :-
 glyph_metrics_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-glyph_metrics_get_advance(REF, OUT) :- 
-	object_call(REF, getAdvance, [], OUT).
-
 glyph_metrics_get_bounds2_d(REF, OUT) :- 
 	object_call(REF, getBounds2D, [], OUT).
+
+glyph_metrics_get_advance(REF, OUT) :- 
+	object_call(REF, getAdvance, [], OUT).
 
 glyph_metrics_get_l_s_b(REF, OUT) :- 
 	object_call(REF, getLSB, [], OUT).

@@ -217,11 +217,11 @@ j_file_chooser_get_component(REF, ARG0, OUT) :-
 j_file_chooser_key_up(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, keyUp, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-j_file_chooser_get_component_listeners(REF, OUT) :- 
-	object_call(REF, getComponentListeners, [], OUT).
-
 j_file_chooser_handle_event(REF, ARG0, OUT) :- 
 	object_call(REF, handleEvent, '.'(ARG0, []), OUT).
+
+j_file_chooser_get_component_listeners(REF, OUT) :- 
+	object_call(REF, getComponentListeners, [], OUT).
 
 j_file_chooser_is_managing_focus(REF, OUT) :- 
 	object_call(REF, isManagingFocus, [], OUT).
@@ -460,29 +460,29 @@ j_file_chooser_rescan_current_directory(REF) :-
 j_file_chooser_show_open_dialog(REF, ARG0, OUT) :- 
 	object_call(REF, showOpenDialog, '.'(ARG0, []), OUT).
 
-j_file_chooser_create_image(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, createImage, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 j_file_chooser_remove_input_method_listener(REF, ARG0) :- 
 	object_call(REF, removeInputMethodListener, '.'(ARG0, []), _).
+
+j_file_chooser_create_image(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, createImage, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 j_file_chooser_create_image(REF, ARG0, OUT) :- 
 	object_call(REF, createImage, '.'(ARG0, []), OUT).
 
-j_file_chooser_dispatch_event(REF, ARG0) :- 
-	object_call(REF, dispatchEvent, '.'(ARG0, []), _).
-
 j_file_chooser_is_minimum_size_set(REF, OUT) :- 
 	object_call(REF, isMinimumSizeSet, [], OUT).
+
+j_file_chooser_dispatch_event(REF, ARG0) :- 
+	object_call(REF, dispatchEvent, '.'(ARG0, []), _).
 
 j_file_chooser_set_focus_traversal_policy(REF, ARG0) :- 
 	object_call(REF, setFocusTraversalPolicy, '.'(ARG0, []), _).
 
-j_file_chooser_get_font(REF, OUT) :- 
-	object_call(REF, getFont, [], OUT).
-
 j_file_chooser_set_drop_target(REF, ARG0) :- 
 	object_call(REF, setDropTarget, '.'(ARG0, []), _).
+
+j_file_chooser_get_font(REF, OUT) :- 
+	object_call(REF, getFont, [], OUT).
 
 j_file_chooser_get_description(REF, ARG0, OUT) :- 
 	object_call(REF, getDescription, '.'(ARG0, []), OUT).
@@ -541,11 +541,11 @@ j_file_chooser_reshape(REF, ARG0, ARG1, ARG2, ARG3) :-
 j_file_chooser_find_component_at(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, findComponentAt, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-j_file_chooser_bounds(REF, OUT) :- 
-	object_call(REF, bounds, [], OUT).
-
 j_file_chooser_is_font_set(REF, OUT) :- 
 	object_call(REF, isFontSet, [], OUT).
+
+j_file_chooser_bounds(REF, OUT) :- 
+	object_call(REF, bounds, [], OUT).
 
 j_file_chooser_get_width(REF, OUT) :- 
 	object_call(REF, getWidth, [], OUT).
@@ -1117,11 +1117,11 @@ j_file_chooser_disable(REF) :-
 j_file_chooser_get_insets(REF, OUT) :- 
 	object_call(REF, getInsets, [], OUT).
 
-j_file_chooser_get_graphics(REF, OUT) :- 
-	object_call(REF, getGraphics, [], OUT).
-
 j_file_chooser_get_insets(REF, ARG0, OUT) :- 
 	object_call(REF, getInsets, '.'(ARG0, []), OUT).
+
+j_file_chooser_get_graphics(REF, OUT) :- 
+	object_call(REF, getGraphics, [], OUT).
 
 j_file_chooser_get_selected_file(REF, OUT) :- 
 	object_call(REF, getSelectedFile, [], OUT).
@@ -1150,11 +1150,11 @@ j_file_chooser_set_current_directory(REF, ARG0) :-
 j_file_chooser_get_focus_cycle_root_ancestor(REF, OUT) :- 
 	object_call(REF, getFocusCycleRootAncestor, [], OUT).
 
-j_file_chooser_get_focus_listeners(REF, OUT) :- 
-	object_call(REF, getFocusListeners, [], OUT).
-
 j_file_chooser_get_mouse_motion_listeners(REF, OUT) :- 
 	object_call(REF, getMouseMotionListeners, [], OUT).
+
+j_file_chooser_get_focus_listeners(REF, OUT) :- 
+	object_call(REF, getFocusListeners, [], OUT).
 
 j_file_chooser_get_location(REF, ARG0, OUT) :- 
 	object_call(REF, getLocation, '.'(ARG0, []), OUT).
@@ -1243,11 +1243,11 @@ j_file_chooser_get_size(REF, ARG0, OUT) :-
 j_file_chooser_get_peer(REF, OUT) :- 
 	object_call(REF, getPeer, [], OUT).
 
-j_file_chooser_check_image(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, checkImage, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 j_file_chooser_is_focus_owner(REF, OUT) :- 
 	object_call(REF, isFocusOwner, [], OUT).
+
+j_file_chooser_check_image(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, checkImage, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 j_file_chooser_get_size(REF, OUT) :- 
 	object_call(REF, getSize, [], OUT).

@@ -85,11 +85,11 @@ default_styled_document_get_logical_style(REF, ARG0, OUT) :-
 default_styled_document_notify(REF) :- 
 	object_call(REF, notify, [], _).
 
-default_styled_document_insert_string(REF, ARG0, ARG1, ARG2) :- 
-	object_call(REF, insertString, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
-
 default_styled_document_get_document_properties(REF, OUT) :- 
 	object_call(REF, getDocumentProperties, [], OUT).
+
+default_styled_document_insert_string(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, insertString, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
 
 default_styled_document_dump(REF, ARG0) :- 
 	object_call(REF, dump, '.'(ARG0, []), _).
@@ -109,11 +109,11 @@ default_styled_document_notify_all(REF) :-
 default_styled_document_get_style(REF, ARG0, OUT) :- 
 	object_call(REF, getStyle, '.'(ARG0, []), OUT).
 
-default_styled_document_set_document_filter(REF, ARG0) :- 
-	object_call(REF, setDocumentFilter, '.'(ARG0, []), _).
-
 default_styled_document_get_undoable_edit_listeners(REF, OUT) :- 
 	object_call(REF, getUndoableEditListeners, [], OUT).
+
+default_styled_document_set_document_filter(REF, ARG0) :- 
+	object_call(REF, setDocumentFilter, '.'(ARG0, []), _).
 
 default_styled_document_add_document_listener(REF, ARG0) :- 
 	object_call(REF, addDocumentListener, '.'(ARG0, []), _).

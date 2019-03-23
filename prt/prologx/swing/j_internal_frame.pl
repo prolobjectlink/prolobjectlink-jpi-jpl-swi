@@ -418,11 +418,11 @@ j_internal_frame_set_selected(REF, ARG0) :-
 j_internal_frame_get_transfer_handler(REF, OUT) :- 
 	object_call(REF, getTransferHandler, [], OUT).
 
-j_internal_frame_get_focus_listeners(REF, OUT) :- 
-	object_call(REF, getFocusListeners, [], OUT).
-
 j_internal_frame_get_property_change_listeners(REF, ARG0, OUT) :- 
 	object_call(REF, getPropertyChangeListeners, '.'(ARG0, []), OUT).
+
+j_internal_frame_get_focus_listeners(REF, OUT) :- 
+	object_call(REF, getFocusListeners, [], OUT).
 
 j_internal_frame_move_to_front(REF) :- 
 	object_call(REF, moveToFront, [], _).
@@ -496,11 +496,11 @@ j_internal_frame_get_component_at(REF, ARG0, OUT) :-
 j_internal_frame_is_enabled(REF, OUT) :- 
 	object_call(REF, isEnabled, [], OUT).
 
-j_internal_frame_add_key_listener(REF, ARG0) :- 
-	object_call(REF, addKeyListener, '.'(ARG0, []), _).
-
 j_internal_frame_post_event(REF, ARG0, OUT) :- 
 	object_call(REF, postEvent, '.'(ARG0, []), OUT).
+
+j_internal_frame_add_key_listener(REF, ARG0) :- 
+	object_call(REF, addKeyListener, '.'(ARG0, []), _).
 
 j_internal_frame_add_hierarchy_bounds_listener(REF, ARG0) :- 
 	object_call(REF, addHierarchyBoundsListener, '.'(ARG0, []), _).
@@ -1051,11 +1051,11 @@ j_internal_frame_set_opaque(REF, ARG0) :-
 j_internal_frame_print_all(REF, ARG0) :- 
 	object_call(REF, printAll, '.'(ARG0, []), _).
 
-j_internal_frame_find_component_at(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, findComponentAt, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 j_internal_frame_get_layout(REF, OUT) :- 
 	object_call(REF, getLayout, [], OUT).
+
+j_internal_frame_find_component_at(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, findComponentAt, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 j_internal_frame_find_component_at(REF, ARG0, OUT) :- 
 	object_call(REF, findComponentAt, '.'(ARG0, []), OUT).

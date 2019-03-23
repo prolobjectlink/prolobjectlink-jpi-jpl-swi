@@ -184,11 +184,11 @@
 '__r_m_i_connection__stub_is_registered'(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, isRegistered, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-'__r_m_i_connection__stub_fetch_notifications'(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, fetchNotifications, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
 '__r_m_i_connection__stub__ids'(REF, OUT) :- 
 	object_call(REF, '_ids', [], OUT).
+
+'__r_m_i_connection__stub_fetch_notifications'(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, fetchNotifications, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
 '__r_m_i_connection__stub__is_equivalent'(REF, ARG0, OUT) :- 
 	object_call(REF, '_is_equivalent', '.'(ARG0, []), OUT).

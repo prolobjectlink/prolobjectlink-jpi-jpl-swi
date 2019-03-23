@@ -208,11 +208,11 @@ text_field_get_focus_traversal_keys(REF, ARG0, OUT) :-
 text_field_add_hierarchy_listener(REF, ARG0) :- 
 	object_call(REF, addHierarchyListener, '.'(ARG0, []), _).
 
-text_field_get_graphics_configuration(REF, OUT) :- 
-	object_call(REF, getGraphicsConfiguration, [], OUT).
-
 text_field_remove_mouse_motion_listener(REF, ARG0) :- 
 	object_call(REF, removeMouseMotionListener, '.'(ARG0, []), _).
+
+text_field_get_graphics_configuration(REF, OUT) :- 
+	object_call(REF, getGraphicsConfiguration, [], OUT).
 
 text_field_is_double_buffered(REF, OUT) :- 
 	object_call(REF, isDoubleBuffered, [], OUT).
@@ -238,11 +238,11 @@ text_field_get_parent(REF, OUT) :-
 text_field_is_foreground_set(REF, OUT) :- 
 	object_call(REF, isForegroundSet, [], OUT).
 
-text_field_get_bounds(REF, ARG0, OUT) :- 
-	object_call(REF, getBounds, '.'(ARG0, []), OUT).
-
 text_field_set_drop_target(REF, ARG0) :- 
 	object_call(REF, setDropTarget, '.'(ARG0, []), _).
+
+text_field_get_bounds(REF, ARG0, OUT) :- 
+	object_call(REF, getBounds, '.'(ARG0, []), OUT).
 
 text_field_action(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, action, '.'(ARG0, '.'(ARG1, [])), OUT).
@@ -364,20 +364,20 @@ text_field_key_down(REF, ARG0, ARG1, OUT) :-
 text_field_notify(REF) :- 
 	object_call(REF, notify, [], _).
 
-text_field_add_focus_listener(REF, ARG0) :- 
-	object_call(REF, addFocusListener, '.'(ARG0, []), _).
-
 text_field_set_cursor(REF, ARG0) :- 
 	object_call(REF, setCursor, '.'(ARG0, []), _).
+
+text_field_add_focus_listener(REF, ARG0) :- 
+	object_call(REF, addFocusListener, '.'(ARG0, []), _).
 
 text_field_remove_hierarchy_listener(REF, ARG0) :- 
 	object_call(REF, removeHierarchyListener, '.'(ARG0, []), _).
 
-text_field_bounds(REF, OUT) :- 
-	object_call(REF, bounds, [], OUT).
-
 text_field_remove_mouse_listener(REF, ARG0) :- 
 	object_call(REF, removeMouseListener, '.'(ARG0, []), _).
+
+text_field_bounds(REF, OUT) :- 
+	object_call(REF, bounds, [], OUT).
 
 text_field_add_notify(REF) :- 
 	object_call(REF, addNotify, [], _).
@@ -424,11 +424,11 @@ text_field_image_update(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, OUT) :-
 text_field_get_height(REF, OUT) :- 
 	object_call(REF, getHeight, [], OUT).
 
-text_field_get_hierarchy_bounds_listeners(REF, OUT) :- 
-	object_call(REF, getHierarchyBoundsListeners, [], OUT).
-
 text_field_next_focus(REF) :- 
 	object_call(REF, nextFocus, [], _).
+
+text_field_get_hierarchy_bounds_listeners(REF, OUT) :- 
+	object_call(REF, getHierarchyBoundsListeners, [], OUT).
 
 text_field_set_selection_end(REF, ARG0) :- 
 	object_call(REF, setSelectionEnd, '.'(ARG0, []), _).
@@ -469,11 +469,11 @@ text_field_remove_key_listener(REF, ARG0) :-
 text_field_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-text_field_get_graphics(REF, OUT) :- 
-	object_call(REF, getGraphics, [], OUT).
-
 text_field_is_focusable(REF, OUT) :- 
 	object_call(REF, isFocusable, [], OUT).
+
+text_field_get_graphics(REF, OUT) :- 
+	object_call(REF, getGraphics, [], OUT).
 
 text_field_enable(REF, ARG0) :- 
 	object_call(REF, enable, '.'(ARG0, []), _).
@@ -652,11 +652,11 @@ text_field_get_echo_char(REF, OUT) :-
 text_field_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-text_field_get_focus_traversal_keys_enabled(REF, OUT) :- 
-	object_call(REF, getFocusTraversalKeysEnabled, [], OUT).
-
 text_field_get_y(REF, OUT) :- 
 	object_call(REF, getY, [], OUT).
+
+text_field_get_focus_traversal_keys_enabled(REF, OUT) :- 
+	object_call(REF, getFocusTraversalKeysEnabled, [], OUT).
 
 text_field_move(REF, ARG0, ARG1) :- 
 	object_call(REF, move, '.'(ARG0, '.'(ARG1, [])), _).
@@ -679,11 +679,11 @@ text_field_preferred_size(REF, ARG0, OUT) :-
 text_field_is_maximum_size_set(REF, OUT) :- 
 	object_call(REF, isMaximumSizeSet, [], OUT).
 
-text_field_get_alignment_y(REF, OUT) :- 
-	object_call(REF, getAlignmentY, [], OUT).
-
 text_field_mouse_move(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseMove, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+text_field_get_alignment_y(REF, OUT) :- 
+	object_call(REF, getAlignmentY, [], OUT).
 
 text_field_get_property_change_listeners(REF, ARG0, OUT) :- 
 	object_call(REF, getPropertyChangeListeners, '.'(ARG0, []), OUT).

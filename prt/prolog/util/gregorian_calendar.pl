@@ -298,11 +298,11 @@ gregorian_calendar_set_lenient(REF, ARG0) :-
 gregorian_calendar_get_time(REF, OUT) :- 
 	object_call(REF, getTime, [], OUT).
 
-gregorian_calendar_get_time_in_millis(REF, OUT) :- 
-	object_call(REF, getTimeInMillis, [], OUT).
-
 gregorian_calendar_is_lenient(REF, OUT) :- 
 	object_call(REF, isLenient, [], OUT).
+
+gregorian_calendar_get_time_in_millis(REF, OUT) :- 
+	object_call(REF, getTimeInMillis, [], OUT).
 
 gregorian_calendar_set_first_day_of_week(REF, ARG0) :- 
 	object_call(REF, setFirstDayOfWeek, '.'(ARG0, []), _).

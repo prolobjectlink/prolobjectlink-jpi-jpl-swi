@@ -70,11 +70,11 @@ bevel_border_get_class(REF, OUT) :-
 bevel_border_get_shadow_outer_color(REF, OUT) :- 
 	object_call(REF, getShadowOuterColor, [], OUT).
 
-bevel_border_get_highlight_outer_color(REF, ARG0, OUT) :- 
-	object_call(REF, getHighlightOuterColor, '.'(ARG0, []), OUT).
-
 bevel_border_is_border_opaque(REF, OUT) :- 
 	object_call(REF, isBorderOpaque, [], OUT).
+
+bevel_border_get_highlight_outer_color(REF, ARG0, OUT) :- 
+	object_call(REF, getHighlightOuterColor, '.'(ARG0, []), OUT).
 
 bevel_border_get_highlight_outer_color(REF, OUT) :- 
 	object_call(REF, getHighlightOuterColor, [], OUT).

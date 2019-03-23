@@ -196,11 +196,11 @@ wrapped_plain_view_is_visible(REF, OUT) :-
 wrapped_plain_view_get_child_allocation(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, getChildAllocation, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-wrapped_plain_view_get_tool_tip_text(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, getToolTipText, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
 wrapped_plain_view_get_start_offset(REF, OUT) :- 
 	object_call(REF, getStartOffset, [], OUT).
+
+wrapped_plain_view_get_tool_tip_text(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, getToolTipText, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
 wrapped_plain_view_model_to_view(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
 	object_call(REF, modelToView, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).

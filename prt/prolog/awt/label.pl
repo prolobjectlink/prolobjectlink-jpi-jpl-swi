@@ -106,11 +106,11 @@ label_set_ignore_repaint(REF, ARG0) :-
 label_set_background(REF, ARG0) :- 
 	object_call(REF, setBackground, '.'(ARG0, []), _).
 
-label_are_focus_traversal_keys_set(REF, ARG0, OUT) :- 
-	object_call(REF, areFocusTraversalKeysSet, '.'(ARG0, []), OUT).
-
 label_is_background_set(REF, OUT) :- 
 	object_call(REF, isBackgroundSet, [], OUT).
+
+label_are_focus_traversal_keys_set(REF, ARG0, OUT) :- 
+	object_call(REF, areFocusTraversalKeysSet, '.'(ARG0, []), OUT).
 
 label_paint_all(REF, ARG0) :- 
 	object_call(REF, paintAll, '.'(ARG0, []), _).
@@ -238,11 +238,11 @@ label_repaint(REF, ARG0) :-
 label_is_focus_owner(REF, OUT) :- 
 	object_call(REF, isFocusOwner, [], OUT).
 
-label_add_component_listener(REF, ARG0) :- 
-	object_call(REF, addComponentListener, '.'(ARG0, []), _).
-
 label_prepare_image(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_call(REF, prepareImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+
+label_add_component_listener(REF, ARG0) :- 
+	object_call(REF, addComponentListener, '.'(ARG0, []), _).
 
 label_repaint(REF, ARG0, ARG1, ARG2, ARG3) :- 
 	object_call(REF, repaint, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).
@@ -289,11 +289,11 @@ label_action(REF, ARG0, ARG1, OUT) :-
 label_set_focus_traversal_keys_enabled(REF, ARG0) :- 
 	object_call(REF, setFocusTraversalKeysEnabled, '.'(ARG0, []), _).
 
-label_get_background(REF, OUT) :- 
-	object_call(REF, getBackground, [], OUT).
-
 label_set_maximum_size(REF, ARG0) :- 
 	object_call(REF, setMaximumSize, '.'(ARG0, []), _).
+
+label_get_background(REF, OUT) :- 
+	object_call(REF, getBackground, [], OUT).
 
 label_set_name(REF, ARG0) :- 
 	object_call(REF, setName, '.'(ARG0, []), _).
@@ -331,11 +331,11 @@ label_set_visible(REF, ARG0) :-
 label_get_hierarchy_bounds_listeners(REF, OUT) :- 
 	object_call(REF, getHierarchyBoundsListeners, [], OUT).
 
-label_deliver_event(REF, ARG0) :- 
-	object_call(REF, deliverEvent, '.'(ARG0, []), _).
-
 label_get_x(REF, OUT) :- 
 	object_call(REF, getX, [], OUT).
+
+label_deliver_event(REF, ARG0) :- 
+	object_call(REF, deliverEvent, '.'(ARG0, []), _).
 
 label_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
@@ -364,11 +364,11 @@ label_add_mouse_wheel_listener(REF, ARG0) :-
 label_add_hierarchy_bounds_listener(REF, ARG0) :- 
 	object_call(REF, addHierarchyBoundsListener, '.'(ARG0, []), _).
 
-label_do_layout(REF) :- 
-	object_call(REF, doLayout, [], _).
-
 label_is_double_buffered(REF, OUT) :- 
 	object_call(REF, isDoubleBuffered, [], OUT).
+
+label_do_layout(REF) :- 
+	object_call(REF, doLayout, [], _).
 
 label_request_focus_in_window(REF, OUT) :- 
 	object_call(REF, requestFocusInWindow, [], OUT).
@@ -394,11 +394,11 @@ label_get_cursor(REF, OUT) :-
 label_get_text(REF, OUT) :- 
 	object_call(REF, getText, [], OUT).
 
-label_add_hierarchy_listener(REF, ARG0) :- 
-	object_call(REF, addHierarchyListener, '.'(ARG0, []), _).
-
 label_hide(REF) :- 
 	object_call(REF, hide, [], _).
+
+label_add_hierarchy_listener(REF, ARG0) :- 
+	object_call(REF, addHierarchyListener, '.'(ARG0, []), _).
 
 label_validate(REF) :- 
 	object_call(REF, validate, [], _).
@@ -487,20 +487,20 @@ label_get_bounds(REF, OUT) :-
 label_get_height(REF, OUT) :- 
 	object_call(REF, getHeight, [], OUT).
 
-label_get_bounds(REF, ARG0, OUT) :- 
-	object_call(REF, getBounds, '.'(ARG0, []), OUT).
-
 label_set_focusable(REF, ARG0) :- 
 	object_call(REF, setFocusable, '.'(ARG0, []), _).
 
 label_transfer_focus_backward(REF) :- 
 	object_call(REF, transferFocusBackward, [], _).
 
-label_get_focus_listeners(REF, OUT) :- 
-	object_call(REF, getFocusListeners, [], OUT).
+label_get_bounds(REF, ARG0, OUT) :- 
+	object_call(REF, getBounds, '.'(ARG0, []), OUT).
 
 label_is_foreground_set(REF, OUT) :- 
 	object_call(REF, isForegroundSet, [], OUT).
+
+label_get_focus_listeners(REF, OUT) :- 
+	object_call(REF, getFocusListeners, [], OUT).
 
 label_add_focus_listener(REF, ARG0) :- 
 	object_call(REF, addFocusListener, '.'(ARG0, []), _).
@@ -544,11 +544,11 @@ label_mouse_up(REF, ARG0, ARG1, ARG2, OUT) :-
 label_location(REF, OUT) :- 
 	object_call(REF, location, [], OUT).
 
-label_add_mouse_listener(REF, ARG0) :- 
-	object_call(REF, addMouseListener, '.'(ARG0, []), _).
-
 label_reshape(REF, ARG0, ARG1, ARG2, ARG3) :- 
 	object_call(REF, reshape, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).
+
+label_add_mouse_listener(REF, ARG0) :- 
+	object_call(REF, addMouseListener, '.'(ARG0, []), _).
 
 label_enable_input_methods(REF, ARG0) :- 
 	object_call(REF, enableInputMethods, '.'(ARG0, []), _).
@@ -682,11 +682,11 @@ label_get_font(REF, OUT) :-
 label_got_focus(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, gotFocus, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-label_get_component_listeners(REF, OUT) :- 
-	object_call(REF, getComponentListeners, [], OUT).
-
 label_set_drop_target(REF, ARG0) :- 
 	object_call(REF, setDropTarget, '.'(ARG0, []), _).
+
+label_get_component_listeners(REF, OUT) :- 
+	object_call(REF, getComponentListeners, [], OUT).
 
 label_get_accessible_context(REF, OUT) :- 
 	object_call(REF, getAccessibleContext, [], OUT).

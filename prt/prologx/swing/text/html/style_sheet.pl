@@ -94,11 +94,11 @@ style_sheet_get_index_of_size(REF, ARG0, OUT) :-
 style_sheet_add_style_sheet(REF, ARG0) :- 
 	object_call(REF, addStyleSheet, '.'(ARG0, []), _).
 
-style_sheet_write_attributes(REF, ARG0, ARG1) :- 
-	object_call(REF, writeAttributes, '.'(ARG0, '.'(ARG1, [])), _).
-
 style_sheet_add_change_listener(REF, ARG0) :- 
 	object_call(REF, addChangeListener, '.'(ARG0, []), _).
+
+style_sheet_write_attributes(REF, ARG0, ARG1) :- 
+	object_call(REF, writeAttributes, '.'(ARG0, '.'(ARG1, [])), _).
 
 style_sheet_remove_style_sheet(REF, ARG0) :- 
 	object_call(REF, removeStyleSheet, '.'(ARG0, []), _).
@@ -121,11 +121,11 @@ style_sheet_write_attribute_set(REF, ARG0, ARG1) :-
 style_sheet_get_static_attribute_key(REF, ARG0, OUT) :- 
 	object_call(REF, getStaticAttributeKey, '.'(ARG0, []), OUT).
 
-style_sheet_get_change_listeners(REF, OUT) :- 
-	object_call(REF, getChangeListeners, [], OUT).
-
 style_sheet_read_attribute_set(REF, ARG0, ARG1) :- 
 	object_call(REF, readAttributeSet, '.'(ARG0, '.'(ARG1, [])), _).
+
+style_sheet_get_change_listeners(REF, OUT) :- 
+	object_call(REF, getChangeListeners, [], OUT).
 
 style_sheet_notify(REF) :- 
 	object_call(REF, notify, [], _).
@@ -175,14 +175,14 @@ style_sheet_equals(REF, ARG0, OUT) :-
 style_sheet_register_static_attribute_key(REF, ARG0) :- 
 	object_call(REF, registerStaticAttributeKey, '.'(ARG0, []), _).
 
-style_sheet_remove_attributes(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, removeAttributes, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-style_sheet_remove_attributes(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, removeAttributes, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 style_sheet_translate_h_t_m_l_to_c_s_s(REF, ARG0, OUT) :- 
 	object_call(REF, translateHTMLToCSS, '.'(ARG0, []), OUT).
+
+style_sheet_remove_attributes(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, removeAttributes, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+style_sheet_remove_attributes(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, removeAttributes, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 style_sheet_get_font_metrics(REF, ARG0, OUT) :- 
 	object_call(REF, getFontMetrics, '.'(ARG0, []), OUT).
@@ -199,9 +199,9 @@ style_sheet_read_attributes(REF, ARG0, ARG1) :-
 style_sheet_get_style(REF, ARG0, OUT) :- 
 	object_call(REF, getStyle, '.'(ARG0, []), OUT).
 
-style_sheet_remove_attribute(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, removeAttribute, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 style_sheet_get_view_attributes(REF, ARG0, OUT) :- 
 	object_call(REF, getViewAttributes, '.'(ARG0, []), OUT).
+
+style_sheet_remove_attribute(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, removeAttribute, '.'(ARG0, '.'(ARG1, [])), OUT).
 

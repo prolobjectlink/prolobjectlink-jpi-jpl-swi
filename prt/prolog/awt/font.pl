@@ -85,20 +85,20 @@ font_derive_font(REF, ARG0, ARG1, OUT) :-
 font_derive_font(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, deriveFont, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-font_derive_font(REF, ARG0, OUT) :- 
-	object_call(REF, deriveFont, '.'(ARG0, []), OUT).
-
-font_derive_font(REF, ARG0, OUT) :- 
-	object_call(REF, deriveFont, '.'(ARG0, []), OUT).
-
-font_derive_font(REF, ARG0, OUT) :- 
-	object_call(REF, deriveFont, '.'(ARG0, []), OUT).
-
-font_derive_font(REF, ARG0, OUT) :- 
-	object_call(REF, deriveFont, '.'(ARG0, []), OUT).
-
 font_get_baseline_for(REF, ARG0, OUT) :- 
 	object_call(REF, getBaselineFor, '.'(ARG0, []), OUT).
+
+font_derive_font(REF, ARG0, OUT) :- 
+	object_call(REF, deriveFont, '.'(ARG0, []), OUT).
+
+font_derive_font(REF, ARG0, OUT) :- 
+	object_call(REF, deriveFont, '.'(ARG0, []), OUT).
+
+font_derive_font(REF, ARG0, OUT) :- 
+	object_call(REF, deriveFont, '.'(ARG0, []), OUT).
+
+font_derive_font(REF, ARG0, OUT) :- 
+	object_call(REF, deriveFont, '.'(ARG0, []), OUT).
 
 font_get_italic_angle(REF, OUT) :- 
 	object_call(REF, getItalicAngle, [], OUT).
@@ -151,11 +151,11 @@ font_can_display_up_to(REF, ARG0, ARG1, ARG2, OUT) :-
 font_can_display_up_to(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, canDisplayUpTo, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-font_can_display_up_to(REF, ARG0, OUT) :- 
-	object_call(REF, canDisplayUpTo, '.'(ARG0, []), OUT).
-
 font_get_style(REF, OUT) :- 
 	object_call(REF, getStyle, [], OUT).
+
+font_can_display_up_to(REF, ARG0, OUT) :- 
+	object_call(REF, canDisplayUpTo, '.'(ARG0, []), OUT).
 
 font_is_transformed(REF, OUT) :- 
 	object_call(REF, isTransformed, [], OUT).

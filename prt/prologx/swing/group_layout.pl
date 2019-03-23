@@ -76,14 +76,14 @@ group_layout_equals(REF, ARG0, OUT) :-
 group_layout_set_honors_visibility(REF, ARG0, ARG1) :- 
 	object_call(REF, setHonorsVisibility, '.'(ARG0, '.'(ARG1, [])), _).
 
+group_layout_set_auto_create_gaps(REF, ARG0) :- 
+	object_call(REF, setAutoCreateGaps, '.'(ARG0, []), _).
+
 group_layout_get_auto_create_gaps(REF, OUT) :- 
 	object_call(REF, getAutoCreateGaps, [], OUT).
 
 group_layout_get_layout_style(REF, OUT) :- 
 	object_call(REF, getLayoutStyle, [], OUT).
-
-group_layout_set_auto_create_gaps(REF, ARG0) :- 
-	object_call(REF, setAutoCreateGaps, '.'(ARG0, []), _).
 
 group_layout_notify_all(REF) :- 
 	object_call(REF, notifyAll, [], _).
@@ -127,11 +127,11 @@ group_layout_create_parallel_group(REF, ARG0, ARG1, OUT) :-
 group_layout_maximum_layout_size(REF, ARG0, OUT) :- 
 	object_call(REF, maximumLayoutSize, '.'(ARG0, []), OUT).
 
-group_layout_create_parallel_group(REF, ARG0, OUT) :- 
-	object_call(REF, createParallelGroup, '.'(ARG0, []), OUT).
-
 group_layout_set_auto_create_container_gaps(REF, ARG0) :- 
 	object_call(REF, setAutoCreateContainerGaps, '.'(ARG0, []), _).
+
+group_layout_create_parallel_group(REF, ARG0, OUT) :- 
+	object_call(REF, createParallelGroup, '.'(ARG0, []), OUT).
 
 group_layout_create_parallel_group(REF, OUT) :- 
 	object_call(REF, createParallelGroup, [], OUT).

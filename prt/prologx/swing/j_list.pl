@@ -406,11 +406,11 @@ j_list_get_selected_values_list(REF, OUT) :-
 j_list_is_optimized_drawing_enabled(REF, OUT) :- 
 	object_call(REF, isOptimizedDrawingEnabled, [], OUT).
 
-j_list_add_mouse_motion_listener(REF, ARG0) :- 
-	object_call(REF, addMouseMotionListener, '.'(ARG0, []), _).
-
 j_list_mouse_enter(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseEnter, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+j_list_add_mouse_motion_listener(REF, ARG0) :- 
+	object_call(REF, addMouseMotionListener, '.'(ARG0, []), _).
 
 j_list_enable(REF, ARG0) :- 
 	object_call(REF, enable, '.'(ARG0, []), _).
@@ -511,11 +511,11 @@ j_list_invalidate(REF) :-
 j_list_get_hierarchy_listeners(REF, OUT) :- 
 	object_call(REF, getHierarchyListeners, [], OUT).
 
-j_list_add_hierarchy_bounds_listener(REF, ARG0) :- 
-	object_call(REF, addHierarchyBoundsListener, '.'(ARG0, []), _).
-
 j_list_get_property_change_listeners(REF, OUT) :- 
 	object_call(REF, getPropertyChangeListeners, [], OUT).
+
+j_list_add_hierarchy_bounds_listener(REF, ARG0) :- 
+	object_call(REF, addHierarchyBoundsListener, '.'(ARG0, []), _).
 
 j_list_create_tool_tip(REF, OUT) :- 
 	object_call(REF, createToolTip, [], OUT).
@@ -622,14 +622,14 @@ j_list_get_key_listeners(REF, OUT) :-
 j_list_get_ancestor_listeners(REF, OUT) :- 
 	object_call(REF, getAncestorListeners, [], OUT).
 
-j_list_get_foreground(REF, OUT) :- 
-	object_call(REF, getForeground, [], OUT).
-
 j_list_is_focus_traversable(REF, OUT) :- 
 	object_call(REF, isFocusTraversable, [], OUT).
 
 j_list_remove_key_listener(REF, ARG0) :- 
 	object_call(REF, removeKeyListener, '.'(ARG0, []), _).
+
+j_list_get_foreground(REF, OUT) :- 
+	object_call(REF, getForeground, [], OUT).
 
 j_list_scroll_rect_to_visible(REF, ARG0) :- 
 	object_call(REF, scrollRectToVisible, '.'(ARG0, []), _).
@@ -667,11 +667,11 @@ j_list_get_scrollable_block_increment(REF, ARG0, ARG1, ARG2, OUT) :-
 j_list_get_mouse_wheel_listeners(REF, OUT) :- 
 	object_call(REF, getMouseWheelListeners, [], OUT).
 
-j_list_get_focus_cycle_root_ancestor(REF, OUT) :- 
-	object_call(REF, getFocusCycleRootAncestor, [], OUT).
-
 j_list_is_cursor_set(REF, OUT) :- 
 	object_call(REF, isCursorSet, [], OUT).
+
+j_list_get_focus_cycle_root_ancestor(REF, OUT) :- 
+	object_call(REF, getFocusCycleRootAncestor, [], OUT).
 
 j_list_is_selection_empty(REF, OUT) :- 
 	object_call(REF, isSelectionEmpty, [], OUT).
@@ -772,11 +772,11 @@ j_list_list(REF, ARG0) :-
 j_list_list(REF) :- 
 	object_call(REF, list, [], _).
 
-j_list_get_hierarchy_bounds_listeners(REF, OUT) :- 
-	object_call(REF, getHierarchyBoundsListeners, [], OUT).
-
 j_list_get_mouse_motion_listeners(REF, OUT) :- 
 	object_call(REF, getMouseMotionListeners, [], OUT).
+
+j_list_get_hierarchy_bounds_listeners(REF, OUT) :- 
+	object_call(REF, getHierarchyBoundsListeners, [], OUT).
 
 j_list_set_focus_traversal_policy_provider(REF, ARG0) :- 
 	object_call(REF, setFocusTraversalPolicyProvider, '.'(ARG0, []), _).
@@ -970,11 +970,11 @@ j_list_remove_component_listener(REF, ARG0) :-
 j_list_get_y(REF, OUT) :- 
 	object_call(REF, getY, [], OUT).
 
-j_list_get_tree_lock(REF, OUT) :- 
-	object_call(REF, getTreeLock, [], OUT).
-
 j_list_post_event(REF, ARG0, OUT) :- 
 	object_call(REF, postEvent, '.'(ARG0, []), OUT).
+
+j_list_get_tree_lock(REF, OUT) :- 
+	object_call(REF, getTreeLock, [], OUT).
 
 j_list_set_selected_index(REF, ARG0) :- 
 	object_call(REF, setSelectedIndex, '.'(ARG0, []), _).
@@ -985,11 +985,11 @@ j_list_get_preferred_size(REF, OUT) :-
 j_list_is_selected_index(REF, ARG0, OUT) :- 
 	object_call(REF, isSelectedIndex, '.'(ARG0, []), OUT).
 
-j_list_get_component_orientation(REF, OUT) :- 
-	object_call(REF, getComponentOrientation, [], OUT).
-
 j_list_set_cursor(REF, ARG0) :- 
 	object_call(REF, setCursor, '.'(ARG0, []), _).
+
+j_list_get_component_orientation(REF, OUT) :- 
+	object_call(REF, getComponentOrientation, [], OUT).
 
 j_list_key_down(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, keyDown, '.'(ARG0, '.'(ARG1, [])), OUT).
@@ -1030,11 +1030,11 @@ j_list_set_focus_cycle_root(REF, ARG0) :-
 j_list_prepare_image(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, prepareImage, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-j_list_get_focus_listeners(REF, OUT) :- 
-	object_call(REF, getFocusListeners, [], OUT).
-
 j_list_remove_input_method_listener(REF, ARG0) :- 
 	object_call(REF, removeInputMethodListener, '.'(ARG0, []), _).
+
+j_list_get_focus_listeners(REF, OUT) :- 
+	object_call(REF, getFocusListeners, [], OUT).
 
 j_list_set_preferred_size(REF, ARG0) :- 
 	object_call(REF, setPreferredSize, '.'(ARG0, []), _).
@@ -1174,11 +1174,11 @@ j_list_get_debug_graphics_options(REF, OUT) :-
 j_list_get_verify_input_when_focus_target(REF, OUT) :- 
 	object_call(REF, getVerifyInputWhenFocusTarget, [], OUT).
 
-j_list_get_cell_bounds(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getCellBounds, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 j_list_update_u_i(REF) :- 
 	object_call(REF, updateUI, [], _).
+
+j_list_get_cell_bounds(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getCellBounds, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 j_list_get_input_map(REF, OUT) :- 
 	object_call(REF, getInputMap, [], OUT).

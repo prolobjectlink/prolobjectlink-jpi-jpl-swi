@@ -160,11 +160,11 @@ j_text_pane_get_size(REF, OUT) :-
 j_text_pane_get_selected_text(REF, OUT) :- 
 	object_call(REF, getSelectedText, [], OUT).
 
-j_text_pane_get_cursor(REF, OUT) :- 
-	object_call(REF, getCursor, [], OUT).
-
 j_text_pane_is_font_set(REF, OUT) :- 
 	object_call(REF, isFontSet, [], OUT).
+
+j_text_pane_get_cursor(REF, OUT) :- 
+	object_call(REF, getCursor, [], OUT).
 
 j_text_pane_add_property_change_listener(REF, ARG0) :- 
 	object_call(REF, addPropertyChangeListener, '.'(ARG0, []), _).
@@ -1156,11 +1156,11 @@ j_text_pane_transfer_focus(REF) :-
 j_text_pane_get_vetoable_change_listeners(REF, OUT) :- 
 	object_call(REF, getVetoableChangeListeners, [], OUT).
 
-j_text_pane_get_alignment_y(REF, OUT) :- 
-	object_call(REF, getAlignmentY, [], OUT).
-
 j_text_pane_set_maximum_size(REF, ARG0) :- 
 	object_call(REF, setMaximumSize, '.'(ARG0, []), _).
+
+j_text_pane_get_alignment_y(REF, OUT) :- 
+	object_call(REF, getAlignmentY, [], OUT).
 
 j_text_pane_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
@@ -1279,11 +1279,11 @@ j_text_pane_is_showing(REF, OUT) :-
 j_text_pane_get_content_type(REF, OUT) :- 
 	object_call(REF, getContentType, [], OUT).
 
-j_text_pane_add_component_listener(REF, ARG0) :- 
-	object_call(REF, addComponentListener, '.'(ARG0, []), _).
-
 j_text_pane_remove_mouse_motion_listener(REF, ARG0) :- 
 	object_call(REF, removeMouseMotionListener, '.'(ARG0, []), _).
+
+j_text_pane_add_component_listener(REF, ARG0) :- 
+	object_call(REF, addComponentListener, '.'(ARG0, []), _).
 
 j_text_pane_register_keyboard_action(REF, ARG0, ARG1, ARG2) :- 
 	object_call(REF, registerKeyboardAction, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).

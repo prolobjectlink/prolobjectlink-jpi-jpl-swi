@@ -115,6 +115,9 @@ component_sample_model_get_samples(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, ARG6
 component_sample_model_get_transfer_type(REF, OUT) :- 
 	object_call(REF, getTransferType, [], OUT).
 
+component_sample_model_get_num_data_elements(REF, OUT) :- 
+	object_call(REF, getNumDataElements, [], OUT).
+
 component_sample_model_get_pixels(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, OUT) :- 
 	object_call(REF, getPixels, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), OUT).
 
@@ -126,9 +129,6 @@ component_sample_model_get_pixels(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, OUT) 
 
 component_sample_model_set_data_elements(REF, ARG0, ARG1, ARG2, ARG3) :- 
 	object_call(REF, setDataElements, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).
-
-component_sample_model_get_num_data_elements(REF, OUT) :- 
-	object_call(REF, getNumDataElements, [], OUT).
 
 component_sample_model_notify_all(REF) :- 
 	object_call(REF, notifyAll, [], _).

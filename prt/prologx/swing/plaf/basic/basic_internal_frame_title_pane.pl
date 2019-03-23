@@ -88,11 +88,11 @@ basic_internal_frame_title_pane_is_focus_traversal_policy_provider(REF, OUT) :-
 basic_internal_frame_title_pane_get_component_at(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, getComponentAt, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-basic_internal_frame_title_pane_create_image(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, createImage, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 basic_internal_frame_title_pane_remove_component_listener(REF, ARG0) :- 
 	object_call(REF, removeComponentListener, '.'(ARG0, []), _).
+
+basic_internal_frame_title_pane_create_image(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, createImage, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 basic_internal_frame_title_pane_get_component_at(REF, ARG0, OUT) :- 
 	object_call(REF, getComponentAt, '.'(ARG0, []), OUT).
@@ -100,11 +100,11 @@ basic_internal_frame_title_pane_get_component_at(REF, ARG0, OUT) :-
 basic_internal_frame_title_pane_location(REF, OUT) :- 
 	object_call(REF, location, [], OUT).
 
-basic_internal_frame_title_pane_create_image(REF, ARG0, OUT) :- 
-	object_call(REF, createImage, '.'(ARG0, []), OUT).
-
 basic_internal_frame_title_pane_is_maximum_size_set(REF, OUT) :- 
 	object_call(REF, isMaximumSizeSet, [], OUT).
+
+basic_internal_frame_title_pane_create_image(REF, ARG0, OUT) :- 
+	object_call(REF, createImage, '.'(ARG0, []), OUT).
 
 basic_internal_frame_title_pane_get_toolkit(REF, OUT) :- 
 	object_call(REF, getToolkit, [], OUT).
@@ -211,11 +211,11 @@ basic_internal_frame_title_pane_add_property_change_listener(REF, ARG0) :-
 basic_internal_frame_title_pane_is_validate_root(REF, OUT) :- 
 	object_call(REF, isValidateRoot, [], OUT).
 
-basic_internal_frame_title_pane_create_volatile_image(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, createVolatileImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
 basic_internal_frame_title_pane_set_focus_traversal_keys_enabled(REF, ARG0) :- 
 	object_call(REF, setFocusTraversalKeysEnabled, '.'(ARG0, []), _).
+
+basic_internal_frame_title_pane_create_volatile_image(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, createVolatileImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
 basic_internal_frame_title_pane_create_volatile_image(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, createVolatileImage, '.'(ARG0, '.'(ARG1, [])), OUT).
@@ -340,11 +340,11 @@ basic_internal_frame_title_pane_compute_visible_rect(REF, ARG0) :-
 basic_internal_frame_title_pane_paint_immediately(REF, ARG0, ARG1, ARG2, ARG3) :- 
 	object_call(REF, paintImmediately, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).
 
-basic_internal_frame_title_pane_get_bounds(REF, OUT) :- 
-	object_call(REF, getBounds, [], OUT).
-
 basic_internal_frame_title_pane_mouse_exit(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseExit, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+basic_internal_frame_title_pane_get_bounds(REF, OUT) :- 
+	object_call(REF, getBounds, [], OUT).
 
 basic_internal_frame_title_pane_get_bounds(REF, ARG0, OUT) :- 
 	object_call(REF, getBounds, '.'(ARG0, []), OUT).
@@ -403,11 +403,11 @@ basic_internal_frame_title_pane_get_locale(REF, OUT) :-
 basic_internal_frame_title_pane_get_top_level_ancestor(REF, OUT) :- 
 	object_call(REF, getTopLevelAncestor, [], OUT).
 
-basic_internal_frame_title_pane_get_hierarchy_listeners(REF, OUT) :- 
-	object_call(REF, getHierarchyListeners, [], OUT).
-
 basic_internal_frame_title_pane_get_input_method_requests(REF, OUT) :- 
 	object_call(REF, getInputMethodRequests, [], OUT).
+
+basic_internal_frame_title_pane_get_hierarchy_listeners(REF, OUT) :- 
+	object_call(REF, getHierarchyListeners, [], OUT).
 
 basic_internal_frame_title_pane_get_action_map(REF, OUT) :- 
 	object_call(REF, getActionMap, [], OUT).
@@ -427,11 +427,11 @@ basic_internal_frame_title_pane_paint_component(REF, ARG0) :-
 basic_internal_frame_title_pane_validate(REF) :- 
 	object_call(REF, validate, [], _).
 
-basic_internal_frame_title_pane_add_mouse_listener(REF, ARG0) :- 
-	object_call(REF, addMouseListener, '.'(ARG0, []), _).
-
 basic_internal_frame_title_pane_get_mouse_wheel_listeners(REF, OUT) :- 
 	object_call(REF, getMouseWheelListeners, [], OUT).
+
+basic_internal_frame_title_pane_add_mouse_listener(REF, ARG0) :- 
+	object_call(REF, addMouseListener, '.'(ARG0, []), _).
 
 basic_internal_frame_title_pane_get_alignment_y(REF, OUT) :- 
 	object_call(REF, getAlignmentY, [], OUT).
@@ -640,14 +640,14 @@ basic_internal_frame_title_pane_add_container_listener(REF, ARG0) :-
 basic_internal_frame_title_pane_get_input_verifier(REF, OUT) :- 
 	object_call(REF, getInputVerifier, [], OUT).
 
+basic_internal_frame_title_pane_get_mouse_listeners(REF, OUT) :- 
+	object_call(REF, getMouseListeners, [], OUT).
+
 basic_internal_frame_title_pane_add_mouse_motion_listener(REF, ARG0) :- 
 	object_call(REF, addMouseMotionListener, '.'(ARG0, []), _).
 
 basic_internal_frame_title_pane_get_input_context(REF, OUT) :- 
 	object_call(REF, getInputContext, [], OUT).
-
-basic_internal_frame_title_pane_get_mouse_listeners(REF, OUT) :- 
-	object_call(REF, getMouseListeners, [], OUT).
 
 basic_internal_frame_title_pane_get_tree_lock(REF, OUT) :- 
 	object_call(REF, getTreeLock, [], OUT).
@@ -820,11 +820,11 @@ basic_internal_frame_title_pane_get_transfer_handler(REF, OUT) :-
 basic_internal_frame_title_pane_set_double_buffered(REF, ARG0) :- 
 	object_call(REF, setDoubleBuffered, '.'(ARG0, []), _).
 
-basic_internal_frame_title_pane_bounds(REF, OUT) :- 
-	object_call(REF, bounds, [], OUT).
-
 basic_internal_frame_title_pane_get_key_listeners(REF, OUT) :- 
 	object_call(REF, getKeyListeners, [], OUT).
+
+basic_internal_frame_title_pane_bounds(REF, OUT) :- 
+	object_call(REF, bounds, [], OUT).
 
 basic_internal_frame_title_pane_notify(REF) :- 
 	object_call(REF, notify, [], _).
@@ -877,11 +877,11 @@ basic_internal_frame_title_pane_set_maximum_size(REF, ARG0) :-
 basic_internal_frame_title_pane_paint_components(REF, ARG0) :- 
 	object_call(REF, paintComponents, '.'(ARG0, []), _).
 
-basic_internal_frame_title_pane_add_hierarchy_listener(REF, ARG0) :- 
-	object_call(REF, addHierarchyListener, '.'(ARG0, []), _).
-
 basic_internal_frame_title_pane_set_component_orientation(REF, ARG0) :- 
 	object_call(REF, setComponentOrientation, '.'(ARG0, []), _).
+
+basic_internal_frame_title_pane_add_hierarchy_listener(REF, ARG0) :- 
+	object_call(REF, addHierarchyListener, '.'(ARG0, []), _).
 
 basic_internal_frame_title_pane_add_input_method_listener(REF, ARG0) :- 
 	object_call(REF, addInputMethodListener, '.'(ARG0, []), _).

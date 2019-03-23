@@ -142,11 +142,11 @@ color_u_i_resource_r_g_bto_h_s_b(REF, ARG0, ARG1, ARG2, ARG3, OUT) :-
 color_u_i_resource_get_blue(REF, OUT) :- 
 	object_call(REF, getBlue, [], OUT).
 
-color_u_i_resource_get_transparency(REF, OUT) :- 
-	object_call(REF, getTransparency, [], OUT).
-
 color_u_i_resource_get_r_g_b_color_components(REF, ARG0, OUT) :- 
 	object_call(REF, getRGBColorComponents, '.'(ARG0, []), OUT).
+
+color_u_i_resource_get_transparency(REF, OUT) :- 
+	object_call(REF, getTransparency, [], OUT).
 
 color_u_i_resource_get_color_components(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, getColorComponents, '.'(ARG0, '.'(ARG1, [])), OUT).

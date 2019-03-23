@@ -58,11 +58,11 @@ week_fields_day_of_week(REF, OUT) :-
 week_fields_get_minimal_days_in_first_week(REF, OUT) :- 
 	object_call(REF, getMinimalDaysInFirstWeek, [], OUT).
 
-week_fields_week_of_week_based_year(REF, OUT) :- 
-	object_call(REF, weekOfWeekBasedYear, [], OUT).
-
 week_fields_get_first_day_of_week(REF, OUT) :- 
 	object_call(REF, getFirstDayOfWeek, [], OUT).
+
+week_fields_week_of_week_based_year(REF, OUT) :- 
+	object_call(REF, weekOfWeekBasedYear, [], OUT).
 
 week_fields_week_of_month(REF, OUT) :- 
 	object_call(REF, weekOfMonth, [], OUT).

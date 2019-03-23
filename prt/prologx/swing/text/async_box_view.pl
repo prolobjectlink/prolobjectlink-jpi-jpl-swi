@@ -124,11 +124,11 @@ async_box_view_set_size(REF, ARG0, ARG1) :-
 async_box_view_get_element(REF, OUT) :- 
 	object_call(REF, getElement, [], OUT).
 
-async_box_view_get_preferred_span(REF, ARG0, OUT) :- 
-	object_call(REF, getPreferredSpan, '.'(ARG0, []), OUT).
-
 async_box_view_set_left_inset(REF, ARG0) :- 
 	object_call(REF, setLeftInset, '.'(ARG0, []), _).
+
+async_box_view_get_preferred_span(REF, ARG0, OUT) :- 
+	object_call(REF, getPreferredSpan, '.'(ARG0, []), OUT).
 
 async_box_view_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).

@@ -64,11 +64,11 @@ temporal_adjusters_to_string(REF, OUT) :-
 temporal_adjusters_first_in_month(REF, ARG0, OUT) :- 
 	object_call(REF, firstInMonth, '.'(ARG0, []), OUT).
 
-temporal_adjusters_last_in_month(REF, ARG0, OUT) :- 
-	object_call(REF, lastInMonth, '.'(ARG0, []), OUT).
-
 temporal_adjusters_previous_or_same(REF, ARG0, OUT) :- 
 	object_call(REF, previousOrSame, '.'(ARG0, []), OUT).
+
+temporal_adjusters_last_in_month(REF, ARG0, OUT) :- 
+	object_call(REF, lastInMonth, '.'(ARG0, []), OUT).
 
 temporal_adjusters_notify(REF) :- 
 	object_call(REF, notify, [], _).

@@ -46,11 +46,11 @@ file_cache_image_output_stream_write_double(REF, ARG0) :-
 file_cache_image_output_stream_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-file_cache_image_output_stream_write_ints(REF, ARG0, ARG1, ARG2) :- 
-	object_call(REF, writeInts, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
-
 file_cache_image_output_stream_write_boolean(REF, ARG0) :- 
 	object_call(REF, writeBoolean, '.'(ARG0, []), _).
+
+file_cache_image_output_stream_write_ints(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, writeInts, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
 
 file_cache_image_output_stream_is_cached(REF, OUT) :- 
 	object_call(REF, isCached, [], OUT).

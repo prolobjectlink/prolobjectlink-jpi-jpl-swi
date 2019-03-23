@@ -151,11 +151,11 @@ window_invalidate(REF) :-
 window_add_mouse_listener(REF, ARG0) :- 
 	object_call(REF, addMouseListener, '.'(ARG0, []), _).
 
-window_create_volatile_image(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, createVolatileImage, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 window_get_key_listeners(REF, OUT) :- 
 	object_call(REF, getKeyListeners, [], OUT).
+
+window_create_volatile_image(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, createVolatileImage, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 window_key_up(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, keyUp, '.'(ARG0, '.'(ARG1, [])), OUT).
@@ -382,11 +382,11 @@ window_reshape(REF, ARG0, ARG1, ARG2, ARG3) :-
 window_get_alignment_y(REF, OUT) :- 
 	object_call(REF, getAlignmentY, [], OUT).
 
-window_get_drop_target(REF, OUT) :- 
-	object_call(REF, getDropTarget, [], OUT).
-
 window_mouse_up(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseUp, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+window_get_drop_target(REF, OUT) :- 
+	object_call(REF, getDropTarget, [], OUT).
 
 window_is_ancestor_of(REF, ARG0, OUT) :- 
 	object_call(REF, isAncestorOf, '.'(ARG0, []), OUT).
@@ -514,11 +514,11 @@ window_print_all(REF, ARG0) :-
 window_add_property_change_listener(REF, ARG0, ARG1) :- 
 	object_call(REF, addPropertyChangeListener, '.'(ARG0, '.'(ARG1, [])), _).
 
-window_get_window_state_listeners(REF, OUT) :- 
-	object_call(REF, getWindowStateListeners, [], OUT).
-
 window_add_property_change_listener(REF, ARG0) :- 
 	object_call(REF, addPropertyChangeListener, '.'(ARG0, []), _).
+
+window_get_window_state_listeners(REF, OUT) :- 
+	object_call(REF, getWindowStateListeners, [], OUT).
 
 window_get_container_listeners(REF, OUT) :- 
 	object_call(REF, getContainerListeners, [], OUT).
@@ -583,11 +583,11 @@ window_is_focus_traversable(REF, OUT) :-
 window_is_opaque(REF, OUT) :- 
 	object_call(REF, isOpaque, [], OUT).
 
-window_add_input_method_listener(REF, ARG0) :- 
-	object_call(REF, addInputMethodListener, '.'(ARG0, []), _).
-
 window_get_width(REF, OUT) :- 
 	object_call(REF, getWidth, [], OUT).
+
+window_add_input_method_listener(REF, ARG0) :- 
+	object_call(REF, addInputMethodListener, '.'(ARG0, []), _).
 
 window_get_focus_traversal_keys(REF, ARG0, OUT) :- 
 	object_call(REF, getFocusTraversalKeys, '.'(ARG0, []), OUT).
@@ -784,11 +784,11 @@ window_get_height(REF, OUT) :-
 window_get_hierarchy_bounds_listeners(REF, OUT) :- 
 	object_call(REF, getHierarchyBoundsListeners, [], OUT).
 
-window_count_components(REF, OUT) :- 
-	object_call(REF, countComponents, [], OUT).
-
 window_layout(REF) :- 
 	object_call(REF, layout, [], _).
+
+window_count_components(REF, OUT) :- 
+	object_call(REF, countComponents, [], OUT).
 
 window_inside(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, inside, '.'(ARG0, '.'(ARG1, [])), OUT).
@@ -826,11 +826,11 @@ window_mouse_enter(REF, ARG0, ARG1, ARG2, OUT) :-
 window_set_location(REF, ARG0, ARG1) :- 
 	object_call(REF, setLocation, '.'(ARG0, '.'(ARG1, [])), _).
 
-window_add_component_listener(REF, ARG0) :- 
-	object_call(REF, addComponentListener, '.'(ARG0, []), _).
-
 window_get_peer(REF, OUT) :- 
 	object_call(REF, getPeer, [], OUT).
+
+window_add_component_listener(REF, ARG0) :- 
+	object_call(REF, addComponentListener, '.'(ARG0, []), _).
 
 window_get_minimum_size(REF, OUT) :- 
 	object_call(REF, getMinimumSize, [], OUT).

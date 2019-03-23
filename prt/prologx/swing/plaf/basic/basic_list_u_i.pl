@@ -79,11 +79,11 @@ basic_list_u_i_get_maximum_size(REF, ARG0, OUT) :-
 basic_list_u_i_get_minimum_size(REF, ARG0, OUT) :- 
 	object_call(REF, getMinimumSize, '.'(ARG0, []), OUT).
 
-basic_list_u_i_get_baseline(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, getBaseline, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
 basic_list_u_i_paint(REF, ARG0, ARG1) :- 
 	object_call(REF, paint, '.'(ARG0, '.'(ARG1, [])), _).
+
+basic_list_u_i_get_baseline(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, getBaseline, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
 basic_list_u_i_get_accessible_children_count(REF, ARG0, OUT) :- 
 	object_call(REF, getAccessibleChildrenCount, '.'(ARG0, []), OUT).

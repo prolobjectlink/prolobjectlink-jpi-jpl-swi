@@ -58,11 +58,11 @@ basic_menu_u_i_create_u_i(REF, ARG0, OUT) :-
 basic_menu_u_i_wait(REF) :- 
 	object_call(REF, wait, [], _).
 
-basic_menu_u_i_get_baseline(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, getBaseline, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
 basic_menu_u_i_get_accessible_child(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, getAccessibleChild, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+basic_menu_u_i_get_baseline(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, getBaseline, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
 basic_menu_u_i_wait(REF, ARG0) :- 
 	object_call(REF, wait, '.'(ARG0, []), _).

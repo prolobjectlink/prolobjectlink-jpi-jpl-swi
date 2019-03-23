@@ -445,14 +445,14 @@ j_combo_box_compute_visible_rect(REF, ARG0) :-
 j_combo_box_set_request_focus_enabled(REF, ARG0) :- 
 	object_call(REF, setRequestFocusEnabled, '.'(ARG0, []), _).
 
+j_combo_box_got_focus(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, gotFocus, '.'(ARG0, '.'(ARG1, [])), OUT).
+
 j_combo_box_get_tree_lock(REF, OUT) :- 
 	object_call(REF, getTreeLock, [], OUT).
 
 j_combo_box_get_background(REF, OUT) :- 
 	object_call(REF, getBackground, [], OUT).
-
-j_combo_box_got_focus(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, gotFocus, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 j_combo_box_get_cursor(REF, OUT) :- 
 	object_call(REF, getCursor, [], OUT).
@@ -826,11 +826,11 @@ j_combo_box_show(REF, ARG0) :-
 j_combo_box_paint(REF, ARG0) :- 
 	object_call(REF, paint, '.'(ARG0, []), _).
 
-j_combo_box_add_key_listener(REF, ARG0) :- 
-	object_call(REF, addKeyListener, '.'(ARG0, []), _).
-
 j_combo_box_transfer_focus(REF) :- 
 	object_call(REF, transferFocus, [], _).
+
+j_combo_box_add_key_listener(REF, ARG0) :- 
+	object_call(REF, addKeyListener, '.'(ARG0, []), _).
 
 j_combo_box_set_verify_input_when_focus_target(REF, ARG0) :- 
 	object_call(REF, setVerifyInputWhenFocusTarget, '.'(ARG0, []), _).
@@ -964,11 +964,11 @@ j_combo_box_remove_mouse_motion_listener(REF, ARG0) :-
 j_combo_box_get_key_listeners(REF, OUT) :- 
 	object_call(REF, getKeyListeners, [], OUT).
 
-j_combo_box_add_mouse_motion_listener(REF, ARG0) :- 
-	object_call(REF, addMouseMotionListener, '.'(ARG0, []), _).
-
 j_combo_box_mouse_down(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseDown, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+j_combo_box_add_mouse_motion_listener(REF, ARG0) :- 
+	object_call(REF, addMouseMotionListener, '.'(ARG0, []), _).
 
 j_combo_box_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
@@ -1030,11 +1030,11 @@ j_combo_box_add_property_change_listener(REF, ARG0, ARG1) :-
 j_combo_box_mouse_up(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseUp, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-j_combo_box_get_height(REF, OUT) :- 
-	object_call(REF, getHeight, [], OUT).
-
 j_combo_box_remove_notify(REF) :- 
 	object_call(REF, removeNotify, [], _).
+
+j_combo_box_get_height(REF, OUT) :- 
+	object_call(REF, getHeight, [], OUT).
 
 j_combo_box_set_cursor(REF, ARG0) :- 
 	object_call(REF, setCursor, '.'(ARG0, []), _).
@@ -1150,11 +1150,11 @@ j_combo_box_get_alignment_y(REF, OUT) :-
 j_combo_box_get_property_change_listeners(REF, ARG0, OUT) :- 
 	object_call(REF, getPropertyChangeListeners, '.'(ARG0, []), OUT).
 
-j_combo_box_action(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, action, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 j_combo_box_get_property_change_listeners(REF, OUT) :- 
 	object_call(REF, getPropertyChangeListeners, [], OUT).
+
+j_combo_box_action(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, action, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 j_combo_box_remove_item(REF, ARG0) :- 
 	object_call(REF, removeItem, '.'(ARG0, []), _).

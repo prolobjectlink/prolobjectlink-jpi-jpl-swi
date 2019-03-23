@@ -70,14 +70,14 @@ image_icon_set_image_observer(REF, ARG0) :-
 image_icon_get_accessible_context(REF, OUT) :- 
 	object_call(REF, getAccessibleContext, [], OUT).
 
-image_icon_get_icon_height(REF, OUT) :- 
-	object_call(REF, getIconHeight, [], OUT).
-
 image_icon_get_image_observer(REF, OUT) :- 
 	object_call(REF, getImageObserver, [], OUT).
 
 image_icon_set_description(REF, ARG0) :- 
 	object_call(REF, setDescription, '.'(ARG0, []), _).
+
+image_icon_get_icon_height(REF, OUT) :- 
+	object_call(REF, getIconHeight, [], OUT).
 
 image_icon_notify(REF) :- 
 	object_call(REF, notify, [], _).

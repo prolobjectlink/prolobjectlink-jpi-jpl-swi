@@ -88,11 +88,11 @@ timer_get_class(REF, OUT) :-
 timer_notify_all(REF) :- 
 	object_call(REF, notifyAll, [], _).
 
-timer_set_send_past_notifications(REF, ARG0) :- 
-	object_call(REF, setSendPastNotifications, '.'(ARG0, []), _).
-
 timer_pre_deregister(REF) :- 
 	object_call(REF, preDeregister, [], _).
+
+timer_set_send_past_notifications(REF, ARG0) :- 
+	object_call(REF, setSendPastNotifications, '.'(ARG0, []), _).
 
 timer_get_notification_type(REF, ARG0, OUT) :- 
 	object_call(REF, getNotificationType, '.'(ARG0, []), OUT).

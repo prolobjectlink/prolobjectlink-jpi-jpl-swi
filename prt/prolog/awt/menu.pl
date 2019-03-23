@@ -34,11 +34,11 @@ menu(OUT) :-
 menu_insert_separator(REF, ARG0) :- 
 	object_call(REF, insertSeparator, '.'(ARG0, []), _).
 
-menu_add(REF, ARG0) :- 
-	object_call(REF, add, '.'(ARG0, []), _).
-
 menu_add(REF, ARG0, OUT) :- 
 	object_call(REF, add, '.'(ARG0, []), OUT).
+
+menu_add(REF, ARG0) :- 
+	object_call(REF, add, '.'(ARG0, []), _).
 
 menu_set_action_command(REF, ARG0) :- 
 	object_call(REF, setActionCommand, '.'(ARG0, []), _).

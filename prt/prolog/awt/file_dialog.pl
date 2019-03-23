@@ -208,11 +208,11 @@ file_dialog_is_lightweight(REF, OUT) :-
 file_dialog_is_resizable(REF, OUT) :- 
 	object_call(REF, isResizable, [], OUT).
 
-file_dialog_add_mouse_listener(REF, ARG0) :- 
-	object_call(REF, addMouseListener, '.'(ARG0, []), _).
-
 file_dialog_is_background_set(REF, OUT) :- 
 	object_call(REF, isBackgroundSet, [], OUT).
+
+file_dialog_add_mouse_listener(REF, ARG0) :- 
+	object_call(REF, addMouseListener, '.'(ARG0, []), _).
 
 file_dialog_set_auto_request_focus(REF, ARG0) :- 
 	object_call(REF, setAutoRequestFocus, '.'(ARG0, []), _).
@@ -220,11 +220,11 @@ file_dialog_set_auto_request_focus(REF, ARG0) :-
 file_dialog_print_all(REF, ARG0) :- 
 	object_call(REF, printAll, '.'(ARG0, []), _).
 
-file_dialog_get_ignore_repaint(REF, OUT) :- 
-	object_call(REF, getIgnoreRepaint, [], OUT).
-
 file_dialog_is_visible(REF, OUT) :- 
 	object_call(REF, isVisible, [], OUT).
+
+file_dialog_get_ignore_repaint(REF, OUT) :- 
+	object_call(REF, getIgnoreRepaint, [], OUT).
 
 file_dialog_set_filename_filter(REF, ARG0) :- 
 	object_call(REF, setFilenameFilter, '.'(ARG0, []), _).
@@ -268,11 +268,11 @@ file_dialog_is_opaque(REF, OUT) :-
 file_dialog_set_maximum_size(REF, ARG0) :- 
 	object_call(REF, setMaximumSize, '.'(ARG0, []), _).
 
-file_dialog_get_ownerless_windows(REF, OUT) :- 
-	object_call(REF, getOwnerlessWindows, [], OUT).
-
 file_dialog_get_locale(REF, OUT) :- 
 	object_call(REF, getLocale, [], OUT).
+
+file_dialog_get_ownerless_windows(REF, OUT) :- 
+	object_call(REF, getOwnerlessWindows, [], OUT).
 
 file_dialog_create_image(REF, ARG0, OUT) :- 
 	object_call(REF, createImage, '.'(ARG0, []), OUT).
@@ -385,11 +385,11 @@ file_dialog_get_components(REF, OUT) :-
 file_dialog_get_alignment_y(REF, OUT) :- 
 	object_call(REF, getAlignmentY, [], OUT).
 
-file_dialog_find_component_at(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, findComponentAt, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 file_dialog_layout(REF) :- 
 	object_call(REF, layout, [], _).
+
+file_dialog_find_component_at(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, findComponentAt, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 file_dialog_set_undecorated(REF, ARG0) :- 
 	object_call(REF, setUndecorated, '.'(ARG0, []), _).
@@ -421,17 +421,17 @@ file_dialog_is_focusable(REF, OUT) :-
 file_dialog_remove_mouse_wheel_listener(REF, ARG0) :- 
 	object_call(REF, removeMouseWheelListener, '.'(ARG0, []), _).
 
-file_dialog_check_image(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, checkImage, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 file_dialog_prepare_image(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, prepareImage, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-file_dialog_check_image(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, checkImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+file_dialog_check_image(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, checkImage, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 file_dialog_prepare_image(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_call(REF, prepareImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+
+file_dialog_check_image(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_call(REF, checkImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
 file_dialog_key_up(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, keyUp, '.'(ARG0, '.'(ARG1, [])), OUT).
@@ -493,11 +493,11 @@ file_dialog_get_property_change_listeners(REF, OUT) :-
 file_dialog_set_multiple_mode(REF, ARG0) :- 
 	object_call(REF, setMultipleMode, '.'(ARG0, []), _).
 
-file_dialog_get_graphics_configuration(REF, OUT) :- 
-	object_call(REF, getGraphicsConfiguration, [], OUT).
-
 file_dialog_is_focus_traversable(REF, OUT) :- 
 	object_call(REF, isFocusTraversable, [], OUT).
+
+file_dialog_get_graphics_configuration(REF, OUT) :- 
+	object_call(REF, getGraphicsConfiguration, [], OUT).
 
 file_dialog_is_multiple_mode(REF, OUT) :- 
 	object_call(REF, isMultipleMode, [], OUT).
@@ -706,14 +706,14 @@ file_dialog_get_preferred_size(REF, OUT) :-
 file_dialog_remove_window_listener(REF, ARG0) :- 
 	object_call(REF, removeWindowListener, '.'(ARG0, []), _).
 
-file_dialog_add_mouse_wheel_listener(REF, ARG0) :- 
-	object_call(REF, addMouseWheelListener, '.'(ARG0, []), _).
-
 file_dialog_is_minimum_size_set(REF, OUT) :- 
 	object_call(REF, isMinimumSizeSet, [], OUT).
 
 file_dialog_transfer_focus_up_cycle(REF) :- 
 	object_call(REF, transferFocusUpCycle, [], _).
+
+file_dialog_add_mouse_wheel_listener(REF, ARG0) :- 
+	object_call(REF, addMouseWheelListener, '.'(ARG0, []), _).
 
 file_dialog_add_notify(REF) :- 
 	object_call(REF, addNotify, [], _).
@@ -814,11 +814,11 @@ file_dialog_mouse_enter(REF, ARG0, ARG1, ARG2, OUT) :-
 file_dialog_get_hierarchy_listeners(REF, OUT) :- 
 	object_call(REF, getHierarchyListeners, [], OUT).
 
-file_dialog_get_graphics(REF, OUT) :- 
-	object_call(REF, getGraphics, [], OUT).
-
 file_dialog_set_foreground(REF, ARG0) :- 
 	object_call(REF, setForeground, '.'(ARG0, []), _).
+
+file_dialog_get_graphics(REF, OUT) :- 
+	object_call(REF, getGraphics, [], OUT).
 
 file_dialog_remove_mouse_listener(REF, ARG0) :- 
 	object_call(REF, removeMouseListener, '.'(ARG0, []), _).

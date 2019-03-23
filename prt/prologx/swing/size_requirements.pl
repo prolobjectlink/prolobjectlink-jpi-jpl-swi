@@ -31,11 +31,11 @@ size_requirements(OUT) :-
 size_requirements_adjust_sizes(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, adjustSizes, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-size_requirements_calculate_aligned_positions(REF, ARG0, ARG1, ARG2, ARG3, ARG4) :- 
-	object_call(REF, calculateAlignedPositions, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), _).
-
 size_requirements_get_tiled_size_requirements(REF, ARG0, OUT) :- 
 	object_call(REF, getTiledSizeRequirements, '.'(ARG0, []), OUT).
+
+size_requirements_calculate_aligned_positions(REF, ARG0, ARG1, ARG2, ARG3, ARG4) :- 
+	object_call(REF, calculateAlignedPositions, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), _).
 
 size_requirements_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).

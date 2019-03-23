@@ -115,11 +115,11 @@ default_handler2_ignorable_whitespace(REF, ARG0, ARG1, ARG2) :-
 default_handler2_notify(REF) :- 
 	object_call(REF, notify, [], _).
 
-default_handler2_resolve_entity(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, resolveEntity, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 default_handler2_end_entity(REF, ARG0) :- 
 	object_call(REF, endEntity, '.'(ARG0, []), _).
+
+default_handler2_resolve_entity(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, resolveEntity, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 default_handler2_skipped_entity(REF, ARG0) :- 
 	object_call(REF, skippedEntity, '.'(ARG0, []), _).

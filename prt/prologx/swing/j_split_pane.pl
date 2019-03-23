@@ -184,11 +184,11 @@ j_split_pane_remove(REF, ARG0) :-
 j_split_pane_disable(REF) :- 
 	object_call(REF, disable, [], _).
 
-j_split_pane_add_input_method_listener(REF, ARG0) :- 
-	object_call(REF, addInputMethodListener, '.'(ARG0, []), _).
-
 j_split_pane_is_maximum_size_set(REF, OUT) :- 
 	object_call(REF, isMaximumSizeSet, [], OUT).
+
+j_split_pane_add_input_method_listener(REF, ARG0) :- 
+	object_call(REF, addInputMethodListener, '.'(ARG0, []), _).
 
 j_split_pane_get_components(REF, OUT) :- 
 	object_call(REF, getComponents, [], OUT).
@@ -382,11 +382,11 @@ j_split_pane_remove_component_listener(REF, ARG0) :-
 j_split_pane_get_focus_traversal_keys(REF, ARG0, OUT) :- 
 	object_call(REF, getFocusTraversalKeys, '.'(ARG0, []), OUT).
 
-j_split_pane_get_graphics_configuration(REF, OUT) :- 
-	object_call(REF, getGraphicsConfiguration, [], OUT).
-
 j_split_pane_is_preferred_size_set(REF, OUT) :- 
 	object_call(REF, isPreferredSizeSet, [], OUT).
+
+j_split_pane_get_graphics_configuration(REF, OUT) :- 
+	object_call(REF, getGraphicsConfiguration, [], OUT).
 
 j_split_pane_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
@@ -421,11 +421,11 @@ j_split_pane_preferred_size(REF, OUT) :-
 j_split_pane_get_toolkit(REF, OUT) :- 
 	object_call(REF, getToolkit, [], OUT).
 
-j_split_pane_get_alignment_y(REF, OUT) :- 
-	object_call(REF, getAlignmentY, [], OUT).
-
 j_split_pane_get_minimum_size(REF, OUT) :- 
 	object_call(REF, getMinimumSize, [], OUT).
+
+j_split_pane_get_alignment_y(REF, OUT) :- 
+	object_call(REF, getAlignmentY, [], OUT).
 
 j_split_pane_create_image(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, createImage, '.'(ARG0, '.'(ARG1, [])), OUT).
@@ -463,11 +463,11 @@ j_split_pane_request_focus_in_window(REF, OUT) :-
 j_split_pane_set_orientation(REF, ARG0) :- 
 	object_call(REF, setOrientation, '.'(ARG0, []), _).
 
-j_split_pane_add_mouse_wheel_listener(REF, ARG0) :- 
-	object_call(REF, addMouseWheelListener, '.'(ARG0, []), _).
-
 j_split_pane_set_focus_traversal_keys_enabled(REF, ARG0) :- 
 	object_call(REF, setFocusTraversalKeysEnabled, '.'(ARG0, []), _).
+
+j_split_pane_add_mouse_wheel_listener(REF, ARG0) :- 
+	object_call(REF, addMouseWheelListener, '.'(ARG0, []), _).
 
 j_split_pane_get_minimum_divider_location(REF, OUT) :- 
 	object_call(REF, getMinimumDividerLocation, [], OUT).
@@ -511,11 +511,11 @@ j_split_pane_set_divider_location(REF, ARG0) :-
 j_split_pane_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-j_split_pane_get_component_orientation(REF, OUT) :- 
-	object_call(REF, getComponentOrientation, [], OUT).
-
 j_split_pane_repaint(REF, ARG0, ARG1, ARG2, ARG3) :- 
 	object_call(REF, repaint, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).
+
+j_split_pane_get_component_orientation(REF, OUT) :- 
+	object_call(REF, getComponentOrientation, [], OUT).
 
 j_split_pane_repaint(REF, ARG0) :- 
 	object_call(REF, repaint, '.'(ARG0, []), _).
@@ -541,11 +541,11 @@ j_split_pane_enable(REF) :-
 j_split_pane_enable(REF, ARG0) :- 
 	object_call(REF, enable, '.'(ARG0, []), _).
 
-j_split_pane_get_hierarchy_bounds_listeners(REF, OUT) :- 
-	object_call(REF, getHierarchyBoundsListeners, [], OUT).
-
 j_split_pane_mouse_enter(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseEnter, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+j_split_pane_get_hierarchy_bounds_listeners(REF, OUT) :- 
+	object_call(REF, getHierarchyBoundsListeners, [], OUT).
 
 j_split_pane_set_location(REF, ARG0, ARG1) :- 
 	object_call(REF, setLocation, '.'(ARG0, '.'(ARG1, [])), _).
@@ -751,11 +751,11 @@ j_split_pane_insets(REF, OUT) :-
 j_split_pane_set_cursor(REF, ARG0) :- 
 	object_call(REF, setCursor, '.'(ARG0, []), _).
 
-j_split_pane_create_volatile_image(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, createVolatileImage, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 j_split_pane_paint_all(REF, ARG0) :- 
 	object_call(REF, paintAll, '.'(ARG0, []), _).
+
+j_split_pane_create_volatile_image(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, createVolatileImage, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 j_split_pane_create_volatile_image(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, createVolatileImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
@@ -913,11 +913,11 @@ j_split_pane_get_cursor(REF, OUT) :-
 j_split_pane_mouse_down(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseDown, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-j_split_pane_get_foreground(REF, OUT) :- 
-	object_call(REF, getForeground, [], OUT).
-
 j_split_pane_set_bounds(REF, ARG0) :- 
 	object_call(REF, setBounds, '.'(ARG0, []), _).
+
+j_split_pane_get_foreground(REF, OUT) :- 
+	object_call(REF, getForeground, [], OUT).
 
 j_split_pane_set_bounds(REF, ARG0, ARG1, ARG2, ARG3) :- 
 	object_call(REF, setBounds, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).
@@ -970,11 +970,11 @@ j_split_pane_layout(REF) :-
 j_split_pane_reset_to_preferred_sizes(REF) :- 
 	object_call(REF, resetToPreferredSizes, [], _).
 
-j_split_pane_get_background(REF, OUT) :- 
-	object_call(REF, getBackground, [], OUT).
-
 j_split_pane_transfer_focus(REF) :- 
 	object_call(REF, transferFocus, [], _).
+
+j_split_pane_get_background(REF, OUT) :- 
+	object_call(REF, getBackground, [], OUT).
 
 j_split_pane_paint(REF, ARG0) :- 
 	object_call(REF, paint, '.'(ARG0, []), _).
@@ -1099,11 +1099,11 @@ j_split_pane_get_font_metrics(REF, ARG0, OUT) :-
 j_split_pane_reset_keyboard_actions(REF) :- 
 	object_call(REF, resetKeyboardActions, [], _).
 
-j_split_pane_get_baseline_resize_behavior(REF, OUT) :- 
-	object_call(REF, getBaselineResizeBehavior, [], OUT).
-
 j_split_pane_set_focus_traversal_keys(REF, ARG0, ARG1) :- 
 	object_call(REF, setFocusTraversalKeys, '.'(ARG0, '.'(ARG1, [])), _).
+
+j_split_pane_get_baseline_resize_behavior(REF, OUT) :- 
+	object_call(REF, getBaselineResizeBehavior, [], OUT).
 
 j_split_pane_add(REF, ARG0, OUT) :- 
 	object_call(REF, add, '.'(ARG0, []), OUT).

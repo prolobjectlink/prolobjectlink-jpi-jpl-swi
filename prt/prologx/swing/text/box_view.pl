@@ -256,11 +256,11 @@ box_view_to_string(REF, OUT) :-
 box_view_model_to_view(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, modelToView, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-box_view_model_to_view(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, modelToView, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 box_view_get_view_factory(REF, OUT) :- 
 	object_call(REF, getViewFactory, [], OUT).
+
+box_view_model_to_view(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, modelToView, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 box_view_model_to_view(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
 	object_call(REF, modelToView, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).

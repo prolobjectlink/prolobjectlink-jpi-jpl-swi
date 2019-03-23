@@ -313,11 +313,11 @@ j_window_mouse_up(REF, ARG0, ARG1, ARG2, OUT) :-
 j_window_enable(REF) :- 
 	object_call(REF, enable, [], _).
 
-j_window_get_baseline_resize_behavior(REF, OUT) :- 
-	object_call(REF, getBaselineResizeBehavior, [], OUT).
-
 j_window_set_foreground(REF, ARG0) :- 
 	object_call(REF, setForeground, '.'(ARG0, []), _).
+
+j_window_get_baseline_resize_behavior(REF, OUT) :- 
+	object_call(REF, getBaselineResizeBehavior, [], OUT).
 
 j_window_enable(REF, ARG0) :- 
 	object_call(REF, enable, '.'(ARG0, []), _).
@@ -499,17 +499,17 @@ j_window_get_x(REF, OUT) :-
 j_window_repaint(REF, ARG0) :- 
 	object_call(REF, repaint, '.'(ARG0, []), _).
 
-j_window_add_focus_listener(REF, ARG0) :- 
-	object_call(REF, addFocusListener, '.'(ARG0, []), _).
-
 j_window_repaint(REF) :- 
 	object_call(REF, repaint, [], _).
 
-j_window_get_drop_target(REF, OUT) :- 
-	object_call(REF, getDropTarget, [], OUT).
+j_window_add_focus_listener(REF, ARG0) :- 
+	object_call(REF, addFocusListener, '.'(ARG0, []), _).
 
 j_window_is_maximum_size_set(REF, OUT) :- 
 	object_call(REF, isMaximumSizeSet, [], OUT).
+
+j_window_get_drop_target(REF, OUT) :- 
+	object_call(REF, getDropTarget, [], OUT).
 
 j_window_repaint(REF, ARG0, ARG1, ARG2, ARG3, ARG4) :- 
 	object_call(REF, repaint, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), _).
@@ -580,14 +580,14 @@ j_window_set_transfer_handler(REF, ARG0) :-
 j_window_get_size(REF, ARG0, OUT) :- 
 	object_call(REF, getSize, '.'(ARG0, []), OUT).
 
-j_window_create_image(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, createImage, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 j_window_inside(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, inside, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 j_window_is_focus_owner(REF, OUT) :- 
 	object_call(REF, isFocusOwner, [], OUT).
+
+j_window_create_image(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, createImage, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 j_window_create_image(REF, ARG0, OUT) :- 
 	object_call(REF, createImage, '.'(ARG0, []), OUT).
@@ -658,11 +658,11 @@ j_window_size(REF, OUT) :-
 j_window_add_property_change_listener(REF, ARG0, ARG1) :- 
 	object_call(REF, addPropertyChangeListener, '.'(ARG0, '.'(ARG1, [])), _).
 
-j_window_add_mouse_listener(REF, ARG0) :- 
-	object_call(REF, addMouseListener, '.'(ARG0, []), _).
-
 j_window_remove_component_listener(REF, ARG0) :- 
 	object_call(REF, removeComponentListener, '.'(ARG0, []), _).
+
+j_window_add_mouse_listener(REF, ARG0) :- 
+	object_call(REF, addMouseListener, '.'(ARG0, []), _).
 
 j_window_handle_event(REF, ARG0, OUT) :- 
 	object_call(REF, handleEvent, '.'(ARG0, []), OUT).
@@ -694,11 +694,11 @@ j_window_show(REF) :-
 j_window_add_mouse_wheel_listener(REF, ARG0) :- 
 	object_call(REF, addMouseWheelListener, '.'(ARG0, []), _).
 
-j_window_dispatch_event(REF, ARG0) :- 
-	object_call(REF, dispatchEvent, '.'(ARG0, []), _).
-
 j_window_show(REF, ARG0) :- 
 	object_call(REF, show, '.'(ARG0, []), _).
+
+j_window_dispatch_event(REF, ARG0) :- 
+	object_call(REF, dispatchEvent, '.'(ARG0, []), _).
 
 j_window_get_peer(REF, OUT) :- 
 	object_call(REF, getPeer, [], OUT).
@@ -739,11 +739,11 @@ j_window_add(REF, ARG0, ARG1, OUT) :-
 j_window_add(REF, ARG0, ARG1, ARG2) :- 
 	object_call(REF, add, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
 
-j_window_check_image(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, checkImage, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 j_window_lost_focus(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, lostFocus, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+j_window_check_image(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, checkImage, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 j_window_add(REF, ARG0, OUT) :- 
 	object_call(REF, add, '.'(ARG0, []), OUT).
@@ -880,11 +880,11 @@ j_window_add_window_state_listener(REF, ARG0) :-
 j_window_set_background(REF, ARG0) :- 
 	object_call(REF, setBackground, '.'(ARG0, []), _).
 
-j_window_is_enabled(REF, OUT) :- 
-	object_call(REF, isEnabled, [], OUT).
-
 j_window_set_locale(REF, ARG0) :- 
 	object_call(REF, setLocale, '.'(ARG0, []), _).
+
+j_window_is_enabled(REF, OUT) :- 
+	object_call(REF, isEnabled, [], OUT).
 
 j_window_to_back(REF) :- 
 	object_call(REF, toBack, [], _).
@@ -970,24 +970,24 @@ j_window_location(REF, OUT) :-
 j_window_transfer_focus_down_cycle(REF) :- 
 	object_call(REF, transferFocusDownCycle, [], _).
 
-j_window_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
-	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
-
-j_window_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
-	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
-
-j_window_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
-	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
-
-j_window_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
-	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
-
-j_window_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
-	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
-
-j_window_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
-	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
-
 j_window_set_focusable(REF, ARG0) :- 
 	object_call(REF, setFocusable, '.'(ARG0, []), _).
+
+j_window_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+j_window_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+j_window_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+j_window_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+j_window_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+j_window_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
 

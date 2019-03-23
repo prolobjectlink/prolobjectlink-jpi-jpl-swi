@@ -319,11 +319,11 @@ default_table_cell_renderer_show(REF) :-
 default_table_cell_renderer_add_vetoable_change_listener(REF, ARG0) :- 
 	object_call(REF, addVetoableChangeListener, '.'(ARG0, []), _).
 
-default_table_cell_renderer_get_cursor(REF, OUT) :- 
-	object_call(REF, getCursor, [], OUT).
-
 default_table_cell_renderer_show(REF, ARG0) :- 
 	object_call(REF, show, '.'(ARG0, []), _).
+
+default_table_cell_renderer_get_cursor(REF, OUT) :- 
+	object_call(REF, getCursor, [], OUT).
 
 default_table_cell_renderer_count_components(REF, OUT) :- 
 	object_call(REF, countComponents, [], OUT).
@@ -406,11 +406,11 @@ default_table_cell_renderer_get_mouse_motion_listeners(REF, OUT) :-
 default_table_cell_renderer_set_request_focus_enabled(REF, ARG0) :- 
 	object_call(REF, setRequestFocusEnabled, '.'(ARG0, []), _).
 
-default_table_cell_renderer_action(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, action, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 default_table_cell_renderer_is_background_set(REF, OUT) :- 
 	object_call(REF, isBackgroundSet, [], OUT).
+
+default_table_cell_renderer_action(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, action, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 default_table_cell_renderer_is_lightweight(REF, OUT) :- 
 	object_call(REF, isLightweight, [], OUT).
@@ -511,11 +511,11 @@ default_table_cell_renderer_is_focus_traversal_policy_provider(REF, OUT) :-
 default_table_cell_renderer_get_name(REF, OUT) :- 
 	object_call(REF, getName, [], OUT).
 
-default_table_cell_renderer_add_hierarchy_listener(REF, ARG0) :- 
-	object_call(REF, addHierarchyListener, '.'(ARG0, []), _).
-
 default_table_cell_renderer_get_mouse_wheel_listeners(REF, OUT) :- 
 	object_call(REF, getMouseWheelListeners, [], OUT).
+
+default_table_cell_renderer_add_hierarchy_listener(REF, ARG0) :- 
+	object_call(REF, addHierarchyListener, '.'(ARG0, []), _).
 
 default_table_cell_renderer_update(REF, ARG0) :- 
 	object_call(REF, update, '.'(ARG0, []), _).
@@ -673,11 +673,11 @@ default_table_cell_renderer_set_debug_graphics_options(REF, ARG0) :-
 default_table_cell_renderer_key_up(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, keyUp, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-default_table_cell_renderer_get_foreground(REF, OUT) :- 
-	object_call(REF, getForeground, [], OUT).
-
 default_table_cell_renderer_has_focus(REF, OUT) :- 
 	object_call(REF, hasFocus, [], OUT).
+
+default_table_cell_renderer_get_foreground(REF, OUT) :- 
+	object_call(REF, getForeground, [], OUT).
 
 default_table_cell_renderer_add_focus_listener(REF, ARG0) :- 
 	object_call(REF, addFocusListener, '.'(ARG0, []), _).

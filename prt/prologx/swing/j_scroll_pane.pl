@@ -187,11 +187,11 @@ j_scroll_pane_get_component_popup_menu(REF, OUT) :-
 j_scroll_pane_set_alignment_y(REF, ARG0) :- 
 	object_call(REF, setAlignmentY, '.'(ARG0, []), _).
 
-j_scroll_pane_find_component_at(REF, ARG0, OUT) :- 
-	object_call(REF, findComponentAt, '.'(ARG0, []), OUT).
-
 j_scroll_pane_is_focus_cycle_root(REF, ARG0, OUT) :- 
 	object_call(REF, isFocusCycleRoot, '.'(ARG0, []), OUT).
+
+j_scroll_pane_find_component_at(REF, ARG0, OUT) :- 
+	object_call(REF, findComponentAt, '.'(ARG0, []), OUT).
 
 j_scroll_pane_get_autoscrolls(REF, OUT) :- 
 	object_call(REF, getAutoscrolls, [], OUT).
@@ -199,11 +199,11 @@ j_scroll_pane_get_autoscrolls(REF, OUT) :-
 j_scroll_pane_is_focus_cycle_root(REF, OUT) :- 
 	object_call(REF, isFocusCycleRoot, [], OUT).
 
-j_scroll_pane_find_component_at(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, findComponentAt, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 j_scroll_pane_get_mouse_position(REF, ARG0, OUT) :- 
 	object_call(REF, getMousePosition, '.'(ARG0, []), OUT).
+
+j_scroll_pane_find_component_at(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, findComponentAt, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 j_scroll_pane_set_wheel_scrolling_enabled(REF, ARG0) :- 
 	object_call(REF, setWheelScrollingEnabled, '.'(ARG0, []), _).
@@ -331,11 +331,11 @@ j_scroll_pane_get_alignment_y(REF, OUT) :-
 j_scroll_pane_get_inherits_popup_menu(REF, OUT) :- 
 	object_call(REF, getInheritsPopupMenu, [], OUT).
 
-j_scroll_pane_get_ignore_repaint(REF, OUT) :- 
-	object_call(REF, getIgnoreRepaint, [], OUT).
-
 j_scroll_pane_remove_component_listener(REF, ARG0) :- 
 	object_call(REF, removeComponentListener, '.'(ARG0, []), _).
+
+j_scroll_pane_get_ignore_repaint(REF, OUT) :- 
+	object_call(REF, getIgnoreRepaint, [], OUT).
 
 j_scroll_pane_set_alignment_x(REF, ARG0) :- 
 	object_call(REF, setAlignmentX, '.'(ARG0, []), _).
@@ -700,11 +700,11 @@ j_scroll_pane_list(REF, ARG0, ARG1) :-
 j_scroll_pane_list(REF, ARG0, ARG1) :- 
 	object_call(REF, list, '.'(ARG0, '.'(ARG1, [])), _).
 
-j_scroll_pane_add_hierarchy_listener(REF, ARG0) :- 
-	object_call(REF, addHierarchyListener, '.'(ARG0, []), _).
-
 j_scroll_pane_has_focus(REF, OUT) :- 
 	object_call(REF, hasFocus, [], OUT).
+
+j_scroll_pane_add_hierarchy_listener(REF, ARG0) :- 
+	object_call(REF, addHierarchyListener, '.'(ARG0, []), _).
 
 j_scroll_pane_list(REF, ARG0) :- 
 	object_call(REF, list, '.'(ARG0, []), _).
@@ -901,11 +901,11 @@ j_scroll_pane_add(REF, ARG0, OUT) :-
 j_scroll_pane_add(REF, ARG0) :- 
 	object_call(REF, add, '.'(ARG0, []), _).
 
-j_scroll_pane_get_hierarchy_listeners(REF, OUT) :- 
-	object_call(REF, getHierarchyListeners, [], OUT).
-
 j_scroll_pane_mouse_exit(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseExit, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+j_scroll_pane_get_hierarchy_listeners(REF, OUT) :- 
+	object_call(REF, getHierarchyListeners, [], OUT).
 
 j_scroll_pane_add(REF, ARG0, ARG1, ARG2) :- 
 	object_call(REF, add, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
@@ -1102,11 +1102,11 @@ j_scroll_pane_get_default_locale(REF, OUT) :-
 j_scroll_pane_set_vertical_scroll_bar_policy(REF, ARG0) :- 
 	object_call(REF, setVerticalScrollBarPolicy, '.'(ARG0, []), _).
 
-j_scroll_pane_create_volatile_image(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, createVolatileImage, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 j_scroll_pane_handle_event(REF, ARG0, OUT) :- 
 	object_call(REF, handleEvent, '.'(ARG0, []), OUT).
+
+j_scroll_pane_create_volatile_image(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, createVolatileImage, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 j_scroll_pane_create_volatile_image(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, createVolatileImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).

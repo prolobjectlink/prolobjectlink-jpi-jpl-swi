@@ -115,11 +115,11 @@ zoned_date_time_get_hour(REF, OUT) :-
 zoned_date_time_get_day_of_week(REF, OUT) :- 
 	object_call(REF, getDayOfWeek, [], OUT).
 
-zoned_date_time_of_local(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, ofLocal, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
 zoned_date_time_plus_days(REF, ARG0, OUT) :- 
 	object_call(REF, plusDays, '.'(ARG0, []), OUT).
+
+zoned_date_time_of_local(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, ofLocal, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
 zoned_date_time_get_month_value(REF, OUT) :- 
 	object_call(REF, getMonthValue, [], OUT).
@@ -133,14 +133,14 @@ zoned_date_time_get_month(REF, OUT) :-
 zoned_date_time_get_zone(REF, OUT) :- 
 	object_call(REF, getZone, [], OUT).
 
-zoned_date_time_with_zone_same_local(REF, ARG0, OUT) :- 
-	object_call(REF, withZoneSameLocal, '.'(ARG0, []), OUT).
-
-zoned_date_time_with_zone_same_local(REF, ARG0, OUT) :- 
-	object_call(REF, withZoneSameLocal, '.'(ARG0, []), OUT).
-
 zoned_date_time_with_minute(REF, ARG0, OUT) :- 
 	object_call(REF, withMinute, '.'(ARG0, []), OUT).
+
+zoned_date_time_with_zone_same_local(REF, ARG0, OUT) :- 
+	object_call(REF, withZoneSameLocal, '.'(ARG0, []), OUT).
+
+zoned_date_time_with_zone_same_local(REF, ARG0, OUT) :- 
+	object_call(REF, withZoneSameLocal, '.'(ARG0, []), OUT).
 
 zoned_date_time_wait(REF, ARG0, ARG1) :- 
 	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
@@ -238,11 +238,11 @@ zoned_date_time_hash_code(REF, OUT) :-
 zoned_date_time_minus_years(REF, ARG0, OUT) :- 
 	object_call(REF, minusYears, '.'(ARG0, []), OUT).
 
-zoned_date_time_until(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, until, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 zoned_date_time_get_nano(REF, OUT) :- 
 	object_call(REF, getNano, [], OUT).
+
+zoned_date_time_until(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, until, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 zoned_date_time_minus_hours(REF, ARG0, OUT) :- 
 	object_call(REF, minusHours, '.'(ARG0, []), OUT).

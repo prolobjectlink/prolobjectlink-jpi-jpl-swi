@@ -523,11 +523,11 @@ j_separator_is_painting_tile(REF, OUT) :-
 j_separator_set_default_locale(REF, ARG0) :- 
 	object_call(REF, setDefaultLocale, '.'(ARG0, []), _).
 
-j_separator_get_bounds(REF, OUT) :- 
-	object_call(REF, getBounds, [], OUT).
-
 j_separator_set_component_orientation(REF, ARG0) :- 
 	object_call(REF, setComponentOrientation, '.'(ARG0, []), _).
+
+j_separator_get_bounds(REF, OUT) :- 
+	object_call(REF, getBounds, [], OUT).
 
 j_separator_mouse_drag(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseDrag, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
@@ -550,11 +550,11 @@ j_separator_is_focus_owner(REF, OUT) :-
 j_separator_prepare_image(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_call(REF, prepareImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
-j_separator_add_mouse_motion_listener(REF, ARG0) :- 
-	object_call(REF, addMouseMotionListener, '.'(ARG0, []), _).
-
 j_separator_is_minimum_size_set(REF, OUT) :- 
 	object_call(REF, isMinimumSizeSet, [], OUT).
+
+j_separator_add_mouse_motion_listener(REF, ARG0) :- 
+	object_call(REF, addMouseMotionListener, '.'(ARG0, []), _).
 
 j_separator_prepare_image(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, prepareImage, '.'(ARG0, '.'(ARG1, [])), OUT).
@@ -907,14 +907,14 @@ j_separator_transfer_focus_backward(REF) :-
 j_separator_get_input_verifier(REF, OUT) :- 
 	object_call(REF, getInputVerifier, [], OUT).
 
-j_separator_add_hierarchy_bounds_listener(REF, ARG0) :- 
-	object_call(REF, addHierarchyBoundsListener, '.'(ARG0, []), _).
-
 j_separator_has_focus(REF, OUT) :- 
 	object_call(REF, hasFocus, [], OUT).
 
 j_separator_remove_mouse_wheel_listener(REF, ARG0) :- 
 	object_call(REF, removeMouseWheelListener, '.'(ARG0, []), _).
+
+j_separator_add_hierarchy_bounds_listener(REF, ARG0) :- 
+	object_call(REF, addHierarchyBoundsListener, '.'(ARG0, []), _).
 
 j_separator_size(REF, OUT) :- 
 	object_call(REF, size, [], OUT).
@@ -931,11 +931,11 @@ j_separator_is_showing(REF, OUT) :-
 j_separator_print(REF, ARG0) :- 
 	object_call(REF, print, '.'(ARG0, []), _).
 
-j_separator_action(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, action, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 j_separator_get_peer(REF, OUT) :- 
 	object_call(REF, getPeer, [], OUT).
+
+j_separator_action(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, action, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 j_separator_set_visible(REF, ARG0) :- 
 	object_call(REF, setVisible, '.'(ARG0, []), _).

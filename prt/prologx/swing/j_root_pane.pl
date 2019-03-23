@@ -208,11 +208,11 @@ j_root_pane_set_cursor(REF, ARG0) :-
 j_root_pane_set_foreground(REF, ARG0) :- 
 	object_call(REF, setForeground, '.'(ARG0, []), _).
 
-j_root_pane_get_hierarchy_listeners(REF, OUT) :- 
-	object_call(REF, getHierarchyListeners, [], OUT).
-
 j_root_pane_is_cursor_set(REF, OUT) :- 
 	object_call(REF, isCursorSet, [], OUT).
+
+j_root_pane_get_hierarchy_listeners(REF, OUT) :- 
+	object_call(REF, getHierarchyListeners, [], OUT).
 
 j_root_pane_apply_component_orientation(REF, ARG0) :- 
 	object_call(REF, applyComponentOrientation, '.'(ARG0, []), _).
@@ -265,11 +265,11 @@ j_root_pane_is_opaque(REF, OUT) :-
 j_root_pane_set_component_orientation(REF, ARG0) :- 
 	object_call(REF, setComponentOrientation, '.'(ARG0, []), _).
 
-j_root_pane_get_color_model(REF, OUT) :- 
-	object_call(REF, getColorModel, [], OUT).
-
 j_root_pane_mouse_up(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseUp, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+j_root_pane_get_color_model(REF, OUT) :- 
+	object_call(REF, getColorModel, [], OUT).
 
 j_root_pane_get_cursor(REF, OUT) :- 
 	object_call(REF, getCursor, [], OUT).
@@ -514,11 +514,11 @@ j_root_pane_get_height(REF, OUT) :-
 j_root_pane_get_preferred_size(REF, OUT) :- 
 	object_call(REF, getPreferredSize, [], OUT).
 
-j_root_pane_get_toolkit(REF, OUT) :- 
-	object_call(REF, getToolkit, [], OUT).
-
 j_root_pane_got_focus(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, gotFocus, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+j_root_pane_get_toolkit(REF, OUT) :- 
+	object_call(REF, getToolkit, [], OUT).
 
 j_root_pane_get_vetoable_change_listeners(REF, OUT) :- 
 	object_call(REF, getVetoableChangeListeners, [], OUT).
@@ -559,11 +559,11 @@ j_root_pane_get_component_at(REF, ARG0, ARG1, OUT) :-
 j_root_pane_get_component_at(REF, ARG0, OUT) :- 
 	object_call(REF, getComponentAt, '.'(ARG0, []), OUT).
 
-j_root_pane_get_listeners(REF, ARG0, OUT) :- 
-	object_call(REF, getListeners, '.'(ARG0, []), OUT).
-
 j_root_pane_set_font(REF, ARG0) :- 
 	object_call(REF, setFont, '.'(ARG0, []), _).
+
+j_root_pane_get_listeners(REF, ARG0, OUT) :- 
+	object_call(REF, getListeners, '.'(ARG0, []), OUT).
 
 j_root_pane_is_foreground_set(REF, OUT) :- 
 	object_call(REF, isForegroundSet, [], OUT).
@@ -769,11 +769,11 @@ j_root_pane_get_tool_tip_text(REF, OUT) :-
 j_root_pane_set_u_i(REF, ARG0) :- 
 	object_call(REF, setUI, '.'(ARG0, []), _).
 
-j_root_pane_enable_input_methods(REF, ARG0) :- 
-	object_call(REF, enableInputMethods, '.'(ARG0, []), _).
-
 j_root_pane_get_mouse_motion_listeners(REF, OUT) :- 
 	object_call(REF, getMouseMotionListeners, [], OUT).
+
+j_root_pane_enable_input_methods(REF, ARG0) :- 
+	object_call(REF, enableInputMethods, '.'(ARG0, []), _).
 
 j_root_pane_set_visible(REF, ARG0) :- 
 	object_call(REF, setVisible, '.'(ARG0, []), _).
@@ -871,11 +871,11 @@ j_root_pane_add_hierarchy_bounds_listener(REF, ARG0) :-
 j_root_pane_set_tool_tip_text(REF, ARG0) :- 
 	object_call(REF, setToolTipText, '.'(ARG0, []), _).
 
-j_root_pane_create_volatile_image(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, createVolatileImage, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 j_root_pane_is_visible(REF, OUT) :- 
 	object_call(REF, isVisible, [], OUT).
+
+j_root_pane_create_volatile_image(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, createVolatileImage, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 j_root_pane_is_request_focus_enabled(REF, OUT) :- 
 	object_call(REF, isRequestFocusEnabled, [], OUT).

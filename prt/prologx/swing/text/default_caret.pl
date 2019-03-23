@@ -178,11 +178,11 @@ default_caret_move_dot(REF, ARG0, ARG1) :-
 default_caret_get_bounds(REF, OUT) :- 
 	object_call(REF, getBounds, [], OUT).
 
-default_caret_get_listeners(REF, ARG0, OUT) :- 
-	object_call(REF, getListeners, '.'(ARG0, []), OUT).
-
 default_caret_mouse_released(REF, ARG0) :- 
 	object_call(REF, mouseReleased, '.'(ARG0, []), _).
+
+default_caret_get_listeners(REF, ARG0, OUT) :- 
+	object_call(REF, getListeners, '.'(ARG0, []), OUT).
 
 default_caret_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
@@ -268,11 +268,11 @@ default_caret_set_frame_from_center(REF, ARG0, ARG1, ARG2, ARG3) :-
 default_caret_grow(REF, ARG0, ARG1) :- 
 	object_call(REF, grow, '.'(ARG0, '.'(ARG1, [])), _).
 
-default_caret_get_height(REF, OUT) :- 
-	object_call(REF, getHeight, [], OUT).
-
 default_caret_inside(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, inside, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+default_caret_get_height(REF, OUT) :- 
+	object_call(REF, getHeight, [], OUT).
 
 default_caret_is_active(REF, OUT) :- 
 	object_call(REF, isActive, [], OUT).

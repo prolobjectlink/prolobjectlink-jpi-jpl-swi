@@ -91,11 +91,11 @@ choice_add_mouse_motion_listener(REF, ARG0) :-
 choice_notify_all(REF) :- 
 	object_call(REF, notifyAll, [], _).
 
-choice_get_focus_traversal_keys_enabled(REF, OUT) :- 
-	object_call(REF, getFocusTraversalKeysEnabled, [], OUT).
-
 choice_is_lightweight(REF, OUT) :- 
 	object_call(REF, isLightweight, [], OUT).
+
+choice_get_focus_traversal_keys_enabled(REF, OUT) :- 
+	object_call(REF, getFocusTraversalKeysEnabled, [], OUT).
 
 choice_is_opaque(REF, OUT) :- 
 	object_call(REF, isOpaque, [], OUT).
@@ -208,11 +208,11 @@ choice_is_visible(REF, OUT) :-
 choice_get_toolkit(REF, OUT) :- 
 	object_call(REF, getToolkit, [], OUT).
 
-choice_get_background(REF, OUT) :- 
-	object_call(REF, getBackground, [], OUT).
-
 choice_remove_hierarchy_bounds_listener(REF, ARG0) :- 
 	object_call(REF, removeHierarchyBoundsListener, '.'(ARG0, []), _).
+
+choice_get_background(REF, OUT) :- 
+	object_call(REF, getBackground, [], OUT).
 
 choice_get_listeners(REF, ARG0, OUT) :- 
 	object_call(REF, getListeners, '.'(ARG0, []), OUT).
@@ -289,11 +289,11 @@ choice_set_minimum_size(REF, ARG0) :-
 choice_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-choice_check_image(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, checkImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
 choice_remove_mouse_motion_listener(REF, ARG0) :- 
 	object_call(REF, removeMouseMotionListener, '.'(ARG0, []), _).
+
+choice_check_image(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_call(REF, checkImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
 choice_check_image(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, checkImage, '.'(ARG0, '.'(ARG1, [])), OUT).
@@ -319,14 +319,14 @@ choice_remove_property_change_listener(REF, ARG0) :-
 choice_is_valid(REF, OUT) :- 
 	object_call(REF, isValid, [], OUT).
 
+choice_mouse_drag(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, mouseDrag, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
 choice_enable_input_methods(REF, ARG0) :- 
 	object_call(REF, enableInputMethods, '.'(ARG0, []), _).
 
 choice_get_font(REF, OUT) :- 
 	object_call(REF, getFont, [], OUT).
-
-choice_mouse_drag(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, mouseDrag, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
 choice_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
 	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
@@ -418,11 +418,11 @@ choice_update(REF, ARG0) :-
 choice_get_font_metrics(REF, ARG0, OUT) :- 
 	object_call(REF, getFontMetrics, '.'(ARG0, []), OUT).
 
-choice_get_baseline(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getBaseline, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 choice_layout(REF) :- 
 	object_call(REF, layout, [], _).
+
+choice_get_baseline(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getBaseline, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 choice_get_bounds(REF, OUT) :- 
 	object_call(REF, getBounds, [], OUT).
@@ -436,11 +436,11 @@ choice_get_selected_index(REF, OUT) :-
 choice_invalidate(REF) :- 
 	object_call(REF, invalidate, [], _).
 
-choice_add_hierarchy_bounds_listener(REF, ARG0) :- 
-	object_call(REF, addHierarchyBoundsListener, '.'(ARG0, []), _).
-
 choice_repaint(REF) :- 
 	object_call(REF, repaint, [], _).
+
+choice_add_hierarchy_bounds_listener(REF, ARG0) :- 
+	object_call(REF, addHierarchyBoundsListener, '.'(ARG0, []), _).
 
 choice_repaint(REF, ARG0) :- 
 	object_call(REF, repaint, '.'(ARG0, []), _).
@@ -505,11 +505,11 @@ choice_get_location_on_screen(REF, OUT) :-
 choice_set_focus_traversal_keys(REF, ARG0, ARG1) :- 
 	object_call(REF, setFocusTraversalKeys, '.'(ARG0, '.'(ARG1, [])), _).
 
-choice_dispatch_event(REF, ARG0) :- 
-	object_call(REF, dispatchEvent, '.'(ARG0, []), _).
-
 choice_locate(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, locate, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+choice_dispatch_event(REF, ARG0) :- 
+	object_call(REF, dispatchEvent, '.'(ARG0, []), _).
 
 choice_get_item_listeners(REF, OUT) :- 
 	object_call(REF, getItemListeners, [], OUT).
@@ -517,20 +517,20 @@ choice_get_item_listeners(REF, OUT) :-
 choice_is_maximum_size_set(REF, OUT) :- 
 	object_call(REF, isMaximumSizeSet, [], OUT).
 
-choice_get_input_context(REF, OUT) :- 
-	object_call(REF, getInputContext, [], OUT).
-
 choice_remove_notify(REF) :- 
 	object_call(REF, removeNotify, [], _).
+
+choice_get_input_context(REF, OUT) :- 
+	object_call(REF, getInputContext, [], OUT).
 
 choice_get_ignore_repaint(REF, OUT) :- 
 	object_call(REF, getIgnoreRepaint, [], OUT).
 
-choice_get_foreground(REF, OUT) :- 
-	object_call(REF, getForeground, [], OUT).
-
 choice_get_mouse_position(REF, OUT) :- 
 	object_call(REF, getMousePosition, [], OUT).
+
+choice_get_foreground(REF, OUT) :- 
+	object_call(REF, getForeground, [], OUT).
 
 choice_lost_focus(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, lostFocus, '.'(ARG0, '.'(ARG1, [])), OUT).
@@ -547,11 +547,11 @@ choice_handle_event(REF, ARG0, OUT) :-
 choice_set_location(REF, ARG0) :- 
 	object_call(REF, setLocation, '.'(ARG0, []), _).
 
-choice_bounds(REF, OUT) :- 
-	object_call(REF, bounds, [], OUT).
-
 choice_set_location(REF, ARG0, ARG1) :- 
 	object_call(REF, setLocation, '.'(ARG0, '.'(ARG1, [])), _).
+
+choice_bounds(REF, OUT) :- 
+	object_call(REF, bounds, [], OUT).
 
 choice_add_notify(REF) :- 
 	object_call(REF, addNotify, [], _).
@@ -673,11 +673,11 @@ choice_validate(REF) :-
 choice_contains(REF, ARG0, OUT) :- 
 	object_call(REF, contains, '.'(ARG0, []), OUT).
 
-choice_action(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, action, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 choice_set_font(REF, ARG0) :- 
 	object_call(REF, setFont, '.'(ARG0, []), _).
+
+choice_action(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, action, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 choice_transfer_focus(REF) :- 
 	object_call(REF, transferFocus, [], _).
@@ -703,11 +703,11 @@ choice_is_font_set(REF, OUT) :-
 choice_set_name(REF, ARG0) :- 
 	object_call(REF, setName, '.'(ARG0, []), _).
 
-choice_get_alignment_x(REF, OUT) :- 
-	object_call(REF, getAlignmentX, [], OUT).
-
 choice_set_drop_target(REF, ARG0) :- 
 	object_call(REF, setDropTarget, '.'(ARG0, []), _).
+
+choice_get_alignment_x(REF, OUT) :- 
+	object_call(REF, getAlignmentX, [], OUT).
 
 choice_is_displayable(REF, OUT) :- 
 	object_call(REF, isDisplayable, [], OUT).
@@ -739,11 +739,11 @@ choice_get_size(REF, OUT) :-
 choice_get_size(REF, ARG0, OUT) :- 
 	object_call(REF, getSize, '.'(ARG0, []), OUT).
 
-choice_are_focus_traversal_keys_set(REF, ARG0, OUT) :- 
-	object_call(REF, areFocusTraversalKeysSet, '.'(ARG0, []), OUT).
-
 choice_request_focus_in_window(REF, OUT) :- 
 	object_call(REF, requestFocusInWindow, [], OUT).
+
+choice_are_focus_traversal_keys_set(REF, ARG0, OUT) :- 
+	object_call(REF, areFocusTraversalKeysSet, '.'(ARG0, []), OUT).
 
 choice_minimum_size(REF, OUT) :- 
 	object_call(REF, minimumSize, [], OUT).

@@ -79,14 +79,14 @@ checkbox(OUT) :-
 checkbox_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-checkbox_add_hierarchy_listener(REF, ARG0) :- 
-	object_call(REF, addHierarchyListener, '.'(ARG0, []), _).
-
 checkbox_get_input_method_requests(REF, OUT) :- 
 	object_call(REF, getInputMethodRequests, [], OUT).
 
 checkbox_is_preferred_size_set(REF, OUT) :- 
 	object_call(REF, isPreferredSizeSet, [], OUT).
+
+checkbox_add_hierarchy_listener(REF, ARG0) :- 
+	object_call(REF, addHierarchyListener, '.'(ARG0, []), _).
 
 checkbox_get_focus_listeners(REF, OUT) :- 
 	object_call(REF, getFocusListeners, [], OUT).
@@ -130,20 +130,20 @@ checkbox_mouse_up(REF, ARG0, ARG1, ARG2, OUT) :-
 checkbox_remove_input_method_listener(REF, ARG0) :- 
 	object_call(REF, removeInputMethodListener, '.'(ARG0, []), _).
 
-checkbox_apply_component_orientation(REF, ARG0) :- 
-	object_call(REF, applyComponentOrientation, '.'(ARG0, []), _).
-
 checkbox_request_focus_in_window(REF, OUT) :- 
 	object_call(REF, requestFocusInWindow, [], OUT).
+
+checkbox_apply_component_orientation(REF, ARG0) :- 
+	object_call(REF, applyComponentOrientation, '.'(ARG0, []), _).
 
 checkbox_post_event(REF, ARG0, OUT) :- 
 	object_call(REF, postEvent, '.'(ARG0, []), OUT).
 
-checkbox_get_background(REF, OUT) :- 
-	object_call(REF, getBackground, [], OUT).
-
 checkbox_is_maximum_size_set(REF, OUT) :- 
 	object_call(REF, isMaximumSizeSet, [], OUT).
+
+checkbox_get_background(REF, OUT) :- 
+	object_call(REF, getBackground, [], OUT).
 
 checkbox_add_input_method_listener(REF, ARG0) :- 
 	object_call(REF, addInputMethodListener, '.'(ARG0, []), _).
@@ -181,11 +181,11 @@ checkbox_get_locale(REF, OUT) :-
 checkbox_is_enabled(REF, OUT) :- 
 	object_call(REF, isEnabled, [], OUT).
 
-checkbox_add_mouse_listener(REF, ARG0) :- 
-	object_call(REF, addMouseListener, '.'(ARG0, []), _).
-
 checkbox_got_focus(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, gotFocus, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+checkbox_add_mouse_listener(REF, ARG0) :- 
+	object_call(REF, addMouseListener, '.'(ARG0, []), _).
 
 checkbox_get_mouse_wheel_listeners(REF, OUT) :- 
 	object_call(REF, getMouseWheelListeners, [], OUT).
@@ -193,11 +193,11 @@ checkbox_get_mouse_wheel_listeners(REF, OUT) :-
 checkbox_add_mouse_motion_listener(REF, ARG0) :- 
 	object_call(REF, addMouseMotionListener, '.'(ARG0, []), _).
 
-checkbox_add_component_listener(REF, ARG0) :- 
-	object_call(REF, addComponentListener, '.'(ARG0, []), _).
-
 checkbox_mouse_enter(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseEnter, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+checkbox_add_component_listener(REF, ARG0) :- 
+	object_call(REF, addComponentListener, '.'(ARG0, []), _).
 
 checkbox_check_image(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_call(REF, checkImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
@@ -358,11 +358,11 @@ checkbox_get_item_listeners(REF, OUT) :-
 checkbox_transfer_focus_up_cycle(REF) :- 
 	object_call(REF, transferFocusUpCycle, [], _).
 
-checkbox_get_focus_traversal_keys_enabled(REF, OUT) :- 
-	object_call(REF, getFocusTraversalKeysEnabled, [], OUT).
-
 checkbox_get_property_change_listeners(REF, OUT) :- 
 	object_call(REF, getPropertyChangeListeners, [], OUT).
+
+checkbox_get_focus_traversal_keys_enabled(REF, OUT) :- 
+	object_call(REF, getFocusTraversalKeysEnabled, [], OUT).
 
 checkbox_get_property_change_listeners(REF, ARG0, OUT) :- 
 	object_call(REF, getPropertyChangeListeners, '.'(ARG0, []), OUT).
@@ -406,20 +406,20 @@ checkbox_mouse_exit(REF, ARG0, ARG1, ARG2, OUT) :-
 checkbox_get_mouse_motion_listeners(REF, OUT) :- 
 	object_call(REF, getMouseMotionListeners, [], OUT).
 
-checkbox_get_font(REF, OUT) :- 
-	object_call(REF, getFont, [], OUT).
-
 checkbox_is_focus_cycle_root(REF, ARG0, OUT) :- 
 	object_call(REF, isFocusCycleRoot, '.'(ARG0, []), OUT).
+
+checkbox_get_font(REF, OUT) :- 
+	object_call(REF, getFont, [], OUT).
 
 checkbox_repaint(REF, ARG0, ARG1, ARG2, ARG3, ARG4) :- 
 	object_call(REF, repaint, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), _).
 
-checkbox_get_input_context(REF, OUT) :- 
-	object_call(REF, getInputContext, [], OUT).
-
 checkbox_repaint(REF, ARG0, ARG1, ARG2, ARG3) :- 
 	object_call(REF, repaint, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).
+
+checkbox_get_input_context(REF, OUT) :- 
+	object_call(REF, getInputContext, [], OUT).
 
 checkbox_list(REF, ARG0) :- 
 	object_call(REF, list, '.'(ARG0, []), _).
@@ -547,11 +547,11 @@ checkbox_move(REF, ARG0, ARG1) :-
 checkbox_set_checkbox_group(REF, ARG0) :- 
 	object_call(REF, setCheckboxGroup, '.'(ARG0, []), _).
 
-checkbox_get_bounds(REF, OUT) :- 
-	object_call(REF, getBounds, [], OUT).
-
 checkbox_paint(REF, ARG0) :- 
 	object_call(REF, paint, '.'(ARG0, []), _).
+
+checkbox_get_bounds(REF, OUT) :- 
+	object_call(REF, getBounds, [], OUT).
 
 checkbox_mouse_move(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseMove, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
@@ -559,11 +559,11 @@ checkbox_mouse_move(REF, ARG0, ARG1, ARG2, OUT) :-
 checkbox_disable(REF) :- 
 	object_call(REF, disable, [], _).
 
-checkbox_get_drop_target(REF, OUT) :- 
-	object_call(REF, getDropTarget, [], OUT).
-
 checkbox_remove_mouse_motion_listener(REF, ARG0) :- 
 	object_call(REF, removeMouseMotionListener, '.'(ARG0, []), _).
+
+checkbox_get_drop_target(REF, OUT) :- 
+	object_call(REF, getDropTarget, [], OUT).
 
 checkbox_get_graphics(REF, OUT) :- 
 	object_call(REF, getGraphics, [], OUT).
@@ -676,11 +676,11 @@ checkbox_get_component_at(REF, ARG0, ARG1, OUT) :-
 checkbox_get_baseline(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, getBaseline, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-checkbox_get_baseline_resize_behavior(REF, OUT) :- 
-	object_call(REF, getBaselineResizeBehavior, [], OUT).
-
 checkbox_get_location_on_screen(REF, OUT) :- 
 	object_call(REF, getLocationOnScreen, [], OUT).
+
+checkbox_get_baseline_resize_behavior(REF, OUT) :- 
+	object_call(REF, getBaselineResizeBehavior, [], OUT).
 
 checkbox_remove_hierarchy_listener(REF, ARG0) :- 
 	object_call(REF, removeHierarchyListener, '.'(ARG0, []), _).
@@ -694,11 +694,11 @@ checkbox_create_volatile_image(REF, ARG0, ARG1, OUT) :-
 checkbox_set_locale(REF, ARG0) :- 
 	object_call(REF, setLocale, '.'(ARG0, []), _).
 
-checkbox_create_volatile_image(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, createVolatileImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
 checkbox_image_update(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, OUT) :- 
 	object_call(REF, imageUpdate, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), OUT).
+
+checkbox_create_volatile_image(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, createVolatileImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
 checkbox_add_mouse_wheel_listener(REF, ARG0) :- 
 	object_call(REF, addMouseWheelListener, '.'(ARG0, []), _).

@@ -175,11 +175,11 @@ swing_utilities_process_key_bindings(REF, ARG0, OUT) :-
 swing_utilities_convert_point(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_call(REF, convertPoint, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
-swing_utilities_compute_difference(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, computeDifference, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 swing_utilities_convert_point(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, convertPoint, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+swing_utilities_compute_difference(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, computeDifference, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 swing_utilities_compute_union(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
 	object_call(REF, computeUnion, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).

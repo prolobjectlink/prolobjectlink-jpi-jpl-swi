@@ -145,9 +145,9 @@ datagram_socket_notify_all(REF) :-
 datagram_socket_is_bound(REF, OUT) :- 
 	object_call(REF, isBound, [], OUT).
 
-datagram_socket_receive(REF, ARG0) :- 
-	object_call(REF, receive, '.'(ARG0, []), _).
-
 datagram_socket_get_local_address(REF, OUT) :- 
 	object_call(REF, getLocalAddress, [], OUT).
+
+datagram_socket_receive(REF, ARG0) :- 
+	object_call(REF, receive, '.'(ARG0, []), _).
 

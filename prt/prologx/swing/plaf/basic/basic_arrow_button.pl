@@ -316,11 +316,11 @@ basic_arrow_button_set_label(REF, ARG0) :-
 basic_arrow_button_set_focus_cycle_root(REF, ARG0) :- 
 	object_call(REF, setFocusCycleRoot, '.'(ARG0, []), _).
 
-basic_arrow_button_get_ignore_repaint(REF, OUT) :- 
-	object_call(REF, getIgnoreRepaint, [], OUT).
-
 basic_arrow_button_set_component_orientation(REF, ARG0) :- 
 	object_call(REF, setComponentOrientation, '.'(ARG0, []), _).
+
+basic_arrow_button_get_ignore_repaint(REF, OUT) :- 
+	object_call(REF, getIgnoreRepaint, [], OUT).
 
 basic_arrow_button_get_focus_traversal_policy(REF, OUT) :- 
 	object_call(REF, getFocusTraversalPolicy, [], OUT).
@@ -817,11 +817,11 @@ basic_arrow_button_set_focus_traversal_keys_enabled(REF, ARG0) :-
 basic_arrow_button_set_horizontal_alignment(REF, ARG0) :- 
 	object_call(REF, setHorizontalAlignment, '.'(ARG0, []), _).
 
-basic_arrow_button_get_hierarchy_bounds_listeners(REF, OUT) :- 
-	object_call(REF, getHierarchyBoundsListeners, [], OUT).
-
 basic_arrow_button_set_location(REF, ARG0, ARG1) :- 
 	object_call(REF, setLocation, '.'(ARG0, '.'(ARG1, [])), _).
+
+basic_arrow_button_get_hierarchy_bounds_listeners(REF, OUT) :- 
+	object_call(REF, getHierarchyBoundsListeners, [], OUT).
 
 basic_arrow_button_print_all(REF, ARG0) :- 
 	object_call(REF, printAll, '.'(ARG0, []), _).
@@ -895,14 +895,14 @@ basic_arrow_button_check_image(REF, ARG0, ARG1, ARG2, ARG3, OUT) :-
 basic_arrow_button_get_x(REF, OUT) :- 
 	object_call(REF, getX, [], OUT).
 
+basic_arrow_button_is_lightweight(REF, OUT) :- 
+	object_call(REF, isLightweight, [], OUT).
+
 basic_arrow_button_action(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, action, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 basic_arrow_button_check_image(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, checkImage, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-basic_arrow_button_is_lightweight(REF, OUT) :- 
-	object_call(REF, isLightweight, [], OUT).
 
 basic_arrow_button_get_rollover_icon(REF, OUT) :- 
 	object_call(REF, getRolloverIcon, [], OUT).
@@ -1072,11 +1072,11 @@ basic_arrow_button_set_border(REF, ARG0) :-
 basic_arrow_button_add_change_listener(REF, ARG0) :- 
 	object_call(REF, addChangeListener, '.'(ARG0, []), _).
 
-basic_arrow_button_get_drop_target(REF, OUT) :- 
-	object_call(REF, getDropTarget, [], OUT).
-
 basic_arrow_button_set_focusable(REF, ARG0) :- 
 	object_call(REF, setFocusable, '.'(ARG0, []), _).
+
+basic_arrow_button_get_drop_target(REF, OUT) :- 
+	object_call(REF, getDropTarget, [], OUT).
 
 basic_arrow_button_get_preferred_size(REF, OUT) :- 
 	object_call(REF, getPreferredSize, [], OUT).

@@ -49,11 +49,11 @@ synth_menu_u_i(OUT) :-
 synth_menu_u_i_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-synth_menu_u_i_uninstall_u_i(REF, ARG0) :- 
-	object_call(REF, uninstallUI, '.'(ARG0, []), _).
-
 synth_menu_u_i_create_u_i(REF, ARG0, OUT) :- 
 	object_call(REF, createUI, '.'(ARG0, []), OUT).
+
+synth_menu_u_i_uninstall_u_i(REF, ARG0) :- 
+	object_call(REF, uninstallUI, '.'(ARG0, []), _).
 
 synth_menu_u_i_install_u_i(REF, ARG0) :- 
 	object_call(REF, installUI, '.'(ARG0, []), _).

@@ -196,11 +196,11 @@ r_t_f_editor_kit_to_string(REF, OUT) :-
 r_t_f_editor_kit_get_content_type(REF, OUT) :- 
 	object_call(REF, getContentType, [], OUT).
 
-r_t_f_editor_kit_deinstall(REF, ARG0) :- 
-	object_call(REF, deinstall, '.'(ARG0, []), _).
-
 r_t_f_editor_kit_get_character_attribute_run(REF, OUT) :- 
 	object_call(REF, getCharacterAttributeRun, [], OUT).
+
+r_t_f_editor_kit_deinstall(REF, ARG0) :- 
+	object_call(REF, deinstall, '.'(ARG0, []), _).
 
 r_t_f_editor_kit_write(REF, ARG0, ARG1, ARG2, ARG3) :- 
 	object_call(REF, write, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).

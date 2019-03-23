@@ -82,11 +82,11 @@ style_context_get_background(REF, ARG0, OUT) :-
 style_context_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-style_context_add_attribute(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, addAttribute, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
 style_context_read_attributes(REF, ARG0, ARG1) :- 
 	object_call(REF, readAttributes, '.'(ARG0, '.'(ARG1, [])), _).
+
+style_context_add_attribute(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, addAttribute, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
 style_context_remove_style(REF, ARG0) :- 
 	object_call(REF, removeStyle, '.'(ARG0, []), _).
@@ -103,6 +103,9 @@ style_context_get_empty_set(REF, OUT) :-
 style_context_remove_attribute(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, removeAttribute, '.'(ARG0, '.'(ARG1, [])), OUT).
 
+style_context_reclaim(REF, ARG0) :- 
+	object_call(REF, reclaim, '.'(ARG0, []), _).
+
 style_context_add_attributes(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, addAttributes, '.'(ARG0, '.'(ARG1, [])), OUT).
 
@@ -111,9 +114,6 @@ style_context_remove_attributes(REF, ARG0, ARG1, OUT) :-
 
 style_context_remove_attributes(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, removeAttributes, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-style_context_reclaim(REF, ARG0) :- 
-	object_call(REF, reclaim, '.'(ARG0, []), _).
 
 style_context_get_style_names(REF, OUT) :- 
 	object_call(REF, getStyleNames, [], OUT).

@@ -127,11 +127,11 @@ canvas_is_font_set(REF, OUT) :-
 canvas_request_focus_in_window(REF, OUT) :- 
 	object_call(REF, requestFocusInWindow, [], OUT).
 
-canvas_get_foreground(REF, OUT) :- 
-	object_call(REF, getForeground, [], OUT).
-
 canvas_get_mouse_motion_listeners(REF, OUT) :- 
 	object_call(REF, getMouseMotionListeners, [], OUT).
+
+canvas_get_foreground(REF, OUT) :- 
+	object_call(REF, getForeground, [], OUT).
 
 canvas_get_width(REF, OUT) :- 
 	object_call(REF, getWidth, [], OUT).
@@ -187,17 +187,17 @@ canvas_enable(REF) :-
 canvas_bounds(REF, OUT) :- 
 	object_call(REF, bounds, [], OUT).
 
-canvas_get_component_at(REF, ARG0, OUT) :- 
-	object_call(REF, getComponentAt, '.'(ARG0, []), OUT).
-
 canvas_transfer_focus(REF) :- 
 	object_call(REF, transferFocus, [], _).
 
-canvas_do_layout(REF) :- 
-	object_call(REF, doLayout, [], _).
+canvas_get_component_at(REF, ARG0, OUT) :- 
+	object_call(REF, getComponentAt, '.'(ARG0, []), OUT).
 
 canvas_set_component_orientation(REF, ARG0) :- 
 	object_call(REF, setComponentOrientation, '.'(ARG0, []), _).
+
+canvas_do_layout(REF) :- 
+	object_call(REF, doLayout, [], _).
 
 canvas_is_enabled(REF, OUT) :- 
 	object_call(REF, isEnabled, [], OUT).
@@ -325,11 +325,11 @@ canvas_is_maximum_size_set(REF, OUT) :-
 canvas_remove_hierarchy_bounds_listener(REF, ARG0) :- 
 	object_call(REF, removeHierarchyBoundsListener, '.'(ARG0, []), _).
 
-canvas_get_hierarchy_bounds_listeners(REF, OUT) :- 
-	object_call(REF, getHierarchyBoundsListeners, [], OUT).
-
 canvas_set_location(REF, ARG0) :- 
 	object_call(REF, setLocation, '.'(ARG0, []), _).
+
+canvas_get_hierarchy_bounds_listeners(REF, OUT) :- 
+	object_call(REF, getHierarchyBoundsListeners, [], OUT).
 
 canvas_locate(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, locate, '.'(ARG0, '.'(ARG1, [])), OUT).
@@ -340,23 +340,23 @@ canvas_add_hierarchy_listener(REF, ARG0) :-
 canvas_get_x(REF, OUT) :- 
 	object_call(REF, getX, [], OUT).
 
+canvas_set_focusable(REF, ARG0) :- 
+	object_call(REF, setFocusable, '.'(ARG0, []), _).
+
 canvas_add_input_method_listener(REF, ARG0) :- 
 	object_call(REF, addInputMethodListener, '.'(ARG0, []), _).
 
 canvas_create_image(REF, ARG0, OUT) :- 
 	object_call(REF, createImage, '.'(ARG0, []), OUT).
 
-canvas_set_focusable(REF, ARG0) :- 
-	object_call(REF, setFocusable, '.'(ARG0, []), _).
-
 canvas_get_component_listeners(REF, OUT) :- 
 	object_call(REF, getComponentListeners, [], OUT).
 
-canvas_create_image(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, createImage, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 canvas_remove_input_method_listener(REF, ARG0) :- 
 	object_call(REF, removeInputMethodListener, '.'(ARG0, []), _).
+
+canvas_create_image(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, createImage, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 canvas_is_foreground_set(REF, OUT) :- 
 	object_call(REF, isForegroundSet, [], OUT).
@@ -379,11 +379,11 @@ canvas_is_valid(REF, OUT) :-
 canvas_get_name(REF, OUT) :- 
 	object_call(REF, getName, [], OUT).
 
-canvas_add_component_listener(REF, ARG0) :- 
-	object_call(REF, addComponentListener, '.'(ARG0, []), _).
-
 canvas_set_ignore_repaint(REF, ARG0) :- 
 	object_call(REF, setIgnoreRepaint, '.'(ARG0, []), _).
+
+canvas_add_component_listener(REF, ARG0) :- 
+	object_call(REF, addComponentListener, '.'(ARG0, []), _).
 
 canvas_get_graphics(REF, OUT) :- 
 	object_call(REF, getGraphics, [], OUT).
@@ -484,11 +484,11 @@ canvas_lost_focus(REF, ARG0, ARG1, OUT) :-
 canvas_get_maximum_size(REF, OUT) :- 
 	object_call(REF, getMaximumSize, [], OUT).
 
-canvas_add_key_listener(REF, ARG0) :- 
-	object_call(REF, addKeyListener, '.'(ARG0, []), _).
-
 canvas_hide(REF) :- 
 	object_call(REF, hide, [], _).
+
+canvas_add_key_listener(REF, ARG0) :- 
+	object_call(REF, addKeyListener, '.'(ARG0, []), _).
 
 canvas_remove_property_change_listener(REF, ARG0) :- 
 	object_call(REF, removePropertyChangeListener, '.'(ARG0, []), _).
@@ -526,11 +526,11 @@ canvas_is_cursor_set(REF, OUT) :-
 canvas_get_toolkit(REF, OUT) :- 
 	object_call(REF, getToolkit, [], OUT).
 
-canvas_add_mouse_motion_listener(REF, ARG0) :- 
-	object_call(REF, addMouseMotionListener, '.'(ARG0, []), _).
-
 canvas_is_background_set(REF, OUT) :- 
 	object_call(REF, isBackgroundSet, [], OUT).
+
+canvas_add_mouse_motion_listener(REF, ARG0) :- 
+	object_call(REF, addMouseMotionListener, '.'(ARG0, []), _).
 
 canvas_transfer_focus_backward(REF) :- 
 	object_call(REF, transferFocusBackward, [], _).
@@ -586,17 +586,17 @@ canvas_get_preferred_size(REF, OUT) :-
 canvas_get_peer(REF, OUT) :- 
 	object_call(REF, getPeer, [], OUT).
 
-canvas_get_focus_cycle_root_ancestor(REF, OUT) :- 
-	object_call(REF, getFocusCycleRootAncestor, [], OUT).
-
 canvas_set_preferred_size(REF, ARG0) :- 
 	object_call(REF, setPreferredSize, '.'(ARG0, []), _).
 
-canvas_get_input_context(REF, OUT) :- 
-	object_call(REF, getInputContext, [], OUT).
+canvas_get_focus_cycle_root_ancestor(REF, OUT) :- 
+	object_call(REF, getFocusCycleRootAncestor, [], OUT).
 
 canvas_mouse_up(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseUp, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+canvas_get_input_context(REF, OUT) :- 
+	object_call(REF, getInputContext, [], OUT).
 
 canvas_add_mouse_wheel_listener(REF, ARG0) :- 
 	object_call(REF, addMouseWheelListener, '.'(ARG0, []), _).
@@ -652,11 +652,11 @@ canvas_wait(REF, ARG0, ARG1) :-
 canvas_resize(REF, ARG0, ARG1) :- 
 	object_call(REF, resize, '.'(ARG0, '.'(ARG1, [])), _).
 
-canvas_add_mouse_listener(REF, ARG0) :- 
-	object_call(REF, addMouseListener, '.'(ARG0, []), _).
-
 canvas_preferred_size(REF, OUT) :- 
 	object_call(REF, preferredSize, [], OUT).
+
+canvas_add_mouse_listener(REF, ARG0) :- 
+	object_call(REF, addMouseListener, '.'(ARG0, []), _).
 
 canvas_resize(REF, ARG0) :- 
 	object_call(REF, resize, '.'(ARG0, []), _).

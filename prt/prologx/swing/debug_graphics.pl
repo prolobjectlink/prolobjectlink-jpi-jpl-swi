@@ -103,11 +103,11 @@ debug_graphics_fill_round_rect(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5) :-
 debug_graphics_flash_time(REF, OUT) :- 
 	object_call(REF, flashTime, [], OUT).
 
-debug_graphics_get_font_metrics(REF, ARG0, OUT) :- 
-	object_call(REF, getFontMetrics, '.'(ARG0, []), OUT).
-
 debug_graphics_set_clip(REF, ARG0) :- 
 	object_call(REF, setClip, '.'(ARG0, []), _).
+
+debug_graphics_get_font_metrics(REF, ARG0, OUT) :- 
+	object_call(REF, getFontMetrics, '.'(ARG0, []), OUT).
 
 debug_graphics_clip_rect(REF, ARG0, ARG1, ARG2, ARG3) :- 
 	object_call(REF, clipRect, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).

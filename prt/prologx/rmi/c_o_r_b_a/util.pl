@@ -46,11 +46,11 @@ util_load_class(REF, ARG0, ARG1, ARG2, OUT) :-
 util_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-util_register_target(REF, ARG0, ARG1) :- 
-	object_call(REF, registerTarget, '.'(ARG0, '.'(ARG1, [])), _).
-
 util_write_any(REF, ARG0, ARG1) :- 
 	object_call(REF, writeAny, '.'(ARG0, '.'(ARG1, [])), _).
+
+util_register_target(REF, ARG0, ARG1) :- 
+	object_call(REF, registerTarget, '.'(ARG0, '.'(ARG1, [])), _).
 
 util_notify(REF) :- 
 	object_call(REF, notify, [], _).

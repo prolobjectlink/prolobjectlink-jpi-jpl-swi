@@ -259,9 +259,6 @@ j_radio_button_create_volatile_image(REF, ARG0, ARG1, ARG2, OUT) :-
 j_radio_button_get_width(REF, OUT) :- 
 	object_call(REF, getWidth, [], OUT).
 
-j_radio_button_check_image(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, checkImage, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 j_radio_button_get_mouse_wheel_listeners(REF, OUT) :- 
 	object_call(REF, getMouseWheelListeners, [], OUT).
 
@@ -270,6 +267,9 @@ j_radio_button_is_lightweight(REF, OUT) :-
 
 j_radio_button_mouse_exit(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseExit, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+j_radio_button_check_image(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, checkImage, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 j_radio_button_is_opaque(REF, OUT) :- 
 	object_call(REF, isOpaque, [], OUT).
@@ -397,11 +397,11 @@ j_radio_button_key_up(REF, ARG0, ARG1, OUT) :-
 j_radio_button_get_hide_action_text(REF, OUT) :- 
 	object_call(REF, getHideActionText, [], OUT).
 
-j_radio_button_add_focus_listener(REF, ARG0) :- 
-	object_call(REF, addFocusListener, '.'(ARG0, []), _).
-
 j_radio_button_remove_mouse_listener(REF, ARG0) :- 
 	object_call(REF, removeMouseListener, '.'(ARG0, []), _).
+
+j_radio_button_add_focus_listener(REF, ARG0) :- 
+	object_call(REF, addFocusListener, '.'(ARG0, []), _).
 
 j_radio_button_is_double_buffered(REF, OUT) :- 
 	object_call(REF, isDoubleBuffered, [], OUT).
@@ -658,11 +658,11 @@ j_radio_button_create_image(REF, ARG0, ARG1, OUT) :-
 j_radio_button_is_selected(REF, OUT) :- 
 	object_call(REF, isSelected, [], OUT).
 
-j_radio_button_apply_component_orientation(REF, ARG0) :- 
-	object_call(REF, applyComponentOrientation, '.'(ARG0, []), _).
-
 j_radio_button_minimum_size(REF, OUT) :- 
 	object_call(REF, minimumSize, [], OUT).
+
+j_radio_button_apply_component_orientation(REF, ARG0) :- 
+	object_call(REF, applyComponentOrientation, '.'(ARG0, []), _).
 
 j_radio_button_get_selected_objects(REF, OUT) :- 
 	object_call(REF, getSelectedObjects, [], OUT).
@@ -832,11 +832,11 @@ j_radio_button_invalidate(REF) :-
 j_radio_button_validate(REF) :- 
 	object_call(REF, validate, [], _).
 
-j_radio_button_get_focus_cycle_root_ancestor(REF, OUT) :- 
-	object_call(REF, getFocusCycleRootAncestor, [], OUT).
-
 j_radio_button_set_cursor(REF, ARG0) :- 
 	object_call(REF, setCursor, '.'(ARG0, []), _).
+
+j_radio_button_get_focus_cycle_root_ancestor(REF, OUT) :- 
+	object_call(REF, getFocusCycleRootAncestor, [], OUT).
 
 j_radio_button_get_bounds(REF, OUT) :- 
 	object_call(REF, getBounds, [], OUT).
@@ -925,11 +925,11 @@ j_radio_button_get_component_at(REF, ARG0, ARG1, OUT) :-
 j_radio_button_remove_key_listener(REF, ARG0) :- 
 	object_call(REF, removeKeyListener, '.'(ARG0, []), _).
 
-j_radio_button_get_cursor(REF, OUT) :- 
-	object_call(REF, getCursor, [], OUT).
-
 j_radio_button_set_bounds(REF, ARG0, ARG1, ARG2, ARG3) :- 
 	object_call(REF, setBounds, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).
+
+j_radio_button_get_cursor(REF, OUT) :- 
+	object_call(REF, getCursor, [], OUT).
 
 j_radio_button_get_mouse_position(REF, ARG0, OUT) :- 
 	object_call(REF, getMousePosition, '.'(ARG0, []), OUT).
@@ -1042,11 +1042,11 @@ j_radio_button_get_action_map(REF, OUT) :-
 j_radio_button_remove_hierarchy_bounds_listener(REF, ARG0) :- 
 	object_call(REF, removeHierarchyBoundsListener, '.'(ARG0, []), _).
 
-j_radio_button_bounds(REF, OUT) :- 
-	object_call(REF, bounds, [], OUT).
-
 j_radio_button_mouse_drag(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseDrag, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+j_radio_button_bounds(REF, OUT) :- 
+	object_call(REF, bounds, [], OUT).
 
 j_radio_button_remove_change_listener(REF, ARG0) :- 
 	object_call(REF, removeChangeListener, '.'(ARG0, []), _).
@@ -1189,11 +1189,11 @@ j_radio_button_set_rollover_selected_icon(REF, ARG0) :-
 j_radio_button_set_hide_action_text(REF, ARG0) :- 
 	object_call(REF, setHideActionText, '.'(ARG0, []), _).
 
-j_radio_button_get_input_context(REF, OUT) :- 
-	object_call(REF, getInputContext, [], OUT).
-
 j_radio_button_mouse_enter(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseEnter, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+j_radio_button_get_input_context(REF, OUT) :- 
+	object_call(REF, getInputContext, [], OUT).
 
 j_radio_button_get_ancestor_listeners(REF, OUT) :- 
 	object_call(REF, getAncestorListeners, [], OUT).
@@ -1282,11 +1282,11 @@ j_radio_button_is_validate_root(REF, OUT) :-
 j_radio_button_find_component_at(REF, ARG0, OUT) :- 
 	object_call(REF, findComponentAt, '.'(ARG0, []), OUT).
 
-j_radio_button_set_icon(REF, ARG0) :- 
-	object_call(REF, setIcon, '.'(ARG0, []), _).
-
 j_radio_button_get_change_listeners(REF, OUT) :- 
 	object_call(REF, getChangeListeners, [], OUT).
+
+j_radio_button_set_icon(REF, ARG0) :- 
+	object_call(REF, setIcon, '.'(ARG0, []), _).
 
 j_radio_button_add_vetoable_change_listener(REF, ARG0) :- 
 	object_call(REF, addVetoableChangeListener, '.'(ARG0, []), _).
@@ -1303,11 +1303,11 @@ j_radio_button_set_component_popup_menu(REF, ARG0) :-
 j_radio_button_get_background(REF, OUT) :- 
 	object_call(REF, getBackground, [], OUT).
 
-j_radio_button_get_toolkit(REF, OUT) :- 
-	object_call(REF, getToolkit, [], OUT).
-
 j_radio_button_transfer_focus_backward(REF) :- 
 	object_call(REF, transferFocusBackward, [], _).
+
+j_radio_button_get_toolkit(REF, OUT) :- 
+	object_call(REF, getToolkit, [], OUT).
 
 j_radio_button_add_hierarchy_listener(REF, ARG0) :- 
 	object_call(REF, addHierarchyListener, '.'(ARG0, []), _).
@@ -1333,11 +1333,11 @@ j_radio_button_set_component_z_order(REF, ARG0, ARG1) :-
 j_radio_button_get_size(REF, OUT) :- 
 	object_call(REF, getSize, [], OUT).
 
-j_radio_button_get_listeners(REF, ARG0, OUT) :- 
-	object_call(REF, getListeners, '.'(ARG0, []), OUT).
-
 j_radio_button_request_focus(REF, ARG0, OUT) :- 
 	object_call(REF, requestFocus, '.'(ARG0, []), OUT).
+
+j_radio_button_get_listeners(REF, ARG0, OUT) :- 
+	object_call(REF, getListeners, '.'(ARG0, []), OUT).
 
 j_radio_button_request_focus(REF) :- 
 	object_call(REF, requestFocus, [], _).

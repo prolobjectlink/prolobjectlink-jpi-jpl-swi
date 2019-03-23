@@ -28,11 +28,11 @@ basic_combo_box_u_i(OUT) :-
 basic_combo_box_u_i_paint(REF, ARG0, ARG1) :- 
 	object_call(REF, paint, '.'(ARG0, '.'(ARG1, [])), _).
 
-basic_combo_box_u_i_uninstall_u_i(REF, ARG0) :- 
-	object_call(REF, uninstallUI, '.'(ARG0, []), _).
-
 basic_combo_box_u_i_add_editor(REF) :- 
 	object_call(REF, addEditor, [], _).
+
+basic_combo_box_u_i_uninstall_u_i(REF, ARG0) :- 
+	object_call(REF, uninstallUI, '.'(ARG0, []), _).
 
 basic_combo_box_u_i_get_baseline_resize_behavior(REF, ARG0, OUT) :- 
 	object_call(REF, getBaselineResizeBehavior, '.'(ARG0, []), OUT).
@@ -106,11 +106,11 @@ basic_combo_box_u_i_get_baseline(REF, ARG0, ARG1, ARG2, OUT) :-
 basic_combo_box_u_i_get_accessible_children_count(REF, ARG0, OUT) :- 
 	object_call(REF, getAccessibleChildrenCount, '.'(ARG0, []), OUT).
 
-basic_combo_box_u_i_set_popup_visible(REF, ARG0, ARG1) :- 
-	object_call(REF, setPopupVisible, '.'(ARG0, '.'(ARG1, [])), _).
-
 basic_combo_box_u_i_configure_arrow_button(REF) :- 
 	object_call(REF, configureArrowButton, [], _).
+
+basic_combo_box_u_i_set_popup_visible(REF, ARG0, ARG1) :- 
+	object_call(REF, setPopupVisible, '.'(ARG0, '.'(ARG1, [])), _).
 
 basic_combo_box_u_i_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).

@@ -43,11 +43,11 @@ metal_look_and_feel_get_control_info(REF, OUT) :-
 metal_look_and_feel_get_window_title_foreground(REF, OUT) :- 
 	object_call(REF, getWindowTitleForeground, [], OUT).
 
-metal_look_and_feel_get_menu_text_font(REF, OUT) :- 
-	object_call(REF, getMenuTextFont, [], OUT).
-
 metal_look_and_feel_get_disabled_icon(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, getDisabledIcon, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+metal_look_and_feel_get_menu_text_font(REF, OUT) :- 
+	object_call(REF, getMenuTextFont, [], OUT).
 
 metal_look_and_feel_get_control_text_color(REF, OUT) :- 
 	object_call(REF, getControlTextColor, [], OUT).
@@ -208,17 +208,17 @@ metal_look_and_feel_make_key_bindings(REF, ARG0, OUT) :-
 metal_look_and_feel_get_menu_selected_background(REF, OUT) :- 
 	object_call(REF, getMenuSelectedBackground, [], OUT).
 
+metal_look_and_feel_set_current_theme(REF, ARG0) :- 
+	object_call(REF, setCurrentTheme, '.'(ARG0, []), _).
+
+metal_look_and_feel_provide_error_feedback(REF, ARG0) :- 
+	object_call(REF, provideErrorFeedback, '.'(ARG0, []), _).
+
 metal_look_and_feel_get_accelerator_selected_foreground(REF, OUT) :- 
 	object_call(REF, getAcceleratorSelectedForeground, [], OUT).
 
 metal_look_and_feel_get_menu_background(REF, OUT) :- 
 	object_call(REF, getMenuBackground, [], OUT).
-
-metal_look_and_feel_provide_error_feedback(REF, ARG0) :- 
-	object_call(REF, provideErrorFeedback, '.'(ARG0, []), _).
-
-metal_look_and_feel_set_current_theme(REF, ARG0) :- 
-	object_call(REF, setCurrentTheme, '.'(ARG0, []), _).
 
 metal_look_and_feel_get_disabled_selected_icon(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, getDisabledSelectedIcon, '.'(ARG0, '.'(ARG1, [])), OUT).

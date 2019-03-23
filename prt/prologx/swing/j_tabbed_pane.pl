@@ -664,11 +664,11 @@ j_tabbed_pane_get_ignore_repaint(REF, OUT) :-
 j_tabbed_pane_add_ancestor_listener(REF, ARG0) :- 
 	object_call(REF, addAncestorListener, '.'(ARG0, []), _).
 
-j_tabbed_pane_get_bounds(REF, OUT) :- 
-	object_call(REF, getBounds, [], OUT).
-
 j_tabbed_pane_get_input_method_listeners(REF, OUT) :- 
 	object_call(REF, getInputMethodListeners, [], OUT).
+
+j_tabbed_pane_get_bounds(REF, OUT) :- 
+	object_call(REF, getBounds, [], OUT).
 
 j_tabbed_pane_get_bounds(REF, ARG0, OUT) :- 
 	object_call(REF, getBounds, '.'(ARG0, []), OUT).
@@ -982,11 +982,11 @@ j_tabbed_pane_enable(REF, ARG0) :-
 j_tabbed_pane_set_tool_tip_text_at(REF, ARG0, ARG1) :- 
 	object_call(REF, setToolTipTextAt, '.'(ARG0, '.'(ARG1, [])), _).
 
-j_tabbed_pane_add_mouse_motion_listener(REF, ARG0) :- 
-	object_call(REF, addMouseMotionListener, '.'(ARG0, []), _).
-
 j_tabbed_pane_is_displayable(REF, OUT) :- 
 	object_call(REF, isDisplayable, [], OUT).
+
+j_tabbed_pane_add_mouse_motion_listener(REF, ARG0) :- 
+	object_call(REF, addMouseMotionListener, '.'(ARG0, []), _).
 
 j_tabbed_pane_remove_vetoable_change_listener(REF, ARG0) :- 
 	object_call(REF, removeVetoableChangeListener, '.'(ARG0, []), _).
@@ -1027,11 +1027,11 @@ j_tabbed_pane_enable_input_methods(REF, ARG0) :-
 j_tabbed_pane_is_validate_root(REF, OUT) :- 
 	object_call(REF, isValidateRoot, [], OUT).
 
-j_tabbed_pane_apply_component_orientation(REF, ARG0) :- 
-	object_call(REF, applyComponentOrientation, '.'(ARG0, []), _).
-
 j_tabbed_pane_is_ancestor_of(REF, ARG0, OUT) :- 
 	object_call(REF, isAncestorOf, '.'(ARG0, []), OUT).
+
+j_tabbed_pane_apply_component_orientation(REF, ARG0) :- 
+	object_call(REF, applyComponentOrientation, '.'(ARG0, []), _).
 
 j_tabbed_pane_set_default_locale(REF, ARG0) :- 
 	object_call(REF, setDefaultLocale, '.'(ARG0, []), _).

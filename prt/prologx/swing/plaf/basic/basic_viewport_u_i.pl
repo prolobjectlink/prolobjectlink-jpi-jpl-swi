@@ -37,11 +37,11 @@ basic_viewport_u_i_wait(REF) :-
 basic_viewport_u_i_update(REF, ARG0, ARG1) :- 
 	object_call(REF, update, '.'(ARG0, '.'(ARG1, [])), _).
 
-basic_viewport_u_i_get_baseline_resize_behavior(REF, ARG0, OUT) :- 
-	object_call(REF, getBaselineResizeBehavior, '.'(ARG0, []), OUT).
-
 basic_viewport_u_i_get_preferred_size(REF, ARG0, OUT) :- 
 	object_call(REF, getPreferredSize, '.'(ARG0, []), OUT).
+
+basic_viewport_u_i_get_baseline_resize_behavior(REF, ARG0, OUT) :- 
+	object_call(REF, getBaselineResizeBehavior, '.'(ARG0, []), OUT).
 
 basic_viewport_u_i_wait(REF, ARG0) :- 
 	object_call(REF, wait, '.'(ARG0, []), _).

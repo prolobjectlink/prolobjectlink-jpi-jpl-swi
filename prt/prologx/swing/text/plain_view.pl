@@ -109,11 +109,11 @@ plain_view_get_graphics(REF, OUT) :-
 plain_view_get_alignment(REF, ARG0, OUT) :- 
 	object_call(REF, getAlignment, '.'(ARG0, []), OUT).
 
-plain_view_model_to_view(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
-	object_call(REF, modelToView, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
-
 plain_view_get_start_offset(REF, OUT) :- 
 	object_call(REF, getStartOffset, [], OUT).
+
+plain_view_model_to_view(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
+	object_call(REF, modelToView, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
 
 plain_view_get_next_visual_position_from(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
 	object_call(REF, getNextVisualPositionFrom, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).

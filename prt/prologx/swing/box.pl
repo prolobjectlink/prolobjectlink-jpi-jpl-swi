@@ -169,11 +169,11 @@ box_request_focus_in_window(REF, OUT) :-
 box_get_cursor(REF, OUT) :- 
 	object_call(REF, getCursor, [], OUT).
 
-box_get_hierarchy_listeners(REF, OUT) :- 
-	object_call(REF, getHierarchyListeners, [], OUT).
-
 box_mouse_down(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseDown, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+box_get_hierarchy_listeners(REF, OUT) :- 
+	object_call(REF, getHierarchyListeners, [], OUT).
 
 box_get_focus_listeners(REF, OUT) :- 
 	object_call(REF, getFocusListeners, [], OUT).
@@ -346,14 +346,14 @@ box_prepare_image(REF, ARG0, ARG1, ARG2, ARG3, OUT) :-
 box_lost_focus(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, lostFocus, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-box_add_mouse_motion_listener(REF, ARG0) :- 
-	object_call(REF, addMouseMotionListener, '.'(ARG0, []), _).
-
 box_post_event(REF, ARG0, OUT) :- 
 	object_call(REF, postEvent, '.'(ARG0, []), OUT).
 
 box_set_bounds(REF, ARG0, ARG1, ARG2, ARG3) :- 
 	object_call(REF, setBounds, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).
+
+box_add_mouse_motion_listener(REF, ARG0) :- 
+	object_call(REF, addMouseMotionListener, '.'(ARG0, []), _).
 
 box_remove_all(REF) :- 
 	object_call(REF, removeAll, [], _).
@@ -433,11 +433,11 @@ box_is_lightweight_component(REF, ARG0, OUT) :-
 box_mouse_enter(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseEnter, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-box_get_focus_traversal_keys_enabled(REF, OUT) :- 
-	object_call(REF, getFocusTraversalKeysEnabled, [], OUT).
-
 box_set_ignore_repaint(REF, ARG0) :- 
 	object_call(REF, setIgnoreRepaint, '.'(ARG0, []), _).
+
+box_get_focus_traversal_keys_enabled(REF, OUT) :- 
+	object_call(REF, getFocusTraversalKeysEnabled, [], OUT).
 
 box_action(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, action, '.'(ARG0, '.'(ARG1, [])), OUT).
@@ -853,11 +853,11 @@ box_hide(REF) :-
 box_get_action_map(REF, OUT) :- 
 	object_call(REF, getActionMap, [], OUT).
 
-box_bounds(REF, OUT) :- 
-	object_call(REF, bounds, [], OUT).
-
 box_get_mouse_position(REF, OUT) :- 
 	object_call(REF, getMousePosition, [], OUT).
+
+box_bounds(REF, OUT) :- 
+	object_call(REF, bounds, [], OUT).
 
 box_set_request_focus_enabled(REF, ARG0) :- 
 	object_call(REF, setRequestFocusEnabled, '.'(ARG0, []), _).

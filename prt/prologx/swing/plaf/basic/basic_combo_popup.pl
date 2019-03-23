@@ -385,11 +385,11 @@ basic_combo_popup_next_focus(REF) :-
 basic_combo_popup_is_focus_cycle_root(REF, ARG0, OUT) :- 
 	object_call(REF, isFocusCycleRoot, '.'(ARG0, []), OUT).
 
-basic_combo_popup_get_height(REF, OUT) :- 
-	object_call(REF, getHeight, [], OUT).
-
 basic_combo_popup_set_focus_traversal_keys(REF, ARG0, ARG1) :- 
 	object_call(REF, setFocusTraversalKeys, '.'(ARG0, '.'(ARG1, [])), _).
+
+basic_combo_popup_get_height(REF, OUT) :- 
+	object_call(REF, getHeight, [], OUT).
 
 basic_combo_popup_set_autoscrolls(REF, ARG0) :- 
 	object_call(REF, setAutoscrolls, '.'(ARG0, []), _).
@@ -499,11 +499,11 @@ basic_combo_popup_remove_mouse_motion_listener(REF, ARG0) :-
 basic_combo_popup_get_name(REF, OUT) :- 
 	object_call(REF, getName, [], OUT).
 
-basic_combo_popup_add_key_listener(REF, ARG0) :- 
-	object_call(REF, addKeyListener, '.'(ARG0, []), _).
-
 basic_combo_popup_is_displayable(REF, OUT) :- 
 	object_call(REF, isDisplayable, [], OUT).
+
+basic_combo_popup_add_key_listener(REF, ARG0) :- 
+	object_call(REF, addKeyListener, '.'(ARG0, []), _).
 
 basic_combo_popup_add_input_method_listener(REF, ARG0) :- 
 	object_call(REF, addInputMethodListener, '.'(ARG0, []), _).
@@ -547,14 +547,14 @@ basic_combo_popup_get_vetoable_change_listeners(REF, OUT) :-
 basic_combo_popup_grab_focus(REF) :- 
 	object_call(REF, grabFocus, [], _).
 
-basic_combo_popup_get_font(REF, OUT) :- 
-	object_call(REF, getFont, [], OUT).
-
 basic_combo_popup_key_up(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, keyUp, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 basic_combo_popup_mouse_drag(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseDrag, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+basic_combo_popup_get_font(REF, OUT) :- 
+	object_call(REF, getFont, [], OUT).
 
 basic_combo_popup_get_selection_model(REF, OUT) :- 
 	object_call(REF, getSelectionModel, [], OUT).
@@ -769,11 +769,11 @@ basic_combo_popup_is_painting_for_print(REF, OUT) :-
 basic_combo_popup_set_inherits_popup_menu(REF, ARG0) :- 
 	object_call(REF, setInheritsPopupMenu, '.'(ARG0, []), _).
 
-basic_combo_popup_are_focus_traversal_keys_set(REF, ARG0, OUT) :- 
-	object_call(REF, areFocusTraversalKeysSet, '.'(ARG0, []), OUT).
-
 basic_combo_popup_get_mouse_position(REF, ARG0, OUT) :- 
 	object_call(REF, getMousePosition, '.'(ARG0, []), OUT).
+
+basic_combo_popup_are_focus_traversal_keys_set(REF, ARG0, OUT) :- 
+	object_call(REF, areFocusTraversalKeysSet, '.'(ARG0, []), OUT).
 
 basic_combo_popup_compute_visible_rect(REF, ARG0) :- 
 	object_call(REF, computeVisibleRect, '.'(ARG0, []), _).
@@ -1078,11 +1078,11 @@ basic_combo_popup_set_bounds(REF, ARG0, ARG1, ARG2, ARG3) :-
 basic_combo_popup_set_selection_model(REF, ARG0) :- 
 	object_call(REF, setSelectionModel, '.'(ARG0, []), _).
 
-basic_combo_popup_add_component_listener(REF, ARG0) :- 
-	object_call(REF, addComponentListener, '.'(ARG0, []), _).
-
 basic_combo_popup_set_bounds(REF, ARG0) :- 
 	object_call(REF, setBounds, '.'(ARG0, []), _).
+
+basic_combo_popup_add_component_listener(REF, ARG0) :- 
+	object_call(REF, addComponentListener, '.'(ARG0, []), _).
 
 basic_combo_popup_set_invoker(REF, ARG0) :- 
 	object_call(REF, setInvoker, '.'(ARG0, []), _).
@@ -1165,11 +1165,11 @@ basic_combo_popup_get_font_metrics(REF, ARG0, OUT) :-
 basic_combo_popup_get_inherits_popup_menu(REF, OUT) :- 
 	object_call(REF, getInheritsPopupMenu, [], OUT).
 
-basic_combo_popup_add_mouse_wheel_listener(REF, ARG0) :- 
-	object_call(REF, addMouseWheelListener, '.'(ARG0, []), _).
-
 basic_combo_popup_get_peer(REF, OUT) :- 
 	object_call(REF, getPeer, [], OUT).
+
+basic_combo_popup_add_mouse_wheel_listener(REF, ARG0) :- 
+	object_call(REF, addMouseWheelListener, '.'(ARG0, []), _).
 
 basic_combo_popup_preferred_size(REF, OUT) :- 
 	object_call(REF, preferredSize, [], OUT).

@@ -85,11 +85,11 @@ plain_document_read_lock(REF) :-
 plain_document_remove(REF, ARG0, ARG1) :- 
 	object_call(REF, remove, '.'(ARG0, '.'(ARG1, [])), _).
 
-plain_document_get_start_position(REF, OUT) :- 
-	object_call(REF, getStartPosition, [], OUT).
-
 plain_document_set_document_properties(REF, ARG0) :- 
 	object_call(REF, setDocumentProperties, '.'(ARG0, []), _).
+
+plain_document_get_start_position(REF, OUT) :- 
+	object_call(REF, getStartPosition, [], OUT).
 
 plain_document_get_root_elements(REF, OUT) :- 
 	object_call(REF, getRootElements, [], OUT).

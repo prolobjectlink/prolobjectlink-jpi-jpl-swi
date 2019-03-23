@@ -133,11 +133,11 @@ default_button_model_remove_change_listener(REF, ARG0) :-
 default_button_model_is_enabled(REF, OUT) :- 
 	object_call(REF, isEnabled, [], OUT).
 
-default_button_model_remove_action_listener(REF, ARG0) :- 
-	object_call(REF, removeActionListener, '.'(ARG0, []), _).
-
 default_button_model_set_enabled(REF, ARG0) :- 
 	object_call(REF, setEnabled, '.'(ARG0, []), _).
+
+default_button_model_remove_action_listener(REF, ARG0) :- 
+	object_call(REF, removeActionListener, '.'(ARG0, []), _).
 
 default_button_model_get_selected_objects(REF, OUT) :- 
 	object_call(REF, getSelectedObjects, [], OUT).

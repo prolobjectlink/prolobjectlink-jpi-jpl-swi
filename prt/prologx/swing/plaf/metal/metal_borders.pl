@@ -25,11 +25,11 @@
 metal_borders(OUT) :- 
 	object_new('javax.swing.plaf.metal.MetalBorders', [], OUT).
 
-metal_borders_get_text_border(REF, OUT) :- 
-	object_call(REF, getTextBorder, [], OUT).
-
 metal_borders_get_toggle_button_border(REF, OUT) :- 
 	object_call(REF, getToggleButtonBorder, [], OUT).
+
+metal_borders_get_text_border(REF, OUT) :- 
+	object_call(REF, getTextBorder, [], OUT).
 
 metal_borders_get_button_border(REF, OUT) :- 
 	object_call(REF, getButtonBorder, [], OUT).

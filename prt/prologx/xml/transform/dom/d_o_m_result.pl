@@ -49,11 +49,11 @@ d_o_m_result(OUT) :-
 d_o_m_result_notify(REF) :- 
 	object_call(REF, notify, [], _).
 
-d_o_m_result_set_system_id(REF, ARG0) :- 
-	object_call(REF, setSystemId, '.'(ARG0, []), _).
-
 d_o_m_result_set_next_sibling(REF, ARG0) :- 
 	object_call(REF, setNextSibling, '.'(ARG0, []), _).
+
+d_o_m_result_set_system_id(REF, ARG0) :- 
+	object_call(REF, setSystemId, '.'(ARG0, []), _).
 
 d_o_m_result_get_node(REF, OUT) :- 
 	object_call(REF, getNode, [], OUT).

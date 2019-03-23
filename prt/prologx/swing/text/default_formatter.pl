@@ -49,11 +49,11 @@ default_formatter_equals(REF, ARG0, OUT) :-
 default_formatter_notify(REF) :- 
 	object_call(REF, notify, [], _).
 
-default_formatter_install(REF, ARG0) :- 
-	object_call(REF, install, '.'(ARG0, []), _).
-
 default_formatter_get_value_class(REF, OUT) :- 
 	object_call(REF, getValueClass, [], OUT).
+
+default_formatter_install(REF, ARG0) :- 
+	object_call(REF, install, '.'(ARG0, []), _).
 
 default_formatter_notify_all(REF) :- 
 	object_call(REF, notifyAll, [], _).

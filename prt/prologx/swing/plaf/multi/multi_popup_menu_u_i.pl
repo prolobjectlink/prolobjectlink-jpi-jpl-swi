@@ -76,11 +76,11 @@ multi_popup_menu_u_i_equals(REF, ARG0, OUT) :-
 multi_popup_menu_u_i_get_baseline(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, getBaseline, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-multi_popup_menu_u_i_get_u_is(REF, OUT) :- 
-	object_call(REF, getUIs, [], OUT).
-
 multi_popup_menu_u_i_uninstall_u_i(REF, ARG0) :- 
 	object_call(REF, uninstallUI, '.'(ARG0, []), _).
+
+multi_popup_menu_u_i_get_u_is(REF, OUT) :- 
+	object_call(REF, getUIs, [], OUT).
 
 multi_popup_menu_u_i_wait(REF) :- 
 	object_call(REF, wait, [], _).

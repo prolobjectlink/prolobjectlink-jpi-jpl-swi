@@ -33,14 +33,14 @@ object_file_choose_demo :-
     j_frame_set_visible(FRAME, TRUE),
     j_frame_to_front(FRAME),
     j_frame_get_content_pane(FRAME, CONTENT_PANE),
-    j_file_chooser(FILE_SHOOSER),
-	j_file_chooser_show_dialog(FILE_SHOOSER, CONTENT_PANE, 'Select a file', _),
+    j_file_chooser(FILE_CHOOSER),
+	j_file_chooser_show_dialog(FILE_CHOOSER, CONTENT_PANE, 'Select a file', _),
     j_frame_dispose(FRAME),
     
-    (       object_is_null(FILE_SHOOSER)
+    (       object_is_null(FILE_CHOOSER)
     ->      write('you cancelled')
     ;       write('you chose '), 
-    		j_file_chooser_get_selected_file(FILE_SHOOSER, FILE),
+    		j_file_chooser_get_selected_file(FILE_CHOOSER, FILE),
     		file_get_path(FILE, PATH),
     		write(PATH)
     ),

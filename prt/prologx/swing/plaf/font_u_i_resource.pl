@@ -148,29 +148,29 @@ font_u_i_resource_decode(REF, ARG0, OUT) :-
 font_u_i_resource_get_attributes(REF, OUT) :- 
 	object_call(REF, getAttributes, [], OUT).
 
-font_u_i_resource_derive_font(REF, ARG0, OUT) :- 
-	object_call(REF, deriveFont, '.'(ARG0, []), OUT).
-
-font_u_i_resource_derive_font(REF, ARG0, OUT) :- 
-	object_call(REF, deriveFont, '.'(ARG0, []), OUT).
-
-font_u_i_resource_derive_font(REF, ARG0, OUT) :- 
-	object_call(REF, deriveFont, '.'(ARG0, []), OUT).
-
-font_u_i_resource_derive_font(REF, ARG0, OUT) :- 
-	object_call(REF, deriveFont, '.'(ARG0, []), OUT).
-
 font_u_i_resource_get_missing_glyph_code(REF, OUT) :- 
 	object_call(REF, getMissingGlyphCode, [], OUT).
 
-font_u_i_resource_derive_font(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, deriveFont, '.'(ARG0, '.'(ARG1, [])), OUT).
+font_u_i_resource_derive_font(REF, ARG0, OUT) :- 
+	object_call(REF, deriveFont, '.'(ARG0, []), OUT).
 
-font_u_i_resource_derive_font(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, deriveFont, '.'(ARG0, '.'(ARG1, [])), OUT).
+font_u_i_resource_derive_font(REF, ARG0, OUT) :- 
+	object_call(REF, deriveFont, '.'(ARG0, []), OUT).
+
+font_u_i_resource_derive_font(REF, ARG0, OUT) :- 
+	object_call(REF, deriveFont, '.'(ARG0, []), OUT).
+
+font_u_i_resource_derive_font(REF, ARG0, OUT) :- 
+	object_call(REF, deriveFont, '.'(ARG0, []), OUT).
 
 font_u_i_resource_has_layout_attributes(REF, OUT) :- 
 	object_call(REF, hasLayoutAttributes, [], OUT).
+
+font_u_i_resource_derive_font(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, deriveFont, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+font_u_i_resource_derive_font(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, deriveFont, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 font_u_i_resource_get_font_name(REF, OUT) :- 
 	object_call(REF, getFontName, [], OUT).
@@ -187,12 +187,6 @@ font_u_i_resource_get_p_s_name(REF, OUT) :-
 font_u_i_resource_is_bold(REF, OUT) :- 
 	object_call(REF, isBold, [], OUT).
 
-font_u_i_resource_can_display_up_to(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, canDisplayUpTo, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
-font_u_i_resource_can_display_up_to(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, canDisplayUpTo, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
 font_u_i_resource_get_baseline_for(REF, ARG0, OUT) :- 
 	object_call(REF, getBaselineFor, '.'(ARG0, []), OUT).
 
@@ -201,6 +195,12 @@ font_u_i_resource_get_transform(REF, OUT) :-
 
 font_u_i_resource_is_plain(REF, OUT) :- 
 	object_call(REF, isPlain, [], OUT).
+
+font_u_i_resource_can_display_up_to(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, canDisplayUpTo, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+font_u_i_resource_can_display_up_to(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, canDisplayUpTo, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
 font_u_i_resource_get_size2_d(REF, OUT) :- 
 	object_call(REF, getSize2D, [], OUT).
@@ -226,14 +226,14 @@ font_u_i_resource_has_uniform_line_metrics(REF, OUT) :-
 font_u_i_resource_is_transformed(REF, OUT) :- 
 	object_call(REF, isTransformed, [], OUT).
 
-font_u_i_resource_create_font(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, createFont, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-font_u_i_resource_create_font(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, createFont, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 font_u_i_resource_get_available_attributes(REF, OUT) :- 
 	object_call(REF, getAvailableAttributes, [], OUT).
+
+font_u_i_resource_create_font(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, createFont, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+font_u_i_resource_create_font(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, createFont, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 font_u_i_resource_wait(REF, ARG0) :- 
 	object_call(REF, wait, '.'(ARG0, []), _).

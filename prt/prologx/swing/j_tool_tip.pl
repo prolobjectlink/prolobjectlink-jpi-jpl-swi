@@ -109,14 +109,14 @@ j_tool_tip_post_event(REF, ARG0, OUT) :-
 j_tool_tip_print_all(REF, ARG0) :- 
 	object_call(REF, printAll, '.'(ARG0, []), _).
 
-j_tool_tip_get_component_listeners(REF, OUT) :- 
-	object_call(REF, getComponentListeners, [], OUT).
-
 j_tool_tip_get_input_method_listeners(REF, OUT) :- 
 	object_call(REF, getInputMethodListeners, [], OUT).
 
 j_tool_tip_get_peer(REF, OUT) :- 
 	object_call(REF, getPeer, [], OUT).
+
+j_tool_tip_get_component_listeners(REF, OUT) :- 
+	object_call(REF, getComponentListeners, [], OUT).
 
 j_tool_tip_reset_keyboard_actions(REF) :- 
 	object_call(REF, resetKeyboardActions, [], _).
@@ -148,11 +148,11 @@ j_tool_tip_list(REF) :-
 j_tool_tip_set_locale(REF, ARG0) :- 
 	object_call(REF, setLocale, '.'(ARG0, []), _).
 
-j_tool_tip_create_image(REF, ARG0, OUT) :- 
-	object_call(REF, createImage, '.'(ARG0, []), OUT).
-
 j_tool_tip_is_cursor_set(REF, OUT) :- 
 	object_call(REF, isCursorSet, [], OUT).
+
+j_tool_tip_create_image(REF, ARG0, OUT) :- 
+	object_call(REF, createImage, '.'(ARG0, []), OUT).
 
 j_tool_tip_create_image(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, createImage, '.'(ARG0, '.'(ARG1, [])), OUT).
@@ -193,11 +193,11 @@ j_tool_tip_repaint(REF, ARG0, ARG1, ARG2, ARG3, ARG4) :-
 j_tool_tip_is_opaque(REF, OUT) :- 
 	object_call(REF, isOpaque, [], OUT).
 
-j_tool_tip_get_toolkit(REF, OUT) :- 
-	object_call(REF, getToolkit, [], OUT).
-
 j_tool_tip_repaint(REF, ARG0, ARG1, ARG2, ARG3) :- 
 	object_call(REF, repaint, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).
+
+j_tool_tip_get_toolkit(REF, OUT) :- 
+	object_call(REF, getToolkit, [], OUT).
 
 j_tool_tip_get_mouse_motion_listeners(REF, OUT) :- 
 	object_call(REF, getMouseMotionListeners, [], OUT).
@@ -496,11 +496,11 @@ j_tool_tip_get_action_for_key_stroke(REF, ARG0, OUT) :-
 j_tool_tip_show(REF, ARG0) :- 
 	object_call(REF, show, '.'(ARG0, []), _).
 
-j_tool_tip_get_bounds(REF, OUT) :- 
-	object_call(REF, getBounds, [], OUT).
-
 j_tool_tip_show(REF) :- 
 	object_call(REF, show, [], _).
+
+j_tool_tip_get_bounds(REF, OUT) :- 
+	object_call(REF, getBounds, [], OUT).
 
 j_tool_tip_get_bounds(REF, ARG0, OUT) :- 
 	object_call(REF, getBounds, '.'(ARG0, []), OUT).
@@ -640,11 +640,11 @@ j_tool_tip_set_verify_input_when_focus_target(REF, ARG0) :-
 j_tool_tip_is_validate_root(REF, OUT) :- 
 	object_call(REF, isValidateRoot, [], OUT).
 
-j_tool_tip_dispatch_event(REF, ARG0) :- 
-	object_call(REF, dispatchEvent, '.'(ARG0, []), _).
-
 j_tool_tip_set_bounds(REF, ARG0) :- 
 	object_call(REF, setBounds, '.'(ARG0, []), _).
+
+j_tool_tip_dispatch_event(REF, ARG0) :- 
+	object_call(REF, dispatchEvent, '.'(ARG0, []), _).
 
 j_tool_tip_set_bounds(REF, ARG0, ARG1, ARG2, ARG3) :- 
 	object_call(REF, setBounds, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).
@@ -754,11 +754,11 @@ j_tool_tip_invalidate(REF) :-
 j_tool_tip_is_ancestor_of(REF, ARG0, OUT) :- 
 	object_call(REF, isAncestorOf, '.'(ARG0, []), OUT).
 
-j_tool_tip_get_baseline_resize_behavior(REF, OUT) :- 
-	object_call(REF, getBaselineResizeBehavior, [], OUT).
-
 j_tool_tip_revalidate(REF) :- 
 	object_call(REF, revalidate, [], _).
+
+j_tool_tip_get_baseline_resize_behavior(REF, OUT) :- 
+	object_call(REF, getBaselineResizeBehavior, [], OUT).
 
 j_tool_tip_get_focus_listeners(REF, OUT) :- 
 	object_call(REF, getFocusListeners, [], OUT).

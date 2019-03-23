@@ -55,11 +55,11 @@ multi_look_and_feel_make_input_map(REF, ARG0, OUT) :-
 multi_look_and_feel_get_defaults(REF, OUT) :- 
 	object_call(REF, getDefaults, [], OUT).
 
-multi_look_and_feel_uninitialize(REF) :- 
-	object_call(REF, uninitialize, [], _).
-
 multi_look_and_feel_get_disabled_icon(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, getDisabledIcon, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+multi_look_and_feel_uninitialize(REF) :- 
+	object_call(REF, uninitialize, [], _).
 
 multi_look_and_feel_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).

@@ -136,11 +136,11 @@ h_t_m_l_document_get_style_sheet(REF, OUT) :-
 h_t_m_l_document_get_text(REF, ARG0, ARG1, ARG2) :- 
 	object_call(REF, getText, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
 
-h_t_m_l_document_get_text(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getText, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 h_t_m_l_document_get_bidi_root_element(REF, OUT) :- 
 	object_call(REF, getBidiRootElement, [], OUT).
+
+h_t_m_l_document_get_text(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getText, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 h_t_m_l_document_get_property(REF, ARG0, OUT) :- 
 	object_call(REF, getProperty, '.'(ARG0, []), OUT).
@@ -268,14 +268,14 @@ h_t_m_l_document_equals(REF, ARG0, OUT) :-
 h_t_m_l_document_get_base(REF, OUT) :- 
 	object_call(REF, getBase, [], OUT).
 
+h_t_m_l_document_get_undoable_edit_listeners(REF, OUT) :- 
+	object_call(REF, getUndoableEditListeners, [], OUT).
+
 h_t_m_l_document_put_property(REF, ARG0, ARG1) :- 
 	object_call(REF, putProperty, '.'(ARG0, '.'(ARG1, [])), _).
 
 h_t_m_l_document_render(REF, ARG0) :- 
 	object_call(REF, render, '.'(ARG0, []), _).
-
-h_t_m_l_document_get_undoable_edit_listeners(REF, OUT) :- 
-	object_call(REF, getUndoableEditListeners, [], OUT).
 
 h_t_m_l_document_insert_after_end(REF, ARG0, ARG1) :- 
 	object_call(REF, insertAfterEnd, '.'(ARG0, '.'(ARG1, [])), _).

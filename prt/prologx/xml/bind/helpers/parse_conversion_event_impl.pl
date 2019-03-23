@@ -67,11 +67,11 @@ parse_conversion_event_impl_get_message(REF, OUT) :-
 parse_conversion_event_impl_set_severity(REF, ARG0) :- 
 	object_call(REF, setSeverity, '.'(ARG0, []), _).
 
-parse_conversion_event_impl_set_message(REF, ARG0) :- 
-	object_call(REF, setMessage, '.'(ARG0, []), _).
-
 parse_conversion_event_impl_set_linked_exception(REF, ARG0) :- 
 	object_call(REF, setLinkedException, '.'(ARG0, []), _).
+
+parse_conversion_event_impl_set_message(REF, ARG0) :- 
+	object_call(REF, setMessage, '.'(ARG0, []), _).
 
 parse_conversion_event_impl_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).

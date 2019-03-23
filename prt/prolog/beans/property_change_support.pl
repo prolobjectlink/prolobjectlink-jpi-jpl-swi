@@ -46,26 +46,26 @@ property_change_support_hash_code(REF, OUT) :-
 property_change_support_wait(REF, ARG0, ARG1) :- 
 	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
+property_change_support_fire_indexed_property_change(REF, ARG0, ARG1, ARG2, ARG3) :- 
+	object_call(REF, fireIndexedPropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).
+
+property_change_support_fire_indexed_property_change(REF, ARG0, ARG1, ARG2, ARG3) :- 
+	object_call(REF, fireIndexedPropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).
+
+property_change_support_fire_indexed_property_change(REF, ARG0, ARG1, ARG2, ARG3) :- 
+	object_call(REF, fireIndexedPropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).
+
 property_change_support_has_listeners(REF, ARG0, OUT) :- 
 	object_call(REF, hasListeners, '.'(ARG0, []), OUT).
-
-property_change_support_fire_indexed_property_change(REF, ARG0, ARG1, ARG2, ARG3) :- 
-	object_call(REF, fireIndexedPropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).
-
-property_change_support_fire_indexed_property_change(REF, ARG0, ARG1, ARG2, ARG3) :- 
-	object_call(REF, fireIndexedPropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).
-
-property_change_support_fire_indexed_property_change(REF, ARG0, ARG1, ARG2, ARG3) :- 
-	object_call(REF, fireIndexedPropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).
 
 property_change_support_wait(REF, ARG0) :- 
 	object_call(REF, wait, '.'(ARG0, []), _).
 
-property_change_support_fire_property_change(REF, ARG0) :- 
-	object_call(REF, firePropertyChange, '.'(ARG0, []), _).
-
 property_change_support_get_property_change_listeners(REF, OUT) :- 
 	object_call(REF, getPropertyChangeListeners, [], OUT).
+
+property_change_support_fire_property_change(REF, ARG0) :- 
+	object_call(REF, firePropertyChange, '.'(ARG0, []), _).
 
 property_change_support_get_property_change_listeners(REF, ARG0, OUT) :- 
 	object_call(REF, getPropertyChangeListeners, '.'(ARG0, []), OUT).

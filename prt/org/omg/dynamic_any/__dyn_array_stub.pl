@@ -109,11 +109,11 @@
 '__dyn_array_stub_equals'(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-'__dyn_array_stub_set_elements_as_dyn_any'(REF, ARG0) :- 
-	object_call(REF, set_elements_as_dyn_any, '.'(ARG0, []), _).
-
 '__dyn_array_stub_insert_wstring'(REF, ARG0) :- 
 	object_call(REF, insert_wstring, '.'(ARG0, []), _).
+
+'__dyn_array_stub_set_elements_as_dyn_any'(REF, ARG0) :- 
+	object_call(REF, set_elements_as_dyn_any, '.'(ARG0, []), _).
 
 '__dyn_array_stub_get_double'(REF, OUT) :- 
 	object_call(REF, get_double, [], OUT).
@@ -232,11 +232,11 @@
 '__dyn_array_stub__set_delegate'(REF, ARG0) :- 
 	object_call(REF, '_set_delegate', '.'(ARG0, []), _).
 
-'__dyn_array_stub_insert_dyn_any'(REF, ARG0) :- 
-	object_call(REF, insert_dyn_any, '.'(ARG0, []), _).
-
 '__dyn_array_stub_get_typecode'(REF, OUT) :- 
 	object_call(REF, get_typecode, [], OUT).
+
+'__dyn_array_stub_insert_dyn_any'(REF, ARG0) :- 
+	object_call(REF, insert_dyn_any, '.'(ARG0, []), _).
 
 '__dyn_array_stub_get_val'(REF, OUT) :- 
 	object_call(REF, get_val, [], OUT).
@@ -256,14 +256,14 @@
 '__dyn_array_stub_to_string'(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-'__dyn_array_stub_get_elements_as_dyn_any'(REF, OUT) :- 
-	object_call(REF, get_elements_as_dyn_any, [], OUT).
-
 '__dyn_array_stub_get_char'(REF, OUT) :- 
 	object_call(REF, get_char, [], OUT).
 
 '__dyn_array_stub_get_ushort'(REF, OUT) :- 
 	object_call(REF, get_ushort, [], OUT).
+
+'__dyn_array_stub_get_elements_as_dyn_any'(REF, OUT) :- 
+	object_call(REF, get_elements_as_dyn_any, [], OUT).
 
 '__dyn_array_stub_component_count'(REF, OUT) :- 
 	object_call(REF, component_count, [], OUT).

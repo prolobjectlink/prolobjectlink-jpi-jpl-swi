@@ -31,11 +31,11 @@ basic_text_area_u_i_get_next_visual_position_from(REF, ARG0, ARG1, ARG2, ARG3, A
 basic_text_area_u_i_model_to_view(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, modelToView, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-basic_text_area_u_i_uninstall_u_i(REF, ARG0) :- 
-	object_call(REF, uninstallUI, '.'(ARG0, []), _).
-
 basic_text_area_u_i_model_to_view(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, modelToView, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+basic_text_area_u_i_uninstall_u_i(REF, ARG0) :- 
+	object_call(REF, uninstallUI, '.'(ARG0, []), _).
 
 basic_text_area_u_i_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).

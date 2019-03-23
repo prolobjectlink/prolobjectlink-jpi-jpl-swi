@@ -220,14 +220,14 @@ basic_combo_box_renderer_register_keyboard_action(REF, ARG0, ARG1, ARG2, ARG3) :
 basic_combo_box_renderer_get_displayed_mnemonic_index(REF, OUT) :- 
 	object_call(REF, getDisplayedMnemonicIndex, [], OUT).
 
+basic_combo_box_renderer_set_cursor(REF, ARG0) :- 
+	object_call(REF, setCursor, '.'(ARG0, []), _).
+
 basic_combo_box_renderer_bounds(REF, OUT) :- 
 	object_call(REF, bounds, [], OUT).
 
 basic_combo_box_renderer_create_volatile_image(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, createVolatileImage, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-basic_combo_box_renderer_set_cursor(REF, ARG0) :- 
-	object_call(REF, setCursor, '.'(ARG0, []), _).
 
 basic_combo_box_renderer_create_volatile_image(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, createVolatileImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
@@ -1138,11 +1138,11 @@ basic_combo_box_renderer_equals(REF, ARG0, OUT) :-
 basic_combo_box_renderer_get_list_cell_renderer_component(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
 	object_call(REF, getListCellRendererComponent, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
 
-basic_combo_box_renderer_check_image(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, checkImage, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 basic_combo_box_renderer_transfer_focus_backward(REF) :- 
 	object_call(REF, transferFocusBackward, [], _).
+
+basic_combo_box_renderer_check_image(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, checkImage, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 basic_combo_box_renderer_check_image(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_call(REF, checkImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).

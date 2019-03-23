@@ -208,11 +208,11 @@ frame_get_components(REF, OUT) :-
 frame_set_extended_state(REF, ARG0) :- 
 	object_call(REF, setExtendedState, '.'(ARG0, []), _).
 
-frame_get_color_model(REF, OUT) :- 
-	object_call(REF, getColorModel, [], OUT).
-
 frame_remove_mouse_wheel_listener(REF, ARG0) :- 
 	object_call(REF, removeMouseWheelListener, '.'(ARG0, []), _).
+
+frame_get_color_model(REF, OUT) :- 
+	object_call(REF, getColorModel, [], OUT).
 
 frame_set_undecorated(REF, ARG0) :- 
 	object_call(REF, setUndecorated, '.'(ARG0, []), _).
@@ -220,11 +220,11 @@ frame_set_undecorated(REF, ARG0) :-
 frame_create_buffer_strategy(REF, ARG0, ARG1) :- 
 	object_call(REF, createBufferStrategy, '.'(ARG0, '.'(ARG1, [])), _).
 
-frame_get_component_listeners(REF, OUT) :- 
-	object_call(REF, getComponentListeners, [], OUT).
-
 frame_inside(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, inside, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+frame_get_component_listeners(REF, OUT) :- 
+	object_call(REF, getComponentListeners, [], OUT).
 
 frame_create_buffer_strategy(REF, ARG0) :- 
 	object_call(REF, createBufferStrategy, '.'(ARG0, []), _).
@@ -262,11 +262,11 @@ frame_get_component_orientation(REF, OUT) :-
 frame_is_always_on_top(REF, OUT) :- 
 	object_call(REF, isAlwaysOnTop, [], OUT).
 
-frame_add_mouse_wheel_listener(REF, ARG0) :- 
-	object_call(REF, addMouseWheelListener, '.'(ARG0, []), _).
-
 frame_remove_component_listener(REF, ARG0) :- 
 	object_call(REF, removeComponentListener, '.'(ARG0, []), _).
+
+frame_add_mouse_wheel_listener(REF, ARG0) :- 
+	object_call(REF, addMouseWheelListener, '.'(ARG0, []), _).
 
 frame_count_components(REF, OUT) :- 
 	object_call(REF, countComponents, [], OUT).
@@ -427,11 +427,11 @@ frame_get_most_recent_focus_owner(REF, OUT) :-
 frame_to_front(REF) :- 
 	object_call(REF, toFront, [], _).
 
-frame_get_graphics_configuration(REF, OUT) :- 
-	object_call(REF, getGraphicsConfiguration, [], OUT).
-
 frame_mouse_move(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseMove, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+frame_get_graphics_configuration(REF, OUT) :- 
+	object_call(REF, getGraphicsConfiguration, [], OUT).
 
 frame_is_displayable(REF, OUT) :- 
 	object_call(REF, isDisplayable, [], OUT).
@@ -505,11 +505,11 @@ frame_is_background_set(REF, OUT) :-
 frame_is_focused(REF, OUT) :- 
 	object_call(REF, isFocused, [], OUT).
 
-frame_add_input_method_listener(REF, ARG0) :- 
-	object_call(REF, addInputMethodListener, '.'(ARG0, []), _).
-
 frame_mouse_enter(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseEnter, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+frame_add_input_method_listener(REF, ARG0) :- 
+	object_call(REF, addInputMethodListener, '.'(ARG0, []), _).
 
 frame_disable(REF) :- 
 	object_call(REF, disable, [], _).
@@ -598,26 +598,26 @@ frame_get_name(REF, OUT) :-
 frame_get_layout(REF, OUT) :- 
 	object_call(REF, getLayout, [], OUT).
 
-frame_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
-	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
-
-frame_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
-	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
-
-frame_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
-	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
-
-frame_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
-	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
-
-frame_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
-	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
-
-frame_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
-	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
-
 frame_get_input_method_requests(REF, OUT) :- 
 	object_call(REF, getInputMethodRequests, [], OUT).
+
+frame_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+frame_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+frame_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+frame_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+frame_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+frame_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
 
 frame_set_bounds(REF, ARG0, ARG1, ARG2, ARG3) :- 
 	object_call(REF, setBounds, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).
@@ -637,11 +637,11 @@ frame_set_icon_image(REF, ARG0) :-
 frame_get_cursor_type(REF, OUT) :- 
 	object_call(REF, getCursorType, [], OUT).
 
-frame_get_hierarchy_bounds_listeners(REF, OUT) :- 
-	object_call(REF, getHierarchyBoundsListeners, [], OUT).
-
 frame_lost_focus(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, lostFocus, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+frame_get_hierarchy_bounds_listeners(REF, OUT) :- 
+	object_call(REF, getHierarchyBoundsListeners, [], OUT).
 
 frame_is_location_by_platform(REF, OUT) :- 
 	object_call(REF, isLocationByPlatform, [], OUT).
@@ -742,11 +742,11 @@ frame_pack(REF) :-
 frame_add_mouse_motion_listener(REF, ARG0) :- 
 	object_call(REF, addMouseMotionListener, '.'(ARG0, []), _).
 
-frame_get_bounds(REF, OUT) :- 
-	object_call(REF, getBounds, [], OUT).
-
 frame_set_foreground(REF, ARG0) :- 
 	object_call(REF, setForeground, '.'(ARG0, []), _).
+
+frame_get_bounds(REF, OUT) :- 
+	object_call(REF, getBounds, [], OUT).
 
 frame_locate(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, locate, '.'(ARG0, '.'(ARG1, [])), OUT).
@@ -1000,11 +1000,11 @@ frame_set_location(REF, ARG0) :-
 frame_get_focus_cycle_root_ancestor(REF, OUT) :- 
 	object_call(REF, getFocusCycleRootAncestor, [], OUT).
 
-frame_add_component_listener(REF, ARG0) :- 
-	object_call(REF, addComponentListener, '.'(ARG0, []), _).
-
 frame_is_double_buffered(REF, OUT) :- 
 	object_call(REF, isDoubleBuffered, [], OUT).
+
+frame_add_component_listener(REF, ARG0) :- 
+	object_call(REF, addComponentListener, '.'(ARG0, []), _).
 
 frame_add(REF, ARG0, OUT) :- 
 	object_call(REF, add, '.'(ARG0, []), OUT).
@@ -1042,11 +1042,11 @@ frame_preferred_size(REF, OUT) :-
 frame_get_location(REF, OUT) :- 
 	object_call(REF, getLocation, [], OUT).
 
-frame_get_hierarchy_listeners(REF, OUT) :- 
-	object_call(REF, getHierarchyListeners, [], OUT).
-
 frame_has_focus(REF, OUT) :- 
 	object_call(REF, hasFocus, [], OUT).
+
+frame_get_hierarchy_listeners(REF, OUT) :- 
+	object_call(REF, getHierarchyListeners, [], OUT).
 
 frame_get_mouse_motion_listeners(REF, OUT) :- 
 	object_call(REF, getMouseMotionListeners, [], OUT).

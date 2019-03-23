@@ -58,11 +58,11 @@ zone_offset_transition_to_epoch_second(REF, OUT) :-
 zone_offset_transition_get_duration(REF, OUT) :- 
 	object_call(REF, getDuration, [], OUT).
 
-zone_offset_transition_is_valid_offset(REF, ARG0, OUT) :- 
-	object_call(REF, isValidOffset, '.'(ARG0, []), OUT).
-
 zone_offset_transition_get_date_time_before(REF, OUT) :- 
 	object_call(REF, getDateTimeBefore, [], OUT).
+
+zone_offset_transition_is_valid_offset(REF, ARG0, OUT) :- 
+	object_call(REF, isValidOffset, '.'(ARG0, []), OUT).
 
 zone_offset_transition_of(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, of, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).

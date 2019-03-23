@@ -286,11 +286,11 @@ j_tree_repaint(REF, ARG0, ARG1, ARG2, ARG3, ARG4) :-
 j_tree_get_u_i(REF, OUT) :- 
 	object_call(REF, getUI, [], OUT).
 
-j_tree_get_ignore_repaint(REF, OUT) :- 
-	object_call(REF, getIgnoreRepaint, [], OUT).
-
 j_tree_repaint(REF, ARG0, ARG1, ARG2, ARG3) :- 
 	object_call(REF, repaint, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).
+
+j_tree_get_ignore_repaint(REF, OUT) :- 
+	object_call(REF, getIgnoreRepaint, [], OUT).
 
 j_tree_get_width(REF, OUT) :- 
 	object_call(REF, getWidth, [], OUT).
@@ -649,14 +649,14 @@ j_tree_check_image(REF, ARG0, ARG1, ARG2, ARG3, OUT) :-
 j_tree_check_image(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, checkImage, '.'(ARG0, '.'(ARG1, [])), OUT).
 
+j_tree_set_selection_model(REF, ARG0) :- 
+	object_call(REF, setSelectionModel, '.'(ARG0, []), _).
+
 j_tree_set_visible_row_count(REF, ARG0) :- 
 	object_call(REF, setVisibleRowCount, '.'(ARG0, []), _).
 
 j_tree_remove_selection_interval(REF, ARG0, ARG1) :- 
 	object_call(REF, removeSelectionInterval, '.'(ARG0, '.'(ARG1, [])), _).
-
-j_tree_set_selection_model(REF, ARG0) :- 
-	object_call(REF, setSelectionModel, '.'(ARG0, []), _).
 
 j_tree_is_managing_focus(REF, OUT) :- 
 	object_call(REF, isManagingFocus, [], OUT).
@@ -697,11 +697,11 @@ j_tree_get_mouse_listeners(REF, OUT) :-
 j_tree_get_max_selection_row(REF, OUT) :- 
 	object_call(REF, getMaxSelectionRow, [], OUT).
 
-j_tree_set_selection_interval(REF, ARG0, ARG1) :- 
-	object_call(REF, setSelectionInterval, '.'(ARG0, '.'(ARG1, [])), _).
-
 j_tree_set_selection_paths(REF, ARG0) :- 
 	object_call(REF, setSelectionPaths, '.'(ARG0, []), _).
+
+j_tree_set_selection_interval(REF, ARG0, ARG1) :- 
+	object_call(REF, setSelectionInterval, '.'(ARG0, '.'(ARG1, [])), _).
 
 j_tree_compute_visible_rect(REF, ARG0) :- 
 	object_call(REF, computeVisibleRect, '.'(ARG0, []), _).
@@ -829,11 +829,11 @@ j_tree_create_volatile_image(REF, ARG0, ARG1, ARG2, OUT) :-
 j_tree_create_volatile_image(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, createVolatileImage, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-j_tree_add_selection_path(REF, ARG0) :- 
-	object_call(REF, addSelectionPath, '.'(ARG0, []), _).
-
 j_tree_get_scrolls_on_expand(REF, OUT) :- 
 	object_call(REF, getScrollsOnExpand, [], OUT).
+
+j_tree_add_selection_path(REF, ARG0) :- 
+	object_call(REF, addSelectionPath, '.'(ARG0, []), _).
 
 j_tree_request_default_focus(REF, OUT) :- 
 	object_call(REF, requestDefaultFocus, [], OUT).
@@ -904,14 +904,14 @@ j_tree_is_large_model(REF, OUT) :-
 j_tree_remove_vetoable_change_listener(REF, ARG0) :- 
 	object_call(REF, removeVetoableChangeListener, '.'(ARG0, []), _).
 
+j_tree_remove_selection_paths(REF, ARG0) :- 
+	object_call(REF, removeSelectionPaths, '.'(ARG0, []), _).
+
 j_tree_get_visible_row_count(REF, OUT) :- 
 	object_call(REF, getVisibleRowCount, [], OUT).
 
 j_tree_get_editing_path(REF, OUT) :- 
 	object_call(REF, getEditingPath, [], OUT).
-
-j_tree_remove_selection_paths(REF, ARG0) :- 
-	object_call(REF, removeSelectionPaths, '.'(ARG0, []), _).
 
 j_tree_add_input_method_listener(REF, ARG0) :- 
 	object_call(REF, addInputMethodListener, '.'(ARG0, []), _).
@@ -1111,11 +1111,11 @@ j_tree_get_lead_selection_row(REF, OUT) :-
 j_tree_is_validate_root(REF, OUT) :- 
 	object_call(REF, isValidateRoot, [], OUT).
 
-j_tree_get_focus_traversal_policy(REF, OUT) :- 
-	object_call(REF, getFocusTraversalPolicy, [], OUT).
-
 j_tree_is_focus_cycle_root(REF, OUT) :- 
 	object_call(REF, isFocusCycleRoot, [], OUT).
+
+j_tree_get_focus_traversal_policy(REF, OUT) :- 
+	object_call(REF, getFocusTraversalPolicy, [], OUT).
 
 j_tree_set_root_visible(REF, ARG0) :- 
 	object_call(REF, setRootVisible, '.'(ARG0, []), _).
@@ -1147,11 +1147,11 @@ j_tree_get_selection_count(REF, OUT) :-
 j_tree_add(REF, ARG0, ARG1, ARG2) :- 
 	object_call(REF, add, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
 
-j_tree_add_tree_expansion_listener(REF, ARG0) :- 
-	object_call(REF, addTreeExpansionListener, '.'(ARG0, []), _).
-
 j_tree_get_row_height(REF, OUT) :- 
 	object_call(REF, getRowHeight, [], OUT).
+
+j_tree_add_tree_expansion_listener(REF, ARG0) :- 
+	object_call(REF, addTreeExpansionListener, '.'(ARG0, []), _).
 
 j_tree_add(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, add, '.'(ARG0, '.'(ARG1, [])), OUT).
@@ -1216,11 +1216,11 @@ j_tree_dispatch_event(REF, ARG0) :-
 j_tree_get_drop_target(REF, OUT) :- 
 	object_call(REF, getDropTarget, [], OUT).
 
-j_tree_get_font(REF, OUT) :- 
-	object_call(REF, getFont, [], OUT).
-
 j_tree_set_drop_target(REF, ARG0) :- 
 	object_call(REF, setDropTarget, '.'(ARG0, []), _).
+
+j_tree_get_font(REF, OUT) :- 
+	object_call(REF, getFont, [], OUT).
 
 j_tree_set_double_buffered(REF, ARG0) :- 
 	object_call(REF, setDoubleBuffered, '.'(ARG0, []), _).
@@ -1288,11 +1288,11 @@ j_tree_get_debug_graphics_options(REF, OUT) :-
 j_tree_post_event(REF, ARG0, OUT) :- 
 	object_call(REF, postEvent, '.'(ARG0, []), OUT).
 
-j_tree_fire_tree_collapsed(REF, ARG0) :- 
-	object_call(REF, fireTreeCollapsed, '.'(ARG0, []), _).
-
 j_tree_get_selection_model(REF, OUT) :- 
 	object_call(REF, getSelectionModel, [], OUT).
+
+j_tree_fire_tree_collapsed(REF, ARG0) :- 
+	object_call(REF, fireTreeCollapsed, '.'(ARG0, []), _).
 
 j_tree_action(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, action, '.'(ARG0, '.'(ARG1, [])), OUT).

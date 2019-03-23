@@ -142,9 +142,9 @@ synth_combo_box_u_i_get_baseline_resize_behavior(REF, ARG0, OUT) :-
 synth_combo_box_u_i_paint_border(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5) :- 
 	object_call(REF, paintBorder, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), _).
 
-synth_combo_box_u_i_is_popup_visible(REF, ARG0, OUT) :- 
-	object_call(REF, isPopupVisible, '.'(ARG0, []), OUT).
-
 synth_combo_box_u_i_paint_current_value_background(REF, ARG0, ARG1, ARG2) :- 
 	object_call(REF, paintCurrentValueBackground, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+synth_combo_box_u_i_is_popup_visible(REF, ARG0, OUT) :- 
+	object_call(REF, isPopupVisible, '.'(ARG0, []), OUT).
 

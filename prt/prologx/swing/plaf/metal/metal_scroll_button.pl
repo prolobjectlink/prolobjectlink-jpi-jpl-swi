@@ -259,11 +259,11 @@ metal_scroll_button_locate(REF, ARG0, ARG1, OUT) :-
 metal_scroll_button_is_focus_owner(REF, OUT) :- 
 	object_call(REF, isFocusOwner, [], OUT).
 
-metal_scroll_button_set_hide_action_text(REF, ARG0) :- 
-	object_call(REF, setHideActionText, '.'(ARG0, []), _).
-
 metal_scroll_button_get_displayed_mnemonic_index(REF, OUT) :- 
 	object_call(REF, getDisplayedMnemonicIndex, [], OUT).
+
+metal_scroll_button_set_hide_action_text(REF, ARG0) :- 
+	object_call(REF, setHideActionText, '.'(ARG0, []), _).
 
 metal_scroll_button_get_size(REF, OUT) :- 
 	object_call(REF, getSize, [], OUT).
@@ -805,9 +805,6 @@ metal_scroll_button_repaint(REF, ARG0, ARG1, ARG2, ARG3) :-
 metal_scroll_button_request_focus(REF, ARG0, OUT) :- 
 	object_call(REF, requestFocus, '.'(ARG0, []), OUT).
 
-metal_scroll_button_get_listeners(REF, ARG0, OUT) :- 
-	object_call(REF, getListeners, '.'(ARG0, []), OUT).
-
 metal_scroll_button_repaint(REF, ARG0) :- 
 	object_call(REF, repaint, '.'(ARG0, []), _).
 
@@ -816,6 +813,9 @@ metal_scroll_button_repaint(REF, ARG0) :-
 
 metal_scroll_button_request_focus(REF) :- 
 	object_call(REF, requestFocus, [], _).
+
+metal_scroll_button_get_listeners(REF, ARG0, OUT) :- 
+	object_call(REF, getListeners, '.'(ARG0, []), OUT).
 
 metal_scroll_button_repaint(REF) :- 
 	object_call(REF, repaint, [], _).
@@ -1153,14 +1153,14 @@ metal_scroll_button_get_graphics(REF, OUT) :-
 metal_scroll_button_get_parent(REF, OUT) :- 
 	object_call(REF, getParent, [], OUT).
 
+metal_scroll_button_remove_component_listener(REF, ARG0) :- 
+	object_call(REF, removeComponentListener, '.'(ARG0, []), _).
+
 metal_scroll_button_add_mouse_listener(REF, ARG0) :- 
 	object_call(REF, addMouseListener, '.'(ARG0, []), _).
 
 metal_scroll_button_get_color_model(REF, OUT) :- 
 	object_call(REF, getColorModel, [], OUT).
-
-metal_scroll_button_remove_component_listener(REF, ARG0) :- 
-	object_call(REF, removeComponentListener, '.'(ARG0, []), _).
 
 metal_scroll_button_get_peer(REF, OUT) :- 
 	object_call(REF, getPeer, [], OUT).
@@ -1168,11 +1168,11 @@ metal_scroll_button_get_peer(REF, OUT) :-
 metal_scroll_button_get_horizontal_alignment(REF, OUT) :- 
 	object_call(REF, getHorizontalAlignment, [], OUT).
 
-metal_scroll_button_add_component_listener(REF, ARG0) :- 
-	object_call(REF, addComponentListener, '.'(ARG0, []), _).
-
 metal_scroll_button_remove_hierarchy_bounds_listener(REF, ARG0) :- 
 	object_call(REF, removeHierarchyBoundsListener, '.'(ARG0, []), _).
+
+metal_scroll_button_add_component_listener(REF, ARG0) :- 
+	object_call(REF, addComponentListener, '.'(ARG0, []), _).
 
 metal_scroll_button_set_icon_text_gap(REF, ARG0) :- 
 	object_call(REF, setIconTextGap, '.'(ARG0, []), _).
@@ -1336,11 +1336,11 @@ metal_scroll_button_set_name(REF, ARG0) :-
 metal_scroll_button_is_double_buffered(REF, OUT) :- 
 	object_call(REF, isDoubleBuffered, [], OUT).
 
-metal_scroll_button_get_baseline(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getBaseline, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 metal_scroll_button_get_width(REF, OUT) :- 
 	object_call(REF, getWidth, [], OUT).
+
+metal_scroll_button_get_baseline(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getBaseline, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 metal_scroll_button_get_mnemonic(REF, OUT) :- 
 	object_call(REF, getMnemonic, [], OUT).

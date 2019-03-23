@@ -82,11 +82,11 @@ synth_editor_pane_u_i_get_class(REF, OUT) :-
 synth_editor_pane_u_i_get_editor_kit(REF, ARG0, OUT) :- 
 	object_call(REF, getEditorKit, '.'(ARG0, []), OUT).
 
-synth_editor_pane_u_i_get_baseline_resize_behavior(REF, ARG0, OUT) :- 
-	object_call(REF, getBaselineResizeBehavior, '.'(ARG0, []), OUT).
-
 synth_editor_pane_u_i_get_accessible_child(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, getAccessibleChild, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+synth_editor_pane_u_i_get_baseline_resize_behavior(REF, ARG0, OUT) :- 
+	object_call(REF, getBaselineResizeBehavior, '.'(ARG0, []), OUT).
 
 synth_editor_pane_u_i_get_context(REF, ARG0, OUT) :- 
 	object_call(REF, getContext, '.'(ARG0, []), OUT).

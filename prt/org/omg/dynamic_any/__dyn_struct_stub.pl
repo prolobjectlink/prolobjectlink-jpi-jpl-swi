@@ -133,11 +133,11 @@
 '__dyn_struct_stub__get_policy'(REF, ARG0, OUT) :- 
 	object_call(REF, '_get_policy', '.'(ARG0, []), OUT).
 
-'__dyn_struct_stub_get_dyn_any'(REF, OUT) :- 
-	object_call(REF, get_dyn_any, [], OUT).
-
 '__dyn_struct_stub_get_ushort'(REF, OUT) :- 
 	object_call(REF, get_ushort, [], OUT).
+
+'__dyn_struct_stub_get_dyn_any'(REF, OUT) :- 
+	object_call(REF, get_dyn_any, [], OUT).
 
 '__dyn_struct_stub_get_any'(REF, OUT) :- 
 	object_call(REF, get_any, [], OUT).
@@ -220,11 +220,11 @@
 '__dyn_struct_stub_wait'(REF, ARG0, ARG1) :- 
 	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-'__dyn_struct_stub_insert_dyn_any'(REF, ARG0) :- 
-	object_call(REF, insert_dyn_any, '.'(ARG0, []), _).
-
 '__dyn_struct_stub_get_longlong'(REF, OUT) :- 
 	object_call(REF, get_longlong, [], OUT).
+
+'__dyn_struct_stub_insert_dyn_any'(REF, ARG0) :- 
+	object_call(REF, insert_dyn_any, '.'(ARG0, []), _).
 
 '__dyn_struct_stub_wait'(REF, ARG0) :- 
 	object_call(REF, wait, '.'(ARG0, []), _).

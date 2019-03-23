@@ -64,11 +64,11 @@ input_context_dispose(REF) :-
 input_context_notify_all(REF) :- 
 	object_call(REF, notifyAll, [], _).
 
-input_context_end_composition(REF) :- 
-	object_call(REF, endComposition, [], _).
-
 input_context_remove_notify(REF, ARG0) :- 
 	object_call(REF, removeNotify, '.'(ARG0, []), _).
+
+input_context_end_composition(REF) :- 
+	object_call(REF, endComposition, [], _).
 
 input_context_get_instance(REF, OUT) :- 
 	object_call(REF, getInstance, [], OUT).

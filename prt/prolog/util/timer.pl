@@ -43,14 +43,14 @@ timer_to_string(REF, OUT) :-
 timer_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
+timer_schedule(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, schedule, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+timer_schedule(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, schedule, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
 timer_cancel(REF) :- 
 	object_call(REF, cancel, [], _).
-
-timer_schedule(REF, ARG0, ARG1, ARG2) :- 
-	object_call(REF, schedule, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
-
-timer_schedule(REF, ARG0, ARG1, ARG2) :- 
-	object_call(REF, schedule, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
 
 timer_schedule(REF, ARG0, ARG1) :- 
 	object_call(REF, schedule, '.'(ARG0, '.'(ARG1, [])), _).

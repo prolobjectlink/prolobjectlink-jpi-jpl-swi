@@ -37,11 +37,11 @@ fixed_height_layout_cache_tree_nodes_changed(REF, ARG0) :-
 fixed_height_layout_cache_is_expanded(REF, ARG0, OUT) :- 
 	object_call(REF, isExpanded, '.'(ARG0, []), OUT).
 
-fixed_height_layout_cache_invalidate_path_bounds(REF, ARG0) :- 
-	object_call(REF, invalidatePathBounds, '.'(ARG0, []), _).
-
 fixed_height_layout_cache_set_row_height(REF, ARG0) :- 
 	object_call(REF, setRowHeight, '.'(ARG0, []), _).
+
+fixed_height_layout_cache_invalidate_path_bounds(REF, ARG0) :- 
+	object_call(REF, invalidatePathBounds, '.'(ARG0, []), _).
 
 fixed_height_layout_cache_set_selection_model(REF, ARG0) :- 
 	object_call(REF, setSelectionModel, '.'(ARG0, []), _).

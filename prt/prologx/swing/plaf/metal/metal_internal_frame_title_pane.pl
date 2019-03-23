@@ -199,11 +199,11 @@ metal_internal_frame_title_pane_mouse_enter(REF, ARG0, ARG1, ARG2, OUT) :-
 metal_internal_frame_title_pane_reset_keyboard_actions(REF) :- 
 	object_call(REF, resetKeyboardActions, [], _).
 
-metal_internal_frame_title_pane_get_accessible_context(REF, OUT) :- 
-	object_call(REF, getAccessibleContext, [], OUT).
-
 metal_internal_frame_title_pane_show(REF, ARG0) :- 
 	object_call(REF, show, '.'(ARG0, []), _).
+
+metal_internal_frame_title_pane_get_accessible_context(REF, OUT) :- 
+	object_call(REF, getAccessibleContext, [], OUT).
 
 metal_internal_frame_title_pane_show(REF) :- 
 	object_call(REF, show, [], _).
@@ -259,11 +259,11 @@ metal_internal_frame_title_pane_get_component_popup_menu(REF, OUT) :-
 metal_internal_frame_title_pane_set_action_map(REF, ARG0) :- 
 	object_call(REF, setActionMap, '.'(ARG0, []), _).
 
-metal_internal_frame_title_pane_get_color_model(REF, OUT) :- 
-	object_call(REF, getColorModel, [], OUT).
-
 metal_internal_frame_title_pane_mouse_down(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseDown, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+metal_internal_frame_title_pane_get_color_model(REF, OUT) :- 
+	object_call(REF, getColorModel, [], OUT).
 
 metal_internal_frame_title_pane_get_foreground(REF, OUT) :- 
 	object_call(REF, getForeground, [], OUT).
@@ -463,14 +463,14 @@ metal_internal_frame_title_pane_add_input_method_listener(REF, ARG0) :-
 metal_internal_frame_title_pane_add_property_change_listener(REF, ARG0) :- 
 	object_call(REF, addPropertyChangeListener, '.'(ARG0, []), _).
 
-metal_internal_frame_title_pane_get_component_orientation(REF, OUT) :- 
-	object_call(REF, getComponentOrientation, [], OUT).
-
 metal_internal_frame_title_pane_has_focus(REF, OUT) :- 
 	object_call(REF, hasFocus, [], OUT).
 
 metal_internal_frame_title_pane_is_showing(REF, OUT) :- 
 	object_call(REF, isShowing, [], OUT).
+
+metal_internal_frame_title_pane_get_component_orientation(REF, OUT) :- 
+	object_call(REF, getComponentOrientation, [], OUT).
 
 metal_internal_frame_title_pane_add_property_change_listener(REF, ARG0, ARG1) :- 
 	object_call(REF, addPropertyChangeListener, '.'(ARG0, '.'(ARG1, [])), _).
@@ -511,32 +511,32 @@ metal_internal_frame_title_pane_paint_components(REF, ARG0) :-
 metal_internal_frame_title_pane_get_baseline_resize_behavior(REF, OUT) :- 
 	object_call(REF, getBaselineResizeBehavior, [], OUT).
 
-metal_internal_frame_title_pane_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
-	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
-
-metal_internal_frame_title_pane_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
-	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
-
-metal_internal_frame_title_pane_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
-	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
-
-metal_internal_frame_title_pane_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
-	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
-
-metal_internal_frame_title_pane_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
-	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
-
-metal_internal_frame_title_pane_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
-	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
-
-metal_internal_frame_title_pane_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
-	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
-
-metal_internal_frame_title_pane_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
-	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
-
 metal_internal_frame_title_pane_set_background(REF, ARG0) :- 
 	object_call(REF, setBackground, '.'(ARG0, []), _).
+
+metal_internal_frame_title_pane_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+metal_internal_frame_title_pane_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+metal_internal_frame_title_pane_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+metal_internal_frame_title_pane_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+metal_internal_frame_title_pane_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+metal_internal_frame_title_pane_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+metal_internal_frame_title_pane_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+metal_internal_frame_title_pane_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
 
 metal_internal_frame_title_pane_get_popup_location(REF, ARG0, OUT) :- 
 	object_call(REF, getPopupLocation, '.'(ARG0, []), OUT).
@@ -688,20 +688,20 @@ metal_internal_frame_title_pane_remove_mouse_wheel_listener(REF, ARG0) :-
 metal_internal_frame_title_pane_is_preferred_size_set(REF, OUT) :- 
 	object_call(REF, isPreferredSizeSet, [], OUT).
 
-metal_internal_frame_title_pane_get_hierarchy_listeners(REF, OUT) :- 
-	object_call(REF, getHierarchyListeners, [], OUT).
-
 metal_internal_frame_title_pane_mouse_exit(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseExit, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+metal_internal_frame_title_pane_get_hierarchy_listeners(REF, OUT) :- 
+	object_call(REF, getHierarchyListeners, [], OUT).
 
 metal_internal_frame_title_pane_get_component_count(REF, OUT) :- 
 	object_call(REF, getComponentCount, [], OUT).
 
-metal_internal_frame_title_pane_get_focus_traversal_keys_enabled(REF, OUT) :- 
-	object_call(REF, getFocusTraversalKeysEnabled, [], OUT).
-
 metal_internal_frame_title_pane_got_focus(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, gotFocus, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+metal_internal_frame_title_pane_get_focus_traversal_keys_enabled(REF, OUT) :- 
+	object_call(REF, getFocusTraversalKeysEnabled, [], OUT).
 
 metal_internal_frame_title_pane_get_root_pane(REF, OUT) :- 
 	object_call(REF, getRootPane, [], OUT).
@@ -730,11 +730,11 @@ metal_internal_frame_title_pane_unregister_keyboard_action(REF, ARG0) :-
 metal_internal_frame_title_pane_action(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, action, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-metal_internal_frame_title_pane_check_image(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, checkImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
 metal_internal_frame_title_pane_set_drop_target(REF, ARG0) :- 
 	object_call(REF, setDropTarget, '.'(ARG0, []), _).
+
+metal_internal_frame_title_pane_check_image(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_call(REF, checkImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
 metal_internal_frame_title_pane_check_image(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, checkImage, '.'(ARG0, '.'(ARG1, [])), OUT).
@@ -943,11 +943,11 @@ metal_internal_frame_title_pane_get_registered_key_strokes(REF, OUT) :-
 metal_internal_frame_title_pane_is_ancestor_of(REF, ARG0, OUT) :- 
 	object_call(REF, isAncestorOf, '.'(ARG0, []), OUT).
 
-metal_internal_frame_title_pane_add_mouse_wheel_listener(REF, ARG0) :- 
-	object_call(REF, addMouseWheelListener, '.'(ARG0, []), _).
-
 metal_internal_frame_title_pane_is_displayable(REF, OUT) :- 
 	object_call(REF, isDisplayable, [], OUT).
+
+metal_internal_frame_title_pane_add_mouse_wheel_listener(REF, ARG0) :- 
+	object_call(REF, addMouseWheelListener, '.'(ARG0, []), _).
 
 metal_internal_frame_title_pane_get_border(REF, OUT) :- 
 	object_call(REF, getBorder, [], OUT).

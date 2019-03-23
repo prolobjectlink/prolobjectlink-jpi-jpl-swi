@@ -409,11 +409,11 @@ applet_is_focus_traversal_policy_set(REF, OUT) :-
 applet_get_bounds(REF, ARG0, OUT) :- 
 	object_call(REF, getBounds, '.'(ARG0, []), OUT).
 
-applet_add_mouse_listener(REF, ARG0) :- 
-	object_call(REF, addMouseListener, '.'(ARG0, []), _).
-
 applet_request_focus(REF) :- 
 	object_call(REF, requestFocus, [], _).
+
+applet_add_mouse_listener(REF, ARG0) :- 
+	object_call(REF, addMouseListener, '.'(ARG0, []), _).
 
 applet_mouse_down(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseDown, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
@@ -463,11 +463,11 @@ applet_lost_focus(REF, ARG0, ARG1, OUT) :-
 applet_revalidate(REF) :- 
 	object_call(REF, revalidate, [], _).
 
-applet_create_volatile_image(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, createVolatileImage, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 applet_is_cursor_set(REF, OUT) :- 
 	object_call(REF, isCursorSet, [], OUT).
+
+applet_create_volatile_image(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, createVolatileImage, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 applet_add(REF, ARG0, ARG1, ARG2) :- 
 	object_call(REF, add, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).

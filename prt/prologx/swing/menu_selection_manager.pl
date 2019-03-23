@@ -37,11 +37,11 @@ menu_selection_manager_notify_all(REF) :-
 menu_selection_manager_clear_selected_path(REF) :- 
 	object_call(REF, clearSelectedPath, [], _).
 
-menu_selection_manager_is_component_part_of_current_menu(REF, ARG0, OUT) :- 
-	object_call(REF, isComponentPartOfCurrentMenu, '.'(ARG0, []), OUT).
-
 menu_selection_manager_default_manager(REF, OUT) :- 
 	object_call(REF, defaultManager, [], OUT).
+
+menu_selection_manager_is_component_part_of_current_menu(REF, ARG0, OUT) :- 
+	object_call(REF, isComponentPartOfCurrentMenu, '.'(ARG0, []), OUT).
 
 menu_selection_manager_remove_change_listener(REF, ARG0) :- 
 	object_call(REF, removeChangeListener, '.'(ARG0, []), _).

@@ -52,11 +52,11 @@ relation_notification_get_relation_type_name(REF, OUT) :-
 relation_notification_set_user_data(REF, ARG0) :- 
 	object_call(REF, setUserData, '.'(ARG0, []), _).
 
-relation_notification_set_sequence_number(REF, ARG0) :- 
-	object_call(REF, setSequenceNumber, '.'(ARG0, []), _).
-
 relation_notification_set_time_stamp(REF, ARG0) :- 
 	object_call(REF, setTimeStamp, '.'(ARG0, []), _).
+
+relation_notification_set_sequence_number(REF, ARG0) :- 
+	object_call(REF, setSequenceNumber, '.'(ARG0, []), _).
 
 relation_notification_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).

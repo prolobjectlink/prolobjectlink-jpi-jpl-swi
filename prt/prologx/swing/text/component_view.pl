@@ -160,11 +160,11 @@ component_view_remove_all(REF) :-
 component_view_get_element(REF, OUT) :- 
 	object_call(REF, getElement, [], OUT).
 
-component_view_get_document(REF, OUT) :- 
-	object_call(REF, getDocument, [], OUT).
-
 component_view_get_resize_weight(REF, ARG0, OUT) :- 
 	object_call(REF, getResizeWeight, '.'(ARG0, []), OUT).
+
+component_view_get_document(REF, OUT) :- 
+	object_call(REF, getDocument, [], OUT).
 
 component_view_model_to_view(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
 	object_call(REF, modelToView, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).

@@ -67,11 +67,11 @@ s_a_x_source_set_x_m_l_reader(REF, ARG0) :-
 s_a_x_source_get_x_m_l_reader(REF, OUT) :- 
 	object_call(REF, getXMLReader, [], OUT).
 
-s_a_x_source_set_system_id(REF, ARG0) :- 
-	object_call(REF, setSystemId, '.'(ARG0, []), _).
-
 s_a_x_source_get_input_source(REF, OUT) :- 
 	object_call(REF, getInputSource, [], OUT).
+
+s_a_x_source_set_system_id(REF, ARG0) :- 
+	object_call(REF, setSystemId, '.'(ARG0, []), _).
 
 s_a_x_source_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).

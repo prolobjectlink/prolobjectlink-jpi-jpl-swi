@@ -88,14 +88,14 @@ text_component_set_size(REF, ARG0) :-
 text_component_add_mouse_listener(REF, ARG0) :- 
 	object_call(REF, addMouseListener, '.'(ARG0, []), _).
 
-text_component_get_focus_traversal_keys_enabled(REF, OUT) :- 
-	object_call(REF, getFocusTraversalKeysEnabled, [], OUT).
-
 text_component_is_cursor_set(REF, OUT) :- 
 	object_call(REF, isCursorSet, [], OUT).
 
 text_component_is_focus_owner(REF, OUT) :- 
 	object_call(REF, isFocusOwner, [], OUT).
+
+text_component_get_focus_traversal_keys_enabled(REF, OUT) :- 
+	object_call(REF, getFocusTraversalKeysEnabled, [], OUT).
 
 text_component_set_focus_traversal_keys_enabled(REF, ARG0) :- 
 	object_call(REF, setFocusTraversalKeysEnabled, '.'(ARG0, []), _).
@@ -175,14 +175,14 @@ text_component_get_y(REF, OUT) :-
 text_component_get_caret_position(REF, OUT) :- 
 	object_call(REF, getCaretPosition, [], OUT).
 
-text_component_get_foreground(REF, OUT) :- 
-	object_call(REF, getForeground, [], OUT).
-
 text_component_get_minimum_size(REF, OUT) :- 
 	object_call(REF, getMinimumSize, [], OUT).
 
 text_component_get_property_change_listeners(REF, OUT) :- 
 	object_call(REF, getPropertyChangeListeners, [], OUT).
+
+text_component_get_foreground(REF, OUT) :- 
+	object_call(REF, getForeground, [], OUT).
 
 text_component_get_property_change_listeners(REF, ARG0, OUT) :- 
 	object_call(REF, getPropertyChangeListeners, '.'(ARG0, []), OUT).
@@ -262,11 +262,11 @@ text_component_locate(REF, ARG0, ARG1, OUT) :-
 text_component_remove_mouse_wheel_listener(REF, ARG0) :- 
 	object_call(REF, removeMouseWheelListener, '.'(ARG0, []), _).
 
-text_component_get_cursor(REF, OUT) :- 
-	object_call(REF, getCursor, [], OUT).
-
 text_component_remove_key_listener(REF, ARG0) :- 
 	object_call(REF, removeKeyListener, '.'(ARG0, []), _).
+
+text_component_get_cursor(REF, OUT) :- 
+	object_call(REF, getCursor, [], OUT).
 
 text_component_mouse_down(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseDown, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
@@ -358,11 +358,11 @@ text_component_set_location(REF, ARG0) :-
 text_component_set_location(REF, ARG0, ARG1) :- 
 	object_call(REF, setLocation, '.'(ARG0, '.'(ARG1, [])), _).
 
-text_component_deliver_event(REF, ARG0) :- 
-	object_call(REF, deliverEvent, '.'(ARG0, []), _).
-
 text_component_get_mouse_position(REF, OUT) :- 
 	object_call(REF, getMousePosition, [], OUT).
+
+text_component_deliver_event(REF, ARG0) :- 
+	object_call(REF, deliverEvent, '.'(ARG0, []), _).
 
 text_component_set_maximum_size(REF, ARG0) :- 
 	object_call(REF, setMaximumSize, '.'(ARG0, []), _).
@@ -397,11 +397,11 @@ text_component_get_baseline(REF, ARG0, ARG1, OUT) :-
 text_component_repaint(REF) :- 
 	object_call(REF, repaint, [], _).
 
-text_component_get_font(REF, OUT) :- 
-	object_call(REF, getFont, [], OUT).
-
 text_component_repaint(REF, ARG0) :- 
 	object_call(REF, repaint, '.'(ARG0, []), _).
+
+text_component_get_font(REF, OUT) :- 
+	object_call(REF, getFont, [], OUT).
 
 text_component_repaint(REF, ARG0, ARG1, ARG2, ARG3) :- 
 	object_call(REF, repaint, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).
@@ -472,11 +472,11 @@ text_component_get_text_listeners(REF, OUT) :-
 text_component_are_focus_traversal_keys_set(REF, ARG0, OUT) :- 
 	object_call(REF, areFocusTraversalKeysSet, '.'(ARG0, []), OUT).
 
-text_component_get_drop_target(REF, OUT) :- 
-	object_call(REF, getDropTarget, [], OUT).
-
 text_component_set_drop_target(REF, ARG0) :- 
 	object_call(REF, setDropTarget, '.'(ARG0, []), _).
+
+text_component_get_drop_target(REF, OUT) :- 
+	object_call(REF, getDropTarget, [], OUT).
 
 text_component_remove_notify(REF) :- 
 	object_call(REF, removeNotify, [], _).
@@ -568,11 +568,11 @@ text_component_get_selected_text(REF, OUT) :-
 text_component_get_input_method_listeners(REF, OUT) :- 
 	object_call(REF, getInputMethodListeners, [], OUT).
 
-text_component_get_toolkit(REF, OUT) :- 
-	object_call(REF, getToolkit, [], OUT).
-
 text_component_next_focus(REF) :- 
 	object_call(REF, nextFocus, [], _).
+
+text_component_get_toolkit(REF, OUT) :- 
+	object_call(REF, getToolkit, [], OUT).
 
 text_component_get_x(REF, OUT) :- 
 	object_call(REF, getX, [], OUT).
@@ -622,11 +622,11 @@ text_component_remove_input_method_listener(REF, ARG0) :-
 text_component_get_location_on_screen(REF, OUT) :- 
 	object_call(REF, getLocationOnScreen, [], OUT).
 
-text_component_add_hierarchy_bounds_listener(REF, ARG0) :- 
-	object_call(REF, addHierarchyBoundsListener, '.'(ARG0, []), _).
-
 text_component_set_cursor(REF, ARG0) :- 
 	object_call(REF, setCursor, '.'(ARG0, []), _).
+
+text_component_add_hierarchy_bounds_listener(REF, ARG0) :- 
+	object_call(REF, addHierarchyBoundsListener, '.'(ARG0, []), _).
 
 text_component_get_peer(REF, OUT) :- 
 	object_call(REF, getPeer, [], OUT).
@@ -652,11 +652,11 @@ text_component_fire_property_change(REF, ARG0, ARG1, ARG2) :-
 text_component_add_mouse_wheel_listener(REF, ARG0) :- 
 	object_call(REF, addMouseWheelListener, '.'(ARG0, []), _).
 
-text_component_get_component_listeners(REF, OUT) :- 
-	object_call(REF, getComponentListeners, [], OUT).
-
 text_component_get_mouse_listeners(REF, OUT) :- 
 	object_call(REF, getMouseListeners, [], OUT).
+
+text_component_get_component_listeners(REF, OUT) :- 
+	object_call(REF, getComponentListeners, [], OUT).
 
 text_component_bounds(REF, OUT) :- 
 	object_call(REF, bounds, [], OUT).
@@ -670,11 +670,11 @@ text_component_create_volatile_image(REF, ARG0, ARG1, ARG2, OUT) :-
 text_component_create_volatile_image(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, createVolatileImage, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-text_component_get_height(REF, OUT) :- 
-	object_call(REF, getHeight, [], OUT).
-
 text_component_set_font(REF, ARG0) :- 
 	object_call(REF, setFont, '.'(ARG0, []), _).
+
+text_component_get_height(REF, OUT) :- 
+	object_call(REF, getHeight, [], OUT).
 
 text_component_add_component_listener(REF, ARG0) :- 
 	object_call(REF, addComponentListener, '.'(ARG0, []), _).
@@ -709,11 +709,11 @@ text_component_add_text_listener(REF, ARG0) :-
 text_component_is_preferred_size_set(REF, OUT) :- 
 	object_call(REF, isPreferredSizeSet, [], OUT).
 
-text_component_get_component_at(REF, ARG0, OUT) :- 
-	object_call(REF, getComponentAt, '.'(ARG0, []), OUT).
-
 text_component_layout(REF) :- 
 	object_call(REF, layout, [], _).
+
+text_component_get_component_at(REF, ARG0, OUT) :- 
+	object_call(REF, getComponentAt, '.'(ARG0, []), OUT).
 
 text_component_get_component_at(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, getComponentAt, '.'(ARG0, '.'(ARG1, [])), OUT).

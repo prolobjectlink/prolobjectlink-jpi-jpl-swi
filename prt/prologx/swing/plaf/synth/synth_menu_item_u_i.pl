@@ -46,14 +46,14 @@ synth_menu_item_u_i_DEFAULT(OUT) :-
 synth_menu_item_u_i(OUT) :- 
 	object_new('javax.swing.plaf.synth.SynthMenuItemUI', [], OUT).
 
+synth_menu_item_u_i_create_u_i(REF, ARG0, OUT) :- 
+	object_call(REF, createUI, '.'(ARG0, []), OUT).
+
 synth_menu_item_u_i_paint_border(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5) :- 
 	object_call(REF, paintBorder, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), _).
 
 synth_menu_item_u_i_uninstall_u_i(REF, ARG0) :- 
 	object_call(REF, uninstallUI, '.'(ARG0, []), _).
-
-synth_menu_item_u_i_create_u_i(REF, ARG0, OUT) :- 
-	object_call(REF, createUI, '.'(ARG0, []), OUT).
 
 synth_menu_item_u_i_get_baseline_resize_behavior(REF, ARG0, OUT) :- 
 	object_call(REF, getBaselineResizeBehavior, '.'(ARG0, []), OUT).

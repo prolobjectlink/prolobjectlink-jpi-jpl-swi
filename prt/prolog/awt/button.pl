@@ -82,11 +82,11 @@ button_show(REF, ARG0) :-
 button_get_graphics_configuration(REF, OUT) :- 
 	object_call(REF, getGraphicsConfiguration, [], OUT).
 
-button_get_hierarchy_bounds_listeners(REF, OUT) :- 
-	object_call(REF, getHierarchyBoundsListeners, [], OUT).
-
 button_transfer_focus_up_cycle(REF) :- 
 	object_call(REF, transferFocusUpCycle, [], _).
+
+button_get_hierarchy_bounds_listeners(REF, OUT) :- 
+	object_call(REF, getHierarchyBoundsListeners, [], OUT).
 
 button_lost_focus(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, lostFocus, '.'(ARG0, '.'(ARG1, [])), OUT).
@@ -142,14 +142,14 @@ button_prepare_image(REF, ARG0, ARG1, ARG2, ARG3, OUT) :-
 button_get_baseline(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, getBaseline, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-button_get_focus_traversal_keys(REF, ARG0, OUT) :- 
-	object_call(REF, getFocusTraversalKeys, '.'(ARG0, []), OUT).
-
 button_is_focus_cycle_root(REF, ARG0, OUT) :- 
 	object_call(REF, isFocusCycleRoot, '.'(ARG0, []), OUT).
 
 button_set_ignore_repaint(REF, ARG0) :- 
 	object_call(REF, setIgnoreRepaint, '.'(ARG0, []), _).
+
+button_get_focus_traversal_keys(REF, ARG0, OUT) :- 
+	object_call(REF, getFocusTraversalKeys, '.'(ARG0, []), OUT).
 
 button_add_hierarchy_listener(REF, ARG0) :- 
 	object_call(REF, addHierarchyListener, '.'(ARG0, []), _).
@@ -187,11 +187,11 @@ button_is_maximum_size_set(REF, OUT) :-
 button_get_bounds(REF, ARG0, OUT) :- 
 	object_call(REF, getBounds, '.'(ARG0, []), OUT).
 
-button_get_bounds(REF, OUT) :- 
-	object_call(REF, getBounds, [], OUT).
-
 button_minimum_size(REF, OUT) :- 
 	object_call(REF, minimumSize, [], OUT).
+
+button_get_bounds(REF, OUT) :- 
+	object_call(REF, getBounds, [], OUT).
 
 button_deliver_event(REF, ARG0) :- 
 	object_call(REF, deliverEvent, '.'(ARG0, []), _).
@@ -208,23 +208,23 @@ button_add_property_change_listener(REF, ARG0) :-
 button_add_property_change_listener(REF, ARG0, ARG1) :- 
 	object_call(REF, addPropertyChangeListener, '.'(ARG0, '.'(ARG1, [])), _).
 
-button_add_mouse_motion_listener(REF, ARG0) :- 
-	object_call(REF, addMouseMotionListener, '.'(ARG0, []), _).
-
 button_is_minimum_size_set(REF, OUT) :- 
 	object_call(REF, isMinimumSizeSet, [], OUT).
 
 button_set_font(REF, ARG0) :- 
 	object_call(REF, setFont, '.'(ARG0, []), _).
 
+button_add_mouse_motion_listener(REF, ARG0) :- 
+	object_call(REF, addMouseMotionListener, '.'(ARG0, []), _).
+
 button_get_label(REF, OUT) :- 
 	object_call(REF, getLabel, [], OUT).
 
-button_add_component_listener(REF, ARG0) :- 
-	object_call(REF, addComponentListener, '.'(ARG0, []), _).
-
 button_set_drop_target(REF, ARG0) :- 
 	object_call(REF, setDropTarget, '.'(ARG0, []), _).
+
+button_add_component_listener(REF, ARG0) :- 
+	object_call(REF, addComponentListener, '.'(ARG0, []), _).
 
 button_wait(REF, ARG0, ARG1) :- 
 	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
@@ -256,6 +256,9 @@ button_paint_all(REF, ARG0) :-
 button_get_mouse_motion_listeners(REF, OUT) :- 
 	object_call(REF, getMouseMotionListeners, [], OUT).
 
+button_mouse_move(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, mouseMove, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
 button_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
 	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
 
@@ -276,9 +279,6 @@ button_fire_property_change(REF, ARG0, ARG1, ARG2) :-
 
 button_get_color_model(REF, OUT) :- 
 	object_call(REF, getColorModel, [], OUT).
-
-button_mouse_move(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, mouseMove, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
 button_is_showing(REF, OUT) :- 
 	object_call(REF, isShowing, [], OUT).
@@ -349,11 +349,11 @@ button_add_action_listener(REF, ARG0) :-
 button_set_locale(REF, ARG0) :- 
 	object_call(REF, setLocale, '.'(ARG0, []), _).
 
-button_get_font_metrics(REF, ARG0, OUT) :- 
-	object_call(REF, getFontMetrics, '.'(ARG0, []), OUT).
-
 button_set_maximum_size(REF, ARG0) :- 
 	object_call(REF, setMaximumSize, '.'(ARG0, []), _).
+
+button_get_font_metrics(REF, ARG0, OUT) :- 
+	object_call(REF, getFontMetrics, '.'(ARG0, []), OUT).
 
 button_get_focus_listeners(REF, OUT) :- 
 	object_call(REF, getFocusListeners, [], OUT).
@@ -379,11 +379,11 @@ button_mouse_up(REF, ARG0, ARG1, ARG2, OUT) :-
 button_get_input_context(REF, OUT) :- 
 	object_call(REF, getInputContext, [], OUT).
 
-button_enable_input_methods(REF, ARG0) :- 
-	object_call(REF, enableInputMethods, '.'(ARG0, []), _).
-
 button_is_displayable(REF, OUT) :- 
 	object_call(REF, isDisplayable, [], OUT).
+
+button_enable_input_methods(REF, ARG0) :- 
+	object_call(REF, enableInputMethods, '.'(ARG0, []), _).
 
 button_get_mouse_wheel_listeners(REF, OUT) :- 
 	object_call(REF, getMouseWheelListeners, [], OUT).
@@ -475,11 +475,11 @@ button_next_focus(REF) :-
 button_get_mouse_listeners(REF, OUT) :- 
 	object_call(REF, getMouseListeners, [], OUT).
 
-button_get_focus_cycle_root_ancestor(REF, OUT) :- 
-	object_call(REF, getFocusCycleRootAncestor, [], OUT).
-
 button_set_minimum_size(REF, ARG0) :- 
 	object_call(REF, setMinimumSize, '.'(ARG0, []), _).
+
+button_get_focus_cycle_root_ancestor(REF, OUT) :- 
+	object_call(REF, getFocusCycleRootAncestor, [], OUT).
 
 button_get_location(REF, OUT) :- 
 	object_call(REF, getLocation, [], OUT).
@@ -547,11 +547,11 @@ button_repaint(REF, ARG0, ARG1, ARG2, ARG3, ARG4) :-
 button_repaint(REF, ARG0) :- 
 	object_call(REF, repaint, '.'(ARG0, []), _).
 
-button_get_hierarchy_listeners(REF, OUT) :- 
-	object_call(REF, getHierarchyListeners, [], OUT).
-
 button_set_preferred_size(REF, ARG0) :- 
 	object_call(REF, setPreferredSize, '.'(ARG0, []), _).
+
+button_get_hierarchy_listeners(REF, OUT) :- 
+	object_call(REF, getHierarchyListeners, [], OUT).
 
 button_repaint(REF, ARG0, ARG1, ARG2, ARG3) :- 
 	object_call(REF, repaint, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).

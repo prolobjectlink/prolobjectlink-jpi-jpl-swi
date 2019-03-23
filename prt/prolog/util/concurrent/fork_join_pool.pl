@@ -154,11 +154,11 @@ fork_join_pool_get_factory(REF, OUT) :-
 fork_join_pool_await_termination(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, awaitTermination, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-fork_join_pool_is_quiescent(REF, OUT) :- 
-	object_call(REF, isQuiescent, [], OUT).
-
 fork_join_pool_managed_block(REF, ARG0) :- 
 	object_call(REF, managedBlock, '.'(ARG0, []), _).
+
+fork_join_pool_is_quiescent(REF, OUT) :- 
+	object_call(REF, isQuiescent, [], OUT).
 
 fork_join_pool_execute(REF, ARG0) :- 
 	object_call(REF, execute, '.'(ARG0, []), _).

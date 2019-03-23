@@ -220,11 +220,11 @@ j_table_header_get_tool_tip_location(REF, ARG0, OUT) :-
 j_table_header_add_input_method_listener(REF, ARG0) :- 
 	object_call(REF, addInputMethodListener, '.'(ARG0, []), _).
 
-j_table_header_enable_input_methods(REF, ARG0) :- 
-	object_call(REF, enableInputMethods, '.'(ARG0, []), _).
-
 j_table_header_is_font_set(REF, OUT) :- 
 	object_call(REF, isFontSet, [], OUT).
+
+j_table_header_enable_input_methods(REF, ARG0) :- 
+	object_call(REF, enableInputMethods, '.'(ARG0, []), _).
 
 j_table_header_column_selection_changed(REF, ARG0) :- 
 	object_call(REF, columnSelectionChanged, '.'(ARG0, []), _).
@@ -346,11 +346,11 @@ j_table_header_request_focus(REF, ARG0, OUT) :-
 j_table_header_mouse_move(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseMove, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-j_table_header_add_notify(REF) :- 
-	object_call(REF, addNotify, [], _).
-
 j_table_header_request_focus(REF) :- 
 	object_call(REF, requestFocus, [], _).
+
+j_table_header_add_notify(REF) :- 
+	object_call(REF, addNotify, [], _).
 
 j_table_header_lost_focus(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, lostFocus, '.'(ARG0, '.'(ARG1, [])), OUT).
@@ -367,11 +367,11 @@ j_table_header_action(REF, ARG0, ARG1, OUT) :-
 j_table_header_do_layout(REF) :- 
 	object_call(REF, doLayout, [], _).
 
-j_table_header_add_focus_listener(REF, ARG0) :- 
-	object_call(REF, addFocusListener, '.'(ARG0, []), _).
-
 j_table_header_image_update(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, OUT) :- 
 	object_call(REF, imageUpdate, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), OUT).
+
+j_table_header_add_focus_listener(REF, ARG0) :- 
+	object_call(REF, addFocusListener, '.'(ARG0, []), _).
 
 j_table_header_is_double_buffered(REF, OUT) :- 
 	object_call(REF, isDoubleBuffered, [], OUT).
@@ -520,11 +520,11 @@ j_table_header_disable(REF) :-
 j_table_header_add_hierarchy_bounds_listener(REF, ARG0) :- 
 	object_call(REF, addHierarchyBoundsListener, '.'(ARG0, []), _).
 
-j_table_header_get_input_context(REF, OUT) :- 
-	object_call(REF, getInputContext, [], OUT).
-
 j_table_header_prepare_image(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, prepareImage, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+j_table_header_get_input_context(REF, OUT) :- 
+	object_call(REF, getInputContext, [], OUT).
 
 j_table_header_get_update_table_in_real_time(REF, OUT) :- 
 	object_call(REF, getUpdateTableInRealTime, [], OUT).
@@ -724,11 +724,11 @@ j_table_header_update_u_i(REF) :-
 j_table_header_validate(REF) :- 
 	object_call(REF, validate, [], _).
 
-j_table_header_get_hierarchy_listeners(REF, OUT) :- 
-	object_call(REF, getHierarchyListeners, [], OUT).
-
 j_table_header_transfer_focus(REF) :- 
 	object_call(REF, transferFocus, [], _).
+
+j_table_header_get_hierarchy_listeners(REF, OUT) :- 
+	object_call(REF, getHierarchyListeners, [], OUT).
 
 j_table_header_is_enabled(REF, OUT) :- 
 	object_call(REF, isEnabled, [], OUT).
@@ -772,11 +772,11 @@ j_table_header_mouse_exit(REF, ARG0, ARG1, ARG2, OUT) :-
 j_table_header_is_ancestor_of(REF, ARG0, OUT) :- 
 	object_call(REF, isAncestorOf, '.'(ARG0, []), OUT).
 
-j_table_header_get_component_orientation(REF, OUT) :- 
-	object_call(REF, getComponentOrientation, [], OUT).
-
 j_table_header_show(REF) :- 
 	object_call(REF, show, [], _).
+
+j_table_header_get_component_orientation(REF, OUT) :- 
+	object_call(REF, getComponentOrientation, [], OUT).
 
 j_table_header_show(REF, ARG0) :- 
 	object_call(REF, show, '.'(ARG0, []), _).
@@ -1042,11 +1042,11 @@ j_table_header_add_hierarchy_listener(REF, ARG0) :-
 j_table_header_apply_component_orientation(REF, ARG0) :- 
 	object_call(REF, applyComponentOrientation, '.'(ARG0, []), _).
 
-j_table_header_get_bounds(REF, OUT) :- 
-	object_call(REF, getBounds, [], OUT).
-
 j_table_header_is_displayable(REF, OUT) :- 
 	object_call(REF, isDisplayable, [], OUT).
+
+j_table_header_get_bounds(REF, OUT) :- 
+	object_call(REF, getBounds, [], OUT).
 
 j_table_header_add_vetoable_change_listener(REF, ARG0) :- 
 	object_call(REF, addVetoableChangeListener, '.'(ARG0, []), _).

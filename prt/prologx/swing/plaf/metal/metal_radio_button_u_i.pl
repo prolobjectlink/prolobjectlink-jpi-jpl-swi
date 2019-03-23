@@ -67,11 +67,11 @@ metal_radio_button_u_i_wait(REF, ARG0) :-
 metal_radio_button_u_i_get_accessible_children_count(REF, ARG0, OUT) :- 
 	object_call(REF, getAccessibleChildrenCount, '.'(ARG0, []), OUT).
 
-metal_radio_button_u_i_get_baseline(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, getBaseline, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
 metal_radio_button_u_i_get_minimum_size(REF, ARG0, OUT) :- 
 	object_call(REF, getMinimumSize, '.'(ARG0, []), OUT).
+
+metal_radio_button_u_i_get_baseline(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, getBaseline, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
 metal_radio_button_u_i_notify_all(REF) :- 
 	object_call(REF, notifyAll, [], _).

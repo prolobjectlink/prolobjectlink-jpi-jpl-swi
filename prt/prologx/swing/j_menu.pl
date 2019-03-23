@@ -793,11 +793,11 @@ j_menu_get_pressed_icon(REF, OUT) :-
 j_menu_action(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, action, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-j_menu_get_vertical_alignment(REF, OUT) :- 
-	object_call(REF, getVerticalAlignment, [], OUT).
-
 j_menu_set_action(REF, ARG0) :- 
 	object_call(REF, setAction, '.'(ARG0, []), _).
+
+j_menu_get_vertical_alignment(REF, OUT) :- 
+	object_call(REF, getVerticalAlignment, [], OUT).
 
 j_menu_get_visible_rect(REF, OUT) :- 
 	object_call(REF, getVisibleRect, [], OUT).
@@ -943,11 +943,11 @@ j_menu_get_hierarchy_listeners(REF, OUT) :-
 j_menu_repaint(REF) :- 
 	object_call(REF, repaint, [], _).
 
-j_menu_get_cursor(REF, OUT) :- 
-	object_call(REF, getCursor, [], OUT).
-
 j_menu_show(REF, ARG0) :- 
 	object_call(REF, show, '.'(ARG0, []), _).
+
+j_menu_get_cursor(REF, OUT) :- 
+	object_call(REF, getCursor, [], OUT).
 
 j_menu_scroll_rect_to_visible(REF, ARG0) :- 
 	object_call(REF, scrollRectToVisible, '.'(ARG0, []), _).
@@ -1339,11 +1339,11 @@ j_menu_is_background_set(REF, OUT) :-
 j_menu_get_baseline_resize_behavior(REF, OUT) :- 
 	object_call(REF, getBaselineResizeBehavior, [], OUT).
 
-j_menu_set_hide_action_text(REF, ARG0) :- 
-	object_call(REF, setHideActionText, '.'(ARG0, []), _).
-
 j_menu_set_horizontal_text_position(REF, ARG0) :- 
 	object_call(REF, setHorizontalTextPosition, '.'(ARG0, []), _).
+
+j_menu_set_hide_action_text(REF, ARG0) :- 
+	object_call(REF, setHideActionText, '.'(ARG0, []), _).
 
 j_menu_has_focus(REF, OUT) :- 
 	object_call(REF, hasFocus, [], OUT).

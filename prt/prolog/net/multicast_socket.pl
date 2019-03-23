@@ -31,11 +31,11 @@ multicast_socket(ARG0, OUT) :-
 multicast_socket(OUT) :- 
 	object_new('java.net.MulticastSocket', [], OUT).
 
-multicast_socket_set_datagram_socket_impl_factory(REF, ARG0) :- 
-	object_call(REF, setDatagramSocketImplFactory, '.'(ARG0, []), _).
-
 multicast_socket_set_reuse_address(REF, ARG0) :- 
 	object_call(REF, setReuseAddress, '.'(ARG0, []), _).
+
+multicast_socket_set_datagram_socket_impl_factory(REF, ARG0) :- 
+	object_call(REF, setDatagramSocketImplFactory, '.'(ARG0, []), _).
 
 multicast_socket_get_broadcast(REF, OUT) :- 
 	object_call(REF, getBroadcast, [], OUT).

@@ -142,11 +142,11 @@ j_text_area_remove(REF, ARG0) :-
 j_text_area_is_preferred_size_set(REF, OUT) :- 
 	object_call(REF, isPreferredSizeSet, [], OUT).
 
-j_text_area_get_component_orientation(REF, OUT) :- 
-	object_call(REF, getComponentOrientation, [], OUT).
-
 j_text_area_is_lightweight(REF, OUT) :- 
 	object_call(REF, isLightweight, [], OUT).
+
+j_text_area_get_component_orientation(REF, OUT) :- 
+	object_call(REF, getComponentOrientation, [], OUT).
 
 j_text_area_get_wrap_style_word(REF, OUT) :- 
 	object_call(REF, getWrapStyleWord, [], OUT).
@@ -496,20 +496,20 @@ j_text_area_register_keyboard_action(REF, ARG0, ARG1, ARG2) :-
 j_text_area_transfer_focus(REF) :- 
 	object_call(REF, transferFocus, [], _).
 
-j_text_area_get_ignore_repaint(REF, OUT) :- 
-	object_call(REF, getIgnoreRepaint, [], OUT).
-
 j_text_area_prepare_image(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_call(REF, prepareImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+
+j_text_area_get_ignore_repaint(REF, OUT) :- 
+	object_call(REF, getIgnoreRepaint, [], OUT).
 
 j_text_area_register_keyboard_action(REF, ARG0, ARG1, ARG2, ARG3) :- 
 	object_call(REF, registerKeyboardAction, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).
 
-j_text_area_add_mouse_listener(REF, ARG0) :- 
-	object_call(REF, addMouseListener, '.'(ARG0, []), _).
-
 j_text_area_prepare_image(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, prepareImage, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+j_text_area_add_mouse_listener(REF, ARG0) :- 
+	object_call(REF, addMouseListener, '.'(ARG0, []), _).
 
 j_text_area_set_margin(REF, ARG0) :- 
 	object_call(REF, setMargin, '.'(ARG0, []), _).
@@ -766,11 +766,11 @@ j_text_area_get_font_metrics(REF, ARG0, OUT) :-
 j_text_area_get_alignment_y(REF, OUT) :- 
 	object_call(REF, getAlignmentY, [], OUT).
 
-j_text_area_get_focus_listeners(REF, OUT) :- 
-	object_call(REF, getFocusListeners, [], OUT).
-
 j_text_area_is_showing(REF, OUT) :- 
 	object_call(REF, isShowing, [], OUT).
+
+j_text_area_get_focus_listeners(REF, OUT) :- 
+	object_call(REF, getFocusListeners, [], OUT).
 
 j_text_area_contains(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, contains, '.'(ARG0, '.'(ARG1, [])), OUT).

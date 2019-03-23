@@ -265,11 +265,11 @@ j_text_field_is_foreground_set(REF, OUT) :-
 j_text_field_add_keymap(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, addKeymap, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-j_text_field_get_component_orientation(REF, OUT) :- 
-	object_call(REF, getComponentOrientation, [], OUT).
-
 j_text_field_set_drop_target(REF, ARG0) :- 
 	object_call(REF, setDropTarget, '.'(ARG0, []), _).
+
+j_text_field_get_component_orientation(REF, OUT) :- 
+	object_call(REF, getComponentOrientation, [], OUT).
 
 j_text_field_get_margin(REF, OUT) :- 
 	object_call(REF, getMargin, [], OUT).
@@ -682,11 +682,11 @@ j_text_field_get_background(REF, OUT) :-
 j_text_field_set_u_i(REF, ARG0) :- 
 	object_call(REF, setUI, '.'(ARG0, []), _).
 
-j_text_field_create_image(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, createImage, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 j_text_field_get_key_listeners(REF, OUT) :- 
 	object_call(REF, getKeyListeners, [], OUT).
+
+j_text_field_create_image(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, createImage, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 j_text_field_get_top_level_ancestor(REF, OUT) :- 
 	object_call(REF, getTopLevelAncestor, [], OUT).
@@ -1204,11 +1204,11 @@ j_text_field_revalidate(REF) :-
 j_text_field_reset_keyboard_actions(REF) :- 
 	object_call(REF, resetKeyboardActions, [], _).
 
-j_text_field_get_baseline(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getBaseline, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 j_text_field_get_maximum_size(REF, OUT) :- 
 	object_call(REF, getMaximumSize, [], OUT).
+
+j_text_field_get_baseline(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getBaseline, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 j_text_field_validate(REF) :- 
 	object_call(REF, validate, [], _).

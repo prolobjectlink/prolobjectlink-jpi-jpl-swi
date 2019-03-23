@@ -34,11 +34,11 @@ tag_element_is_preformatted(REF, OUT) :-
 tag_element_wait(REF, ARG0, ARG1) :- 
 	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-tag_element_fictional(REF, OUT) :- 
-	object_call(REF, fictional, [], OUT).
-
 tag_element_get_h_t_m_l_tag(REF, OUT) :- 
 	object_call(REF, getHTMLTag, [], OUT).
+
+tag_element_fictional(REF, OUT) :- 
+	object_call(REF, fictional, [], OUT).
 
 tag_element_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).

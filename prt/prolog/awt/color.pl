@@ -169,11 +169,11 @@ color_wait(REF, ARG0, ARG1) :-
 color_get_blue(REF, OUT) :- 
 	object_call(REF, getBlue, [], OUT).
 
-color_get_transparency(REF, OUT) :- 
-	object_call(REF, getTransparency, [], OUT).
-
 color_get_color_components(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, getColorComponents, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+color_get_transparency(REF, OUT) :- 
+	object_call(REF, getTransparency, [], OUT).
 
 color_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).

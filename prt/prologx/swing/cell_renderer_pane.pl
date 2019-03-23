@@ -472,20 +472,20 @@ cell_renderer_pane_is_minimum_size_set(REF, OUT) :-
 cell_renderer_pane_handle_event(REF, ARG0, OUT) :- 
 	object_call(REF, handleEvent, '.'(ARG0, []), OUT).
 
-cell_renderer_pane_get_baseline(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getBaseline, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 cell_renderer_pane_mouse_exit(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseExit, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+cell_renderer_pane_get_baseline(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getBaseline, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 cell_renderer_pane_get_locale(REF, OUT) :- 
 	object_call(REF, getLocale, [], OUT).
 
-cell_renderer_pane_dispatch_event(REF, ARG0) :- 
-	object_call(REF, dispatchEvent, '.'(ARG0, []), _).
-
 cell_renderer_pane_get_peer(REF, OUT) :- 
 	object_call(REF, getPeer, [], OUT).
+
+cell_renderer_pane_dispatch_event(REF, ARG0) :- 
+	object_call(REF, dispatchEvent, '.'(ARG0, []), _).
 
 cell_renderer_pane_get_mouse_position(REF, ARG0, OUT) :- 
 	object_call(REF, getMousePosition, '.'(ARG0, []), OUT).
@@ -568,11 +568,11 @@ cell_renderer_pane_get_input_context(REF, OUT) :-
 cell_renderer_pane_remove_input_method_listener(REF, ARG0) :- 
 	object_call(REF, removeInputMethodListener, '.'(ARG0, []), _).
 
-cell_renderer_pane_get_graphics_configuration(REF, OUT) :- 
-	object_call(REF, getGraphicsConfiguration, [], OUT).
-
 cell_renderer_pane_is_visible(REF, OUT) :- 
 	object_call(REF, isVisible, [], OUT).
+
+cell_renderer_pane_get_graphics_configuration(REF, OUT) :- 
+	object_call(REF, getGraphicsConfiguration, [], OUT).
 
 cell_renderer_pane_list(REF, ARG0) :- 
 	object_call(REF, list, '.'(ARG0, []), _).
@@ -595,11 +595,11 @@ cell_renderer_pane_resize(REF, ARG0, ARG1) :-
 cell_renderer_pane_list(REF) :- 
 	object_call(REF, list, [], _).
 
-cell_renderer_pane_add_hierarchy_bounds_listener(REF, ARG0) :- 
-	object_call(REF, addHierarchyBoundsListener, '.'(ARG0, []), _).
-
 cell_renderer_pane_next_focus(REF) :- 
 	object_call(REF, nextFocus, [], _).
+
+cell_renderer_pane_add_hierarchy_bounds_listener(REF, ARG0) :- 
+	object_call(REF, addHierarchyBoundsListener, '.'(ARG0, []), _).
 
 cell_renderer_pane_is_foreground_set(REF, OUT) :- 
 	object_call(REF, isForegroundSet, [], OUT).

@@ -79,11 +79,11 @@ memory_cache_image_output_stream_read_fully(REF, ARG0, ARG1, ARG2) :-
 memory_cache_image_output_stream_is_cached(REF, OUT) :- 
 	object_call(REF, isCached, [], OUT).
 
-memory_cache_image_output_stream_write_floats(REF, ARG0, ARG1, ARG2) :- 
-	object_call(REF, writeFloats, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
-
 memory_cache_image_output_stream_write_double(REF, ARG0) :- 
 	object_call(REF, writeDouble, '.'(ARG0, []), _).
+
+memory_cache_image_output_stream_write_floats(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, writeFloats, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
 
 memory_cache_image_output_stream_write_doubles(REF, ARG0, ARG1, ARG2) :- 
 	object_call(REF, writeDoubles, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).

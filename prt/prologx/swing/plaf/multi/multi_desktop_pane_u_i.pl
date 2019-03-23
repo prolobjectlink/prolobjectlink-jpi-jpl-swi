@@ -40,11 +40,11 @@ multi_desktop_pane_u_i_wait(REF) :-
 multi_desktop_pane_u_i_notify(REF) :- 
 	object_call(REF, notify, [], _).
 
-multi_desktop_pane_u_i_uninstall_u_i(REF, ARG0) :- 
-	object_call(REF, uninstallUI, '.'(ARG0, []), _).
-
 multi_desktop_pane_u_i_create_u_i(REF, ARG0, OUT) :- 
 	object_call(REF, createUI, '.'(ARG0, []), OUT).
+
+multi_desktop_pane_u_i_uninstall_u_i(REF, ARG0) :- 
+	object_call(REF, uninstallUI, '.'(ARG0, []), _).
 
 multi_desktop_pane_u_i_wait(REF, ARG0, ARG1) :- 
 	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).

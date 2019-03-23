@@ -277,11 +277,11 @@ j_toggle_button_set_bounds(REF, ARG0, ARG1, ARG2, ARG3) :-
 j_toggle_button_enable(REF) :- 
 	object_call(REF, enable, [], _).
 
-j_toggle_button_dispatch_event(REF, ARG0) :- 
-	object_call(REF, dispatchEvent, '.'(ARG0, []), _).
-
 j_toggle_button_is_background_set(REF, OUT) :- 
 	object_call(REF, isBackgroundSet, [], OUT).
+
+j_toggle_button_dispatch_event(REF, ARG0) :- 
+	object_call(REF, dispatchEvent, '.'(ARG0, []), _).
 
 j_toggle_button_get_popup_location(REF, ARG0, OUT) :- 
 	object_call(REF, getPopupLocation, '.'(ARG0, []), OUT).
@@ -310,11 +310,11 @@ j_toggle_button_get_selected_objects(REF, OUT) :-
 j_toggle_button_set_selected(REF, ARG0) :- 
 	object_call(REF, setSelected, '.'(ARG0, []), _).
 
-j_toggle_button_add_key_listener(REF, ARG0) :- 
-	object_call(REF, addKeyListener, '.'(ARG0, []), _).
-
 j_toggle_button_get_input_method_requests(REF, OUT) :- 
 	object_call(REF, getInputMethodRequests, [], OUT).
+
+j_toggle_button_add_key_listener(REF, ARG0) :- 
+	object_call(REF, addKeyListener, '.'(ARG0, []), _).
 
 j_toggle_button_apply_component_orientation(REF, ARG0) :- 
 	object_call(REF, applyComponentOrientation, '.'(ARG0, []), _).
@@ -388,11 +388,11 @@ j_toggle_button_remove_container_listener(REF, ARG0) :-
 j_toggle_button_get_component(REF, ARG0, OUT) :- 
 	object_call(REF, getComponent, '.'(ARG0, []), OUT).
 
-j_toggle_button_get_bounds(REF, OUT) :- 
-	object_call(REF, getBounds, [], OUT).
-
 j_toggle_button_remove_mouse_wheel_listener(REF, ARG0) :- 
 	object_call(REF, removeMouseWheelListener, '.'(ARG0, []), _).
+
+j_toggle_button_get_bounds(REF, OUT) :- 
+	object_call(REF, getBounds, [], OUT).
 
 j_toggle_button_get_bounds(REF, ARG0, OUT) :- 
 	object_call(REF, getBounds, '.'(ARG0, []), OUT).
@@ -412,11 +412,11 @@ j_toggle_button_revalidate(REF) :-
 j_toggle_button_get_vertical_alignment(REF, OUT) :- 
 	object_call(REF, getVerticalAlignment, [], OUT).
 
-j_toggle_button_set_u_i(REF, ARG0) :- 
-	object_call(REF, setUI, '.'(ARG0, []), _).
-
 j_toggle_button_set_horizontal_text_position(REF, ARG0) :- 
 	object_call(REF, setHorizontalTextPosition, '.'(ARG0, []), _).
+
+j_toggle_button_set_u_i(REF, ARG0) :- 
+	object_call(REF, setUI, '.'(ARG0, []), _).
 
 j_toggle_button_set_component_popup_menu(REF, ARG0) :- 
 	object_call(REF, setComponentPopupMenu, '.'(ARG0, []), _).
@@ -469,11 +469,11 @@ j_toggle_button_get_text(REF, OUT) :-
 j_toggle_button_set_layout(REF, ARG0) :- 
 	object_call(REF, setLayout, '.'(ARG0, []), _).
 
-j_toggle_button_get_foreground(REF, OUT) :- 
-	object_call(REF, getForeground, [], OUT).
-
 j_toggle_button_remove_key_listener(REF, ARG0) :- 
 	object_call(REF, removeKeyListener, '.'(ARG0, []), _).
+
+j_toggle_button_get_foreground(REF, OUT) :- 
+	object_call(REF, getForeground, [], OUT).
 
 j_toggle_button_get_debug_graphics_options(REF, OUT) :- 
 	object_call(REF, getDebugGraphicsOptions, [], OUT).
@@ -649,14 +649,14 @@ j_toggle_button_set_horizontal_alignment(REF, ARG0) :-
 j_toggle_button_get_vertical_text_position(REF, OUT) :- 
 	object_call(REF, getVerticalTextPosition, [], OUT).
 
+j_toggle_button_is_displayable(REF, OUT) :- 
+	object_call(REF, isDisplayable, [], OUT).
+
 j_toggle_button_check_image(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_call(REF, checkImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
 j_toggle_button_get_component_listeners(REF, OUT) :- 
 	object_call(REF, getComponentListeners, [], OUT).
-
-j_toggle_button_is_displayable(REF, OUT) :- 
-	object_call(REF, isDisplayable, [], OUT).
 
 j_toggle_button_get_focus_traversal_keys_enabled(REF, OUT) :- 
 	object_call(REF, getFocusTraversalKeysEnabled, [], OUT).
@@ -679,11 +679,11 @@ j_toggle_button_is_selected(REF, OUT) :-
 j_toggle_button_print_all(REF, ARG0) :- 
 	object_call(REF, printAll, '.'(ARG0, []), _).
 
-j_toggle_button_create_volatile_image(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, createVolatileImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
 j_toggle_button_is_lightweight(REF, OUT) :- 
 	object_call(REF, isLightweight, [], OUT).
+
+j_toggle_button_create_volatile_image(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, createVolatileImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
 j_toggle_button_is_cursor_set(REF, OUT) :- 
 	object_call(REF, isCursorSet, [], OUT).
@@ -1144,14 +1144,14 @@ j_toggle_button_request_focus(REF, ARG0, OUT) :-
 j_toggle_button_request_focus(REF) :- 
 	object_call(REF, requestFocus, [], _).
 
+j_toggle_button_get_mnemonic(REF, OUT) :- 
+	object_call(REF, getMnemonic, [], OUT).
+
 j_toggle_button_set_hide_action_text(REF, ARG0) :- 
 	object_call(REF, setHideActionText, '.'(ARG0, []), _).
 
 j_toggle_button_set_rollover_selected_icon(REF, ARG0) :- 
 	object_call(REF, setRolloverSelectedIcon, '.'(ARG0, []), _).
-
-j_toggle_button_get_mnemonic(REF, OUT) :- 
-	object_call(REF, getMnemonic, [], OUT).
 
 j_toggle_button_get_font(REF, OUT) :- 
 	object_call(REF, getFont, [], OUT).
@@ -1168,32 +1168,32 @@ j_toggle_button_get_autoscrolls(REF, OUT) :-
 j_toggle_button_is_focus_traversal_policy_set(REF, OUT) :- 
 	object_call(REF, isFocusTraversalPolicySet, [], OUT).
 
-j_toggle_button_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
-	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
-
-j_toggle_button_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
-	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
-
-j_toggle_button_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
-	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
-
-j_toggle_button_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
-	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
-
-j_toggle_button_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
-	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
-
-j_toggle_button_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
-	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
-
-j_toggle_button_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
-	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
-
-j_toggle_button_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
-	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
-
 j_toggle_button_get_insets(REF, OUT) :- 
 	object_call(REF, getInsets, [], OUT).
+
+j_toggle_button_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+j_toggle_button_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+j_toggle_button_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+j_toggle_button_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+j_toggle_button_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+j_toggle_button_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+j_toggle_button_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+j_toggle_button_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
 
 j_toggle_button_get_disabled_selected_icon(REF, OUT) :- 
 	object_call(REF, getDisabledSelectedIcon, [], OUT).
@@ -1354,11 +1354,11 @@ j_toggle_button_set_focus_traversal_keys(REF, ARG0, ARG1) :-
 j_toggle_button_add_property_change_listener(REF, ARG0, ARG1) :- 
 	object_call(REF, addPropertyChangeListener, '.'(ARG0, '.'(ARG1, [])), _).
 
-j_toggle_button_get_focus_cycle_root_ancestor(REF, OUT) :- 
-	object_call(REF, getFocusCycleRootAncestor, [], OUT).
-
 j_toggle_button_mouse_move(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseMove, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+j_toggle_button_get_focus_cycle_root_ancestor(REF, OUT) :- 
+	object_call(REF, getFocusCycleRootAncestor, [], OUT).
 
 j_toggle_button_set_opaque(REF, ARG0) :- 
 	object_call(REF, setOpaque, '.'(ARG0, []), _).

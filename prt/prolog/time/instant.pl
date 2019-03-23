@@ -157,14 +157,14 @@ instant_with(REF, ARG0, OUT) :-
 instant_with(REF, ARG0, OUT) :- 
 	object_call(REF, with, '.'(ARG0, []), OUT).
 
+instant_plus(REF, ARG0, OUT) :- 
+	object_call(REF, plus, '.'(ARG0, []), OUT).
+
+instant_plus(REF, ARG0, OUT) :- 
+	object_call(REF, plus, '.'(ARG0, []), OUT).
+
 instant_is_before(REF, ARG0, OUT) :- 
 	object_call(REF, isBefore, '.'(ARG0, []), OUT).
-
-instant_plus(REF, ARG0, OUT) :- 
-	object_call(REF, plus, '.'(ARG0, []), OUT).
-
-instant_plus(REF, ARG0, OUT) :- 
-	object_call(REF, plus, '.'(ARG0, []), OUT).
 
 instant_plus(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, plus, '.'(ARG0, '.'(ARG1, [])), OUT).

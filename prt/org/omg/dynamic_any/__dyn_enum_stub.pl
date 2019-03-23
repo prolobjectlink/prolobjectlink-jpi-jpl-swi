@@ -121,11 +121,11 @@
 '__dyn_enum_stub_rewind'(REF) :- 
 	object_call(REF, rewind, [], _).
 
-'__dyn_enum_stub_set_as_ulong'(REF, ARG0) :- 
-	object_call(REF, set_as_ulong, '.'(ARG0, []), _).
-
 '__dyn_enum_stub_get_octet'(REF, OUT) :- 
 	object_call(REF, get_octet, [], OUT).
+
+'__dyn_enum_stub_set_as_ulong'(REF, ARG0) :- 
+	object_call(REF, set_as_ulong, '.'(ARG0, []), _).
 
 '__dyn_enum_stub_wait'(REF, ARG0, ARG1) :- 
 	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
@@ -226,11 +226,11 @@
 '__dyn_enum_stub_insert_wstring'(REF, ARG0) :- 
 	object_call(REF, insert_wstring, '.'(ARG0, []), _).
 
-'__dyn_enum_stub_get_as_ulong'(REF, OUT) :- 
-	object_call(REF, get_as_ulong, [], OUT).
-
 '__dyn_enum_stub_get_short'(REF, OUT) :- 
 	object_call(REF, get_short, [], OUT).
+
+'__dyn_enum_stub_get_as_ulong'(REF, OUT) :- 
+	object_call(REF, get_as_ulong, [], OUT).
 
 '__dyn_enum_stub_insert_long'(REF, ARG0) :- 
 	object_call(REF, insert_long, '.'(ARG0, []), _).

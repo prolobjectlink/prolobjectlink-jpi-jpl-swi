@@ -106,11 +106,11 @@ basic_tree_u_i_uninstall_u_i(REF, ARG0) :-
 basic_tree_u_i_contains(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, contains, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-basic_tree_u_i_get_expanded_icon(REF, OUT) :- 
-	object_call(REF, getExpandedIcon, [], OUT).
-
 basic_tree_u_i_get_row_count(REF, ARG0, OUT) :- 
 	object_call(REF, getRowCount, '.'(ARG0, []), OUT).
+
+basic_tree_u_i_get_expanded_icon(REF, OUT) :- 
+	object_call(REF, getExpandedIcon, [], OUT).
 
 basic_tree_u_i_wait(REF, ARG0, ARG1) :- 
 	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).

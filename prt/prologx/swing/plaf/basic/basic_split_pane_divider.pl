@@ -100,17 +100,17 @@ basic_split_pane_divider_list(REF, ARG0) :-
 basic_split_pane_divider_set_location(REF, ARG0, ARG1) :- 
 	object_call(REF, setLocation, '.'(ARG0, '.'(ARG1, [])), _).
 
-basic_split_pane_divider_get_toolkit(REF, OUT) :- 
-	object_call(REF, getToolkit, [], OUT).
-
 basic_split_pane_divider_set_location(REF, ARG0) :- 
 	object_call(REF, setLocation, '.'(ARG0, []), _).
 
-basic_split_pane_divider_get_graphics_configuration(REF, OUT) :- 
-	object_call(REF, getGraphicsConfiguration, [], OUT).
+basic_split_pane_divider_get_toolkit(REF, OUT) :- 
+	object_call(REF, getToolkit, [], OUT).
 
 basic_split_pane_divider_reshape(REF, ARG0, ARG1, ARG2, ARG3) :- 
 	object_call(REF, reshape, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).
+
+basic_split_pane_divider_get_graphics_configuration(REF, OUT) :- 
+	object_call(REF, getGraphicsConfiguration, [], OUT).
 
 basic_split_pane_divider_list(REF, ARG0, ARG1) :- 
 	object_call(REF, list, '.'(ARG0, '.'(ARG1, [])), _).
@@ -211,11 +211,11 @@ basic_split_pane_divider_add_key_listener(REF, ARG0) :-
 basic_split_pane_divider_add_mouse_wheel_listener(REF, ARG0) :- 
 	object_call(REF, addMouseWheelListener, '.'(ARG0, []), _).
 
-basic_split_pane_divider_get_cursor(REF, OUT) :- 
-	object_call(REF, getCursor, [], OUT).
-
 basic_split_pane_divider_get_property_change_listeners(REF, ARG0, OUT) :- 
 	object_call(REF, getPropertyChangeListeners, '.'(ARG0, []), OUT).
+
+basic_split_pane_divider_get_cursor(REF, OUT) :- 
+	object_call(REF, getCursor, [], OUT).
 
 basic_split_pane_divider_remove_notify(REF) :- 
 	object_call(REF, removeNotify, [], _).
@@ -295,11 +295,11 @@ basic_split_pane_divider_mouse_up(REF, ARG0, ARG1, ARG2, OUT) :-
 basic_split_pane_divider_move(REF, ARG0, ARG1) :- 
 	object_call(REF, move, '.'(ARG0, '.'(ARG1, [])), _).
 
-basic_split_pane_divider_get_background(REF, OUT) :- 
-	object_call(REF, getBackground, [], OUT).
-
 basic_split_pane_divider_mouse_exit(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseExit, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+basic_split_pane_divider_get_background(REF, OUT) :- 
+	object_call(REF, getBackground, [], OUT).
 
 basic_split_pane_divider_validate(REF) :- 
 	object_call(REF, validate, [], _).
@@ -409,11 +409,11 @@ basic_split_pane_divider_get_minimum_size(REF, OUT) :-
 basic_split_pane_divider_enable(REF) :- 
 	object_call(REF, enable, [], _).
 
-basic_split_pane_divider_get_component_orientation(REF, OUT) :- 
-	object_call(REF, getComponentOrientation, [], OUT).
-
 basic_split_pane_divider_next_focus(REF) :- 
 	object_call(REF, nextFocus, [], _).
+
+basic_split_pane_divider_get_component_orientation(REF, OUT) :- 
+	object_call(REF, getComponentOrientation, [], OUT).
 
 basic_split_pane_divider_get_baseline(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, getBaseline, '.'(ARG0, '.'(ARG1, [])), OUT).
@@ -508,11 +508,11 @@ basic_split_pane_divider_remove_all(REF) :-
 basic_split_pane_divider_prepare_image(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_call(REF, prepareImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
-basic_split_pane_divider_check_image(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, checkImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
 basic_split_pane_divider_request_focus_in_window(REF, OUT) :- 
 	object_call(REF, requestFocusInWindow, [], OUT).
+
+basic_split_pane_divider_check_image(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_call(REF, checkImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
 basic_split_pane_divider_count_components(REF, OUT) :- 
 	object_call(REF, countComponents, [], OUT).
@@ -556,11 +556,11 @@ basic_split_pane_divider_property_change(REF, ARG0) :-
 basic_split_pane_divider_is_enabled(REF, OUT) :- 
 	object_call(REF, isEnabled, [], OUT).
 
-basic_split_pane_divider_dispatch_event(REF, ARG0) :- 
-	object_call(REF, dispatchEvent, '.'(ARG0, []), _).
-
 basic_split_pane_divider_is_background_set(REF, OUT) :- 
 	object_call(REF, isBackgroundSet, [], OUT).
+
+basic_split_pane_divider_dispatch_event(REF, ARG0) :- 
+	object_call(REF, dispatchEvent, '.'(ARG0, []), _).
 
 basic_split_pane_divider_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
@@ -586,38 +586,38 @@ basic_split_pane_divider_get_foreground(REF, OUT) :-
 basic_split_pane_divider_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-basic_split_pane_divider_get_focus_cycle_root_ancestor(REF, OUT) :- 
-	object_call(REF, getFocusCycleRootAncestor, [], OUT).
-
 basic_split_pane_divider_set_bounds(REF, ARG0, ARG1, ARG2, ARG3) :- 
 	object_call(REF, setBounds, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).
 
 basic_split_pane_divider_set_focusable(REF, ARG0) :- 
 	object_call(REF, setFocusable, '.'(ARG0, []), _).
 
+basic_split_pane_divider_get_focus_cycle_root_ancestor(REF, OUT) :- 
+	object_call(REF, getFocusCycleRootAncestor, [], OUT).
+
 basic_split_pane_divider_find_component_at(REF, ARG0, OUT) :- 
 	object_call(REF, findComponentAt, '.'(ARG0, []), OUT).
 
-basic_split_pane_divider_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
-	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
-
-basic_split_pane_divider_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
-	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
-
-basic_split_pane_divider_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
-	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
-
-basic_split_pane_divider_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
-	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
-
-basic_split_pane_divider_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
-	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
-
-basic_split_pane_divider_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
-	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
-
 basic_split_pane_divider_set_bounds(REF, ARG0) :- 
 	object_call(REF, setBounds, '.'(ARG0, []), _).
+
+basic_split_pane_divider_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+basic_split_pane_divider_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+basic_split_pane_divider_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+basic_split_pane_divider_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+basic_split_pane_divider_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+basic_split_pane_divider_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
 
 basic_split_pane_divider_find_component_at(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, findComponentAt, '.'(ARG0, '.'(ARG1, [])), OUT).
@@ -628,11 +628,11 @@ basic_split_pane_divider_remove_mouse_wheel_listener(REF, ARG0) :-
 basic_split_pane_divider_set_preferred_size(REF, ARG0) :- 
 	object_call(REF, setPreferredSize, '.'(ARG0, []), _).
 
-basic_split_pane_divider_get_hierarchy_bounds_listeners(REF, OUT) :- 
-	object_call(REF, getHierarchyBoundsListeners, [], OUT).
-
 basic_split_pane_divider_remove_hierarchy_bounds_listener(REF, ARG0) :- 
 	object_call(REF, removeHierarchyBoundsListener, '.'(ARG0, []), _).
+
+basic_split_pane_divider_get_hierarchy_bounds_listeners(REF, OUT) :- 
+	object_call(REF, getHierarchyBoundsListeners, [], OUT).
 
 basic_split_pane_divider_get_font(REF, OUT) :- 
 	object_call(REF, getFont, [], OUT).
@@ -679,11 +679,11 @@ basic_split_pane_divider_repaint(REF) :-
 basic_split_pane_divider_repaint(REF, ARG0) :- 
 	object_call(REF, repaint, '.'(ARG0, []), _).
 
-basic_split_pane_divider_get_font_metrics(REF, ARG0, OUT) :- 
-	object_call(REF, getFontMetrics, '.'(ARG0, []), OUT).
-
 basic_split_pane_divider_repaint(REF, ARG0, ARG1, ARG2, ARG3) :- 
 	object_call(REF, repaint, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).
+
+basic_split_pane_divider_get_font_metrics(REF, ARG0, OUT) :- 
+	object_call(REF, getFontMetrics, '.'(ARG0, []), OUT).
 
 basic_split_pane_divider_get_alignment_x(REF, OUT) :- 
 	object_call(REF, getAlignmentX, [], OUT).
@@ -694,11 +694,11 @@ basic_split_pane_divider_repaint(REF, ARG0, ARG1, ARG2, ARG3, ARG4) :-
 basic_split_pane_divider_get_bounds(REF, OUT) :- 
 	object_call(REF, getBounds, [], OUT).
 
-basic_split_pane_divider_get_bounds(REF, ARG0, OUT) :- 
-	object_call(REF, getBounds, '.'(ARG0, []), OUT).
-
 basic_split_pane_divider_transfer_focus_up_cycle(REF) :- 
 	object_call(REF, transferFocusUpCycle, [], _).
+
+basic_split_pane_divider_get_bounds(REF, ARG0, OUT) :- 
+	object_call(REF, getBounds, '.'(ARG0, []), OUT).
 
 basic_split_pane_divider_is_double_buffered(REF, OUT) :- 
 	object_call(REF, isDoubleBuffered, [], OUT).
@@ -811,11 +811,11 @@ basic_split_pane_divider_key_up(REF, ARG0, ARG1, OUT) :-
 basic_split_pane_divider_set_component_orientation(REF, ARG0) :- 
 	object_call(REF, setComponentOrientation, '.'(ARG0, []), _).
 
-basic_split_pane_divider_add_focus_listener(REF, ARG0) :- 
-	object_call(REF, addFocusListener, '.'(ARG0, []), _).
-
 basic_split_pane_divider_set_drop_target(REF, ARG0) :- 
 	object_call(REF, setDropTarget, '.'(ARG0, []), _).
+
+basic_split_pane_divider_add_focus_listener(REF, ARG0) :- 
+	object_call(REF, addFocusListener, '.'(ARG0, []), _).
 
 basic_split_pane_divider_add_component_listener(REF, ARG0) :- 
 	object_call(REF, addComponentListener, '.'(ARG0, []), _).

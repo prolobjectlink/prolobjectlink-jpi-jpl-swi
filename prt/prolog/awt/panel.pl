@@ -109,11 +109,11 @@ panel_is_valid(REF, OUT) :-
 panel_is_focus_traversal_policy_provider(REF, OUT) :- 
 	object_call(REF, isFocusTraversalPolicyProvider, [], OUT).
 
-panel_get_hierarchy_listeners(REF, OUT) :- 
-	object_call(REF, getHierarchyListeners, [], OUT).
-
 panel_set_maximum_size(REF, ARG0) :- 
 	object_call(REF, setMaximumSize, '.'(ARG0, []), _).
+
+panel_get_hierarchy_listeners(REF, OUT) :- 
+	object_call(REF, getHierarchyListeners, [], OUT).
 
 panel_get_focus_traversal_keys_enabled(REF, OUT) :- 
 	object_call(REF, getFocusTraversalKeysEnabled, [], OUT).
@@ -121,11 +121,11 @@ panel_get_focus_traversal_keys_enabled(REF, OUT) :-
 panel_set_foreground(REF, ARG0) :- 
 	object_call(REF, setForeground, '.'(ARG0, []), _).
 
-panel_get_font_metrics(REF, ARG0, OUT) :- 
-	object_call(REF, getFontMetrics, '.'(ARG0, []), OUT).
-
 panel_set_enabled(REF, ARG0) :- 
 	object_call(REF, setEnabled, '.'(ARG0, []), _).
+
+panel_get_font_metrics(REF, ARG0, OUT) :- 
+	object_call(REF, getFontMetrics, '.'(ARG0, []), OUT).
 
 panel_get_listeners(REF, ARG0, OUT) :- 
 	object_call(REF, getListeners, '.'(ARG0, []), OUT).
@@ -166,11 +166,11 @@ panel_contains(REF, ARG0, OUT) :-
 panel_add_property_change_listener(REF, ARG0) :- 
 	object_call(REF, addPropertyChangeListener, '.'(ARG0, []), _).
 
-panel_get_component_count(REF, OUT) :- 
-	object_call(REF, getComponentCount, [], OUT).
-
 panel_is_validate_root(REF, OUT) :- 
 	object_call(REF, isValidateRoot, [], OUT).
+
+panel_get_component_count(REF, OUT) :- 
+	object_call(REF, getComponentCount, [], OUT).
 
 panel_add_property_change_listener(REF, ARG0, ARG1) :- 
 	object_call(REF, addPropertyChangeListener, '.'(ARG0, '.'(ARG1, [])), _).
@@ -304,11 +304,11 @@ panel_disable(REF) :-
 panel_get_cursor(REF, OUT) :- 
 	object_call(REF, getCursor, [], OUT).
 
-panel_get_foreground(REF, OUT) :- 
-	object_call(REF, getForeground, [], OUT).
-
 panel_get_width(REF, OUT) :- 
 	object_call(REF, getWidth, [], OUT).
+
+panel_get_foreground(REF, OUT) :- 
+	object_call(REF, getForeground, [], OUT).
 
 panel_get_key_listeners(REF, OUT) :- 
 	object_call(REF, getKeyListeners, [], OUT).
@@ -379,11 +379,11 @@ panel_get_alignment_x(REF, OUT) :-
 panel_find_component_at(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, findComponentAt, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-panel_find_component_at(REF, ARG0, OUT) :- 
-	object_call(REF, findComponentAt, '.'(ARG0, []), OUT).
-
 panel_layout(REF) :- 
 	object_call(REF, layout, [], _).
+
+panel_find_component_at(REF, ARG0, OUT) :- 
+	object_call(REF, findComponentAt, '.'(ARG0, []), OUT).
 
 panel_get_focus_listeners(REF, OUT) :- 
 	object_call(REF, getFocusListeners, [], OUT).
@@ -553,11 +553,11 @@ panel_get_parent(REF, OUT) :-
 panel_do_layout(REF) :- 
 	object_call(REF, doLayout, [], _).
 
-panel_get_height(REF, OUT) :- 
-	object_call(REF, getHeight, [], OUT).
-
 panel_transfer_focus_up_cycle(REF) :- 
 	object_call(REF, transferFocusUpCycle, [], _).
+
+panel_get_height(REF, OUT) :- 
+	object_call(REF, getHeight, [], OUT).
 
 panel_add_component_listener(REF, ARG0) :- 
 	object_call(REF, addComponentListener, '.'(ARG0, []), _).
@@ -628,11 +628,11 @@ panel_set_layout(REF, ARG0) :-
 panel_get_maximum_size(REF, OUT) :- 
 	object_call(REF, getMaximumSize, [], OUT).
 
-panel_get_ignore_repaint(REF, OUT) :- 
-	object_call(REF, getIgnoreRepaint, [], OUT).
-
 panel_got_focus(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, gotFocus, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+panel_get_ignore_repaint(REF, OUT) :- 
+	object_call(REF, getIgnoreRepaint, [], OUT).
 
 panel_resize(REF, ARG0, ARG1) :- 
 	object_call(REF, resize, '.'(ARG0, '.'(ARG1, [])), _).
@@ -649,9 +649,6 @@ panel_are_focus_traversal_keys_set(REF, ARG0, OUT) :-
 panel_get_bounds(REF, OUT) :- 
 	object_call(REF, getBounds, [], OUT).
 
-panel_get_bounds(REF, ARG0, OUT) :- 
-	object_call(REF, getBounds, '.'(ARG0, []), OUT).
-
 panel_is_minimum_size_set(REF, OUT) :- 
 	object_call(REF, isMinimumSizeSet, [], OUT).
 
@@ -660,6 +657,9 @@ panel_mouse_exit(REF, ARG0, ARG1, ARG2, OUT) :-
 
 panel_transfer_focus_backward(REF) :- 
 	object_call(REF, transferFocusBackward, [], _).
+
+panel_get_bounds(REF, ARG0, OUT) :- 
+	object_call(REF, getBounds, '.'(ARG0, []), OUT).
 
 panel_get_baseline(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, getBaseline, '.'(ARG0, '.'(ARG1, [])), OUT).
@@ -709,11 +709,11 @@ panel_get_y(REF, OUT) :-
 panel_set_ignore_repaint(REF, ARG0) :- 
 	object_call(REF, setIgnoreRepaint, '.'(ARG0, []), _).
 
-panel_get_font(REF, OUT) :- 
-	object_call(REF, getFont, [], OUT).
-
 panel_show(REF) :- 
 	object_call(REF, show, [], _).
+
+panel_get_font(REF, OUT) :- 
+	object_call(REF, getFont, [], OUT).
 
 panel_show(REF, ARG0) :- 
 	object_call(REF, show, '.'(ARG0, []), _).

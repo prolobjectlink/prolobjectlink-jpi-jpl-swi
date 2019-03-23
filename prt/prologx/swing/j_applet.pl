@@ -181,11 +181,11 @@ j_applet_set_stub(REF, ARG0) :-
 j_applet_get_listeners(REF, ARG0, OUT) :- 
 	object_call(REF, getListeners, '.'(ARG0, []), OUT).
 
-j_applet_get_font(REF, OUT) :- 
-	object_call(REF, getFont, [], OUT).
-
 j_applet_remove_mouse_motion_listener(REF, ARG0) :- 
 	object_call(REF, removeMouseMotionListener, '.'(ARG0, []), _).
+
+j_applet_get_font(REF, OUT) :- 
+	object_call(REF, getFont, [], OUT).
 
 j_applet_locate(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, locate, '.'(ARG0, '.'(ARG1, [])), OUT).
@@ -268,11 +268,11 @@ j_applet_is_minimum_size_set(REF, OUT) :-
 j_applet_get_peer(REF, OUT) :- 
 	object_call(REF, getPeer, [], OUT).
 
-j_applet_get_color_model(REF, OUT) :- 
-	object_call(REF, getColorModel, [], OUT).
-
 j_applet_set_visible(REF, ARG0) :- 
 	object_call(REF, setVisible, '.'(ARG0, []), _).
+
+j_applet_get_color_model(REF, OUT) :- 
+	object_call(REF, getColorModel, [], OUT).
 
 j_applet_add_focus_listener(REF, ARG0) :- 
 	object_call(REF, addFocusListener, '.'(ARG0, []), _).
@@ -328,11 +328,11 @@ j_applet_set_component_z_order(REF, ARG0, ARG1) :-
 j_applet_get_mouse_position(REF, OUT) :- 
 	object_call(REF, getMousePosition, [], OUT).
 
-j_applet_get_hierarchy_bounds_listeners(REF, OUT) :- 
-	object_call(REF, getHierarchyBoundsListeners, [], OUT).
-
 j_applet_transfer_focus(REF) :- 
 	object_call(REF, transferFocus, [], _).
+
+j_applet_get_hierarchy_bounds_listeners(REF, OUT) :- 
+	object_call(REF, getHierarchyBoundsListeners, [], OUT).
 
 j_applet_destroy(REF) :- 
 	object_call(REF, destroy, [], _).
@@ -352,11 +352,11 @@ j_applet_contains(REF, ARG0, ARG1, OUT) :-
 j_applet_remove_notify(REF) :- 
 	object_call(REF, removeNotify, [], _).
 
-j_applet_create_image(REF, ARG0, OUT) :- 
-	object_call(REF, createImage, '.'(ARG0, []), OUT).
-
 j_applet_set_component_orientation(REF, ARG0) :- 
 	object_call(REF, setComponentOrientation, '.'(ARG0, []), _).
+
+j_applet_create_image(REF, ARG0, OUT) :- 
+	object_call(REF, createImage, '.'(ARG0, []), OUT).
 
 j_applet_create_image(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, createImage, '.'(ARG0, '.'(ARG1, [])), OUT).
@@ -532,11 +532,11 @@ j_applet_get_focus_traversal_policy(REF, OUT) :-
 j_applet_get_property_change_listeners(REF, OUT) :- 
 	object_call(REF, getPropertyChangeListeners, [], OUT).
 
-j_applet_get_cursor(REF, OUT) :- 
-	object_call(REF, getCursor, [], OUT).
-
 j_applet_get_property_change_listeners(REF, ARG0, OUT) :- 
 	object_call(REF, getPropertyChangeListeners, '.'(ARG0, []), OUT).
+
+j_applet_get_cursor(REF, OUT) :- 
+	object_call(REF, getCursor, [], OUT).
 
 j_applet_paint_all(REF, ARG0) :- 
 	object_call(REF, paintAll, '.'(ARG0, []), _).
@@ -637,11 +637,11 @@ j_applet_is_showing(REF, OUT) :-
 j_applet_is_focus_owner(REF, OUT) :- 
 	object_call(REF, isFocusOwner, [], OUT).
 
-j_applet_get_drop_target(REF, OUT) :- 
-	object_call(REF, getDropTarget, [], OUT).
-
 j_applet_get_mouse_wheel_listeners(REF, OUT) :- 
 	object_call(REF, getMouseWheelListeners, [], OUT).
+
+j_applet_get_drop_target(REF, OUT) :- 
+	object_call(REF, getDropTarget, [], OUT).
 
 j_applet_add_component_listener(REF, ARG0) :- 
 	object_call(REF, addComponentListener, '.'(ARG0, []), _).
@@ -718,11 +718,11 @@ j_applet_get_layout(REF, OUT) :-
 j_applet_preferred_size(REF, OUT) :- 
 	object_call(REF, preferredSize, [], OUT).
 
-j_applet_check_image(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, checkImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
 j_applet_request_focus_in_window(REF, OUT) :- 
 	object_call(REF, requestFocusInWindow, [], OUT).
+
+j_applet_check_image(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_call(REF, checkImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
 j_applet_is_valid(REF, OUT) :- 
 	object_call(REF, isValid, [], OUT).
@@ -886,11 +886,11 @@ j_applet_reshape(REF, ARG0, ARG1, ARG2, ARG3) :-
 j_applet_mouse_down(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseDown, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-j_applet_get_audio_clip(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getAudioClip, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 j_applet_is_validate_root(REF, OUT) :- 
 	object_call(REF, isValidateRoot, [], OUT).
+
+j_applet_get_audio_clip(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getAudioClip, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 j_applet_set_focusable(REF, ARG0) :- 
 	object_call(REF, setFocusable, '.'(ARG0, []), _).

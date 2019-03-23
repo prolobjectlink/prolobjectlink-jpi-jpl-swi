@@ -487,11 +487,11 @@ dialog_repaint(REF) :-
 dialog_repaint(REF, ARG0) :- 
 	object_call(REF, repaint, '.'(ARG0, []), _).
 
-dialog_is_enabled(REF, OUT) :- 
-	object_call(REF, isEnabled, [], OUT).
-
 dialog_set_locale(REF, ARG0) :- 
 	object_call(REF, setLocale, '.'(ARG0, []), _).
+
+dialog_is_enabled(REF, OUT) :- 
+	object_call(REF, isEnabled, [], OUT).
 
 dialog_repaint(REF, ARG0, ARG1, ARG2, ARG3) :- 
 	object_call(REF, repaint, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).
@@ -625,14 +625,14 @@ dialog_set_focus_traversal_keys_enabled(REF, ARG0) :-
 dialog_get_bounds(REF, OUT) :- 
 	object_call(REF, getBounds, [], OUT).
 
-dialog_get_bounds(REF, ARG0, OUT) :- 
-	object_call(REF, getBounds, '.'(ARG0, []), OUT).
-
 dialog_remove_mouse_motion_listener(REF, ARG0) :- 
 	object_call(REF, removeMouseMotionListener, '.'(ARG0, []), _).
 
 dialog_set_foreground(REF, ARG0) :- 
 	object_call(REF, setForeground, '.'(ARG0, []), _).
+
+dialog_get_bounds(REF, ARG0, OUT) :- 
+	object_call(REF, getBounds, '.'(ARG0, []), OUT).
 
 dialog_get_type(REF, OUT) :- 
 	object_call(REF, getType, [], OUT).
@@ -808,11 +808,11 @@ dialog_get_location(REF, OUT) :-
 dialog_get_location(REF, ARG0, OUT) :- 
 	object_call(REF, getLocation, '.'(ARG0, []), OUT).
 
-dialog_get_foreground(REF, OUT) :- 
-	object_call(REF, getForeground, [], OUT).
-
 dialog_revalidate(REF) :- 
 	object_call(REF, revalidate, [], _).
+
+dialog_get_foreground(REF, OUT) :- 
+	object_call(REF, getForeground, [], OUT).
 
 dialog_get_modal_exclusion_type(REF, OUT) :- 
 	object_call(REF, getModalExclusionType, [], OUT).
@@ -835,11 +835,11 @@ dialog_add_mouse_wheel_listener(REF, ARG0) :-
 dialog_is_undecorated(REF, OUT) :- 
 	object_call(REF, isUndecorated, [], OUT).
 
-dialog_add_mouse_listener(REF, ARG0) :- 
-	object_call(REF, addMouseListener, '.'(ARG0, []), _).
-
 dialog_next_focus(REF) :- 
 	object_call(REF, nextFocus, [], _).
+
+dialog_add_mouse_listener(REF, ARG0) :- 
+	object_call(REF, addMouseListener, '.'(ARG0, []), _).
 
 dialog_add_hierarchy_listener(REF, ARG0) :- 
 	object_call(REF, addHierarchyListener, '.'(ARG0, []), _).

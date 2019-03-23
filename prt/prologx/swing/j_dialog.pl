@@ -463,11 +463,11 @@ j_dialog_is_lightweight(REF, OUT) :-
 j_dialog_dispose(REF) :- 
 	object_call(REF, dispose, [], _).
 
-j_dialog_action(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, action, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 j_dialog_is_minimum_size_set(REF, OUT) :- 
 	object_call(REF, isMinimumSizeSet, [], OUT).
+
+j_dialog_action(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, action, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 j_dialog_get_background(REF, OUT) :- 
 	object_call(REF, getBackground, [], OUT).
@@ -661,26 +661,26 @@ j_dialog_get_mouse_position(REF, OUT) :-
 j_dialog_set_minimum_size(REF, ARG0) :- 
 	object_call(REF, setMinimumSize, '.'(ARG0, []), _).
 
-j_dialog_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
-	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
-
-j_dialog_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
-	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
-
-j_dialog_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
-	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
-
-j_dialog_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
-	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
-
-j_dialog_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
-	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
-
-j_dialog_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
-	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
-
 j_dialog_mouse_enter(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseEnter, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+j_dialog_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+j_dialog_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+j_dialog_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+j_dialog_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+j_dialog_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
+
+j_dialog_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
 
 j_dialog_set_focusable_window_state(REF, ARG0) :- 
 	object_call(REF, setFocusableWindowState, '.'(ARG0, []), _).
@@ -895,11 +895,11 @@ j_dialog_set_location_relative_to(REF, ARG0) :-
 j_dialog_get_focus_traversal_policy(REF, OUT) :- 
 	object_call(REF, getFocusTraversalPolicy, [], OUT).
 
-j_dialog_enable_input_methods(REF, ARG0) :- 
-	object_call(REF, enableInputMethods, '.'(ARG0, []), _).
-
 j_dialog_set_focus_traversal_keys_enabled(REF, ARG0) :- 
 	object_call(REF, setFocusTraversalKeysEnabled, '.'(ARG0, []), _).
+
+j_dialog_enable_input_methods(REF, ARG0) :- 
+	object_call(REF, enableInputMethods, '.'(ARG0, []), _).
 
 j_dialog_is_cursor_set(REF, OUT) :- 
 	object_call(REF, isCursorSet, [], OUT).
@@ -979,11 +979,11 @@ j_dialog_get_property_change_listeners(REF, ARG0, OUT) :-
 j_dialog_get_property_change_listeners(REF, OUT) :- 
 	object_call(REF, getPropertyChangeListeners, [], OUT).
 
-j_dialog_get_font_metrics(REF, ARG0, OUT) :- 
-	object_call(REF, getFontMetrics, '.'(ARG0, []), OUT).
-
 j_dialog_prepare_image(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_call(REF, prepareImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+
+j_dialog_get_font_metrics(REF, ARG0, OUT) :- 
+	object_call(REF, getFontMetrics, '.'(ARG0, []), OUT).
 
 j_dialog_prepare_image(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, prepareImage, '.'(ARG0, '.'(ARG1, [])), OUT).
@@ -1054,11 +1054,11 @@ j_dialog_remove_container_listener(REF, ARG0) :-
 j_dialog_set_transfer_handler(REF, ARG0) :- 
 	object_call(REF, setTransferHandler, '.'(ARG0, []), _).
 
-j_dialog_get_baseline(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getBaseline, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 j_dialog_has_focus(REF, OUT) :- 
 	object_call(REF, hasFocus, [], OUT).
+
+j_dialog_get_baseline(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getBaseline, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 j_dialog_add_window_state_listener(REF, ARG0) :- 
 	object_call(REF, addWindowStateListener, '.'(ARG0, []), _).

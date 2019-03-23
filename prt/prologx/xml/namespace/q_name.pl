@@ -40,11 +40,11 @@ q_name_wait(REF) :-
 q_name_wait(REF, ARG0, ARG1) :- 
 	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-q_name_get_namespace_u_r_i(REF, OUT) :- 
-	object_call(REF, getNamespaceURI, [], OUT).
-
 q_name_get_local_part(REF, OUT) :- 
 	object_call(REF, getLocalPart, [], OUT).
+
+q_name_get_namespace_u_r_i(REF, OUT) :- 
+	object_call(REF, getNamespaceURI, [], OUT).
 
 q_name_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).

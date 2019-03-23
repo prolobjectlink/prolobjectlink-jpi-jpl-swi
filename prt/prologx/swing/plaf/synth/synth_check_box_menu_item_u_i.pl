@@ -88,11 +88,11 @@ synth_check_box_menu_item_u_i_get_maximum_size(REF, ARG0, OUT) :-
 synth_check_box_menu_item_u_i_uninstall_u_i(REF, ARG0) :- 
 	object_call(REF, uninstallUI, '.'(ARG0, []), _).
 
-synth_check_box_menu_item_u_i_get_baseline(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, getBaseline, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
 synth_check_box_menu_item_u_i_get_accessible_child(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, getAccessibleChild, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+synth_check_box_menu_item_u_i_get_baseline(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, getBaseline, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
 synth_check_box_menu_item_u_i_install_u_i(REF, ARG0) :- 
 	object_call(REF, installUI, '.'(ARG0, []), _).

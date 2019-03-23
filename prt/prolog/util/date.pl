@@ -52,11 +52,11 @@ date_get_day(REF, OUT) :-
 date_wait(REF, ARG0) :- 
 	object_call(REF, wait, '.'(ARG0, []), _).
 
-date_set_date(REF, ARG0) :- 
-	object_call(REF, setDate, '.'(ARG0, []), _).
-
 date_to_locale_string(REF, OUT) :- 
 	object_call(REF, toLocaleString, [], OUT).
+
+date_set_date(REF, ARG0) :- 
+	object_call(REF, setDate, '.'(ARG0, []), _).
 
 date_from(REF, ARG0, OUT) :- 
 	object_call(REF, from, '.'(ARG0, []), OUT).
@@ -88,11 +88,11 @@ date_get_year(REF, OUT) :-
 date_set_hours(REF, ARG0) :- 
 	object_call(REF, setHours, '.'(ARG0, []), _).
 
-date_set_minutes(REF, ARG0) :- 
-	object_call(REF, setMinutes, '.'(ARG0, []), _).
-
 date_get_timezone_offset(REF, OUT) :- 
 	object_call(REF, getTimezoneOffset, [], OUT).
+
+date_set_minutes(REF, ARG0) :- 
+	object_call(REF, setMinutes, '.'(ARG0, []), _).
 
 date_set_seconds(REF, ARG0) :- 
 	object_call(REF, setSeconds, '.'(ARG0, []), _).

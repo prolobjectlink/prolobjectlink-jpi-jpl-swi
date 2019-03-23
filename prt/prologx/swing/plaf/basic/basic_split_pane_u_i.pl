@@ -37,11 +37,11 @@ basic_split_pane_u_i_update(REF, ARG0, ARG1) :-
 basic_split_pane_u_i_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-basic_split_pane_u_i_set_divider_location(REF, ARG0, ARG1) :- 
-	object_call(REF, setDividerLocation, '.'(ARG0, '.'(ARG1, [])), _).
-
 basic_split_pane_u_i_create_u_i(REF, ARG0, OUT) :- 
 	object_call(REF, createUI, '.'(ARG0, []), OUT).
+
+basic_split_pane_u_i_set_divider_location(REF, ARG0, ARG1) :- 
+	object_call(REF, setDividerLocation, '.'(ARG0, '.'(ARG1, [])), _).
 
 basic_split_pane_u_i_wait(REF, ARG0) :- 
 	object_call(REF, wait, '.'(ARG0, []), _).

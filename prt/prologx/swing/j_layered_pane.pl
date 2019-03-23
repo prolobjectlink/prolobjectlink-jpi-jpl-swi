@@ -145,11 +145,11 @@ j_layered_pane_remove_mouse_listener(REF, ARG0) :-
 j_layered_pane_set_bounds(REF, ARG0, ARG1, ARG2, ARG3) :- 
 	object_call(REF, setBounds, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).
 
-j_layered_pane_check_image(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, checkImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
 j_layered_pane_set_location(REF, ARG0) :- 
 	object_call(REF, setLocation, '.'(ARG0, []), _).
+
+j_layered_pane_check_image(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_call(REF, checkImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
 j_layered_pane_get_listeners(REF, ARG0, OUT) :- 
 	object_call(REF, getListeners, '.'(ARG0, []), OUT).
@@ -778,11 +778,11 @@ j_layered_pane_set_layer(REF, ARG0, ARG1) :-
 j_layered_pane_hide(REF) :- 
 	object_call(REF, hide, [], _).
 
-j_layered_pane_set_layer(REF, ARG0, ARG1, ARG2) :- 
-	object_call(REF, setLayer, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
-
 j_layered_pane_get_components_in_layer(REF, ARG0, OUT) :- 
 	object_call(REF, getComponentsInLayer, '.'(ARG0, []), OUT).
+
+j_layered_pane_set_layer(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, setLayer, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
 
 j_layered_pane_compute_visible_rect(REF, ARG0) :- 
 	object_call(REF, computeVisibleRect, '.'(ARG0, []), _).
@@ -859,14 +859,14 @@ j_layered_pane_set_focus_cycle_root(REF, ARG0) :-
 j_layered_pane_notify(REF) :- 
 	object_call(REF, notify, [], _).
 
-j_layered_pane_add_input_method_listener(REF, ARG0) :- 
-	object_call(REF, addInputMethodListener, '.'(ARG0, []), _).
-
 j_layered_pane_is_displayable(REF, OUT) :- 
 	object_call(REF, isDisplayable, [], OUT).
 
 j_layered_pane_mouse_enter(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseEnter, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+j_layered_pane_add_input_method_listener(REF, ARG0) :- 
+	object_call(REF, addInputMethodListener, '.'(ARG0, []), _).
 
 j_layered_pane_repaint(REF, ARG0, ARG1, ARG2, ARG3, ARG4) :- 
 	object_call(REF, repaint, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), _).
@@ -955,20 +955,20 @@ j_layered_pane_set_font(REF, ARG0) :-
 j_layered_pane_add_notify(REF) :- 
 	object_call(REF, addNotify, [], _).
 
-j_layered_pane_get_component_listeners(REF, OUT) :- 
-	object_call(REF, getComponentListeners, [], OUT).
-
 j_layered_pane_show(REF, ARG0) :- 
 	object_call(REF, show, '.'(ARG0, []), _).
+
+j_layered_pane_get_component_listeners(REF, OUT) :- 
+	object_call(REF, getComponentListeners, [], OUT).
 
 j_layered_pane_transfer_focus_down_cycle(REF) :- 
 	object_call(REF, transferFocusDownCycle, [], _).
 
-j_layered_pane_get_drop_target(REF, OUT) :- 
-	object_call(REF, getDropTarget, [], OUT).
-
 j_layered_pane_show(REF) :- 
 	object_call(REF, show, [], _).
+
+j_layered_pane_get_drop_target(REF, OUT) :- 
+	object_call(REF, getDropTarget, [], OUT).
 
 j_layered_pane_validate(REF) :- 
 	object_call(REF, validate, [], _).

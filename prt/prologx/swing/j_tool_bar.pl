@@ -553,11 +553,11 @@ j_tool_bar_get_bounds(REF, OUT) :-
 j_tool_bar_get_locale(REF, OUT) :- 
 	object_call(REF, getLocale, [], OUT).
 
-j_tool_bar_add_key_listener(REF, ARG0) :- 
-	object_call(REF, addKeyListener, '.'(ARG0, []), _).
-
 j_tool_bar_remove_mouse_listener(REF, ARG0) :- 
 	object_call(REF, removeMouseListener, '.'(ARG0, []), _).
+
+j_tool_bar_add_key_listener(REF, ARG0) :- 
+	object_call(REF, addKeyListener, '.'(ARG0, []), _).
 
 j_tool_bar_set_focus_traversal_policy(REF, ARG0) :- 
 	object_call(REF, setFocusTraversalPolicy, '.'(ARG0, []), _).
@@ -601,11 +601,11 @@ j_tool_bar_enable(REF, ARG0) :-
 j_tool_bar_enable(REF) :- 
 	object_call(REF, enable, [], _).
 
-j_tool_bar_get_color_model(REF, OUT) :- 
-	object_call(REF, getColorModel, [], OUT).
-
 j_tool_bar_is_preferred_size_set(REF, OUT) :- 
 	object_call(REF, isPreferredSizeSet, [], OUT).
+
+j_tool_bar_get_color_model(REF, OUT) :- 
+	object_call(REF, getColorModel, [], OUT).
 
 j_tool_bar_set_double_buffered(REF, ARG0) :- 
 	object_call(REF, setDoubleBuffered, '.'(ARG0, []), _).
@@ -880,11 +880,11 @@ j_tool_bar_set_alignment_x(REF, ARG0) :-
 j_tool_bar_notify_all(REF) :- 
 	object_call(REF, notifyAll, [], _).
 
-j_tool_bar_get_component_orientation(REF, OUT) :- 
-	object_call(REF, getComponentOrientation, [], OUT).
-
 j_tool_bar_get_input_method_listeners(REF, OUT) :- 
 	object_call(REF, getInputMethodListeners, [], OUT).
+
+j_tool_bar_get_component_orientation(REF, OUT) :- 
+	object_call(REF, getComponentOrientation, [], OUT).
 
 j_tool_bar_paint_all(REF, ARG0) :- 
 	object_call(REF, paintAll, '.'(ARG0, []), _).

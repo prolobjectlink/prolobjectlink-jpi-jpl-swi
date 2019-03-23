@@ -205,11 +205,11 @@ list_add_mouse_listener(REF, ARG0) :-
 list_get_bounds(REF, OUT) :- 
 	object_call(REF, getBounds, [], OUT).
 
-list_get_bounds(REF, ARG0, OUT) :- 
-	object_call(REF, getBounds, '.'(ARG0, []), OUT).
-
 list_set_bounds(REF, ARG0) :- 
 	object_call(REF, setBounds, '.'(ARG0, []), _).
+
+list_get_bounds(REF, ARG0, OUT) :- 
+	object_call(REF, getBounds, '.'(ARG0, []), OUT).
 
 list_notify(REF) :- 
 	object_call(REF, notify, [], _).
@@ -253,11 +253,11 @@ list_key_up(REF, ARG0, ARG1, OUT) :-
 list_add_key_listener(REF, ARG0) :- 
 	object_call(REF, addKeyListener, '.'(ARG0, []), _).
 
-list_enable_input_methods(REF, ARG0) :- 
-	object_call(REF, enableInputMethods, '.'(ARG0, []), _).
-
 list_is_displayable(REF, OUT) :- 
 	object_call(REF, isDisplayable, [], OUT).
+
+list_enable_input_methods(REF, ARG0) :- 
+	object_call(REF, enableInputMethods, '.'(ARG0, []), _).
 
 list_add_focus_listener(REF, ARG0) :- 
 	object_call(REF, addFocusListener, '.'(ARG0, []), _).
@@ -517,11 +517,11 @@ list_set_multiple_mode(REF, ARG0) :-
 list_remove_property_change_listener(REF, ARG0) :- 
 	object_call(REF, removePropertyChangeListener, '.'(ARG0, []), _).
 
-list_get_font_metrics(REF, ARG0, OUT) :- 
-	object_call(REF, getFontMetrics, '.'(ARG0, []), OUT).
-
 list_is_foreground_set(REF, OUT) :- 
 	object_call(REF, isForegroundSet, [], OUT).
+
+list_get_font_metrics(REF, ARG0, OUT) :- 
+	object_call(REF, getFontMetrics, '.'(ARG0, []), OUT).
 
 list_get_preferred_size(REF, OUT) :- 
 	object_call(REF, getPreferredSize, [], OUT).
@@ -583,23 +583,23 @@ list_replace_item(REF, ARG0, ARG1) :-
 list_mouse_down(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseDown, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-list_check_image(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, checkImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
 list_get_property_change_listeners(REF, OUT) :- 
 	object_call(REF, getPropertyChangeListeners, [], OUT).
 
 list_remove_hierarchy_bounds_listener(REF, ARG0) :- 
 	object_call(REF, removeHierarchyBoundsListener, '.'(ARG0, []), _).
 
+list_check_image(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_call(REF, checkImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+
+list_remove_focus_listener(REF, ARG0) :- 
+	object_call(REF, removeFocusListener, '.'(ARG0, []), _).
+
 list_check_image(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, checkImage, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 list_get_baseline_resize_behavior(REF, OUT) :- 
 	object_call(REF, getBaselineResizeBehavior, [], OUT).
-
-list_remove_focus_listener(REF, ARG0) :- 
-	object_call(REF, removeFocusListener, '.'(ARG0, []), _).
 
 list_size(REF, OUT) :- 
 	object_call(REF, size, [], OUT).
@@ -649,14 +649,14 @@ list_paint(REF, ARG0) :-
 list_get_x(REF, OUT) :- 
 	object_call(REF, getX, [], OUT).
 
-list_get_focus_traversal_keys(REF, ARG0, OUT) :- 
-	object_call(REF, getFocusTraversalKeys, '.'(ARG0, []), OUT).
-
 list_get_input_method_listeners(REF, OUT) :- 
 	object_call(REF, getInputMethodListeners, [], OUT).
 
 list_transfer_focus(REF) :- 
 	object_call(REF, transferFocus, [], _).
+
+list_get_focus_traversal_keys(REF, ARG0, OUT) :- 
+	object_call(REF, getFocusTraversalKeys, '.'(ARG0, []), OUT).
 
 list_add_item(REF, ARG0, ARG1) :- 
 	object_call(REF, addItem, '.'(ARG0, '.'(ARG1, [])), _).
@@ -748,14 +748,14 @@ list_get_focus_cycle_root_ancestor(REF, OUT) :-
 list_is_focus_cycle_root(REF, ARG0, OUT) :- 
 	object_call(REF, isFocusCycleRoot, '.'(ARG0, []), OUT).
 
-list_create_image(REF, ARG0, OUT) :- 
-	object_call(REF, createImage, '.'(ARG0, []), OUT).
-
 list_get_y(REF, OUT) :- 
 	object_call(REF, getY, [], OUT).
 
 list_request_focus(REF) :- 
 	object_call(REF, requestFocus, [], _).
+
+list_create_image(REF, ARG0, OUT) :- 
+	object_call(REF, createImage, '.'(ARG0, []), OUT).
 
 list_select(REF, ARG0) :- 
 	object_call(REF, select, '.'(ARG0, []), _).

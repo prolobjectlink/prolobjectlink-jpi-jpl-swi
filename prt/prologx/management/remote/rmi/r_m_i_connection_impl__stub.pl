@@ -49,11 +49,11 @@ r_m_i_connection_impl__stub_set_attribute(REF, ARG0, ARG1, ARG2) :-
 r_m_i_connection_impl__stub_set_attributes(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, setAttributes, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-r_m_i_connection_impl__stub_is_instance_of(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, isInstanceOf, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
 r_m_i_connection_impl__stub_add_notification_listener(REF, ARG0, ARG1, ARG2, ARG3, ARG4) :- 
 	object_call(REF, addNotificationListener, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), _).
+
+r_m_i_connection_impl__stub_is_instance_of(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, isInstanceOf, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
 r_m_i_connection_impl__stub_invoke(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
 	object_call(REF, invoke, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
@@ -88,11 +88,11 @@ r_m_i_connection_impl__stub_fetch_notifications(REF, ARG0, ARG1, ARG2, OUT) :-
 r_m_i_connection_impl__stub_remove_notification_listener(REF, ARG0, ARG1, ARG2) :- 
 	object_call(REF, removeNotificationListener, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
 
-r_m_i_connection_impl__stub_get_attribute(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, getAttribute, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
 r_m_i_connection_impl__stub_create_m_bean(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
 	object_call(REF, createMBean, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
+
+r_m_i_connection_impl__stub_get_attribute(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, getAttribute, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
 r_m_i_connection_impl__stub_create_m_bean(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, OUT) :- 
 	object_call(REF, createMBean, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), OUT).

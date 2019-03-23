@@ -331,11 +331,11 @@ j_check_box_menu_item_get_popup_location(REF, ARG0, OUT) :-
 j_check_box_menu_item_mouse_enter(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseEnter, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-j_check_box_menu_item_get_component_orientation(REF, OUT) :- 
-	object_call(REF, getComponentOrientation, [], OUT).
-
 j_check_box_menu_item_is_foreground_set(REF, OUT) :- 
 	object_call(REF, isForegroundSet, [], OUT).
+
+j_check_box_menu_item_get_component_orientation(REF, OUT) :- 
+	object_call(REF, getComponentOrientation, [], OUT).
 
 j_check_box_menu_item_get_graphics(REF, OUT) :- 
 	object_call(REF, getGraphics, [], OUT).

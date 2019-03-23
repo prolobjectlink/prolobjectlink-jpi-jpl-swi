@@ -475,20 +475,20 @@ j_frame_is_preferred_size_set(REF, OUT) :-
 j_frame_mouse_exit(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseExit, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-j_frame_create_image(REF, ARG0, OUT) :- 
-	object_call(REF, createImage, '.'(ARG0, []), OUT).
-
 j_frame_key_down(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, keyDown, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+j_frame_create_image(REF, ARG0, OUT) :- 
+	object_call(REF, createImage, '.'(ARG0, []), OUT).
 
 j_frame_create_image(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, createImage, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-j_frame_get_input_context(REF, OUT) :- 
-	object_call(REF, getInputContext, [], OUT).
-
 j_frame_set_location(REF, ARG0, ARG1) :- 
 	object_call(REF, setLocation, '.'(ARG0, '.'(ARG1, [])), _).
+
+j_frame_get_input_context(REF, OUT) :- 
+	object_call(REF, getInputContext, [], OUT).
 
 j_frame_set_location(REF, ARG0) :- 
 	object_call(REF, setLocation, '.'(ARG0, []), _).
@@ -691,11 +691,11 @@ j_frame_get_component_listeners(REF, OUT) :-
 j_frame_get_component_count(REF, OUT) :- 
 	object_call(REF, getComponentCount, [], OUT).
 
-j_frame_enable_input_methods(REF, ARG0) :- 
-	object_call(REF, enableInputMethods, '.'(ARG0, []), _).
-
 j_frame_is_lightweight(REF, OUT) :- 
 	object_call(REF, isLightweight, [], OUT).
+
+j_frame_enable_input_methods(REF, ARG0) :- 
+	object_call(REF, enableInputMethods, '.'(ARG0, []), _).
 
 j_frame_set_content_pane(REF, ARG0) :- 
 	object_call(REF, setContentPane, '.'(ARG0, []), _).
@@ -763,11 +763,11 @@ j_frame_wait(REF, ARG0) :-
 j_frame_wait(REF) :- 
 	object_call(REF, wait, [], _).
 
-j_frame_add_component_listener(REF, ARG0) :- 
-	object_call(REF, addComponentListener, '.'(ARG0, []), _).
-
 j_frame_mouse_drag(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseDrag, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+j_frame_add_component_listener(REF, ARG0) :- 
+	object_call(REF, addComponentListener, '.'(ARG0, []), _).
 
 j_frame_find_component_at(REF, ARG0, OUT) :- 
 	object_call(REF, findComponentAt, '.'(ARG0, []), OUT).
@@ -781,11 +781,11 @@ j_frame_contains(REF, ARG0, OUT) :-
 j_frame_contains(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, contains, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-j_frame_action(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, action, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 j_frame_is_visible(REF, OUT) :- 
 	object_call(REF, isVisible, [], OUT).
+
+j_frame_action(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, action, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 j_frame_add_notify(REF) :- 
 	object_call(REF, addNotify, [], _).
@@ -841,11 +841,11 @@ j_frame_get_minimum_size(REF, OUT) :-
 j_frame_print_components(REF, ARG0) :- 
 	object_call(REF, printComponents, '.'(ARG0, []), _).
 
-j_frame_get_component_orientation(REF, OUT) :- 
-	object_call(REF, getComponentOrientation, [], OUT).
-
 j_frame_set_preferred_size(REF, ARG0) :- 
 	object_call(REF, setPreferredSize, '.'(ARG0, []), _).
+
+j_frame_get_component_orientation(REF, OUT) :- 
+	object_call(REF, getComponentOrientation, [], OUT).
 
 j_frame_is_focusable_window(REF, OUT) :- 
 	object_call(REF, isFocusableWindow, [], OUT).
@@ -892,11 +892,11 @@ j_frame_get_focus_owner(REF, OUT) :-
 j_frame_pack(REF) :- 
 	object_call(REF, pack, [], _).
 
-j_frame_get_hierarchy_listeners(REF, OUT) :- 
-	object_call(REF, getHierarchyListeners, [], OUT).
-
 j_frame_is_focusable(REF, OUT) :- 
 	object_call(REF, isFocusable, [], OUT).
+
+j_frame_get_hierarchy_listeners(REF, OUT) :- 
+	object_call(REF, getHierarchyListeners, [], OUT).
 
 j_frame_get_property_change_listeners(REF, ARG0, OUT) :- 
 	object_call(REF, getPropertyChangeListeners, '.'(ARG0, []), OUT).
@@ -1090,11 +1090,11 @@ j_frame_is_focus_traversable(REF, OUT) :-
 j_frame_remove_property_change_listener(REF, ARG0) :- 
 	object_call(REF, removePropertyChangeListener, '.'(ARG0, []), _).
 
-j_frame_get_hierarchy_bounds_listeners(REF, OUT) :- 
-	object_call(REF, getHierarchyBoundsListeners, [], OUT).
-
 j_frame_transfer_focus_backward(REF) :- 
 	object_call(REF, transferFocusBackward, [], _).
+
+j_frame_get_hierarchy_bounds_listeners(REF, OUT) :- 
+	object_call(REF, getHierarchyBoundsListeners, [], OUT).
 
 j_frame_mouse_enter(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseEnter, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).

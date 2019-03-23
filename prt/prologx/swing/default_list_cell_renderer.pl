@@ -319,11 +319,11 @@ default_list_cell_renderer_get_popup_location(REF, ARG0, OUT) :-
 default_list_cell_renderer_size(REF, OUT) :- 
 	object_call(REF, size, [], OUT).
 
-default_list_cell_renderer_bounds(REF, OUT) :- 
-	object_call(REF, bounds, [], OUT).
-
 default_list_cell_renderer_prepare_image(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_call(REF, prepareImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+
+default_list_cell_renderer_bounds(REF, OUT) :- 
+	object_call(REF, bounds, [], OUT).
 
 default_list_cell_renderer_mouse_down(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseDown, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
@@ -340,11 +340,11 @@ default_list_cell_renderer_minimum_size(REF, OUT) :-
 default_list_cell_renderer_get_ancestor_listeners(REF, OUT) :- 
 	object_call(REF, getAncestorListeners, [], OUT).
 
-default_list_cell_renderer_get_cursor(REF, OUT) :- 
-	object_call(REF, getCursor, [], OUT).
-
 default_list_cell_renderer_is_focus_traversable(REF, OUT) :- 
 	object_call(REF, isFocusTraversable, [], OUT).
+
+default_list_cell_renderer_get_cursor(REF, OUT) :- 
+	object_call(REF, getCursor, [], OUT).
 
 default_list_cell_renderer_get_component_at(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, getComponentAt, '.'(ARG0, '.'(ARG1, [])), OUT).
@@ -946,11 +946,11 @@ default_list_cell_renderer_is_painting_tile(REF, OUT) :-
 default_list_cell_renderer_get_text(REF, OUT) :- 
 	object_call(REF, getText, [], OUT).
 
-default_list_cell_renderer_get_graphics(REF, OUT) :- 
-	object_call(REF, getGraphics, [], OUT).
-
 default_list_cell_renderer_set_foreground(REF, ARG0) :- 
 	object_call(REF, setForeground, '.'(ARG0, []), _).
+
+default_list_cell_renderer_get_graphics(REF, OUT) :- 
+	object_call(REF, getGraphics, [], OUT).
 
 default_list_cell_renderer_get_font(REF, OUT) :- 
 	object_call(REF, getFont, [], OUT).
@@ -1063,11 +1063,11 @@ default_list_cell_renderer_get_input_verifier(REF, OUT) :-
 default_list_cell_renderer_is_font_set(REF, OUT) :- 
 	object_call(REF, isFontSet, [], OUT).
 
-default_list_cell_renderer_get_hierarchy_bounds_listeners(REF, OUT) :- 
-	object_call(REF, getHierarchyBoundsListeners, [], OUT).
-
 default_list_cell_renderer_get_mouse_motion_listeners(REF, OUT) :- 
 	object_call(REF, getMouseMotionListeners, [], OUT).
+
+default_list_cell_renderer_get_hierarchy_bounds_listeners(REF, OUT) :- 
+	object_call(REF, getHierarchyBoundsListeners, [], OUT).
 
 default_list_cell_renderer_revalidate(REF) :- 
 	object_call(REF, revalidate, [], _).

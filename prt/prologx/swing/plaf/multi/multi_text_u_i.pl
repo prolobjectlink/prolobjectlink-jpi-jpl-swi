@@ -85,11 +85,11 @@ multi_text_u_i_wait(REF) :-
 multi_text_u_i_model_to_view(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, modelToView, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-multi_text_u_i_uninstall_u_i(REF, ARG0) :- 
-	object_call(REF, uninstallUI, '.'(ARG0, []), _).
-
 multi_text_u_i_model_to_view(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, modelToView, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+multi_text_u_i_uninstall_u_i(REF, ARG0) :- 
+	object_call(REF, uninstallUI, '.'(ARG0, []), _).
 
 multi_text_u_i_contains(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, contains, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).

@@ -76,11 +76,11 @@ utilities_get_paragraph_element(REF, ARG0, ARG1, OUT) :-
 utilities_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-utilities_get_position_below(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, getPositionBelow, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
 utilities_get_break_location(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, OUT) :- 
 	object_call(REF, getBreakLocation, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), OUT).
+
+utilities_get_position_below(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, getPositionBelow, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
 utilities_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).

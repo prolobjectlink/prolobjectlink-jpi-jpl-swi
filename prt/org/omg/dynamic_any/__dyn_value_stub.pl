@@ -91,11 +91,11 @@
 '__dyn_value_stub_type'(REF, OUT) :- 
 	object_call(REF, type, [], OUT).
 
-'__dyn_value_stub_insert_dyn_any'(REF, ARG0) :- 
-	object_call(REF, insert_dyn_any, '.'(ARG0, []), _).
-
 '__dyn_value_stub_insert_double'(REF, ARG0) :- 
 	object_call(REF, insert_double, '.'(ARG0, []), _).
+
+'__dyn_value_stub_insert_dyn_any'(REF, ARG0) :- 
+	object_call(REF, insert_dyn_any, '.'(ARG0, []), _).
 
 '__dyn_value_stub__invoke'(REF, ARG0, OUT) :- 
 	object_call(REF, '_invoke', '.'(ARG0, []), OUT).
@@ -124,14 +124,14 @@
 '__dyn_value_stub_equal'(REF, ARG0, OUT) :- 
 	object_call(REF, equal, '.'(ARG0, []), OUT).
 
-'__dyn_value_stub_is_null'(REF, OUT) :- 
-	object_call(REF, is_null, [], OUT).
-
 '__dyn_value_stub_insert_longlong'(REF, ARG0) :- 
 	object_call(REF, insert_longlong, '.'(ARG0, []), _).
 
 '__dyn_value_stub_current_component'(REF, OUT) :- 
 	object_call(REF, current_component, [], OUT).
+
+'__dyn_value_stub_is_null'(REF, OUT) :- 
+	object_call(REF, is_null, [], OUT).
 
 '__dyn_value_stub__orb'(REF, OUT) :- 
 	object_call(REF, '_orb', [], OUT).
@@ -181,11 +181,11 @@
 '__dyn_value_stub_get_boolean'(REF, OUT) :- 
 	object_call(REF, get_boolean, [], OUT).
 
-'__dyn_value_stub_set_to_value'(REF) :- 
-	object_call(REF, set_to_value, [], _).
-
 '__dyn_value_stub_insert_typecode'(REF, ARG0) :- 
 	object_call(REF, insert_typecode, '.'(ARG0, []), _).
+
+'__dyn_value_stub_set_to_value'(REF) :- 
+	object_call(REF, set_to_value, [], _).
 
 '__dyn_value_stub__is_a'(REF, ARG0, OUT) :- 
 	object_call(REF, '_is_a', '.'(ARG0, []), OUT).
@@ -205,11 +205,11 @@
 '__dyn_value_stub_get_class'(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-'__dyn_value_stub_get_dyn_any'(REF, OUT) :- 
-	object_call(REF, get_dyn_any, [], OUT).
-
 '__dyn_value_stub_insert_boolean'(REF, ARG0) :- 
 	object_call(REF, insert_boolean, '.'(ARG0, []), _).
+
+'__dyn_value_stub_get_dyn_any'(REF, OUT) :- 
+	object_call(REF, get_dyn_any, [], OUT).
 
 '__dyn_value_stub_set_to_null'(REF) :- 
 	object_call(REF, set_to_null, [], _).
@@ -247,11 +247,11 @@
 '__dyn_value_stub_insert_string'(REF, ARG0) :- 
 	object_call(REF, insert_string, '.'(ARG0, []), _).
 
-'__dyn_value_stub_set_members_as_dyn_any'(REF, ARG0) :- 
-	object_call(REF, set_members_as_dyn_any, '.'(ARG0, []), _).
-
 '__dyn_value_stub_current_member_kind'(REF, OUT) :- 
 	object_call(REF, current_member_kind, [], OUT).
+
+'__dyn_value_stub_set_members_as_dyn_any'(REF, ARG0) :- 
+	object_call(REF, set_members_as_dyn_any, '.'(ARG0, []), _).
 
 '__dyn_value_stub__ids'(REF, OUT) :- 
 	object_call(REF, '_ids', [], OUT).

@@ -121,11 +121,11 @@ j_desktop_pane_is_painting_for_print(REF, OUT) :-
 j_desktop_pane_create_volatile_image(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, createVolatileImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-j_desktop_pane_get_drop_target(REF, OUT) :- 
-	object_call(REF, getDropTarget, [], OUT).
-
 j_desktop_pane_remove_mouse_wheel_listener(REF, ARG0) :- 
 	object_call(REF, removeMouseWheelListener, '.'(ARG0, []), _).
+
+j_desktop_pane_get_drop_target(REF, OUT) :- 
+	object_call(REF, getDropTarget, [], OUT).
 
 j_desktop_pane_get_verify_input_when_focus_target(REF, OUT) :- 
 	object_call(REF, getVerifyInputWhenFocusTarget, [], OUT).
@@ -586,11 +586,11 @@ j_desktop_pane_resize(REF, ARG0) :-
 j_desktop_pane_get_u_i_class_i_d(REF, OUT) :- 
 	object_call(REF, getUIClassID, [], OUT).
 
-j_desktop_pane_add_input_method_listener(REF, ARG0) :- 
-	object_call(REF, addInputMethodListener, '.'(ARG0, []), _).
-
 j_desktop_pane_show(REF) :- 
 	object_call(REF, show, [], _).
+
+j_desktop_pane_add_input_method_listener(REF, ARG0) :- 
+	object_call(REF, addInputMethodListener, '.'(ARG0, []), _).
 
 j_desktop_pane_set_visible(REF, ARG0) :- 
 	object_call(REF, setVisible, '.'(ARG0, []), _).
@@ -721,11 +721,11 @@ j_desktop_pane_get_mouse_listeners(REF, OUT) :-
 j_desktop_pane_transfer_focus_backward(REF) :- 
 	object_call(REF, transferFocusBackward, [], _).
 
-j_desktop_pane_get_cursor(REF, OUT) :- 
-	object_call(REF, getCursor, [], OUT).
-
 j_desktop_pane_prepare_image(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_call(REF, prepareImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+
+j_desktop_pane_get_cursor(REF, OUT) :- 
+	object_call(REF, getCursor, [], OUT).
 
 j_desktop_pane_get_debug_graphics_options(REF, OUT) :- 
 	object_call(REF, getDebugGraphicsOptions, [], OUT).
@@ -814,14 +814,14 @@ j_desktop_pane_contains(REF, ARG0, ARG1, OUT) :-
 j_desktop_pane_get_input_map(REF, OUT) :- 
 	object_call(REF, getInputMap, [], OUT).
 
+j_desktop_pane_set_cursor(REF, ARG0) :- 
+	object_call(REF, setCursor, '.'(ARG0, []), _).
+
 j_desktop_pane_get_toolkit(REF, OUT) :- 
 	object_call(REF, getToolkit, [], OUT).
 
 j_desktop_pane_get_color_model(REF, OUT) :- 
 	object_call(REF, getColorModel, [], OUT).
-
-j_desktop_pane_set_cursor(REF, ARG0) :- 
-	object_call(REF, setCursor, '.'(ARG0, []), _).
 
 j_desktop_pane_set_minimum_size(REF, ARG0) :- 
 	object_call(REF, setMinimumSize, '.'(ARG0, []), _).
@@ -895,11 +895,11 @@ j_desktop_pane_get_input_verifier(REF, OUT) :-
 j_desktop_pane_layout(REF) :- 
 	object_call(REF, layout, [], _).
 
-j_desktop_pane_get_focus_cycle_root_ancestor(REF, OUT) :- 
-	object_call(REF, getFocusCycleRootAncestor, [], OUT).
-
 j_desktop_pane_remove_component_listener(REF, ARG0) :- 
 	object_call(REF, removeComponentListener, '.'(ARG0, []), _).
+
+j_desktop_pane_get_focus_cycle_root_ancestor(REF, OUT) :- 
+	object_call(REF, getFocusCycleRootAncestor, [], OUT).
 
 j_desktop_pane_set_input_verifier(REF, ARG0) :- 
 	object_call(REF, setInputVerifier, '.'(ARG0, []), _).
@@ -949,11 +949,11 @@ j_desktop_pane_set_double_buffered(REF, ARG0) :-
 j_desktop_pane_get_hierarchy_bounds_listeners(REF, OUT) :- 
 	object_call(REF, getHierarchyBoundsListeners, [], OUT).
 
-j_desktop_pane_get_component_orientation(REF, OUT) :- 
-	object_call(REF, getComponentOrientation, [], OUT).
-
 j_desktop_pane_is_displayable(REF, OUT) :- 
 	object_call(REF, isDisplayable, [], OUT).
+
+j_desktop_pane_get_component_orientation(REF, OUT) :- 
+	object_call(REF, getComponentOrientation, [], OUT).
 
 j_desktop_pane_get_baseline_resize_behavior(REF, OUT) :- 
 	object_call(REF, getBaselineResizeBehavior, [], OUT).

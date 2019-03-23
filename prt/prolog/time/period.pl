@@ -97,14 +97,14 @@ period_wait(REF) :-
 period_wait(REF, ARG0) :- 
 	object_call(REF, wait, '.'(ARG0, []), _).
 
-period_multiplied_by(REF, ARG0, OUT) :- 
-	object_call(REF, multipliedBy, '.'(ARG0, []), OUT).
-
-period_multiplied_by(REF, ARG0, OUT) :- 
-	object_call(REF, multipliedBy, '.'(ARG0, []), OUT).
-
 period_of_months(REF, ARG0, OUT) :- 
 	object_call(REF, ofMonths, '.'(ARG0, []), OUT).
+
+period_multiplied_by(REF, ARG0, OUT) :- 
+	object_call(REF, multipliedBy, '.'(ARG0, []), OUT).
+
+period_multiplied_by(REF, ARG0, OUT) :- 
+	object_call(REF, multipliedBy, '.'(ARG0, []), OUT).
 
 period_get_units(REF, OUT) :- 
 	object_call(REF, getUnits, [], OUT).

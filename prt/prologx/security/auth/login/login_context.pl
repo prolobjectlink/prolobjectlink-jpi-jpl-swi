@@ -40,11 +40,11 @@ login_context(ARG0, OUT) :-
 login_context_notify(REF) :- 
 	object_call(REF, notify, [], _).
 
-login_context_login(REF) :- 
-	object_call(REF, login, [], _).
-
 login_context_get_subject(REF, OUT) :- 
 	object_call(REF, getSubject, [], OUT).
+
+login_context_login(REF) :- 
+	object_call(REF, login, [], _).
 
 login_context_wait(REF) :- 
 	object_call(REF, wait, [], _).

@@ -31,11 +31,11 @@ message_format(ARG0, OUT) :-
 message_format_set_formats(REF, ARG0) :- 
 	object_call(REF, setFormats, '.'(ARG0, []), _).
 
-message_format_set_locale(REF, ARG0) :- 
-	object_call(REF, setLocale, '.'(ARG0, []), _).
-
 message_format_apply_pattern(REF, ARG0) :- 
 	object_call(REF, applyPattern, '.'(ARG0, []), _).
+
+message_format_set_locale(REF, ARG0) :- 
+	object_call(REF, setLocale, '.'(ARG0, []), _).
 
 message_format_notify_all(REF) :- 
 	object_call(REF, notifyAll, [], _).

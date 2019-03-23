@@ -85,11 +85,11 @@ multi_separator_u_i_get_maximum_size(REF, ARG0, OUT) :-
 multi_separator_u_i_get_preferred_size(REF, ARG0, OUT) :- 
 	object_call(REF, getPreferredSize, '.'(ARG0, []), OUT).
 
-multi_separator_u_i_install_u_i(REF, ARG0) :- 
-	object_call(REF, installUI, '.'(ARG0, []), _).
-
 multi_separator_u_i_create_u_i(REF, ARG0, OUT) :- 
 	object_call(REF, createUI, '.'(ARG0, []), OUT).
+
+multi_separator_u_i_install_u_i(REF, ARG0) :- 
+	object_call(REF, installUI, '.'(ARG0, []), _).
 
 multi_separator_u_i_notify(REF) :- 
 	object_call(REF, notify, [], _).

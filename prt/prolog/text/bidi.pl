@@ -49,11 +49,11 @@ bidi_wait(REF, ARG0, ARG1) :-
 bidi_wait(REF, ARG0) :- 
 	object_call(REF, wait, '.'(ARG0, []), _).
 
-bidi_create_line_bidi(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, createLineBidi, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 bidi_is_left_to_right(REF, OUT) :- 
 	object_call(REF, isLeftToRight, [], OUT).
+
+bidi_create_line_bidi(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, createLineBidi, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 bidi_wait(REF) :- 
 	object_call(REF, wait, [], _).

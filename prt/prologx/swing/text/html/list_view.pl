@@ -202,11 +202,11 @@ list_view_get_element(REF, OUT) :-
 list_view_changed_update(REF, ARG0, ARG1, ARG2) :- 
 	object_call(REF, changedUpdate, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
 
-list_view_get_tool_tip_text(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, getToolTipText, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
 list_view_get_view_factory(REF, OUT) :- 
 	object_call(REF, getViewFactory, [], OUT).
+
+list_view_get_tool_tip_text(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, getToolTipText, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
 list_view_paint(REF, ARG0, ARG1) :- 
 	object_call(REF, paint, '.'(ARG0, '.'(ARG1, [])), _).

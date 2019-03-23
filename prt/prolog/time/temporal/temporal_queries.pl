@@ -34,11 +34,11 @@ temporal_queries_local_time(REF, OUT) :-
 temporal_queries_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-temporal_queries_zone_id(REF, OUT) :- 
-	object_call(REF, zoneId, [], OUT).
-
 temporal_queries_precision(REF, OUT) :- 
 	object_call(REF, precision, [], OUT).
+
+temporal_queries_zone_id(REF, OUT) :- 
+	object_call(REF, zoneId, [], OUT).
 
 temporal_queries_notify_all(REF) :- 
 	object_call(REF, notifyAll, [], _).

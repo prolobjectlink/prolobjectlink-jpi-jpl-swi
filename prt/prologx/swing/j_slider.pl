@@ -451,11 +451,11 @@ j_slider_is_opaque(REF, OUT) :-
 j_slider_get_root_pane(REF, OUT) :- 
 	object_call(REF, getRootPane, [], OUT).
 
-j_slider_get_drop_target(REF, OUT) :- 
-	object_call(REF, getDropTarget, [], OUT).
-
 j_slider_remove_hierarchy_bounds_listener(REF, ARG0) :- 
 	object_call(REF, removeHierarchyBoundsListener, '.'(ARG0, []), _).
+
+j_slider_get_drop_target(REF, OUT) :- 
+	object_call(REF, getDropTarget, [], OUT).
 
 j_slider_set_label_table(REF, ARG0) :- 
 	object_call(REF, setLabelTable, '.'(ARG0, []), _).
@@ -646,11 +646,11 @@ j_slider_get_minimum_size(REF, OUT) :-
 j_slider_paint_immediately(REF, ARG0) :- 
 	object_call(REF, paintImmediately, '.'(ARG0, []), _).
 
-j_slider_add_mouse_listener(REF, ARG0) :- 
-	object_call(REF, addMouseListener, '.'(ARG0, []), _).
-
 j_slider_repaint(REF) :- 
 	object_call(REF, repaint, [], _).
+
+j_slider_add_mouse_listener(REF, ARG0) :- 
+	object_call(REF, addMouseListener, '.'(ARG0, []), _).
 
 j_slider_set_snap_to_ticks(REF, ARG0) :- 
 	object_call(REF, setSnapToTicks, '.'(ARG0, []), _).
@@ -961,11 +961,11 @@ j_slider_get_extent(REF, OUT) :-
 j_slider_get_property_change_listeners(REF, ARG0, OUT) :- 
 	object_call(REF, getPropertyChangeListeners, '.'(ARG0, []), OUT).
 
-j_slider_get_input_context(REF, OUT) :- 
-	object_call(REF, getInputContext, [], OUT).
-
 j_slider_get_property_change_listeners(REF, OUT) :- 
 	object_call(REF, getPropertyChangeListeners, [], OUT).
+
+j_slider_get_input_context(REF, OUT) :- 
+	object_call(REF, getInputContext, [], OUT).
 
 j_slider_get_next_focusable_component(REF, OUT) :- 
 	object_call(REF, getNextFocusableComponent, [], OUT).
@@ -1003,11 +1003,11 @@ j_slider_insets(REF, OUT) :-
 j_slider_get_u_i_class_i_d(REF, OUT) :- 
 	object_call(REF, getUIClassID, [], OUT).
 
-j_slider_get_hierarchy_listeners(REF, OUT) :- 
-	object_call(REF, getHierarchyListeners, [], OUT).
-
 j_slider_remove_component_listener(REF, ARG0) :- 
 	object_call(REF, removeComponentListener, '.'(ARG0, []), _).
+
+j_slider_get_hierarchy_listeners(REF, OUT) :- 
+	object_call(REF, getHierarchyListeners, [], OUT).
 
 j_slider_is_focus_traversable(REF, OUT) :- 
 	object_call(REF, isFocusTraversable, [], OUT).

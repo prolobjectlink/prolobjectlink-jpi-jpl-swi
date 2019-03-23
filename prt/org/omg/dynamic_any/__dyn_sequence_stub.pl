@@ -199,11 +199,11 @@
 '__dyn_sequence_stub_destroy'(REF) :- 
 	object_call(REF, destroy, [], _).
 
-'__dyn_sequence_stub_set_elements_as_dyn_any'(REF, ARG0) :- 
-	object_call(REF, set_elements_as_dyn_any, '.'(ARG0, []), _).
-
 '__dyn_sequence_stub_insert_any'(REF, ARG0) :- 
 	object_call(REF, insert_any, '.'(ARG0, []), _).
+
+'__dyn_sequence_stub_set_elements_as_dyn_any'(REF, ARG0) :- 
+	object_call(REF, set_elements_as_dyn_any, '.'(ARG0, []), _).
 
 '__dyn_sequence_stub__is_a'(REF, ARG0, OUT) :- 
 	object_call(REF, '_is_a', '.'(ARG0, []), OUT).

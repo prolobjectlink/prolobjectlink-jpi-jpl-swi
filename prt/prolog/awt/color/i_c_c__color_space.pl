@@ -169,11 +169,11 @@ i_c_c__color_space_equals(REF, ARG0, OUT) :-
 i_c_c__color_space_get_instance(REF, ARG0, OUT) :- 
 	object_call(REF, getInstance, '.'(ARG0, []), OUT).
 
-i_c_c__color_space_to_r_g_b(REF, ARG0, OUT) :- 
-	object_call(REF, toRGB, '.'(ARG0, []), OUT).
-
 i_c_c__color_space_get_max_value(REF, ARG0, OUT) :- 
 	object_call(REF, getMaxValue, '.'(ARG0, []), OUT).
+
+i_c_c__color_space_to_r_g_b(REF, ARG0, OUT) :- 
+	object_call(REF, toRGB, '.'(ARG0, []), OUT).
 
 i_c_c__color_space_get_name(REF, ARG0, OUT) :- 
 	object_call(REF, getName, '.'(ARG0, []), OUT).

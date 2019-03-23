@@ -58,11 +58,11 @@ basic_editor_pane_u_i_paint(REF, ARG0, ARG1) :-
 basic_editor_pane_u_i_get_tool_tip_text(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, getToolTipText, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-basic_editor_pane_u_i_get_baseline(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, getBaseline, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
 basic_editor_pane_u_i_get_accessible_children_count(REF, ARG0, OUT) :- 
 	object_call(REF, getAccessibleChildrenCount, '.'(ARG0, []), OUT).
+
+basic_editor_pane_u_i_get_baseline(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, getBaseline, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
 basic_editor_pane_u_i_damage_range(REF, ARG0, ARG1, ARG2, ARG3, ARG4) :- 
 	object_call(REF, damageRange, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), _).

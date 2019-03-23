@@ -373,11 +373,11 @@ j_popup_menu_set_u_i(REF, ARG0) :-
 j_popup_menu_create_tool_tip(REF, OUT) :- 
 	object_call(REF, createToolTip, [], OUT).
 
-j_popup_menu_get_u_i_class_i_d(REF, OUT) :- 
-	object_call(REF, getUIClassID, [], OUT).
-
 j_popup_menu_set_default_light_weight_popup_enabled(REF, ARG0) :- 
 	object_call(REF, setDefaultLightWeightPopupEnabled, '.'(ARG0, []), _).
+
+j_popup_menu_get_u_i_class_i_d(REF, OUT) :- 
+	object_call(REF, getUIClassID, [], OUT).
 
 j_popup_menu_set_component_z_order(REF, ARG0, ARG1) :- 
 	object_call(REF, setComponentZOrder, '.'(ARG0, '.'(ARG1, [])), _).
@@ -400,11 +400,11 @@ j_popup_menu_revalidate(REF) :-
 j_popup_menu_get_size(REF, OUT) :- 
 	object_call(REF, getSize, [], OUT).
 
-j_popup_menu_check_image(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, checkImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
 j_popup_menu_is_focusable(REF, OUT) :- 
 	object_call(REF, isFocusable, [], OUT).
+
+j_popup_menu_check_image(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_call(REF, checkImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
 j_popup_menu_location(REF, OUT) :- 
 	object_call(REF, location, [], OUT).
@@ -418,11 +418,11 @@ j_popup_menu_add_ancestor_listener(REF, ARG0) :-
 j_popup_menu_get_component_at(REF, ARG0, OUT) :- 
 	object_call(REF, getComponentAt, '.'(ARG0, []), OUT).
 
-j_popup_menu_get_hierarchy_listeners(REF, OUT) :- 
-	object_call(REF, getHierarchyListeners, [], OUT).
-
 j_popup_menu_get_location_on_screen(REF, OUT) :- 
 	object_call(REF, getLocationOnScreen, [], OUT).
+
+j_popup_menu_get_hierarchy_listeners(REF, OUT) :- 
+	object_call(REF, getHierarchyListeners, [], OUT).
 
 j_popup_menu_contains(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, contains, '.'(ARG0, '.'(ARG1, [])), OUT).
@@ -493,11 +493,11 @@ j_popup_menu_got_focus(REF, ARG0, ARG1, OUT) :-
 j_popup_menu_request_focus_in_window(REF, OUT) :- 
 	object_call(REF, requestFocusInWindow, [], OUT).
 
-j_popup_menu_get_ignore_repaint(REF, OUT) :- 
-	object_call(REF, getIgnoreRepaint, [], OUT).
-
 j_popup_menu_transfer_focus_up_cycle(REF) :- 
 	object_call(REF, transferFocusUpCycle, [], _).
+
+j_popup_menu_get_ignore_repaint(REF, OUT) :- 
+	object_call(REF, getIgnoreRepaint, [], OUT).
 
 j_popup_menu_get_selection_model(REF, OUT) :- 
 	object_call(REF, getSelectionModel, [], OUT).
@@ -514,11 +514,11 @@ j_popup_menu_add_container_listener(REF, ARG0) :-
 j_popup_menu_set_tool_tip_text(REF, ARG0) :- 
 	object_call(REF, setToolTipText, '.'(ARG0, []), _).
 
-j_popup_menu_get_toolkit(REF, OUT) :- 
-	object_call(REF, getToolkit, [], OUT).
-
 j_popup_menu_is_displayable(REF, OUT) :- 
 	object_call(REF, isDisplayable, [], OUT).
+
+j_popup_menu_get_toolkit(REF, OUT) :- 
+	object_call(REF, getToolkit, [], OUT).
 
 j_popup_menu_get_component_index(REF, ARG0, OUT) :- 
 	object_call(REF, getComponentIndex, '.'(ARG0, []), OUT).
@@ -571,11 +571,11 @@ j_popup_menu_get_popup_menu_listeners(REF, OUT) :-
 j_popup_menu_get_autoscrolls(REF, OUT) :- 
 	object_call(REF, getAutoscrolls, [], OUT).
 
-j_popup_menu_create_volatile_image(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, createVolatileImage, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 j_popup_menu_transfer_focus(REF) :- 
 	object_call(REF, transferFocus, [], _).
+
+j_popup_menu_create_volatile_image(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, createVolatileImage, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 j_popup_menu_set_alignment_y(REF, ARG0) :- 
 	object_call(REF, setAlignmentY, '.'(ARG0, []), _).
@@ -1042,11 +1042,11 @@ j_popup_menu_are_focus_traversal_keys_set(REF, ARG0, OUT) :-
 j_popup_menu_set_focus_cycle_root(REF, ARG0) :- 
 	object_call(REF, setFocusCycleRoot, '.'(ARG0, []), _).
 
-j_popup_menu_add_mouse_listener(REF, ARG0) :- 
-	object_call(REF, addMouseListener, '.'(ARG0, []), _).
-
 j_popup_menu_get_property_change_listeners(REF, OUT) :- 
 	object_call(REF, getPropertyChangeListeners, [], OUT).
+
+j_popup_menu_add_mouse_listener(REF, ARG0) :- 
+	object_call(REF, addMouseListener, '.'(ARG0, []), _).
 
 j_popup_menu_is_visible(REF, OUT) :- 
 	object_call(REF, isVisible, [], OUT).
@@ -1102,11 +1102,11 @@ j_popup_menu_disable(REF) :-
 j_popup_menu_add_vetoable_change_listener(REF, ARG0) :- 
 	object_call(REF, addVetoableChangeListener, '.'(ARG0, []), _).
 
-j_popup_menu_get_font_metrics(REF, ARG0, OUT) :- 
-	object_call(REF, getFontMetrics, '.'(ARG0, []), OUT).
-
 j_popup_menu_set_background(REF, ARG0) :- 
 	object_call(REF, setBackground, '.'(ARG0, []), _).
+
+j_popup_menu_get_font_metrics(REF, ARG0, OUT) :- 
+	object_call(REF, getFontMetrics, '.'(ARG0, []), OUT).
 
 j_popup_menu_get_next_focusable_component(REF, OUT) :- 
 	object_call(REF, getNextFocusableComponent, [], OUT).

@@ -127,20 +127,20 @@ hijrah_date_plus(REF, ARG0, ARG1, OUT) :-
 hijrah_date_plus(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, plus, '.'(ARG0, '.'(ARG1, [])), OUT).
 
+hijrah_date_plus(REF, ARG0, OUT) :- 
+	object_call(REF, plus, '.'(ARG0, []), OUT).
+
+hijrah_date_plus(REF, ARG0, OUT) :- 
+	object_call(REF, plus, '.'(ARG0, []), OUT).
+
+hijrah_date_plus(REF, ARG0, OUT) :- 
+	object_call(REF, plus, '.'(ARG0, []), OUT).
+
 hijrah_date_now(REF, ARG0, OUT) :- 
 	object_call(REF, now, '.'(ARG0, []), OUT).
 
 hijrah_date_now(REF, ARG0, OUT) :- 
 	object_call(REF, now, '.'(ARG0, []), OUT).
-
-hijrah_date_plus(REF, ARG0, OUT) :- 
-	object_call(REF, plus, '.'(ARG0, []), OUT).
-
-hijrah_date_plus(REF, ARG0, OUT) :- 
-	object_call(REF, plus, '.'(ARG0, []), OUT).
-
-hijrah_date_plus(REF, ARG0, OUT) :- 
-	object_call(REF, plus, '.'(ARG0, []), OUT).
 
 hijrah_date_query(REF, ARG0, OUT) :- 
 	object_call(REF, query, '.'(ARG0, []), OUT).

@@ -34,11 +34,11 @@ color_chooser_component_factory_wait(REF) :-
 color_chooser_component_factory_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-color_chooser_component_factory_get_default_chooser_panels(REF, OUT) :- 
-	object_call(REF, getDefaultChooserPanels, [], OUT).
-
 color_chooser_component_factory_get_preview_panel(REF, OUT) :- 
 	object_call(REF, getPreviewPanel, [], OUT).
+
+color_chooser_component_factory_get_default_chooser_panels(REF, OUT) :- 
+	object_call(REF, getDefaultChooserPanels, [], OUT).
 
 color_chooser_component_factory_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).

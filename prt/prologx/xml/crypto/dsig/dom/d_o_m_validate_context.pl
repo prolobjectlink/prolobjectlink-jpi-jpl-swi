@@ -70,11 +70,11 @@ d_o_m_validate_context_set_key_selector(REF, ARG0) :-
 d_o_m_validate_context_get_property(REF, ARG0, OUT) :- 
 	object_call(REF, getProperty, '.'(ARG0, []), OUT).
 
-d_o_m_validate_context_get_base_u_r_i(REF, OUT) :- 
-	object_call(REF, getBaseURI, [], OUT).
-
 d_o_m_validate_context_get_u_r_i_dereferencer(REF, OUT) :- 
 	object_call(REF, getURIDereferencer, [], OUT).
+
+d_o_m_validate_context_get_base_u_r_i(REF, OUT) :- 
+	object_call(REF, getBaseURI, [], OUT).
 
 d_o_m_validate_context_wait(REF, ARG0) :- 
 	object_call(REF, wait, '.'(ARG0, []), _).

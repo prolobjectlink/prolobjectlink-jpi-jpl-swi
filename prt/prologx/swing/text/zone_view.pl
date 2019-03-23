@@ -109,11 +109,11 @@ zone_view_get_minimum_span(REF, ARG0, OUT) :-
 zone_view_get_height(REF, OUT) :- 
 	object_call(REF, getHeight, [], OUT).
 
-zone_view_get_tool_tip_text(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, getToolTipText, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
 zone_view_get_start_offset(REF, OUT) :- 
 	object_call(REF, getStartOffset, [], OUT).
+
+zone_view_get_tool_tip_text(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, getToolTipText, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
 zone_view_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
@@ -154,11 +154,11 @@ zone_view_remove_all(REF) :-
 zone_view_append(REF, ARG0) :- 
 	object_call(REF, append, '.'(ARG0, []), _).
 
-zone_view_model_to_view(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, modelToView, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 zone_view_get_view_factory(REF, OUT) :- 
 	object_call(REF, getViewFactory, [], OUT).
+
+zone_view_model_to_view(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, modelToView, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 zone_view_get_next_visual_position_from(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
 	object_call(REF, getNextVisualPositionFrom, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).

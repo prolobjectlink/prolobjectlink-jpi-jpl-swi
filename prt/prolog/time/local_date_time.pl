@@ -160,6 +160,15 @@ local_date_time_with_minute(REF, ARG0, OUT) :-
 local_date_time_plus_months(REF, ARG0, OUT) :- 
 	object_call(REF, plusMonths, '.'(ARG0, []), OUT).
 
+local_date_time_plus(REF, ARG0, OUT) :- 
+	object_call(REF, plus, '.'(ARG0, []), OUT).
+
+local_date_time_plus(REF, ARG0, OUT) :- 
+	object_call(REF, plus, '.'(ARG0, []), OUT).
+
+local_date_time_plus(REF, ARG0, OUT) :- 
+	object_call(REF, plus, '.'(ARG0, []), OUT).
+
 local_date_time_minus(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, minus, '.'(ARG0, '.'(ARG1, [])), OUT).
 
@@ -169,14 +178,14 @@ local_date_time_minus(REF, ARG0, ARG1, OUT) :-
 local_date_time_minus(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, minus, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-local_date_time_plus(REF, ARG0, OUT) :- 
-	object_call(REF, plus, '.'(ARG0, []), OUT).
+local_date_time_plus(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, plus, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-local_date_time_plus(REF, ARG0, OUT) :- 
-	object_call(REF, plus, '.'(ARG0, []), OUT).
+local_date_time_plus(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, plus, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-local_date_time_plus(REF, ARG0, OUT) :- 
-	object_call(REF, plus, '.'(ARG0, []), OUT).
+local_date_time_plus(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, plus, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 local_date_time_minus(REF, ARG0, OUT) :- 
 	object_call(REF, minus, '.'(ARG0, []), OUT).
@@ -189,15 +198,6 @@ local_date_time_minus(REF, ARG0, OUT) :-
 
 local_date_time_minus_nanos(REF, ARG0, OUT) :- 
 	object_call(REF, minusNanos, '.'(ARG0, []), OUT).
-
-local_date_time_plus(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, plus, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-local_date_time_plus(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, plus, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-local_date_time_plus(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, plus, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 local_date_time_minus_days(REF, ARG0, OUT) :- 
 	object_call(REF, minusDays, '.'(ARG0, []), OUT).

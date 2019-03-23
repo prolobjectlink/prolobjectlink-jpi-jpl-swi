@@ -103,11 +103,11 @@ container_add_property_change_listener(REF, ARG0) :-
 container_move(REF, ARG0, ARG1) :- 
 	object_call(REF, move, '.'(ARG0, '.'(ARG1, [])), _).
 
-container_get_hierarchy_bounds_listeners(REF, OUT) :- 
-	object_call(REF, getHierarchyBoundsListeners, [], OUT).
-
 container_image_update(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, OUT) :- 
 	object_call(REF, imageUpdate, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), OUT).
+
+container_get_hierarchy_bounds_listeners(REF, OUT) :- 
+	object_call(REF, getHierarchyBoundsListeners, [], OUT).
 
 container_transfer_focus_down_cycle(REF) :- 
 	object_call(REF, transferFocusDownCycle, [], _).
@@ -244,14 +244,14 @@ container_get_minimum_size(REF, OUT) :-
 container_location(REF, OUT) :- 
 	object_call(REF, location, [], OUT).
 
-container_get_color_model(REF, OUT) :- 
-	object_call(REF, getColorModel, [], OUT).
-
 container_is_background_set(REF, OUT) :- 
 	object_call(REF, isBackgroundSet, [], OUT).
 
 container_is_preferred_size_set(REF, OUT) :- 
 	object_call(REF, isPreferredSizeSet, [], OUT).
+
+container_get_color_model(REF, OUT) :- 
+	object_call(REF, getColorModel, [], OUT).
 
 container_get_component_orientation(REF, OUT) :- 
 	object_call(REF, getComponentOrientation, [], OUT).
@@ -625,11 +625,11 @@ container_get_hierarchy_listeners(REF, OUT) :-
 container_get_mouse_position(REF, ARG0, OUT) :- 
 	object_call(REF, getMousePosition, '.'(ARG0, []), OUT).
 
-container_get_tree_lock(REF, OUT) :- 
-	object_call(REF, getTreeLock, [], OUT).
-
 container_is_foreground_set(REF, OUT) :- 
 	object_call(REF, isForegroundSet, [], OUT).
+
+container_get_tree_lock(REF, OUT) :- 
+	object_call(REF, getTreeLock, [], OUT).
 
 container_get_component_count(REF, OUT) :- 
 	object_call(REF, getComponentCount, [], OUT).

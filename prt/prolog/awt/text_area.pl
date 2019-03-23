@@ -115,11 +115,11 @@ text_area_do_layout(REF) :-
 text_area_remove_component_listener(REF, ARG0) :- 
 	object_call(REF, removeComponentListener, '.'(ARG0, []), _).
 
-text_area_get_cursor(REF, OUT) :- 
-	object_call(REF, getCursor, [], OUT).
-
 text_area_prepare_image(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_call(REF, prepareImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+
+text_area_get_cursor(REF, OUT) :- 
+	object_call(REF, getCursor, [], OUT).
 
 text_area_set_cursor(REF, ARG0) :- 
 	object_call(REF, setCursor, '.'(ARG0, []), _).
@@ -196,11 +196,11 @@ text_area_got_focus(REF, ARG0, ARG1, OUT) :-
 text_area_validate(REF) :- 
 	object_call(REF, validate, [], _).
 
-text_area_get_component_at(REF, ARG0, OUT) :- 
-	object_call(REF, getComponentAt, '.'(ARG0, []), OUT).
-
 text_area_set_maximum_size(REF, ARG0) :- 
 	object_call(REF, setMaximumSize, '.'(ARG0, []), _).
+
+text_area_get_component_at(REF, ARG0, OUT) :- 
+	object_call(REF, getComponentAt, '.'(ARG0, []), OUT).
 
 text_area_get_component_at(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, getComponentAt, '.'(ARG0, '.'(ARG1, [])), OUT).
@@ -211,20 +211,20 @@ text_area_preferred_size(REF, OUT) :-
 text_area_enable_input_methods(REF, ARG0) :- 
 	object_call(REF, enableInputMethods, '.'(ARG0, []), _).
 
-text_area_get_font_metrics(REF, ARG0, OUT) :- 
-	object_call(REF, getFontMetrics, '.'(ARG0, []), OUT).
-
 text_area_image_update(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, OUT) :- 
 	object_call(REF, imageUpdate, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), OUT).
+
+text_area_get_font_metrics(REF, ARG0, OUT) :- 
+	object_call(REF, getFontMetrics, '.'(ARG0, []), OUT).
 
 text_area_preferred_size(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, preferredSize, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-text_area_get_focus_traversal_keys_enabled(REF, OUT) :- 
-	object_call(REF, getFocusTraversalKeysEnabled, [], OUT).
-
 text_area_get_mouse_listeners(REF, OUT) :- 
 	object_call(REF, getMouseListeners, [], OUT).
+
+text_area_get_focus_traversal_keys_enabled(REF, OUT) :- 
+	object_call(REF, getFocusTraversalKeysEnabled, [], OUT).
 
 text_area_get_location(REF, OUT) :- 
 	object_call(REF, getLocation, [], OUT).
@@ -283,11 +283,11 @@ text_area_get_height(REF, OUT) :-
 text_area_key_down(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, keyDown, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-text_area_add_hierarchy_listener(REF, ARG0) :- 
-	object_call(REF, addHierarchyListener, '.'(ARG0, []), _).
-
 text_area_remove_input_method_listener(REF, ARG0) :- 
 	object_call(REF, removeInputMethodListener, '.'(ARG0, []), _).
+
+text_area_add_hierarchy_listener(REF, ARG0) :- 
+	object_call(REF, addHierarchyListener, '.'(ARG0, []), _).
 
 text_area_get_size(REF, ARG0, OUT) :- 
 	object_call(REF, getSize, '.'(ARG0, []), OUT).
@@ -463,11 +463,11 @@ text_area_add_mouse_motion_listener(REF, ARG0) :-
 text_area_set_location(REF, ARG0) :- 
 	object_call(REF, setLocation, '.'(ARG0, []), _).
 
-text_area_add_key_listener(REF, ARG0) :- 
-	object_call(REF, addKeyListener, '.'(ARG0, []), _).
-
 text_area_set_location(REF, ARG0, ARG1) :- 
 	object_call(REF, setLocation, '.'(ARG0, '.'(ARG1, [])), _).
+
+text_area_add_key_listener(REF, ARG0) :- 
+	object_call(REF, addKeyListener, '.'(ARG0, []), _).
 
 text_area_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
 	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
@@ -631,14 +631,14 @@ text_area_remove_focus_listener(REF, ARG0) :-
 text_area_set_locale(REF, ARG0) :- 
 	object_call(REF, setLocale, '.'(ARG0, []), _).
 
+text_area_set_font(REF, ARG0) :- 
+	object_call(REF, setFont, '.'(ARG0, []), _).
+
 text_area_add_hierarchy_bounds_listener(REF, ARG0) :- 
 	object_call(REF, addHierarchyBoundsListener, '.'(ARG0, []), _).
 
 text_area_get_font(REF, OUT) :- 
 	object_call(REF, getFont, [], OUT).
-
-text_area_set_font(REF, ARG0) :- 
-	object_call(REF, setFont, '.'(ARG0, []), _).
 
 text_area_bounds(REF, OUT) :- 
 	object_call(REF, bounds, [], OUT).
@@ -655,11 +655,11 @@ text_area_get_baseline(REF, ARG0, ARG1, OUT) :-
 text_area_is_visible(REF, OUT) :- 
 	object_call(REF, isVisible, [], OUT).
 
-text_area_get_focus_cycle_root_ancestor(REF, OUT) :- 
-	object_call(REF, getFocusCycleRootAncestor, [], OUT).
-
 text_area_transfer_focus_backward(REF) :- 
 	object_call(REF, transferFocusBackward, [], _).
+
+text_area_get_focus_cycle_root_ancestor(REF, OUT) :- 
+	object_call(REF, getFocusCycleRootAncestor, [], OUT).
 
 text_area_location(REF, OUT) :- 
 	object_call(REF, location, [], OUT).
@@ -757,11 +757,11 @@ text_area_mouse_down(REF, ARG0, ARG1, ARG2, OUT) :-
 text_area_get_key_listeners(REF, OUT) :- 
 	object_call(REF, getKeyListeners, [], OUT).
 
-text_area_action(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, action, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 text_area_set_focusable(REF, ARG0) :- 
 	object_call(REF, setFocusable, '.'(ARG0, []), _).
+
+text_area_action(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, action, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 text_area_get_preferred_size(REF, OUT) :- 
 	object_call(REF, getPreferredSize, [], OUT).
@@ -802,11 +802,11 @@ text_area_hide(REF) :-
 text_area_remove_hierarchy_listener(REF, ARG0) :- 
 	object_call(REF, removeHierarchyListener, '.'(ARG0, []), _).
 
-text_area_get_input_context(REF, OUT) :- 
-	object_call(REF, getInputContext, [], OUT).
-
 text_area_mouse_drag(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseDrag, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+text_area_get_input_context(REF, OUT) :- 
+	object_call(REF, getInputContext, [], OUT).
 
 text_area_set_rows(REF, ARG0) :- 
 	object_call(REF, setRows, '.'(ARG0, []), _).

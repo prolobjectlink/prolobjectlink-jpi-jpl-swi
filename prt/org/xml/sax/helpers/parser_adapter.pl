@@ -97,11 +97,11 @@ parser_adapter_start_element(REF, ARG0, ARG1) :-
 parser_adapter_set_entity_resolver(REF, ARG0) :- 
 	object_call(REF, setEntityResolver, '.'(ARG0, []), _).
 
-parser_adapter_get_feature(REF, ARG0, OUT) :- 
-	object_call(REF, getFeature, '.'(ARG0, []), OUT).
-
 parser_adapter_get_entity_resolver(REF, OUT) :- 
 	object_call(REF, getEntityResolver, [], OUT).
+
+parser_adapter_get_feature(REF, ARG0, OUT) :- 
+	object_call(REF, getFeature, '.'(ARG0, []), OUT).
 
 parser_adapter_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).

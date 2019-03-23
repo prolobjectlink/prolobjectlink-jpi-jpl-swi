@@ -55,14 +55,14 @@ x_m_l_filter_impl_get_class(REF, OUT) :-
 x_m_l_filter_impl_get_parent(REF, OUT) :- 
 	object_call(REF, getParent, [], OUT).
 
-x_m_l_filter_impl_fatal_error(REF, ARG0) :- 
-	object_call(REF, fatalError, '.'(ARG0, []), _).
-
 x_m_l_filter_impl_get_d_t_d_handler(REF, OUT) :- 
 	object_call(REF, getDTDHandler, [], OUT).
 
 x_m_l_filter_impl_set_content_handler(REF, ARG0) :- 
 	object_call(REF, setContentHandler, '.'(ARG0, []), _).
+
+x_m_l_filter_impl_fatal_error(REF, ARG0) :- 
+	object_call(REF, fatalError, '.'(ARG0, []), _).
 
 x_m_l_filter_impl_set_document_locator(REF, ARG0) :- 
 	object_call(REF, setDocumentLocator, '.'(ARG0, []), _).
@@ -145,11 +145,11 @@ x_m_l_filter_impl_get_entity_resolver(REF, OUT) :-
 x_m_l_filter_impl_characters(REF, ARG0, ARG1, ARG2) :- 
 	object_call(REF, characters, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
 
-x_m_l_filter_impl_unparsed_entity_decl(REF, ARG0, ARG1, ARG2, ARG3) :- 
-	object_call(REF, unparsedEntityDecl, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).
-
 x_m_l_filter_impl_set_d_t_d_handler(REF, ARG0) :- 
 	object_call(REF, setDTDHandler, '.'(ARG0, []), _).
+
+x_m_l_filter_impl_unparsed_entity_decl(REF, ARG0, ARG1, ARG2, ARG3) :- 
+	object_call(REF, unparsedEntityDecl, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).
 
 x_m_l_filter_impl_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).

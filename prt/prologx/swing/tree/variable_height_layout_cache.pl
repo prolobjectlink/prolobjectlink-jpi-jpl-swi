@@ -37,11 +37,11 @@ variable_height_layout_cache_get_selection_model(REF, OUT) :-
 variable_height_layout_cache_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).
 
-variable_height_layout_cache_invalidate_path_bounds(REF, ARG0) :- 
-	object_call(REF, invalidatePathBounds, '.'(ARG0, []), _).
-
 variable_height_layout_cache_set_root_visible(REF, ARG0) :- 
 	object_call(REF, setRootVisible, '.'(ARG0, []), _).
+
+variable_height_layout_cache_invalidate_path_bounds(REF, ARG0) :- 
+	object_call(REF, invalidatePathBounds, '.'(ARG0, []), _).
 
 variable_height_layout_cache_set_expanded_state(REF, ARG0, ARG1) :- 
 	object_call(REF, setExpandedState, '.'(ARG0, '.'(ARG1, [])), _).

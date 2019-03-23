@@ -205,11 +205,11 @@ files_walk_file_tree(REF, ARG0, ARG1, ARG2, ARG3, OUT) :-
 files_hash_code(REF, OUT) :- 
 	object_call(REF, hashCode, [], OUT).
 
-files_is_writable(REF, ARG0, OUT) :- 
-	object_call(REF, isWritable, '.'(ARG0, []), OUT).
-
 files_new_byte_channel(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, newByteChannel, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+files_is_writable(REF, ARG0, OUT) :- 
+	object_call(REF, isWritable, '.'(ARG0, []), OUT).
 
 files_is_directory(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, isDirectory, '.'(ARG0, '.'(ARG1, [])), OUT).

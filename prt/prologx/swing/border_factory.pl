@@ -40,11 +40,11 @@ border_factory_wait(REF, ARG0) :-
 border_factory_create_soft_bevel_border(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
 	object_call(REF, createSoftBevelBorder, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
 
-border_factory_create_raised_soft_bevel_border(REF, OUT) :- 
-	object_call(REF, createRaisedSoftBevelBorder, [], OUT).
-
 border_factory_create_empty_border(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_call(REF, createEmptyBorder, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+
+border_factory_create_raised_soft_bevel_border(REF, OUT) :- 
+	object_call(REF, createRaisedSoftBevelBorder, [], OUT).
 
 border_factory_create_raised_bevel_border(REF, OUT) :- 
 	object_call(REF, createRaisedBevelBorder, [], OUT).

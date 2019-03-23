@@ -1069,11 +1069,11 @@ j_progress_bar_add_change_listener(REF, ARG0) :-
 j_progress_bar_is_showing(REF, OUT) :- 
 	object_call(REF, isShowing, [], OUT).
 
-j_progress_bar_action(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, action, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 j_progress_bar_get_property_change_listeners(REF, OUT) :- 
 	object_call(REF, getPropertyChangeListeners, [], OUT).
+
+j_progress_bar_action(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, action, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 j_progress_bar_get_property_change_listeners(REF, ARG0, OUT) :- 
 	object_call(REF, getPropertyChangeListeners, '.'(ARG0, []), OUT).
@@ -1096,11 +1096,11 @@ j_progress_bar_add_mouse_wheel_listener(REF, ARG0) :-
 j_progress_bar_put_client_property(REF, ARG0, ARG1) :- 
 	object_call(REF, putClientProperty, '.'(ARG0, '.'(ARG1, [])), _).
 
-j_progress_bar_dispatch_event(REF, ARG0) :- 
-	object_call(REF, dispatchEvent, '.'(ARG0, []), _).
-
 j_progress_bar_lost_focus(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, lostFocus, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+j_progress_bar_dispatch_event(REF, ARG0) :- 
+	object_call(REF, dispatchEvent, '.'(ARG0, []), _).
 
 j_progress_bar_mouse_up(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseUp, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
@@ -1156,11 +1156,11 @@ j_progress_bar_remove_all(REF) :-
 j_progress_bar_get_u_i_class_i_d(REF, OUT) :- 
 	object_call(REF, getUIClassID, [], OUT).
 
-j_progress_bar_get_graphics_configuration(REF, OUT) :- 
-	object_call(REF, getGraphicsConfiguration, [], OUT).
-
 j_progress_bar_set_bounds(REF, ARG0, ARG1, ARG2, ARG3) :- 
 	object_call(REF, setBounds, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).
+
+j_progress_bar_get_graphics_configuration(REF, OUT) :- 
+	object_call(REF, getGraphicsConfiguration, [], OUT).
 
 j_progress_bar_get_ignore_repaint(REF, OUT) :- 
 	object_call(REF, getIgnoreRepaint, [], OUT).

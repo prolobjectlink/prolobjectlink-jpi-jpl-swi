@@ -49,11 +49,11 @@ r_m_i_connector_server_to_string(REF, OUT) :-
 r_m_i_connector_server_pre_deregister(REF) :- 
 	object_call(REF, preDeregister, [], _).
 
-r_m_i_connector_server_get_connection_ids(REF, OUT) :- 
-	object_call(REF, getConnectionIds, [], OUT).
-
 r_m_i_connector_server_pre_register(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, preRegister, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+r_m_i_connector_server_get_connection_ids(REF, OUT) :- 
+	object_call(REF, getConnectionIds, [], OUT).
 
 r_m_i_connector_server_is_active(REF, OUT) :- 
 	object_call(REF, isActive, [], OUT).

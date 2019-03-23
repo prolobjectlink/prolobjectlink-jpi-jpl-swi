@@ -79,11 +79,11 @@ confirmation_callback_wait(REF, ARG0, ARG1) :-
 confirmation_callback_notify_all(REF) :- 
 	object_call(REF, notifyAll, [], _).
 
-confirmation_callback_get_options(REF, OUT) :- 
-	object_call(REF, getOptions, [], OUT).
-
 confirmation_callback_get_selected_index(REF, OUT) :- 
 	object_call(REF, getSelectedIndex, [], OUT).
+
+confirmation_callback_get_options(REF, OUT) :- 
+	object_call(REF, getOptions, [], OUT).
 
 confirmation_callback_wait(REF) :- 
 	object_call(REF, wait, [], _).

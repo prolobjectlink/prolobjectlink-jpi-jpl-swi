@@ -130,11 +130,11 @@ time_set_month(REF, ARG0) :-
 time_set_date(REF, ARG0) :- 
 	object_call(REF, setDate, '.'(ARG0, []), _).
 
-time_get_time(REF, OUT) :- 
-	object_call(REF, getTime, [], OUT).
-
 time_get_timezone_offset(REF, OUT) :- 
 	object_call(REF, getTimezoneOffset, [], OUT).
+
+time_get_time(REF, OUT) :- 
+	object_call(REF, getTime, [], OUT).
 
 time_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).

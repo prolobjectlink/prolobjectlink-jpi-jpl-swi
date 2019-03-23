@@ -157,6 +157,9 @@ multi_pixel_packed_sample_model_get_num_bands(REF, OUT) :-
 multi_pixel_packed_sample_model_get_data_bit_offset(REF, OUT) :- 
 	object_call(REF, getDataBitOffset, [], OUT).
 
+multi_pixel_packed_sample_model_create_compatible_sample_model(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, createCompatibleSampleModel, '.'(ARG0, '.'(ARG1, [])), OUT).
+
 multi_pixel_packed_sample_model_create_data_buffer(REF, OUT) :- 
 	object_call(REF, createDataBuffer, [], OUT).
 
@@ -168,9 +171,6 @@ multi_pixel_packed_sample_model_get_pixel(REF, ARG0, ARG1, ARG2, ARG3, OUT) :-
 
 multi_pixel_packed_sample_model_get_pixel(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_call(REF, getPixel, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
-multi_pixel_packed_sample_model_create_compatible_sample_model(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, createCompatibleSampleModel, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 multi_pixel_packed_sample_model_set_sample(REF, ARG0, ARG1, ARG2, ARG3, ARG4) :- 
 	object_call(REF, setSample, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), _).

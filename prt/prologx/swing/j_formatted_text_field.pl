@@ -202,11 +202,11 @@ j_formatted_text_field_get_maximum_size(REF, OUT) :-
 j_formatted_text_field_set_focus_traversal_policy_provider(REF, ARG0) :- 
 	object_call(REF, setFocusTraversalPolicyProvider, '.'(ARG0, []), _).
 
-j_formatted_text_field_get_background(REF, OUT) :- 
-	object_call(REF, getBackground, [], OUT).
-
 j_formatted_text_field_get_mouse_listeners(REF, OUT) :- 
 	object_call(REF, getMouseListeners, [], OUT).
+
+j_formatted_text_field_get_background(REF, OUT) :- 
+	object_call(REF, getBackground, [], OUT).
 
 j_formatted_text_field_is_request_focus_enabled(REF, OUT) :- 
 	object_call(REF, isRequestFocusEnabled, [], OUT).
@@ -541,14 +541,14 @@ j_formatted_text_field_lost_focus(REF, ARG0, ARG1, OUT) :-
 j_formatted_text_field_is_maximum_size_set(REF, OUT) :- 
 	object_call(REF, isMaximumSizeSet, [], OUT).
 
-j_formatted_text_field_get_hierarchy_bounds_listeners(REF, OUT) :- 
-	object_call(REF, getHierarchyBoundsListeners, [], OUT).
-
 j_formatted_text_field_prepare_image(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, prepareImage, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 j_formatted_text_field_set_focusable(REF, ARG0) :- 
 	object_call(REF, setFocusable, '.'(ARG0, []), _).
+
+j_formatted_text_field_get_hierarchy_bounds_listeners(REF, OUT) :- 
+	object_call(REF, getHierarchyBoundsListeners, [], OUT).
 
 j_formatted_text_field_set_input_verifier(REF, ARG0) :- 
 	object_call(REF, setInputVerifier, '.'(ARG0, []), _).
@@ -1177,11 +1177,11 @@ j_formatted_text_field_wait(REF, ARG0) :-
 j_formatted_text_field_set_focus_lost_behavior(REF, ARG0) :- 
 	object_call(REF, setFocusLostBehavior, '.'(ARG0, []), _).
 
-j_formatted_text_field_create_image(REF, ARG0, OUT) :- 
-	object_call(REF, createImage, '.'(ARG0, []), OUT).
-
 j_formatted_text_field_set_bounds(REF, ARG0) :- 
 	object_call(REF, setBounds, '.'(ARG0, []), _).
+
+j_formatted_text_field_create_image(REF, ARG0, OUT) :- 
+	object_call(REF, createImage, '.'(ARG0, []), OUT).
 
 j_formatted_text_field_create_image(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, createImage, '.'(ARG0, '.'(ARG1, [])), OUT).

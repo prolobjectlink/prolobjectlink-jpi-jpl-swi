@@ -232,11 +232,11 @@ j_button_get_focus_traversal_keys_enabled(REF, OUT) :-
 j_button_get_top_level_ancestor(REF, OUT) :- 
 	object_call(REF, getTopLevelAncestor, [], OUT).
 
-j_button_set_rollover_selected_icon(REF, ARG0) :- 
-	object_call(REF, setRolloverSelectedIcon, '.'(ARG0, []), _).
-
 j_button_set_action(REF, ARG0) :- 
 	object_call(REF, setAction, '.'(ARG0, []), _).
+
+j_button_set_rollover_selected_icon(REF, ARG0) :- 
+	object_call(REF, setRolloverSelectedIcon, '.'(ARG0, []), _).
 
 j_button_add_ancestor_listener(REF, ARG0) :- 
 	object_call(REF, addAncestorListener, '.'(ARG0, []), _).
@@ -319,11 +319,11 @@ j_button_request_focus_in_window(REF, OUT) :-
 j_button_set_bounds(REF, ARG0) :- 
 	object_call(REF, setBounds, '.'(ARG0, []), _).
 
-j_button_action(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, action, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 j_button_set_bounds(REF, ARG0, ARG1, ARG2, ARG3) :- 
 	object_call(REF, setBounds, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).
+
+j_button_action(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, action, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 j_button_get_registered_key_strokes(REF, OUT) :- 
 	object_call(REF, getRegisteredKeyStrokes, [], OUT).
@@ -349,11 +349,11 @@ j_button_remove_ancestor_listener(REF, ARG0) :-
 j_button_get_key_listeners(REF, OUT) :- 
 	object_call(REF, getKeyListeners, [], OUT).
 
-j_button_get_cursor(REF, OUT) :- 
-	object_call(REF, getCursor, [], OUT).
-
 j_button_set_focus_traversal_keys_enabled(REF, ARG0) :- 
 	object_call(REF, setFocusTraversalKeysEnabled, '.'(ARG0, []), _).
+
+j_button_get_cursor(REF, OUT) :- 
+	object_call(REF, getCursor, [], OUT).
 
 j_button_get_tool_tip_text(REF, ARG0, OUT) :- 
 	object_call(REF, getToolTipText, '.'(ARG0, []), OUT).
@@ -391,11 +391,11 @@ j_button_get_graphics_configuration(REF, OUT) :-
 j_button_get_inherits_popup_menu(REF, OUT) :- 
 	object_call(REF, getInheritsPopupMenu, [], OUT).
 
-j_button_get_vertical_alignment(REF, OUT) :- 
-	object_call(REF, getVerticalAlignment, [], OUT).
-
 j_button_set_margin(REF, ARG0) :- 
 	object_call(REF, setMargin, '.'(ARG0, []), _).
+
+j_button_get_vertical_alignment(REF, OUT) :- 
+	object_call(REF, getVerticalAlignment, [], OUT).
 
 j_button_set_layout(REF, ARG0) :- 
 	object_call(REF, setLayout, '.'(ARG0, []), _).
@@ -748,14 +748,14 @@ j_button_add(REF, ARG0, OUT) :-
 j_button_add(REF, ARG0) :- 
 	object_call(REF, add, '.'(ARG0, []), _).
 
+j_button_is_background_set(REF, OUT) :- 
+	object_call(REF, isBackgroundSet, [], OUT).
+
 j_button_add_mouse_motion_listener(REF, ARG0) :- 
 	object_call(REF, addMouseMotionListener, '.'(ARG0, []), _).
 
 j_button_get_hierarchy_listeners(REF, OUT) :- 
 	object_call(REF, getHierarchyListeners, [], OUT).
-
-j_button_is_background_set(REF, OUT) :- 
-	object_call(REF, isBackgroundSet, [], OUT).
 
 j_button_is_lightweight_component(REF, ARG0, OUT) :- 
 	object_call(REF, isLightweightComponent, '.'(ARG0, []), OUT).
@@ -1126,11 +1126,11 @@ j_button_remove_hierarchy_listener(REF, ARG0) :-
 j_button_get_location(REF, OUT) :- 
 	object_call(REF, getLocation, [], OUT).
 
-j_button_get_input_context(REF, OUT) :- 
-	object_call(REF, getInputContext, [], OUT).
-
 j_button_is_font_set(REF, OUT) :- 
 	object_call(REF, isFontSet, [], OUT).
+
+j_button_get_input_context(REF, OUT) :- 
+	object_call(REF, getInputContext, [], OUT).
 
 j_button_key_up(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, keyUp, '.'(ARG0, '.'(ARG1, [])), OUT).
@@ -1189,11 +1189,11 @@ j_button_create_image(REF, ARG0, OUT) :-
 j_button_create_image(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, createImage, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-j_button_get_alignment_x(REF, OUT) :- 
-	object_call(REF, getAlignmentX, [], OUT).
-
 j_button_print_all(REF, ARG0) :- 
 	object_call(REF, printAll, '.'(ARG0, []), _).
+
+j_button_get_alignment_x(REF, OUT) :- 
+	object_call(REF, getAlignmentX, [], OUT).
 
 j_button_set_location(REF, ARG0, ARG1) :- 
 	object_call(REF, setLocation, '.'(ARG0, '.'(ARG1, [])), _).
@@ -1243,11 +1243,11 @@ j_button_get_component_orientation(REF, OUT) :-
 j_button_paint_all(REF, ARG0) :- 
 	object_call(REF, paintAll, '.'(ARG0, []), _).
 
-j_button_do_click(REF, ARG0) :- 
-	object_call(REF, doClick, '.'(ARG0, []), _).
-
 j_button_is_border_painted(REF, OUT) :- 
 	object_call(REF, isBorderPainted, [], OUT).
+
+j_button_do_click(REF, ARG0) :- 
+	object_call(REF, doClick, '.'(ARG0, []), _).
 
 j_button_set_alignment_x(REF, ARG0) :- 
 	object_call(REF, setAlignmentX, '.'(ARG0, []), _).
@@ -1357,11 +1357,11 @@ j_button_is_focusable(REF, OUT) :-
 j_button_set_input_verifier(REF, ARG0) :- 
 	object_call(REF, setInputVerifier, '.'(ARG0, []), _).
 
-j_button_get_component_listeners(REF, OUT) :- 
-	object_call(REF, getComponentListeners, [], OUT).
-
 j_button_mouse_move(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseMove, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+j_button_get_component_listeners(REF, OUT) :- 
+	object_call(REF, getComponentListeners, [], OUT).
 
 j_button_set_inherits_popup_menu(REF, ARG0) :- 
 	object_call(REF, setInheritsPopupMenu, '.'(ARG0, []), _).

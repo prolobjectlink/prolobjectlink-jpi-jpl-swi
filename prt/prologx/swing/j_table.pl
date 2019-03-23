@@ -124,11 +124,11 @@ j_table_set_alignment_x(REF, ARG0) :-
 j_table_is_valid(REF, OUT) :- 
 	object_call(REF, isValid, [], OUT).
 
-j_table_get_listeners(REF, ARG0, OUT) :- 
-	object_call(REF, getListeners, '.'(ARG0, []), OUT).
-
 j_table_set_visible(REF, ARG0) :- 
 	object_call(REF, setVisible, '.'(ARG0, []), _).
+
+j_table_get_listeners(REF, ARG0, OUT) :- 
+	object_call(REF, getListeners, '.'(ARG0, []), OUT).
 
 j_table_get_visible_rect(REF, OUT) :- 
 	object_call(REF, getVisibleRect, [], OUT).
@@ -712,11 +712,11 @@ j_table_minimum_size(REF, OUT) :-
 j_table_add_ancestor_listener(REF, ARG0) :- 
 	object_call(REF, addAncestorListener, '.'(ARG0, []), _).
 
-j_table_add_hierarchy_bounds_listener(REF, ARG0) :- 
-	object_call(REF, addHierarchyBoundsListener, '.'(ARG0, []), _).
-
 j_table_is_foreground_set(REF, OUT) :- 
 	object_call(REF, isForegroundSet, [], OUT).
+
+j_table_add_hierarchy_bounds_listener(REF, ARG0) :- 
+	object_call(REF, addHierarchyBoundsListener, '.'(ARG0, []), _).
 
 j_table_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
@@ -874,11 +874,11 @@ j_table_get_foreground(REF, OUT) :-
 j_table_get_drop_location(REF, OUT) :- 
 	object_call(REF, getDropLocation, [], OUT).
 
-j_table_add_mouse_motion_listener(REF, ARG0) :- 
-	object_call(REF, addMouseMotionListener, '.'(ARG0, []), _).
-
 j_table_paint_all(REF, ARG0) :- 
 	object_call(REF, paintAll, '.'(ARG0, []), _).
+
+j_table_add_mouse_motion_listener(REF, ARG0) :- 
+	object_call(REF, addMouseMotionListener, '.'(ARG0, []), _).
 
 j_table_is_focus_cycle_root(REF, ARG0, OUT) :- 
 	object_call(REF, isFocusCycleRoot, '.'(ARG0, []), OUT).
@@ -901,11 +901,11 @@ j_table_list(REF, ARG0, ARG1) :-
 j_table_list(REF, ARG0, ARG1) :- 
 	object_call(REF, list, '.'(ARG0, '.'(ARG1, [])), _).
 
-j_table_dispatch_event(REF, ARG0) :- 
-	object_call(REF, dispatchEvent, '.'(ARG0, []), _).
-
 j_table_is_cursor_set(REF, OUT) :- 
 	object_call(REF, isCursorSet, [], OUT).
+
+j_table_dispatch_event(REF, ARG0) :- 
+	object_call(REF, dispatchEvent, '.'(ARG0, []), _).
 
 j_table_get_bounds(REF, ARG0, OUT) :- 
 	object_call(REF, getBounds, '.'(ARG0, []), OUT).

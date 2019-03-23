@@ -283,14 +283,14 @@ j_spinner_get_mouse_listeners(REF, OUT) :-
 j_spinner_put_client_property(REF, ARG0, ARG1) :- 
 	object_call(REF, putClientProperty, '.'(ARG0, '.'(ARG1, [])), _).
 
+j_spinner_prepare_image(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_call(REF, prepareImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+
 j_spinner_get_component_listeners(REF, OUT) :- 
 	object_call(REF, getComponentListeners, [], OUT).
 
 j_spinner_get_hierarchy_bounds_listeners(REF, OUT) :- 
 	object_call(REF, getHierarchyBoundsListeners, [], OUT).
-
-j_spinner_prepare_image(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, prepareImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
 j_spinner_get_alignment_x(REF, OUT) :- 
 	object_call(REF, getAlignmentX, [], OUT).
@@ -616,17 +616,17 @@ j_spinner_is_opaque(REF, OUT) :-
 j_spinner_remove_mouse_wheel_listener(REF, ARG0) :- 
 	object_call(REF, removeMouseWheelListener, '.'(ARG0, []), _).
 
-j_spinner_action(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, action, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 j_spinner_set_drop_target(REF, ARG0) :- 
 	object_call(REF, setDropTarget, '.'(ARG0, []), _).
 
-j_spinner_get_bounds(REF, OUT) :- 
-	object_call(REF, getBounds, [], OUT).
+j_spinner_action(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, action, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 j_spinner_is_minimum_size_set(REF, OUT) :- 
 	object_call(REF, isMinimumSizeSet, [], OUT).
+
+j_spinner_get_bounds(REF, OUT) :- 
+	object_call(REF, getBounds, [], OUT).
 
 j_spinner_get_bounds(REF, ARG0, OUT) :- 
 	object_call(REF, getBounds, '.'(ARG0, []), OUT).
@@ -817,11 +817,11 @@ j_spinner_enable(REF, ARG0) :-
 j_spinner_is_focus_traversal_policy_set(REF, OUT) :- 
 	object_call(REF, isFocusTraversalPolicySet, [], OUT).
 
-j_spinner_get_focus_traversal_keys_enabled(REF, OUT) :- 
-	object_call(REF, getFocusTraversalKeysEnabled, [], OUT).
-
 j_spinner_is_font_set(REF, OUT) :- 
 	object_call(REF, isFontSet, [], OUT).
+
+j_spinner_get_focus_traversal_keys_enabled(REF, OUT) :- 
+	object_call(REF, getFocusTraversalKeysEnabled, [], OUT).
 
 j_spinner_size(REF, OUT) :- 
 	object_call(REF, size, [], OUT).
@@ -955,11 +955,11 @@ j_spinner_set_bounds(REF, ARG0, ARG1, ARG2, ARG3) :-
 j_spinner_get_key_listeners(REF, OUT) :- 
 	object_call(REF, getKeyListeners, [], OUT).
 
-j_spinner_create_image(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, createImage, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 j_spinner_mouse_up(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseUp, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+j_spinner_create_image(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, createImage, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 j_spinner_create_image(REF, ARG0, OUT) :- 
 	object_call(REF, createImage, '.'(ARG0, []), OUT).
@@ -1012,11 +1012,11 @@ j_spinner_is_double_buffered(REF, OUT) :-
 j_spinner_set_name(REF, ARG0) :- 
 	object_call(REF, setName, '.'(ARG0, []), _).
 
-j_spinner_add_focus_listener(REF, ARG0) :- 
-	object_call(REF, addFocusListener, '.'(ARG0, []), _).
-
 j_spinner_remove_hierarchy_bounds_listener(REF, ARG0) :- 
 	object_call(REF, removeHierarchyBoundsListener, '.'(ARG0, []), _).
+
+j_spinner_add_focus_listener(REF, ARG0) :- 
+	object_call(REF, addFocusListener, '.'(ARG0, []), _).
 
 j_spinner_set_bounds(REF, ARG0) :- 
 	object_call(REF, setBounds, '.'(ARG0, []), _).

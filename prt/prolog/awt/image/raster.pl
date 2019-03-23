@@ -34,17 +34,17 @@ raster_create_banded_raster(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, ARG6, OUT) 
 raster_create_banded_raster(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, ARG6, OUT) :- 
 	object_call(REF, createBandedRaster, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, '.'(ARG6, []))))))), OUT).
 
-raster_get_pixels(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
-	object_call(REF, getPixels, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
-
-raster_get_pixels(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
-	object_call(REF, getPixels, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
-
-raster_get_pixels(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
-	object_call(REF, getPixels, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
-
 raster_get_num_data_elements(REF, OUT) :- 
 	object_call(REF, getNumDataElements, [], OUT).
+
+raster_get_pixels(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
+	object_call(REF, getPixels, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
+
+raster_get_pixels(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
+	object_call(REF, getPixels, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
+
+raster_get_pixels(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
+	object_call(REF, getPixels, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
 
 raster_notify_all(REF) :- 
 	object_call(REF, notifyAll, [], _).
@@ -79,11 +79,11 @@ raster_create_compatible_writable_raster(REF, OUT) :-
 raster_get_num_bands(REF, OUT) :- 
 	object_call(REF, getNumBands, [], OUT).
 
-raster_get_sample_double(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, getSampleDouble, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
 raster_create_compatible_writable_raster(REF, ARG0, OUT) :- 
 	object_call(REF, createCompatibleWritableRaster, '.'(ARG0, []), OUT).
+
+raster_get_sample_double(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, getSampleDouble, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
 raster_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).

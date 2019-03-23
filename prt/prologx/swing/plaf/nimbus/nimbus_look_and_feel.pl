@@ -127,11 +127,11 @@ nimbus_look_and_feel_update_styles(REF, ARG0) :-
 nimbus_look_and_feel_wait(REF) :- 
 	object_call(REF, wait, [], _).
 
-nimbus_look_and_feel_install_colors(REF, ARG0, ARG1, ARG2) :- 
-	object_call(REF, installColors, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
-
 nimbus_look_and_feel_install_border(REF, ARG0, ARG1) :- 
 	object_call(REF, installBorder, '.'(ARG0, '.'(ARG1, [])), _).
+
+nimbus_look_and_feel_install_colors(REF, ARG0, ARG1, ARG2) :- 
+	object_call(REF, installColors, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
 
 nimbus_look_and_feel_create_u_i(REF, ARG0, OUT) :- 
 	object_call(REF, createUI, '.'(ARG0, []), OUT).

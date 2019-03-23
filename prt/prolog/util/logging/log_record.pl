@@ -85,11 +85,11 @@ log_record_set_thrown(REF, ARG0) :-
 log_record_wait(REF, ARG0) :- 
 	object_call(REF, wait, '.'(ARG0, []), _).
 
-log_record_set_logger_name(REF, ARG0) :- 
-	object_call(REF, setLoggerName, '.'(ARG0, []), _).
-
 log_record_get_source_method_name(REF, OUT) :- 
 	object_call(REF, getSourceMethodName, [], OUT).
+
+log_record_set_logger_name(REF, ARG0) :- 
+	object_call(REF, setLoggerName, '.'(ARG0, []), _).
 
 log_record_wait(REF, ARG0, ARG1) :- 
 	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).

@@ -55,11 +55,11 @@ multi_root_pane_u_i_get_preferred_size(REF, ARG0, OUT) :-
 multi_root_pane_u_i_wait(REF, ARG0, ARG1) :- 
 	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
-multi_root_pane_u_i_uninstall_u_i(REF, ARG0) :- 
-	object_call(REF, uninstallUI, '.'(ARG0, []), _).
-
 multi_root_pane_u_i_create_u_i(REF, ARG0, OUT) :- 
 	object_call(REF, createUI, '.'(ARG0, []), OUT).
+
+multi_root_pane_u_i_uninstall_u_i(REF, ARG0) :- 
+	object_call(REF, uninstallUI, '.'(ARG0, []), _).
 
 multi_root_pane_u_i_contains(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, contains, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).

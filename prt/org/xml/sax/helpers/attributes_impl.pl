@@ -82,11 +82,11 @@ attributes_impl_notify_all(REF) :-
 attributes_impl_get_index(REF, ARG0, OUT) :- 
 	object_call(REF, getIndex, '.'(ARG0, []), OUT).
 
-attributes_impl_get_index(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getIndex, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 attributes_impl_add_attribute(REF, ARG0, ARG1, ARG2, ARG3, ARG4) :- 
 	object_call(REF, addAttribute, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), _).
+
+attributes_impl_get_index(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getIndex, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 attributes_impl_set_attribute(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5) :- 
 	object_call(REF, setAttribute, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), _).

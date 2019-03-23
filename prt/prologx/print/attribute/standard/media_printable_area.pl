@@ -76,11 +76,11 @@ media_printable_area_get_name(REF, OUT) :-
 media_printable_area_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-media_printable_area_get_height(REF, ARG0, OUT) :- 
-	object_call(REF, getHeight, '.'(ARG0, []), OUT).
-
 media_printable_area_get_y(REF, ARG0, OUT) :- 
 	object_call(REF, getY, '.'(ARG0, []), OUT).
+
+media_printable_area_get_height(REF, ARG0, OUT) :- 
+	object_call(REF, getHeight, '.'(ARG0, []), OUT).
 
 media_printable_area_get_x(REF, ARG0, OUT) :- 
 	object_call(REF, getX, '.'(ARG0, []), OUT).

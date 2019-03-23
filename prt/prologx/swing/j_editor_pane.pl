@@ -454,11 +454,11 @@ j_editor_pane_mouse_enter(REF, ARG0, ARG1, ARG2, OUT) :-
 j_editor_pane_set_selected_text_color(REF, ARG0) :- 
 	object_call(REF, setSelectedTextColor, '.'(ARG0, []), _).
 
-j_editor_pane_get_focus_listeners(REF, OUT) :- 
-	object_call(REF, getFocusListeners, [], OUT).
-
 j_editor_pane_set_bounds(REF, ARG0, ARG1, ARG2, ARG3) :- 
 	object_call(REF, setBounds, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).
+
+j_editor_pane_get_focus_listeners(REF, OUT) :- 
+	object_call(REF, getFocusListeners, [], OUT).
 
 j_editor_pane_set_autoscrolls(REF, ARG0) :- 
 	object_call(REF, setAutoscrolls, '.'(ARG0, []), _).
@@ -955,11 +955,11 @@ j_editor_pane_load_keymap(REF, ARG0, ARG1, ARG2) :-
 j_editor_pane_equals(REF, ARG0, OUT) :- 
 	object_call(REF, equals, '.'(ARG0, []), OUT).
 
-j_editor_pane_view_to_model(REF, ARG0, OUT) :- 
-	object_call(REF, viewToModel, '.'(ARG0, []), OUT).
-
 j_editor_pane_get_drag_enabled(REF, OUT) :- 
 	object_call(REF, getDragEnabled, [], OUT).
+
+j_editor_pane_view_to_model(REF, ARG0, OUT) :- 
+	object_call(REF, viewToModel, '.'(ARG0, []), OUT).
 
 j_editor_pane_set_focus_cycle_root(REF, ARG0) :- 
 	object_call(REF, setFocusCycleRoot, '.'(ARG0, []), _).
@@ -1177,11 +1177,11 @@ j_editor_pane_mouse_up(REF, ARG0, ARG1, ARG2, OUT) :-
 j_editor_pane_is_editable(REF, OUT) :- 
 	object_call(REF, isEditable, [], OUT).
 
-j_editor_pane_get_printable(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getPrintable, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 j_editor_pane_get_text(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, getText, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+j_editor_pane_get_printable(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getPrintable, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 j_editor_pane_remove_mouse_listener(REF, ARG0) :- 
 	object_call(REF, removeMouseListener, '.'(ARG0, []), _).

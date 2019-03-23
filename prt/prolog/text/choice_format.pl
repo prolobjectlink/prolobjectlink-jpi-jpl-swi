@@ -94,11 +94,11 @@ choice_format_get_limits(REF, OUT) :-
 choice_format_get_number_instance(REF, ARG0, OUT) :- 
 	object_call(REF, getNumberInstance, '.'(ARG0, []), OUT).
 
-choice_format_get_number_instance(REF, OUT) :- 
-	object_call(REF, getNumberInstance, [], OUT).
-
 choice_format_set_maximum_integer_digits(REF, ARG0) :- 
 	object_call(REF, setMaximumIntegerDigits, '.'(ARG0, []), _).
+
+choice_format_get_number_instance(REF, OUT) :- 
+	object_call(REF, getNumberInstance, [], OUT).
 
 choice_format_to_string(REF, OUT) :- 
 	object_call(REF, toString, [], OUT).

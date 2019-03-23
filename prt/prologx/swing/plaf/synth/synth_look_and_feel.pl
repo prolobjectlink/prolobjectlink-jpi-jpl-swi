@@ -109,11 +109,11 @@ synth_look_and_feel_uninstall_border(REF, ARG0) :-
 synth_look_and_feel_create_u_i(REF, ARG0, OUT) :- 
 	object_call(REF, createUI, '.'(ARG0, []), OUT).
 
-synth_look_and_feel_load_key_bindings(REF, ARG0, ARG1) :- 
-	object_call(REF, loadKeyBindings, '.'(ARG0, '.'(ARG1, [])), _).
-
 synth_look_and_feel_get_layout_style(REF, OUT) :- 
 	object_call(REF, getLayoutStyle, [], OUT).
+
+synth_look_and_feel_load_key_bindings(REF, ARG0, ARG1) :- 
+	object_call(REF, loadKeyBindings, '.'(ARG0, '.'(ARG1, [])), _).
 
 synth_look_and_feel_get_disabled_selected_icon(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, getDisabledSelectedIcon, '.'(ARG0, '.'(ARG1, [])), OUT).
@@ -136,11 +136,11 @@ synth_look_and_feel_install_property(REF, ARG0, ARG1, ARG2) :-
 synth_look_and_feel_get_disabled_icon(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, getDisabledIcon, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-synth_look_and_feel_get_desktop_property_value(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getDesktopPropertyValue, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 synth_look_and_feel_install_border(REF, ARG0, ARG1) :- 
 	object_call(REF, installBorder, '.'(ARG0, '.'(ARG1, [])), _).
+
+synth_look_and_feel_get_desktop_property_value(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getDesktopPropertyValue, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 synth_look_and_feel_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).

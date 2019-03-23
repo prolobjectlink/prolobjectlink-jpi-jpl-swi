@@ -301,14 +301,14 @@ j_label_set_double_buffered(REF, ARG0) :-
 j_label_get_root_pane(REF, OUT) :- 
 	object_call(REF, getRootPane, [], OUT).
 
+j_label_is_maximum_size_set(REF, OUT) :- 
+	object_call(REF, isMaximumSizeSet, [], OUT).
+
 j_label_add_mouse_wheel_listener(REF, ARG0) :- 
 	object_call(REF, addMouseWheelListener, '.'(ARG0, []), _).
 
 j_label_get_component_listeners(REF, OUT) :- 
 	object_call(REF, getComponentListeners, [], OUT).
-
-j_label_is_maximum_size_set(REF, OUT) :- 
-	object_call(REF, isMaximumSizeSet, [], OUT).
 
 j_label_get_property_change_listeners(REF, OUT) :- 
 	object_call(REF, getPropertyChangeListeners, [], OUT).
@@ -397,11 +397,11 @@ j_label_enable(REF, ARG0) :-
 j_label_enable(REF) :- 
 	object_call(REF, enable, [], _).
 
-j_label_add_input_method_listener(REF, ARG0) :- 
-	object_call(REF, addInputMethodListener, '.'(ARG0, []), _).
-
 j_label_set_cursor(REF, ARG0) :- 
 	object_call(REF, setCursor, '.'(ARG0, []), _).
+
+j_label_add_input_method_listener(REF, ARG0) :- 
+	object_call(REF, addInputMethodListener, '.'(ARG0, []), _).
 
 j_label_get_label_for(REF, OUT) :- 
 	object_call(REF, getLabelFor, [], OUT).
@@ -601,11 +601,11 @@ j_label_add_notify(REF) :-
 j_label_get_name(REF, OUT) :- 
 	object_call(REF, getName, [], OUT).
 
-j_label_add_hierarchy_bounds_listener(REF, ARG0) :- 
-	object_call(REF, addHierarchyBoundsListener, '.'(ARG0, []), _).
-
 j_label_get_mouse_position(REF, OUT) :- 
 	object_call(REF, getMousePosition, [], OUT).
+
+j_label_add_hierarchy_bounds_listener(REF, ARG0) :- 
+	object_call(REF, addHierarchyBoundsListener, '.'(ARG0, []), _).
 
 j_label_get_mouse_position(REF, ARG0, OUT) :- 
 	object_call(REF, getMousePosition, '.'(ARG0, []), OUT).
@@ -628,11 +628,11 @@ j_label_get_vertical_text_position(REF, OUT) :-
 j_label_create_volatile_image(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, createVolatileImage, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-j_label_create_volatile_image(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, createVolatileImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
 j_label_handle_event(REF, ARG0, OUT) :- 
 	object_call(REF, handleEvent, '.'(ARG0, []), OUT).
+
+j_label_create_volatile_image(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, createVolatileImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
 j_label_is_focus_cycle_root(REF, ARG0, OUT) :- 
 	object_call(REF, isFocusCycleRoot, '.'(ARG0, []), OUT).
@@ -823,11 +823,11 @@ j_label_repaint(REF, ARG0) :-
 j_label_set_verify_input_when_focus_target(REF, ARG0) :- 
 	object_call(REF, setVerifyInputWhenFocusTarget, '.'(ARG0, []), _).
 
-j_label_enable_input_methods(REF, ARG0) :- 
-	object_call(REF, enableInputMethods, '.'(ARG0, []), _).
-
 j_label_is_focus_traversable(REF, OUT) :- 
 	object_call(REF, isFocusTraversable, [], OUT).
+
+j_label_enable_input_methods(REF, ARG0) :- 
+	object_call(REF, enableInputMethods, '.'(ARG0, []), _).
 
 j_label_mouse_down(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseDown, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
@@ -1012,11 +1012,11 @@ j_label_set_name(REF, ARG0) :-
 j_label_scroll_rect_to_visible(REF, ARG0) :- 
 	object_call(REF, scrollRectToVisible, '.'(ARG0, []), _).
 
-j_label_get_baseline(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getBaseline, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 j_label_set_foreground(REF, ARG0) :- 
 	object_call(REF, setForeground, '.'(ARG0, []), _).
+
+j_label_get_baseline(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getBaseline, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 j_label_set_vertical_alignment(REF, ARG0) :- 
 	object_call(REF, setVerticalAlignment, '.'(ARG0, []), _).
@@ -1177,11 +1177,11 @@ j_label_set_label_for(REF, ARG0) :-
 j_label_invalidate(REF) :- 
 	object_call(REF, invalidate, [], _).
 
-j_label_add_key_listener(REF, ARG0) :- 
-	object_call(REF, addKeyListener, '.'(ARG0, []), _).
-
 j_label_set_ignore_repaint(REF, ARG0) :- 
 	object_call(REF, setIgnoreRepaint, '.'(ARG0, []), _).
+
+j_label_add_key_listener(REF, ARG0) :- 
+	object_call(REF, addKeyListener, '.'(ARG0, []), _).
 
 j_label_get_alignment_x(REF, OUT) :- 
 	object_call(REF, getAlignmentX, [], OUT).

@@ -382,11 +382,11 @@ metal_combo_box_button_resize(REF, ARG0, ARG1) :-
 metal_combo_box_button_transfer_focus_up_cycle(REF) :- 
 	object_call(REF, transferFocusUpCycle, [], _).
 
-metal_combo_box_button_get_graphics_configuration(REF, OUT) :- 
-	object_call(REF, getGraphicsConfiguration, [], OUT).
-
 metal_combo_box_button_get_location_on_screen(REF, OUT) :- 
 	object_call(REF, getLocationOnScreen, [], OUT).
+
+metal_combo_box_button_get_graphics_configuration(REF, OUT) :- 
+	object_call(REF, getGraphicsConfiguration, [], OUT).
 
 metal_combo_box_button_create_image(REF, ARG0, OUT) :- 
 	object_call(REF, createImage, '.'(ARG0, []), OUT).
@@ -436,11 +436,11 @@ metal_combo_box_button_set_location(REF, ARG0) :-
 metal_combo_box_button_paint(REF, ARG0) :- 
 	object_call(REF, paint, '.'(ARG0, []), _).
 
-metal_combo_box_button_get_background(REF, OUT) :- 
-	object_call(REF, getBackground, [], OUT).
-
 metal_combo_box_button_set_location(REF, ARG0, ARG1) :- 
 	object_call(REF, setLocation, '.'(ARG0, '.'(ARG1, [])), _).
+
+metal_combo_box_button_get_background(REF, OUT) :- 
+	object_call(REF, getBackground, [], OUT).
 
 metal_combo_box_button_get_debug_graphics_options(REF, OUT) :- 
 	object_call(REF, getDebugGraphicsOptions, [], OUT).
@@ -511,14 +511,14 @@ metal_combo_box_button_remove_property_change_listener(REF, ARG0, ARG1) :-
 metal_combo_box_button_repaint(REF) :- 
 	object_call(REF, repaint, [], _).
 
+metal_combo_box_button_repaint(REF, ARG0) :- 
+	object_call(REF, repaint, '.'(ARG0, []), _).
+
+metal_combo_box_button_repaint(REF, ARG0) :- 
+	object_call(REF, repaint, '.'(ARG0, []), _).
+
 metal_combo_box_button_get_listeners(REF, ARG0, OUT) :- 
 	object_call(REF, getListeners, '.'(ARG0, []), OUT).
-
-metal_combo_box_button_repaint(REF, ARG0) :- 
-	object_call(REF, repaint, '.'(ARG0, []), _).
-
-metal_combo_box_button_repaint(REF, ARG0) :- 
-	object_call(REF, repaint, '.'(ARG0, []), _).
 
 metal_combo_box_button_remove_property_change_listener(REF, ARG0) :- 
 	object_call(REF, removePropertyChangeListener, '.'(ARG0, []), _).
@@ -595,11 +595,11 @@ metal_combo_box_button_get_maximum_size(REF, OUT) :-
 metal_combo_box_button_get_pressed_icon(REF, OUT) :- 
 	object_call(REF, getPressedIcon, [], OUT).
 
-metal_combo_box_button_get_hierarchy_bounds_listeners(REF, OUT) :- 
-	object_call(REF, getHierarchyBoundsListeners, [], OUT).
-
 metal_combo_box_button_remove_component_listener(REF, ARG0) :- 
 	object_call(REF, removeComponentListener, '.'(ARG0, []), _).
+
+metal_combo_box_button_get_hierarchy_bounds_listeners(REF, OUT) :- 
+	object_call(REF, getHierarchyBoundsListeners, [], OUT).
 
 metal_combo_box_button_move(REF, ARG0, ARG1) :- 
 	object_call(REF, move, '.'(ARG0, '.'(ARG1, [])), _).
@@ -697,11 +697,11 @@ metal_combo_box_button_do_click(REF, ARG0) :-
 metal_combo_box_button_register_keyboard_action(REF, ARG0, ARG1, ARG2) :- 
 	object_call(REF, registerKeyboardAction, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
 
-metal_combo_box_button_do_click(REF) :- 
-	object_call(REF, doClick, [], _).
-
 metal_combo_box_button_set_action(REF, ARG0) :- 
 	object_call(REF, setAction, '.'(ARG0, []), _).
+
+metal_combo_box_button_do_click(REF) :- 
+	object_call(REF, doClick, [], _).
 
 metal_combo_box_button_set_debug_graphics_options(REF, ARG0) :- 
 	object_call(REF, setDebugGraphicsOptions, '.'(ARG0, []), _).
@@ -940,11 +940,11 @@ metal_combo_box_button_get_mouse_motion_listeners(REF, OUT) :-
 metal_combo_box_button_set_request_focus_enabled(REF, ARG0) :- 
 	object_call(REF, setRequestFocusEnabled, '.'(ARG0, []), _).
 
-metal_combo_box_button_get_foreground(REF, OUT) :- 
-	object_call(REF, getForeground, [], OUT).
-
 metal_combo_box_button_remove_mouse_motion_listener(REF, ARG0) :- 
 	object_call(REF, removeMouseMotionListener, '.'(ARG0, []), _).
+
+metal_combo_box_button_get_foreground(REF, OUT) :- 
+	object_call(REF, getForeground, [], OUT).
 
 metal_combo_box_button_get_input_method_requests(REF, OUT) :- 
 	object_call(REF, getInputMethodRequests, [], OUT).
@@ -985,11 +985,11 @@ metal_combo_box_button_is_enabled(REF, OUT) :-
 metal_combo_box_button_get_container_listeners(REF, OUT) :- 
 	object_call(REF, getContainerListeners, [], OUT).
 
-metal_combo_box_button_action(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, action, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 metal_combo_box_button_transfer_focus(REF) :- 
 	object_call(REF, transferFocus, [], _).
+
+metal_combo_box_button_action(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, action, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 metal_combo_box_button_get_label(REF, OUT) :- 
 	object_call(REF, getLabel, [], OUT).
@@ -1156,20 +1156,20 @@ metal_combo_box_button_is_focus_owner(REF, OUT) :-
 metal_combo_box_button_get_alignment_x(REF, OUT) :- 
 	object_call(REF, getAlignmentX, [], OUT).
 
-metal_combo_box_button_get_action(REF, OUT) :- 
-	object_call(REF, getAction, [], OUT).
-
 metal_combo_box_button_set_text(REF, ARG0) :- 
 	object_call(REF, setText, '.'(ARG0, []), _).
+
+metal_combo_box_button_get_action(REF, OUT) :- 
+	object_call(REF, getAction, [], OUT).
 
 metal_combo_box_button_add_property_change_listener(REF, ARG0) :- 
 	object_call(REF, addPropertyChangeListener, '.'(ARG0, []), _).
 
-metal_combo_box_button_create_volatile_image(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, createVolatileImage, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 metal_combo_box_button_key_down(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, keyDown, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+metal_combo_box_button_create_volatile_image(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, createVolatileImage, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 metal_combo_box_button_create_volatile_image(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, createVolatileImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
@@ -1267,11 +1267,11 @@ metal_combo_box_button_set_next_focusable_component(REF, ARG0) :-
 metal_combo_box_button_do_layout(REF) :- 
 	object_call(REF, doLayout, [], _).
 
-metal_combo_box_button_set_disabled_icon(REF, ARG0) :- 
-	object_call(REF, setDisabledIcon, '.'(ARG0, []), _).
-
 metal_combo_box_button_remove_change_listener(REF, ARG0) :- 
 	object_call(REF, removeChangeListener, '.'(ARG0, []), _).
+
+metal_combo_box_button_set_disabled_icon(REF, ARG0) :- 
+	object_call(REF, setDisabledIcon, '.'(ARG0, []), _).
 
 metal_combo_box_button_set_multi_click_threshhold(REF, ARG0) :- 
 	object_call(REF, setMultiClickThreshhold, '.'(ARG0, []), _).
@@ -1318,11 +1318,11 @@ metal_combo_box_button_set_ignore_repaint(REF, ARG0) :-
 metal_combo_box_button_get_alignment_y(REF, OUT) :- 
 	object_call(REF, getAlignmentY, [], OUT).
 
-metal_combo_box_button_get_toolkit(REF, OUT) :- 
-	object_call(REF, getToolkit, [], OUT).
-
 metal_combo_box_button_remove_key_listener(REF, ARG0) :- 
 	object_call(REF, removeKeyListener, '.'(ARG0, []), _).
+
+metal_combo_box_button_get_toolkit(REF, OUT) :- 
+	object_call(REF, getToolkit, [], OUT).
 
 metal_combo_box_button_get_action_for_key_stroke(REF, ARG0, OUT) :- 
 	object_call(REF, getActionForKeyStroke, '.'(ARG0, []), OUT).
@@ -1351,11 +1351,11 @@ metal_combo_box_button_prepare_image(REF, ARG0, ARG1, ARG2, ARG3, OUT) :-
 metal_combo_box_button_print(REF, ARG0) :- 
 	object_call(REF, print, '.'(ARG0, []), _).
 
-metal_combo_box_button_add_key_listener(REF, ARG0) :- 
-	object_call(REF, addKeyListener, '.'(ARG0, []), _).
-
 metal_combo_box_button_prepare_image(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, prepareImage, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+metal_combo_box_button_add_key_listener(REF, ARG0) :- 
+	object_call(REF, addKeyListener, '.'(ARG0, []), _).
 
 metal_combo_box_button_get_component_popup_menu(REF, OUT) :- 
 	object_call(REF, getComponentPopupMenu, [], OUT).

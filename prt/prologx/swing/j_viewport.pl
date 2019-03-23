@@ -160,11 +160,11 @@ j_viewport_mouse_down(REF, ARG0, ARG1, ARG2, OUT) :-
 j_viewport_notify(REF) :- 
 	object_call(REF, notify, [], _).
 
-j_viewport_get_focus_cycle_root_ancestor(REF, OUT) :- 
-	object_call(REF, getFocusCycleRootAncestor, [], OUT).
-
 j_viewport_mouse_move(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseMove, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+j_viewport_get_focus_cycle_root_ancestor(REF, OUT) :- 
+	object_call(REF, getFocusCycleRootAncestor, [], OUT).
 
 j_viewport_add_notify(REF) :- 
 	object_call(REF, addNotify, [], _).
@@ -247,11 +247,11 @@ j_viewport_set_border(REF, ARG0) :-
 j_viewport_add_hierarchy_bounds_listener(REF, ARG0) :- 
 	object_call(REF, addHierarchyBoundsListener, '.'(ARG0, []), _).
 
-j_viewport_get_alignment_y(REF, OUT) :- 
-	object_call(REF, getAlignmentY, [], OUT).
-
 j_viewport_get_maximum_size(REF, OUT) :- 
 	object_call(REF, getMaximumSize, [], OUT).
+
+j_viewport_get_alignment_y(REF, OUT) :- 
+	object_call(REF, getAlignmentY, [], OUT).
 
 j_viewport_get_container_listeners(REF, OUT) :- 
 	object_call(REF, getContainerListeners, [], OUT).
@@ -316,11 +316,11 @@ j_viewport_is_cursor_set(REF, OUT) :-
 j_viewport_set_bounds(REF, ARG0, ARG1, ARG2, ARG3) :- 
 	object_call(REF, setBounds, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).
 
-j_viewport_create_image(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, createImage, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 j_viewport_remove_hierarchy_bounds_listener(REF, ARG0) :- 
 	object_call(REF, removeHierarchyBoundsListener, '.'(ARG0, []), _).
+
+j_viewport_create_image(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, createImage, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 j_viewport_create_image(REF, ARG0, OUT) :- 
 	object_call(REF, createImage, '.'(ARG0, []), OUT).
@@ -472,11 +472,11 @@ j_viewport_set_focus_traversal_keys(REF, ARG0, ARG1) :-
 j_viewport_add_container_listener(REF, ARG0) :- 
 	object_call(REF, addContainerListener, '.'(ARG0, []), _).
 
-j_viewport_get_foreground(REF, OUT) :- 
-	object_call(REF, getForeground, [], OUT).
-
 j_viewport_remove_component_listener(REF, ARG0) :- 
 	object_call(REF, removeComponentListener, '.'(ARG0, []), _).
+
+j_viewport_get_foreground(REF, OUT) :- 
+	object_call(REF, getForeground, [], OUT).
 
 j_viewport_set_drop_target(REF, ARG0) :- 
 	object_call(REF, setDropTarget, '.'(ARG0, []), _).
@@ -523,11 +523,11 @@ j_viewport_resize(REF, ARG0) :-
 j_viewport_resize(REF, ARG0, ARG1) :- 
 	object_call(REF, resize, '.'(ARG0, '.'(ARG1, [])), _).
 
-j_viewport_get_listeners(REF, ARG0, OUT) :- 
-	object_call(REF, getListeners, '.'(ARG0, []), OUT).
-
 j_viewport_request_focus(REF, ARG0, OUT) :- 
 	object_call(REF, requestFocus, '.'(ARG0, []), OUT).
+
+j_viewport_get_listeners(REF, ARG0, OUT) :- 
+	object_call(REF, getListeners, '.'(ARG0, []), OUT).
 
 j_viewport_request_focus(REF) :- 
 	object_call(REF, requestFocus, [], _).
@@ -838,11 +838,11 @@ j_viewport_get_action_for_key_stroke(REF, ARG0, OUT) :-
 j_viewport_is_lightweight_component(REF, ARG0, OUT) :- 
 	object_call(REF, isLightweightComponent, '.'(ARG0, []), OUT).
 
-j_viewport_add_component_listener(REF, ARG0) :- 
-	object_call(REF, addComponentListener, '.'(ARG0, []), _).
-
 j_viewport_mouse_up(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseUp, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+j_viewport_add_component_listener(REF, ARG0) :- 
+	object_call(REF, addComponentListener, '.'(ARG0, []), _).
 
 j_viewport_get_focus_traversal_policy(REF, OUT) :- 
 	object_call(REF, getFocusTraversalPolicy, [], OUT).
@@ -880,11 +880,11 @@ j_viewport_set_ignore_repaint(REF, ARG0) :-
 j_viewport_set_view(REF, ARG0) :- 
 	object_call(REF, setView, '.'(ARG0, []), _).
 
-j_viewport_get_background(REF, OUT) :- 
-	object_call(REF, getBackground, [], OUT).
-
 j_viewport_is_focusable(REF, OUT) :- 
 	object_call(REF, isFocusable, [], OUT).
+
+j_viewport_get_background(REF, OUT) :- 
+	object_call(REF, getBackground, [], OUT).
 
 j_viewport_insets(REF, OUT) :- 
 	object_call(REF, insets, [], OUT).
@@ -979,11 +979,11 @@ j_viewport_is_painting_for_print(REF, OUT) :-
 j_viewport_get_input_map(REF, ARG0, OUT) :- 
 	object_call(REF, getInputMap, '.'(ARG0, []), OUT).
 
-j_viewport_create_volatile_image(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, createVolatileImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
 j_viewport_got_focus(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, gotFocus, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+j_viewport_create_volatile_image(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, createVolatileImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
 j_viewport_create_volatile_image(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, createVolatileImage, '.'(ARG0, '.'(ARG1, [])), OUT).

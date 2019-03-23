@@ -124,11 +124,11 @@ scrollbar_revalidate(REF) :-
 scrollbar_get_key_listeners(REF, OUT) :- 
 	object_call(REF, getKeyListeners, [], OUT).
 
-scrollbar_add_mouse_listener(REF, ARG0) :- 
-	object_call(REF, addMouseListener, '.'(ARG0, []), _).
-
 scrollbar_lost_focus(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, lostFocus, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+scrollbar_add_mouse_listener(REF, ARG0) :- 
+	object_call(REF, addMouseListener, '.'(ARG0, []), _).
 
 scrollbar_transfer_focus_up_cycle(REF) :- 
 	object_call(REF, transferFocusUpCycle, [], _).
@@ -238,11 +238,11 @@ scrollbar_get_focus_traversal_keys_enabled(REF, OUT) :-
 scrollbar_get_visible_amount(REF, OUT) :- 
 	object_call(REF, getVisibleAmount, [], OUT).
 
-scrollbar_apply_component_orientation(REF, ARG0) :- 
-	object_call(REF, applyComponentOrientation, '.'(ARG0, []), _).
-
 scrollbar_set_focus_traversal_keys(REF, ARG0, ARG1) :- 
 	object_call(REF, setFocusTraversalKeys, '.'(ARG0, '.'(ARG1, [])), _).
+
+scrollbar_apply_component_orientation(REF, ARG0) :- 
+	object_call(REF, applyComponentOrientation, '.'(ARG0, []), _).
 
 scrollbar_set_unit_increment(REF, ARG0) :- 
 	object_call(REF, setUnitIncrement, '.'(ARG0, []), _).
@@ -319,11 +319,11 @@ scrollbar_set_drop_target(REF, ARG0) :-
 scrollbar_set_location(REF, ARG0) :- 
 	object_call(REF, setLocation, '.'(ARG0, []), _).
 
-scrollbar_get_drop_target(REF, OUT) :- 
-	object_call(REF, getDropTarget, [], OUT).
-
 scrollbar_get_mouse_wheel_listeners(REF, OUT) :- 
 	object_call(REF, getMouseWheelListeners, [], OUT).
+
+scrollbar_get_drop_target(REF, OUT) :- 
+	object_call(REF, getDropTarget, [], OUT).
 
 scrollbar_update(REF, ARG0) :- 
 	object_call(REF, update, '.'(ARG0, []), _).
@@ -343,17 +343,17 @@ scrollbar_create_volatile_image(REF, ARG0, ARG1, OUT) :-
 scrollbar_prepare_image(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, prepareImage, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-scrollbar_create_volatile_image(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, createVolatileImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
 scrollbar_prepare_image(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_call(REF, prepareImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
-scrollbar_get_hierarchy_listeners(REF, OUT) :- 
-	object_call(REF, getHierarchyListeners, [], OUT).
+scrollbar_create_volatile_image(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, createVolatileImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
 scrollbar_inside(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, inside, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+scrollbar_get_hierarchy_listeners(REF, OUT) :- 
+	object_call(REF, getHierarchyListeners, [], OUT).
 
 scrollbar_get_baseline(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, getBaseline, '.'(ARG0, '.'(ARG1, [])), OUT).
@@ -367,11 +367,11 @@ scrollbar_request_focus(REF) :-
 scrollbar_size(REF, OUT) :- 
 	object_call(REF, size, [], OUT).
 
-scrollbar_dispatch_event(REF, ARG0) :- 
-	object_call(REF, dispatchEvent, '.'(ARG0, []), _).
-
 scrollbar_remove_input_method_listener(REF, ARG0) :- 
 	object_call(REF, removeInputMethodListener, '.'(ARG0, []), _).
+
+scrollbar_dispatch_event(REF, ARG0) :- 
+	object_call(REF, dispatchEvent, '.'(ARG0, []), _).
 
 scrollbar_has_focus(REF, OUT) :- 
 	object_call(REF, hasFocus, [], OUT).
@@ -394,11 +394,11 @@ scrollbar_get_location_on_screen(REF, OUT) :-
 scrollbar_get_width(REF, OUT) :- 
 	object_call(REF, getWidth, [], OUT).
 
-scrollbar_get_component_at(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getComponentAt, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 scrollbar_image_update(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, OUT) :- 
 	object_call(REF, imageUpdate, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, [])))))), OUT).
+
+scrollbar_get_component_at(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getComponentAt, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 scrollbar_get_component_at(REF, ARG0, OUT) :- 
 	object_call(REF, getComponentAt, '.'(ARG0, []), OUT).
@@ -439,11 +439,11 @@ scrollbar_set_enabled(REF, ARG0) :-
 scrollbar_get_focus_traversal_keys(REF, ARG0, OUT) :- 
 	object_call(REF, getFocusTraversalKeys, '.'(ARG0, []), OUT).
 
-scrollbar_get_focus_listeners(REF, OUT) :- 
-	object_call(REF, getFocusListeners, [], OUT).
-
 scrollbar_print_all(REF, ARG0) :- 
 	object_call(REF, printAll, '.'(ARG0, []), _).
+
+scrollbar_get_focus_listeners(REF, OUT) :- 
+	object_call(REF, getFocusListeners, [], OUT).
 
 scrollbar_get_value_is_adjusting(REF, OUT) :- 
 	object_call(REF, getValueIsAdjusting, [], OUT).
@@ -454,11 +454,11 @@ scrollbar_get_listeners(REF, ARG0, OUT) :-
 scrollbar_is_background_set(REF, OUT) :- 
 	object_call(REF, isBackgroundSet, [], OUT).
 
-scrollbar_add_key_listener(REF, ARG0) :- 
-	object_call(REF, addKeyListener, '.'(ARG0, []), _).
-
 scrollbar_remove_notify(REF) :- 
 	object_call(REF, removeNotify, [], _).
+
+scrollbar_add_key_listener(REF, ARG0) :- 
+	object_call(REF, addKeyListener, '.'(ARG0, []), _).
 
 scrollbar_get_minimum(REF, OUT) :- 
 	object_call(REF, getMinimum, [], OUT).
@@ -466,11 +466,11 @@ scrollbar_get_minimum(REF, OUT) :-
 scrollbar_is_opaque(REF, OUT) :- 
 	object_call(REF, isOpaque, [], OUT).
 
-scrollbar_enable_input_methods(REF, ARG0) :- 
-	object_call(REF, enableInputMethods, '.'(ARG0, []), _).
-
 scrollbar_remove_focus_listener(REF, ARG0) :- 
 	object_call(REF, removeFocusListener, '.'(ARG0, []), _).
+
+scrollbar_enable_input_methods(REF, ARG0) :- 
+	object_call(REF, enableInputMethods, '.'(ARG0, []), _).
 
 scrollbar_post_event(REF, ARG0, OUT) :- 
 	object_call(REF, postEvent, '.'(ARG0, []), OUT).
@@ -628,11 +628,11 @@ scrollbar_get_orientation(REF, OUT) :-
 scrollbar_set_name(REF, ARG0) :- 
 	object_call(REF, setName, '.'(ARG0, []), _).
 
-scrollbar_get_alignment_y(REF, OUT) :- 
-	object_call(REF, getAlignmentY, [], OUT).
-
 scrollbar_remove_mouse_wheel_listener(REF, ARG0) :- 
 	object_call(REF, removeMouseWheelListener, '.'(ARG0, []), _).
+
+scrollbar_get_alignment_y(REF, OUT) :- 
+	object_call(REF, getAlignmentY, [], OUT).
 
 scrollbar_is_foreground_set(REF, OUT) :- 
 	object_call(REF, isForegroundSet, [], OUT).
@@ -715,11 +715,11 @@ scrollbar_remove_key_listener(REF, ARG0) :-
 scrollbar_action(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, action, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-scrollbar_do_layout(REF) :- 
-	object_call(REF, doLayout, [], _).
-
 scrollbar_set_focusable(REF, ARG0) :- 
 	object_call(REF, setFocusable, '.'(ARG0, []), _).
+
+scrollbar_do_layout(REF) :- 
+	object_call(REF, doLayout, [], _).
 
 scrollbar_is_minimum_size_set(REF, OUT) :- 
 	object_call(REF, isMinimumSizeSet, [], OUT).

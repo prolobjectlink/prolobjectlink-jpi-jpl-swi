@@ -40,11 +40,11 @@ multi_option_pane_u_i_hash_code(REF, OUT) :-
 multi_option_pane_u_i_update(REF, ARG0, ARG1) :- 
 	object_call(REF, update, '.'(ARG0, '.'(ARG1, [])), _).
 
-multi_option_pane_u_i_get_u_is(REF, OUT) :- 
-	object_call(REF, getUIs, [], OUT).
-
 multi_option_pane_u_i_create_u_i(REF, ARG0, OUT) :- 
 	object_call(REF, createUI, '.'(ARG0, []), OUT).
+
+multi_option_pane_u_i_get_u_is(REF, OUT) :- 
+	object_call(REF, getUIs, [], OUT).
 
 multi_option_pane_u_i_get_baseline(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, getBaseline, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).

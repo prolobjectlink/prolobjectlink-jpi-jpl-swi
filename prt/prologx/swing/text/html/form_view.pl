@@ -130,11 +130,11 @@ form_view_replace(REF, ARG0, ARG1, ARG2) :-
 form_view_get_next_visual_position_from(REF, ARG0, ARG1, ARG2, ARG3, ARG4, OUT) :- 
 	object_call(REF, getNextVisualPositionFrom, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, []))))), OUT).
 
-form_view_get_document(REF, OUT) :- 
-	object_call(REF, getDocument, [], OUT).
-
 form_view_get_resize_weight(REF, ARG0, OUT) :- 
 	object_call(REF, getResizeWeight, '.'(ARG0, []), OUT).
+
+form_view_get_document(REF, OUT) :- 
+	object_call(REF, getDocument, [], OUT).
 
 form_view_get_child_allocation(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, getChildAllocation, '.'(ARG0, '.'(ARG1, [])), OUT).

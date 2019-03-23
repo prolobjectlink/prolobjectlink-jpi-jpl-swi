@@ -115,11 +115,11 @@ j_color_chooser_get_insets(REF, ARG0, OUT) :-
 j_color_chooser_set_enabled(REF, ARG0) :- 
 	object_call(REF, setEnabled, '.'(ARG0, []), _).
 
-j_color_chooser_get_ignore_repaint(REF, OUT) :- 
-	object_call(REF, getIgnoreRepaint, [], OUT).
-
 j_color_chooser_mouse_drag(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseDrag, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+j_color_chooser_get_ignore_repaint(REF, OUT) :- 
+	object_call(REF, getIgnoreRepaint, [], OUT).
 
 j_color_chooser_get_input_context(REF, OUT) :- 
 	object_call(REF, getInputContext, [], OUT).
@@ -256,11 +256,11 @@ j_color_chooser_is_focus_owner(REF, OUT) :-
 j_color_chooser_get_width(REF, OUT) :- 
 	object_call(REF, getWidth, [], OUT).
 
-j_color_chooser_add_hierarchy_listener(REF, ARG0) :- 
-	object_call(REF, addHierarchyListener, '.'(ARG0, []), _).
-
 j_color_chooser_remove_component_listener(REF, ARG0) :- 
 	object_call(REF, removeComponentListener, '.'(ARG0, []), _).
+
+j_color_chooser_add_hierarchy_listener(REF, ARG0) :- 
+	object_call(REF, addHierarchyListener, '.'(ARG0, []), _).
 
 j_color_chooser_is_opaque(REF, OUT) :- 
 	object_call(REF, isOpaque, [], OUT).
@@ -292,11 +292,11 @@ j_color_chooser_notify(REF) :-
 j_color_chooser_set_double_buffered(REF, ARG0) :- 
 	object_call(REF, setDoubleBuffered, '.'(ARG0, []), _).
 
-j_color_chooser_get_cursor(REF, OUT) :- 
-	object_call(REF, getCursor, [], OUT).
-
 j_color_chooser_is_showing(REF, OUT) :- 
 	object_call(REF, isShowing, [], OUT).
+
+j_color_chooser_get_cursor(REF, OUT) :- 
+	object_call(REF, getCursor, [], OUT).
 
 j_color_chooser_get_bounds(REF, ARG0, OUT) :- 
 	object_call(REF, getBounds, '.'(ARG0, []), OUT).
@@ -676,11 +676,11 @@ j_color_chooser_request_default_focus(REF, OUT) :-
 j_color_chooser_create_volatile_image(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, createVolatileImage, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-j_color_chooser_create_volatile_image(REF, ARG0, ARG1, ARG2, OUT) :- 
-	object_call(REF, createVolatileImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
-
 j_color_chooser_is_maximum_size_set(REF, OUT) :- 
 	object_call(REF, isMaximumSizeSet, [], OUT).
+
+j_color_chooser_create_volatile_image(REF, ARG0, ARG1, ARG2, OUT) :- 
+	object_call(REF, createVolatileImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
 j_color_chooser_request_focus(REF, ARG0, OUT) :- 
 	object_call(REF, requestFocus, '.'(ARG0, []), OUT).

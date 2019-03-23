@@ -295,11 +295,11 @@ j_radio_button_menu_item_create_image(REF, ARG0, OUT) :-
 j_radio_button_menu_item_show(REF) :- 
 	object_call(REF, show, [], _).
 
-j_radio_button_menu_item_get_background(REF, OUT) :- 
-	object_call(REF, getBackground, [], OUT).
-
 j_radio_button_menu_item_show(REF, ARG0) :- 
 	object_call(REF, show, '.'(ARG0, []), _).
+
+j_radio_button_menu_item_get_background(REF, OUT) :- 
+	object_call(REF, getBackground, [], OUT).
 
 j_radio_button_menu_item_remove_input_method_listener(REF, ARG0) :- 
 	object_call(REF, removeInputMethodListener, '.'(ARG0, []), _).
@@ -382,11 +382,11 @@ j_radio_button_menu_item_set_input_map(REF, ARG0, ARG1) :-
 j_radio_button_menu_item_set_icon(REF, ARG0) :- 
 	object_call(REF, setIcon, '.'(ARG0, []), _).
 
-j_radio_button_menu_item_process_menu_key_event(REF, ARG0) :- 
-	object_call(REF, processMenuKeyEvent, '.'(ARG0, []), _).
-
 j_radio_button_menu_item_remove_menu_drag_mouse_listener(REF, ARG0) :- 
 	object_call(REF, removeMenuDragMouseListener, '.'(ARG0, []), _).
+
+j_radio_button_menu_item_process_menu_key_event(REF, ARG0) :- 
+	object_call(REF, processMenuKeyEvent, '.'(ARG0, []), _).
 
 j_radio_button_menu_item_set_background(REF, ARG0) :- 
 	object_call(REF, setBackground, '.'(ARG0, []), _).
@@ -736,11 +736,11 @@ j_radio_button_menu_item_process_menu_drag_mouse_event(REF, ARG0) :-
 j_radio_button_menu_item_location(REF, OUT) :- 
 	object_call(REF, location, [], OUT).
 
-j_radio_button_menu_item_get_cursor(REF, OUT) :- 
-	object_call(REF, getCursor, [], OUT).
-
 j_radio_button_menu_item_is_displayable(REF, OUT) :- 
 	object_call(REF, isDisplayable, [], OUT).
+
+j_radio_button_menu_item_get_cursor(REF, OUT) :- 
+	object_call(REF, getCursor, [], OUT).
 
 j_radio_button_menu_item_get_name(REF, OUT) :- 
 	object_call(REF, getName, [], OUT).
@@ -1207,11 +1207,11 @@ j_radio_button_menu_item_set_selected_icon(REF, ARG0) :-
 j_radio_button_menu_item_resize(REF, ARG0) :- 
 	object_call(REF, resize, '.'(ARG0, []), _).
 
-j_radio_button_menu_item_get_hierarchy_bounds_listeners(REF, OUT) :- 
-	object_call(REF, getHierarchyBoundsListeners, [], OUT).
-
 j_radio_button_menu_item_transfer_focus_backward(REF) :- 
 	object_call(REF, transferFocusBackward, [], _).
+
+j_radio_button_menu_item_get_hierarchy_bounds_listeners(REF, OUT) :- 
+	object_call(REF, getHierarchyBoundsListeners, [], OUT).
 
 j_radio_button_menu_item_process_key_event(REF, ARG0, ARG1, ARG2) :- 
 	object_call(REF, processKeyEvent, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
@@ -1222,11 +1222,11 @@ j_radio_button_menu_item_remove_vetoable_change_listener(REF, ARG0) :-
 j_radio_button_menu_item_get_graphics_configuration(REF, OUT) :- 
 	object_call(REF, getGraphicsConfiguration, [], OUT).
 
-j_radio_button_menu_item_set_rollover_enabled(REF, ARG0) :- 
-	object_call(REF, setRolloverEnabled, '.'(ARG0, []), _).
-
 j_radio_button_menu_item_remove_change_listener(REF, ARG0) :- 
 	object_call(REF, removeChangeListener, '.'(ARG0, []), _).
+
+j_radio_button_menu_item_set_rollover_enabled(REF, ARG0) :- 
+	object_call(REF, setRolloverEnabled, '.'(ARG0, []), _).
 
 j_radio_button_menu_item_set_drop_target(REF, ARG0) :- 
 	object_call(REF, setDropTarget, '.'(ARG0, []), _).
@@ -1264,11 +1264,11 @@ j_radio_button_menu_item_set_disabled_icon(REF, ARG0) :-
 j_radio_button_menu_item_is_focus_traversable(REF, OUT) :- 
 	object_call(REF, isFocusTraversable, [], OUT).
 
-j_radio_button_menu_item_set_focus_painted(REF, ARG0) :- 
-	object_call(REF, setFocusPainted, '.'(ARG0, []), _).
-
 j_radio_button_menu_item_set_border_painted(REF, ARG0) :- 
 	object_call(REF, setBorderPainted, '.'(ARG0, []), _).
+
+j_radio_button_menu_item_set_focus_painted(REF, ARG0) :- 
+	object_call(REF, setFocusPainted, '.'(ARG0, []), _).
 
 j_radio_button_menu_item_set_debug_graphics_options(REF, ARG0) :- 
 	object_call(REF, setDebugGraphicsOptions, '.'(ARG0, []), _).

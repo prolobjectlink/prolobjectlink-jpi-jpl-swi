@@ -55,11 +55,11 @@ default_tree_selection_model_remove_selection_path(REF, ARG0) :-
 default_tree_selection_model_set_selection_mode(REF, ARG0) :- 
 	object_call(REF, setSelectionMode, '.'(ARG0, []), _).
 
-default_tree_selection_model_add_tree_selection_listener(REF, ARG0) :- 
-	object_call(REF, addTreeSelectionListener, '.'(ARG0, []), _).
-
 default_tree_selection_model_get_selection_count(REF, OUT) :- 
 	object_call(REF, getSelectionCount, [], OUT).
+
+default_tree_selection_model_add_tree_selection_listener(REF, ARG0) :- 
+	object_call(REF, addTreeSelectionListener, '.'(ARG0, []), _).
 
 default_tree_selection_model_get_lead_selection_row(REF, OUT) :- 
 	object_call(REF, getLeadSelectionRow, [], OUT).
@@ -85,20 +85,20 @@ default_tree_selection_model_get_selection_paths(REF, OUT) :-
 default_tree_selection_model_clone(REF, OUT) :- 
 	object_call(REF, clone, [], OUT).
 
-default_tree_selection_model_get_lead_selection_path(REF, OUT) :- 
-	object_call(REF, getLeadSelectionPath, [], OUT).
-
 default_tree_selection_model_get_selection_path(REF, OUT) :- 
 	object_call(REF, getSelectionPath, [], OUT).
+
+default_tree_selection_model_get_lead_selection_path(REF, OUT) :- 
+	object_call(REF, getLeadSelectionPath, [], OUT).
 
 default_tree_selection_model_is_row_selected(REF, ARG0, OUT) :- 
 	object_call(REF, isRowSelected, '.'(ARG0, []), OUT).
 
-default_tree_selection_model_get_min_selection_row(REF, OUT) :- 
-	object_call(REF, getMinSelectionRow, [], OUT).
-
 default_tree_selection_model_clear_selection(REF) :- 
 	object_call(REF, clearSelection, [], _).
+
+default_tree_selection_model_get_min_selection_row(REF, OUT) :- 
+	object_call(REF, getMinSelectionRow, [], OUT).
 
 default_tree_selection_model_set_row_mapper(REF, ARG0) :- 
 	object_call(REF, setRowMapper, '.'(ARG0, []), _).
@@ -130,11 +130,11 @@ default_tree_selection_model_get_property_change_listeners(REF, OUT) :-
 default_tree_selection_model_remove_property_change_listener(REF, ARG0) :- 
 	object_call(REF, removePropertyChangeListener, '.'(ARG0, []), _).
 
-default_tree_selection_model_add_selection_paths(REF, ARG0) :- 
-	object_call(REF, addSelectionPaths, '.'(ARG0, []), _).
-
 default_tree_selection_model_remove_selection_paths(REF, ARG0) :- 
 	object_call(REF, removeSelectionPaths, '.'(ARG0, []), _).
+
+default_tree_selection_model_add_selection_paths(REF, ARG0) :- 
+	object_call(REF, addSelectionPaths, '.'(ARG0, []), _).
 
 default_tree_selection_model_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).

@@ -25,11 +25,11 @@
 basic_separator_u_i(OUT) :- 
 	object_new('javax.swing.plaf.basic.BasicSeparatorUI', [], OUT).
 
-basic_separator_u_i_get_baseline_resize_behavior(REF, ARG0, OUT) :- 
-	object_call(REF, getBaselineResizeBehavior, '.'(ARG0, []), OUT).
-
 basic_separator_u_i_get_accessible_child(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, getAccessibleChild, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+basic_separator_u_i_get_baseline_resize_behavior(REF, ARG0, OUT) :- 
+	object_call(REF, getBaselineResizeBehavior, '.'(ARG0, []), OUT).
 
 basic_separator_u_i_update(REF, ARG0, ARG1) :- 
 	object_call(REF, update, '.'(ARG0, '.'(ARG1, [])), _).

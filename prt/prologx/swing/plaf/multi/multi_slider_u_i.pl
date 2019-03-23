@@ -31,11 +31,11 @@ multi_slider_u_i_hash_code(REF, OUT) :-
 multi_slider_u_i_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
 
-multi_slider_u_i_get_u_is(REF, OUT) :- 
-	object_call(REF, getUIs, [], OUT).
-
 multi_slider_u_i_create_u_i(REF, ARG0, OUT) :- 
 	object_call(REF, createUI, '.'(ARG0, []), OUT).
+
+multi_slider_u_i_get_u_is(REF, OUT) :- 
+	object_call(REF, getUIs, [], OUT).
 
 multi_slider_u_i_install_u_i(REF, ARG0) :- 
 	object_call(REF, installUI, '.'(ARG0, []), _).

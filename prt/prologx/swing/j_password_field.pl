@@ -283,11 +283,11 @@ j_password_field_get_height(REF, OUT) :-
 j_password_field_repaint(REF, ARG0, ARG1, ARG2, ARG3) :- 
 	object_call(REF, repaint, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).
 
-j_password_field_get_u_i(REF, OUT) :- 
-	object_call(REF, getUI, [], OUT).
-
 j_password_field_get_keymap(REF, ARG0, OUT) :- 
 	object_call(REF, getKeymap, '.'(ARG0, []), OUT).
+
+j_password_field_get_u_i(REF, OUT) :- 
+	object_call(REF, getUI, [], OUT).
 
 j_password_field_is_visible(REF, OUT) :- 
 	object_call(REF, isVisible, [], OUT).
@@ -946,11 +946,11 @@ j_password_field_set_autoscrolls(REF, ARG0) :-
 j_password_field_select(REF, ARG0, ARG1) :- 
 	object_call(REF, select, '.'(ARG0, '.'(ARG1, [])), _).
 
-j_password_field_get_focus_cycle_root_ancestor(REF, OUT) :- 
-	object_call(REF, getFocusCycleRootAncestor, [], OUT).
-
 j_password_field_mouse_exit(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseExit, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+j_password_field_get_focus_cycle_root_ancestor(REF, OUT) :- 
+	object_call(REF, getFocusCycleRootAncestor, [], OUT).
 
 j_password_field_is_focus_traversable(REF, OUT) :- 
 	object_call(REF, isFocusTraversable, [], OUT).
@@ -1258,14 +1258,14 @@ j_password_field_minimum_size(REF, OUT) :-
 j_password_field_mouse_up(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseUp, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-j_password_field_get_focus_listeners(REF, OUT) :- 
-	object_call(REF, getFocusListeners, [], OUT).
-
 j_password_field_is_displayable(REF, OUT) :- 
 	object_call(REF, isDisplayable, [], OUT).
 
 j_password_field_is_preferred_size_set(REF, OUT) :- 
 	object_call(REF, isPreferredSizeSet, [], OUT).
+
+j_password_field_get_focus_listeners(REF, OUT) :- 
+	object_call(REF, getFocusListeners, [], OUT).
 
 j_password_field_get_components(REF, OUT) :- 
 	object_call(REF, getComponents, [], OUT).
@@ -1312,11 +1312,11 @@ j_password_field_check_image(REF, ARG0, ARG1, OUT) :-
 j_password_field_set_bounds(REF, ARG0, ARG1, ARG2, ARG3) :- 
 	object_call(REF, setBounds, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).
 
-j_password_field_check_image(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
-	object_call(REF, checkImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
-
 j_password_field_inside(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, inside, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+j_password_field_check_image(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
+	object_call(REF, checkImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
 
 j_password_field_add_key_listener(REF, ARG0) :- 
 	object_call(REF, addKeyListener, '.'(ARG0, []), _).

@@ -109,11 +109,11 @@ synth_tree_u_i_get_baseline_resize_behavior(REF, ARG0, OUT) :-
 synth_tree_u_i_notify(REF) :- 
 	object_call(REF, notify, [], _).
 
-synth_tree_u_i_cancel_editing(REF, ARG0) :- 
-	object_call(REF, cancelEditing, '.'(ARG0, []), _).
-
 synth_tree_u_i_install_u_i(REF, ARG0) :- 
 	object_call(REF, installUI, '.'(ARG0, []), _).
+
+synth_tree_u_i_cancel_editing(REF, ARG0) :- 
+	object_call(REF, cancelEditing, '.'(ARG0, []), _).
 
 synth_tree_u_i_get_minimum_size(REF, ARG0, OUT) :- 
 	object_call(REF, getMinimumSize, '.'(ARG0, []), OUT).

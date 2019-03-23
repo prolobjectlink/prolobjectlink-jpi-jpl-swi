@@ -283,14 +283,14 @@ j_panel_get_parent(REF, OUT) :-
 j_panel_get_component_orientation(REF, OUT) :- 
 	object_call(REF, getComponentOrientation, [], OUT).
 
-j_panel_get_tree_lock(REF, OUT) :- 
-	object_call(REF, getTreeLock, [], OUT).
-
 j_panel_is_foreground_set(REF, OUT) :- 
 	object_call(REF, isForegroundSet, [], OUT).
 
 j_panel_remove_component_listener(REF, ARG0) :- 
 	object_call(REF, removeComponentListener, '.'(ARG0, []), _).
+
+j_panel_get_tree_lock(REF, OUT) :- 
+	object_call(REF, getTreeLock, [], OUT).
 
 j_panel_remove(REF, ARG0) :- 
 	object_call(REF, remove, '.'(ARG0, []), _).
@@ -880,11 +880,11 @@ j_panel_set_bounds(REF, ARG0, ARG1, ARG2, ARG3) :-
 j_panel_get_location_on_screen(REF, OUT) :- 
 	object_call(REF, getLocationOnScreen, [], OUT).
 
-j_panel_get_focus_cycle_root_ancestor(REF, OUT) :- 
-	object_call(REF, getFocusCycleRootAncestor, [], OUT).
-
 j_panel_set_bounds(REF, ARG0) :- 
 	object_call(REF, setBounds, '.'(ARG0, []), _).
+
+j_panel_get_focus_cycle_root_ancestor(REF, OUT) :- 
+	object_call(REF, getFocusCycleRootAncestor, [], OUT).
 
 j_panel_get_ancestor_listeners(REF, OUT) :- 
 	object_call(REF, getAncestorListeners, [], OUT).
@@ -994,11 +994,11 @@ j_panel_is_optimized_drawing_enabled(REF, OUT) :-
 j_panel_get_registered_key_strokes(REF, OUT) :- 
 	object_call(REF, getRegisteredKeyStrokes, [], OUT).
 
-j_panel_add_input_method_listener(REF, ARG0) :- 
-	object_call(REF, addInputMethodListener, '.'(ARG0, []), _).
-
 j_panel_transfer_focus_up_cycle(REF) :- 
 	object_call(REF, transferFocusUpCycle, [], _).
+
+j_panel_add_input_method_listener(REF, ARG0) :- 
+	object_call(REF, addInputMethodListener, '.'(ARG0, []), _).
 
 j_panel_get_layout(REF, OUT) :- 
 	object_call(REF, getLayout, [], OUT).

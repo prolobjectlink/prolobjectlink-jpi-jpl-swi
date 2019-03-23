@@ -472,11 +472,11 @@ j_check_box_set_locale(REF, ARG0) :-
 j_check_box_set_bounds(REF, ARG0) :- 
 	object_call(REF, setBounds, '.'(ARG0, []), _).
 
-j_check_box_add_mouse_wheel_listener(REF, ARG0) :- 
-	object_call(REF, addMouseWheelListener, '.'(ARG0, []), _).
-
 j_check_box_get_mouse_listeners(REF, OUT) :- 
 	object_call(REF, getMouseListeners, [], OUT).
+
+j_check_box_add_mouse_wheel_listener(REF, ARG0) :- 
+	object_call(REF, addMouseWheelListener, '.'(ARG0, []), _).
 
 j_check_box_is_request_focus_enabled(REF, OUT) :- 
 	object_call(REF, isRequestFocusEnabled, [], OUT).
@@ -508,11 +508,11 @@ j_check_box_add(REF, ARG0, ARG1, ARG2) :-
 j_check_box_get_top_level_ancestor(REF, OUT) :- 
 	object_call(REF, getTopLevelAncestor, [], OUT).
 
-j_check_box_set_vertical_alignment(REF, ARG0) :- 
-	object_call(REF, setVerticalAlignment, '.'(ARG0, []), _).
-
 j_check_box_set_vertical_text_position(REF, ARG0) :- 
 	object_call(REF, setVerticalTextPosition, '.'(ARG0, []), _).
+
+j_check_box_set_vertical_alignment(REF, ARG0) :- 
+	object_call(REF, setVerticalAlignment, '.'(ARG0, []), _).
 
 j_check_box_set_focus_cycle_root(REF, ARG0) :- 
 	object_call(REF, setFocusCycleRoot, '.'(ARG0, []), _).
@@ -550,11 +550,11 @@ j_check_box_apply_component_orientation(REF, ARG0) :-
 j_check_box_create_image(REF, ARG0, OUT) :- 
 	object_call(REF, createImage, '.'(ARG0, []), OUT).
 
-j_check_box_create_image(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, createImage, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 j_check_box_prepare_image(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_call(REF, prepareImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+
+j_check_box_create_image(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, createImage, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 j_check_box_compute_visible_rect(REF, ARG0) :- 
 	object_call(REF, computeVisibleRect, '.'(ARG0, []), _).
@@ -637,14 +637,14 @@ j_check_box_get_y(REF, OUT) :-
 j_check_box_create_volatile_image(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, createVolatileImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
+j_check_box_is_foreground_set(REF, OUT) :- 
+	object_call(REF, isForegroundSet, [], OUT).
+
 j_check_box_add_key_listener(REF, ARG0) :- 
 	object_call(REF, addKeyListener, '.'(ARG0, []), _).
 
 j_check_box_create_volatile_image(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, createVolatileImage, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-j_check_box_is_foreground_set(REF, OUT) :- 
-	object_call(REF, isForegroundSet, [], OUT).
 
 j_check_box_get_mouse_motion_listeners(REF, OUT) :- 
 	object_call(REF, getMouseMotionListeners, [], OUT).
@@ -661,11 +661,11 @@ j_check_box_scroll_rect_to_visible(REF, ARG0) :-
 j_check_box_register_keyboard_action(REF, ARG0, ARG1, ARG2, ARG3) :- 
 	object_call(REF, registerKeyboardAction, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).
 
-j_check_box_get_drop_target(REF, OUT) :- 
-	object_call(REF, getDropTarget, [], OUT).
-
 j_check_box_set_component_orientation(REF, ARG0) :- 
 	object_call(REF, setComponentOrientation, '.'(ARG0, []), _).
+
+j_check_box_get_drop_target(REF, OUT) :- 
+	object_call(REF, getDropTarget, [], OUT).
 
 j_check_box_set_alignment_x(REF, ARG0) :- 
 	object_call(REF, setAlignmentX, '.'(ARG0, []), _).
@@ -676,11 +676,11 @@ j_check_box_get_container_listeners(REF, OUT) :-
 j_check_box_get_focus_cycle_root_ancestor(REF, OUT) :- 
 	object_call(REF, getFocusCycleRootAncestor, [], OUT).
 
-j_check_box_get_color_model(REF, OUT) :- 
-	object_call(REF, getColorModel, [], OUT).
-
 j_check_box_lost_focus(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, lostFocus, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+j_check_box_get_color_model(REF, OUT) :- 
+	object_call(REF, getColorModel, [], OUT).
 
 j_check_box_remove_notify(REF) :- 
 	object_call(REF, removeNotify, [], _).
@@ -1063,11 +1063,11 @@ j_check_box_print(REF, ARG0) :-
 j_check_box_preferred_size(REF, OUT) :- 
 	object_call(REF, preferredSize, [], OUT).
 
-j_check_box_dispatch_event(REF, ARG0) :- 
-	object_call(REF, dispatchEvent, '.'(ARG0, []), _).
-
 j_check_box_key_up(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, keyUp, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+j_check_box_dispatch_event(REF, ARG0) :- 
+	object_call(REF, dispatchEvent, '.'(ARG0, []), _).
 
 j_check_box_get_bounds(REF, ARG0, OUT) :- 
 	object_call(REF, getBounds, '.'(ARG0, []), OUT).
@@ -1138,14 +1138,14 @@ j_check_box_set_enabled(REF, ARG0) :-
 j_check_box_wait(REF, ARG0, ARG1) :- 
 	object_call(REF, wait, '.'(ARG0, '.'(ARG1, [])), _).
 
+j_check_box_post_event(REF, ARG0, OUT) :- 
+	object_call(REF, postEvent, '.'(ARG0, []), OUT).
+
 j_check_box_get_component_listeners(REF, OUT) :- 
 	object_call(REF, getComponentListeners, [], OUT).
 
 j_check_box_get_input_context(REF, OUT) :- 
 	object_call(REF, getInputContext, [], OUT).
-
-j_check_box_post_event(REF, ARG0, OUT) :- 
-	object_call(REF, postEvent, '.'(ARG0, []), OUT).
 
 j_check_box_get_margin(REF, OUT) :- 
 	object_call(REF, getMargin, [], OUT).

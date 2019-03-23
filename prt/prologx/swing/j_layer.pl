@@ -304,11 +304,11 @@ j_layer_contains(REF, ARG0, ARG1, OUT) :-
 j_layer_set_alignment_y(REF, ARG0) :- 
 	object_call(REF, setAlignmentY, '.'(ARG0, []), _).
 
-j_layer_dispatch_event(REF, ARG0) :- 
-	object_call(REF, dispatchEvent, '.'(ARG0, []), _).
-
 j_layer_has_focus(REF, OUT) :- 
 	object_call(REF, hasFocus, [], OUT).
+
+j_layer_dispatch_event(REF, ARG0) :- 
+	object_call(REF, dispatchEvent, '.'(ARG0, []), _).
 
 j_layer_get_class(REF, OUT) :- 
 	object_call(REF, getClass, [], OUT).
@@ -523,11 +523,11 @@ j_layer_set_ignore_repaint(REF, ARG0) :-
 j_layer_get_y(REF, OUT) :- 
 	object_call(REF, getY, [], OUT).
 
-j_layer_add_mouse_motion_listener(REF, ARG0) :- 
-	object_call(REF, addMouseMotionListener, '.'(ARG0, []), _).
-
 j_layer_got_focus(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, gotFocus, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+j_layer_add_mouse_motion_listener(REF, ARG0) :- 
+	object_call(REF, addMouseMotionListener, '.'(ARG0, []), _).
 
 j_layer_get_alignment_x(REF, OUT) :- 
 	object_call(REF, getAlignmentX, [], OUT).
@@ -697,11 +697,11 @@ j_layer_remove_component_listener(REF, ARG0) :-
 j_layer_set_next_focusable_component(REF, ARG0) :- 
 	object_call(REF, setNextFocusableComponent, '.'(ARG0, []), _).
 
-j_layer_get_baseline(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, getBaseline, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 j_layer_set_focus_traversal_keys(REF, ARG0, ARG1) :- 
 	object_call(REF, setFocusTraversalKeys, '.'(ARG0, '.'(ARG1, [])), _).
+
+j_layer_get_baseline(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, getBaseline, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 j_layer_get_inherits_popup_menu(REF, OUT) :- 
 	object_call(REF, getInheritsPopupMenu, [], OUT).
@@ -874,11 +874,11 @@ j_layer_set_border(REF, ARG0) :-
 j_layer_is_focusable(REF, OUT) :- 
 	object_call(REF, isFocusable, [], OUT).
 
-j_layer_add_input_method_listener(REF, ARG0) :- 
-	object_call(REF, addInputMethodListener, '.'(ARG0, []), _).
-
 j_layer_mouse_drag(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseDrag, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+j_layer_add_input_method_listener(REF, ARG0) :- 
+	object_call(REF, addInputMethodListener, '.'(ARG0, []), _).
 
 j_layer_set_request_focus_enabled(REF, ARG0) :- 
 	object_call(REF, setRequestFocusEnabled, '.'(ARG0, []), _).
@@ -991,11 +991,11 @@ j_layer_remove(REF, ARG0) :-
 j_layer_add_hierarchy_listener(REF, ARG0) :- 
 	object_call(REF, addHierarchyListener, '.'(ARG0, []), _).
 
-j_layer_get_component_orientation(REF, OUT) :- 
-	object_call(REF, getComponentOrientation, [], OUT).
-
 j_layer_get_peer(REF, OUT) :- 
 	object_call(REF, getPeer, [], OUT).
+
+j_layer_get_component_orientation(REF, OUT) :- 
+	object_call(REF, getComponentOrientation, [], OUT).
 
 j_layer_get_input_map(REF, OUT) :- 
 	object_call(REF, getInputMap, [], OUT).
@@ -1009,11 +1009,11 @@ j_layer_get_input_map(REF, ARG0, OUT) :-
 j_layer_get_focus_traversal_keys(REF, ARG0, OUT) :- 
 	object_call(REF, getFocusTraversalKeys, '.'(ARG0, []), OUT).
 
-j_layer_add_mouse_listener(REF, ARG0) :- 
-	object_call(REF, addMouseListener, '.'(ARG0, []), _).
-
 j_layer_is_visible(REF, OUT) :- 
 	object_call(REF, isVisible, [], OUT).
+
+j_layer_add_mouse_listener(REF, ARG0) :- 
+	object_call(REF, addMouseListener, '.'(ARG0, []), _).
 
 j_layer_is_lightweight(REF, OUT) :- 
 	object_call(REF, isLightweight, [], OUT).
@@ -1045,11 +1045,11 @@ j_layer_fire_property_change(REF, ARG0, ARG1, ARG2) :-
 j_layer_get_mouse_position(REF, ARG0, OUT) :- 
 	object_call(REF, getMousePosition, '.'(ARG0, []), OUT).
 
-j_layer_enable_input_methods(REF, ARG0) :- 
-	object_call(REF, enableInputMethods, '.'(ARG0, []), _).
-
 j_layer_get_mouse_position(REF, OUT) :- 
 	object_call(REF, getMousePosition, [], OUT).
+
+j_layer_enable_input_methods(REF, ARG0) :- 
+	object_call(REF, enableInputMethods, '.'(ARG0, []), _).
 
 j_layer_set_foreground(REF, ARG0) :- 
 	object_call(REF, setForeground, '.'(ARG0, []), _).

@@ -184,11 +184,11 @@ default_tree_cell_renderer_notify(REF) :-
 default_tree_cell_renderer_is_opaque(REF, OUT) :- 
 	object_call(REF, isOpaque, [], OUT).
 
-default_tree_cell_renderer_get_component_z_order(REF, ARG0, OUT) :- 
-	object_call(REF, getComponentZOrder, '.'(ARG0, []), OUT).
-
 default_tree_cell_renderer_is_ancestor_of(REF, ARG0, OUT) :- 
 	object_call(REF, isAncestorOf, '.'(ARG0, []), OUT).
+
+default_tree_cell_renderer_get_component_z_order(REF, ARG0, OUT) :- 
+	object_call(REF, getComponentZOrder, '.'(ARG0, []), OUT).
 
 default_tree_cell_renderer_get_default_open_icon(REF, OUT) :- 
 	object_call(REF, getDefaultOpenIcon, [], OUT).
@@ -361,11 +361,11 @@ default_tree_cell_renderer_get_font(REF, OUT) :-
 default_tree_cell_renderer_show(REF) :- 
 	object_call(REF, show, [], _).
 
-default_tree_cell_renderer_get_hierarchy_listeners(REF, OUT) :- 
-	object_call(REF, getHierarchyListeners, [], OUT).
-
 default_tree_cell_renderer_transfer_focus(REF) :- 
 	object_call(REF, transferFocus, [], _).
+
+default_tree_cell_renderer_get_hierarchy_listeners(REF, OUT) :- 
+	object_call(REF, getHierarchyListeners, [], OUT).
 
 default_tree_cell_renderer_get_debug_graphics_options(REF, OUT) :- 
 	object_call(REF, getDebugGraphicsOptions, [], OUT).
@@ -403,11 +403,11 @@ default_tree_cell_renderer_size(REF, OUT) :-
 default_tree_cell_renderer_get_property_change_listeners(REF, OUT) :- 
 	object_call(REF, getPropertyChangeListeners, [], OUT).
 
-default_tree_cell_renderer_add_mouse_wheel_listener(REF, ARG0) :- 
-	object_call(REF, addMouseWheelListener, '.'(ARG0, []), _).
-
 default_tree_cell_renderer_get_property_change_listeners(REF, ARG0, OUT) :- 
 	object_call(REF, getPropertyChangeListeners, '.'(ARG0, []), OUT).
+
+default_tree_cell_renderer_add_mouse_wheel_listener(REF, ARG0) :- 
+	object_call(REF, addMouseWheelListener, '.'(ARG0, []), _).
 
 default_tree_cell_renderer_contains(REF, ARG0, OUT) :- 
 	object_call(REF, contains, '.'(ARG0, []), OUT).
@@ -472,11 +472,11 @@ default_tree_cell_renderer_get_x(REF, OUT) :-
 default_tree_cell_renderer_is_visible(REF, OUT) :- 
 	object_call(REF, isVisible, [], OUT).
 
-default_tree_cell_renderer_add_hierarchy_bounds_listener(REF, ARG0) :- 
-	object_call(REF, addHierarchyBoundsListener, '.'(ARG0, []), _).
-
 default_tree_cell_renderer_repaint(REF, ARG0, ARG1, ARG2, ARG3) :- 
 	object_call(REF, repaint, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).
+
+default_tree_cell_renderer_add_hierarchy_bounds_listener(REF, ARG0) :- 
+	object_call(REF, addHierarchyBoundsListener, '.'(ARG0, []), _).
 
 default_tree_cell_renderer_fire_property_change(REF, ARG0, ARG1, ARG2) :- 
 	object_call(REF, firePropertyChange, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), _).
@@ -625,11 +625,11 @@ default_tree_cell_renderer_set_border(REF, ARG0) :-
 default_tree_cell_renderer_set_bounds(REF, ARG0, ARG1, ARG2, ARG3) :- 
 	object_call(REF, setBounds, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), _).
 
-default_tree_cell_renderer_is_enabled(REF, OUT) :- 
-	object_call(REF, isEnabled, [], OUT).
-
 default_tree_cell_renderer_set_locale(REF, ARG0) :- 
 	object_call(REF, setLocale, '.'(ARG0, []), _).
+
+default_tree_cell_renderer_is_enabled(REF, OUT) :- 
+	object_call(REF, isEnabled, [], OUT).
 
 default_tree_cell_renderer_set_minimum_size(REF, ARG0) :- 
 	object_call(REF, setMinimumSize, '.'(ARG0, []), _).
@@ -682,11 +682,11 @@ default_tree_cell_renderer_get_tree_cell_renderer_component(REF, ARG0, ARG1, ARG
 default_tree_cell_renderer_count_components(REF, OUT) :- 
 	object_call(REF, countComponents, [], OUT).
 
-default_tree_cell_renderer_get_toolkit(REF, OUT) :- 
-	object_call(REF, getToolkit, [], OUT).
-
 default_tree_cell_renderer_lost_focus(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, lostFocus, '.'(ARG0, '.'(ARG1, [])), OUT).
+
+default_tree_cell_renderer_get_toolkit(REF, OUT) :- 
+	object_call(REF, getToolkit, [], OUT).
 
 default_tree_cell_renderer_get_component_popup_menu(REF, OUT) :- 
 	object_call(REF, getComponentPopupMenu, [], OUT).
@@ -712,11 +712,11 @@ default_tree_cell_renderer_set_icon(REF, ARG0) :-
 default_tree_cell_renderer_get_tool_tip_location(REF, ARG0, OUT) :- 
 	object_call(REF, getToolTipLocation, '.'(ARG0, []), OUT).
 
-default_tree_cell_renderer_add_mouse_listener(REF, ARG0) :- 
-	object_call(REF, addMouseListener, '.'(ARG0, []), _).
-
 default_tree_cell_renderer_is_maximum_size_set(REF, OUT) :- 
 	object_call(REF, isMaximumSizeSet, [], OUT).
+
+default_tree_cell_renderer_add_mouse_listener(REF, ARG0) :- 
+	object_call(REF, addMouseListener, '.'(ARG0, []), _).
 
 default_tree_cell_renderer_add_property_change_listener(REF, ARG0, ARG1) :- 
 	object_call(REF, addPropertyChangeListener, '.'(ARG0, '.'(ARG1, [])), _).

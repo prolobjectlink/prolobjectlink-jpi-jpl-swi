@@ -235,11 +235,11 @@ j_option_pane_repaint(REF, ARG0) :-
 j_option_pane_repaint(REF, ARG0) :- 
 	object_call(REF, repaint, '.'(ARG0, []), _).
 
-j_option_pane_get_component_orientation(REF, OUT) :- 
-	object_call(REF, getComponentOrientation, [], OUT).
-
 j_option_pane_mouse_exit(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseExit, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
+
+j_option_pane_get_component_orientation(REF, OUT) :- 
+	object_call(REF, getComponentOrientation, [], OUT).
 
 j_option_pane_show_internal_input_dialog(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, ARG6, OUT) :- 
 	object_call(REF, showInternalInputDialog, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, '.'(ARG4, '.'(ARG5, '.'(ARG6, []))))))), OUT).
@@ -577,11 +577,11 @@ j_option_pane_transfer_focus_up_cycle(REF) :-
 j_option_pane_compute_visible_rect(REF, ARG0) :- 
 	object_call(REF, computeVisibleRect, '.'(ARG0, []), _).
 
-j_option_pane_check_image(REF, ARG0, ARG1, OUT) :- 
-	object_call(REF, checkImage, '.'(ARG0, '.'(ARG1, [])), OUT).
-
 j_option_pane_next_focus(REF) :- 
 	object_call(REF, nextFocus, [], _).
+
+j_option_pane_check_image(REF, ARG0, ARG1, OUT) :- 
+	object_call(REF, checkImage, '.'(ARG0, '.'(ARG1, [])), OUT).
 
 j_option_pane_set_component_z_order(REF, ARG0, ARG1) :- 
 	object_call(REF, setComponentZOrder, '.'(ARG0, '.'(ARG1, [])), _).
@@ -787,11 +787,11 @@ j_option_pane_is_focus_traversal_policy_set(REF, OUT) :-
 j_option_pane_is_optimized_drawing_enabled(REF, OUT) :- 
 	object_call(REF, isOptimizedDrawingEnabled, [], OUT).
 
-j_option_pane_add_mouse_motion_listener(REF, ARG0) :- 
-	object_call(REF, addMouseMotionListener, '.'(ARG0, []), _).
-
 j_option_pane_get_mouse_motion_listeners(REF, OUT) :- 
 	object_call(REF, getMouseMotionListeners, [], OUT).
+
+j_option_pane_add_mouse_motion_listener(REF, ARG0) :- 
+	object_call(REF, addMouseMotionListener, '.'(ARG0, []), _).
 
 j_option_pane_paint_components(REF, ARG0) :- 
 	object_call(REF, paintComponents, '.'(ARG0, []), _).
@@ -820,11 +820,11 @@ j_option_pane_bounds(REF, OUT) :-
 j_option_pane_locate(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, locate, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-j_option_pane_add_hierarchy_listener(REF, ARG0) :- 
-	object_call(REF, addHierarchyListener, '.'(ARG0, []), _).
-
 j_option_pane_remove_hierarchy_bounds_listener(REF, ARG0) :- 
 	object_call(REF, removeHierarchyBoundsListener, '.'(ARG0, []), _).
+
+j_option_pane_add_hierarchy_listener(REF, ARG0) :- 
+	object_call(REF, addHierarchyListener, '.'(ARG0, []), _).
 
 j_option_pane_create_image(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, createImage, '.'(ARG0, '.'(ARG1, [])), OUT).
@@ -931,11 +931,11 @@ j_option_pane_show_confirm_dialog(REF, ARG0, ARG1, OUT) :-
 j_option_pane_get_component_z_order(REF, ARG0, OUT) :- 
 	object_call(REF, getComponentZOrder, '.'(ARG0, []), OUT).
 
-j_option_pane_get_hierarchy_listeners(REF, OUT) :- 
-	object_call(REF, getHierarchyListeners, [], OUT).
-
 j_option_pane_remove_focus_listener(REF, ARG0) :- 
 	object_call(REF, removeFocusListener, '.'(ARG0, []), _).
+
+j_option_pane_get_hierarchy_listeners(REF, OUT) :- 
+	object_call(REF, getHierarchyListeners, [], OUT).
 
 j_option_pane_show_confirm_dialog(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_call(REF, showConfirmDialog, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
@@ -1276,11 +1276,11 @@ j_option_pane_is_font_set(REF, OUT) :-
 j_option_pane_get_y(REF, OUT) :- 
 	object_call(REF, getY, [], OUT).
 
-j_option_pane_enable_input_methods(REF, ARG0) :- 
-	object_call(REF, enableInputMethods, '.'(ARG0, []), _).
-
 j_option_pane_is_focus_owner(REF, OUT) :- 
 	object_call(REF, isFocusOwner, [], OUT).
+
+j_option_pane_enable_input_methods(REF, ARG0) :- 
+	object_call(REF, enableInputMethods, '.'(ARG0, []), _).
 
 j_option_pane_set_preferred_size(REF, ARG0) :- 
 	object_call(REF, setPreferredSize, '.'(ARG0, []), _).

@@ -535,14 +535,14 @@ j_scroll_bar_set_inherits_popup_menu(REF, ARG0) :-
 j_scroll_bar_is_focus_cycle_root(REF, OUT) :- 
 	object_call(REF, isFocusCycleRoot, [], OUT).
 
+j_scroll_bar_remove_component_listener(REF, ARG0) :- 
+	object_call(REF, removeComponentListener, '.'(ARG0, []), _).
+
 j_scroll_bar_add_mouse_wheel_listener(REF, ARG0) :- 
 	object_call(REF, addMouseWheelListener, '.'(ARG0, []), _).
 
 j_scroll_bar_create_image(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, createImage, '.'(ARG0, '.'(ARG1, [])), OUT).
-
-j_scroll_bar_remove_component_listener(REF, ARG0) :- 
-	object_call(REF, removeComponentListener, '.'(ARG0, []), _).
 
 j_scroll_bar_is_painting_for_print(REF, OUT) :- 
 	object_call(REF, isPaintingForPrint, [], OUT).
@@ -568,11 +568,11 @@ j_scroll_bar_image_update(REF, ARG0, ARG1, ARG2, ARG3, ARG4, ARG5, OUT) :-
 j_scroll_bar_prepare_image(REF, ARG0, ARG1, OUT) :- 
 	object_call(REF, prepareImage, '.'(ARG0, '.'(ARG1, [])), OUT).
 
-j_scroll_bar_get_cursor(REF, OUT) :- 
-	object_call(REF, getCursor, [], OUT).
-
 j_scroll_bar_prepare_image(REF, ARG0, ARG1, ARG2, ARG3, OUT) :- 
 	object_call(REF, prepareImage, '.'(ARG0, '.'(ARG1, '.'(ARG2, '.'(ARG3, [])))), OUT).
+
+j_scroll_bar_get_cursor(REF, OUT) :- 
+	object_call(REF, getCursor, [], OUT).
 
 j_scroll_bar_are_focus_traversal_keys_set(REF, ARG0, OUT) :- 
 	object_call(REF, areFocusTraversalKeysSet, '.'(ARG0, []), OUT).
@@ -880,11 +880,11 @@ j_scroll_bar_update_u_i(REF) :-
 j_scroll_bar_mouse_enter(REF, ARG0, ARG1, ARG2, OUT) :- 
 	object_call(REF, mouseEnter, '.'(ARG0, '.'(ARG1, '.'(ARG2, []))), OUT).
 
-j_scroll_bar_get_focus_listeners(REF, OUT) :- 
-	object_call(REF, getFocusListeners, [], OUT).
-
 j_scroll_bar_next_focus(REF) :- 
 	object_call(REF, nextFocus, [], _).
+
+j_scroll_bar_get_focus_listeners(REF, OUT) :- 
+	object_call(REF, getFocusListeners, [], OUT).
 
 j_scroll_bar_set_double_buffered(REF, ARG0) :- 
 	object_call(REF, setDoubleBuffered, '.'(ARG0, []), _).
@@ -901,11 +901,11 @@ j_scroll_bar_set_model(REF, ARG0) :-
 j_scroll_bar_get_unit_increment(REF, ARG0, OUT) :- 
 	object_call(REF, getUnitIncrement, '.'(ARG0, []), OUT).
 
-j_scroll_bar_get_drop_target(REF, OUT) :- 
-	object_call(REF, getDropTarget, [], OUT).
-
 j_scroll_bar_is_lightweight(REF, OUT) :- 
 	object_call(REF, isLightweight, [], OUT).
+
+j_scroll_bar_get_drop_target(REF, OUT) :- 
+	object_call(REF, getDropTarget, [], OUT).
 
 j_scroll_bar_is_validate_root(REF, OUT) :- 
 	object_call(REF, isValidateRoot, [], OUT).
@@ -1126,9 +1126,9 @@ j_scroll_bar_get_baseline_resize_behavior(REF, OUT) :-
 j_scroll_bar_get_mouse_listeners(REF, OUT) :- 
 	object_call(REF, getMouseListeners, [], OUT).
 
-j_scroll_bar_get_hierarchy_listeners(REF, OUT) :- 
-	object_call(REF, getHierarchyListeners, [], OUT).
-
 j_scroll_bar_set_focus_traversal_keys_enabled(REF, ARG0) :- 
 	object_call(REF, setFocusTraversalKeysEnabled, '.'(ARG0, []), _).
+
+j_scroll_bar_get_hierarchy_listeners(REF, OUT) :- 
+	object_call(REF, getHierarchyListeners, [], OUT).
 
