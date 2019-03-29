@@ -55,7 +55,7 @@ public final class SwiPrologEngine extends JplEngine implements PrologEngine {
 	}
 
 	public final String getLicense() {
-		return Licenses.LGPL_V3;
+		return Licenses.LGPL_V2_1;
 	}
 
 	public final String getVersion() {
