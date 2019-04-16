@@ -39,13 +39,13 @@ import jpl.Term;
  * @author Jose Zalacain
  * @since 1.0
  */
-public final class SwiPrologEngine extends JplEngine implements PrologEngine {
+public class SwiPrologEngine extends JplEngine implements PrologEngine {
 
-	SwiPrologEngine(PrologProvider provider) {
+	protected SwiPrologEngine(PrologProvider provider) {
 		super(provider);
 	}
 
-	SwiPrologEngine(PrologProvider provider, String file) {
+	protected SwiPrologEngine(PrologProvider provider, String file) {
 		super(provider, file);
 	}
 
