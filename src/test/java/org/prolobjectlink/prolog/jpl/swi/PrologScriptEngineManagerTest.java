@@ -1,8 +1,8 @@
-/*
+/*-
  * #%L
  * prolobjectlink-jpi-jpl-swi
  * %%
- * Copyright (C) 2019 Prolobjectlink Project
+ * Copyright (C) 2012 - 2019 Prolobjectlink Project
  * %%
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as
@@ -21,41 +21,31 @@
  */
 package org.prolobjectlink.prolog.jpl.swi;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
+import java.util.List;
+
+import javax.script.ScriptEngine;
 import javax.script.ScriptEngineFactory;
+import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
 
-import org.prolobjectlink.prolog.PrologConverter;
-import org.prolobjectlink.prolog.PrologEngine;
-import org.prolobjectlink.prolog.PrologProvider;
-import org.prolobjectlink.prolog.jpl.JplProvider;
+import org.junit.Test;
 
-import jpl.Term;
+public class PrologScriptEngineManagerTest extends PrologBaseTest {
 
-/**
- * 
- * @author Jose Zalacain
- * @since 1.0
- */
-public class SwiProlog extends JplProvider implements PrologProvider {
+	@Test
+	public void test() throws ScriptException {
 
-	public SwiProlog() {
-		super(new SwiPrologConverter());
-	}
+		ScriptEngineManager manager = new ScriptEngineManager();
+		List<ScriptEngineFactory> factories = manager.getEngineFactories();
+		assertTrue(factories.contains(provider.getScriptFactory()));
 
-	public SwiProlog(PrologConverter<Term> converter) {
-		super(converter);
-	}
+		ScriptEngine engine = manager.getEngineByName(provider.getName());
+		assertEquals(true, engine.eval("?- X is 5+3."));
+		assertEquals(provider.newInteger(8), engine.get("X"));
 
-	public ScriptEngineFactory getScriptFactory() {
-		return new SwiPrologScriptFactory(newEngine());
-	}
-
-	public PrologEngine newEngine() {
-		return new SwiPrologEngine(this);
-	}
-
-	@Override
-	public String toString() {
-		return "SwiPrologProvider [converter=" + converter + "]";
 	}
 
 }

@@ -1,8 +1,8 @@
-/*
+/*-
  * #%L
  * prolobjectlink-jpi-jpl-swi
  * %%
- * Copyright (C) 2019 Prolobjectlink Project
+ * Copyright (C) 2012 - 2019 Prolobjectlink Project
  * %%
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as
@@ -23,39 +23,17 @@ package org.prolobjectlink.prolog.jpl.swi;
 
 import javax.script.ScriptEngineFactory;
 
-import org.prolobjectlink.prolog.PrologConverter;
 import org.prolobjectlink.prolog.PrologEngine;
-import org.prolobjectlink.prolog.PrologProvider;
-import org.prolobjectlink.prolog.jpl.JplProvider;
+import org.prolobjectlink.prolog.jpl.JplScriptFactory;
 
-import jpl.Term;
+public class SwiPrologScriptFactory extends JplScriptFactory implements ScriptEngineFactory {
 
-/**
- * 
- * @author Jose Zalacain
- * @since 1.0
- */
-public class SwiProlog extends JplProvider implements PrologProvider {
-
-	public SwiProlog() {
-		super(new SwiPrologConverter());
+	public SwiPrologScriptFactory() {
+		super(new SwiProlog().newEngine());
 	}
 
-	public SwiProlog(PrologConverter<Term> converter) {
-		super(converter);
-	}
-
-	public ScriptEngineFactory getScriptFactory() {
-		return new SwiPrologScriptFactory(newEngine());
-	}
-
-	public PrologEngine newEngine() {
-		return new SwiPrologEngine(this);
-	}
-
-	@Override
-	public String toString() {
-		return "SwiPrologProvider [converter=" + converter + "]";
+	public SwiPrologScriptFactory(PrologEngine engine) {
+		super(engine);
 	}
 
 }

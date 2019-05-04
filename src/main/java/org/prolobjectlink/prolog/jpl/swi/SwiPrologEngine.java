@@ -25,9 +25,12 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.script.ScriptEngine;
+
 import org.prolobjectlink.prolog.Licenses;
 import org.prolobjectlink.prolog.PrologEngine;
 import org.prolobjectlink.prolog.PrologProvider;
+import org.prolobjectlink.prolog.PrologScriptEngine;
 import org.prolobjectlink.prolog.jpl.JplEngine;
 
 import jpl.JPL;
@@ -47,6 +50,10 @@ public class SwiPrologEngine extends JplEngine implements PrologEngine {
 
 	protected SwiPrologEngine(PrologProvider provider, String file) {
 		super(provider, file);
+	}
+
+	public final ScriptEngine getPrologScript() {
+		return new PrologScriptEngine(new SwiPrologScriptFactory(this), this);
 	}
 
 	public final String getLicense() {
