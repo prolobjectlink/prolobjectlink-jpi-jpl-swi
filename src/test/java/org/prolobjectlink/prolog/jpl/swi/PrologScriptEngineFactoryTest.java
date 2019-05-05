@@ -33,7 +33,7 @@ import org.junit.Test;
 
 public class PrologScriptEngineFactoryTest extends PrologBaseTest {
 
-	private ScriptEngineFactory sef = provider.getScriptFactory();
+	private ScriptEngineFactory sef = manager.getEngineByName(provider.getName()).getFactory();
 
 	@Test
 	public void testGetEngineName() {
@@ -112,7 +112,7 @@ public class PrologScriptEngineFactoryTest extends PrologBaseTest {
 
 	@Test
 	public void testGetMethodCallSyntax() {
-		assertEquals("jpl_call(OBJ1, equals, [OBJ2], Result).", sef.getMethodCallSyntax("OBJ1", "equals", "OBJ2"));
+		assertEquals("bsf_invoke(Result, OBJ1, equals, [OBJ2]).", sef.getMethodCallSyntax("OBJ1", "equals", "OBJ2"));
 	}
 
 }
