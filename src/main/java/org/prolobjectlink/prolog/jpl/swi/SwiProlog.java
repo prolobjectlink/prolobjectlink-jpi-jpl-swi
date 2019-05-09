@@ -21,8 +21,6 @@
  */
 package org.prolobjectlink.prolog.jpl.swi;
 
-import javax.script.ScriptEngineFactory;
-
 import org.prolobjectlink.prolog.PrologConverter;
 import org.prolobjectlink.prolog.PrologEngine;
 import org.prolobjectlink.prolog.PrologJavaConverter;
@@ -48,10 +46,6 @@ public class SwiProlog extends JplProvider implements PrologProvider {
 
 	public PrologJavaConverter getJavaConverter() {
 		return new SwiPrologJavaConverter(this);
-	}
-
-	public ScriptEngineFactory getScriptFactory() {
-		return new SwiPrologScriptFactory(newEngine());
 	}
 
 	public PrologEngine newEngine() {
