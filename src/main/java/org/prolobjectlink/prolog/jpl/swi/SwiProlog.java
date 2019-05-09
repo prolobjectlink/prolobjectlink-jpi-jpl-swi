@@ -25,6 +25,7 @@ import javax.script.ScriptEngineFactory;
 
 import org.prolobjectlink.prolog.PrologConverter;
 import org.prolobjectlink.prolog.PrologEngine;
+import org.prolobjectlink.prolog.PrologJavaConverter;
 import org.prolobjectlink.prolog.PrologProvider;
 import org.prolobjectlink.prolog.jpl.JplProvider;
 
@@ -43,6 +44,10 @@ public class SwiProlog extends JplProvider implements PrologProvider {
 
 	public SwiProlog(PrologConverter<Term> converter) {
 		super(converter);
+	}
+
+	public PrologJavaConverter getJavaConverter() {
+		return new SwiPrologJavaConverter(this);
 	}
 
 	public ScriptEngineFactory getScriptFactory() {
