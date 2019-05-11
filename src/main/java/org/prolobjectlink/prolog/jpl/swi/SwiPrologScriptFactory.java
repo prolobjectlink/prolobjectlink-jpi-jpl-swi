@@ -23,17 +23,12 @@ package org.prolobjectlink.prolog.jpl.swi;
 
 import javax.script.ScriptEngineFactory;
 
-import org.prolobjectlink.prolog.PrologEngine;
 import org.prolobjectlink.prolog.jpl.JplScriptFactory;
 
 public class SwiPrologScriptFactory extends JplScriptFactory implements ScriptEngineFactory {
 
 	public SwiPrologScriptFactory() {
 		super(new SwiProlog().newEngine());
-	}
-
-	public SwiPrologScriptFactory(PrologEngine engine) {
-		super(engine);
 	}
 
 }
