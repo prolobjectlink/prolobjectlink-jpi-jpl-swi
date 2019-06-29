@@ -1034,6 +1034,7 @@ public class PrologEngineTest extends PrologBaseTest {
 				predicates.add(pi);
 			}
 		}
+		query.close();
 		assertEquals(predicates, engine.currentPredicates());
 	}
 
@@ -1058,6 +1059,7 @@ public class PrologEngineTest extends PrologBaseTest {
 				operators.add(o);
 			}
 		}
+		query.close();
 		assertEquals(operators, engine.currentOperators());
 	}
 

@@ -52,6 +52,12 @@ public class SwiProlog extends JplProvider implements PrologProvider {
 		return new SwiPrologEngine(this);
 	}
 
+	public PrologEngine newEngine(String path) {
+		PrologEngine engine = newEngine();
+		engine.consult(path);
+		return engine;
+	}
+
 	@Override
 	public String toString() {
 		return "SwiPrologProvider [converter=" + converter + "]";
