@@ -49,7 +49,7 @@ before_install:
   - export M2_HOME=$PWD/apache-maven-3.5.0
   - export PATH=$M2_HOME/bin:$PATH
   - echo "MAVEN_OPTS='-Dmaven.repo.local=$HOME/.m2/repository -Xmx1g -Dorg.slf4j.simpleLogger.showDateTime=true -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS'" > ~/.mavenrc
-  - cd /tmp
+  
   - wget http://www.swi-prolog.org/download/stable/src/pl-6.6.6.tar.gz
   - tar -xzvf pl-6.6.6.tar.gz
   - cd pl-6.6.6
