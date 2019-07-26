@@ -68,6 +68,16 @@
         <enabled>true</enabled>
       </snapshots>
     </repository>
+		<repository>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/service/local/repositories/central_bundles-18413/content/</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
   </repositories>
 	
 	<distributionManagement>
