@@ -63,7 +63,7 @@ before_install:
   - cd pl-6.6.6
   - ./configure --with-world
   - make
-  - make install
+  - sudo make install
   - cd packages/jpl
   - ./configure
   - make
