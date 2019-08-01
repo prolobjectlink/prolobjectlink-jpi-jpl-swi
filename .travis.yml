@@ -49,7 +49,7 @@ before_install:
   - export M2_HOME=$PWD/apache-maven-3.5.0
   - export PATH=$M2_HOME/bin:$PATH
   - echo "MAVEN_OPTS='-Dmaven.repo.local=$HOME/.m2/repository -Xmx1g -Dorg.slf4j.simpleLogger.showDateTime=true -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS'" > ~/.mavenrc
-  - export JAVA_HOME=/usr/lib/jvm/default-java
+  - export JAVA_HOME=/usr/lib/jvm/java-8-oracle
   - echo $JAVA_HOME
   - sudo touch /etc/ld.so.conf.d/java.conf
   - echo $JAVA_HOME/jre/lib/amd64 | sudo tee -a /etc/ld.so.conf.d/java.conf
@@ -67,11 +67,10 @@ before_install:
   - cd packages/jpl
   - ./configure
   - make
-  - pwd
-  - export SWI_HOME=/home/jzalacain/pl-6.6.6
+  - export SWI_HOME=/home/travis/build/prolobjectlink/prolobjectlink-jpi-jpl-swi/pl-6.6.6
   - export PATH=$PATH:$SWI_HOME/bin
-  - export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/jzalacain/pl-6.6.6/packages/jpl/
-  - export CLASSPATH=$CLASSPATH:/home/jzalacain/pl-6.6.6/jpl/jpl.jar
+  - export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/travis/build/prolobjectlink/prolobjectlink-jpi-jpl-swi/pl-6.6.6/packages/jpl
+  - export CLASSPATH=$CLASSPATH:/home/travis/build/prolobjectlink/prolobjectlink-jpi-jpl-swi/pl-6.6.6/packages/jpl/jpl.jar
 
 install:
   -
