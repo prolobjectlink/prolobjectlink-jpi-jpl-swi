@@ -51,7 +51,7 @@ before_install:
   - echo "MAVEN_OPTS='-Dmaven.repo.local=$HOME/.m2/repository -Xmx1g -Dorg.slf4j.simpleLogger.showDateTime=true -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS'" > ~/.mavenrc
   - wget https://github.com/prolobjectlink/prolobjectlink-jpi/releases/download/1.0.0/prolobjectlink-jpi-1.0.0.jar -O /home/travis/build/prolobjectlink/prolobjectlink-jpi-jpl-swi/prolobjectlink-jpi-1.0.0.jar
   - mvn install:install-file -Dfile=prolobjectlink-jpi-1.0.0.jar -DgroupId=org.prolobjectlink -DartifactId=prolobjectlink-jpi -Dversion=1.0.0 -Dpackaging=jar
-  - wget https://github.com/prolobjectlink/prolobjectlink-jpi-jpl/releases/download/1.0.0/prolobjectlink-jpi-jpl-1.0.0.jar -O /home/travis/build/prolobjectlink/prolobjectlink-jpi-ip/prolobjectlink-jpi-jpl-1.0.0.jar
+  - wget https://github.com/prolobjectlink/prolobjectlink-jpi-jpl/releases/download/1.0.0/prolobjectlink-jpi-jpl-1.0.0.jar -O /home/travis/build/prolobjectlink/prolobjectlink-jpi-jpl-swi/prolobjectlink-jpi-jpl-1.0.0.jar
   - mvn install:install-file -Dfile=prolobjectlink-jpi-jpl-1.0.0.jar -DgroupId=org.prolobjectlink -DartifactId=prolobjectlink-jpi-jpl -Dversion=1.0.0 -Dpackaging=jar
   - export JAVA_HOME=/usr/lib/jvm/java-8-oracle
   - echo $JAVA_HOME
