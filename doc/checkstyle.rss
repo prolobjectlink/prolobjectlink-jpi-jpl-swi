@@ -29,35 +29,7 @@
           <tbody>
                           <tr>
                 <td>
-                  <a href="https://github.com/prolobjectlink/prolobjectlink-jpi-jpl-swi/checkstyle.html#org.prolobjectlink.prolog.jpl.swi.SwiPrologConsole.java">org/prolobjectlink/prolog/jpl/swi/SwiPrologConsole.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  12
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="https://github.com/prolobjectlink/prolobjectlink-jpi-jpl-swi/checkstyle.html#org.prolobjectlink.prolog.jpl.swi.SwiPrologScriptFactory.java">org/prolobjectlink/prolog/jpl/swi/SwiPrologScriptFactory.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  8
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="https://github.com/prolobjectlink/prolobjectlink-jpi-jpl-swi/checkstyle.html#org.prolobjectlink.prolog.jpl.swi.SwiProlog.java">org/prolobjectlink/prolog/jpl/swi/SwiProlog.java</a>
+                  <a href="https://github.com/prolobjectlink/prolobjectlink-jpi-jpl-swi/checkstyle.html#io.github.prolobjectlink.prolog.jpl.swi.SwiProlog.java">io/github/prolobjectlink/prolog/jpl/swi/SwiProlog.java</a>
                 </td>
                 <td>
                   0
@@ -71,7 +43,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/prolobjectlink/prolobjectlink-jpi-jpl-swi/checkstyle.html#org.prolobjectlink.prolog.jpl.swi.SwiPrologConverter.java">org/prolobjectlink/prolog/jpl/swi/SwiPrologConverter.java</a>
+                  <a href="https://github.com/prolobjectlink/prolobjectlink-jpi-jpl-swi/checkstyle.html#io.github.prolobjectlink.prolog.jpl.swi.SwiPrologScriptFactory.java">io/github/prolobjectlink/prolog/jpl/swi/SwiPrologScriptFactory.java</a>
                 </td>
                 <td>
                   0
@@ -80,12 +52,12 @@
                   0
                 </td>
                 <td>
-                  7
+                  8
                 </td>
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/prolobjectlink/prolobjectlink-jpi-jpl-swi/checkstyle.html#org.prolobjectlink.prolog.jpl.swi.SwiPrologJavaConverter.java">org/prolobjectlink/prolog/jpl/swi/SwiPrologJavaConverter.java</a>
+                  <a href="https://github.com/prolobjectlink/prolobjectlink-jpi-jpl-swi/checkstyle.html#io.github.prolobjectlink.prolog.jpl.swi.SwiPrologJavaConverter.java">io/github/prolobjectlink/prolog/jpl/swi/SwiPrologJavaConverter.java</a>
                 </td>
                 <td>
                   0
@@ -99,7 +71,35 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/prolobjectlink/prolobjectlink-jpi-jpl-swi/checkstyle.html#org.prolobjectlink.prolog.jpl.swi.SwiPrologEngine.java">org/prolobjectlink/prolog/jpl/swi/SwiPrologEngine.java</a>
+                  <a href="https://github.com/prolobjectlink/prolobjectlink-jpi-jpl-swi/checkstyle.html#io.github.prolobjectlink.prolog.jpl.swi.SwiPrologConsole.java">io/github/prolobjectlink/prolog/jpl/swi/SwiPrologConsole.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  12
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/prolobjectlink/prolobjectlink-jpi-jpl-swi/checkstyle.html#io.github.prolobjectlink.prolog.jpl.swi.SwiPrologConverter.java">io/github/prolobjectlink/prolog/jpl/swi/SwiPrologConverter.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  7
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/prolobjectlink/prolobjectlink-jpi-jpl-swi/checkstyle.html#io.github.prolobjectlink.prolog.jpl.swi.SwiPrologEngine.java">io/github/prolobjectlink/prolog/jpl/swi/SwiPrologEngine.java</a>
                 </td>
                 <td>
                   0

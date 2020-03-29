@@ -212,7 +212,7 @@
 						<manifest>
 							<addClasspath>true</addClasspath>
 							<mainClass>
-								org.prolobjectlink.prolog.jpl.swi.SwiPrologConsole
+								io.github.prolobjectlink.prolog.jpl.swi.SwiPrologConsole
 							</mainClass>
 						</manifest>
 						<manifestEntries>
