@@ -2,7 +2,7 @@ version: 2 # use CircleCI 2.0
 jobs: # a collection of steps
   build: # runs not using Workflows must have a `build` job as entry point
     
-    working_directory: ~/circleci-prolobjectlink-jpi # directory where steps will run
+    working_directory: ~/circleci-prolobjectlink-jpi-jpl-swi # directory where steps will run
 
     docker: # run the steps with Docker
       - image: circleci/openjdk:8-jdk-stretch # ...with this image as the primary container; this is where all `steps` will run
@@ -13,14 +13,87 @@ jobs: # a collection of steps
 
       - restore_cache: # restore the saved cache after the first run or if `pom.xml` has changed
           # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
-          key: circleci-prolobjectlink-jpi-{{ checksum "pom.xml" }}
+          key: circleci-prolobjectlink-jpi-jpl-swi-{{ checksum "pom.xml" }}
+      
+      - run: apt-get install build-essential
+      - run: apt-get install pkg-config
+      - run: apt-get install ncurses-dev
+      - run: apt-get install libreadline-dev
+      - run: apt-get install libedit-dev
+      - run: apt-get install libgmp-dev
+      - run: apt-get install libssl-dev
+      - run: apt-get install unixodbc-dev
+      - run: apt-get install zlib1g-dev
+      - run: apt-get install libarchive-dev
+      - run: apt-get install libossp-uuid-dev
+      - run: apt-get install libxext-dev
+      - run: apt-get install libice-dev
+      - run: apt-get install libjpeg-dev
+      - run: apt-get install libxinerama-dev
+      - run: apt-get install libxft-dev
+      - run: apt-get install libxpm-dev
+      - run: apt-get install libxt-dev
+      - run: apt-get install libdb-dev
+      - run: apt-get install libpcre3-dev
+      - run: apt-get install libyaml-dev
+      # - run: apt-get install openjdk-8-jdk
+      - run: apt-get install junit
+      - run: apt-get install ninja-build
+      
+      - run: apt-get install cmake
+      - run: apt-get install ninja
+      - run: apt-get install gmp
+      - run: apt-get install libarchive
+      - run: apt-get install readline
+      - run: apt-get install ossp-uuid
+      - run: apt-get install openssl
+      - run: apt-get install libyaml
+      - run: apt-get install unixodbc
+      - run: apt-get install berkeley-db
+      - run: apt-get install pcre
+      - run: apt-get install jpeg
+      
+      - run: wget https://archive.apache.org/dist/maven/maven-3/3.5.0/binaries/apache-maven-3.5.0-bin.zip
+      - run: unzip -qq apache-maven-3.5.0-bin.zip
+      - run: export M2_HOME=$PWD/apache-maven-3.5.0
+      - run: export PATH=$M2_HOME/bin:$PATH
+      - run: echo "MAVEN_OPTS='-Dmaven.repo.local=$HOME/.m2/repository -Xmx1g -Dorg.slf4j.simpleLogger.showDateTime=true -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS'" > ~/.mavenrc
+      - run: wget https://github.com/prolobjectlink/prolobjectlink-jpi/releases/download/1.0.0/prolobjectlink-jpi-1.0.0.jar -O /home/travis/build/prolobjectlink/prolobjectlink-jpi-jpl-swi/prolobjectlink-jpi-1.0.0.jar
+      - run: mvn install:install-file -Dfile=prolobjectlink-jpi-1.0.0.jar -DgroupId=org.prolobjectlink -DartifactId=prolobjectlink-jpi -Dversion=1.0.0 -Dpackaging=jar
+      - run: wget https://github.com/prolobjectlink/prolobjectlink-jpi-jpl/releases/download/1.0.0/prolobjectlink-jpi-jpl-1.0.0.jar -O /home/travis/build/prolobjectlink/prolobjectlink-jpi-jpl-swi/prolobjectlink-jpi-jpl-1.0.0.jar
+      - run: mvn install:install-file -Dfile=prolobjectlink-jpi-jpl-1.0.0.jar -DgroupId=org.prolobjectlink -DartifactId=prolobjectlink-jpi-jpl -Dversion=1.0.0 -Dpackaging=jar
+      - run: export JAVA_HOME=/usr/lib/jvm/java-8-oracle
+      - run: echo $JAVA_HOME
+      - run: sudo touch /etc/ld.so.conf.d/java.conf
+      - run: echo $JAVA_HOME/jre/lib/amd64 | sudo tee -a /etc/ld.so.conf.d/java.conf
+      - run: echo $JAVA_HOME/jre/lib/amd64/server | sudo tee -a /etc/ld.so.conf.d/java.conf
+      - run: sudo ldconfig
+      - run: export PATH=$PATH:$JAVA_HOME/bin
+      - run: export CLASSPATH=$CLASSPATH:$JAVA_HOME/lib/tools.jar
+      - run: export CLASSPATH=$CLASSPATH:$JAVA_HOME/jre/lib/rt.jar
+      - run: wget https://www.swi-prolog.org/download/stable/src/pl-6.6.6.tar.gz
+      - run: tar -xzvf pl-6.6.6.tar.gz
+      - run: cd pl-6.6.6
+      - run: ./configure --with-world
+      - run: make
+      - run: sudo make install
+      - run: cd packages/jpl
+      - run: ./configure
+      - run: make
+      - run: export SWI_HOME=/home/travis/build/prolobjectlink/prolobjectlink-jpi-jpl-swi/pl-6.6.6
+      - run: export PATH=$PATH:$SWI_HOME/bin
+      - run: export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/travis/build/prolobjectlink/prolobjectlink-jpi-jpl-swi/pl-6.6.6/packages/jpl
+      - run: export CLASSPATH=$CLASSPATH:/home/travis/build/prolobjectlink/prolobjectlink-jpi-jpl-swi/pl-6.6.6/packages/jpl/jpl.jar
+      - run: cd ..
+      - run: cd ..
+      - run: cd ..
       
       - run: mvn dependency:go-offline # gets the project dependencies
       
       - save_cache: # saves the project dependencies
           paths:
             - ~/.m2
-          key: circleci-prolobjectlink-jpi-{{ checksum "pom.xml" }}
+          key: circleci-prolobjectlink-jpi-jpl-swi-{{ checksum "pom.xml" }}
       
       - run: mvn package # run the actual tests
       
@@ -30,5 +103,5 @@ jobs: # a collection of steps
       
       - store_artifacts: # store the uberjar as an artifact
       # Upload test summary for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
-          path: target/prolobjectlink-jpi-1.0-SNAPSHOT.jar
+          path: target/prolobjectlink-jpi-jpl-swi-1.0-SNAPSHOT.jar
       # See https://circleci.com/docs/2.0/deployment-integrations/ for deploy examples    
