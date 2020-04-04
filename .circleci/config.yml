@@ -42,7 +42,7 @@ jobs: # a collection of steps
       - run: sudo apt-get install ninja-build
       
       - run: sudo apt-get install cmake
-      - run: sudo apt-get install ninja
+      # - run: sudo apt-get install ninja
       - run: sudo apt-get install gmp
       - run: sudo apt-get install libarchive
       - run: sudo apt-get install readline
