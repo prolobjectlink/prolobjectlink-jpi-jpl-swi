@@ -71,11 +71,11 @@ jobs: # a collection of steps
       - run: wget https://www.swi-prolog.org/download/stable/src/pl-6.6.6.tar.gz
       - run: tar -xzvf pl-6.6.6.tar.gz
       - run: cd pl-6.6.6
-      - run: ./configure --with-world
+      - run: bash configure --with-world
       - run: make
       - run: sudo make install
       - run: cd packages/jpl
-      - run: ./configure
+      - run: bash configure
       - run: make
       - run: export SWI_HOME=/home/travis/build/prolobjectlink/prolobjectlink-jpi-jpl-swi/pl-6.6.6
       - run: export PATH=$PATH:$SWI_HOME/bin
