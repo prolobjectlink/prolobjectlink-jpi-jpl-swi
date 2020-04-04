@@ -43,16 +43,16 @@ jobs: # a collection of steps
       
       - run: sudo apt-get install cmake
       # - run: sudo apt-get install ninja
-      - run: sudo apt-get install gmp
-      - run: sudo apt-get install libarchive
-      - run: sudo apt-get install readline
-      - run: sudo apt-get install ossp-uuid
-      - run: sudo apt-get install openssl
-      - run: sudo apt-get install libyaml
-      - run: sudo apt-get install unixodbc
-      - run: sudo apt-get install berkeley-db
-      - run: sudo apt-get install pcre
-      - run: sudo apt-get install jpeg
+      # - run: sudo apt-get install gmp
+      # - run: sudo apt-get install libarchive
+      # - run: sudo apt-get install readline
+      # - run: sudo apt-get install ossp-uuid
+      # - run: sudo apt-get install openssl
+      # - run: sudo apt-get install libyaml
+      # - run: sudo apt-get install unixodbc
+      # - run: sudo apt-get install berkeley-db
+      # - run: sudo apt-get install pcre
+      # - run: sudo apt-get install jpeg
       
       - run: wget https://archive.apache.org/dist/maven/maven-3/3.5.0/binaries/apache-maven-3.5.0-bin.zip
       - run: unzip -qq apache-maven-3.5.0-bin.zip
