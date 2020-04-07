@@ -41,24 +41,24 @@ import jpl.Term;
 public class SwiPrologEngine extends JplEngine implements PrologEngine {
 
 	protected SwiPrologEngine(PrologProvider provider) {
-<span class="fc" id="L44">		super(provider);</span>
-<span class="fc" id="L45">	}</span>
+<span class="nc" id="L44">		super(provider);</span>
+<span class="nc" id="L45">	}</span>
 
 	protected SwiPrologEngine(PrologProvider provider, String file) {
 <span class="nc" id="L48">		super(provider, file);</span>
 <span class="nc" id="L49">	}</span>
 
 	public final String getLicense() {
-<span class="fc" id="L52">		return Licenses.LGPL_V2_1;</span>
+<span class="nc" id="L52">		return Licenses.LGPL_V2_1;</span>
 	}
 
 	public final String getVersion() {
-<span class="fc" id="L56">		Term swi = (Term) new Query(&quot;current_prolog_flag(version_data,Swi)&quot;).oneSolution().get(&quot;Swi&quot;);</span>
-<span class="fc" id="L57">		return &quot;&quot; + swi.arg(1) + &quot;.&quot; + swi.arg(2) + &quot;.&quot; + swi.arg(3) + &quot; (JPL v&quot; + JPL.version_string() + &quot;)&quot;;</span>
+<span class="nc" id="L56">		Term swi = (Term) new Query(&quot;current_prolog_flag(version_data,Swi)&quot;).oneSolution().get(&quot;Swi&quot;);</span>
+<span class="nc" id="L57">		return &quot;&quot; + swi.arg(1) + &quot;.&quot; + swi.arg(2) + &quot;.&quot; + swi.arg(3) + &quot; (JPL v&quot; + JPL.version_string() + &quot;)&quot;;</span>
 	}
 
 	public final String getName() {
-<span class="fc" id="L61">		return &quot;SWI-Prolog&quot;;</span>
+<span class="nc" id="L61">		return &quot;SWI-Prolog&quot;;</span>
 	}
 
 	public final List&lt;String&gt; verify() {
