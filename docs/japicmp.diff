@@ -1,0 +1,37 @@
+Comparing source compatibility of C:\Users\Jose Zalacain\Documents\eclipse-java-photon-workspace\prolobjectlink-jpi-jpl-swi\target\prolobjectlink-jpi-jpl-swi-1.1-SNAPSHOT.jar against C:\Users\Jose Zalacain\.m2\repository\io\github\prolobjectlink\prolobjectlink-jpi-jpl-swi\1.0\prolobjectlink-jpi-jpl-swi-1.0.jar
+===  UNCHANGED CLASS: PUBLIC io.github.prolobjectlink.prolog.jpl.swi.SwiProlog  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 50.0 <- 50.0
+	===  UNCHANGED INTERFACE: io.github.prolobjectlink.prolog.PrologProvider
+	===  UNCHANGED INTERFACE: java.util.Map
+	===  UNCHANGED INTERFACE: io.github.prolobjectlink.prolog.PrologMapper
+	===  UNCHANGED INTERFACE: io.github.prolobjectlink.prolog.PrologParser
+	===  UNCHANGED SUPERCLASS: io.github.prolobjectlink.prolog.jpl.JplProvider (<- io.github.prolobjectlink.prolog.jpl.JplProvider)
+	===  UNCHANGED CONSTRUCTOR: PUBLIC SwiProlog()
+	===  UNCHANGED METHOD: PUBLIC io.github.prolobjectlink.prolog.PrologJavaConverter getJavaConverter()
+	===  UNCHANGED METHOD: PUBLIC io.github.prolobjectlink.prolog.PrologEngine newEngine()
+	===  UNCHANGED METHOD: PUBLIC io.github.prolobjectlink.prolog.PrologEngine newEngine(java.lang.String)
+	===  UNCHANGED METHOD: PUBLIC java.lang.String toString()
+===  UNCHANGED CLASS: PUBLIC io.github.prolobjectlink.prolog.jpl.swi.SwiPrologConsole  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 50.0 <- 50.0
+	===  UNCHANGED INTERFACE: io.github.prolobjectlink.prolog.PrologConsole
+	===  UNCHANGED SUPERCLASS: io.github.prolobjectlink.prolog.AbstractConsole (<- io.github.prolobjectlink.prolog.AbstractConsole)
+	===  UNCHANGED CONSTRUCTOR: PUBLIC SwiPrologConsole()
+	===  UNCHANGED METHOD: PUBLIC STATIC void main(java.lang.String[])
+***  MODIFIED CLASS: PUBLIC io.github.prolobjectlink.prolog.jpl.swi.SwiPrologEngine  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 50.0 <- 50.0
+	===  UNCHANGED INTERFACE: java.util.Map
+	===  UNCHANGED INTERFACE: io.github.prolobjectlink.prolog.PrologEngine
+	===  UNCHANGED INTERFACE: java.lang.Iterable
+	===  UNCHANGED SUPERCLASS: io.github.prolobjectlink.prolog.jpl.JplEngine (<- io.github.prolobjectlink.prolog.jpl.JplEngine)
+	===  UNCHANGED CONSTRUCTOR: PROTECTED SwiPrologEngine(io.github.prolobjectlink.prolog.PrologProvider)
+	===  UNCHANGED CONSTRUCTOR: PROTECTED SwiPrologEngine(io.github.prolobjectlink.prolog.PrologProvider, java.lang.String)
+	===  UNCHANGED METHOD: PUBLIC FINAL java.lang.String getLicense()
+	===  UNCHANGED METHOD: PUBLIC FINAL java.lang.String getName()
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) java.lang.String getVendor()
+	===  UNCHANGED METHOD: PUBLIC FINAL java.lang.String getVersion()
+	===  UNCHANGED METHOD: PUBLIC FINAL java.util.List verify()
+===  UNCHANGED CLASS: PUBLIC io.github.prolobjectlink.prolog.jpl.swi.SwiPrologScriptFactory  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 50.0 <- 50.0
+	===  UNCHANGED INTERFACE: javax.script.ScriptEngineFactory
+	===  UNCHANGED SUPERCLASS: io.github.prolobjectlink.prolog.jpl.JplScriptFactory (<- io.github.prolobjectlink.prolog.jpl.JplScriptFactory)
+	===  UNCHANGED CONSTRUCTOR: PUBLIC SwiPrologScriptFactory()
