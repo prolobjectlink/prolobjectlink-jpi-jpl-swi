@@ -59,7 +59,7 @@ public class SwiProlog extends JplProvider implements PrologProvider {
 
 	@Override
 	public String toString() {
-		return "SwiPrologProvider [converter=" + converter + "]";
+		return "SwiProlog [converter=" + converter + "]";
 	}
 
 }

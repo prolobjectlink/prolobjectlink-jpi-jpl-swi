@@ -37,4 +37,9 @@ class SwiPrologConverter extends JplConverter implements PrologConverter<Term> {
 		return new SwiProlog(this);
 	}
 
+	@Override
+	public String toString() {
+		return "SwiPrologConverter";
+	}
+
 }
