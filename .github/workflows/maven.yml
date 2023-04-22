@@ -74,7 +74,6 @@ jobs:
     - run: pwd
     - run: ls -l
     - run: cd pl-6.6.6
-    - run: cd /home/runner/work/prolobjectlink-jpi-jpl-swi/prolobjectlink-jpi-jpl-swi/pl-6.6.6
     - run: pwd
     - run: ls -l
     - run: sudo ./configure --with-world
