@@ -77,11 +77,11 @@ jobs:
     - run: cd /home/runner/work/prolobjectlink-jpi-jpl-swi/prolobjectlink-jpi-jpl-swi/pl-6.6.6
     - run: pwd
     - run: ls -l
-    - run: sudo configure --with-world
+    - run: sudo ./configure --with-world
     - run: make
     - run: sudo make install
     - run: cd packages/jpl
-    - run: sudo configure
+    - run: sudo ./configure
     - run: make
     - run: pwd
     - run: export SWI_HOME=/home/travis/build/prolobjectlink/prolobjectlink-jpi-jpl-swi/pl-6.6.6
